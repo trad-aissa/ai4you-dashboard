@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin
 
-Sitemap: https://ai4you.site/sitemap-index.xml
+Sitemap: https://www.ai4you.site/sitemap-index.xml

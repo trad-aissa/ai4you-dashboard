@@ -10,7 +10,7 @@ interface Props {
 }
 const { title, description, path = '', image, type = 'website', publishedTime } = Astro.props;
 
-const SITE = 'https://ai4you.site';
+const SITE = 'https://www.ai4you.site';
 const canonical = `${SITE}${path || '/'}`;
 const ogImage = image ? (image.startsWith('http') ? image : `${SITE}${image}`) : `${SITE}/og-default.svg`;
 const desc = description ?? 'A calm, sourced briefing on AI: model releases, pricing changes and industry moves — plus the tools actually worth your money.';

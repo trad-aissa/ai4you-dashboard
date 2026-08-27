@@ -10,7 +10,7 @@
 
 export const SITE = {
   name: 'ai4you.site',
-  url: 'https://ai4you.site',
+  url: 'https://www.ai4you.site',
 };
 
 export const SUPABASE_URL = 'https://igiogbnoqitejrifzsfo.supabase.co';
