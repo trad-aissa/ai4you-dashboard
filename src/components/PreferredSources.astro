@@ -1,0 +1,26 @@
+---
+// Google "Add to Preferred Sources" button (official embed)
+// Docs: https://developers.google.com/search/docs/appearance/preferred-sources
+interface Props { theme?: 'light' | 'dark' }
+const { theme = 'light' } = Astro.props;
+---
+
+<div class="a4u-pref">
+  <p class="a4u-pref-line">Like our briefing? Get us inside your Google feed.</p>
+  <div
+    class="g-ps"
+    data-source-url="https://ai4you.site"
+    data-theme={theme}
+  >Add to Preferred Sources</div>
+</div>
+
+<style>
+  .a4u-pref {
+    display: flex; flex-direction: column; gap: 8px; align-items: flex-start;
+  }
+  .a4u-pref-line {
+    margin: 0; font-size: 13.5px; color: var(--muted); line-height: 1.5;
+  }
+</style>
+
+<script is:inline src="https://www.gstatic.com/pg/ssogp.min.js" async></script>

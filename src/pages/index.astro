@@ -14,6 +14,7 @@ try {
 }
 const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
 const unit = (slug) => (byslug[slug] ? renderUnit(byslug[slug]) : '');
+import PreferredSources from '../components/PreferredSources.astro';
 ---
 
 <Layout title="ai4you.site — AI news, model releases & tools, minus the hype" path="/" description="A calm, sourced briefing on AI: every frontier-model release, price change and industry move — plus the AI tools actually worth your money.">
@@ -49,7 +50,8 @@ const unit = (slug) => (byslug[slug] ? renderUnit(byslug[slug]) : '');
         <input id="nl-email" name="email" type="email" placeholder="you@work.com" autocomplete="email" required />
         <button class="btn btn--primary" type="submit">Get the brief</button>
       </form>
-      <p class="form-msg" id="nl-msg" role="status" aria-live="polite"></p>
+      <div style="margin-top:18px;display:flex;justify-content:center;"><PreferredSources theme="light" /></div>
+        <p class="form-msg" id="nl-msg" role="status" aria-live="polite"></p>
     </div>
   </section>
 
