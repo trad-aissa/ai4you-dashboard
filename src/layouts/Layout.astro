@@ -1,0 +1,103 @@
+---
+// src/layouts/Layout.astro — shared page shell
+import '../styles/site.css';
+
+interface Props { title: string; }
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content="A calm, sourced briefing on AI: model releases, pricing changes and industry moves — plus the tools actually worth your money." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <meta name="view-transition" content="same-origin" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="masthead">
+      <div class="wrap">
+        <div class="top">
+          <a class="brand" href="/">ai4you<em> · the AI wire</em></a>
+          <div class="meta">
+            <span id="masthead-date">—</span><br />
+            Independent &amp; reader-supported
+          </div>
+        </div>
+        <nav aria-label="Main">
+          <a href="/" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>Latest</a>
+          <a href="/tools" aria-current={Astro.url.pathname === '/tools' ? 'page' : undefined}>Tools</a>
+          <a href="/article" aria-current={Astro.url.pathname === '/article' ? 'page' : undefined}>Deep dive</a>
+          <a href="/about" aria-current={Astro.url.pathname === '/about' ? 'page' : undefined}>About</a>
+          <a href="/admin" hidden aria-hidden="true">·</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="cols">
+          <div>
+            <div class="f-brand">ai4you.site</div>
+            <p>A calm, sourced briefing on artificial intelligence. We link to primary sources for every story, and we label every affiliate link.</p>
+          </div>
+          <div>
+            <h4>Sections</h4>
+            <ul>
+              <li><a href="/">Latest</a></li>
+              <li><a href="/tools">Tool shelf</a></li>
+              <li><a href="/article">Deep dive</a></li>
+              <li><a href="/about">About</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Trust</h4>
+            <ul>
+              <li><a href="/about#disclosure">Affiliate disclosure</a></li>
+              <li><a href="/about#privacy">Privacy</a></li>
+              <li><a href="/about#standards">Editorial standards</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="baseline">
+          <span>© <span class="js-year">2026</span> ai4you.site</span>
+          <span class="disc">Disclosure: some outbound links may earn us a commission. News items link to their original publishers.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // masthead date + footer year + newsletter validation (vanilla, tiny)
+      const d = document.getElementById('masthead-date');
+      if (d) d.textContent = new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'long', day: 'numeric', year: 'numeric' });
+      document.querySelectorAll('.js-year').forEach((n) => (n.textContent = String(new Date().getFullYear())));
+
+      const form = document.querySelector('.newsletter form');
+      form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = form.querySelector('input[type="email"]');
+        const msg = document.querySelector('.form-msg');
+        const v = (input?.value ?? '').trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) {
+          msg.textContent = 'Please enter a valid email address.';
+          msg.classList.add('err');
+          return;
+        }
+        msg.textContent = 'Thanks — you are on the list (demo mode).';
+        msg.classList.add('ok');
+        if (input) input.value = '';
+      });
+    </script>
+  </body>
+</html>

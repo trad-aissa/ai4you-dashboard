@@ -1,0 +1,93 @@
+---
+// src/pages/tools.astro — the tool shelf
+import Layout from '../layouts/Layout.astro';
+import tools from '../data/tools.js';
+
+const cats = [
+  { id: 'all', label: 'All' },
+  { id: 'writing', label: 'Writing' },
+  { id: 'video', label: 'Video & audio' },
+  { id: 'seo', label: 'SEO' },
+  { id: 'marketing', label: 'Marketing' },
+  { id: 'productivity', label: 'Productivity' },
+];
+---
+
+<Layout title="The tool shelf — AI tools worth paying for · ai4you.site">
+  <section class="tools-hero wrap">
+    <span class="kicker">Curated · terms checked August 2026</span>
+    <h1>The tool shelf.</h1>
+    <p class="lede">
+      Every AI tool here earns its place: we use them, we check their terms, and we say plainly
+      what their affiliate programs pay us. You pay the same either way.
+    </p>
+    <div class="affiliate-note" style="margin-top:28px;">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 14.5 13.5h-13L8 1.5zM8 6.5v3M8 11.5v.01"/></svg>
+      <span>
+        <b>Affiliate disclosure:</b> “Try” buttons may become affiliate links once programs are
+        approved — if you subscribe through one, we may earn a commission at no extra cost to you.
+        <a href="/about#disclosure">Read the full disclosure</a>.
+      </span>
+    </div>
+  </section>
+
+  <section class="dir wrap" aria-label="Tools directory">
+    <div class="filters" id="tool-filters" role="group" aria-label="Filter tools by category">
+      {cats.map((c, i) => (
+        <button class:list={['filter-btn', { 'is-active': i === 0 }]} data-filter={c.id} aria-pressed={i === 0 ? 'true' : 'false'}>
+          {c.label}
+        </button>
+      ))}
+    </div>
+    <div class="dir-grid" id="dir-grid">
+      {tools.map((t) => (
+        <article class="dir-card" data-cat={t.category}>
+          <div class="dir-top">
+            <h3>{t.name}</h3>
+            {t.terms?.commission && <span class="rate">{t.terms.commission}</span>}
+          </div>
+          <p class="dir-body">{t.blurb}</p>
+          <div class="dir-terms">
+            {t.terms?.commission && <span class="term">Commission: {t.terms.commission}</span>}
+            {t.terms?.network && <span class="term">Network: {t.terms.network}</span>}
+          </div>
+          <a class="btn btn--primary" href={t.url} target="_blank" rel="noopener noreferrer sponsored">
+            Try {t.name}
+            <span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+          <p class="disclosure-mini">Plain link — affiliate details being verified.</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:72px;" aria-label="How we pick tools">
+    <div class="section-head"><h2>How tools get on the shelf</h2></div>
+    <ul class="checklist">
+      <li><span class="n">1</span><span><b>Real use first.</b> We only list tools we'd recommend to a friend — affiliate program or not.</span></li>
+      <li><span class="n">2</span><span><b>Terms in the open.</b> Commission rates are printed on every card. Stale terms get flagged.</span></li>
+      <li><span class="n">3</span><span><b>No pay-to-rank.</b> Vendors cannot buy placement. Sponsored placements, if ever, will be labeled as such.</span></li>
+      <li><span class="n">4</span><span><b>Labeled links, always.</b> Every affiliate link is tagged <code>rel="sponsored"</code> and disclosed next to the button.</span></li>
+    </ul>
+  </section>
+</Layout>
+
+<script>
+  const bar = document.getElementById('tool-filters');
+  bar?.addEventListener('click', (e) => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    for (const b of bar.querySelectorAll('.filter-btn')) {
+      const active = b === btn;
+      b.classList.toggle('is-active', active);
+      b.setAttribute('aria-pressed', String(active));
+    }
+    const f = btn.dataset.filter;
+    let shown = 0;
+    for (const card of document.querySelectorAll('#dir-grid .dir-card')) {
+      const show = f === 'all' || card.dataset.cat === f;
+      card.style.display = show ? '' : 'none';
+      if (show) shown++;
+    }
+  });
+</script>

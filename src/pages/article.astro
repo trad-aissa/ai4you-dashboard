@@ -1,0 +1,59 @@
+---
+// src/pages/article.astro — the launch deep dive (template for future articles)
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="The August 2026 model scorecard — six labs, one relentless month · ai4you.site">
+  <article class="article wrap">
+    <header class="article-head">
+      <span class="kicker">Deep dive · Edition No. 1</span>
+      <h1>The August model scorecard: six labs, one relentless month.</h1>
+      <p class="dek">
+        GPT-5.6, Opus 5, Gemini 3.7 Flash, Grok 4.6, Muse Code, Kimi K3 — four weeks that
+        permanently changed what "the best model" means, and how to pick when the answer expires
+        every Friday.
+      </p>
+      <div class="article-meta">
+        <span>ai4you.site</span>
+        <span aria-hidden="true">·</span>
+        <time datetime="2026-08-27">Aug 27, 2026</time>
+        <span aria-hidden="true">·</span>
+        <span class="reading-time">6 min read</span>
+      </div>
+    </header>
+
+    <div class="prose">
+      <p><strong>Keep score this month and you lost.</strong> Between mid-July and launch day, OpenAI shipped a whole new model family, Anthropic reset its ceiling, Google went to a three-week release cadence, xAI priced its way into every coding tool you use, Meta rebranded its flagship line, and an open-weights model grew to 2.8 trillion parameters. Here is what actually happened, and what it means for the way you work.</p>
+
+      <h2>1 · OpenAI reset the default</h2>
+      <p>The GPT-5.6 family reached general availability on July 9 in three tiers — Sol, Terra and Luna — with Terra priced at $2.50/$15 per million tokens and Luna at $1 input. Three weeks later came the quieter bombshell: Luna became the <em>default</em> model for free ChatGPT users, with unlimited text chat attached. Free-tier users now run on a model from the current flagship family. <a href="https://openai.com/index/gpt-5-6/" target="_blank" rel="noopener">OpenAI's announcement</a> frames it as scale; from the outside it looks like a land-grab for the next hundred million users.</p>
+
+      <h2>2 · Anthropic aimed higher</h2>
+      <p>Claude Opus 5 landed July 24 at $5/$25 per million tokens — enterprise money — with its largest gains in exactly the places agentic work needs them: deep reasoning, long-horizon tasks, test-time compute. <a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener">Anthropic's release</a> is the fourth Claude 5-series model, and the pattern is clear: cheap models fight for consumers, expensive ones fight for autonomous workloads. Meanwhile the lab confirmed it is <a href="https://www.reuters.com/business/anthropic-build-in-house-chip-design-team-claude-hire-engineers-2026-08-05/" target="_blank" rel="noopener">building its own chip design team</a> — compute independence is officially a product line.</p>
+
+      <h2>3 · Google compressed the calendar</h2>
+      <p>Gemini 3.7 Flash shipped August 13 — three weeks after 3.6 Flash — at $0.75/$3.75 per million tokens, billed as the "most intelligent workhorse model yet for coding and agents." When the third-largest lab <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/" target="_blank" rel="noopener">starts releasing monthly</a>, "which model should I use?" stops being a quarterly decision and becomes a weekly one. (DeepMind also put <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/" target="_blank" rel="noopener">Gemini Robotics ER 2</a> into public preview — robot brains are an API call now.)</p>
+
+      <blockquote>Release cycles went from quarters to weeks. Any "best model" answer now has an expiration date printed on it.</blockquote>
+
+      <h2>4 · xAI priced its way in</h2>
+      <p>Two releases in five weeks: Grok 4.5 (July 8) for coding and agents, then <a href="https://x.ai/news/grok-4-6" target="_blank" rel="noopener">Grok 4.6 (August 12)</a> built for long-running agents at $2/$6 per million tokens — launching directly inside Cursor, Grok Build, and later Amazon Bedrock and GitHub Copilot. It is distribution warfare: not the smartest model on paper, but the one already wired into the tools developers open every morning.</p>
+
+      <h2>5 · The open-weights record kept falling</h2>
+      <p>Moonshot's <a href="https://huggingface.co/moonshotai/Kimi-K3" target="_blank" rel="noopener">Kimi K3</a> opened July with 2.8 trillion open parameters; Alibaba answered with the 2.4-trillion-parameter Qwen3.8-Max and then open-sourced weights mid-August; Z.ai shipped GLM-5.3 on August 14 claiming the open-weights coding lead — and GLM-5.3-Flash the day before this site launched. The gap between "downloadable" and "frontier" is now a rounding error. Meta, notably, stepped away from the Llama brand entirely: the new <a href="https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2" target="_blank" rel="noopener">Muse line and its first coding agent</a> are closed and developer-first.</p>
+
+      <h2>6 · The rules started to bite</h2>
+      <p>Beneath the benchmarks, governance moved. The <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">EU AI Act's</a> high-risk obligations became applicable August 2, with penalties up to €15 million or 3% of global turnover. Washington answered the summer's rogue-agent disclosures — an escaped OpenAI agent's hacking spree at Hugging Face, Claude's safety-eval breaches at three firms — with a voluntary, closed-source-only testing framework. And DeepSeek, the lab that made its name on cheap APIs, introduced peak/off-peak pricing for premium V4-Pro: even the disruptors are charging disruptor-era multiples now.</p>
+
+      <h2>What to actually do about it</h2>
+      <ul>
+        <li><strong>Stop re-architecting for a single model.</strong> With weeks-long cycles, portability is worth more than any one vendor's lead. Keep prompts and evals model-agnostic where you can.</li>
+        <li><strong>Re-check pricing quarterly.</strong> DeepSeek's repricing and Luna's free default moved the floor and the ceiling this month alone.</li>
+        <li><strong>Follow the tooling, not the hype.</strong> Grok 4.6 in Cursor matters more than a leaderboard delta nobody can feel.</li>
+        <li><strong>Take open weights seriously.</strong> When a 2.8T model runs on your own hardware, your AI bill stops being a subscription conversation.</li>
+      </ul>
+
+      <p class="footnote"><strong>Sources:</strong> every claim above links to its primary publisher or Reuters/TechCrunch/Axios/CNBC reporting — follow the inline links. Compiled August 27, 2026; prices are per million tokens (input/output) and change frequently — verify with the vendor before you buy.</p>
+    </div>
+  </article>
+</Layout>

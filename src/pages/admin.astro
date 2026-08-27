@@ -1,0 +1,302 @@
+---
+// src/pages/admin.astro — private dashboard (Supabase email/password auth)
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Link dashboard · ai4you.site">
+  <div class="dash-wrap">
+    <!-- ===== auth gate ===== -->
+    <div id="auth" class="auth-card">
+      <span class="brand">ai4you<em> · link dashboard</em></span>
+      <p class="gate-title">Sign in to manage link placements</p>
+      <p class="gate-sub">Authentication is handled by Supabase. Only the admin email configured in <code>src/config.js</code> is allowed to make changes — enforced again at the database level.</p>
+      <label class="visually-hidden" for="a-email">Email</label>
+      <input id="a-email" type="email" placeholder="admin@yourdomain.com" autocomplete="username" />
+      <label class="visually-hidden" for="a-pass">Password</label>
+      <input id="a-pass" type="password" placeholder="Password" autocomplete="current-password" />
+      <button class="btn btn--primary" id="a-login" type="button">Sign in</button>
+      <p class="gate-msg" id="a-msg" role="alert"></p>
+    </div>
+
+    <!-- ===== dashboard ===== -->
+    <div id="dash" hidden>
+      <div class="admin-bar">
+        <span id="who">Signed in</span>
+        <button class="bar-btn" id="signout" type="button">Sign out</button>
+      </div>
+
+      <h1>Link dashboard</h1>
+      <p class="lede">Create, edit, pause, and delete link placements. Changes save to the database immediately; the public site picks them up on its next build (Vercel redeploys automatically, or trigger one from the Vercel dashboard).</p>
+
+      <div class="panel">
+        <h2 id="form-title">New placement</h2>
+        <div class="grid2">
+          <div class="field">
+            <label for="f-slug">Slug (used as data-a4u value &amp; sub-id)</label>
+            <input id="f-slug" type="text" placeholder="jasper-inline-1" />
+          </div>
+          <div class="field">
+            <label for="f-type">Placement type</label>
+            <select id="f-type">
+              <option value="inline">inline — in-text link</option>
+              <option value="button">button — CTA button</option>
+              <option value="card" selected>card — compact product card</option>
+              <option value="banner">banner — full-width strip</option>
+              <option value="box">box — recommended panel</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-url">Affiliate / tracking URL</label>
+          <input id="f-url" type="url" placeholder="https://vendor.com/?fpr=YOURID" />
+        </div>
+        <div class="grid2">
+          <div class="field">
+            <label for="f-label">Label</label>
+            <input id="f-label" type="text" placeholder="Try Jasper" />
+          </div>
+          <div class="field">
+            <label for="f-note">Note (shown on card/banner/box)</label>
+            <input id="f-note" type="text" placeholder="Short supporting sentence" />
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn--primary" id="f-save" type="button">Save placement</button>
+          <button class="btn btn--ghost" id="f-cancel" type="button" hidden>Cancel edit</button>
+        </div>
+        <p class="status" id="f-status" role="status" aria-live="polite"></p>
+      </div>
+
+      <div class="panel">
+        <h2>Placements (<span id="count">0</span>)</h2>
+        <div id="rows"></div>
+        <p class="hint">Place on any page with: <code>&lt;div data-a4u="SLUG"&gt;&lt;/div&gt;</code> — the build renders it automatically.</p>
+      </div>
+
+      <div class="panel">
+        <h2>Clicks (last 30 days)</h2>
+        <table class="stats-table">
+          <thead><tr><th>Placement</th><th>Clicks</th></tr></thead>
+          <tbody id="click-rows"><tr><td colspan="2">—</td></tr></tbody>
+        </table>
+        <div class="btn-row" style="margin-top:12px;">
+          <button class="btn btn--ghost btn--small" id="refresh-clicks" type="button">Refresh</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .dash-wrap { max-width: 980px; margin: 0 auto; padding: 32px 24px 80px; }
+  .dash-wrap h1 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 4.5vw, 52px); letter-spacing: -0.02em; margin: 0 0 8px; }
+  .dash-wrap .lede { color: var(--muted); font-size: 15px; margin: 0 0 32px; max-width: 62ch; }
+  .auth-card {
+    max-width: 420px; margin: 48px auto; border: 1px solid var(--hairline);
+    background: var(--surface); border-radius: 12px; padding: 36px 32px;
+  }
+  .auth-card .brand { font-family: var(--display); font-size: 26px; margin-bottom: 14px; display: block; }
+  .auth-card .brand em { font-style: italic; color: var(--muted); }
+  .gate-title { font: 600 15px/1.4 var(--sans); margin: 0 0 4px; }
+  .gate-sub { font-size: 13px; color: var(--muted); margin: 0 0 18px; line-height: 1.55; }
+  .gate-sub code { font-family: var(--mono); font-size: 11.5px; }
+  #auth input {
+    width: 100%; font: 400 15px/1.4 var(--sans); color: var(--ink);
+    background: var(--canvas); border: 1px solid var(--hairline-strong);
+    border-radius: 8px; padding: 12px 14px; margin-bottom: 12px;
+  }
+  #auth input:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .gate-msg { font: 500 13px/1.5 var(--sans); min-height: 20px; margin: 12px 0 0; }
+  .gate-msg.err { color: var(--pale-red-fg); }
+  .gate-msg.ok { color: var(--pale-green-fg); }
+  .panel { border: 1px solid var(--hairline); background: var(--surface); border-radius: 10px; padding: 24px; margin-bottom: 24px; }
+  .panel h2 { font: 600 17px/1.3 var(--sans); margin: 0 0 16px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field { margin-bottom: 14px; }
+  label { display: block; font: 500 12px/1.4 var(--sans); color: var(--muted); margin-bottom: 5px; }
+  input[type="text"], input[type="url"], select {
+    width: 100%; font: 400 14px/1.4 var(--sans); color: var(--ink);
+    background: var(--canvas); border: 1px solid var(--hairline-strong); border-radius: 8px; padding: 10px 12px;
+  }
+  input:focus-visible, select:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .status { font: 500 13px/1.4 var(--sans); min-height: 20px; margin: 12px 0 0; }
+  .status.ok { color: var(--pale-green-fg); } .status.err { color: var(--pale-red-fg); }
+  .hint { font-size: 12.5px; color: var(--muted); margin: 8px 0 0; }
+  .hint code { font-family: var(--mono); font-size: 11.5px; background: var(--canvas); border: 1px solid var(--hairline); border-radius: 4px; padding: 1px 5px; }
+  .unit-row { display: flex; align-items: center; gap: 12px; border: 1px solid var(--hairline); border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; background: var(--canvas); flex-wrap: wrap; }
+  .unit-row .u-id { font-family: var(--mono); font-size: 12px; font-weight: 500; }
+  .unit-row .u-url { margin-left: auto; font-size: 12px; color: var(--muted); font-family: var(--mono); }
+  .unit-row .u-actions { display: flex; gap: 8px; }
+  .btn--small { padding: 8px 12px; font-size: 12.5px; border-radius: 6px; }
+  .stats-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .stats-table th { font: 600 11px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--hairline-strong); }
+  .stats-table td { padding: 9px 10px; border-bottom: 1px solid var(--hairline); }
+  .admin-bar { background: var(--pale-yellow-bg); color: var(--pale-yellow-fg); font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 8px 16px; border-radius: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+  .admin-bar .bar-btn { background: none; border: 1px solid currentColor; color: inherit; font: inherit; letter-spacing: inherit; text-transform: inherit; border-radius: 5px; padding: 3px 9px; cursor: pointer; }
+  .admin-bar .bar-btn:hover { background: rgba(0,0,0,0.05); }
+  @media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } }
+</style>
+
+<script>
+  import { supabase } from '../lib/supabase.js';
+  import { ADMIN_EMAIL } from '../config.js';
+
+  const $ = (s) => document.querySelector(s);
+  const esc = (s = '') => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const msg = (t, ok = false) => { const el = $('#a-msg'); el.textContent = t; el.classList.toggle('ok', ok); el.classList.toggle('err', !ok); };
+  const fmsg = (t, ok = false) => { const el = $('#f-status'); el.textContent = t; el.classList.toggle('ok', ok); el.classList.toggle('err', !ok); };
+
+  let editingId = null;
+  let units = [];
+
+  async function requireAdmin(user) {
+    if (!user) return false;
+    if (user.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
+      msg(`Signed in as ${user.email}, but only ${ADMIN_EMAIL} may edit.`, false);
+      return false;
+    }
+    return true;
+  }
+
+  async function loadUnits() {
+    const { data, error } = await supabase
+      .from('link_units')
+      .select('*')
+      .order('created_at', { ascending: true });
+    if (error) { fmsg('Load failed: ' + error.message, false); return; }
+    units = data ?? [];
+    render();
+  }
+
+  function render() {
+    $('#count').textContent = String(units.length);
+    $('#rows').innerHTML = units.length
+      ? units.map((u) => `
+        <div class="unit-row">
+          <span class="u-id">${esc(u.slug)}</span>
+          <span class="chip chip--model">${esc(u.type)}</span>
+          ${u.active ? '' : '<span class="chip chip--red">paused</span>'}
+          <span class="u-url">${esc(u.url)}</span>
+          <span class="u-actions">
+            <button class="btn btn--ghost btn--small" data-copy="${esc(u.slug)}" type="button">Copy</button>
+            <button class="btn btn--ghost btn--small" data-edit="${u.id}" type="button">Edit</button>
+            <button class="btn btn--ghost btn--small" data-toggle="${u.id}" type="button">${u.active ? 'Pause' : 'Resume'}</button>
+            <button class="btn btn--ghost btn--small" data-del="${u.id}" type="button">Delete</button>
+          </span>
+        </div>`).join('')
+      : '<p class="hint">No placements yet — create your first above.</p>';
+  }
+
+  function clearForm() {
+    editingId = null;
+    $('#form-title').textContent = 'New placement';
+    for (const id of ['#f-slug', '#f-url', '#f-label', '#f-note']) $(id).value = '';
+    $('#f-cancel').hidden = true;
+  }
+
+  function fillForm(u) {
+    editingId = u.id;
+    $('#form-title').textContent = `Editing “${u.slug}”`;
+    $('#f-slug').value = u.slug; $('#f-type').value = u.type;
+    $('#f-url').value = u.url; $('#f-label').value = u.label; $('#f-note').value = u.note ?? '';
+    $('#f-cancel').hidden = false;
+    $('#form-title').scrollIntoView({ block: 'nearest' });
+  }
+
+  async function save() {
+    const slug = $('#f-slug').value.trim().toLowerCase();
+    const type = $('#f-type').value;
+    const url = $('#f-url').value.trim();
+    const label = $('#f-label').value.trim();
+    const note = $('#f-note').value.trim();
+    if (!/^[a-z0-9][a-z0-9-]{1,40}$/.test(slug)) { fmsg('Slug: 2–40 chars, lowercase letters/numbers/dashes.', false); return; }
+    if (!label) { fmsg('Label is required.', false); return; }
+    try { const u = new URL(url); if (!/^https?:$/.test(u.protocol)) throw 0; }
+    catch { fmsg('Enter a valid https:// URL.', false); return; }
+
+    const payload = { slug, type, label, note, url };
+    const { error } = editingId
+      ? await supabase.from('link_units').update(payload).eq('id', editingId)
+      : await supabase.from('link_units').insert(payload);
+    if (error) { fmsg('Save failed: ' + error.message, false); return; }
+    fmsg(editingId ? 'Updated.' : 'Created.', true);
+    clearForm();
+    await loadUnits();
+  }
+
+  async function loadClicks() {
+    const since = new Date(Date.now() - 30 * 24 * 3600 * 1000).toISOString();
+    const { data, error } = await supabase
+      .from('click_events')
+      .select('unit_slug')
+      .gte('created_at', since);
+    if (error) { $('#click-rows').innerHTML = '<tr><td colspan="2">Could not load clicks: ' + esc(error.message) + '</td></tr>'; return; }
+    const counts = {};
+    for (const r of data ?? []) counts[r.unit_slug] = (counts[r.unit_slug] ?? 0) + 1;
+    const rows = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+    $('#click-rows').innerHTML = rows.length
+      ? rows.map(([slug, n]) => `<tr><td>${esc(slug)}</td><td>${n}</td></tr>`).join('')
+      : '<tr><td colspan="2">No clicks yet — place the snippets and share your articles.</td></tr>';
+  }
+
+  /* auth wiring */
+  $('#a-login').addEventListener('click', async () => {
+    const email = $('#a-email').value.trim();
+    const password = $('#a-pass').value;
+    if (!email || !password) { msg('Enter email and password.', false); return; }
+    $('#a-login').disabled = true;
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+    $('#a-login').disabled = false;
+    if (error) { msg('Sign-in failed: ' + error.message, false); return; }
+    if (!(await requireAdmin(data.user))) return;
+    enterDash(data.user);
+  });
+
+  function enterDash(user) {
+    $('#auth').hidden = true;
+    $('#dash').hidden = false;
+    $('#who').textContent = `Signed in as ${user.email}`;
+    loadUnits();
+    loadClicks();
+  }
+
+  $('#signout').addEventListener('click', async () => {
+    await supabase.auth.signOut();
+    location.reload();
+  });
+
+  /* dashboard wiring */
+  $('#f-save').addEventListener('click', save);
+  $('#f-cancel').addEventListener('click', clearForm);
+  $('#refresh-clicks').addEventListener('click', loadClicks);
+
+  $('#rows').addEventListener('click', async (e) => {
+    const copy = e.target.closest('[data-copy]');
+    const edit = e.target.closest('[data-edit]');
+    const toggle = e.target.closest('[data-toggle]');
+    const del = e.target.closest('[data-del]');
+    if (copy) {
+      const snippet = `<div data-a4u="${copy.dataset.copy}"></div>`;
+      navigator.clipboard?.writeText(snippet).then(() => fmsg('Snippet copied.', true), () => {});
+    }
+    if (edit) fillForm(units.find((u) => u.id === edit.dataset.edit));
+    if (toggle) {
+      const u = units.find((x) => x.id === toggle.dataset.toggle);
+      const { error } = await supabase.from('link_units').update({ active: !u.active }).eq('id', u.id);
+      if (error) fmsg('Update failed: ' + error.message, false);
+      else { fmsg(u.active ? 'Paused — it disappears from the site on next build.' : 'Resumed.', true); loadUnits(); }
+    }
+    if (del) {
+      const u = units.find((x) => x.id === del.dataset.del);
+      if (!confirm(`Delete “${u.slug}”? Pages that reference it will render nothing for that slot.`)) return;
+      const { error } = await supabase.from('link_units').delete().eq('id', u.id);
+      if (error) fmsg('Delete failed: ' + error.message, false);
+      else { fmsg('Deleted.', true); loadUnits(); }
+    }
+  });
+
+  /* session restore */
+  supabase.auth.getSession().then(async ({ data }) => {
+    if (data?.session && (await requireAdmin(data.session.user))) enterDash(data.session.user);
+  });
+</script>

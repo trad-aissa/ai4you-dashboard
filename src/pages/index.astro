@@ -1,0 +1,66 @@
+---
+// src/pages/index.astro — homepage (build-time rendered)
+import { getActiveUnits } from '../lib/supabase.js';
+import { renderUnit, bindUnits } from '../lib/link-units.js';
+import Layout from '../layouts/Layout.astro';
+import NewsFeed from '../components/NewsFeed.astro';
+
+let units = [];
+let dbError = null;
+try {
+  units = await getActiveUnits();
+} catch (e) {
+  dbError = e?.message ?? 'database unavailable';
+}
+const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
+const unit = (slug) => (byslug[slug] ? renderUnit(byslug[slug]) : '');
+---
+
+<Layout title="ai4you.site — AI news, model releases & tools, minus the hype">
+  <section class="hero wrap reveal">
+    <span class="eyebrow"><span class="dot"></span>Independent · reader-supported · sourced</span>
+    <h1>The model race, <em>decoded</em> for busy humans.</h1>
+    <p class="lede">
+      We track every frontier-model release, price change and industry shockwave — then point you at
+      the handful of AI tools actually worth your money. News first, no hype.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="/tools">Browse the tool shelf</a>
+      <a class="btn btn--ghost" href="/about">How we make money</a>
+    </div>
+  </section>
+
+  <NewsFeed />
+
+  <section class="tools-strip wrap" aria-label="Sponsored picks">
+    <div class="section-head">
+      <h2>Recommended this week</h2>
+    </div>
+    <Fragment set:html={unit('descript-card-demo')} />
+    <Fragment set:html={unit('weekly-deals-banner-demo')} />
+  </section>
+
+  <section class="newsletter" aria-label="Newsletter signup">
+    <div class="wrap inner reveal">
+      <h2>The 3-minute AI brief, <em>every weekday</em>.</h2>
+      <p>Model launches, price changes and one tool worth trying — read before your coffee cools.</p>
+      <form novalidate>
+        <label class="visually-hidden" for="nl-email">Email address</label>
+        <input id="nl-email" name="email" type="email" placeholder="you@work.com" autocomplete="email" required />
+        <button class="btn btn--primary" type="submit">Get the brief</button>
+      </form>
+      <p class="form-msg" id="nl-msg" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  {dbError && (
+    <div class="wrap" style="padding-bottom:40px;">
+      <p class="feed-status">Some sponsored placements are temporarily unavailable ({dbError}).</p>
+    </div>
+  )}
+</Layout>
+
+<script>
+  import { bindUnits } from '../lib/link-units.js';
+  bindUnits(document);
+</script>
