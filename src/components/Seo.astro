@@ -1,0 +1,48 @@
+---
+// src/components/Seo.astro — canonical + Open Graph + Twitter cards + Article JSON-LD
+interface Props {
+  title: string;
+  description?: string;
+  path?: string;          // e.g. "/tools" (no trailing slash)
+  image?: string;         // absolute or root-relative og image
+  type?: 'website' | 'article';
+  publishedTime?: string;
+}
+const { title, description, path = '', image, type = 'website', publishedTime } = Astro.props;
+
+const SITE = 'https://ai4you.site';
+const canonical = `${SITE}${path || '/'}`;
+const ogImage = image ? (image.startsWith('http') ? image : `${SITE}${image}`) : `${SITE}/og-default.svg`;
+const desc = description ?? 'A calm, sourced briefing on AI: model releases, pricing changes and industry moves — plus the tools actually worth your money.';
+---
+
+<!-- Primary -->
+<link rel="canonical" href={canonical} />
+<meta name="description" content={desc} />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="author" content="ai4you.site" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="ai4you.site" />
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={desc} />
+<meta property="og:image" content={ogImage} />
+{publishedTime && <meta property="article:published_time" content={publishedTime} />}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={desc} />
+<meta name="twitter:image" content={ogImage} />
+
+<!-- Organization JSON-LD (sitewide identity) -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'ai4you.site',
+  url: SITE,
+  logo: `${SITE}/favicon.svg`,
+  description: 'Independent AI news, model releases and tool recommendations.',
+})} />

@@ -3,7 +3,19 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="The August 2026 model scorecard — six labs, one relentless month · ai4you.site">
+<Layout title="The August 2026 model scorecard — six labs, one relentless month · ai4you.site" path="/article" description="GPT-5.6, Opus 5, Gemini 3.7 Flash, Grok 4.6, Muse Code, Kimi K3: what a relentless month of AI model releases means for the way you work." type="article" publishedTime="2026-08-27T12:00:00Z">
+  <meta name="robots" content="index, follow" slot="head-extra" />
+  <script type="application/ld+json" slot="head-extra" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: 'The August 2026 model scorecard: six labs, one relentless month',
+    datePublished: '2026-08-27T12:00:00Z',
+    dateModified: '2026-08-27T12:00:00Z',
+    author: { '@type': 'Organization', name: 'ai4you.site' },
+    publisher: { '@type': 'Organization', name: 'ai4you.site', logo: { '@type': 'ImageObject', url: 'https://ai4you.site/favicon.svg' } },
+    mainEntityOfPage: 'https://ai4you.site/article',
+    description: 'What four weeks of relentless AI model releases means for the way you work.',
+  })} />
   <article class="article wrap">
     <header class="article-head">
       <span class="kicker">Deep dive · Edition No. 1</span>

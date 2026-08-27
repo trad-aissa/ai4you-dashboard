@@ -2,8 +2,10 @@
 // src/layouts/Layout.astro — shared page shell
 import '../styles/site.css';
 
-interface Props { title: string; }
-const { title } = Astro.props;
+import Seo from '../components/Seo.astro';
+
+interface Props { title: string; description?: string; path?: string; image?: string; type?: 'website' | 'article'; publishedTime?: string; }
+const { title, description, path, image, type, publishedTime } = Astro.props;
 ---
 
 <!doctype html>
@@ -12,7 +14,8 @@ const { title } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <meta name="description" content="A calm, sourced briefing on AI: model releases, pricing changes and industry moves — plus the tools actually worth your money." />
+    <Seo title={title} description={description} path={path} image={image} type={type} publishedTime={publishedTime} />
+    <slot name="head-extra" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
