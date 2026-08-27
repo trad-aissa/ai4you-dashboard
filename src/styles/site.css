@@ -536,12 +536,15 @@ footer .baseline {
 }
 footer .baseline .disc { max-width: 62ch; font-size: 10.5px; line-height: 1.6; }
 
-/* ---------- reveal motion ---------- */
-.reveal { opacity: 0; transform: translateY(12px); transition: opacity 600ms cubic-bezier(0.16,1,0.3,1), transform 600ms cubic-bezier(0.16,1,0.3,1); }
-.reveal.is-in { opacity: 1; transform: none; }
+/* ---------- reveal motion (CSS-only, no JS dependency) ---------- */
+.reveal { animation: a4u-enter 600ms cubic-bezier(0.16,1,0.3,1) both; }
+@keyframes a4u-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal { animation: none; }
   .briefs .briefs-label .pulse { animation: none; }
 }
 
