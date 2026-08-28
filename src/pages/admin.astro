@@ -61,6 +61,33 @@ import Layout from '../layouts/Layout.astro';
             <input id="f-note" type="text" placeholder="Short supporting sentence" />
           </div>
         </div>
+        <div class="grid2">
+          <div class="field">
+            <label for="f-commission">Commission text (shown on tool-shelf cards, optional)</label>
+            <input id="f-commission" type="text" placeholder="~30% recurring" />
+          </div>
+          <div class="field">
+            <label for="f-network">Affiliate network (optional)</label>
+            <input id="f-network" type="text" placeholder="PartnerStack / Impact / in-house" />
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="field">
+            <label for="f-shelfcat">Shelf category</label>
+            <select id="f-shelfcat">
+              <option value="">- not on shelf -</option>
+              <option value="writing">writing</option>
+              <option value="video">video &amp; audio</option>
+              <option value="seo">seo</option>
+              <option value="marketing">marketing</option>
+              <option value="productivity">productivity</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>&nbsp;</label>
+            <label style="display:flex;gap:8px;align-items:center;font-size:13px;color:var(--ink);"><input id="f-shelf" type="checkbox" style="width:auto;" /> Show on the tool shelf (/tools)</label>
+          </div>
+        </div>
         <div class="btn-row">
           <button class="btn btn--primary" id="f-save" type="button">Save placement</button>
           <button class="btn btn--ghost" id="f-cancel" type="button" hidden>Cancel edit</button>
@@ -143,6 +170,7 @@ import Layout from '../layouts/Layout.astro';
   import { ADMIN_EMAIL } from '../config.js';
 
   const $ = (s) => document.querySelector(s);
+  const shelfBadge = (u) => u.show_on_shelf ? '<span class="chip chip--pricing" title="On /tools shelf">shelf</span> ' : '';
   const esc = (s = '') => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const msg = (t, ok = false) => { const el = $('#a-msg'); el.textContent = t; el.classList.toggle('ok', ok); el.classList.toggle('err', !ok); };
   const fmsg = (t, ok = false) => { const el = $('#f-status'); el.textContent = t; el.classList.toggle('ok', ok); el.classList.toggle('err', !ok); };
@@ -177,7 +205,7 @@ import Layout from '../layouts/Layout.astro';
           <span class="u-id">${esc(u.slug)}</span>
           <span class="chip chip--model">${esc(u.type)}</span>
           ${u.active ? '' : '<span class="chip chip--red">paused</span>'}
-          <span class="u-url">${esc(u.url)}</span>
+          ${shelfBadge(u)}<span class="u-url">${esc(u.url)}</span>
           <span class="u-actions">
             <button class="btn btn--ghost btn--small" data-copy="${esc(u.slug)}" type="button">Copy</button>
             <button class="btn btn--ghost btn--small" data-edit="${u.id}" type="button">Edit</button>
@@ -191,7 +219,8 @@ import Layout from '../layouts/Layout.astro';
   function clearForm() {
     editingId = null;
     $('#form-title').textContent = 'New placement';
-    for (const id of ['#f-slug', '#f-url', '#f-label', '#f-note']) $(id).value = '';
+        for (const id of ['#f-slug', '#f-url', '#f-label', '#f-note', '#f-commission', '#f-network']) $(id).value = '';
+    $('#f-shelf').checked = false; $('f-shelfcat').value = '';
     $('#f-cancel').hidden = true;
   }
 
@@ -200,6 +229,8 @@ import Layout from '../layouts/Layout.astro';
     $('#form-title').textContent = `Editing “${u.slug}”`;
     $('#f-slug').value = u.slug; $('#f-type').value = u.type;
     $('#f-url').value = u.url; $('#f-label').value = u.label; $('#f-note').value = u.note ?? '';
+    $('#f-shelf').checked = !!u.show_on_shelf; $('#f-shelfcat').value = u.shelf_category ?? '';
+    $('#f-commission').value = u.commission ?? ''; $('#f-network').value = u.network ?? '';
     $('#f-cancel').hidden = false;
     $('#form-title').scrollIntoView({ block: 'nearest' });
   }
@@ -215,7 +246,8 @@ import Layout from '../layouts/Layout.astro';
     try { const u = new URL(url); if (!/^https?:$/.test(u.protocol)) throw 0; }
     catch { fmsg('Enter a valid https:// URL.', false); return; }
 
-    const payload = { slug, type, label, note, url };
+    const shelfOn = $('#f-shelf').checked;
+    const payload = { slug, type, label, note, url, show_on_shelf: shelfOn, shelf_category: shelfOn ? $('#f-shelfcat').value || 'productivity' : null, commission: $('#f-commission').value.trim() || null, network: $('#f-network').value.trim() || null };
     const { error } = editingId
       ? await supabase.from('link_units').update(payload).eq('id', editingId)
       : await supabase.from('link_units').insert(payload);
