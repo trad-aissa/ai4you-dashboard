@@ -1,7 +1,36 @@
 ---
-// src/pages/tools.astro — the tool shelf
+// src/pages/tools.astro — DB-driven tool shelf with static fallback
 import Layout from '../layouts/Layout.astro';
-import tools from '../data/tools.js';
+import { supabase } from '../lib/supabase.js';
+import toolsStatic from '../data/tools.js';
+
+// Read shelf entries from the database (show_on_shelf = true), fall back to
+// the static list if the DB is unreachable or has no shelf items.
+let tools = [];
+let dbError = null;
+try {
+  const { data, error } = await supabase
+    .from('link_units')
+    .select('slug, label, note, url, shelf_category, commission, network')
+    .eq('show_on_shelf', true)
+    .eq('active', true)
+    .order('created_at', { ascending: true });
+  if (error) throw error;
+  tools = (data ?? []).map((u) => ({
+    id: u.slug,
+    name: u.label,
+    category: u.shelf_category ?? 'productivity',
+    blurb: u.note ?? '',
+    terms: { commission: u.commission || null, network: u.network || null },
+    url: u.url,
+    affiliate: true, // shelf items come from link_units => affiliate-tagged by definition
+  }));
+} catch (e) {
+  dbError = e?.message ?? 'database unavailable';
+}
+if (tools.length === 0) {
+  tools = toolsStatic; // DB empty or unreachable -> curated static list
+}
 
 const cats = [
   { id: 'all', label: 'All' },
@@ -24,9 +53,8 @@ const cats = [
     <div class="affiliate-note" style="margin-top:28px;">
       <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 14.5 13.5h-13L8 1.5zM8 6.5v3M8 11.5v.01"/></svg>
       <span>
-        <b>Affiliate disclosure:</b> “Try” buttons may become affiliate links once programs are
-        approved — if you subscribe through one, we may earn a commission at no extra cost to you.
-        <a href="/about#disclosure">Read the full disclosure</a>.
+        <b>Affiliate disclosure:</b> “Try” buttons may be affiliate links — if you subscribe through
+        one, we may earn a commission at no extra cost to you. <a href="/about#disclosure">Read the full disclosure</a>.
       </span>
     </div>
   </section>
@@ -51,14 +79,26 @@ const cats = [
             {t.terms?.commission && <span class="term">Commission: {t.terms.commission}</span>}
             {t.terms?.network && <span class="term">Network: {t.terms.network}</span>}
           </div>
-          <a class="btn btn--primary" href={t.url} target="_blank" rel="noopener noreferrer sponsored">
+          <a
+            class="btn btn--primary"
+            href={t.url}
+            target="_blank"
+            rel={t.affiliate ? 'sponsored nofollow noopener' : 'noopener noreferrer sponsored'}
+          >
             Try {t.name}
             <span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
           </a>
-          <p class="disclosure-mini">Plain link — affiliate details being verified.</p>
+          <p class="disclosure-mini">
+            {t.affiliate ? 'Affiliate link — we may earn a commission at no extra cost to you.' : 'Plain link — affiliate details being verified.'}
+          </p>
         </article>
       ))}
     </div>
+    {dbError && (
+      <p class="feed-status" style="margin-top:20px;">
+        Showing the curated starter shelf — live shelf sync temporarily unavailable ({dbError}).
+      </p>
+    )}
   </section>
 
   <section class="wrap" style="padding-bottom:72px;" aria-label="How we pick tools">
