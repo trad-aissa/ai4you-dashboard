@@ -2,6 +2,15 @@
 // src/pages/article.astro — the launch deep dive (template for future articles)
 import Layout from '../layouts/Layout.astro';
 import PreferredSources from '../components/PreferredSources.astro';
+import { getActiveUnits } from '../lib/supabase.js';
+import { renderUnit } from '../lib/link-units.js';
+
+let autoclawUnit = null;
+try {
+  autoclawUnit = ((await getActiveUnits()) ?? []).find((u) => u.slug === 'autoclaw-invite') ?? null;
+} catch {
+  autoclawUnit = null;
+}
 ---
 
 <Layout title="The August 2026 model scorecard — six labs, one relentless month · ai4you.site" path="/article" description="GPT-5.6, Opus 5, Gemini 3.7 Flash, Grok 4.6, Muse Code, Kimi K3: what a relentless month of AI model releases means for the way you work." type="article" publishedTime="2026-08-27T12:00:00Z">
@@ -67,7 +76,12 @@ import PreferredSources from '../components/PreferredSources.astro';
       </ul>
 
       <div class="wrap" style="max-width:700px;margin:32px 0 0;"><PreferredSources theme="light" /></div>
+      {autoclawUnit && <div class="wrap" style="max-width:700px;margin:24px 0 0;" set:html={renderUnit(autoclawUnit)} />}
       <p class="footnote"><strong>Sources:</strong> every claim above links to its primary publisher or Reuters/TechCrunch/Axios/CNBC reporting — follow the inline links. Compiled August 27, 2026; prices are per million tokens (input/output) and change frequently — verify with the vendor before you buy.</p>
     </div>
   </article>
+<script>
+  import { bindUnits } from '../lib/link-units.js';
+  bindUnits(document);
+</script>
 </Layout>
