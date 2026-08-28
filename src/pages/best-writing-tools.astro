@@ -1,0 +1,106 @@
+---
+// src/pages/best-writing-tools.astro — flagship listicle: Best AI Writing Tools 2026
+// Highest-converting affiliate format. Wire real tracking URLs when approved.
+import Layout from '../layouts/Layout.astro';
+import Seo from '../components/Seo.astro';
+import PreferredSources from '../components/PreferredSources.astro';
+
+const tools = [
+  {
+    rank: 1, name: 'Jasper', tag: 'Best for marketing teams',
+    blurb: 'The most mature AI writing platform: brand-voice training, campaign workflows, and team collaboration. Priced for businesses, worth it if content is a revenue channel for you.',
+    pros: ['Brand voice memory across campaigns', 'Templates for ads, emails, blogs', 'Team roles & workflows'],
+    cons: ['Expensive vs. raw chatbots', 'Overkill for casual users'],
+    url: 'https://www.jasper.ai/', slug: 'jasper-best-writing',
+  },
+  {
+    rank: 2, name: 'Copy.ai', tag: 'Best for GTM automation',
+    blurb: 'Less "write me a blog post", more "run my outbound engine." Copy.ai went all-in on go-to-market workflows — sequences, enrichment, and CRM sync alongside the writer.',
+    pros: ['Strong workflow automation', 'Generous free tier', 'Sales + marketing in one tool'],
+    cons: ['Writing quality trails Jasper for long-form', 'Interface takes a day to learn'],
+    url: 'https://www.copy.ai/', slug: 'copyai-best-writing',
+  },
+  {
+    rank: 3, name: 'Grammarly', tag: 'Best editor (not writer)',
+    blurb: 'Not a generator — an editor that lives everywhere you type. The pair-well with any AI writer: draft fast anywhere, let Grammarly keep tone and polish consistent.',
+    pros: ['Works in every app', 'Free tier is genuinely useful', 'Tone suggestions are best-in-class'],
+    cons: ['Not a content generator', 'Premium needed for full rewrites'],
+    url: 'https://www.grammarly.com/', slug: 'grammarly-best-writing',
+  },
+  {
+    rank: 4, name: 'ChatGPT (free)', tag: 'Best free all-rounder',
+    blurb: 'Since GPT-5.6 Luna became the default for free users with unlimited text chat, the calculus changed: for drafts, outlines and rewrites, free ChatGPT is the baseline every paid tool must beat.',
+    pros: ['Free, unlimited text', 'Frontier-class model as default', 'Fastest iteration on prompts'],
+    cons: ['No brand-voice memory', 'No publishing workflows'],
+    url: 'https://chatgpt.com/', slug: 'chatgpt-best-writing',
+  },
+];
+
+const affiliateSlugs = new Set(['jasper-best-writing', 'copyai-best-writing', 'grammarly-best-writing']);
+---
+
+<Layout title="The 4 Best AI Writing Tools in 2026 (Compared) · ai4you.site" path="/best-writing-tools" description="Jasper vs Copy.ai vs Grammarly vs free ChatGPT: which AI writing tool is actually worth your money in 2026 — tested, compared, with honest pros and cons." type="article" publishedTime="2026-08-28T09:00:00Z">
+  <article class="article wrap">
+    <header class="article-head">
+      <span class="kicker">Guide · Tools</span>
+      <h1>The best AI writing tools in 2026, compared honestly.</h1>
+      <p class="dek">Four tools, one question: which one survives contact with a real content calendar? We tested them on actual work — not vendor demos.</p>
+      <div class="article-meta">
+        <span>ai4you.site</span>
+        <span aria-hidden="true">·</span>
+        <time datetime="2026-08-28">Aug 28, 2026</time>
+        <span aria-hidden="true">·</span>
+        <span class="reading-time">5 min read</span>
+      </div>
+    </header>
+
+    <div class="affiliate-note" style="max-width:700px;">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 14.5 13.5h-13L8 1.5zM8 6.5v3M8 11.5v.01"/></svg>
+      <span><b>Affiliate disclosure:</b> some links below are affiliate links — if you subscribe through one, we may earn a commission at no extra cost to you. Rankings are ours alone; commissions never decide them. <a href="/about#disclosure">Full disclosure</a>.</span>
+    </div>
+
+    <div class="prose">
+      <p><strong>TL;DR:</strong> If content is a revenue channel for your business, <a href="https://www.jasper.ai/" target="_blank" rel="sponsored nofollow noopener">Jasper</a> is worth the price. If you're automating outbound and GTM workflows, <a href="https://www.copy.ai/" target="_blank" rel="sponsored nofollow noopener">Copy.ai</a> wins. If you just need an editor everywhere, <a href="https://www.grammarly.com/" target="_blank" rel="sponsored nofollow noopener">Grammarly</a>. And if you're not ready to pay anything: free ChatGPT got shockingly good this month.</p>
+
+      {tools.map((t) => (
+        <section style="border-top:1px solid var(--hairline);padding-top:36px;margin-top:40px;">
+          <p class="kicker" style="margin:0 0 6px;">#{t.rank} · {t.tag}</p>
+          <h2 style="margin:0 0 12px;">{t.name}</h2>
+          <p>{t.blurb}</p>
+          <ul>
+            {t.pros.map((p) => <li><strong>Pro:</strong> {p}</li>)}
+            {t.cons.map((c) => <li style="color:var(--muted);"><strong>Con:</strong> {c}</li>)}
+          </ul>
+          <a class="btn btn--primary" href={t.url} target="_blank" rel="sponsored nofollow noopener">
+            Check out {t.name}
+            <span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+          {affiliateSlugs.has(t.slug) && <p class="disclosure-mini" style="margin-top:8px;">Affiliate link — we may earn a commission at no extra cost to you.</p>}
+        </section>
+      ))}
+
+      <section style="border-top:1px solid var(--hairline);padding-top:36px;margin-top:40px;">
+        <h2>How to choose in 30 seconds</h2>
+        <ul class="checklist">
+          <li><span class="n">1</span><span>Content drives revenue (SEO, campaigns)? → <b>Jasper</b></span></li>
+          <li><span class="n">2</span><span>Automating sales/marketing sequences? → <b>Copy.ai</b></span></li>
+          <li><span class="n">3</span><span>Already writing, need an editor everywhere? → <b>Grammarly</b></span></li>
+          <li><span class="n">4</span><span>Budget is zero? → <b>Free ChatGPT</b> — the 2026 free tier is genuinely frontier-class</span></li>
+        </ul>
+        <p class="footnote"><strong>Last updated:</strong> August 28, 2026. Pricing and capabilities change frequently — verify with the vendor before purchasing. Free tiers mentioned reflect what we could verify at publication time.</p>
+      </section>
+    </div>
+
+    <div class="wrap" style="max-width:700px;margin:32px 0 0;padding:0;">
+      <PreferredSources theme="light" />
+    </div>
+  </article>
+</Layout>
+
+<script>
+  import { logClick } from '../lib/supabase.js';
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest?.('a[rel*="sponsored"]');
+    if (a) logClick(a.textContent.replace('Check out ', '').trim().toLowerCase().replace(/\s+/g, '-'), '/best-writing-tools');
+  });
+</script>
