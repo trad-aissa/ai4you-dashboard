@@ -192,7 +192,20 @@ import Layout from '../layouts/Layout.astro';
       .from('link_units')
       .select('*')
       .order('created_at', { ascending: true });
-    if (error) { fmsg('Load failed: ' + error.message, false); return; }
+    if (error) {
+      if (/JWT|expired|token/i.test(error.message)) {
+        const { data: refreshed } = await supabase.auth.refreshSession();
+        if (refreshed?.session) {
+          const retry = await supabase.from('link_units').select('*').order('created_at', { ascending: true });
+          if (!retry.error) { units = retry.data ?? []; render(); return; }
+        }
+        await supabase.auth.signOut();
+        location.reload();
+        return;
+      }
+      fmsg('Load failed: ' + error.message, false);
+      return;
+    }
     units = data ?? [];
     render();
   }
@@ -330,6 +343,13 @@ import Layout from '../layouts/Layout.astro';
 
   /* session restore */
   supabase.auth.getSession().then(async ({ data }) => {
-    if (data?.session && (await requireAdmin(data.session.user))) enterDash(data.session.user);
+    if (!data?.session) return;
+    if (!(await requireAdmin(data.session.user))) return;
+    const probe = await supabase.from('link_units').select('slug').limit(1);
+    if (probe.error && /JWT|expired|token/i.test(probe.error.message)) {
+      const { data: refreshed } = await supabase.auth.refreshSession();
+      if (!refreshed?.session) { await supabase.auth.signOut(); location.reload(); return; }
+    }
+    enterDash(data.session.user);
   });
 </script>
