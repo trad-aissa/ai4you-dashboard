@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-08-29T05:24:05.315Z",
+  "timestamp": "2026-08-29T05:33:29.771Z",
   "base": "https://www.ai4you.site",
   "pages": {
     "/|desktop": {
       "status": 200,
-      "loadMs": 2718,
+      "loadMs": 2820,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -19,7 +19,7 @@
     },
     "/tools|desktop": {
       "status": 200,
-      "loadMs": 1078,
+      "loadMs": 1083,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -34,7 +34,7 @@
     },
     "/article|desktop": {
       "status": 200,
-      "loadMs": 2076,
+      "loadMs": 2083,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -49,7 +49,7 @@
     },
     "/about|desktop": {
       "status": 200,
-      "loadMs": 2081,
+      "loadMs": 2099,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -64,7 +64,7 @@
     },
     "/terms|desktop": {
       "status": 200,
-      "loadMs": 1078,
+      "loadMs": 1081,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -79,7 +79,7 @@
     },
     "/best-writing-tools|desktop": {
       "status": 200,
-      "loadMs": 1948,
+      "loadMs": 1892,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -94,7 +94,7 @@
     },
     "/admin|desktop": {
       "status": 200,
-      "loadMs": 1154,
+      "loadMs": 1090,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -109,7 +109,7 @@
     },
     "/|mobile": {
       "status": 304,
-      "loadMs": 1471,
+      "loadMs": 1150,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -124,7 +124,7 @@
     },
     "/tools|mobile": {
       "status": 304,
-      "loadMs": 1080,
+      "loadMs": 1084,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -139,7 +139,7 @@
     },
     "/article|mobile": {
       "status": 304,
-      "loadMs": 2097,
+      "loadMs": 2080,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -154,7 +154,7 @@
     },
     "/about|mobile": {
       "status": 304,
-      "loadMs": 2097,
+      "loadMs": 2106,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -169,7 +169,7 @@
     },
     "/terms|mobile": {
       "status": 304,
-      "loadMs": 1084,
+      "loadMs": 1076,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -184,7 +184,7 @@
     },
     "/best-writing-tools|mobile": {
       "status": 304,
-      "loadMs": 2090,
+      "loadMs": 1896,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -199,7 +199,7 @@
     },
     "/admin|mobile": {
       "status": 304,
-      "loadMs": 1090,
+      "loadMs": 1083,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -226,12 +226,12 @@
       "pass": true
     },
     "liveWire": {
-      "items": 0,
+      "items": 12,
       "status": {
         "text": "Loading live headlines…",
-        "hidden": false
+        "hidden": true
       },
-      "pass": false
+      "pass": true
     },
     "navToTools": {
       "url": "https://www.ai4you.site/tools",
@@ -240,8 +240,8 @@
     "pageErrors": [],
     "toolsFilterMobile": {
       "cards": 1,
-      "videoCards": 0,
-      "pass": false
+      "shownCards": 1,
+      "pass": true
     }
   },
   "screenshots": [
