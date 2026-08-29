@@ -11,7 +11,7 @@
 import { createClient } from '@supabase/supabase-js';
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://igiogbnoqitejrifzsfo.supabase.co';
-const PUBLISHABLE = process.env.SUPABASE_PUBLISHABLE_KEY || '';
+const PUBLISHABLE = process.env.SUPABASE_PUBLISHABLE_KEY || 'sb_publishable_0qtoRYvDd2n79knR1yN3Kg_Mp1NUDKz';
 const ADMIN_EMAIL = process.env.SUPABASE_ADMIN_EMAIL || '';
 const ADMIN_PASSWORD = process.env.SUPABASE_ADMIN_PASSWORD || '';
 const ADMIN_SECRET = process.env.ADMIN_API_SECRET;
