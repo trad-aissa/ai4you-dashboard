@@ -27,15 +27,24 @@ export default async function handler(req, res) {
 
   const auth = req.headers.authorization || '';
   if (!ADMIN_SECRET || auth !== `Bearer ${ADMIN_SECRET}`) {
-    return res.status(401).json({ error: 'Unauthorized', debug: { hasSecret: !!ADMIN_SECRET, len: (ADMIN_SECRET || '').length, gotBearer: auth.slice(0, 12), gotLen: (auth || '').length } });
+    return res.status(401).json({ error: 'Unauthorized' });
   }
   if (!ADMIN_EMAIL || !ADMIN_PASSWORD) {
     return res.status(500).json({ error: 'SUPABASE_ADMIN_EMAIL / SUPABASE_ADMIN_PASSWORD not configured' });
   }
 
-  const supabase = createClient(SUPABASE_URL, PUBLISHABLE, { auth: { persistSession: false } });
-  const { data: authData, error: authError } = await supabase.auth.signInWithPassword({ email: ADMIN_EMAIL, password: ADMIN_PASSWORD });
-  if (authError) return res.status(401).json({ error: 'Supabase auth failed: ' + authError.message });
+  let supabase;
+  try {
+    supabase = createClient(SUPABASE_URL, PUBLISHABLE, { auth: { persistSession: false } });
+  } catch (e) {
+    return res.status(500).json({ error: 'client init failed: ' + e.message });
+  }
+  try {
+    const { data: authData, error: authError } = await supabase.auth.signInWithPassword({ email: ADMIN_EMAIL, password: ADMIN_PASSWORD });
+    if (authError) return res.status(401).json({ error: 'Supabase auth failed: ' + authError.message });
+  } catch (e) {
+    return res.status(500).json({ error: 'auth threw: ' + (e?.message || String(e)) });
+  }
 
   const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
   const action = body.action;
