@@ -1,0 +1,81 @@
+// ============================================================
+// ai4you.site — secure write API for link units
+// POST /api/units   { action: 'add'|'update'|'remove'|'list', ... }
+// Auth: Authorization: Bearer <ADMIN_API_SECRET>  (env var, set in Vercel)
+// Writes use SUPABASE_SERVICE_ROLE (server-only env var) — bypasses RLS
+// but is NEVER exposed to browsers. Public GET of active units stays on
+// the anon key path; this endpoint is for the owner + trusted agent only.
+// ============================================================
+import { createClient } from '@supabase/supabase-js';
+
+const SUPABASE_URL = process.env.SUPABASE_URL || 'https://igiogbnoqitejrifzsfo.supabase.co';
+const SERVICE_ROLE = process.env.SUPABASE_SERVICE_ROLE;
+const ADMIN_SECRET = process.env.ADMIN_API_SECRET;
+
+const VALID_TYPES = ['inline', 'button', 'card', 'banner', 'box'];
+
+export default async function handler(req, res) {
+  // CORS: only allow same origin + the owner's local machine
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  if (req.method === 'OPTIONS') return res.status(204).end();
+  if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
+
+  // --- auth ---
+  const auth = req.headers.authorization || '';
+  if (!ADMIN_SECRET || auth !== `Bearer ${ADMIN_SECRET}`) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+  if (!SERVICE_ROLE) {
+    return res.status(500).json({ error: 'SUPABASE_SERVICE_ROLE not configured' });
+  }
+
+  const supabase = createClient(SUPABASE_URL, SERVICE_ROLE, { auth: { persistSession: false } });
+  const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
+  const action = body.action;
+
+  try {
+    if (action === 'list') {
+      const { data, error } = await supabase
+        .from('link_units')
+        .select('slug, type, label, note, url, active, show_on_shelf, shelf_category, commission, network')
+        .order('created_at', { ascending: true });
+      if (error) throw error;
+      return res.status(200).json({ ok: true, units: data });
+    }
+
+    if (action === 'add' || action === 'update') {
+      const { slug, type, label, note = '', url, active = true, show_on_shelf = false, shelf_category = null, commission = null, network = null } = body;
+      if (!/^[a-z0-9][a-z0-9-]{1,40}$/.test(slug || '')) {
+        return res.status(400).json({ error: 'Invalid slug (2-40 chars: a-z 0-9 -)' });
+      }
+      if (!VALID_TYPES.includes(type)) {
+        return res.status(400).json({ error: `Invalid type; must be one of ${VALID_TYPES.join(', ')}` });
+      }
+      if (!label || typeof label !== 'string') return res.status(400).json({ error: 'label required' });
+      try { const u = new URL(url || ''); if (!/^https?:$/.test(u.protocol)) throw 0; }
+      catch { return res.status(400).json({ error: 'url must be a valid http(s) URL' }); }
+
+      const row = { slug, type, label, note, url, active, show_on_shelf, shelf_category: show_on_shelf ? shelf_category : null, commission, network };
+      const { data, error } = await supabase
+        .from('link_units')
+        .upsert(row, { onConflict: 'slug' })
+        .select();
+      if (error) throw error;
+      return res.status(200).json({ ok: true, action, unit: data[0] });
+    }
+
+    if (action === 'remove') {
+      const { slug } = body;
+      if (!slug) return res.status(400).json({ error: 'slug required' });
+      const { error } = await supabase.from('link_units').delete().eq('slug', slug);
+      if (error) throw error;
+      return res.status(200).json({ ok: true, removed: slug });
+    }
+
+    return res.status(400).json({ error: 'Unknown action; use add | update | remove | list' });
+  } catch (e) {
+    return res.status(500).json({ error: e.message });
+  }
+}
