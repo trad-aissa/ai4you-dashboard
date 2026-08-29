@@ -57,6 +57,9 @@ import PreferredSources from '../components/PreferredSources.astro';
     </div>
     <Fragment set:html={unit('descript-card-demo')} />
     <Fragment set:html={unit('weekly-deals-banner-demo')} />
+    {units.filter((u) => u.type === 'banner' && u.slug !== 'weekly-deals-banner-demo').slice(0, 2).map((u) => (
+      <Fragment set:html={renderUnit(u)} />
+    ))}
   </section>
 
   <section class="newsletter" aria-label="Newsletter signup">
