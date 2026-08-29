@@ -82,5 +82,7 @@ import PreferredSources from '../components/PreferredSources.astro';
 
 <script>
   import { bindUnits } from '../lib/link-units.js';
+  import { initWire } from '../lib/wire.js';
   bindUnits(document);
+  initWire();
 </script>

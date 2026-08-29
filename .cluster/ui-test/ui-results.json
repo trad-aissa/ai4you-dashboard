@@ -1,17 +1,12 @@
 {
-  "timestamp": "2026-08-29T05:15:35.342Z",
+  "timestamp": "2026-08-29T05:24:05.315Z",
   "base": "https://www.ai4you.site",
   "pages": {
     "/|desktop": {
       "status": 200,
-      "loadMs": 1896,
+      "loadMs": 2718,
       "consoleErrors": [],
-      "failedRequests": [
-        {
-          "url": "https://www.gstatic.com/pg/ssogp.min.js",
-          "error": "net::ERR_BLOCKED_BY_ORB"
-        }
-      ],
+      "failedRequests": [],
       "horizontalOverflow": false,
       "brokenImages": [],
       "meta": {
@@ -24,7 +19,7 @@
     },
     "/tools|desktop": {
       "status": 200,
-      "loadMs": 1219,
+      "loadMs": 1078,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -39,14 +34,9 @@
     },
     "/article|desktop": {
       "status": 200,
-      "loadMs": 1220,
+      "loadMs": 2076,
       "consoleErrors": [],
-      "failedRequests": [
-        {
-          "url": "https://www.gstatic.com/pg/ssogp.min.js",
-          "error": "net::ERR_BLOCKED_BY_ORB"
-        }
-      ],
+      "failedRequests": [],
       "horizontalOverflow": false,
       "brokenImages": [],
       "meta": {
@@ -59,14 +49,9 @@
     },
     "/about|desktop": {
       "status": 200,
-      "loadMs": 1229,
+      "loadMs": 2081,
       "consoleErrors": [],
-      "failedRequests": [
-        {
-          "url": "https://www.gstatic.com/pg/ssogp.min.js",
-          "error": "net::ERR_BLOCKED_BY_ORB"
-        }
-      ],
+      "failedRequests": [],
       "horizontalOverflow": false,
       "brokenImages": [],
       "meta": {
@@ -79,7 +64,7 @@
     },
     "/terms|desktop": {
       "status": 200,
-      "loadMs": 1239,
+      "loadMs": 1078,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -94,14 +79,9 @@
     },
     "/best-writing-tools|desktop": {
       "status": 200,
-      "loadMs": 1285,
+      "loadMs": 1948,
       "consoleErrors": [],
-      "failedRequests": [
-        {
-          "url": "https://www.gstatic.com/pg/ssogp.min.js",
-          "error": "net::ERR_BLOCKED_BY_ORB"
-        }
-      ],
+      "failedRequests": [],
       "horizontalOverflow": false,
       "brokenImages": [],
       "meta": {
@@ -114,7 +94,7 @@
     },
     "/admin|desktop": {
       "status": 200,
-      "loadMs": 1081,
+      "loadMs": 1154,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -129,14 +109,9 @@
     },
     "/|mobile": {
       "status": 304,
-      "loadMs": 751,
+      "loadMs": 1471,
       "consoleErrors": [],
-      "failedRequests": [
-        {
-          "url": "https://www.gstatic.com/pg/ssogp.min.js",
-          "error": "net::ERR_BLOCKED_BY_ORB"
-        }
-      ],
+      "failedRequests": [],
       "horizontalOverflow": false,
       "brokenImages": [],
       "meta": {
@@ -149,7 +124,7 @@
     },
     "/tools|mobile": {
       "status": 304,
-      "loadMs": 1102,
+      "loadMs": 1080,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -164,14 +139,9 @@
     },
     "/article|mobile": {
       "status": 304,
-      "loadMs": 1084,
+      "loadMs": 2097,
       "consoleErrors": [],
-      "failedRequests": [
-        {
-          "url": "https://www.gstatic.com/pg/ssogp.min.js",
-          "error": "net::ERR_BLOCKED_BY_ORB"
-        }
-      ],
+      "failedRequests": [],
       "horizontalOverflow": false,
       "brokenImages": [],
       "meta": {
@@ -184,14 +154,9 @@
     },
     "/about|mobile": {
       "status": 304,
-      "loadMs": 1080,
+      "loadMs": 2097,
       "consoleErrors": [],
-      "failedRequests": [
-        {
-          "url": "https://www.gstatic.com/pg/ssogp.min.js",
-          "error": "net::ERR_BLOCKED_BY_ORB"
-        }
-      ],
+      "failedRequests": [],
       "horizontalOverflow": false,
       "brokenImages": [],
       "meta": {
@@ -219,14 +184,9 @@
     },
     "/best-writing-tools|mobile": {
       "status": 304,
-      "loadMs": 1074,
+      "loadMs": 2090,
       "consoleErrors": [],
-      "failedRequests": [
-        {
-          "url": "https://www.gstatic.com/pg/ssogp.min.js",
-          "error": "net::ERR_BLOCKED_BY_ORB"
-        }
-      ],
+      "failedRequests": [],
       "horizontalOverflow": false,
       "brokenImages": [],
       "meta": {
@@ -239,7 +199,7 @@
     },
     "/admin|mobile": {
       "status": 304,
-      "loadMs": 1076,
+      "loadMs": 1090,
       "consoleErrors": [],
       "failedRequests": [],
       "horizontalOverflow": false,
@@ -267,8 +227,11 @@
     },
     "liveWire": {
       "items": 0,
-      "status": null,
-      "pass": null
+      "status": {
+        "text": "Loading live headlines…",
+        "hidden": false
+      },
+      "pass": false
     },
     "navToTools": {
       "url": "https://www.ai4you.site/tools",
