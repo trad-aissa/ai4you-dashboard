@@ -1,37 +1,42 @@
 // ============================================================
 // ai4you.site — secure write API for link units
 // POST /api/units   { action: 'add'|'update'|'remove'|'list', ... }
-// Auth: Authorization: Bearer <ADMIN_API_SECRET>  (env var, set in Vercel)
-// Writes use SUPABASE_SERVICE_ROLE (server-only env var) — bypasses RLS
-// but is NEVER exposed to browsers. Public GET of active units stays on
-// the anon key path; this endpoint is for the owner + trusted agent only.
+//
+// Auth layers:
+//   1. Bearer token must match ADMIN_API_SECRET (env var, Vercel)
+//   2. Supabase email+password auth (env vars) — the same admin
+//      identity as the dashboard, so RLS remains the ONLY write path.
+// No service_role key is used anywhere in this project.
 // ============================================================
 import { createClient } from '@supabase/supabase-js';
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://igiogbnoqitejrifzsfo.supabase.co';
-const SERVICE_ROLE = process.env.SUPABASE_SERVICE_ROLE;
+const PUBLISHABLE = process.env.SUPABASE_PUBLISHABLE_KEY || '';
+const ADMIN_EMAIL = process.env.SUPABASE_ADMIN_EMAIL || '';
+const ADMIN_PASSWORD = process.env.SUPABASE_ADMIN_PASSWORD || '';
 const ADMIN_SECRET = process.env.ADMIN_API_SECRET;
 
 const VALID_TYPES = ['inline', 'button', 'card', 'banner', 'box'];
 
 export default async function handler(req, res) {
-  // CORS: only allow same origin + the owner's local machine
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   if (req.method === 'OPTIONS') return res.status(204).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
 
-  // --- auth ---
   const auth = req.headers.authorization || '';
   if (!ADMIN_SECRET || auth !== `Bearer ${ADMIN_SECRET}`) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
-  if (!SERVICE_ROLE) {
-    return res.status(500).json({ error: 'SUPABASE_SERVICE_ROLE not configured' });
+  if (!ADMIN_EMAIL || !ADMIN_PASSWORD) {
+    return res.status(500).json({ error: 'SUPABASE_ADMIN_EMAIL / SUPABASE_ADMIN_PASSWORD not configured' });
   }
 
-  const supabase = createClient(SUPABASE_URL, SERVICE_ROLE, { auth: { persistSession: false } });
+  const supabase = createClient(SUPABASE_URL, PUBLISHABLE, { auth: { persistSession: false } });
+  const { data: authData, error: authError } = await supabase.auth.signInWithPassword({ email: ADMIN_EMAIL, password: ADMIN_PASSWORD });
+  if (authError) return res.status(401).json({ error: 'Supabase auth failed: ' + authError.message });
+
   const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
   const action = body.action;
 
