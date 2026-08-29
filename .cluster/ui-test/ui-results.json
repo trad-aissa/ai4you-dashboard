@@ -1,0 +1,300 @@
+{
+  "timestamp": "2026-08-29T05:15:35.342Z",
+  "base": "https://www.ai4you.site",
+  "pages": {
+    "/|desktop": {
+      "status": 200,
+      "loadMs": 1896,
+      "consoleErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://www.gstatic.com/pg/ssogp.min.js",
+          "error": "net::ERR_BLOCKED_BY_ORB"
+        }
+      ],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "meta": {
+        "title": "ai4you.site — AI news, model releases & tools, minus the hype",
+        "h1": "The model race, decoded for busy humans.",
+        "h1Count": 1,
+        "hasSkipLink": true,
+        "lang": "en"
+      }
+    },
+    "/tools|desktop": {
+      "status": 200,
+      "loadMs": 1219,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "meta": {
+        "title": "The tool shelf — AI tools worth paying for · ai4you.site",
+        "h1": "The tool shelf.",
+        "h1Count": 1,
+        "hasSkipLink": true,
+        "lang": "en"
+      }
+    },
+    "/article|desktop": {
+      "status": 200,
+      "loadMs": 1220,
+      "consoleErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://www.gstatic.com/pg/ssogp.min.js",
+          "error": "net::ERR_BLOCKED_BY_ORB"
+        }
+      ],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "meta": {
+        "title": "The August 2026 model scorecard — six labs, one relentless month · ai4you.site",
+        "h1": "The August model scorecard: six labs, one relentless month.",
+        "h1Count": 1,
+        "hasSkipLink": true,
+        "lang": "en"
+      }
+    },
+    "/about|desktop": {
+      "status": 200,
+      "loadMs": 1229,
+      "consoleErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://www.gstatic.com/pg/ssogp.min.js",
+          "error": "net::ERR_BLOCKED_BY_ORB"
+        }
+      ],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "meta": {
+        "title": "About, disclosure & privacy · ai4you.site",
+        "h1": "About, disclosure & privacy.",
+        "h1Count": 1,
+        "hasSkipLink": true,
+        "lang": "en"
+      }
+    },
+    "/terms|desktop": {
+      "status": 200,
+      "loadMs": 1239,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "meta": {
+        "title": "Terms of Use · ai4you.site",
+        "h1": "Terms of use.",
+        "h1Count": 1,
+        "hasSkipLink": true,
+        "lang": "en"
+      }
+    },
+    "/best-writing-tools|desktop": {
+      "status": 200,
+      "loadMs": 1285,
+      "consoleErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://www.gstatic.com/pg/ssogp.min.js",
+          "error": "net::ERR_BLOCKED_BY_ORB"
+        }
+      ],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "meta": {
+        "title": "The 4 Best AI Writing Tools in 2026 (Compared) · ai4you.site",
+        "h1": "The best AI writing tools in 2026, compared honestly.",
+        "h1Count": 1,
+        "hasSkipLink": true,
+        "lang": "en"
+      }
+    },
+    "/admin|desktop": {
+      "status": 200,
+      "loadMs": 1081,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "meta": {
+        "title": "Link dashboard · ai4you.site",
+        "h1": "Link dashboard",
+        "h1Count": 1,
+        "hasSkipLink": true,
+        "lang": "en"
+      }
+    },
+    "/|mobile": {
+      "status": 304,
+      "loadMs": 751,
+      "consoleErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://www.gstatic.com/pg/ssogp.min.js",
+          "error": "net::ERR_BLOCKED_BY_ORB"
+        }
+      ],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "meta": {
+        "title": "ai4you.site — AI news, model releases & tools, minus the hype",
+        "h1": "The model race, decoded for busy humans.",
+        "h1Count": 1,
+        "hasSkipLink": true,
+        "lang": "en"
+      }
+    },
+    "/tools|mobile": {
+      "status": 304,
+      "loadMs": 1102,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "meta": {
+        "title": "The tool shelf — AI tools worth paying for · ai4you.site",
+        "h1": "The tool shelf.",
+        "h1Count": 1,
+        "hasSkipLink": true,
+        "lang": "en"
+      }
+    },
+    "/article|mobile": {
+      "status": 304,
+      "loadMs": 1084,
+      "consoleErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://www.gstatic.com/pg/ssogp.min.js",
+          "error": "net::ERR_BLOCKED_BY_ORB"
+        }
+      ],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "meta": {
+        "title": "The August 2026 model scorecard — six labs, one relentless month · ai4you.site",
+        "h1": "The August model scorecard: six labs, one relentless month.",
+        "h1Count": 1,
+        "hasSkipLink": true,
+        "lang": "en"
+      }
+    },
+    "/about|mobile": {
+      "status": 304,
+      "loadMs": 1080,
+      "consoleErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://www.gstatic.com/pg/ssogp.min.js",
+          "error": "net::ERR_BLOCKED_BY_ORB"
+        }
+      ],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "meta": {
+        "title": "About, disclosure & privacy · ai4you.site",
+        "h1": "About, disclosure & privacy.",
+        "h1Count": 1,
+        "hasSkipLink": true,
+        "lang": "en"
+      }
+    },
+    "/terms|mobile": {
+      "status": 304,
+      "loadMs": 1084,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "meta": {
+        "title": "Terms of Use · ai4you.site",
+        "h1": "Terms of use.",
+        "h1Count": 1,
+        "hasSkipLink": true,
+        "lang": "en"
+      }
+    },
+    "/best-writing-tools|mobile": {
+      "status": 304,
+      "loadMs": 1074,
+      "consoleErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://www.gstatic.com/pg/ssogp.min.js",
+          "error": "net::ERR_BLOCKED_BY_ORB"
+        }
+      ],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "meta": {
+        "title": "The 4 Best AI Writing Tools in 2026 (Compared) · ai4you.site",
+        "h1": "The best AI writing tools in 2026, compared honestly.",
+        "h1Count": 1,
+        "hasSkipLink": true,
+        "lang": "en"
+      }
+    },
+    "/admin|mobile": {
+      "status": 304,
+      "loadMs": 1076,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "meta": {
+        "title": "Link dashboard · ai4you.site",
+        "h1": "Link dashboard",
+        "h1Count": 1,
+        "hasSkipLink": true,
+        "lang": "en"
+      }
+    }
+  },
+  "interactions": {
+    "newsFilter": {
+      "before": 20,
+      "pricingFiltered": 1,
+      "restored": 20,
+      "pass": true
+    },
+    "newsletter": {
+      "invalidShowsError": true,
+      "validShowsSuccess": true,
+      "pass": true
+    },
+    "liveWire": {
+      "items": 0,
+      "status": null,
+      "pass": null
+    },
+    "navToTools": {
+      "url": "https://www.ai4you.site/tools",
+      "pass": true
+    },
+    "pageErrors": [],
+    "toolsFilterMobile": {
+      "cards": 1,
+      "videoCards": 0,
+      "pass": false
+    }
+  },
+  "screenshots": [
+    "_-desktop.png",
+    "_tools-desktop.png",
+    "_article-desktop.png",
+    "_about-desktop.png",
+    "_terms-desktop.png",
+    "_best-writing-tools-desktop.png",
+    "_admin-desktop.png",
+    "_-mobile.png",
+    "_tools-mobile.png",
+    "_article-mobile.png",
+    "_about-mobile.png",
+    "_terms-mobile.png",
+    "_best-writing-tools-mobile.png",
+    "_admin-mobile.png"
+  ]
+}
