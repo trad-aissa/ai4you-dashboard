@@ -27,7 +27,7 @@ export default async function handler(req, res) {
 
   const auth = req.headers.authorization || '';
   if (!ADMIN_SECRET || auth !== `Bearer ${ADMIN_SECRET}`) {
-    return res.status(401).json({ error: 'Unauthorized' });
+    return res.status(401).json({ error: 'Unauthorized', debug: { hasSecret: !!ADMIN_SECRET, len: (ADMIN_SECRET || '').length, gotBearer: auth.slice(0, 12), gotLen: (auth || '').length } });
   }
   if (!ADMIN_EMAIL || !ADMIN_PASSWORD) {
     return res.status(500).json({ error: 'SUPABASE_ADMIN_EMAIL / SUPABASE_ADMIN_PASSWORD not configured' });
