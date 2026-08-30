@@ -15,7 +15,6 @@ try {
   dbError = true;
 }
 const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
-const unit = (slug) => (byslug[slug] ? renderUnit(byslug[slug]) : '');
 ---
 
 <Layout title="ai4you.site — AI news, model releases & tools, minus the hype" path="/" description="A calm, sourced briefing on AI: every frontier-model release, price change and industry move — plus the AI tools actually worth your money.">
@@ -56,11 +55,16 @@ const unit = (slug) => (byslug[slug] ? renderUnit(byslug[slug]) : '');
     <div class="section-head">
       <h2>Recommended this week</h2>
     </div>
-    <Fragment set:html={unit('descript-card-demo')} />
-    <Fragment set:html={unit('weekly-deals-banner-demo')} />
-    {units.filter((u) => u.type === 'banner' && u.slug !== 'weekly-deals-banner-demo').slice(0, 2).map((u) => (
-      <Fragment set:html={renderUnit(u)} />
-    ))}
+    {/* pinned favorites first, then any other active card/banner units —
+        the section degrades gracefully if pins are deleted from the DB */}
+    {(() => {
+      const pins = ['descript-card-demo', 'weekly-deals-banner-demo'];
+      const candidates = [
+        ...pins.map((s) => byslug[s]).filter(Boolean),
+        ...units.filter((u) => (u.type === 'card' || u.type === 'banner') && !pins.includes(u.slug)),
+      ];
+      return candidates.slice(0, 3).map((u) => <Fragment set:html={renderUnit(u)} />);
+    })()}
   </section>
 
   <section class="newsletter" aria-label="Newsletter signup">
