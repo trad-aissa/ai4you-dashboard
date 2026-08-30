@@ -1,5 +1,6 @@
 ---
-// src/components/Seo.astro — canonical + Open Graph + Twitter cards + Article JSON-LD
+// src/components/Seo.astro — canonical + Open Graph + Twitter cards + JSON-LD
+interface Crumb { name: string; path: string }
 interface Props {
   title: string;
   description?: string;
@@ -7,13 +8,26 @@ interface Props {
   image?: string;         // absolute or root-relative og image
   type?: 'website' | 'article';
   publishedTime?: string;
+  breadcrumbs?: Crumb[];  // emitted as BreadcrumbList JSON-LD
 }
-const { title, description, path = '', image, type = 'website', publishedTime } = Astro.props;
+const { title, description, path = '', image, type = 'website', publishedTime, breadcrumbs } = Astro.props;
 
 const SITE = 'https://www.ai4you.site';
 const canonical = `${SITE}${path || '/'}`;
 const ogImage = image ? (image.startsWith('http') ? image : `${SITE}${image}`) : `${SITE}/og-default.png`;
+const ogImageAlt = 'ai4you.site — the model race, decoded for busy humans';
 const desc = description ?? 'A calm, sourced briefing on AI: model releases, pricing changes and industry moves — plus the tools actually worth your money.';
+
+const breadcrumbLd = breadcrumbs?.length ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [{ name: 'Home', path: '/' }, ...breadcrumbs].map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.name,
+    item: `${SITE}${c.path}`,
+  })),
+} : null;
 ---
 
 <!-- Primary -->
@@ -29,6 +43,9 @@ const desc = description ?? 'A calm, sourced briefing on AI: model releases, pri
 <meta property="og:title" content={title} />
 <meta property="og:description" content={desc} />
 <meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={ogImageAlt} />
 {publishedTime && <meta property="article:published_time" content={publishedTime} />}
 
 <!-- Twitter -->
@@ -36,6 +53,7 @@ const desc = description ?? 'A calm, sourced briefing on AI: model releases, pri
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={desc} />
 <meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content={ogImageAlt} />
 
 <!-- Organization JSON-LD (sitewide identity) -->
 <script type="application/ld+json" set:html={JSON.stringify({
@@ -46,3 +64,5 @@ const desc = description ?? 'A calm, sourced briefing on AI: model releases, pri
   logo: `${SITE}/favicon.svg`,
   description: 'Independent AI news, model releases and tool recommendations.',
 })} />
+
+{breadcrumbLd && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />}

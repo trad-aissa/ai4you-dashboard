@@ -2,10 +2,20 @@
 // src/layouts/Layout.astro — shared page shell
 import '../styles/site.css';
 
+// Self-hosted fonts (better performance + no third-party requests;
+// families registered: 'Instrument Serif', 'Instrument Sans Variable',
+// 'JetBrains Mono Variable')
+import '@fontsource/instrument-serif/latin-400.css';
+import '@fontsource/instrument-serif/latin-400-italic.css';
+import '@fontsource-variable/instrument-sans';
+import '@fontsource-variable/instrument-sans/wght-italic.css';
+import '@fontsource-variable/jetbrains-mono';
+
 import Seo from '../components/Seo.astro';
 
-interface Props { title: string; description?: string; path?: string; image?: string; type?: 'website' | 'article'; publishedTime?: string; }
-const { title, description, path, image, type, publishedTime } = Astro.props;
+interface Crumb { name: string; path: string }
+interface Props { title: string; description?: string; path?: string; image?: string; type?: 'website' | 'article'; publishedTime?: string; breadcrumbs?: Crumb[] }
+const { title, description, path, image, type, publishedTime, breadcrumbs } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,13 +24,12 @@ const { title, description, path, image, type, publishedTime } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <Seo title={title} description={description} path={path} image={image} type={type} publishedTime={publishedTime} />
+    <Seo title={title} description={description} path={path} image={image} type={type} publishedTime={publishedTime} breadcrumbs={breadcrumbs} />
     <slot name="head-extra" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate" type="application/rss+xml" title="ai4you.site — AI news" href="/rss.xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FBFBFA" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#171614" />
     <meta name="view-transition" content="same-origin" />
   </head>
   <body>
