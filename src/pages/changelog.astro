@@ -3,77 +3,281 @@
 import Layout from '../layouts/Layout.astro';
 import changelogs from '../data/auto/changelogs.json';
 
-const products = [
-  { id: 'claude-code', name: 'Claude Code', vendor: 'Anthropic', repo: 'anthropics/claude-code', releases: changelogs['claude-code'] ?? [] },
-  { id: 'codex', name: 'Codex', vendor: 'OpenAI', repo: 'openai/codex', releases: changelogs.codex ?? [] },
+// Classify a bullet by its leading verb for color-coded scanning.
+const KINDS = [
+  { k: 'Added', cls: 'added' },
+  { k: 'Fixed', cls: 'fixed' },
+  { k: 'Changed', cls: 'changed' },
+  { k: 'Improved', cls: 'changed' },
+  { k: 'Updated', cls: 'changed' },
+  { k: 'Performance', cls: 'changed' },
+  { k: 'Security', cls: 'security' },
+  { k: 'Removed', cls: 'removed' },
+  { k: 'Deprecated', cls: 'removed' },
+  { k: 'New', cls: 'added' },
 ];
-const fmt = (iso) => iso ? new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : null;
+const classify = (b) => {
+  const w = b.split(/[\s:—-]/, 1)[0];
+  const kind = KINDS.find((x) => x.k.toLowerCase() === w.toLowerCase());
+  return kind ? { cls: kind.cls, label: kind.k, rest: b.slice(w.length).replace(/^[\s:—-]+/, '') } : { cls: null, label: null, rest: b };
+};
+
+const products = [
+  { id: 'claude-code', name: 'Claude Code', vendor: 'Anthropic', repo: 'anthropics/claude-code', tag: 'chip--model', releases: changelogs['claude-code'] ?? [] },
+  { id: 'codex', name: 'Codex', vendor: 'OpenAI', repo: 'openai/codex', tag: 'chip--product', releases: changelogs.codex ?? [] },
+].map((p) => ({
+  ...p,
+  count: p.releases.length,
+  latest: p.releases[0]?.version ?? null,
+  releases: p.releases.map((r) => ({
+    ...r,
+    bullets: r.bullets.map(classify),
+  })),
+}));
+
+const fmt = (iso) => (iso ? new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : null);
+const PREVIEW = 4;
+// bullets contain sanitized inline HTML (<code>) from our own fetch pipeline
+const plain = (html) => html.replace(/<[^>]+>/g, '');
 ---
 
-<Layout title="Claude Code & Codex changelogs — every release, tracked · ai4you.site" path="/changelog" description="Every Claude Code and OpenAI Codex release, summarized and updated daily from the official repositories — so you always know what shipped." breadcrumbs={[{ name: 'Changelog', path: '/changelog' }]}>
+<Layout title="Claude Code & Codex changelogs — every release, tracked · ai4you.site" path="/changelog" description="Every Claude Code and OpenAI Codex release, searchable and updated daily from the official repositories — so you always know what shipped." breadcrumbs={[{ name: 'Changelog', path: '/changelog' }]}>
   <section class="tools-hero wrap">
     <span class="kicker">Auto-tracked · refreshed daily from the official repos</span>
     <h1>The agentic CLI changelogs.</h1>
     <p class="lede">
       Claude Code and Codex ship faster than anyone reads release notes. We track both
-      repositories daily and lay out every release in plain sight — what shipped, and when.
+      repositories daily and lay out every release — searchable, scannable, plain sight.
     </p>
   </section>
 
-  <section class="wrap" style="padding-bottom:72px;" aria-label="Changelog releases">
-    <div class="filters" id="cl-filters" role="group" aria-label="Switch product">
-      {products.map((p, i) => (
-        <button class:list={['filter-btn', { 'is-active': i === 0 }]} data-product={p.id} aria-pressed={i === 0 ? 'true' : 'false'}>
-          {p.name}
-        </button>
-      ))}
-    </div>
-
-    {products.map((p, i) => (
-      <div class:list={['cl-product', { hidden: i !== 0 }]} id={`cl-${p.id}`}>
-        {p.releases.map((r, ri) => (
-          <article class="cl-release">
-            <header class="cl-head">
-              <h2 class="cl-version">v{r.version}</h2>
-              {ri === 0 && <span class="chip chip--pricing">latest</span>}
-              {fmt(r.date) && <time datetime={r.date} class="cl-date">{fmt(r.date)}</time>}
-            </header>
-            <ul class="cl-bullets">
-              {r.bullets.map((b) => <li>{b}</li>)}
-            </ul>
-          </article>
+  <section class="wrap cl-section" aria-label="Changelog releases">
+    <div class="cl-layout">
+      <aside class="cl-side">
+        <div class="cl-products" id="cl-products" role="group" aria-label="Choose product">
+          {products.map((p, i) => (
+            <button type="button" class="cl-product-btn" data-product={p.id} aria-pressed={i === 0 ? 'true' : 'false'}>
+              <span class="cl-p-name">{p.name}</span>
+              <span class="cl-p-meta">{p.vendor} · {p.count} releases</span>
+              {p.latest && <span class="cl-p-latest">latest v{p.latest}</span>}
+            </button>
+          ))}
+        </div>
+        <div class="cl-search">
+          <label class="visually-hidden" for="cl-q">Search release notes</label>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"></circle><path d="m10.5 10.5 3 3"></path></svg>
+          <input id="cl-q" type="search" placeholder="Search changes…" autocomplete="off" />
+        </div>
+        {products.map((p, i) => (
+          <nav class:list={['cl-index', { hidden: i !== 0 }]} id={`cl-index-${p.id}`} aria-label={`${p.name} versions`}>
+            {p.releases.map((r, ri) => (
+              <a href={`#${p.id}-v${r.version}`} class="cl-index-link" data-searchable={`${r.version} ${r.bullets.map((b) => plain(b.rest)).join(' ')}`}>
+                <span class="cl-i-v">{r.version}</span>
+                {ri === 0 && <span class="cl-i-latest">latest</span>}
+              </a>
+            ))}
+          </nav>
         ))}
-        <p class="footnote" style="margin-top:20px;">
-          Source: <a href={`https://github.com/${p.repo}`} target="_blank" rel="noopener">github.com/{p.repo}</a> ·
-          {p.name} is a product of {p.vendor}; we are not affiliated with {p.vendor}.
-        </p>
+        <p class="cl-count" id="cl-count" role="status" aria-live="polite"></p>
+      </aside>
+
+      <div class="cl-main">
+        {products.map((p, i) => (
+          <div class:list={['cl-product', { hidden: i !== 0 }]} id={`cl-${p.id}`}>
+            {p.releases.map((r, ri) => {
+              const extra = r.bullets.length - PREVIEW;
+              return (
+                <article class="cl-release" id={`${p.id}-v${r.version}`} data-release>
+                  <div class="cl-node" aria-hidden="true"></div>
+                  <header class="cl-head">
+                    <h2 class="cl-version">v{r.version}</h2>
+                    {ri === 0 && <span class="chip chip--pricing">latest</span>}
+                    {fmt(r.date) && <time datetime={r.date} class="cl-date">{fmt(r.date)}</time>}
+                    <span class="cl-n">{r.bullets.length} changes</span>
+                  </header>
+                  <ul class="cl-bullets">
+                    {r.bullets.slice(0, PREVIEW).map((b) => (
+                      <li class={b.cls ? `is-${b.cls}` : undefined}>
+                        {b.label && <span class={`cl-kind cl-kind--${b.cls}`}>{b.label}</span>}
+                        <Fragment set:html={b.rest} />
+                      </li>
+                    ))}
+                  </ul>
+                  {extra > 0 && (
+                    <div class="cl-more-wrap">
+                      <ul class="cl-bullets" hidden>
+                        {r.bullets.slice(PREVIEW).map((b) => (
+                          <li class={b.cls ? `is-${b.cls}` : undefined}>
+                            {b.label && <span class={`cl-kind cl-kind--${b.cls}`}>{b.label}</span>}
+                            <Fragment set:html={b.rest} />
+                          </li>
+                        ))}
+                      </ul>
+                      <button type="button" class="cl-toggle" aria-expanded="false">Show {extra} more changes</button>
+                    </div>
+                  )}
+                </article>
+              );
+            })}
+            <p class="footnote" style="margin-top:24px;">
+              Source: <a href={`https://github.com/${p.repo}`} target="_blank" rel="noopener">github.com/{p.repo}</a> ·
+              {p.name} is a product of {p.vendor}; we are not affiliated with {p.vendor}.
+            </p>
+          </div>
+        ))}
       </div>
-    ))}
+    </div>
   </section>
 </Layout>
 
 <script>
-  const bar = document.getElementById('cl-filters');
-  bar?.addEventListener('click', (e) => {
-    const btn = e.target.closest('.filter-btn');
+  const productBtns = [...document.querySelectorAll('.cl-product-btn')];
+  const searchInput = document.getElementById('cl-q');
+  const countEl = document.getElementById('cl-count');
+
+  const activeProduct = () => productBtns.find((b) => b.getAttribute('aria-pressed') === 'true')?.dataset.product;
+
+  function applySearch() {
+    const q = (searchInput?.value ?? '').trim().toLowerCase();
+    const pid = activeProduct();
+    const product = document.getElementById(`cl-${pid}`);
+    const index = document.getElementById(`cl-index-${pid}`);
+    if (!product) return;
+    let shown = 0;
+    for (const rel of product.querySelectorAll('[data-release]')) {
+      const text = rel.textContent.toLowerCase();
+      const match = !q || text.includes(q);
+      rel.hidden = !match;
+      if (match) shown++;
+    }
+    for (const link of index?.querySelectorAll('.cl-index-link') ?? []) {
+      const match = !q || (link.dataset.searchable ?? '').toLowerCase().includes(q);
+      link.style.display = match ? '' : 'none';
+    }
+    countEl.textContent = q ? `${shown} release${shown === 1 ? '' : 's'} matching “${searchInput.value.trim()}”` : '';
+  }
+
+  function switchProduct(pid) {
+    for (const b of productBtns) b.setAttribute('aria-pressed', String(b.dataset.product === pid));
+    for (const el of document.querySelectorAll('.cl-product')) el.classList.toggle('hidden', el.id !== `cl-${pid}`);
+    for (const el of document.querySelectorAll('.cl-index')) el.classList.toggle('hidden', el.id !== `cl-index-${pid}`);
+    if (searchInput) searchInput.value = '';
+    countEl.textContent = '';
+    applySearch();
+  }
+
+  for (const b of productBtns) b.addEventListener('click', () => switchProduct(b.dataset.product));
+  searchInput?.addEventListener('input', applySearch);
+
+  // expand/collapse long releases (event delegation)
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.cl-toggle');
     if (!btn) return;
-    for (const b of bar.querySelectorAll('.filter-btn')) {
-      const active = b === btn;
-      b.classList.toggle('is-active', active);
-      b.setAttribute('aria-pressed', String(active));
-    }
-    for (const el of document.querySelectorAll('.cl-product')) {
-      el.classList.toggle('hidden', el.id !== `cl-${btn.dataset.product}`);
-    }
+    const wrap = btn.closest('.cl-more-wrap');
+    const extra = wrap.querySelector('.cl-bullets');
+    const open = !extra.hidden;
+    extra.hidden = open;
+    btn.setAttribute('aria-expanded', String(!open));
+    btn.textContent = open
+      ? `Show ${btn.textContent.match(/\d+/)?.[0] ?? ''} more changes`
+      : 'Show fewer changes';
   });
 </script>
 
 <style>
-  .cl-product.hidden { display: none; }
-  .cl-release { border-top: 1px solid var(--hairline); padding: 26px 0 8px; }
-  .cl-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
-  .cl-version { font-family: var(--mono); font-size: 15px; font-weight: 600; margin: 0; letter-spacing: 0.01em; }
+  .cl-product.hidden, .cl-index.hidden { display: none; }
+  .cl-section { padding-bottom: 88px; }
+  .cl-layout { display: grid; grid-template-columns: 250px 1fr; gap: 40px; align-items: start; }
+
+  /* --- sidebar --- */
+  .cl-side { position: sticky; top: 20px; display: flex; flex-direction: column; gap: 14px; max-height: calc(100vh - 40px); }
+  .cl-products { display: flex; flex-direction: column; gap: 8px; }
+  .cl-product-btn {
+    text-align: left; border: 1px solid var(--hairline-strong); background: var(--surface);
+    border-radius: 10px; padding: 12px 14px; cursor: pointer;
+    transition: border-color 140ms ease, box-shadow 140ms ease;
+  }
+  .cl-product-btn:hover { border-color: var(--ink); }
+  .cl-product-btn[aria-pressed='true'] { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
+  .cl-product-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .cl-p-name { display: block; font: 600 14px/1.3 var(--sans); color: var(--ink); }
+  .cl-p-meta { display: block; font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+  .cl-p-latest { display: inline-block; font-family: var(--mono); font-size: 10px; color: var(--pale-green-fg); background: var(--pale-green-bg); border-radius: 999px; padding: 2px 8px; margin-top: 7px; letter-spacing: 0.02em; }
+  .cl-search { position: relative; }
+  .cl-search svg { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); width: 14px; height: 14px; }
+  .cl-search svg circle, .cl-search svg path { stroke: var(--faint); stroke-width: 1.6; fill: none; stroke-linecap: round; }
+  .cl-search input {
+    width: 100%; font: 400 13.5px/1.4 var(--sans); color: var(--ink);
+    background: var(--surface); border: 1px solid var(--hairline-strong); border-radius: 8px;
+    padding: 9px 12px 9px 32px;
+  }
+  .cl-search input:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .cl-index { overflow-y: auto; border-top: 1px solid var(--hairline); padding-top: 10px; display: flex; flex-direction: column; }
+  .cl-index-link {
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px; color: var(--muted);
+    text-decoration: none; padding: 5px 8px; border-radius: 6px;
+  }
+  .cl-index-link:hover { color: var(--ink); background: var(--hover); }
+  .cl-i-latest { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pale-green-fg); }
+  .cl-count { font: 500 12px/1.5 var(--sans); color: var(--muted); margin: 0; min-height: 18px; }
+
+  /* --- timeline --- */
+  .cl-main { min-width: 0; }
+  .cl-release { position: relative; padding: 4px 0 26px 34px; border-left: 1px solid var(--hairline-strong); margin-left: 7px; }
+  .cl-release:last-of-type { border-left-color: transparent; }
+  .cl-node {
+    position: absolute; left: -6px; top: 8px;
+    width: 11px; height: 11px; border-radius: 999px;
+    background: var(--canvas); border: 2px solid var(--ink);
+  }
+  .cl-release:first-of-type .cl-node { background: var(--ink); }
+  .cl-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+  .cl-version { font-family: var(--mono); font-size: 17px; font-weight: 600; margin: 0; letter-spacing: 0; }
   .cl-date { font-family: var(--mono); font-size: 11px; color: var(--faint); letter-spacing: 0.04em; }
-  .cl-bullets { margin: 0; padding-left: 20px; }
-  .cl-bullets li { font-size: 14.5px; line-height: 1.65; color: var(--ink); margin-bottom: 8px; }
+  .cl-n { font-family: var(--mono); font-size: 10.5px; color: var(--faint); }
+  .cl-bullets { margin: 0; padding: 0; list-style: none; }
+  .cl-bullets[hidden] { display: none; }
+  .cl-bullets li {
+    position: relative; font-size: 14px; line-height: 1.65; color: var(--ink);
+    padding: 3px 0 3px 18px; margin: 0;
+  }
+  .cl-bullets li::before { content: ''; position: absolute; left: 2px; top: 12px; width: 5px; height: 5px; border-radius: 999px; background: var(--faint); }
+  .cl-bullets li code {
+    font-family: var(--mono); font-size: 12px;
+    background: var(--canvas); border: 1px solid var(--hairline); border-radius: 4px; padding: 0 5px;
+  }
+  .cl-bullets li.is-added::before { background: var(--pale-green-fg); }
+  .cl-bullets li.is-fixed::before { background: var(--pale-yellow-fg); }
+  .cl-bullets li.is-changed::before { background: var(--pale-blue-fg); }
+  .cl-bullets li.is-security::before { background: var(--pale-red-fg); }
+  .cl-bullets li.is-removed::before { background: var(--pale-red-fg); }
+  .cl-kind {
+    display: inline-block; font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em;
+    text-transform: uppercase; border-radius: 4px; padding: 1px 6px; margin-right: 7px;
+    position: relative; top: -1px;
+  }
+  .cl-kind--added { color: var(--pale-green-fg); background: var(--pale-green-bg); }
+  .cl-kind--fixed { color: var(--pale-yellow-fg); background: var(--pale-yellow-bg); }
+  .cl-kind--changed { color: var(--pale-blue-fg); background: var(--pale-blue-bg); }
+  .cl-kind--security { color: var(--pale-red-fg); background: var(--pale-red-bg); }
+  .cl-kind--removed { color: var(--pale-red-fg); background: var(--pale-red-bg); }
+  .cl-more-wrap { margin-top: 4px; }
+  .cl-more-wrap .cl-bullets { padding-top: 2px; }
+  .cl-toggle {
+    margin-top: 8px; background: none; border: 1px solid var(--hairline-strong); border-radius: 999px;
+    font: 500 12px/1 var(--sans); color: var(--muted); padding: 7px 14px; cursor: pointer;
+    transition: color 140ms ease, border-color 140ms ease;
+  }
+  .cl-toggle:hover { color: var(--ink); border-color: var(--ink); }
+  .cl-toggle:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+  @media (max-width: 960px) {
+    .cl-layout { grid-template-columns: 1fr; gap: 24px; }
+    .cl-side { position: static; max-height: none; }
+    .cl-products { flex-direction: row; }
+    .cl-product-btn { flex: 1; }
+    .cl-index { flex-direction: row; flex-wrap: wrap; gap: 4px; border-top: none; padding-top: 0; }
+    .cl-index-link { border: 1px solid var(--hairline-strong); border-radius: 999px; padding: 4px 10px; }
+  }
 </style>

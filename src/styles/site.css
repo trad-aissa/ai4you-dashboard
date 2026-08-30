@@ -28,9 +28,10 @@
   color-scheme: light;
 }
 
-/* ---------- dark mode (follows the OS; all pairs ≥4.5:1) ---------- */
+/* ---------- dark mode — applies when OS is dark (unless user forces light),
+   or when the user forces dark via the theme switcher ---------- */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
     --canvas: #171614;
     --surface: #201F1C;
     --ink: #ECEAE5;
@@ -51,6 +52,45 @@
     color-scheme: dark;
   }
 }
+:root[data-theme='dark'] {
+  --canvas: #171614;
+  --surface: #201F1C;
+  --ink: #ECEAE5;
+  --muted: #A5A29A;
+  --faint: #8B897F;
+  --hairline: #2C2B27;
+  --hairline-strong: #3D3B35;
+  --accent: #ECEAE5;
+  --link: #85BEE8;
+  --link-hover: #A9D2F0;
+  --hover: #26251F;
+  --ink-hover: #F6F4EF;
+  --pale-red-bg: rgba(158, 63, 61, 0.20);   --pale-red-fg: #E39390;
+  --pale-blue-bg: rgba(31, 108, 159, 0.24); --pale-blue-fg: #85BEE8;
+  --pale-green-bg: rgba(52, 101, 56, 0.22); --pale-green-fg: #93C48E;
+  --pale-yellow-bg: rgba(149, 100, 0, 0.22); --pale-yellow-fg: #D8B25E;
+  --pale-plum-bg: rgba(108, 74, 140, 0.24); --pale-plum-fg: #BC99DD;
+  color-scheme: dark;
+}
+
+/* ---------- theme switcher ---------- */
+.theme-switch {
+  display: inline-flex; align-items: center; gap: 2px;
+  border: 1px solid var(--hairline-strong); border-radius: 999px;
+  padding: 3px; background: var(--surface);
+  margin-left: auto;
+}
+.theme-switch button {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border: none; border-radius: 999px;
+  background: none; color: var(--muted); cursor: pointer;
+  transition: background 140ms ease, color 140ms ease;
+}
+.theme-switch button:hover { color: var(--ink); background: var(--hover); }
+.theme-switch button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.theme-switch button[aria-pressed='true'] { background: var(--ink); color: var(--canvas); }
+.theme-switch svg { width: 15px; height: 15px; }
+.theme-switch svg path, .theme-switch svg circle, .theme-switch svg line { stroke: currentColor; stroke-width: 1.7; fill: none; stroke-linecap: round; stroke-linejoin: round; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }

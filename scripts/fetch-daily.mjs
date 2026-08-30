@@ -66,6 +66,16 @@ function parseFeed(xml) {
 const toIso = (d) => { const t = Date.parse(d); return Number.isNaN(t) ? null : new Date(t).toISOString(); };
 const idOf = (url) => createHash('sha1').update(url).digest('hex').slice(0, 12);
 
+/** Markdown inline → safe HTML: strip links to their text, escape, then `x` → <code>x</code>. */
+const mdInline = (s = '') =>
+  decode(s)
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/<[^>]*>/g, '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\s+/g, ' ')
+    .trim();
+
 async function readJson(file, fallback) {
   try { return JSON.parse(await readFile(new URL(file, DATA_DIR), 'utf8')); } catch { return fallback; }
 }
@@ -116,7 +126,7 @@ function parseClaudeChangelog(md, max = 25) {
   for (const part of parts) {
     const version = part.split('\n')[0].replace(/^\[?([\d.]+[\w.-]*)\]?.*$/, '$1').trim();
     if (!/^[\d.]/.test(version)) continue;
-    const bullets = [...part.matchAll(/^[-*] (.+)$/gm)].map((m) => stripTags(m[1])).filter(Boolean);
+    const bullets = [...part.matchAll(/^[-*] (.+)$/gm)].map((m) => mdInline(m[1])).filter(Boolean);
     if (bullets.length) releases.push({ version, date: null, bullets: bullets.slice(0, 30) });
     if (releases.length >= max) break;
   }
@@ -137,7 +147,7 @@ async function fetchCodexReleases() {
     return json.map((r) => ({
       version: (r.tag_name || '').replace(/^[a-z]+-v?/i, '').replace(/^v/, ''),
       date: toIso(r.published_at),
-      bullets: stripTags((r.body ?? '').replace(/^#+ .*$/gm, ''))
+      bullets: mdInline((r.body ?? '').replace(/^#+ .*$/gm, ''))
         .split(/(?<=\.)\s+(?=[A-Z])|\n+/).map((s) => s.trim()).filter((s) => s.length > 3).slice(0, 12),
     })).filter((r) => r.version);
   } finally { clearTimeout(t); }
