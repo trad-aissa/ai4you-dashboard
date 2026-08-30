@@ -18,7 +18,7 @@ import { playgroundCategories, playgroundCommandCount } from '../../data/playgro
     <div class="pg-term">
       <div class="pg-bar">
         <span class="pg-dot"></span><span class="pg-dot"></span><span class="pg-dot"></span>
-        <span class="pg-title">guest@ai4you — sandbox</span>
+        <span class="pg-title">ai4you@sandbox — guest session</span>
         <span class="pg-progress" id="pg-progress">0/{playgroundCommandCount}</span>
         <button type="button" class="pg-copy" id="pg-copy">Copy transcript</button>
         <button type="button" class="pg-reset" id="pg-reset">Reset</button>
@@ -27,7 +27,7 @@ import { playgroundCategories, playgroundCommandCount } from '../../data/playgro
         <p class="pg-line pg-hint">Welcome. Try: <code data-run="help">help</code></p>
       </div>
       <div class="pg-input-row">
-        <span class="pg-prompt">❯</span>
+        <span class="pg-prompt">ai4you ❯</span>
         <input id="pg-input" type="text" spellcheck="false" autocomplete="off" aria-label="Terminal command input" placeholder="type a command… (Tab completes, ↑ history)" />
       </div>
     </div>
@@ -73,7 +73,7 @@ import { playgroundCategories, playgroundCommandCount } from '../../data/playgro
   const exec = (raw) => {
     const cmd = norm(raw);
     if (!cmd) return;
-    line(`<span class="pg-prompt">❯</span> ${esc(cmd)}`, 'pg-echo');
+      line(`<span class="pg-prompt">ai4you ❯</span> ${esc(cmd)}`, 'pg-echo');
     history.push(cmd);
     histPos = history.length;
     const key = allNames.find((k) => norm(k).toLowerCase() === cmd.toLowerCase());

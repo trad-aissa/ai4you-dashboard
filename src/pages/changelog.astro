@@ -37,6 +37,7 @@ const products = [
 
 const fmt = (iso) => (iso ? new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : null);
 const PREVIEW = 4;
+const VISIBLE = 8; // releases shown per product before "Show older"
 // bullets contain sanitized inline HTML (<code>) from our own fetch pipeline
 const plain = (html) => html.replace(/<[^>]+>/g, '');
 ---
@@ -83,42 +84,49 @@ const plain = (html) => html.replace(/<[^>]+>/g, '');
 
       <div class="cl-main">
         {products.map((p, i) => (
-          <div class:list={['cl-product', { hidden: i !== 0 }]} id={`cl-${p.id}`}>
-            {p.releases.map((r, ri) => {
-              const extra = r.bullets.length - PREVIEW;
-              return (
-                <article class="cl-release" id={`${p.id}-v${r.version}`} data-release>
-                  <div class="cl-node" aria-hidden="true"></div>
-                  <header class="cl-head">
-                    <h2 class="cl-version">v{r.version}</h2>
-                    {ri === 0 && <span class="chip chip--pricing">latest</span>}
-                    {fmt(r.date) && <time datetime={r.date} class="cl-date">{fmt(r.date)}</time>}
-                    <span class="cl-n">{r.bullets.length} changes</span>
-                  </header>
-                  <ul class="cl-bullets">
-                    {r.bullets.slice(0, PREVIEW).map((b) => (
+      <div class:list={['cl-product', { hidden: i !== 0 }]} id={`cl-${p.id}`}>
+        {p.releases.map((r, ri) => {
+          const extra = r.bullets.length - PREVIEW;
+          return (
+            <article class:list={['cl-release', { 'cl-older': ri >= VISIBLE }]} data-release>
+              <div class="cl-node" aria-hidden="true"></div>
+              <header class="cl-head">
+                <h2 class="cl-version">v{r.version}</h2>
+                {ri === 0 && <span class="chip chip--pricing">latest</span>}
+                {fmt(r.date) && <time datetime={r.date} class="cl-date">{fmt(r.date)}</time>}
+                <span class="cl-n">{r.bullets.length} changes</span>
+              </header>
+              <ul class="cl-bullets">
+                {r.bullets.slice(0, PREVIEW).map((b) => (
+                  <li class={b.cls ? `is-${b.cls}` : undefined}>
+                    {b.label && <span class={`cl-kind cl-kind--${b.cls}`}>{b.label}</span>}
+                    <Fragment set:html={b.rest} />
+                  </li>
+                ))}
+              </ul>
+              {extra > 0 && (
+                <div class="cl-more-wrap">
+                  <ul class="cl-bullets" hidden>
+                    {r.bullets.slice(PREVIEW).map((b) => (
                       <li class={b.cls ? `is-${b.cls}` : undefined}>
                         {b.label && <span class={`cl-kind cl-kind--${b.cls}`}>{b.label}</span>}
                         <Fragment set:html={b.rest} />
                       </li>
                     ))}
                   </ul>
-                  {extra > 0 && (
-                    <div class="cl-more-wrap">
-                      <ul class="cl-bullets" hidden>
-                        {r.bullets.slice(PREVIEW).map((b) => (
-                          <li class={b.cls ? `is-${b.cls}` : undefined}>
-                            {b.label && <span class={`cl-kind cl-kind--${b.cls}`}>{b.label}</span>}
-                            <Fragment set:html={b.rest} />
-                          </li>
-                        ))}
-                      </ul>
-                      <button type="button" class="cl-toggle" aria-expanded="false">Show {extra} more changes</button>
-                    </div>
-                  )}
-                </article>
-              );
-            })}
+                  <button type="button" class="cl-toggle" aria-expanded="false">Show {extra} more changes</button>
+                </div>
+              )}
+            </article>
+          );
+        })}
+        {p.releases.length > VISIBLE && (
+          <div class="cl-older-row">
+            <button type="button" class="cl-toggle cl-show-older" data-product={p.id}>
+              Show {p.releases.length - VISIBLE} older releases
+            </button>
+          </div>
+        )}
             <p class="footnote" style="margin-top:24px;">
               Source: <a href={`https://github.com/${p.repo}`} target="_blank" rel="noopener">github.com/{p.repo}</a> ·
               {p.name} is a product of {p.vendor}; we are not affiliated with {p.vendor}.
@@ -169,11 +177,19 @@ const plain = (html) => html.replace(/<[^>]+>/g, '');
   for (const b of productBtns) b.addEventListener('click', () => switchProduct(b.dataset.product));
   searchInput?.addEventListener('input', applySearch);
 
-  // expand/collapse long releases (event delegation)
+  // expand/collapse long releases + reveal older releases (event delegation)
   document.addEventListener('click', (e) => {
+    const older = e.target.closest('.cl-show-older');
+    if (older) {
+      const pid = older.dataset.product;
+      for (const rel of document.querySelectorAll(`#cl-${pid} .cl-release.cl-older`)) rel.classList.remove('cl-older');
+      older.closest('.cl-older-row').hidden = true;
+      return;
+    }
     const btn = e.target.closest('.cl-toggle');
     if (!btn) return;
     const wrap = btn.closest('.cl-more-wrap');
+    if (!wrap) return;
     const extra = wrap.querySelector('.cl-bullets');
     const open = !extra.hidden;
     extra.hidden = open;
@@ -271,6 +287,8 @@ const plain = (html) => html.replace(/<[^>]+>/g, '');
   }
   .cl-toggle:hover { color: var(--ink); border-color: var(--ink); }
   .cl-toggle:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .cl-release.cl-older { display: none; }
+  .cl-older-row { display: flex; justify-content: center; padding: 18px 0 4px; margin-left: 34px; }
 
   @media (max-width: 960px) {
     .cl-layout { grid-template-columns: 1fr; gap: 24px; }

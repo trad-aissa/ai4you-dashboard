@@ -28,8 +28,8 @@ const ago = (iso) => {
       {sources.map((s) => <button class="filter-btn" data-filter={s} aria-pressed="false">{s}</button>)}
     </div>
     <ul class="news-list" id="news-list">
-      {items.map((i) => (
-        <li class="news-item" data-source={i.source}>
+      {items.map((i, idx) => (
+        <li class:list={['news-item', { 'news-hidden': idx >= 20 }]} data-source={i.source}>
           <div class="news-meta">
             <span class="chip chip--model">{i.source}</span>
             <time datetime={i.date} class="news-when">{ago(i.date)}</time>
@@ -39,6 +39,9 @@ const ago = (iso) => {
         </li>
       ))}
     </ul>
+    <div class="news-more-row">
+      <button type="button" class="btn btn--ghost" id="news-more" hidden>Show more headlines</button>
+    </div>
     <p class="feed-status hidden" id="news-status" role="status"></p>
     <p class="footnote" style="margin-top:24px;">
       Headlines are gathered automatically and link to their original publishers, who own their content.
@@ -69,7 +72,22 @@ const ago = (iso) => {
   import { initWire } from '../lib/wire.js';
   initWire();
 
+  const PAGE = 20;
   const bar = document.getElementById('news-filters');
+  const moreBtn = document.getElementById('news-more');
+
+  // progressive reveal: 20 at a time so the footer is never miles away
+  const revealNext = (all = false) => {
+    const hidden = [...document.querySelectorAll('.news-item.news-hidden')];
+    const count = all ? hidden.length : PAGE;
+    hidden.slice(0, count).forEach((el) => el.classList.remove('news-hidden'));
+    moreBtn.hidden = document.querySelectorAll('.news-item.news-hidden').length === 0;
+  };
+  if (moreBtn) {
+    moreBtn.hidden = document.querySelectorAll('.news-item.news-hidden').length === 0;
+    moreBtn.addEventListener('click', () => revealNext());
+  }
+
   bar?.addEventListener('click', (e) => {
     const btn = e.target.closest('.filter-btn');
     if (!btn) return;
@@ -79,6 +97,8 @@ const ago = (iso) => {
       b.setAttribute('aria-pressed', String(active));
     }
     const f = btn.dataset.filter;
+    // filtering operates on the full set — reveal everything
+    revealNext(true);
     let shown = 0;
     for (const el of document.querySelectorAll('#news-list .news-item')) {
       const show = f === 'all' || el.dataset.source === f;
@@ -90,8 +110,14 @@ const ago = (iso) => {
       status.textContent = shown ? '' : 'No headlines from this source in the current window.';
       status.classList.toggle('hidden', shown > 0);
     }
+    moreBtn.hidden = true;
   });
 </script>
+
+<style>
+  .news-item.news-hidden { display: none; }
+  .news-more-row { display: flex; justify-content: center; padding: 22px 0 4px; }
+</style>
 
 <style>
   .news-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--hairline); }
