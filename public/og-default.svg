@@ -1,7 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#FBFBFA"/>
-  <text x="80" y="200" font-family="Georgia, serif" font-size="72" fill="#1A1A19">ai4you.site</text>
-  <text x="80" y="290" font-family="Georgia, serif" font-size="44" font-style="italic" fill="#6E6D6A">The model race, decoded for busy humans.</text>
-  <text x="80" y="520" font-family="monospace" font-size="24" fill="#9B9A96">AI NEWS · MODEL RELEASES · TOOLS WORTH PAYING FOR</text>
-  <rect x="80" y="360" width="1040" height="2" fill="#EAEAEA"/>
+  <rect x="0" y="96" width="1200" height="2" fill="#EAEAEA"/>
+  <g transform="translate(80,36)">
+    <rect width="52" height="52" rx="13" fill="#1A1A19"/>
+    <path d="M10 27h7l4-10 6.5 19 4-10h10" fill="none" stroke="#FBFBFA" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="43" cy="25.5" r="2.2" fill="#93C48E"/>
+    <text x="70" y="37" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#1A1A19">ai4you<tspan font-style="italic" fill="#6E6D6A"> · the AI wire</tspan></text>
+  </g>
+  <text x="80" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="88" fill="#1A1A19">The model race,</text>
+  <text x="80" y="404" font-family="Georgia, 'Times New Roman', serif" font-size="88" fill="#1A1A19"><tspan font-style="italic" fill="#6E6D6A">decoded</tspan> for busy humans.</text>
+  <g transform="translate(80,470)">
+    <rect width="1040" height="72" rx="14" fill="#FFFFFF" stroke="#EAEAEA"/>
+    <path d="M24 36h90l22-22 40 44 22-22h130l22-22 40 44 22-22h130l22-22 40 44 22-22h130l22-22 40 44 22-22h150" fill="none" stroke="#C9C7BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="1002" cy="36" r="4.5" fill="#346538"/>
+  </g>
+  <text x="80" y="596" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="22" letter-spacing="3" fill="#9B9A96">AI NEWS · MODEL RELEASES · TOOLS WORTH PAYING FOR</text>
 </svg>

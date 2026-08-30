@@ -1,0 +1,74 @@
+---
+// src/pages/stories.astro — full editorial archive
+import Layout from '../layouts/Layout.astro';
+import news from '../data/news.js';
+
+const items = news.items ?? [];
+const cats = [
+  { id: 'all', label: 'All' },
+  { id: 'model-release', label: 'Model releases' },
+  { id: 'pricing', label: 'Pricing' },
+  { id: 'product', label: 'Products' },
+  { id: 'industry', label: 'Industry & policy' },
+];
+const fmt = (iso) => new Date(`${iso}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+const chip = (c) => ({ 'model-release': 'chip--model', pricing: 'chip--pricing', product: 'chip--product', research: 'chip--research', industry: 'chip--industry' })[c] ?? 'chip--product';
+const label = (c) => ({ 'model-release': 'Model release', pricing: 'Pricing', product: 'Product', research: 'Research', industry: 'Industry' })[c] ?? 'News';
+---
+
+<Layout title="Story archive — every ai4you briefing · ai4you.site" path="/stories" description="The full archive of our editorial AI coverage: model releases, pricing changes, products and industry moves — every story linked to its primary source." breadcrumbs={[{ name: 'Stories', path: '/stories' }]}>
+  <section class="tools-hero wrap">
+    <span class="kicker">Editorial archive · {items.length} stories</span>
+    <h1>Every story we've covered.</h1>
+    <p class="lede">Our hand-written briefs — summaries and "why it matters" for each move, linked to the primary source. Auto-gathered live headlines live on <a href="/news">/news</a>.</p>
+  </section>
+
+  <section class="dir wrap" style="padding-bottom:72px;" aria-label="Story archive">
+    <div class="filters" id="st-filters" role="group" aria-label="Filter stories by category">
+      {cats.map((c, i) => (
+        <button class:list={['filter-btn', { 'is-active': i === 0 }]} data-filter={c.id} aria-pressed={i === 0 ? 'true' : 'false'}>
+          {c.label}
+        </button>
+      ))}
+    </div>
+    <div class="feed" id="st-grid">
+      {items.map((item) => (
+        <article class="feed-card" data-cat={item.category}>
+          <div class="card-meta">
+            <span class={`chip ${chip(item.category)}`}>{label(item.category)}</span>
+            <span class="card-date">{fmt(item.date)}</span>
+          </div>
+          <h3><a href={item.url} target="_blank" rel="noopener noreferrer">{item.headline}</a></h3>
+          <p>{item.summary}</p>
+          <p class="src-line">source · <a href={item.url} target="_blank" rel="noopener noreferrer">{item.source_name}</a></p>
+        </article>
+      ))}
+    </div>
+    <p class="feed-status hidden" id="st-status" role="status"></p>
+  </section>
+</Layout>
+
+<script>
+  const bar = document.getElementById('st-filters');
+  bar?.addEventListener('click', (e) => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    for (const b of bar.querySelectorAll('.filter-btn')) {
+      const active = b === btn;
+      b.classList.toggle('is-active', active);
+      b.setAttribute('aria-pressed', String(active));
+    }
+    const f = btn.dataset.filter;
+    let shown = 0;
+    for (const card of document.querySelectorAll('#st-grid .feed-card')) {
+      const show = f === 'all' || card.dataset.cat === f;
+      card.style.display = show ? '' : 'none';
+      if (show) shown++;
+    }
+    const status = document.getElementById('st-status');
+    if (status) {
+      status.textContent = shown ? '' : 'No stories in this category yet — check back soon.';
+      status.classList.toggle('hidden', shown > 0);
+    }
+  });
+</script>

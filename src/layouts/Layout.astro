@@ -31,6 +31,7 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
     <Seo title={title} description={description} path={path} image={image} type={type} publishedTime={publishedTime} breadcrumbs={breadcrumbs} />
     <slot name="head-extra" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/rss+xml" title="ai4you.site — AI news" href="/rss.xml" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" id="meta-theme-light" content="#FBFBFA" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" id="meta-theme-dark" content="#171614" />
@@ -42,7 +43,14 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
     <header class="masthead">
       <div class="wrap">
         <div class="top">
-          <a class="brand" href="/">ai4you<em> · the AI wire</em></a>
+          <a class="brand" href="/">
+            <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+              <rect width="64" height="64" rx="15" class="bm-bg"></rect>
+              <path d="M10 33h9l5-13 8 24 5-13h13" fill="none" class="bm-line" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"></path>
+              <circle cx="53" cy="31" r="2.8" class="bm-dot"></circle>
+            </svg>
+            <span class="brand-text">ai4you<em> · the AI wire</em></span>
+          </a>
           <div class="meta">
             <span id="masthead-date">—</span><br />
             Independent &amp; reader-supported
@@ -114,6 +122,10 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
       </div>
     </footer>
 
+    <button type="button" class="to-top" id="to-top" aria-label="Back to top" hidden>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"></path></svg>
+    </button>
+
     <script>
       // masthead date + footer year (vanilla, tiny)
       const d = document.getElementById('masthead-date');
@@ -138,6 +150,29 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
       applyTheme(saved === 'light' || saved === 'dark' ? saved : 'auto');
       for (const b of document.querySelectorAll('[data-set-theme]')) {
         b.addEventListener('click', () => applyTheme(b.dataset.setTheme));
+      }
+
+      // back-to-top
+      const toTop = document.getElementById('to-top');
+      if (toTop) {
+        addEventListener('scroll', () => { toTop.hidden = scrollY < 700; }, { passive: true });
+        toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+      }
+
+      // scroll-reveal: elements fade-up as they enter the viewport.
+      // Classes are added via JS only, so no-JS visitors see everything.
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduced && 'IntersectionObserver' in window) {
+        const targets = document.querySelectorAll(
+          '.feed-card, .dir-card, .today-item, .side-story, .fi-item, .cl-release, .cs-card, .rs-card, .news-item, .tool-cards .lu, .prose > section, .lr-progress'
+        );
+        targets.forEach((el) => el.classList.add('a4u-reveal'));
+        const io = new IntersectionObserver((entries) => {
+          for (const en of entries) {
+            if (en.isIntersecting) { en.target.classList.add('a4u-in'); io.unobserve(en.target); }
+          }
+        }, { rootMargin: '0px 0px -8% 0px' });
+        targets.forEach((el) => io.observe(el));
       }
     </script>
   </body>

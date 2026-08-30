@@ -30,11 +30,16 @@ const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
       <a class="btn btn--primary" href="/tools">Browse the tool shelf</a>
       <a class="btn btn--ghost" href="/about">How we make money</a>
     </div>
+    <svg class="hero-pulse" viewBox="0 0 1040 56" aria-hidden="true" preserveAspectRatio="none">
+      <path class="hp-base" d="M0 28h150l14-14 24 28 14-14h180l14-14 24 28 14-14h180l14-14 24 28 14-14h180l14-14 24 28 14-14h104" fill="none"></path>
+      <path class="hp-run" d="M0 28h150l14-14 24 28 14-14h180l14-14 24 28 14-14h180l14-14 24 28 14-14h180l14-14 24 28 14-14h104" fill="none"></path>
+      <circle class="hp-dot" cx="1006" cy="28" r="4"></circle>
+    </svg>
   </section>
 
-  <NewsFeed />
+  <NewsFeed limit={6} />
 
-  <section class="wrap" style="padding: 40px 0 64px; border-top: 1px solid var(--hairline);" aria-label="Today's AI headlines">
+  <section class="wrap" style="padding: 32px 0 48px; border-top: 1px solid var(--hairline);" aria-label="Today's AI headlines">
     <div class="section-head">
       <h2>Today's headlines</h2>
       <a class="more" href="/news">All {headlines.count} headlines →</a>
@@ -49,24 +54,6 @@ const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
       ))}
     </div>
     <p class="src-line" style="margin-top:14px;">auto-gathered daily at 06:00 UTC from the primary labs and outlets · <a href="/news" style="color:var(--link);">browse all</a></p>
-  </section>
-
-  <section class="wrap" id="the-wire" aria-label="Live wire from Hacker News" style="padding: 24px 0 64px;">
-    <div class="section-head">
-      <h2>Live wire</h2>
-      <span class="kicker">What the Hacker News crowd is reading about AI, right now</span>
-    </div>
-    <div class="wire">
-      <div class="wire-head">
-        <span class="kicker">hn.algolia.com · refreshes every 15 min</span>
-        <button class="refresh" id="wire-refresh" type="button" aria-label="Refresh live headlines">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9M13.5 1.5v3h-3"/></svg>
-          Refresh
-        </button>
-      </div>
-      <ul class="wire-list" id="wire-list"></ul>
-      <p class="wire-status" id="wire-status" role="status">Loading live headlines…</p>
-    </div>
   </section>
 
   <section class="tools-strip wrap" aria-label="Sponsored picks">
@@ -108,10 +95,8 @@ const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
 
 <script>
   import { bindUnits } from '../lib/link-units.js';
-  import { initWire } from '../lib/wire.js';
   import { supabase } from '../lib/supabase.js';
   bindUnits(document);
-  initWire();
 
   // newsletter signup — writes to newsletter_subscribers (see supabase/upgrade-2026-08-30.sql)
   const form = document.querySelector('.newsletter form');

@@ -45,9 +45,30 @@ const ago = (iso) => {
       Our editorial picks with analysis live on the <a href="/">homepage</a>.
     </p>
   </section>
+
+  <section class="wrap" id="the-wire" aria-label="Live wire from Hacker News" style="padding: 8px 0 72px;">
+    <div class="section-head">
+      <h2>Live wire</h2>
+      <span class="kicker">What the Hacker News crowd is reading about AI, right now</span>
+    </div>
+    <div class="wire">
+      <div class="wire-head">
+        <span class="kicker">hn.algolia.com · refreshes every 15 min</span>
+        <button class="refresh" id="wire-refresh" type="button" aria-label="Refresh live headlines">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9M13.5 1.5v3h-3"/></svg>
+          Refresh
+        </button>
+      </div>
+      <ul class="wire-list" id="wire-list"></ul>
+      <p class="wire-status" id="wire-status" role="status">Loading live headlines…</p>
+    </div>
+  </section>
 </Layout>
 
 <script>
+  import { initWire } from '../lib/wire.js';
+  initWire();
+
   const bar = document.getElementById('news-filters');
   bar?.addEventListener('click', (e) => {
     const btn = e.target.closest('.filter-btn');
