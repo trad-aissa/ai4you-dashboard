@@ -21,6 +21,7 @@ import Layout from '../../layouts/Layout.astro';
       <button class="filter-btn" data-gen="command" aria-pressed="false">Slash command</button>
       <button class="filter-btn" data-gen="skill" aria-pressed="false">Skill</button>
       <button class="filter-btn" data-gen="agent" aria-pressed="false">Agent</button>
+      <button class="filter-btn" data-gen="plugin" aria-pressed="false">Plugin</button>
     </div>
 
     <div class="cb-grid">
@@ -102,6 +103,23 @@ import Layout from '../../layouts/Layout.astro';
           </label>
         </div>
 
+        <!-- Plugin -->
+        <div class="cb-gen" data-gen="plugin" hidden>
+          <label>Plugin name<input name="pl-name" type="text" placeholder="pr-reviewer" /></label>
+          <label>Version<input name="pl-version" type="text" placeholder="1.0.0" /></label>
+          <label>Description<input name="pl-desc" type="text" placeholder="PR review toolkit: commands, agents and hooks" /></label>
+          <label>Author<input name="pl-author" type="text" placeholder="acme" /></label>
+          <label>Includes (check what the bundle ships)
+            <span style="display:flex;flex-direction:column;gap:6px;margin-top:6px;font-weight:400;">
+              <label style="margin:0;"><input name="pl-commands" type="checkbox" style="width:auto" checked /> commands/ — slash commands</label>
+              <label style="margin:0;"><input name="pl-agents" type="checkbox" style="width:auto" checked /> agents/ — subagents</label>
+              <label style="margin:0;"><input name="pl-skills" type="checkbox" style="width:auto" /> skills/ — skills</label>
+              <label style="margin:0;"><input name="pl-hooks" type="checkbox" style="width:auto" /> hooks/ — lifecycle hooks</label>
+              <label style="margin:0;"><input name="pl-mcp" type="checkbox" style="width:auto" /> .mcp.json — MCP servers</label>
+            </span>
+          </label>
+        </div>
+
         <p class="cb-note">Output updates live →</p>
       </form>
 
@@ -134,6 +152,7 @@ import Layout from '../../layouts/Layout.astro';
     command: '.claude/commands/<name>.md',
     skill: '.claude/skills/<name>/SKILL.md',
     agent: '.claude/agents/<name>.md',
+    plugin: '.claude-plugin/plugin.json',
   };
 
   function buildClaudemd() {
@@ -223,10 +242,28 @@ import Layout from '../../layouts/Layout.astro';
     return s;
   }
 
-  const BUILDERS = { claudemd: buildClaudemd, hooks: buildHooks, mcp: buildMcp, command: buildCommand, skill: buildSkill, agent: buildAgent };
+  function buildPlugin() {
+    const name = (val('pl-name') || 'my-plugin').toLowerCase().replace(/[^a-z0-9-]/g, '-');
+    const version = val('pl-version') || '1.0.0';
+    const desc = val('pl-desc') || 'What this plugin bundles.';
+    const author = val('pl-author');
+    const manifest = { name, version, description: desc };
+    if (author) manifest.author = author;
+    const dirs = [];
+    if (chk('pl-commands')) dirs.push('commands');
+    if (chk('pl-agents')) dirs.push('agents');
+    if (chk('pl-skills')) dirs.push('skills');
+    if (chk('pl-hooks')) dirs.push('hooks');
+    if (dirs.length) manifest.directories = dirs;
+    if (chk('pl-mcp')) manifest.mcpServers = '.mcp.json';
+    fileEl.textContent = '.claude-plugin/plugin.json';
+    return JSON.stringify(manifest, null, 2) + `\n`;
+  }
+
+  const BUILDERS = { claudemd: buildClaudemd, hooks: buildHooks, mcp: buildMcp, command: buildCommand, skill: buildSkill, agent: buildAgent, plugin: buildPlugin };
 
   function render() {
-    if (gen === 'command' || gen === 'skill' || gen === 'agent') BUILDERS[gen](); // sets filename
+    if (gen === 'command' || gen === 'skill' || gen === 'agent' || gen === 'plugin') BUILDERS[gen](); // sets filename
     else fileEl.textContent = FILES[gen];
     out.textContent = BUILDERS[gen]();
   }
