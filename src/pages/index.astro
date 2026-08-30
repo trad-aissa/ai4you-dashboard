@@ -4,17 +4,18 @@ import { getActiveUnits } from '../lib/supabase.js';
 import { renderUnit, bindUnits } from '../lib/link-units.js';
 import Layout from '../layouts/Layout.astro';
 import NewsFeed from '../components/NewsFeed.astro';
+import PreferredSources from '../components/PreferredSources.astro';
 
 let units = [];
 let dbError = null;
 try {
   units = await getActiveUnits();
 } catch (e) {
-  dbError = e?.message ?? 'database unavailable';
+  console.error('[index] failed to load link units:', e?.message ?? e);
+  dbError = true;
 }
 const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
 const unit = (slug) => (byslug[slug] ? renderUnit(byslug[slug]) : '');
-import PreferredSources from '../components/PreferredSources.astro';
 ---
 
 <Layout title="ai4you.site — AI news, model releases & tools, minus the hype" path="/" description="A calm, sourced briefing on AI: every frontier-model release, price change and industry move — plus the AI tools actually worth your money.">
@@ -78,7 +79,7 @@ import PreferredSources from '../components/PreferredSources.astro';
 
   {dbError && (
     <div class="wrap" style="padding-bottom:40px;">
-      <p class="feed-status">Some sponsored placements are temporarily unavailable ({dbError}).</p>
+      <p class="feed-status">Some sponsored placements are temporarily unavailable — please check back soon.</p>
     </div>
   )}
 </Layout>
@@ -86,6 +87,41 @@ import PreferredSources from '../components/PreferredSources.astro';
 <script>
   import { bindUnits } from '../lib/link-units.js';
   import { initWire } from '../lib/wire.js';
+  import { supabase } from '../lib/supabase.js';
   bindUnits(document);
   initWire();
+
+  // newsletter signup — writes to newsletter_subscribers (see supabase/upgrade-2026-08-30.sql)
+  const form = document.querySelector('.newsletter form');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input[type="email"]');
+    const msgEl = document.getElementById('nl-msg');
+    const setMsg = (t, ok) => {
+      if (!msgEl) return;
+      msgEl.textContent = t;
+      msgEl.classList.toggle('ok', ok);
+      msgEl.classList.toggle('err', !ok);
+    };
+    const v = (input?.value ?? '').trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) {
+      setMsg('Please enter a valid email address.', false);
+      return;
+    }
+    const btn = form.querySelector('button');
+    if (btn) btn.disabled = true;
+    const { error } = await supabase.from('newsletter_subscribers').insert({ email: v.toLowerCase() });
+    if (btn) btn.disabled = false;
+    if (error) {
+      if (error.code === '23505' || /duplicate|unique/i.test(error.message ?? '')) {
+        setMsg("You're already on the list — see you in the next brief.", true);
+        if (input) input.value = '';
+      } else {
+        setMsg("Couldn't subscribe right now — please try again in a minute.", false);
+      }
+      return;
+    }
+    setMsg('Thanks — you are on the list. The next brief lands in your inbox.', true);
+    if (input) input.value = '';
+  });
 </script>

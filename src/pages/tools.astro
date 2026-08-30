@@ -26,7 +26,8 @@ try {
     affiliate: true, // shelf items come from link_units => affiliate-tagged by definition
   }));
 } catch (e) {
-  dbError = e?.message ?? 'database unavailable';
+  console.error('[tools] failed to load shelf from DB:', e?.message ?? e);
+  dbError = true;
 }
 if (tools.length === 0) {
   tools = toolsStatic; // DB empty or unreachable -> curated static list
@@ -96,7 +97,7 @@ const cats = [
     </div>
     {dbError && (
       <p class="feed-status" style="margin-top:20px;">
-        Showing the curated starter shelf — live shelf sync temporarily unavailable ({dbError}).
+        Showing the curated starter shelf — live shelf sync is temporarily unavailable.
       </p>
     )}
   </section>

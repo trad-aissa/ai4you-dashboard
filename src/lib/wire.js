@@ -5,6 +5,21 @@
 const WIRE_TTL = 15 * 60_000;
 const CACHE_KEY = 'a4u-wire-cache';
 
+const esc = (s = '') =>
+  String(s ?? '').replace(/[&<>"']/g, (c) =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+// Only allow http(s) links from the third-party feed; anything else
+// (javascript:, data:, …) falls back to the HN discussion thread.
+const safeUrl = (url, objectId) => {
+  try {
+    const u = new URL(url);
+    return /^https?:$/.test(u.protocol) ? u.toString() : `https://news.ycombinator.com/item?id=${encodeURIComponent(objectId)}`;
+  } catch {
+    return `https://news.ycombinator.com/item?id=${encodeURIComponent(objectId)}`;
+  }
+};
+
 const store = {
   get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* private mode */ } },
@@ -15,14 +30,17 @@ function renderWire(posts) {
   const status = document.getElementById('wire-status');
   if (!list) return;
   list.innerHTML = posts
-    .map(
-      (p) => `
+    .map((p) => {
+      let href = String(p.url ?? '');
+      try { if (!/^https?:$/.test(new URL(href).protocol)) href = 'https://news.ycombinator.com'; }
+      catch { href = 'https://news.ycombinator.com'; }
+      return `
       <li><div class="wire-item">
-        <span class="pts">${p.points} pts</span>
-        <div class="w"><a href="${p.url}" target="_blank" rel="noopener noreferrer">${p.title}</a></div>
-        <span class="by">${p.comments} comments</span>
-      </div></li>`
-    )
+        <span class="pts">${esc(p.points)} pts</span>
+        <div class="w"><a href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(p.title)}</a></div>
+        <span class="by">${esc(p.comments)} comments</span>
+      </div></li>`;
+    })
     .join('');
   if (status) status.style.display = 'none';
 }
@@ -46,7 +64,7 @@ async function loadWire(force = false) {
     const data = await res.json();
     const posts = (data.hits ?? []).map((h) => ({
       title: h.title ?? '(untitled)',
-      url: h.url ?? 'https://news.ycombinator.com/item?id=' + h.objectID,
+      url: safeUrl(h.url, h.objectID),
       points: h.points ?? 0,
       comments: h.num_comments ?? 0,
     }));
