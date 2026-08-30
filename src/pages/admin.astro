@@ -202,7 +202,6 @@ import Layout from '../layouts/Layout.astro';
   .pv-card em, .pv-box em { display: block; font: 400 12.5px/1.5 var(--sans); color: var(--muted); font-style: normal; margin-bottom: 10px; }
   .pv-kicker { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pale-green-fg); margin: 0 0 6px; }
   @media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } }
-  @media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } }
 </style>
 
 <script>
@@ -280,7 +279,6 @@ import Layout from '../layouts/Layout.astro';
   }
 
   function previewHtml(u) {
-    const dl = document.createElement('textarea');
     const note = esc(u.note || '');
     const label = esc(u.label);
     const btn = (text) => `<span class="pv-btn">${text}<svg class="arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>`;
@@ -296,12 +294,13 @@ import Layout from '../layouts/Layout.astro';
   function clearForm() {
     editingId = null;
     $('#form-title').textContent = 'New placement';
-        for (const id of ['#f-slug', '#f-url', '#f-label', '#f-note', '#f-commission', '#f-network']) $(id).value = '';
-    $('#f-shelf').checked = false; $('f-shelfcat').value = '';
+    for (const id of ['#f-slug', '#f-url', '#f-label', '#f-note', '#f-commission', '#f-network']) $(id).value = '';
+    $('#f-shelf').checked = false; $('#f-shelfcat').value = '';
     $('#f-cancel').hidden = true;
   }
 
   function fillForm(u) {
+    if (!u) return;
     editingId = u.id;
     $('#form-title').textContent = `Editing “${u.slug}”`;
     $('#f-slug').value = u.slug; $('#f-type').value = u.type;
@@ -392,12 +391,14 @@ import Layout from '../layouts/Layout.astro';
     if (edit) fillForm(units.find((u) => u.id === edit.dataset.edit));
     if (toggle) {
       const u = units.find((x) => x.id === toggle.dataset.toggle);
+      if (!u) return;
       const { error } = await supabase.from('link_units').update({ active: !u.active }).eq('id', u.id);
       if (error) fmsg('Update failed: ' + error.message, false);
       else { fmsg(u.active ? 'Paused — it disappears from the site on next build.' : 'Resumed.', true); loadUnits(); }
     }
     if (del) {
       const u = units.find((x) => x.id === del.dataset.del);
+      if (!u) return;
       if (!confirm(`Delete “${u.slug}”? Pages that reference it will render nothing for that slot.`)) return;
       const { error } = await supabase.from('link_units').delete().eq('id', u.id);
       if (error) fmsg('Delete failed: ' + error.message, false);
