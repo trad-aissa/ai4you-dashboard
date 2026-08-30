@@ -169,6 +169,18 @@ async function fetchChangelogs() {
 await mkdir(DATA_DIR, { recursive: true });
 const headlines = await fetchHeadlines();
 const changelogs = await fetchChangelogs();
+
+// Keep the previous `updated` timestamp when content is identical, so
+// quiet days produce zero git diffs (and the workflow makes no commit).
+const prevAll = await readJson('headlines.json', null);
+const prevCl = await readJson('changelogs.json', null);
+const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+if (prevAll && same(headlines.items, prevAll.items)) headlines.updated = prevAll.updated;
+if (prevCl && same(
+  { cc: changelogs['claude-code'], cx: changelogs.codex },
+  { cc: prevCl['claude-code'], cx: prevCl.codex },
+)) changelogs.updated = prevCl.updated;
+
 await writeFile(new URL('headlines.json', DATA_DIR), JSON.stringify(headlines, null, 2) + '\n');
 await writeFile(new URL('changelogs.json', DATA_DIR), JSON.stringify(changelogs, null, 2) + '\n');
 console.log(`headlines: ${headlines.count} | claude-code: ${changelogs['claude-code'].length} releases | codex: ${changelogs.codex.length} releases`);
