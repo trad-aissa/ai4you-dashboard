@@ -19,8 +19,12 @@ export async function getActiveUnits() {
 
 /** Log a click. Fire-and-forget: never blocks or breaks the page. */
 export function logClick(slug, page) {
+  // Privacy: store the referrer's origin only (never full URLs, which can
+  // carry personal data from other sites) — matches /about#privacy.
+  let ref = null;
+  try { ref = document.referrer ? new URL(document.referrer).origin : null; } catch { ref = null; }
   supabase
     .from('click_events')
-    .insert({ unit_slug: slug, page: page ?? location.pathname, ref: document.referrer || null })
+    .insert({ unit_slug: slug, page: page ?? location.pathname, ref })
     .then(() => {}, () => {});
 }
