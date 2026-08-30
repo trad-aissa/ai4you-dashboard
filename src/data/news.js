@@ -223,8 +223,4 @@ var A4U_NEWS = {
   ]
 };
 
-if (typeof window !== 'undefined') { window.A4U_NEWS = A4U_NEWS; }
-if (typeof module !== 'undefined' && module.exports) { module.exports = A4U_NEWS; }
-
-if (typeof module !== 'undefined' && module.exports) { module.exports = A4U_NEWS; }
 export default A4U_NEWS;

@@ -9,7 +9,7 @@
   --surface: #FFFFFF;
   --ink: #1A1A19;
   --muted: #6E6D6A;
-  --faint: #9B9A96;
+  --faint: #75746E;             /* meta text — ≥4.5:1 on canvas */
   --hairline: #EAEAEA;
   --hairline-strong: #D8D7D3;
   --accent: #1A1A19;            /* ink-as-accent; discipline by contrast, not hue */

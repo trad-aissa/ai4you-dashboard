@@ -12,7 +12,7 @@ const { title, description, path = '', image, type = 'website', publishedTime } 
 
 const SITE = 'https://www.ai4you.site';
 const canonical = `${SITE}${path || '/'}`;
-const ogImage = image ? (image.startsWith('http') ? image : `${SITE}${image}`) : `${SITE}/og-default.svg`;
+const ogImage = image ? (image.startsWith('http') ? image : `${SITE}${image}`) : `${SITE}/og-default.png`;
 const desc = description ?? 'A calm, sourced briefing on AI: model releases, pricing changes and industry moves — plus the tools actually worth your money.';
 ---
 

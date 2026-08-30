@@ -82,7 +82,13 @@ const affiliateSlugs = new Set(['jasper-best-writing', 'copyai-best-writing', 'g
             {t.pros.map((p) => <li><strong>Pro:</strong> {p}</li>)}
             {t.cons.map((c) => <li style="color:var(--muted);"><strong>Con:</strong> {c}</li>)}
           </ul>
-          <a class="btn btn--primary" href={t.url} target="_blank" rel="sponsored nofollow noopener">
+          <a
+            class="btn btn--primary"
+            href={t.url}
+            target="_blank"
+            rel={affiliateSlugs.has(t.slug) ? 'sponsored nofollow noopener' : 'noopener noreferrer'}
+            data-a4u-log={affiliateSlugs.has(t.slug) ? t.slug : undefined}
+          >
             Check out {t.name}
             <span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
           </a>
@@ -110,8 +116,10 @@ const affiliateSlugs = new Set(['jasper-best-writing', 'copyai-best-writing', 'g
 
 <script>
   import { logClick } from '../lib/supabase.js';
+  // Log affiliate CTA clicks under the placement's real slug (data-a4u-log),
+  // not text-derived slugs — keeps click_events joinable with link_units.
   document.addEventListener('click', (e) => {
-    const a = e.target.closest?.('a[rel*="sponsored"]');
-    if (a) logClick(a.textContent.replace('Check out ', '').trim().toLowerCase().replace(/\s+/g, '-'), '/best-writing-tools');
+    const a = e.target.closest?.('a[data-a4u-log]');
+    if (a) logClick(a.dataset.a4uLog, '/best-writing-tools');
   });
 </script>

@@ -1,0 +1,20 @@
+---
+// src/pages/404.astro — branded not-found page
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page not found · ai4you.site">
+  <section class="wrap" style="padding:96px 28px 120px;text-align:center;">
+    <span class="kicker">Error 404 · lost signal</span>
+    <h1 style="font-family:var(--display);font-weight:400;font-size:clamp(44px,6vw,76px);letter-spacing:-0.02em;margin:18px 0 12px;">
+      This page doesn't exist.
+    </h1>
+    <p class="lede" style="color:var(--muted);font-size:17px;max-width:46ch;margin:0 auto 32px;">
+      The story may have moved, or the link was mistyped. The latest briefing is one click away.
+    </p>
+    <div class="btn-row" style="justify-content:center;">
+      <a class="btn btn--primary" href="/">Back to the latest</a>
+      <a class="btn btn--ghost" href="/tools">Browse the tool shelf</a>
+    </div>
+  </section>
+</Layout>

@@ -17,6 +17,7 @@ const { title, description, path, image, type, publishedTime } = Astro.props;
     <Seo title={title} description={description} path={path} image={image} type={type} publishedTime={publishedTime} />
     <slot name="head-extra" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" type="application/rss+xml" title="ai4you.site — AI news" href="/rss.xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -63,6 +64,7 @@ const { title, description, path, image, type, publishedTime } = Astro.props;
               <li><a href="/best-writing-tools">Best writing tools</a></li>
               <li><a href="/article">Deep dive</a></li>
               <li><a href="/about">About</a></li>
+              <li><a href="/rss.xml">RSS feed</a></li>
             </ul>
           </div>
           <div>
@@ -83,26 +85,10 @@ const { title, description, path, image, type, publishedTime } = Astro.props;
     </footer>
 
     <script>
-      // masthead date + footer year + newsletter validation (vanilla, tiny)
+      // masthead date + footer year (vanilla, tiny)
       const d = document.getElementById('masthead-date');
       if (d) d.textContent = new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'long', day: 'numeric', year: 'numeric' });
       document.querySelectorAll('.js-year').forEach((n) => (n.textContent = String(new Date().getFullYear())));
-
-      const form = document.querySelector('.newsletter form');
-      form?.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const input = form.querySelector('input[type="email"]');
-        const msg = document.querySelector('.form-msg');
-        const v = (input?.value ?? '').trim();
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) {
-          msg.textContent = 'Please enter a valid email address.';
-          msg.classList.add('err');
-          return;
-        }
-        msg.textContent = 'Thanks — you are on the list (demo mode).';
-        msg.classList.add('ok');
-        if (input) input.value = '';
-      });
     </script>
   </body>
 </html>
