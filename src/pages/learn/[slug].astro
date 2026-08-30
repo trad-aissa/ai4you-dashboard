@@ -15,8 +15,9 @@ const toolChip = lesson.tool === 'Codex' ? 'chip--product' : 'chip--model';
 ---
 
 <Layout title={`${lesson.title} — learn by doing · ai4you.site`} path={`/learn/${lesson.slug}`} description={lesson.summary} type="article" publishedTime="2026-08-30T09:00:00Z" breadcrumbs={crumb}>
-  <article class="article wrap">
-    <header class="article-head">
+  <article class="article wrap" data-module={lesson.slug}>
+    <div class="article-head" style="position:relative;">
+      <span class="chip chip--pricing lesson-done-badge" data-done-badge hidden>✓ completed</span>
       <div class="article-meta" style="border:none;padding:0;margin-bottom:14px;">
         <span class={`chip ${toolChip}`}>{lesson.tool}</span>
         <span>{lesson.level}</span>
@@ -25,7 +26,7 @@ const toolChip = lesson.tool === 'Codex' ? 'chip--product' : 'chip--model';
       </div>
       <h1>{lesson.title}</h1>
       <p class="dek">{lesson.summary}</p>
-    </header>
+    </div>
 
     <div class="prose">
       {lesson.sections.map((s) => (
@@ -51,4 +52,18 @@ const toolChip = lesson.tool === 'Codex' ? 'chip--product' : 'chip--model';
       </p>
     </div>
   </article>
+<script>
+  // progress: finishing the quiz marks the module complete (localStorage)
+  const root = document.querySelector('[data-module]');
+  const slug = root?.dataset.module;
+  const badge = root?.querySelector('[data-done-badge]');
+  const done = () => { try { return JSON.parse(localStorage.getItem('a4u-learn') || '[]'); } catch { return []; } };
+  if (slug && badge && done().includes(slug)) badge.hidden = false;
+  window.addEventListener('a4u-quiz-complete', () => {
+    if (!slug || !badge) return;
+    const list = done();
+    if (!list.includes(slug)) { list.push(slug); try { localStorage.setItem('a4u-learn', JSON.stringify(list)); } catch {} }
+    badge.hidden = false;
+  });
+</script>
 </Layout>

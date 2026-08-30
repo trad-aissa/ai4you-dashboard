@@ -1,0 +1,291 @@
+---
+// src/pages/learn/builder.astro — interactive config generators
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Config Builder — CLAUDE.md, hooks, MCP & more, generated · ai4you.site" path="/learn/builder" description="Interactive generators for Claude Code configuration: build a CLAUDE.md, permission hooks, MCP server lists, custom slash commands, skills and subagents — copy or download the result." breadcrumbs={[{ name: 'Learn', path: '/learn' }, { name: 'Config Builder', path: '/learn/builder' }]}>
+  <section class="wrap pg-hero">
+    <span class="kicker">6 generators · live preview · copy or download · nothing leaves your browser</span>
+    <h1>The config builder.</h1>
+    <p class="lede">
+      Fill the form, watch the file write itself. Every generator produces exactly what the real
+      tools expect — then copy it into your repo.
+    </p>
+  </section>
+
+  <section class="wrap cb-wrap" aria-label="Config generators">
+    <div class="cb-tabs" id="cb-tabs" role="group" aria-label="Choose generator">
+      <button class="filter-btn is-active" data-gen="claudemd" aria-pressed="true">CLAUDE.md</button>
+      <button class="filter-btn" data-gen="hooks" aria-pressed="false">Hooks</button>
+      <button class="filter-btn" data-gen="mcp" aria-pressed="false">MCP servers</button>
+      <button class="filter-btn" data-gen="command" aria-pressed="false">Slash command</button>
+      <button class="filter-btn" data-gen="skill" aria-pressed="false">Skill</button>
+      <button class="filter-btn" data-gen="agent" aria-pressed="false">Agent</button>
+    </div>
+
+    <div class="cb-grid">
+      <form class="cb-form" id="cb-form" autocomplete="off">
+        <!-- CLAUDE.md -->
+        <div class="cb-gen" data-gen="claudemd">
+          <label>Project name<input name="cm-name" type="text" placeholder="acme-dashboard" /></label>
+          <label>Stack (comma-separated)<input name="cm-stack" type="text" placeholder="Astro, Supabase, Tailwind" /></label>
+          <label>Dev command<input name="cm-dev" type="text" placeholder="npm run dev" /></label>
+          <label>Test command<input name="cm-test" type="text" placeholder="npm test" /></label>
+          <label>Lint command<input name="cm-lint" type="text" placeholder="npm run lint" /></label>
+          <label>Conventions (one per line)<textarea name="cm-conv" rows="4" placeholder="Use TypeScript strict mode&#10;Never edit generated/&#10;Commits follow conventional commits"></textarea></label>
+          <label>Warnings (one per line)<textarea name="cm-warn" rows="2" placeholder="Never touch .env files&#10;legacy/ is frozen — ask first"></textarea></label>
+        </div>
+
+        <!-- Hooks -->
+        <div class="cb-gen" data-gen="hooks" hidden>
+          <label>Hook event
+            <select name="hk-event">
+              <option value="PreToolUse">PreToolUse — before a tool runs (can block)</option>
+              <option value="PostToolUse">PostToolUse — after a tool runs</option>
+              <option value="Stop">Stop — when the agent finishes a turn</option>
+            </select>
+          </label>
+          <label>Tool matcher (empty = all tools)<input name="hk-matcher" type="text" placeholder="Bash|Edit|Write" /></label>
+          <label>Action
+            <select name="hk-action">
+              <option value="deny">Deny — block matching tool calls</option>
+              <option value="format">Run formatter after edits</option>
+              <option value="notify">Notify / run a command</option>
+            </select>
+          </label>
+          <label>Pattern to block<input name="hk-pattern" type="text" placeholder="git push --force" /></label>
+          <label>Command to run<input name="hk-cmd" type="text" placeholder="prettier --write $FILE" /></label>
+        </div>
+
+        <!-- MCP -->
+        <div class="cb-gen" data-gen="mcp" hidden>
+          <label>Server name<input name="mc-name" type="text" placeholder="github" /></label>
+          <label>Transport
+            <select name="mc-transport">
+              <option value="http">HTTP (remote URL)</option>
+              <option value="stdio">stdio (local command)</option>
+            </select>
+          </label>
+          <label>URL (for HTTP)<input name="mc-url" type="text" placeholder="https://api.githubcopilot.com/mcp/" /></label>
+          <label>Command (for stdio)<input name="mc-cmd" type="text" placeholder="npx" /></label>
+          <label>Args (space-separated)<input name="mc-args" type="text" placeholder="-y @modelcontextprotocol/server-postgres" /></label>
+          <label><input name="mc-readonly" type="checkbox" style="width:auto" /> Read-only hint (safe to expose)</label>
+        </div>
+
+        <!-- Slash command -->
+        <div class="cb-gen" data-gen="command" hidden>
+          <label>Command name<input name="sc-name" type="text" placeholder="review" /></label>
+          <label>Description (shown in /help)<input name="sc-desc" type="text" placeholder="Review the current diff like a harsh senior" /></label>
+          <label>Allowed tools (comma-separated, empty = all)<input name="sc-tools" type="text" placeholder="Read, Grep, Bash" /></label>
+          <label>Prompt body ($ARGUMENTS supported)<textarea name="sc-body" rows="6" placeholder="Review $ARGUMENTS or the working diff.&#10;Look for: security issues, N+1 queries, missing tests.&#10;Be blunt. Rank findings by severity."></textarea></label>
+        </div>
+
+        <!-- Skill -->
+        <div class="cb-gen" data-gen="skill" hidden>
+          <label>Skill name<input name="sk-name" type="text" placeholder="release-checklist" /></label>
+          <label>Description — the trigger (when should Claude load this?)<input name="sk-desc" type="text" placeholder="Run before cutting any release — versioning, notes, smoke tests." /></label>
+          <label>Instructions (markdown)<textarea name="sk-body" rows="7" placeholder="1. Bump version in package.json&#10;2. Update CHANGELOG.md from merged PRs&#10;3. Run the full test suite — must pass clean&#10;4. Tag vX.Y.Z and push with the tag"></textarea></label>
+        </div>
+
+        <!-- Agent -->
+        <div class="cb-gen" data-gen="agent" hidden>
+          <label>Agent name<input name="ag-name" type="text" placeholder="test-runner" /></label>
+          <label>Description — when should the main agent delegate to it?<input name="ag-desc" type="text" placeholder="Runs the test suite and triages failures. Use when tests break." /></label>
+          <label>Tools (comma-separated)<input name="ag-tools" type="text" placeholder="Bash, Read, Grep" /></label>
+          <label>System prompt<textarea name="ag-body" rows="6" placeholder="You triage failing tests. Reproduce first, then identify the minimal root cause.&#10;Never edit application code — report findings only."></textarea></label>
+          <label>Model
+            <select name="ag-model">
+              <option value="inherit">Inherit from session</option>
+              <option value="sonnet">Fast / cheap (Sonnet class)</option>
+              <option value="opus">Deep reasoning (Opus class)</option>
+            </select>
+          </label>
+        </div>
+
+        <p class="cb-note">Output updates live →</p>
+      </form>
+
+      <div class="cb-out-wrap">
+        <div class="cb-out-bar">
+          <span class="cb-file" id="cb-file">CLAUDE.md</span>
+          <button type="button" class="btn btn--ghost btn--small" id="cb-copy">Copy</button>
+          <button type="button" class="btn btn--ghost btn--small" id="cb-download">Download</button>
+        </div>
+        <pre class="cb-out" id="cb-out" tabindex="0"></pre>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.getElementById('cb-form');
+  const out = document.getElementById('cb-out');
+  const fileEl = document.getElementById('cb-file');
+  const esc = (s) => String(s ?? '');
+  const val = (n) => (form.querySelector(`[name="${n}"]`)?.value ?? '').trim();
+  const chk = (n) => form.querySelector(`[name="${n}"]`)?.checked ?? false;
+  const lines = (s) => s.split('\n').map((l) => l.trim()).filter(Boolean);
+
+  let gen = 'claudemd';
+  const FILES = {
+    claudemd: 'CLAUDE.md',
+    hooks: '.claude/settings.json',
+    mcp: '.mcp.json',
+    command: '.claude/commands/<name>.md',
+    skill: '.claude/skills/<name>/SKILL.md',
+    agent: '.claude/agents/<name>.md',
+  };
+
+  function buildClaudemd() {
+    const name = val('cm-name') || 'my-project';
+    const stack = val('cm-stack');
+    const dev = val('cm-dev') || 'npm run dev';
+    const test = val('cm-test') || 'npm test';
+    const lint = val('cm-lint');
+    const conv = lines(val('cm-conv'));
+    const warn = lines(val('cm-warn'));
+    let s = `# ${name}\n\n`;
+    if (stack) s += `## Stack\n${stack.split(',').map((x) => `- ${x.trim()}`).join('\n')}\n\n`;
+    s += `## Commands\n- Dev: \`${dev}\`\n- Test: \`${test}\`\n`;
+    if (lint) s += `- Lint: \`${lint}\`\n`;
+    if (conv.length) s += `\n## Conventions\n${conv.map((c) => `- ${c}`).join('\n')}\n`;
+    if (warn.length) s += `\n## Warnings\n${warn.map((c) => `- ${c}`).join('\n')}\n`;
+    return s;
+  }
+
+  function buildHooks() {
+    const event = val('hk-event');
+    const matcher = val('hk-matcher');
+    const action = val('hk-action');
+    const pattern = val('hk-pattern');
+    const cmd = val('hk-cmd');
+    const hook = {};
+    if (action === 'deny') {
+      hook.type = 'command';
+      hook.command = `(case "$CLAUDE_TOOL_INPUT" in *" ${pattern || '…'} "*) echo 'BLOCKED by team policy: ${pattern || '…'}' >&2; exit 2;; *) exit 0;; esac)`;
+      hook._comment = `Blocks tool calls matching "${pattern || '…'}" (exit 2 = block).`;
+    } else if (cmd) {
+      hook.type = 'command';
+      hook.command = cmd;
+    } else {
+      hook.type = 'command';
+      hook.command = 'echo "no command configured"';
+    }
+    const entry = { matcher: matcher || '*', hooks: [hook] };
+    return JSON.stringify({ permissions: { allow: [], deny: [] }, hooks: { [event]: [entry] } }, null, 2) + `\n`;
+  }
+
+  function buildMcp() {
+    const name = val('mc-name') || 'my-server';
+    const transport = val('mc-transport');
+    const url = val('mc-url');
+    const cmd = val('mc-cmd');
+    const args = val('mc-args').split(/\s+/).filter(Boolean);
+    const readonly = chk('mc-readonly');
+    const server = transport === 'http'
+      ? { type: 'http', url: url || 'https://example.com/mcp/' }
+      : { type: 'stdio', command: cmd || 'npx', args };
+    if (readonly) server.readonly = true;
+    return JSON.stringify({ mcpServers: { [name]: server } }, null, 2) + `\n`;
+  }
+
+  function buildCommand() {
+    const name = (val('sc-name') || 'my-command').toLowerCase().replace(/[^a-z0-9-]/g, '-');
+    const desc = val('sc-desc') || 'Describe what this command does';
+    const tools = val('sc-tools');
+    const body = val('sc-body') || `Work on $ARGUMENTS.`;
+    fileEl.textContent = `.claude/commands/${name}.md`;
+    let s = `---\ndescription: ${desc}\n`;
+    if (tools) s += `allowed-tools: ${tools}\n`;
+    s += `---\n\n${body}\n`;
+    return s;
+  }
+
+  function buildSkill() {
+    const name = (val('sk-name') || 'my-skill').toLowerCase().replace(/[^a-z0-9-]/g, '-');
+    const desc = val('sk-desc') || 'When to use this skill — write it like a search query.';
+    const body = val('sk-body') || '1. Step one\n2. Step two';
+    fileEl.textContent = `.claude/skills/${name}/SKILL.md`;
+    return `---\nname: ${name}\ndescription: ${desc}\n---\n\n${body}\n`;
+  }
+
+  function buildAgent() {
+    const name = (val('ag-name') || 'my-agent').toLowerCase().replace(/[^a-z0-9-]/g, '-');
+    const desc = val('ag-desc') || 'When to delegate to this agent.';
+    const tools = val('ag-tools');
+    const model = val('ag-model');
+    const body = val('ag-body') || "Describe the agent's job and constraints here.";
+    fileEl.textContent = `.claude/agents/${name}.md`;
+    let s = `---\nname: ${name}\ndescription: ${desc}\n`;
+    if (tools) s += `tools: [${tools.split(',').map((t) => t.trim()).filter(Boolean).join(', ')}]\n`;
+    if (model && model !== 'inherit') s += `model: ${model}\n`;
+    s += `---\n\n${body}\n`;
+    return s;
+  }
+
+  const BUILDERS = { claudemd: buildClaudemd, hooks: buildHooks, mcp: buildMcp, command: buildCommand, skill: buildSkill, agent: buildAgent };
+
+  function render() {
+    if (gen === 'command' || gen === 'skill' || gen === 'agent') BUILDERS[gen](); // sets filename
+    else fileEl.textContent = FILES[gen];
+    out.textContent = BUILDERS[gen]();
+  }
+
+  for (const b of document.querySelectorAll('#cb-tabs .filter-btn')) {
+    b.addEventListener('click', () => {
+      gen = b.dataset.gen;
+      for (const x of document.querySelectorAll('#cb-tabs .filter-btn')) {
+        const active = x === b;
+        x.classList.toggle('is-active', active);
+        x.setAttribute('aria-pressed', String(active));
+      }
+      for (const g of form.querySelectorAll('.cb-gen')) g.hidden = g.dataset.gen !== gen;
+      render();
+    });
+  }
+  form.addEventListener('input', render);
+  form.addEventListener('change', render);
+
+  document.getElementById('cb-copy')?.addEventListener('click', async (e) => {
+    await navigator.clipboard?.writeText(out.textContent);
+    e.target.textContent = 'Copied ✓';
+    setTimeout(() => (e.target.textContent = 'Copy'), 1400);
+  });
+  document.getElementById('cb-download')?.addEventListener('click', () => {
+    const blob = new Blob([out.textContent], { type: 'text/plain' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = fileEl.textContent.split('/').pop() || 'config.md';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+
+  render();
+</script>
+
+<style>
+  .cb-wrap { padding-bottom: 80px; }
+  .cb-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+  .cb-grid { display: grid; grid-template-columns: minmax(320px, 5fr) 7fr; gap: 26px; align-items: start; }
+  .cb-form { border: 1px solid var(--hairline); background: var(--surface); border-radius: 12px; padding: 22px; }
+  .cb-form label { display: block; font: 500 12.5px/1.4 var(--sans); color: var(--muted); margin-bottom: 13px; }
+  .cb-form input[type="text"], .cb-form select, .cb-form textarea {
+    display: block; width: 100%; margin-top: 5px;
+    font: 400 13.5px/1.5 var(--sans); color: var(--ink);
+    background: var(--canvas); border: 1px solid var(--hairline-strong); border-radius: 8px; padding: 9px 12px;
+  }
+  .cb-form textarea { font-family: var(--mono); font-size: 12.5px; resize: vertical; }
+  .cb-form input:focus-visible, .cb-form select:focus-visible, .cb-form textarea:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .cb-note { font: 500 12px/1.4 var(--sans); color: var(--faint); margin: 6px 0 0; text-align: right; }
+  .cb-out-wrap { border: 1px solid #2E2D2A; border-radius: 12px; overflow: hidden; position: sticky; top: 16px; }
+  .cb-out-bar { display: flex; align-items: center; gap: 8px; background: #26251F; padding: 9px 14px; }
+  .cb-file { font-family: var(--mono); font-size: 11.5px; color: #93C48E; margin-right: auto; }
+  .cb-out-bar .btn { border-color: #3D3B35; color: #A5A29A; background: none; padding: 6px 11px; font-size: 12px; }
+  .cb-out-bar .btn:hover { color: #E8E6E0; border-color: #5A5850; }
+  .cb-out {
+    margin: 0; background: #1B1A17; color: #D9D7CF;
+    font-family: var(--mono); font-size: 12.5px; line-height: 1.65;
+    padding: 18px 20px; min-height: 460px; max-height: 560px; overflow: auto; white-space: pre-wrap;
+  }
+  @media (max-width: 960px) { .cb-grid { grid-template-columns: 1fr; } .cb-out-wrap { position: static; } }
+</style>

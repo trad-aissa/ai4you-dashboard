@@ -298,6 +298,624 @@ claude -p "is this issue a bug or a feature request? reply with one word" &lt; i
       },
     ],
   },
+  {
+    slug: 'permissions-safety',
+    title: 'Permissions & staying safe',
+    tool: 'Claude Code',
+    level: 'Beginner',
+    minutes: 9,
+    summary: 'An agent with shell access deserves a guardrail conversation: permission modes, allow/deny rules, and the habits that keep surprises at zero.',
+    sections: [
+      {
+        heading: 'Permission modes — the trust dial',
+        body: `<p>Every tool call passes a permission gate. Shift+Tab cycles the mode: <strong>default</strong> (ask before edits and commands), <strong>auto-accept edits</strong> (file edits apply without prompting — commands still ask), and <strong>plan mode</strong> (read-only: it explores and proposes, changes nothing).</p>
+<p>The professional habit: start risky work in <strong>plan mode</strong>, read the plan, then accept an execution mode once the plan looks right. Approving a plan costs one keystroke; undoing a bad autonomous refactor costs an afternoon.</p>`,
+      },
+      {
+        heading: 'Allowlists — teach it once, not every time',
+        body: `<p>Prompt fatigue is real, so Claude Code lets you pre-approve patterns: when prompted, choose "always allow <code>npm test</code>" and the rule lands in <code>.claude/settings.json</code> under <code>permissions.allow</code>. The mirror exists too: <code>permissions.deny</code> blocks patterns outright — a great home for <code>rm -rf *</code>, production deploy commands, or anything touching <code>.env</code>.</p>
+<p>Because the file is committed, guardrails are shared: nobody on the team re-answers the same prompts, and nobody accidentally allows what the team already banned.</p>`,
+      },
+      {
+        heading: 'The habits that keep it safe',
+        body: `<ul>
+<li><strong>Work in git.</strong> A clean tree turns any bad edit into <code>git checkout .</code>.</li>
+<li><strong>Never bypass casually.</strong> Flags exist to skip all permission checks for sandboxed/CI use — on your laptop against your real files is not that place.</li>
+<li><strong>Read the command.</strong> The prompt shows the exact command about to run. Two seconds of reading is the whole security model.</li>
+</ul>`,
+      },
+    ],
+    sim: {
+      hint: 'Simulated permission flow — try approving, then allowlisting.',
+      commands: {
+        'claude': ['✓ Session started · permission mode: default (ask before edits)'],
+        '/permissions': [
+          'Permission rules (.claude/settings.json):',
+          '  allow:  Bash(npm test), Bash(npm run lint)',
+          '  deny:   Bash(rm -rf *), Read(.env*)',
+          '  ask:    everything else',
+        ],
+        'npm test': ['✓ allowed by rule: Bash(npm test)', '● running tests… 41 passed'],
+        'rm -rf dist': [
+          '⚠ Blocked by deny rule: Bash(rm -rf *)',
+          'Claude: understood — `npm run clean` can clear dist/ instead.',
+        ],
+        'git commit -m "wip"': ['Ask: run git commit? [y/N/e]', '✓ approved · committed "wip"'],
+      },
+    },
+    quiz: [
+      {
+        q: 'You want Claude to propose an approach before touching any file. Which mode?',
+        options: ['auto-accept edits', 'plan mode', 'default mode', 'full access'],
+        answer: 1,
+        explain: 'Plan mode is read-only: it explores the repo and proposes work without changing anything.',
+      },
+      {
+        q: 'Where do shared, committed permission rules live?',
+        options: ['~/.bashrc', 'CLAUDE.md', '.claude/settings.json', 'package.json'],
+        answer: 2,
+        explain: 'permissions.allow / permissions.deny in .claude/settings.json — versioned with the repo.',
+      },
+      {
+        q: 'The single habit that makes agent mistakes cheapest to undo:',
+        options: ['Reading every file after', 'Working in git with a clean tree', 'Using plan mode forever', 'Disabling permissions'],
+        answer: 1,
+        explain: 'Git turns a bad autonomous change into a one-command revert.',
+      },
+    ],
+  },
+  {
+    slug: 'skills',
+    title: 'Skills: teach it your playbooks',
+    tool: 'Claude Code',
+    level: 'Intermediate',
+    minutes: 11,
+    summary: "Package reusable expertise into SKILL.md folders that Claude loads exactly when relevant — your team's best practices, on tap.",
+    sections: [
+      {
+        heading: 'What a skill is',
+        body: `<p>A <strong>skill</strong> is a folder with a <code>SKILL.md</code> file: frontmatter (name + description) plus instructions, and optionally supporting scripts or templates. Skills live in <code>~/.claude/skills/</code> (personal) or <code>.claude/skills/</code> (project, committed and shared).</p>
+<p>The design idea is <em>progressive disclosure</em>: Claude always sees only the skill's name and description (a few tokens each), and reads the full SKILL.md only when your request actually matches. You can install a library of skills without bloating every prompt.</p>`,
+      },
+      {
+        heading: 'When a skill beats a slash command',
+        body: `<p>Slash commands are for <em>invocations</em> — you decide when they run (<code>/review</code>). Skills are for <em>knowledge</em> — Claude decides when they apply. If the value is "whenever we touch X, follow these rules," that's a skill. If it's "when I say so, do this," that's a command.</p>
+<p>Good first skills: your release checklist, the house style for API errors, "how we write database migrations," a deploy runbook. Anything a new hire would need explained twice.</p>`,
+      },
+      {
+        heading: 'Anatomy of a good SKILL.md',
+        body: `<pre><code>---
+name: release-checklist
+description: Run before cutting any release — versioning, notes, smoke tests.
+---
+1. Bump version in package.json (semver, no skips)
+2. Update CHANGELOG.md from merged PRs
+3. pnpm test &amp;&amp; pnpm build must pass clean
+4. Tag vX.Y.Z and push with the tag</code></pre>
+<p>The <code>description</code> is the trigger — write it like a search query Claude should match ("before release", "cut a version"). Instructions stay imperative and short; drop in the exact commands so nothing is improvised.</p>`,
+      },
+    ],
+    sim: {
+      hint: 'Simulated session with skills installed.',
+      commands: {
+        'cut a release for the dashboard': [
+          '● skill matched: release-checklist',
+          '● Bumping version 2.1.0 → 2.2.0 in package.json',
+          '● Regenerating CHANGELOG.md from 7 merged PRs',
+          '● pnpm test ✓ · pnpm build ✓',
+          'Ready to tag v2.2.0 — approve?',
+        ],
+        '/skills': [
+          'Installed skills:',
+          '  release-checklist  (project)  — run before cutting any release',
+          '  api-error-style    (personal) — house style for API error responses',
+          '  migration-rules    (project)  — how we write DB migrations',
+        ],
+        'write a new API endpoint': [
+          '● skill matched: api-error-style',
+          '● Drafting endpoint with { error, code, message } envelope per house style',
+        ],
+      },
+    },
+    quiz: [
+      {
+        q: "When does a skill's full SKILL.md get loaded?",
+        options: ['Every prompt', 'Only when the request matches its description', 'On /skills', 'Never — you open it manually'],
+        answer: 1,
+        explain: 'Progressive disclosure: descriptions ride along cheaply; the body loads on relevance.',
+      },
+      {
+        q: 'Team-wide skills that ship with the repo live in:',
+        options: ['~/.claude/skills/', '.claude/skills/', 'skills.json', 'node_modules/'],
+        answer: 1,
+        explain: '.claude/skills/ is committed with the project; ~/.claude/skills/ is personal.',
+      },
+      {
+        q: '"Whenever we touch auth code, follow our security checklist" is best implemented as:',
+        options: ['A slash command', 'A CLAUDE.md paragraph', 'A skill', 'A git hook'],
+        answer: 2,
+        explain: "It's contextual knowledge Claude should apply when relevant — the definition of a skill.",
+      },
+    ],
+  },
+  {
+    slug: 'mcp',
+    title: "MCP: plug in the world's tools",
+    tool: 'Claude Code',
+    level: 'Intermediate',
+    minutes: 12,
+    summary: 'Model Context Protocol turns Claude Code into a client for databases, browsers, issue trackers — any tool with an MCP server.',
+    sections: [
+      {
+        heading: 'The protocol in one paragraph',
+        body: `<p><strong>MCP (Model Context Protocol)</strong> is an open standard: servers expose tools, resources and prompts; clients (Claude Code, Claude Desktop, many IDEs) discover and call them. For you it means one sentence: <em>Claude can query Postgres, drive a browser, read Jira — through the same permission system as its built-in tools.</em></p>
+<p>Add servers via <code>claude mcp add</code> or a committed <code>.mcp.json</code> at the repo root — teammates get the same toolbelt on their next session. Inside a session, <code>/mcp</code> lists servers, their status, and available tools.</p>`,
+      },
+      {
+        heading: 'Transports: stdio and HTTP',
+        body: `<p><strong>stdio</strong> servers are local processes — Claude Code spawns them and talks over stdin/stdout. Perfect for tools that run on your machine (filesystem, local DB CLIs, Puppeteer).</p>
+<p><strong>HTTP</strong> servers run remotely (yours or a vendor's) and connect by URL — often with OAuth, so the server sees the logged-in user, not your machine. Hosted services (Linear, Sentry, Notion…) typically ship HTTP endpoints.</p>`,
+      },
+      {
+        heading: 'A practical starter set',
+        body: `<ul>
+<li><strong>github</strong> — open issues, read PRs, create branches without leaving the loop.</li>
+<li><strong>postgres / sqlite</strong> — "what does the orders table look like?" becomes a real query, not a guess.</li>
+<li><strong>puppeteer / playwright</strong> — Claude opens your app, clicks through the flow it just built, and screenshots the result.</li>
+</ul>
+<p>Scope deliberately: each server adds tools to every prompt's context. A lean <code>.mcp.json</code> with the three servers you actually use beats fifteen idle ones.</p>`,
+      },
+    ],
+    sim: {
+      hint: 'Simulated session with MCP servers connected.',
+      commands: {
+        '/mcp': [
+          'MCP servers:',
+          '  ✓ github      (http)   12 tools — issues, PRs, repos',
+          '  ✓ postgres    (stdio)   4 tools — read-only SQL',
+          '  ✓ puppeteer   (stdio)   7 tools — navigate, click, screenshot',
+          '  ✗ linear      (http)   auth expired — /mcp auth linear',
+        ],
+        'what are the 5 newest orders?': [
+          '● mcp__postgres__query: SELECT id, total, created_at FROM orders ORDER BY created_at DESC LIMIT 5',
+          '  1. #4821 · $129.00 · 2h ago',
+          '  2. #4820 · $64.50 · 5h ago',
+          '  … 3 more rows',
+        ],
+        'open the pricing page and screenshot it': [
+          '● mcp__puppeteer__navigate → http://localhost:4321/pricing',
+          '● mcp__puppeteer__screenshot → pricing.png (1440×900)',
+          '✓ Saved. The pricing table overflows on this viewport — want a fix?',
+        ],
+        'create an issue for that': [
+          '● mcp__github__create_issue',
+          '✓ #142 "Pricing table overflows on wide viewports" opened',
+        ],
+      },
+    },
+    quiz: [
+      {
+        q: 'Where does a repo-committed MCP server list live?',
+        options: ['.mcp.json', 'mcp.config.js', 'CLAUDE.md', '.github/mcp.yaml'],
+        answer: 0,
+        explain: '.mcp.json at the repo root shares the server config with the whole team.',
+      },
+      {
+        q: 'A local process server speaking over stdin/stdout uses which transport?',
+        options: ['http', 'websocket', 'stdio', 'grpc'],
+        answer: 2,
+        explain: 'stdio servers run locally; http servers connect by URL (often with OAuth).',
+      },
+      {
+        q: "You connected fifteen MCP servers but use two. The real cost is:",
+        options: ['None — unused tools are free', 'Slower npm installs', "Extra tool definitions in every prompt's context", 'Git size'],
+        answer: 2,
+        explain: 'Every connected tool adds definitions to context. Scope .mcp.json to what you use.',
+      },
+    ],
+  },
+  {
+    slug: 'subagents',
+    title: 'Subagents & agent teams',
+    tool: 'Claude Code',
+    level: 'Advanced',
+    minutes: 12,
+    summary: 'Delegate parallel work to specialized sub-agents with their own prompts, tools and context — and coordinate the results.',
+    sections: [
+      {
+        heading: 'Why subagents exist',
+        body: `<p>A single long session accumulates context: every file read and command output stays in the transcript. A <strong>subagent</strong> is a fresh, isolated context with its own system prompt and tool access, dispatched by the main session for one job — "investigate the flaky test," "scan for TODOs," "review this diff." It burns its own tokens, then returns a summary.</p>
+<p>The win is twofold: the main thread stays lean (only conclusions return), and independent jobs can run in <strong>parallel</strong>. Claude does this automatically for natural sub-tasks; you can also invoke agents explicitly with the Agent tool.</p>`,
+      },
+      {
+        heading: 'Defining your own agents',
+        body: `<p><code>/agents</code> opens the manager; agents are markdown files with frontmatter in <code>.claude/agents/</code>:</p>
+<pre><code>---
+name: test-runner
+description: Runs the test suite and triages failures. Use when tests break.
+tools: [Bash, Read, Grep]
+---
+You triage failing tests. Reproduce first, then identify the minimal
+root cause. Never edit application code — report findings only.</code></pre>
+<p>The <code>description</code> is how the main agent knows when to delegate; <code>tools</code> constrains what the subagent may do. A read-only "investigator" and a full-access "implementer" are a classic pair.</p>`,
+      },
+      {
+        heading: 'Agent teams',
+        body: `<p>For bigger jobs, agents can coordinate as a <strong>team</strong>: a lead breaks work into a shared task list, teammates claim tasks and message each other when done. It's the shift from "one assistant with a todo list" to "a stand-up meeting that executes itself" — powerful for parallelizable work like migrating many files, and worth running with a clean git tree and close supervision the first few times.</p>`,
+      },
+    ],
+    sim: {
+      hint: 'Simulated session delegating to subagents.',
+      commands: {
+        '/agents': [
+          'Configured agents (.claude/agents/):',
+          '  investigator  — read-only triage · tools: Bash, Read, Grep',
+          '  implementer   — full edit access · tools: all',
+        ],
+        '3 tests are failing — find the root cause': [
+          '● Dispatching subagent: investigator (read-only)',
+          '● investigator: reproduced 3/3 · common factor: Date.now() in cache key',
+          'Summary: midnight UTC rollover invalidates cache keys — one-line fix in cache.ts:41.',
+        ],
+        'fix it and run the suite': [
+          '● Dispatching subagent: implementer',
+          '● implementer: cache.ts:41 → date-keyed bucket id',
+          '✓ 41/41 tests pass · diff ready for review (1 file, +2 −1)',
+        ],
+      },
+    },
+    quiz: [
+      {
+        q: 'The main benefit of delegating to a subagent (vs doing it in-session):',
+        options: ['It is smarter', 'Isolated context — only conclusions return to the main thread', 'It skips permissions', 'It works offline'],
+        answer: 1,
+        explain: 'Subagent transcripts stay isolated; the parent receives a summary, keeping its own context lean.',
+      },
+      {
+        q: 'A read-only triage agent should declare:',
+        options: ['tools: all', 'tools: [Bash, Read, Grep] plus no Edit/Write', 'no frontmatter', 'unlimited retries'],
+        answer: 1,
+        explain: 'Constraining tools encodes "investigate, don\'t modify" at the harness level.',
+      },
+      {
+        q: 'The description field in an agent file exists so that:',
+        options: ['Users can browse it', 'The main agent knows when delegation is appropriate', 'Git history is readable', 'VS Code shows a tooltip'],
+        answer: 1,
+        explain: 'Descriptions are the routing signal the parent uses to pick and dispatch agents.',
+      },
+    ],
+  },
+  {
+    slug: 'plugins',
+    title: 'Plugins & marketplaces',
+    tool: 'Claude Code',
+    level: 'Intermediate',
+    minutes: 8,
+    summary: 'Bundle commands, agents, skills, hooks and MCP servers into one installable unit — and share your toolkit the way you share npm packages.',
+    sections: [
+      {
+        heading: 'The problem plugins solve',
+        body: `<p>After a month you accumulate: four custom commands, two agents, a skill, a formatting hook, an MCP server. Handing that to a teammate means a copy-paste tour of six directories. A <strong>plugin</strong> bundles all of it under one name with one install.</p>
+<p>Install from a marketplace with <code>/plugin</code>: browse, install, enable/disable per project. Under the hood it's still the primitives you know — the plugin just ships the files for you.</p>`,
+      },
+      {
+        heading: 'Marketplaces',
+        body: `<p>A marketplace is just a git repository with a manifest listing plugins. Add one with <code>/plugin marketplace add owner/repo</code>, then install from it. Teams keep a private marketplace repo with their internal tooling; public ones already exist for common stacks.</p>
+<p>Anatomy of a plugin directory: <code>commands/</code>, <code>agents/</code>, <code>skills/</code>, <code>hooks/</code>, <code>.mcp.json</code> — every folder is optional. If you've followed the earlier lessons, you already know how to build every piece.</p>`,
+      },
+      {
+        heading: 'When to reach for one',
+        body: `<p>Solo and staying solo? Files in <code>.claude/</code> are simpler — skip plugins. Sharing across repos or teams, or wanting enable/disable per project? That's the plugin moment. Rule of thumb: <em>commands you'd have to re-explain are plugins; config you'd have to re-type are settings.</em></p>`,
+      },
+    ],
+    sim: {
+      hint: 'Simulated plugin workflow.',
+      commands: {
+        '/plugin': [
+          'Plugin manager:',
+          '  marketplaces: team-tools (github.com/acme/team-tools)',
+          '  installed:    pr-reviewer ✓ enabled · deploy-kit ⏸ disabled',
+          '  browse:       /plugin install <name>',
+        ],
+        '/plugin install pr-reviewer': [
+          '● Resolving acme/team-tools → pr-reviewer@1.4.0',
+          '✓ Installed: 3 commands (/review, /approve, /pr-comments), 1 agent, 1 hook',
+        ],
+        '/review': ['● pr-reviewer plugin → /review', '⚠ auth.js:23 SQL concatenation · db.js:88 N+1', '✓ 2 findings'],
+        '/plugin disable deploy-kit': ['✓ deploy-kit disabled in this project (files kept, tools unloaded)'],
+      },
+    },
+    quiz: [
+      {
+        q: 'A plugin can bundle:',
+        options: ['Only slash commands', 'Commands, agents, skills, hooks and MCP servers', 'Only MCP servers', 'Only CLAUDE.md files'],
+        answer: 1,
+        explain: 'Plugins package every Claude Code extension primitive under one installable name.',
+      },
+      {
+        q: 'A marketplace is:',
+        options: ['A paid app store', 'A git repo with a plugin manifest', 'An npm registry mirror', 'A built-in catalog only'],
+        answer: 1,
+        explain: 'Add any git repo as a marketplace with /plugin marketplace add owner/repo — private team repos work great.',
+      },
+      {
+        q: 'The leanest correct setup for a solo dev on one repo:',
+        options: ['Always build plugins', 'Plain .claude/ files, no plugin layer', 'Marketplace for everything', 'Disable plugins globally'],
+        answer: 1,
+        explain: 'Plugins earn their keep when sharing across projects or people; for one repo, plain files are simpler.',
+      },
+    ],
+  },
+  {
+    slug: 'git-workflows',
+    title: 'Claude Code × Git',
+    tool: 'Claude Code',
+    level: 'Intermediate',
+    minutes: 10,
+    summary: 'Commits, PRs, worktrees and code review — the workflows where an agent with repo access pays for itself daily.',
+    sections: [
+      {
+        heading: 'Commits and PRs without the chore',
+        body: `<p>"commit this" is the most-used Claude Code phrase for a reason: it diffs the tree, writes a conventional message from the actual changes, and commits. Same for PRs — describe the change and it drafts title, body, and test notes via <code>gh</code>.</p>
+<p>The force multiplier is history awareness: ask "why does function X exist?" and it reads the blame and commit messages. Ask it to find which release broke something and it walks tags and diffs for you.</p>`,
+      },
+      {
+        heading: 'Worktrees — parallel Claudes, zero conflicts',
+        body: `<p>Two agent sessions in one checkout fight over the same files. <strong>Git worktrees</strong> fix that: <code>git worktree add ../feat-a -b feat-a</code> gives branch <code>feat-a</code> its own directory. Run one Claude per worktree — refactor in one, hotfix in the other, merge both.</p>
+<p>Keep a rule: one session, one worktree, one branch. It's the cheapest concurrency model there is, and it needs no sync infrastructure.</p>`,
+      },
+      {
+        heading: 'Review on both sides of the diff',
+        body: `<p>Before pushing: "review my diff like a harsh senior" — expect real findings, not praise. After pushing: the <code>claude-code-action</code> reviews incoming PRs on GitHub, and /mcp GitHub tools let your local session read review comments and fix them. The pattern that sticks: <strong>agent writes, agent self-reviews, human reviews the result.</strong></p>`,
+      },
+    ],
+    sim: {
+      hint: 'Simulated git session.',
+      commands: {
+        'commit this': [
+          '● Diffing 3 files (+84 −12)…',
+          'Suggested: feat(pagination): clamp offset, add page-0 regression test',
+          '✓ committed',
+        ],
+        'open a pr': [
+          '● gh pr create --fill',
+          'Title: feat(pagination): clamp offset, add regression test',
+          'Body: ## What · ## Why · ## Tests',
+          '✓ https://github.com/acme/app/pull/143',
+        ],
+        'git worktree add ../hotfix-121 -b hotfix/121': [
+          '✓ worktree ../hotfix-121 on branch hotfix/121',
+          'Tip: cd ../hotfix-121 && claude — parallel session, zero file conflicts',
+        ],
+        'why does normalizePhone exist?': [
+          '● git log -S normalizePhone --oneline → a41f2c9 (Mar)',
+          'It normalizes E.164 for the Twilio sync added in a41f2c9; without it the API rejects +1-prefixed numbers.',
+        ],
+      },
+    },
+    quiz: [
+      {
+        q: 'Two Claude sessions must edit the same repo simultaneously. The clean answer:',
+        options: ['Same directory, take turns', 'git worktrees — one branch per directory', 'One session, two prompts', 'Copy the repo twice'],
+        answer: 1,
+        explain: 'Worktrees give each session an isolated checkout and branch; merges stay ordinary git.',
+      },
+      {
+        q: '"commit this" produces a good message because Claude:',
+        options: ['Asks you for keywords', 'Reads the actual diff and recent history', 'Uses the last message', 'Picks a random convention'],
+        answer: 1,
+        explain: 'Messages are derived from the real change plus repo conventions — review before accepting.',
+      },
+      {
+        q: 'Which sequence uses the agent most safely on a tricky change?',
+        options: ['Edit → commit → push → pray', 'Plan mode → implement → agent self-review → human review', 'Full access, review later', 'Skip review — it tested it'],
+        answer: 1,
+        explain: 'Read-only plan, then implementation, then a fresh-eyes review pass — human judgement stays in the loop.',
+      },
+    ],
+  },
+  {
+    slug: 'context-management',
+    title: 'Context: the invisible budget',
+    tool: 'Claude Code',
+    level: 'Beginner',
+    minutes: 8,
+    summary: 'Why long sessions get slow and expensive — and the three commands plus one habit that keep context lean.',
+    sections: [
+      {
+        heading: 'What fills the tank',
+        body: `<p>Every prompt ships the whole conversation: system rules, CLAUDE.md, tool definitions, every file you read, every command output. A 200-line file read "to check something" rides along with <em>every subsequent message</em>. Long sessions don't just cost more — quality degrades as relevant details get crowded out.</p>
+<p>Run <code>/context</code> to see the current breakdown. The usual suspects: giant file dumps, verbose tool outputs, and a session that has survived three unrelated tasks.</p>`,
+      },
+      {
+        heading: 'The three commands',
+        body: `<ul>
+<li><strong>/compact</strong> — summarize the session and drop the raw history. Use when context grows but the task continues.</li>
+<li><strong>/clear</strong> — wipe everything for a fresh start. Use when switching tasks; stale context is worse than no context.</li>
+<li><strong>/context</strong> — inspect what's occupying the window; the fuel gauge.</li>
+</ul>
+<p>Related: CLAUDE.md loads every single prompt, so every line you delete from it is a line saved thousands of times. Keep memory files ruthlessly curated.</p>`,
+      },
+      {
+        heading: 'The habit: one task, one session',
+        body: `<p>The pros don't manage context heroically — they avoid the problem. One bug = one session = one commit. Need the fix summarized for a PR? Ask first, then <code>/clear</code>. New task tomorrow? Fresh session, fresh context, CLAUDE.md carries the project knowledge so nothing important is lost.</p>
+<p>Subagents extend the same idea: heavy exploration happens in isolated contexts whose summaries come back, while the raw reading never enters your main thread.</p>`,
+      },
+    ],
+    sim: {
+      hint: 'Simulated context meters — watch the numbers move.',
+      commands: {
+        '/context': [
+          'Context window usage: 61k / 200k tokens',
+          '  system + tools        12k',
+          '  CLAUDE.md              1.8k',
+          '  conversation + files  47k  ← 3 large file reads',
+        ],
+        '/compact': ['● Compacting… 61k → 14k tokens. Task summary retained.'],
+        '/clear': ['✓ History cleared. Context: 3.1k tokens (system + CLAUDE.md only).'],
+      },
+    },
+    quiz: [
+      {
+        q: 'Switching from the pagination bug to a new feature. Best move:',
+        options: ['/compact and continue', 'Keep going — context is free', '/clear and start fresh', 'Open a second terminal in the same directory'],
+        answer: 2,
+        explain: 'Unrelated stale context actively hurts; /clear plus a fresh session is the clean cut. (/compact is for continuing the SAME task.)',
+      },
+      {
+        q: 'Which file is worth the most editing scrutiny because it loads every prompt?',
+        options: ['README.md', 'CLAUDE.md', 'package-lock.json', '.gitignore'],
+        answer: 1,
+        explain: 'CLAUDE.md is paid for on every message — terse and high-signal wins.',
+      },
+      {
+        q: 'The command that shows what currently occupies the context window:',
+        options: ['/cost', '/status', '/context', '/usage'],
+        answer: 2,
+        explain: '/context breaks down window usage; /cost shows money spent.',
+      },
+    ],
+  },
+  {
+    slug: 'ci-cd',
+    title: 'Claude Code in CI/CD',
+    tool: 'Claude Code',
+    level: 'Advanced',
+    minutes: 11,
+    summary: 'From terminal to pipeline: the GitHub Action, headless runs, and the rules that make unattended agents trustworthy.',
+    sections: [
+      {
+        heading: 'The official GitHub Action',
+        body: `<p><code>claude-code-action</code> brings the same agent to Pull Requests and issues: mention <code>@claude</code> in a comment and it can answer questions, review diffs, fix flagged issues and push commits — with an allowlist of what it may touch. Setup is one workflow file plus API credentials.</p>
+<p>The killer workflows: <strong>triage</strong> (new issue → labelled, summarized, duplicates flagged) and <strong>review-and-fix</strong> (CI fails on a PR → agent reads the failure, pushes a fix, explains the root cause).</p>`,
+      },
+      {
+        heading: 'Headless runs as build steps',
+        body: `<p>Anything you can phrase as text-in → text-out can be a pipeline step with <code>claude -p</code>:</p>
+<pre><code>- run: claude -p "summarize this diff for release notes" &lt; diff.txt &gt;&gt; notes.md
+  env: { ANTHROPIC_API_KEY: \${{ secrets.ANTHROPIC_API_KEY }} }</code></pre>
+<p>Deterministic wrappers matter: the agent drafts, your scripts validate (tests, linters, type checks run as separate steps — never trust "it looks right").</p>`,
+      },
+      {
+        heading: 'Rules for unattended agents',
+        body: `<ul>
+<li><strong>Least privilege</strong> — a CI agent gets the repo and nothing else: no cloud keys, no prod access. Permission allowlists work headless too.</li>
+<li><strong>Bounded scope</strong> — "fix this failing test," never "improve the codebase."</li>
+<li><strong>Human merge</strong> — the agent pushes to a branch; a human (or required reviews) merges.</li>
+<li><strong>Budget guardrails</strong> — cap runtime and spend per run so a confused loop costs minutes, not a weekend.</li>
+</ul>`,
+      },
+    ],
+    sim: {
+      hint: 'Simulated CI run with @claude on a PR.',
+      commands: {
+        '@claude why is CI red?': [
+          '● claude-code-action on PR #143',
+          '● Reading failed job: test (node 22) — pagination.spec.ts:17',
+          'Diagnosis: test asserts page 1-indexed, code is 0-indexed after the clamp fix.',
+          '● Pushing fix to branch: 1 commit',
+          '✓ "test: align pagination spec with 0-indexed pages" — CI green',
+        ],
+        'claude -p "release notes from these PRs" < prs.md': [
+          '## 2.2.0',
+          '- clamp pagination offset (fixes #142)',
+          '- test: align pagination spec',
+        ],
+        'deny rules in CI settings': [
+          'permissions.deny: [Bash(git push --force), Bash(npm publish)]',
+          '✓ unattended runs cannot force-push or publish',
+        ],
+      },
+    },
+    quiz: [
+      {
+        q: 'What triggers claude-code-action in the standard setup?',
+        options: ['Every commit', 'Mentioning @claude in an issue or PR', 'A cron schedule only', 'Failed builds only'],
+        answer: 1,
+        explain: 'The action listens for mentions; you converse with the agent right in the PR thread.',
+      },
+      {
+        q: 'The safest CI setup for an agent that fixes failing tests:',
+        options: ['Full access + auto-merge', 'Scoped branch pushes + human merge + deny rules', 'No permissions — describe fixes in comments', 'Run it locally instead'],
+        answer: 1,
+        explain: 'Least privilege with a human merge keeps untrusted automation contained.',
+      },
+      {
+        q: 'Agent-edited code in a pipeline should be gated by:',
+        options: ['Agent self-report', 'Your existing tests/linters as separate steps', 'Nothing — it is usually right', 'A second agent approval'],
+        answer: 1,
+        explain: 'Deterministic checks validate agent output; agents draft, pipelines verify.',
+      },
+    ],
+  },
+  {
+    slug: 'codex-automation',
+    title: 'Codex: exec, config & automation',
+    tool: 'Codex',
+    level: 'Intermediate',
+    minutes: 10,
+    summary: 'The Codex power layer: config.toml, non-interactive exec, MCP support, and where it differs from Claude Code.',
+    sections: [
+      {
+        heading: "config.toml — the memory file's sibling",
+        body: `<p>Codex keeps preferences in <code>~/.codex/config.toml</code>: default model, approval policy, sandbox mode, and per-project profile overrides. Where Claude Code spreads settings across <code>.claude/</code> JSON files, Codex concentrates them in one TOML — check a project-level config into the repo for shared behavior.</p>
+<p>Run <code>codex --profile</code> to switch presets: a paranoid read-only profile for unfamiliar repos, a workspace-write profile for your own.</p>`,
+      },
+      {
+        heading: 'exec — the scriptable mode',
+        body: `<p><code>codex exec "task"</code> runs headless under the configured sandbox — the CI-friendly primitive. Combine with <code>--sandbox read-only</code> for analysis jobs or <code>workspace-write</code> for fix jobs, and pipe output onward:</p>
+<pre><code>codex exec --sandbox read-only "summarize the failing CI log" &lt; ci.log</code></pre>
+<p>Same rule as Claude Code's <code>-p</code>: the agent drafts, deterministic checks verify.</p>`,
+      },
+      {
+        heading: 'MCP and the differences that matter',
+        body: `<p>Codex speaks MCP too — servers configured in its config file extend it with the same tool ecosystem. Choosing between the two CLIs is now a preference, not a capability gap; both ship roughly weekly (tracked on our <a href="/changelog">changelog page</a>).</p>
+<p>Practical differences: Codex is <strong>open source</strong> (Rust core — read the source, file issues), historically stronger in <strong>sandbox ergonomics</strong> (explicit read-only/workspace-write/full-access dials), while Claude Code leans on <strong>hooks/skills/plugins</strong> for extensibility. Teams run both; the AGENTS.md file format works across them.</p>`,
+      },
+    ],
+    sim: {
+      hint: 'Simulated Codex automation session.',
+      commands: {
+        'cat ~/.codex/config.toml': [
+          'model = "gpt-5.6-codex"',
+          'approval_policy = "on-request"',
+          'sandbox = "workspace-write"',
+          '',
+          '[profiles.readonly]',
+          'sandbox = "read-only"',
+        ],
+        'codex --profile readonly exec "audit auth.js for injection risks"': [
+          '● headless · sandbox: read-only',
+          '⚠ auth.js:23 — string-concatenated SQL (parameterize it)',
+          '✓ report complete (no files touched)',
+        ],
+        'codex exec "add parameterized query to auth.js" --sandbox workspace-write': [
+          '● patching auth.js:23 → prepared statement',
+          '✓ done · diff: +3 −2 · tests not run (run them yourself)',
+        ],
+      },
+    },
+    quiz: [
+      {
+        q: "Codex's centralized settings file is:",
+        options: ['settings.json', 'config.toml', 'codex.yaml', 'AGENTS.toml'],
+        answer: 1,
+        explain: '~/.codex/config.toml holds model, approval policy, sandbox and profiles.',
+      },
+      {
+        q: 'An audit job must not modify files. The right invocation:',
+        options: ['codex exec --sandbox read-only', 'codex --full-access', 'codex exec --ask', 'codex tui'],
+        answer: 0,
+        explain: 'read-only sandbox guarantees analysis without writes.',
+      },
+      {
+        q: 'Which project-memory format do BOTH CLIs read?',
+        options: ['CLAUDE.md only', 'AGENTS.md', 'MEMORY.md', 'README.md'],
+        answer: 1,
+        explain: 'AGENTS.md is the cross-tool convention (Codex /init generates it; Claude Code also reads it).',
+      },
+    ],
+  },
 ];
 
 export const bySlug = Object.fromEntries(modules.map((m) => [m.slug, m]));

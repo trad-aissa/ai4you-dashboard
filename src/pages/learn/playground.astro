@@ -1,0 +1,176 @@
+---
+// src/pages/learn/playground.astro — full-size sandbox terminal
+import Layout from '../../layouts/Layout.astro';
+import { playgroundCategories, playgroundCommandCount } from '../../data/playground.js';
+---
+
+<Layout title="Playground — try Claude Code & Codex in your browser · ai4you.site" path="/learn/playground" description="A full-size, safe terminal sandbox: run every Claude Code and Codex command from our lessons, with command history and tab completion — nothing touches your machine." breadcrumbs={[{ name: 'Learn', path: '/learn' }, { name: 'Playground', path: '/learn/playground' }]}>
+  <section class="wrap pg-hero">
+    <span class="kicker">Sandbox · {playgroundCommandCount} commands · history · tab-completion · zero risk</span>
+    <h1>The playground.</h1>
+    <p class="lede">
+      A simulated terminal with every command from our lessons. Type <code class="pg-inline">help</code>, press
+      <kbd>Tab</kbd> to complete, <kbd>↑</kbd>/<kbd>↓</kbd> for history — nothing here touches your machine.
+    </p>
+  </section>
+
+  <section class="wrap" aria-label="Sandbox terminal">
+    <div class="pg-term">
+      <div class="pg-bar">
+        <span class="pg-dot"></span><span class="pg-dot"></span><span class="pg-dot"></span>
+        <span class="pg-title">guest@ai4you — sandbox</span>
+        <span class="pg-progress" id="pg-progress">0/{playgroundCommandCount}</span>
+        <button type="button" class="pg-copy" id="pg-copy">Copy transcript</button>
+        <button type="button" class="pg-reset" id="pg-reset">Reset</button>
+      </div>
+      <div class="pg-screen" id="pg-screen" tabindex="-1">
+        <p class="pg-line pg-hint">Welcome. Try: <code data-run="help">help</code></p>
+      </div>
+      <div class="pg-input-row">
+        <span class="pg-prompt">❯</span>
+        <input id="pg-input" type="text" spellcheck="false" autocomplete="off" aria-label="Terminal command input" placeholder="type a command… (Tab completes, ↑ history)" />
+      </div>
+    </div>
+
+    <div class="pg-cats">
+      {playgroundCategories.map((c) => (
+        <div class="pg-cat">
+          <h3>{c.label}</h3>
+          <div class="pg-chips">
+            {Object.keys(c.commands).map((cmd) => <code data-run={cmd}>{cmd}</code>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import { playgroundCategories } from '../../data/playground.js';
+
+  const term = document.getElementById('pg-screen');
+  const input = document.getElementById('pg-input');
+  const progressEl = document.getElementById('pg-progress');
+  const COMMANDS = Object.fromEntries(playgroundCategories.flatMap((c) => Object.entries(c.commands)));
+  const allNames = Object.keys(COMMANDS);
+  const history = [];
+  let histPos = -1;
+  const run = new Set();
+
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const line = (html, cls = '') => {
+    const p = document.createElement('p');
+    p.className = `pg-line ${cls}`;
+    p.innerHTML = html;
+    term.appendChild(p);
+    term.scrollTop = term.scrollHeight;
+  };
+  const norm = (s) => s.trim().replace(/\s+/g, ' ');
+  const updateProgress = () => {
+    progressEl.textContent = `${run.size}/${allNames.length}`;
+  };
+
+  const exec = (raw) => {
+    const cmd = norm(raw);
+    if (!cmd) return;
+    line(`<span class="pg-prompt">❯</span> ${esc(cmd)}`, 'pg-echo');
+    history.push(cmd);
+    histPos = history.length;
+    const key = allNames.find((k) => norm(k).toLowerCase() === cmd.toLowerCase());
+    if (key) {
+      for (const l of COMMANDS[key]) line(esc(l), 'pg-out');
+      run.add(key);
+      updateProgress();
+    } else if (/^(clear|cls)$/i.test(cmd)) {
+      for (const child of [...term.children]) if (!child.classList.contains('pg-hint')) child.remove();
+    } else {
+      line(`command not found: ${esc(cmd.split(' ')[0])} — this sandbox simulates the agent CLIs only. Try <code data-run="help">help</code> or click any suggestion below.`, 'pg-err');
+    }
+  };
+
+  const complete = () => {
+    const cur = input.value.trim().toLowerCase();
+    if (!cur) return;
+    const matches = allNames.filter((k) => k.toLowerCase().startsWith(cur));
+    if (matches.length === 1) {
+      input.value = matches[0];
+    } else if (matches.length > 1) {
+      const common = matches.reduce((p, c) => { let i = 0; while (i < p.length && p[i] === c[i]) i++; return p.slice(0, i); });
+      input.value = common.length > cur.length ? common : input.value;
+      line(esc(matches.join('  ')), 'pg-hint');
+    }
+  };
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { exec(input.value); input.value = ''; }
+    else if (e.key === 'Tab') { e.preventDefault(); complete(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); if (histPos > 0) input.value = history[--histPos] ?? ''; }
+    else if (e.key === 'ArrowDown') { e.preventDefault(); if (histPos < history.length - 1) input.value = history[++histPos]; else { histPos = history.length; input.value = ''; } }
+    else if (e.key === 'l' && e.ctrlKey) { e.preventDefault(); for (const c of [...term.children]) if (!c.classList.contains('pg-hint')) c.remove(); }
+  });
+
+  // clickable suggestion chips (hint + category lists)
+  document.addEventListener('click', (e) => {
+    const chip = e.target.closest('[data-run]');
+    if (!chip) return;
+    exec(chip.dataset.run);
+    input.focus();
+  });
+
+  document.getElementById('pg-copy')?.addEventListener('click', async (e) => {
+    const text = [...term.querySelectorAll('.pg-line')].map((p) => p.textContent).join('\n');
+    await navigator.clipboard?.writeText(text);
+    e.target.textContent = 'Copied ✓';
+    setTimeout(() => (e.target.textContent = 'Copy transcript'), 1500);
+  });
+  document.getElementById('pg-reset')?.addEventListener('click', () => {
+    for (const c of [...term.children]) c.remove();
+    run.clear();
+    updateProgress();
+    line('Sandbox reset. Try: <code data-run="help">help</code>', 'pg-hint');
+    input.focus();
+  });
+
+  updateProgress();
+</script>
+
+<style>
+  .pg-hero { padding: 56px 0 28px; }
+  .pg-hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(38px, 5vw, 60px); margin: 12px 0 10px; letter-spacing: -0.02em; }
+  .pg-hero .lede { color: var(--muted); max-width: 64ch; }
+  .pg-inline, .pg-hero kbd { font-family: var(--mono); font-size: 12px; background: var(--canvas); border: 1px solid var(--hairline-strong); border-radius: 4px; padding: 1px 6px; }
+  .pg-term { border-radius: 12px; overflow: hidden; border: 1px solid #2E2D2A; box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+  .pg-bar { display: flex; align-items: center; gap: 6px; background: #26251F; padding: 10px 14px; }
+  .pg-dot { width: 11px; height: 11px; border-radius: 999px; background: #B35B5B; }
+  .pg-dot:nth-child(2) { background: #B39D5B; }
+  .pg-dot:nth-child(3) { background: #6FA96F; }
+  .pg-title { font-family: var(--mono); font-size: 11.5px; color: #A5A29A; margin-left: 8px; }
+  .pg-progress { margin-left: auto; font-family: var(--mono); font-size: 11px; color: #93C48E; }
+  .pg-copy, .pg-reset { background: none; border: 1px solid #3D3B35; color: #A5A29A; font: 500 11px/1 var(--sans); border-radius: 6px; padding: 5px 9px; cursor: pointer; }
+  .pg-copy:hover, .pg-reset:hover { color: #E8E6E0; border-color: #5A5850; }
+  .pg-screen {
+    background: #1B1A17; color: #E8E6E0;
+    font-family: var(--mono); font-size: 13px; line-height: 1.65;
+    padding: 16px 18px; height: 420px; overflow-y: auto;
+  }
+  .pg-line { margin: 0 0 2px; white-space: pre-wrap; word-break: break-word; }
+  .pg-hint { color: #8B897F; }
+  .pg-hint code, .pg-cat code {
+    cursor: pointer; background: #2E2D28; color: #C9C7BF;
+    border-radius: 4px; padding: 1px 6px; font-size: 12px;
+  }
+  .pg-hint code:hover, .pg-cat code:hover { background: #3A3833; color: #E8E6E0; }
+  .pg-echo { color: #E8E6E0; }
+  .pg-echo .pg-prompt, .pg-input-row .pg-prompt { color: #93C48E; }
+  .pg-out { color: #B8B6AE; }
+  .pg-err { color: #E39390; }
+  .pg-input-row { display: flex; align-items: center; background: #232220; border-top: 1px solid #2E2D2A; padding: 12px 18px; }
+  .pg-input-row .pg-prompt { margin-right: 10px; font-family: var(--mono); }
+  .pg-input-row input { flex: 1; background: none; border: none; outline: none; font-family: var(--mono); font-size: 14px; color: #E8E6E0; caret-color: #93C48E; }
+  .pg-cats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0 72px; }
+  .pg-cat { border: 1px solid var(--hairline); background: var(--surface); border-radius: 10px; padding: 16px 18px; }
+  .pg-cat h3 { font: 600 13px/1.3 var(--sans); margin: 0 0 10px; color: var(--ink); }
+  .pg-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pg-chips code { font-family: var(--mono); }
+  @media (max-width: 720px) { .pg-cats { grid-template-columns: 1fr; } .pg-screen { height: 340px; } }
+</style>

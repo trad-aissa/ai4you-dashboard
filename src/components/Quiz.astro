@@ -64,6 +64,7 @@ const { questions, title = 'Check yourself' } = Astro.props;
       if (answered === questions.length) {
         scoreEl.textContent = `Score: ${correct}/${questions.length}` + (correct === questions.length ? ' — perfect. 🎉' : ' — read the explanations above, then retake.');
         retake.hidden = false;
+        window.dispatchEvent(new CustomEvent('a4u-quiz-complete', { detail: { score: correct, total: questions.length } }));
       }
     });
 

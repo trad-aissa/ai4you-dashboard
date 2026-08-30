@@ -3,26 +3,51 @@
 import Layout from '../../layouts/Layout.astro';
 import { modules } from '../../data/learn.js';
 
+const totalMinutes = modules.reduce((n, m) => n + m.minutes, 0);
 const toolChip = (t) => (t === 'Codex' ? 'chip--product' : 'chip--model');
+
+const tools = [
+  { href: '/learn/playground', title: 'Playground', desc: `A full-size sandbox terminal: every command from the lessons, with history and tab-completion. Zero risk.`, cta: 'Open the terminal' },
+  { href: '/learn/builder', title: 'Config Builder', desc: 'Generate CLAUDE.md, permission hooks, MCP server lists, slash commands, skills and agents — live preview, copy or download.', cta: 'Build a config' },
+  { href: '/learn/cheat-sheet', title: 'Cheat Sheet', desc: 'Every slash command, flag, file, mode and shortcut — on one printable page.', cta: 'Open the cheat sheet' },
+  { href: '/learn/features', title: 'Feature Index', desc: 'Searchable index of both CLIs: commands, flags, files, hooks, modes and concepts — linked to lessons.', cta: 'Search features' },
+  { href: '/learn/resources', title: 'Resources', desc: 'Copy-paste starter templates: CLAUDE.md, guardrail settings, .mcp.json, CI workflow and more.', cta: 'Get templates' },
+  { href: '/changelog', title: 'Changelog Tracker', desc: 'Every Claude Code and Codex release, refreshed daily from the official repos. Searchable.', cta: 'Track releases' },
+];
 ---
 
-<Layout title="Learn AI coding agents by doing · ai4you.site" path="/learn" description="Interactive lessons for Claude Code and Codex CLI: a safe terminal simulator in your browser, real commands, and quizzes that check you actually learned it." breadcrumbs={[{ name: 'Learn', path: '/learn' }]}>
+<Layout title="Learn AI coding agents by doing · ai4you.site" path="/learn" description="Interactive lessons for Claude Code and Codex CLI: 13 modules with browser terminal simulators, quizzes, a sandbox playground, config builders and a printable cheat sheet." breadcrumbs={[{ name: 'Learn', path: '/learn' }]}>
   <section class="tools-hero wrap">
-    <span class="kicker">Learn by doing · simulator + quizzes · no install needed</span>
+    <span class="kicker">Learn by doing · {modules.length} modules · {totalMinutes} minutes · simulator + quizzes</span>
     <h1>Get fluent in the agent terminals.</h1>
     <p class="lede">
       Reading about Claude Code or Codex teaches you almost nothing. Running commands does —
-      so every lesson here ends in a safe, browser-based terminal and a quiz. Nothing you type
-      touches your machine.
+      every lesson ends in a safe, browser-based terminal and a quiz, and finishing a quiz marks
+      the module complete. Nothing you type touches your machine.
     </p>
+    <div class="btn-row" style="margin-top:22px;">
+      <a class="btn btn--primary" href="/learn/claude-code-101">Start the beginner path</a>
+      <a class="btn btn--ghost" href="/learn/playground">Just let me type → Playground</a>
+    </div>
   </section>
 
-  <section class="dir wrap" style="padding-bottom:72px;" aria-label="Lessons">
-    <div class="dir-grid">
-      {modules.map((m) => (
-        <article class="dir-card">
+  <section class="wrap" style="padding-bottom:8px;" aria-label="Your progress">
+    <div class="lr-progress">
+      <div class="lr-progress-top">
+        <strong id="lr-progress-text">0 of {modules.length} modules completed</strong>
+        <span class="kicker">saved locally, finishes when the quiz does</span>
+      </div>
+      <div class="lr-bar"><div class="lr-bar-fill" id="lr-progress-fill" style="width:0%"></div></div>
+    </div>
+  </section>
+
+  <section class="dir wrap" style="padding-top:24px;" aria-label="Lessons">
+    <div class="section-head"><h2>The curriculum</h2><span class="kicker">beginner → advanced</span></div>
+    <div class="dir-grid lr-grid">
+      {modules.map((m, i) => (
+        <article class="dir-card lr-card" data-slug={m.slug}>
           <div class="dir-top">
-            <h3><a class="learn-link" href={`/learn/${m.slug}`} style="text-decoration:none;color:inherit;">{m.title}</a></h3>
+            <h3><a class="learn-link" href={`/learn/${m.slug}`} style="text-decoration:none;color:inherit;">{i + 1}. {m.title}</a></h3>
             <span class={`chip ${toolChip(m.tool)}`}>{m.tool}</span>
           </div>
           <p class="dir-body">{m.summary}</p>
@@ -30,22 +55,61 @@ const toolChip = (t) => (t === 'Codex' ? 'chip--product' : 'chip--model');
             <span class="term">{m.level}</span>
             <span class="term">{m.minutes} min</span>
             <span class="term">simulator + quiz</span>
+            <span class="term lr-done" data-done={m.slug} hidden>✓ done</span>
           </div>
-          <a class="btn btn--ghost learn-link" href={`/learn/${m.slug}`}>Start the lesson</a>
+          <a class="btn btn--ghost learn-link" href={`/learn/${m.slug}`}>{i < 2 ? 'Start here' : 'Open lesson'}</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="dir wrap" style="padding-top:8px; padding-bottom:72px;" aria-label="Explore tools">
+    <div class="section-head"><h2>Explore</h2><span class="kicker">the hands-on toolkit</span></div>
+    <div class="dir-grid lr-grid">
+      {tools.map((t) => (
+        <article class="dir-card lr-tool">
+          <div class="dir-top"><h3>{t.title}</h3></div>
+          <p class="dir-body">{t.desc}</p>
+          <a class="btn btn--ghost learn-link" href={t.href}>{t.cta}</a>
         </article>
       ))}
     </div>
 
-    <div class="affiliate-note" style="margin-top:36px;">
+    <div class="affiliate-note" style="margin-top:8px;">
       <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 14.5 13.5h-13L8 1.5zM8 6.5v3M8 11.5v.01"/></svg>
       <span>
-        New lessons are added as the tools evolve — release notes for both CLIs are tracked on our
-        <a href="/changelog">changelog page</a>, refreshed daily.
+        Both CLIs ship weekly — release notes are tracked for you on the
+        <a href="/changelog">changelog page</a>, and lessons are updated as the tools evolve.
       </span>
     </div>
   </section>
 </Layout>
 
+<script>
+  // progress bar + done badges from localStorage
+  const KEY = 'a4u-learn';
+  const read = () => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; } };
+  const doneList = read();
+  const slugCount = document.querySelectorAll('[data-done]').length;
+  for (const badge of document.querySelectorAll('[data-done]')) {
+    if (doneList.includes(badge.dataset.done)) badge.hidden = false;
+  }
+  const fill = document.getElementById('lr-progress-fill');
+  const text = document.getElementById('lr-progress-text');
+  const doneCount = new Set(doneList.filter((s) => [...document.querySelectorAll('[data-done]')].some((b) => b.dataset.done === s))).size;
+  if (fill) fill.style.width = `${Math.round((doneCount / slugCount) * 100)}%`;
+  if (text) text.textContent = `${doneCount} of ${slugCount} modules completed`;
+</script>
+
 <style>
   .learn-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 4px; }
+  .lr-progress { border: 1px solid var(--hairline); background: var(--surface); border-radius: 10px; padding: 16px 20px; }
+  .lr-progress-top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+  .lr-progress-top strong { font: 600 14px/1.3 var(--sans); }
+  .lr-bar { height: 8px; border-radius: 999px; background: var(--canvas); border: 1px solid var(--hairline); overflow: hidden; }
+  .lr-bar-fill { height: 100%; background: var(--pale-green-fg); border-radius: 999px; transition: width 300ms ease; }
+  .lr-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .lr-done { color: var(--pale-green-fg) !important; background: var(--pale-green-bg) !important; border-color: transparent !important; font-weight: 600; }
+  @media (max-width: 960px) { .lr-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .lr-grid { grid-template-columns: 1fr; } }
 </style>
