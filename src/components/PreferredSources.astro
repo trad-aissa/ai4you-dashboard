@@ -1,20 +1,27 @@
 ---
-// Google "Add to Preferred Sources" — OFFICIAL embed
+// Google "Add to Preferred Sources" — OFFICIAL embed + deeplink fallback
 // Docs: https://developers.google.com/search/docs/appearance/preferred-sources
-// Loads https://news.google.com/swg/js/v1/publisher.js and renders
-// <div google-add-preferred-source-btn></div> as a Google-styled button.
+// The JS button requires Google to have classified the site as an eligible
+// news source; until then the official deeplink opens the preferences page
+// with our domain pre-filled, which works regardless.
 interface Props { theme?: 'light' | 'dark' }
 const { theme = 'light' } = Astro.props;
+const DEEPLINK = 'https://www.google.com/preferences/source?q=https://www.ai4you.site/';
 ---
 
 <div class="a4u-pref">
   <p class="a4u-pref-line">Like our briefing? Get us inside your Google feed.</p>
   <div google-add-preferred-source-btn data-theme={theme}></div>
+  <noscript><a class="a4u-pref-link" href={DEEPLINK}>Add ai4you.site as a preferred source in Google →</a></noscript>
+  <p class="a4u-pref-alt">Button not working for you? <a href={DEEPLINK} target="_blank" rel="noopener">Add ai4you.site directly in your Google preferences →</a></p>
 </div>
 
 <style>
   .a4u-pref { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
   .a4u-pref-line { margin: 0; font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+  .a4u-pref-alt { margin: 0; font-size: 12px; color: var(--faint); line-height: 1.5; }
+  .a4u-pref-alt a, .a4u-pref-link { color: var(--link); text-decoration: none; }
+  .a4u-pref-alt a:hover, .a4u-pref-link:hover { text-decoration: underline; }
 </style>
 
 <script is:inline async src="https://news.google.com/swg/js/v1/publisher.js"></script>
