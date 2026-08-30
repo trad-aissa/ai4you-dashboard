@@ -1,0 +1,95 @@
+---
+// src/components/Quiz.astro — self-contained lesson quiz (no backend)
+interface QuizQ { q: string; options: string[]; answer: number; explain: string }
+interface Props { questions: QuizQ[]; title?: string }
+const { questions, title = 'Check yourself' } = Astro.props;
+---
+
+<section class="quiz" data-quiz>
+  <script type="application/json" set:html={JSON.stringify({ questions })} />
+  <h3 class="quiz-title">{title}</h3>
+  {questions.map((item, qi) => (
+    <fieldset class="quiz-q" data-qi={qi}>
+      <legend>{qi + 1}. {item.q}</legend>
+      <div class="quiz-opts" role="group">
+        {item.options.map((opt, oi) => (
+          <button type="button" class="quiz-opt" data-oi={oi}>{opt}</button>
+        ))}
+      </div>
+      <p class="quiz-explain" hidden>{item.explain}</p>
+    </fieldset>
+  ))}
+  <p class="quiz-score" data-score></p>
+  <button type="button" class="btn btn--ghost btn--small quiz-retake" data-retake hidden>Retake quiz</button>
+</section>
+
+<script>
+  for (const quiz of document.querySelectorAll('[data-quiz]')) {
+    if (quiz.dataset.bound) continue;
+    quiz.dataset.bound = '1';
+    const { questions } = JSON.parse(quiz.querySelector('script[type="application/json"]').textContent);
+    const scoreEl = quiz.querySelector('[data-score]');
+    const retake = quiz.querySelector('[data-retake]');
+    let answered = 0, correct = 0;
+
+    const reset = () => {
+      answered = 0; correct = 0;
+      scoreEl.textContent = '';
+      retake.hidden = true;
+      for (const q of quiz.querySelectorAll('.quiz-q')) {
+        q.classList.remove('is-right', 'is-wrong', 'is-answered');
+        q.querySelector('.quiz-explain').hidden = true;
+        for (const b of q.querySelectorAll('.quiz-opt')) {
+          b.disabled = false;
+          b.classList.remove('is-correct', 'is-wrong-pick');
+        }
+      }
+    };
+
+    quiz.addEventListener('click', (e) => {
+      const btn = e.target.closest('.quiz-opt');
+      if (!btn || btn.disabled) return;
+      const fieldset = btn.closest('.quiz-q');
+      const qi = Number(fieldset.dataset.qi);
+      const oi = Number(btn.dataset.oi);
+      const right = oi === questions[qi].answer;
+      fieldset.classList.add('is-answered', right ? 'is-right' : 'is-wrong');
+      fieldset.querySelector('.quiz-explain').hidden = false;
+      for (const b of fieldset.querySelectorAll('.quiz-opt')) {
+        b.disabled = true;
+        if (Number(b.dataset.oi) === questions[qi].answer) b.classList.add('is-correct');
+      }
+      if (!right) btn.classList.add('is-wrong-pick');
+      answered++; if (right) correct++;
+      if (answered === questions.length) {
+        scoreEl.textContent = `Score: ${correct}/${questions.length}` + (correct === questions.length ? ' — perfect. 🎉' : ' — read the explanations above, then retake.');
+        retake.hidden = false;
+      }
+    });
+
+    retake.addEventListener('click', reset);
+  }
+</script>
+
+<style>
+  .quiz { border: 1px solid var(--hairline); background: var(--surface); border-radius: 10px; padding: 22px 24px; margin: 24px 0; }
+  .quiz-title { font: 600 16px/1.3 var(--sans); margin: 0 0 6px; }
+  .quiz-q { border: none; margin: 18px 0 0; padding: 0; }
+  .quiz-q legend { font: 500 14.5px/1.5 var(--sans); color: var(--ink); margin-bottom: 10px; padding: 0; }
+  .quiz-opts { display: flex; flex-direction: column; gap: 8px; }
+  .quiz-opt {
+    text-align: left; font: 400 14px/1.5 var(--sans); color: var(--ink);
+    background: var(--canvas); border: 1px solid var(--hairline-strong); border-radius: 8px;
+    padding: 10px 14px; cursor: pointer; transition: border-color 140ms ease, background 140ms ease;
+  }
+  .quiz-opt:hover { border-color: var(--ink); }
+  .quiz-opt:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .quiz-opt.is-correct { border-color: var(--pale-green-fg); background: var(--pale-green-bg); font-weight: 500; }
+  .quiz-opt.is-wrong-pick { border-color: var(--pale-red-fg); background: var(--pale-red-bg); }
+  .quiz-q.is-answered .quiz-opt { cursor: default; }
+  .quiz-explain { font-size: 13.5px; color: var(--muted); line-height: 1.6; margin: 10px 0 0; border-left: 2px solid var(--hairline-strong); padding-left: 12px; }
+  .quiz-q.is-right .quiz-explain { border-color: var(--pale-green-fg); }
+  .quiz-q.is-wrong .quiz-explain { border-color: var(--pale-red-fg); }
+  .quiz-score { font: 600 14px/1.4 var(--sans); min-height: 20px; margin: 16px 0 0; }
+  .quiz-retake { margin-top: 10px; }
+</style>

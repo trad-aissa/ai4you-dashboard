@@ -1,0 +1,54 @@
+---
+// src/pages/learn/[slug].astro — interactive lesson (sections + simulator + quiz)
+import Layout from '../../layouts/Layout.astro';
+import TermSim from '../../components/TermSim.astro';
+import Quiz from '../../components/Quiz.astro';
+import { modules } from '../../data/learn.js';
+
+export function getStaticPaths() {
+  return modules.map((m) => ({ params: { slug: m.slug }, props: { module: m } }));
+}
+
+const { module: lesson } = Astro.props;
+const crumb = [{ name: 'Learn', path: '/learn' }, { name: lesson.title, path: `/learn/${lesson.slug}` }];
+const toolChip = lesson.tool === 'Codex' ? 'chip--product' : 'chip--model';
+---
+
+<Layout title={`${lesson.title} — learn by doing · ai4you.site`} path={`/learn/${lesson.slug}`} description={lesson.summary} type="article" publishedTime="2026-08-30T09:00:00Z" breadcrumbs={crumb}>
+  <article class="article wrap">
+    <header class="article-head">
+      <div class="article-meta" style="border:none;padding:0;margin-bottom:14px;">
+        <span class={`chip ${toolChip}`}>{lesson.tool}</span>
+        <span>{lesson.level}</span>
+        <span aria-hidden="true">·</span>
+        <span>{lesson.minutes} min</span>
+      </div>
+      <h1>{lesson.title}</h1>
+      <p class="dek">{lesson.summary}</p>
+    </header>
+
+    <div class="prose">
+      {lesson.sections.map((s) => (
+        <section>
+          <h2>{s.heading}</h2>
+          <Fragment set:html={s.body} />
+        </section>
+      ))}
+
+      <section>
+        <h2>Your turn — in the simulator</h2>
+        <p>Every command below is safe to try: this is a scripted practice terminal, not your machine.</p>
+      </section>
+      <TermSim {...lesson.sim} />
+
+      <section>
+        <Quiz questions={lesson.quiz} />
+      </section>
+
+      <p class="footnote">
+        Lesson published August 30, 2026 — agent CLIs move fast; commands above reflect the current stable versions
+        (see the <a href="/changelog">changelog tracker</a>). Not affiliated with Anthropic or OpenAI.
+      </p>
+    </div>
+  </article>
+</Layout>

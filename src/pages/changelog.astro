@@ -1,0 +1,79 @@
+---
+// src/pages/changelog.astro — Claude Code + Codex release notes (auto-refreshed daily)
+import Layout from '../layouts/Layout.astro';
+import changelogs from '../data/auto/changelogs.json';
+
+const products = [
+  { id: 'claude-code', name: 'Claude Code', vendor: 'Anthropic', repo: 'anthropics/claude-code', releases: changelogs['claude-code'] ?? [] },
+  { id: 'codex', name: 'Codex', vendor: 'OpenAI', repo: 'openai/codex', releases: changelogs.codex ?? [] },
+];
+const fmt = (iso) => iso ? new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : null;
+---
+
+<Layout title="Claude Code & Codex changelogs — every release, tracked · ai4you.site" path="/changelog" description="Every Claude Code and OpenAI Codex release, summarized and updated daily from the official repositories — so you always know what shipped." breadcrumbs={[{ name: 'Changelog', path: '/changelog' }]}>
+  <section class="tools-hero wrap">
+    <span class="kicker">Auto-tracked · refreshed daily from the official repos</span>
+    <h1>The agentic CLI changelogs.</h1>
+    <p class="lede">
+      Claude Code and Codex ship faster than anyone reads release notes. We track both
+      repositories daily and lay out every release in plain sight — what shipped, and when.
+    </p>
+  </section>
+
+  <section class="wrap" style="padding-bottom:72px;" aria-label="Changelog releases">
+    <div class="filters" id="cl-filters" role="group" aria-label="Switch product">
+      {products.map((p, i) => (
+        <button class:list={['filter-btn', { 'is-active': i === 0 }]} data-product={p.id} aria-pressed={i === 0 ? 'true' : 'false'}>
+          {p.name}
+        </button>
+      ))}
+    </div>
+
+    {products.map((p, i) => (
+      <div class:list={['cl-product', { hidden: i !== 0 }]} id={`cl-${p.id}`}>
+        {p.releases.map((r, ri) => (
+          <article class="cl-release">
+            <header class="cl-head">
+              <h2 class="cl-version">v{r.version}</h2>
+              {ri === 0 && <span class="chip chip--pricing">latest</span>}
+              {fmt(r.date) && <time datetime={r.date} class="cl-date">{fmt(r.date)}</time>}
+            </header>
+            <ul class="cl-bullets">
+              {r.bullets.map((b) => <li>{b}</li>)}
+            </ul>
+          </article>
+        ))}
+        <p class="footnote" style="margin-top:20px;">
+          Source: <a href={`https://github.com/${p.repo}`} target="_blank" rel="noopener">github.com/{p.repo}</a> ·
+          {p.name} is a product of {p.vendor}; we are not affiliated with {p.vendor}.
+        </p>
+      </div>
+    ))}
+  </section>
+</Layout>
+
+<script>
+  const bar = document.getElementById('cl-filters');
+  bar?.addEventListener('click', (e) => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    for (const b of bar.querySelectorAll('.filter-btn')) {
+      const active = b === btn;
+      b.classList.toggle('is-active', active);
+      b.setAttribute('aria-pressed', String(active));
+    }
+    for (const el of document.querySelectorAll('.cl-product')) {
+      el.classList.toggle('hidden', el.id !== `cl-${btn.dataset.product}`);
+    }
+  });
+</script>
+
+<style>
+  .cl-product.hidden { display: none; }
+  .cl-release { border-top: 1px solid var(--hairline); padding: 26px 0 8px; }
+  .cl-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+  .cl-version { font-family: var(--mono); font-size: 15px; font-weight: 600; margin: 0; letter-spacing: 0.01em; }
+  .cl-date { font-family: var(--mono); font-size: 11px; color: var(--faint); letter-spacing: 0.04em; }
+  .cl-bullets { margin: 0; padding-left: 20px; }
+  .cl-bullets li { font-size: 14.5px; line-height: 1.65; color: var(--ink); margin-bottom: 8px; }
+</style>

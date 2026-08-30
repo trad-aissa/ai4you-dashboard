@@ -564,6 +564,24 @@ footer .baseline {
 }
 footer .baseline .disc { max-width: 62ch; font-size: 10.5px; line-height: 1.6; }
 
+/* ---------- today's headlines (auto) ---------- */
+.today-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--hairline); }
+.today-item {
+  display: flex; flex-direction: column; gap: 4px;
+  border-bottom: 1px solid var(--hairline); padding: 16px 24px 16px 0;
+  text-decoration: none;
+}
+.today-item:nth-child(even) { border-left: 1px solid var(--hairline); padding-left: 24px; }
+.today-item:hover .today-title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.today-src { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pale-blue-fg); }
+.today-title { font: 500 14.5px/1.45 var(--sans); color: var(--ink); letter-spacing: -0.005em; }
+.today-when { font-family: var(--mono); font-size: 10.5px; color: var(--faint); }
+@media (max-width: 720px) {
+  .today-grid { grid-template-columns: 1fr; }
+  .today-item:nth-child(even) { border-left: none; padding-left: 0; }
+  .today-item { padding-right: 0; }
+}
+
 /* ---------- reveal motion (CSS-only, no JS dependency) ---------- */
 .reveal { animation: a4u-enter 600ms cubic-bezier(0.16,1,0.3,1) both; }
 @keyframes a4u-enter {

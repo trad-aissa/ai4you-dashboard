@@ -1,0 +1,84 @@
+---
+// src/pages/news.astro — auto-fresh AI headlines (updated daily by the fetch pipeline)
+import Layout from '../layouts/Layout.astro';
+import headlines from '../data/auto/headlines.json';
+
+const items = headlines.items ?? [];
+const sources = [...new Set(items.map((i) => i.source))].sort();
+const fmt = (iso) => new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+const ago = (iso) => {
+  const h = Math.round((Date.now() - Date.parse(iso)) / 3600000);
+  return h < 24 ? `${h}h ago` : fmt(iso);
+};
+---
+
+<Layout title="AI news headlines — updated daily · ai4you.site" path="/news" description="Fresh AI headlines gathered every morning from OpenAI, Google DeepMind, TechCrunch, VentureBeat, Ars Technica, The Verge and Hacker News — linked to the original story." breadcrumbs={[{ name: 'Headlines', path: '/news' }]}>
+  <section class="tools-hero wrap">
+    <span class="kicker">Auto-gathered · refreshed daily at 06:00 UTC</span>
+    <h1>AI headlines.</h1>
+    <p class="lede">
+      Every morning we sweep the primary labs and the outlets that actually break AI stories,
+      and list what moved — each headline links straight to the original publisher.
+    </p>
+  </section>
+
+  <section class="dir wrap" aria-label="Headlines directory">
+    <div class="filters" id="news-filters" role="group" aria-label="Filter headlines by source">
+      <button class="filter-btn is-active" data-filter="all" aria-pressed="true">All sources</button>
+      {sources.map((s) => <button class="filter-btn" data-filter={s} aria-pressed="false">{s}</button>)}
+    </div>
+    <ul class="news-list" id="news-list">
+      {items.map((i) => (
+        <li class="news-item" data-source={i.source}>
+          <div class="news-meta">
+            <span class="chip chip--model">{i.source}</span>
+            <time datetime={i.date} class="news-when">{ago(i.date)}</time>
+          </div>
+          <h3><a href={i.url} target="_blank" rel="noopener">{i.title}</a></h3>
+          {i.snippet && <p>{i.snippet}</p>}
+        </li>
+      ))}
+    </ul>
+    <p class="feed-status hidden" id="news-status" role="status"></p>
+    <p class="footnote" style="margin-top:24px;">
+      Headlines are gathered automatically and link to their original publishers, who own their content.
+      Our editorial picks with analysis live on the <a href="/">homepage</a>.
+    </p>
+  </section>
+</Layout>
+
+<script>
+  const bar = document.getElementById('news-filters');
+  bar?.addEventListener('click', (e) => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    for (const b of bar.querySelectorAll('.filter-btn')) {
+      const active = b === btn;
+      b.classList.toggle('is-active', active);
+      b.setAttribute('aria-pressed', String(active));
+    }
+    const f = btn.dataset.filter;
+    let shown = 0;
+    for (const el of document.querySelectorAll('#news-list .news-item')) {
+      const show = f === 'all' || el.dataset.source === f;
+      el.style.display = show ? '' : 'none';
+      if (show) shown++;
+    }
+    const status = document.getElementById('news-status');
+    if (status) {
+      status.textContent = shown ? '' : 'No headlines from this source in the current window.';
+      status.classList.toggle('hidden', shown > 0);
+    }
+  });
+</script>
+
+<style>
+  .news-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--hairline); }
+  .news-item { border-bottom: 1px solid var(--hairline); padding: 18px 0; }
+  .news-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .news-when { font-family: var(--mono); font-size: 10.5px; color: var(--faint); letter-spacing: 0.04em; }
+  .news-item h3 { font: 600 16.5px/1.35 var(--sans); letter-spacing: -0.01em; margin: 0 0 4px; }
+  .news-item h3 a { text-decoration: none; }
+  .news-item h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .news-item p { font-size: 13.5px; color: var(--muted); margin: 0; max-width: 78ch; }
+</style>

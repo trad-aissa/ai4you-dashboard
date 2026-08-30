@@ -1,0 +1,113 @@
+---
+// src/components/TermSim.astro — safe browser terminal simulator for lessons.
+// Commands/outputs are pre-scripted in the lesson data; nothing is executed.
+interface Props { title?: string; hint?: string; commands: Record<string, string[]> }
+const { title = 'Try it — safe simulator', hint = 'Type a command below (nothing runs on your machine).', commands } = Astro.props;
+const names = Object.keys(commands);
+---
+
+<section class="tsim" data-tsim>
+  <script type="application/json" set:html={JSON.stringify({ commands })} />
+  <div class="tsim-bar">
+    <span class="tsim-dot"></span><span class="tsim-dot"></span><span class="tsim-dot"></span>
+    <span class="tsim-title">{title}</span>
+    <span class="tsim-progress" data-progress>0/{names.length}</span>
+  </div>
+  <div class="tsim-screen" data-screen>
+    <p class="tsim-line tsim-hint">{hint}</p>
+    <p class="tsim-line tsim-hint">Suggested: {names.map((c) => <code>{c}</code>)}</p>
+  </div>
+  <div class="tsim-input-row">
+    <span class="tsim-prompt">❯</span>
+    <input data-input type="text" spellcheck="false" autocomplete="off"
+      aria-label="Terminal command input" placeholder="type a command…" />
+  </div>
+  <p class="tsim-done" data-done hidden>✓ Exercise complete — you ran every command.</p>
+</section>
+
+<script>
+  for (const sim of document.querySelectorAll('[data-tsim]')) {
+    if (sim.dataset.bound) continue;
+    sim.dataset.bound = '1';
+    const config = JSON.parse(sim.querySelector('script[type="application/json"]').textContent);
+    const screen = sim.querySelector('[data-screen]');
+    const input = sim.querySelector('[data-input]');
+    const progress = sim.querySelector('[data-progress]');
+    const done = sim.querySelector('[data-done]');
+    const run = new Set();
+    const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const line = (html, cls = '') => {
+      const p = document.createElement('p');
+      p.className = `tsim-line ${cls}`;
+      p.innerHTML = html;
+      screen.appendChild(p);
+      screen.scrollTop = screen.scrollHeight;
+    };
+    const normalize = (s) => s.trim().replace(/\s+/g, ' ');
+    const updateProgress = () => {
+      progress.textContent = `${run.size}/${Object.keys(config.commands).length}`;
+      if (run.size >= Object.keys(config.commands).length) done.hidden = false;
+    };
+    const exec = (raw) => {
+      const cmd = normalize(raw);
+      if (!cmd) return;
+      line(`<span class="tsim-prompt">❯</span> ${esc(cmd)}`, 'tsim-echo');
+      const key = Object.keys(config.commands).find((k) => normalize(k).toLowerCase() === cmd.toLowerCase());
+      if (key) {
+        for (const l of config.commands[key]) line(esc(l), 'tsim-out');
+        if (!run.has(key)) { run.add(key); updateProgress(); }
+      } else if (/^(clear|cls)$/i.test(cmd)) {
+        for (const child of [...screen.children]) if (!child.classList.contains('tsim-hint')) child.remove();
+      } else {
+        line(`command not found — this simulator only knows the suggested commands. Try one of: ${Object.keys(config.commands).map((k) => esc(k)).join(' · ')}`, 'tsim-err');
+      }
+    };
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { exec(input.value); input.value = ''; }
+    });
+    for (const chip of sim.querySelectorAll('.tsim-hint code')) {
+      chip.addEventListener('click', () => { input.value = chip.textContent; input.focus(); });
+    }
+    updateProgress();
+  }
+</script>
+
+<style>
+  .tsim { border-radius: 10px; overflow: hidden; border: 1px solid #2E2D2A; margin: 20px 0; }
+  .tsim-bar {
+    display: flex; align-items: center; gap: 6px;
+    background: #26251F; padding: 9px 12px;
+  }
+  .tsim-dot { width: 10px; height: 10px; border-radius: 999px; background: #4A4840; }
+  .tsim-dot:first-child { background: #B35B5B; }
+  .tsim-dot:nth-child(2) { background: #B39D5B; }
+  .tsim-dot:nth-child(3) { background: #6FA96F; }
+  .tsim-title { font-family: var(--mono); font-size: 11px; color: #A5A29A; margin-left: 8px; letter-spacing: 0.04em; }
+  .tsim-progress { margin-left: auto; font-family: var(--mono); font-size: 11px; color: #93C48E; }
+  .tsim-screen {
+    background: #1B1A17; color: #E8E6E0;
+    font-family: var(--mono); font-size: 12.5px; line-height: 1.6;
+    padding: 14px 16px; min-height: 200px; max-height: 340px; overflow-y: auto;
+  }
+  .tsim-line { margin: 0 0 2px; white-space: pre-wrap; word-break: break-word; }
+  .tsim-hint { color: #8B897F; }
+  .tsim-hint code {
+    cursor: pointer; background: #2E2D28; color: #C9C7BF;
+    border-radius: 4px; padding: 1px 6px; margin-right: 4px; font-size: 11.5px;
+  }
+  .tsim-hint code:hover { background: #3A3833; color: #E8E6E0; }
+  .tsim-echo { color: #E8E6E0; }
+  .tsim-echo .tsim-prompt { color: #93C48E; margin-right: 6px; }
+  .tsim-out { color: #B8B6AE; }
+  .tsim-err { color: #E39390; }
+  .tsim-prompt { color: #93C48E; margin-right: 8px; }
+  .tsim-input-row {
+    display: flex; align-items: center;
+    background: #232220; border-top: 1px solid #2E2D2A; padding: 10px 16px;
+  }
+  .tsim-input-row input {
+    flex: 1; background: none; border: none; outline: none;
+    font-family: var(--mono); font-size: 13px; color: #E8E6E0; caret-color: #93C48E;
+  }
+  .tsim-done { margin: 10px 2px 0; font: 600 13px/1.4 var(--sans); color: var(--pale-green-fg); }
+</style>

@@ -5,6 +5,7 @@ import { renderUnit, bindUnits } from '../lib/link-units.js';
 import Layout from '../layouts/Layout.astro';
 import NewsFeed from '../components/NewsFeed.astro';
 import PreferredSources from '../components/PreferredSources.astro';
+import headlines from '../data/auto/headlines.json';
 
 let units = [];
 let dbError = null;
@@ -32,6 +33,23 @@ const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
   </section>
 
   <NewsFeed />
+
+  <section class="wrap" style="padding: 40px 0 64px; border-top: 1px solid var(--hairline);" aria-label="Today's AI headlines">
+    <div class="section-head">
+      <h2>Today's headlines</h2>
+      <a class="more" href="/news">All {headlines.count} headlines →</a>
+    </div>
+    <div class="today-grid">
+      {headlines.items.slice(0, 6).map((i) => (
+        <a class="today-item" href={i.url} target="_blank" rel="noopener">
+          <span class="today-src">{i.source}</span>
+          <span class="today-title">{i.title}</span>
+          <time class="today-when" datetime={i.date}>{new Date(i.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</time>
+        </a>
+      ))}
+    </div>
+    <p class="src-line" style="margin-top:14px;">auto-gathered daily at 06:00 UTC from the primary labs and outlets · <a href="/news" style="color:var(--link);">browse all</a></p>
+  </section>
 
   <section class="wrap" id="the-wire" aria-label="Live wire from Hacker News" style="padding: 24px 0 64px;">
     <div class="section-head">

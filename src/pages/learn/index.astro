@@ -1,0 +1,51 @@
+---
+// src/pages/learn/index.astro — "Learn by doing" hub
+import Layout from '../../layouts/Layout.astro';
+import { modules } from '../../data/learn.js';
+
+const toolChip = (t) => (t === 'Codex' ? 'chip--product' : 'chip--model');
+---
+
+<Layout title="Learn AI coding agents by doing · ai4you.site" path="/learn" description="Interactive lessons for Claude Code and Codex CLI: a safe terminal simulator in your browser, real commands, and quizzes that check you actually learned it." breadcrumbs={[{ name: 'Learn', path: '/learn' }]}>
+  <section class="tools-hero wrap">
+    <span class="kicker">Learn by doing · simulator + quizzes · no install needed</span>
+    <h1>Get fluent in the agent terminals.</h1>
+    <p class="lede">
+      Reading about Claude Code or Codex teaches you almost nothing. Running commands does —
+      so every lesson here ends in a safe, browser-based terminal and a quiz. Nothing you type
+      touches your machine.
+    </p>
+  </section>
+
+  <section class="dir wrap" style="padding-bottom:72px;" aria-label="Lessons">
+    <div class="dir-grid">
+      {modules.map((m) => (
+        <article class="dir-card">
+          <div class="dir-top">
+            <h3><a class="learn-link" href={`/learn/${m.slug}`} style="text-decoration:none;color:inherit;">{m.title}</a></h3>
+            <span class={`chip ${toolChip(m.tool)}`}>{m.tool}</span>
+          </div>
+          <p class="dir-body">{m.summary}</p>
+          <div class="dir-terms">
+            <span class="term">{m.level}</span>
+            <span class="term">{m.minutes} min</span>
+            <span class="term">simulator + quiz</span>
+          </div>
+          <a class="btn btn--ghost learn-link" href={`/learn/${m.slug}`}>Start the lesson</a>
+        </article>
+      ))}
+    </div>
+
+    <div class="affiliate-note" style="margin-top:36px;">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 14.5 13.5h-13L8 1.5zM8 6.5v3M8 11.5v.01"/></svg>
+      <span>
+        New lessons are added as the tools evolve — release notes for both CLIs are tracked on our
+        <a href="/changelog">changelog page</a>, refreshed daily.
+      </span>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .learn-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 4px; }
+</style>

@@ -1,0 +1,38 @@
+# Daily AI headlines + tool changelogs → auto-commit → Vercel redeploys.
+name: daily-update
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # 06:00 UTC daily
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-update
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch headlines + changelogs
+        run: node scripts/fetch-daily.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit if data changed
+        run: |
+          git config user.name "ai4you-daily-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/auto
+          if git diff --cached --quiet; then
+            echo "No changes — nothing to commit."
+          else
+            git commit -m "chore(auto): daily headlines + changelogs"
+            git push
+          fi

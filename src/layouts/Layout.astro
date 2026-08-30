@@ -46,7 +46,10 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
         </div>
         <nav aria-label="Main">
           <a href="/" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>Latest</a>
+          <a href="/news" aria-current={Astro.url.pathname === '/news' ? 'page' : undefined}>Headlines</a>
           <a href="/tools" aria-current={Astro.url.pathname === '/tools' ? 'page' : undefined}>Tools</a>
+          <a href="/learn" aria-current={Astro.url.pathname.startsWith('/learn') ? 'page' : undefined}>Learn</a>
+          <a href="/changelog" aria-current={Astro.url.pathname === '/changelog' ? 'page' : undefined}>Updates</a>
           <a href="/article" aria-current={Astro.url.pathname === '/article' ? 'page' : undefined}>Deep dive</a>
           <a href="/about" aria-current={Astro.url.pathname === '/about' ? 'page' : undefined}>About</a>
           <a href="/admin" hidden aria-hidden="true">·</a>
@@ -69,8 +72,11 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
             <h4>Sections</h4>
             <ul>
               <li><a href="/">Latest</a></li>
+              <li><a href="/news">Headlines</a></li>
               <li><a href="/tools">Tool shelf</a></li>
               <li><a href="/best-writing-tools">Best writing tools</a></li>
+              <li><a href="/learn">Learn by doing</a></li>
+              <li><a href="/changelog">Claude Code & Codex updates</a></li>
               <li><a href="/article">Deep dive</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/rss.xml">RSS feed</a></li>
