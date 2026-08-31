@@ -51,7 +51,8 @@
         </div>
       </div>
       <div class="hud-dialog-foot">
-        <span>ai4you.site · developer wire mode</span>
+        <button type="button" class="btn btn--ghost btn--small js-hud-dismiss">Close (Esc)</button>
+        <span>ai4you.site · developer mode</span>
       </div>
     </div>
   </div>
@@ -112,6 +113,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .hud-dialog[hidden] {
+    display: none !important;
   }
 
   .hud-dialog-backdrop {
@@ -188,7 +193,9 @@
     font-family: var(--mono);
     font-size: 11px;
     color: var(--faint);
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   /* Toast Notification */
@@ -247,6 +254,9 @@
     pillBtn?.addEventListener('click', () => toggleDialog(true));
     closeBtn?.addEventListener('click', () => toggleDialog(false));
     backdrop?.addEventListener('click', () => toggleDialog(false));
+    dialog?.querySelectorAll('.js-hud-dismiss').forEach((btn) => {
+      btn.addEventListener('click', () => toggleDialog(false));
+    });
 
     let selectedIndex = -1;
     function getItems(): HTMLElement[] {
