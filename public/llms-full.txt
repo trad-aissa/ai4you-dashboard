@@ -1,0 +1,48 @@
+# ai4you.site — Full LLM Knowledge Base
+Updated: August 2026
+
+## 1. About the Publication
+ai4you.site is an independent, reader-supported briefing on artificial intelligence. It tracks frontier-model releases, token pricing shifts, coding agent tooling (Cursor, Claude Code, Copilot, Bedrock), and practical developer workflows. Every news story links directly to its primary source.
+
+## 2. Active Frontier Model Intelligence (August 2026 Scorecard)
+
+### GPT-5.6 Family (OpenAI)
+- **GPT-5.6 Sol (Flagship)**: $5.00/1M input, $20.00/1M output. 256k context, 16k max output. Flagship multi-modal reasoning.
+- **GPT-5.6 Terra (Workhorse)**: $2.50/1M input, $15.00/1M output. 256k context. Tuned for high-scale agent workflows.
+- **GPT-5.6 Luna (Speed / Free Default)**: $1.00/1M input, $4.00/1M output. 128k context. Default model for free ChatGPT users.
+
+### Claude 5-Series (Anthropic)
+- **Claude Opus 5**: $5.00/1M input, $25.00/1M output. 500k context, 32k max output. Optimized for deep autonomous coding, agentic planning, and long-horizon tasks.
+- **Claude Sonnet 5**: $2.00/1M input, $10.00/1M output. 500k context. Primary model for codebase editing and refactoring.
+
+### Gemini 3.7 (Google DeepMind)
+- **Gemini 3.7 Flash**: $0.75/1M input, $3.75/1M output. 2M token context window, 64k max output. Rapid release cycle, low latency.
+
+### Grok 4-Series (xAI)
+- **Grok 4.6**: $2.00/1M input, $6.00/1M output. 512k context. Integrated directly into Cursor, Grok Build, Bedrock, and GitHub Copilot.
+
+### DeepSeek (DeepSeek AI)
+- **DeepSeek V4-Pro**: $1.80/1M input, $7.20/1M output. 256k context. Introduces peak/off-peak pricing structure.
+
+### Open-Weights Frontier Models
+- **Kimi K3 (Moonshot AI)**: 2.8 Trillion parameter sparse MoE. Downloadable weights on Hugging Face (moonshotai/Kimi-K3). $0 token API cost for self-hosted deployments.
+- **GLM-5.3-Flash (Z.ai)**: High-speed open-weights coding model. Available on Hugging Face (THUDM/glm-5.3-flash).
+
+## 3. Curated AI Tool Directory
+- **Jasper**: Long-form AI writing assistant with brand voice controls for marketing teams.
+- **Copy.ai**: GTM AI automation platform for sales, marketing, and outbound copy.
+- **Grammarly**: Grammar, tone, and real-time sentence composition assistant.
+- **ElevenLabs**: Studio-quality voice generation, speech synthesis, and voice cloning.
+- **Descript**: Video and podcast text-based editor with Studio Sound and multi-track audio.
+- **Murf AI**: Voiceover generator with 120+ natural voices and pitch control.
+- **Pictory**: Automated script-to-short video generator.
+- **Synthesia**: AI video avatars from text for training and product onboarding.
+- **Semrush**: Search engine optimization, keyword tracking, and site auditing suite.
+- **Surfer SEO**: Live SERP-based content scoring editor.
+- **Perplexity Pro**: AI search and cited answer engine.
+- **Notion AI**: Q&A, drafting, and workspace knowledge automation.
+
+## 4. API & Developer Access
+- Raw JSON endpoint: `https://www.ai4you.site/news.json`
+- RSS feed: `https://www.ai4you.site/rss.xml`
+- Robots policy: `https://www.ai4you.site/robots.txt`

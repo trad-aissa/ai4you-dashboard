@@ -1,0 +1,19 @@
+# ai4you.site — The AI Wire
+> A calm, sourced intelligence briefing on artificial intelligence: frontier-model releases, token pricing benchmarks, coding agents, and curated software tools.
+
+## Primary Sections
+- [Latest Briefings](https://www.ai4you.site/): Daily editorial coverage and model release analysis.
+- [AI Headlines](https://www.ai4you.site/news): Auto-gathered daily headlines from primary labs (OpenAI, DeepMind, Anthropic, xAI, Z.ai).
+- [Tool Shelf](https://www.ai4you.site/tools): Curated AI software tools with transparent commission rates and verified terms.
+- [Model Scorecard & Deep Dives](https://www.ai4you.site/article): In-depth benchmark and architectural breakdowns across frontier models.
+- [Coding Changelogs](https://www.ai4you.site/changelog): Real-time release logs for Claude Code, Codex, and coding agents.
+- [Learn by Doing](https://www.ai4you.site/learn): Practical developer guides for building with LLMs, MCP, subagents, and skills.
+
+## Developer & Machine-Readable Feeds
+- [JSON Feed](https://www.ai4you.site/news.json): Standard JSON Feed v1.1 containing model specs, pricing, and live wire news items.
+- [RSS Feed](https://www.ai4you.site/rss.xml): Standard RSS 2.0 feed for automated readers and RSS clients.
+- [Full LLM Markdown Dump](https://www.ai4you.site/llms-full.txt): Complete concatenated text documentation for agent ingestion.
+
+## Editorial Standards & Policies
+- [About & Standards](https://www.ai4you.site/about): Publisher details, editorial guidelines, affiliate disclosures, and privacy commitment.
+- [Terms of Use](https://www.ai4you.site/terms): Terms governing website usage.
