@@ -60,7 +60,13 @@ const leadStoryLd = items.length > 0 ? JSON.stringify({
   </div>
   <div class="lead-grid">
     <article class="lead-story">
-      <span class="kicker">{label(items[0]?.category)}</span>
+      <div class="card-meta" style="margin-bottom:10px;">
+        <span class="kicker">{label(items[0]?.category)}</span>
+        <button type="button" class="btn-copy-mini js-copy-snippet" title="Copy story as Markdown (Slack/Discord ready)" aria-label="Copy story summary">
+          <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" style="width:12px;height:12px;"><path d="M4 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" stroke="currentColor" fill="none" stroke-width="1.4"/><path d="M6 6h4M6 9h4" stroke="currentColor" stroke-width="1.4"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
       <h3><a href={items[0]?.url} target="_blank" rel="noopener noreferrer">{items[0]?.headline}</a></h3>
       <p>{items[0]?.summary}</p>
       {items[0]?.why && <p class="why"><b>Why it matters — </b>{items[0].why}</p>}
@@ -72,6 +78,9 @@ const leadStoryLd = items.length > 0 ? JSON.stringify({
           <div class="card-meta">
             <span class={`chip ${chip(item.category)}`}>{label(item.category)}</span>
             <span class="card-date">{fmt(item.date)}</span>
+            <button type="button" class="btn-copy-mini js-copy-snippet" title="Copy Markdown" aria-label="Copy story snippet" style="margin-left:auto;">
+              Copy
+            </button>
           </div>
           <h4><a href={item.url} target="_blank" rel="noopener noreferrer">{item.headline}</a></h4>
           <p>{item.summary}</p>
@@ -101,6 +110,9 @@ const leadStoryLd = items.length > 0 ? JSON.stringify({
         <div class="card-meta">
           <span class={`chip ${chip(item.category)}`}>{label(item.category)}</span>
           <span class="card-date">{fmt(item.date)}</span>
+          <button type="button" class="btn-copy-mini js-copy-snippet" title="Copy Markdown" aria-label="Copy story snippet" style="margin-left:auto;">
+            Copy
+          </button>
         </div>
         <h3><a href={item.url} target="_blank" rel="noopener noreferrer">{item.headline}</a></h3>
         <p>{item.summary}</p>

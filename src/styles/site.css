@@ -208,6 +208,47 @@ a { color: inherit; }
 .arrow { display: inline-block; width: 1em; height: 1em; vertical-align: -0.12em; }
 .arrow path { stroke: currentColor; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
 
+/* ---------- developer focus & HUD highlight ---------- */
+.a4u-focused {
+  outline: 2px solid var(--ink) !important;
+  outline-offset: 4px;
+  background: color-mix(in srgb, var(--surface) 90%, var(--pale-yellow-bg)) !important;
+  transition: outline 120ms ease, background 120ms ease;
+}
+
+:root[data-theme='dark'] .a4u-focused {
+  outline-color: var(--pale-green-fg) !important;
+  background: color-mix(in srgb, var(--surface) 85%, var(--hover)) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .a4u-focused {
+    outline-color: var(--pale-green-fg) !important;
+    background: color-mix(in srgb, var(--surface) 85%, var(--hover)) !important;
+  }
+}
+
+/* developer quick copy action */
+.btn-copy-mini {
+  background: none;
+  border: 1px solid var(--hairline);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 120ms ease;
+}
+.btn-copy-mini:hover {
+  color: var(--ink);
+  border-color: var(--hairline-strong);
+  background: var(--hover);
+}
+
 /* ---------- hero ---------- */
 .hero { padding: 52px 0 44px; }
 .hero-pulse {
@@ -508,6 +549,25 @@ a { color: inherit; }
   border-top: 1px solid var(--hairline-strong); border-bottom: 1px solid var(--hairline-strong);
   padding: 18px 0; margin: 32px 0;
   font-family: var(--display); font-size: 21px; line-height: 1.45; color: var(--ink);
+}
+.prose pre {
+  background: var(--surface);
+  border: 1px solid var(--hairline-strong);
+  border-radius: 8px;
+  padding: 16px 18px;
+  overflow-x: auto;
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 24px 0;
+}
+.prose code:not(pre code) {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 .prose .footnote { font-size: 13px; color: var(--muted); border-top: 1px dashed var(--hairline-strong); padding-top: 14px; }
 

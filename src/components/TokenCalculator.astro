@@ -1,0 +1,486 @@
+---
+// src/components/TokenCalculator.astro — interactive token pricing & cost simulator
+import { MODELS, PRESETS } from '../data/models.js';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = 'Frontier Token Cost Simulator',
+  subtitle = 'Calculate real-world API costs per request and scale across active frontier models.'
+} = Astro.props;
+
+// Filter out pure open weights for the cost comparison bar (or show with $0 badge)
+const apiModels = MODELS.filter((m) => !m.openWeights);
+---
+
+<section class="calc-card" id="token-calculator" aria-label="Model Token Cost Simulator">
+  <div class="calc-header">
+    <div class="calc-title-group">
+      <div class="calc-badge">
+        <span class="pulse-dot"></span>
+        <span>Interactive Dev Utility</span>
+      </div>
+      <h3>{title}</h3>
+      <p class="calc-sub">{subtitle}</p>
+    </div>
+  </div>
+
+  <div class="calc-presets" role="group" aria-label="Workload presets">
+    <span class="preset-label">Presets:</span>
+    {PRESETS.map((p, idx) => (
+      <button
+        type="button"
+        class={`preset-btn ${idx === 0 ? 'is-active' : ''}`}
+        data-in={p.inputTokens}
+        data-out={p.outputTokens}
+        title={p.desc}
+      >
+        {p.name}
+      </button>
+    ))}
+  </div>
+
+  <div class="calc-controls">
+    <div class="control-box">
+      <div class="control-head">
+        <label for="calc-in-tokens">Prompt / Input Tokens</label>
+        <div class="val-pill"><span id="val-in-display">45,000</span> <span class="unit">tokens</span></div>
+      </div>
+      <input type="range" id="calc-in-range" min="500" max="250000" step="500" value="45000" class="calc-slider" />
+      <div class="scale-ticks">
+        <span>500</span>
+        <span>50k</span>
+        <span>100k</span>
+        <span>250k</span>
+      </div>
+    </div>
+
+    <div class="control-box">
+      <div class="control-head">
+        <label for="calc-out-tokens">Completion / Output Tokens</label>
+        <div class="val-pill"><span id="val-out-display">2,500</span> <span class="unit">tokens</span></div>
+      </div>
+      <input type="range" id="calc-out-range" min="100" max="32000" step="100" value="2500" class="calc-slider" />
+      <div class="scale-ticks">
+        <span>100</span>
+        <span>4k</span>
+        <span>16k</span>
+        <span>32k</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="calc-results">
+    <div class="results-head">
+      <h4>Cost per Execution</h4>
+      <span class="calc-note">Prices per 1M tokens (checked August 2026)</span>
+    </div>
+    
+    <div class="model-bars" id="model-bars-container">
+      {apiModels.map((m) => (
+        <div class="model-row" data-id={m.id} data-in-price={m.inputPrice} data-out-price={m.outputPrice}>
+          <div class="model-meta">
+            <div class="model-name-group">
+              <strong class="model-name">{m.name}</strong>
+              <span class="model-provider">{m.provider}</span>
+            </div>
+            <span class="rate-tag">${m.inputPrice.toFixed(2)} in / ${m.outputPrice.toFixed(2)} out</span>
+          </div>
+
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 10%;"></div>
+          </div>
+
+          <div class="cost-output">
+            <span class="cost-num">$0.0000</span>
+            <span class="cost-label">/ call</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="calc-footer">
+      <div class="open-weights-note">
+        <span class="chip chip--research">Open Weights</span>
+        <span><strong>Kimi K3</strong> &amp; <strong>GLM-5.3-Flash</strong> have <strong>$0.00 API token cost</strong> when self-hosted on your own compute.</span>
+      </div>
+      <a href="/tools" class="calc-more-link">View all 10 model specs in Matrix →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .calc-card {
+    border: 1px solid var(--hairline-strong);
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 36px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  }
+
+  .calc-header {
+    margin-bottom: 20px;
+  }
+
+  .calc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--pale-green-fg);
+    margin-bottom: 6px;
+  }
+
+  .pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--pale-green-fg);
+    box-shadow: 0 0 8px var(--pale-green-fg);
+  }
+
+  .calc-card h3 {
+    font-family: var(--sans);
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+  }
+
+  .calc-sub {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .calc-presets {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 12px 0 18px;
+    border-bottom: 1px solid var(--hairline);
+    margin-bottom: 20px;
+  }
+
+  .preset-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-right: 4px;
+  }
+
+  .preset-btn {
+    background: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font: 500 12.5px/1.2 var(--sans);
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 140ms ease;
+  }
+
+  .preset-btn:hover {
+    border-color: var(--hairline-strong);
+    background: var(--hover);
+  }
+
+  .preset-btn.is-active {
+    background: var(--ink);
+    color: var(--canvas);
+    border-color: var(--ink);
+  }
+
+  .calc-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 26px;
+  }
+
+  @media (max-width: 720px) {
+    .calc-controls {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .control-box {
+    background: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+
+  .control-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .control-head label {
+    font: 600 13px/1.2 var(--sans);
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .val-pill {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--hairline-strong);
+    border-radius: 4px;
+    padding: 2px 8px;
+  }
+
+  .val-pill .unit {
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .calc-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 4px;
+    background: var(--hairline-strong);
+    outline: none;
+    cursor: pointer;
+    accent-color: var(--ink);
+  }
+
+  .scale-ticks {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--faint);
+    margin-top: 6px;
+  }
+
+  .calc-results {
+    border-top: 1px solid var(--hairline);
+    padding-top: 20px;
+  }
+
+  .results-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 14px;
+  }
+
+  .results-head h4 {
+    font: 600 14.5px/1.2 var(--sans);
+    margin: 0;
+  }
+
+  .calc-note {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--faint);
+  }
+
+  .model-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .model-row {
+    display: grid;
+    grid-template-columns: 240px 1fr 100px;
+    align-items: center;
+    gap: 16px;
+    background: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    padding: 8px 14px;
+    transition: transform 120ms ease;
+  }
+
+  @media (max-width: 680px) {
+    .model-row {
+      grid-template-columns: 1fr auto;
+      row-gap: 8px;
+    }
+    .bar-track {
+      display: none;
+    }
+  }
+
+  .model-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .model-name-group {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  .model-name {
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+
+  .model-provider {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .rate-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--faint);
+  }
+
+  .bar-track {
+    height: 8px;
+    background: var(--hairline);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: var(--ink);
+    border-radius: 4px;
+    transition: width 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .cost-output {
+    text-align: right;
+    font-family: var(--mono);
+  }
+
+  .cost-num {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .cost-label {
+    font-size: 10px;
+    color: var(--muted);
+  }
+
+  .calc-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--hairline);
+    font-size: 12.5px;
+    color: var(--muted);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .open-weights-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .calc-more-link {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .calc-more-link:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+  function setupCalculator() {
+    const root = document.getElementById('token-calculator');
+    if (!root) return;
+
+    const inSlider = root.querySelector('#calc-in-range') as HTMLInputElement;
+    const outSlider = root.querySelector('#calc-out-range') as HTMLInputElement;
+    const inDisplay = root.querySelector('#val-in-display');
+    const outDisplay = root.querySelector('#val-out-display');
+    const presetButtons = root.querySelectorAll('.preset-btn');
+    const modelRows = root.querySelectorAll('.model-row');
+
+    function update() {
+      const inVal = parseInt(inSlider.value, 10);
+      const outVal = parseInt(outSlider.value, 10);
+
+      if (inDisplay) inDisplay.textContent = inVal.toLocaleString();
+      if (outDisplay) outDisplay.textContent = outVal.toLocaleString();
+
+      let maxCost = 0;
+      const costs: { row: HTMLElement; cost: number }[] = [];
+
+      modelRows.forEach((r) => {
+        const row = r as HTMLElement;
+        const inPrice = parseFloat(row.dataset.inPrice || '0');
+        const outPrice = parseFloat(row.dataset.outPrice || '0');
+        const cost = (inVal / 1_000_000) * inPrice + (outVal / 1_000_000) * outPrice;
+        if (cost > maxCost) maxCost = cost;
+        costs.push({ row, cost });
+      });
+
+      costs.forEach(({ row, cost }) => {
+        const costNum = row.querySelector('.cost-num');
+        const barFill = row.querySelector('.bar-fill') as HTMLElement;
+
+        if (costNum) {
+          costNum.textContent = cost < 0.01 ? `$${cost.toFixed(4)}` : `$${cost.toFixed(3)}`;
+        }
+
+        if (barFill && maxCost > 0) {
+          const pct = Math.max(5, (cost / maxCost) * 100);
+          barFill.style.width = `${pct}%`;
+        }
+      });
+    }
+
+    inSlider?.addEventListener('input', () => {
+      presetButtons.forEach((b) => b.classList.remove('is-active'));
+      update();
+    });
+
+    outSlider?.addEventListener('input', () => {
+      presetButtons.forEach((b) => b.classList.remove('is-active'));
+      update();
+    });
+
+    presetButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        presetButtons.forEach((b) => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const inVal = btn.getAttribute('data-in');
+        const outVal = btn.getAttribute('data-out');
+        if (inVal && inSlider) inSlider.value = inVal;
+        if (outVal && outSlider) outSlider.value = outVal;
+        update();
+      });
+    });
+
+    update();
+  }
+
+  setupCalculator();
+  document.addEventListener('astro:page-load', setupCalculator);
+</script>

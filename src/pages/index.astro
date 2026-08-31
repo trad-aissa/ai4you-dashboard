@@ -5,6 +5,7 @@ import { renderUnit, bindUnits } from '../lib/link-units.js';
 import Layout from '../layouts/Layout.astro';
 import NewsFeed from '../components/NewsFeed.astro';
 import PreferredSources from '../components/PreferredSources.astro';
+import TokenCalculator from '../components/TokenCalculator.astro';
 import headlines from '../data/auto/headlines.json';
 
 let units = [];
@@ -38,6 +39,10 @@ const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
   </section>
 
   <NewsFeed limit={6} />
+
+  <div class="wrap">
+    <TokenCalculator />
+  </div>
 
   <section class="wrap" style="padding: 32px 0 48px; border-top: 1px solid var(--hairline);" aria-label="Today's AI headlines">
     <div class="section-head">

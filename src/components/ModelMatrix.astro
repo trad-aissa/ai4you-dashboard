@@ -1,0 +1,325 @@
+---
+// src/components/ModelMatrix.astro — searchable, sortable frontier model intelligence matrix
+import { MODELS } from '../data/models.js';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Frontier Model Intelligence Matrix' } = Astro.props;
+---
+
+<section class="matrix-section" id="model-matrix" aria-label="Frontier Model Intelligence Matrix">
+  <div class="matrix-head">
+    <div>
+      <span class="kicker">Benchmarks &amp; Pricing · August 2026</span>
+      <h2>{title}</h2>
+      <p class="matrix-sub">Real-time parameters, context windows, token pricing, and tooling integrations across frontier &amp; open-weights AI models.</p>
+    </div>
+    
+    <div class="matrix-filter-bar">
+      <input type="search" id="matrix-search" placeholder="Filter by model, provider, or tool (e.g. Cursor, 500k, Open Weights)..." aria-label="Search models" />
+      <div class="filter-chips">
+        <button type="button" class="m-chip is-active" data-filter="all">All ({MODELS.length})</button>
+        <button type="button" class="m-chip" data-filter="open">Open Weights</button>
+        <button type="button" class="m-chip" data-filter="coding">Coding &amp; Agents</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Model &amp; Provider</th>
+          <th>Type / Weight</th>
+          <th>Context Window</th>
+          <th>Max Output</th>
+          <th>Pricing (In / Out per 1M)</th>
+          <th>Tool Integrations</th>
+        </tr>
+      </thead>
+      <tbody id="matrix-tbody">
+        {MODELS.map((m) => (
+          <tr class="matrix-row" data-open={m.openWeights ? 'true' : 'false'} data-provider={m.provider.toLowerCase()} data-name={m.name.toLowerCase()} data-tools={m.tools.join(' ').toLowerCase()}>
+            <td class="cell-model">
+              <div class="m-title">{m.name}</div>
+              <div class="m-prov">{m.provider}</div>
+              <div class="m-desc">{m.description}</div>
+            </td>
+            <td>
+              {m.openWeights ? (
+                <a href={m.hfUrl} target="_blank" rel="noopener noreferrer" class="badge-hf" title="View weights on Hugging Face">
+                  <span class="chip chip--research">Open Weights ↗</span>
+                </a>
+              ) : (
+                <span class="chip chip--model">Proprietary API</span>
+              )}
+            </td>
+            <td class="cell-mono font-bold">{m.contextWindow}</td>
+            <td class="cell-mono">{m.maxOutput}</td>
+            <td class="cell-price">
+              {m.openWeights ? (
+                <span class="free-badge">Self-Hosted ($0)</span>
+              ) : (
+                <div>
+                  <span class="in-cost">${m.inputPrice.toFixed(2)}</span> / <span class="out-cost">${m.outputPrice.toFixed(2)}</span>
+                </div>
+              )}
+            </td>
+            <td>
+              <div class="tool-tags">
+                {m.tools.map((t) => (
+                  <span class="tool-tag">{t}</span>
+                ))}
+              </div>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="matrix-footer-note">All prices are standard tier per million tokens. Open weights models require independent GPU inference.</p>
+</section>
+
+<style>
+  .matrix-section {
+    border: 1px solid var(--hairline);
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 28px;
+    margin: 36px 0 48px;
+  }
+
+  .matrix-head {
+    margin-bottom: 24px;
+  }
+
+  .matrix-head h2 {
+    font-family: var(--sans);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 6px 0 6px;
+  }
+
+  .matrix-sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 20px;
+    max-width: 65ch;
+  }
+
+  .matrix-filter-bar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  #matrix-search {
+    flex: 1;
+    min-width: 280px;
+    background: var(--canvas);
+    border: 1px solid var(--hairline-strong);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: var(--ink);
+  }
+
+  #matrix-search:focus {
+    outline: 2px solid var(--ink);
+  }
+
+  .filter-chips {
+    display: flex;
+    gap: 6px;
+  }
+
+  .m-chip {
+    background: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font: 500 12px/1 var(--sans);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 140ms ease;
+  }
+
+  .m-chip:hover {
+    color: var(--ink);
+    background: var(--hover);
+  }
+
+  .m-chip.is-active {
+    background: var(--ink);
+    color: var(--canvas);
+    border-color: var(--ink);
+  }
+
+  .table-container {
+    overflow-x: auto;
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    background: var(--canvas);
+  }
+
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13px;
+  }
+
+  .matrix-table th {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    background: var(--surface);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--hairline-strong);
+    white-space: nowrap;
+  }
+
+  .matrix-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--hairline);
+    vertical-align: middle;
+  }
+
+  .matrix-row:last-child td {
+    border-bottom: none;
+  }
+
+  .matrix-row:hover {
+    background: var(--surface);
+  }
+
+  .cell-model {
+    min-width: 220px;
+  }
+
+  .m-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .m-prov {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .m-desc {
+    font-size: 11.5px;
+    color: var(--faint);
+    line-height: 1.35;
+  }
+
+  .badge-hf {
+    text-decoration: none;
+  }
+
+  .cell-mono {
+    font-family: var(--mono);
+    font-size: 12.5px;
+  }
+
+  .font-bold {
+    font-weight: 600;
+  }
+
+  .cell-price {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    white-space: nowrap;
+  }
+
+  .free-badge {
+    color: var(--pale-green-fg);
+    font-weight: 600;
+  }
+
+  .in-cost {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .out-cost {
+    color: var(--muted);
+  }
+
+  .tool-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .tool-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    padding: 2px 6px;
+    color: var(--faint);
+    white-space: nowrap;
+  }
+
+  .matrix-footer-note {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--faint);
+    margin: 14px 0 0;
+  }
+</style>
+
+<script>
+  function setupMatrix() {
+    const search = document.getElementById('matrix-search') as HTMLInputElement;
+    const chips = document.querySelectorAll('.m-chip');
+    const rows = document.querySelectorAll('.matrix-row');
+
+    function filterTable() {
+      const q = (search?.value || '').trim().toLowerCase();
+      const activeFilter = document.querySelector('.m-chip.is-active')?.getAttribute('data-filter') || 'all';
+
+      rows.forEach((r) => {
+        const row = r as HTMLElement;
+        const name = row.getAttribute('data-name') || '';
+        const provider = row.getAttribute('data-provider') || '';
+        const tools = row.getAttribute('data-tools') || '';
+        const isOpen = row.getAttribute('data-open') === 'true';
+
+        const matchesQuery = !q || name.includes(q) || provider.includes(q) || tools.includes(q);
+        let matchesChip = true;
+
+        if (activeFilter === 'open') {
+          matchesChip = isOpen;
+        } else if (activeFilter === 'coding') {
+          matchesChip = tools.includes('cursor') || tools.includes('copilot') || tools.includes('claude code');
+        }
+
+        row.style.display = matchesQuery && matchesChip ? '' : 'none';
+      });
+    }
+
+    search?.addEventListener('input', filterTable);
+
+    chips.forEach((c) => {
+      c.addEventListener('click', () => {
+        chips.forEach((b) => b.classList.remove('is-active'));
+        c.classList.add('is-active');
+        filterTable();
+      });
+    });
+  }
+
+  setupMatrix();
+  document.addEventListener('astro:page-load', setupMatrix);
+</script>

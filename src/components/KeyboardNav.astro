@@ -1,0 +1,366 @@
+---
+// src/components/KeyboardNav.astro — power-user developer keyboard navigation & quick actions
+---
+
+<aside class="dev-hud" id="dev-hud" aria-label="Developer Keyboard Navigation">
+  <button type="button" class="hud-pill" id="hud-pill-btn" aria-label="Keyboard shortcuts" title="Press ? for keyboard shortcuts">
+    <span class="hud-icon">⌨</span>
+    <span class="hud-text"><kbd>j</kbd><kbd>k</kbd> nav · <kbd>/</kbd> filter · <kbd>?</kbd> keys</span>
+  </button>
+
+  <div class="hud-dialog" id="hud-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="hud-dialog-title">
+    <div class="hud-dialog-backdrop" id="hud-backdrop"></div>
+    <div class="hud-dialog-panel">
+      <div class="hud-dialog-head">
+        <h3 id="hud-dialog-title">Developer Keyboard Shortcuts</h3>
+        <button type="button" class="hud-close" id="hud-close-btn" aria-label="Close shortcuts dialog">✕</button>
+      </div>
+
+      <div class="hud-shortcuts-grid">
+        <div class="hud-shortcut">
+          <div class="hud-keys"><kbd>j</kbd> or <kbd>↓</kbd></div>
+          <div class="hud-desc">Next story / headline</div>
+        </div>
+        <div class="hud-shortcut">
+          <div class="hud-keys"><kbd>k</kbd> or <kbd>↑</kbd></div>
+          <div class="hud-desc">Previous story / headline</div>
+        </div>
+        <div class="hud-shortcut">
+          <div class="hud-keys"><kbd>Enter</kbd> or <kbd>o</kbd></div>
+          <div class="hud-desc">Open primary source link</div>
+        </div>
+        <div class="hud-shortcut">
+          <div class="hud-keys"><kbd>c</kbd></div>
+          <div class="hud-desc">Copy story as Markdown (Slack/Discord)</div>
+        </div>
+        <div class="hud-shortcut">
+          <div class="hud-keys"><kbd>/</kbd></div>
+          <div class="hud-desc">Focus search / filter bar</div>
+        </div>
+        <div class="hud-shortcut">
+          <div class="hud-keys"><kbd>t</kbd></div>
+          <div class="hud-desc">Toggle Dark / Light theme</div>
+        </div>
+        <div class="hud-shortcut">
+          <div class="hud-keys"><kbd>?</kbd></div>
+          <div class="hud-desc">Toggle this cheatsheet</div>
+        </div>
+        <div class="hud-shortcut">
+          <div class="hud-keys"><kbd>Esc</kbd></div>
+          <div class="hud-desc">Dismiss active selection / dialog</div>
+        </div>
+      </div>
+      <div class="hud-dialog-foot">
+        <span>ai4you.site · developer wire mode</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="dev-toast" class="dev-toast" role="status" aria-live="polite" hidden></div>
+</aside>
+
+<style>
+  .dev-hud {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .hud-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--hairline-strong);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font: 500 12px/1 var(--mono);
+    cursor: pointer;
+    transition: all 160ms ease;
+  }
+
+  .hud-pill:hover {
+    background: var(--canvas);
+    border-color: var(--ink);
+    transform: translateY(-1px);
+  }
+
+  .hud-icon {
+    font-size: 14px;
+  }
+
+  .hud-pill kbd, .hud-keys kbd {
+    display: inline-block;
+    background: var(--canvas);
+    border: 1px solid var(--hairline-strong);
+    border-radius: 4px;
+    padding: 2px 5px;
+    font-family: var(--mono);
+    font-size: 11px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    color: var(--ink);
+  }
+
+  /* Modal */
+  .hud-dialog {
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hud-dialog-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .hud-dialog-panel {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--hairline-strong);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 480px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .hud-dialog-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+
+  .hud-dialog-head h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .hud-close {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+  }
+
+  .hud-close:hover {
+    color: var(--ink);
+  }
+
+  .hud-shortcuts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hud-shortcut {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+  }
+
+  .hud-desc {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .hud-dialog-foot {
+    border-top: 1px solid var(--hairline);
+    padding-top: 12px;
+    margin-top: 16px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--faint);
+    text-align: right;
+  }
+
+  /* Toast Notification */
+  .dev-toast {
+    position: fixed;
+    bottom: 74px;
+    right: 20px;
+    background: var(--ink);
+    color: var(--canvas);
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 1002;
+    animation: toast-in 180ms ease;
+  }
+
+  @keyframes toast-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .hud-pill .hud-text {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  function setupKeyboardNav() {
+    const dialog = document.getElementById('hud-dialog');
+    const pillBtn = document.getElementById('hud-pill-btn');
+    const closeBtn = document.getElementById('hud-close-btn');
+    const backdrop = document.getElementById('hud-backdrop');
+    const toast = document.getElementById('dev-toast');
+
+    let toastTimer: any = null;
+    function showToast(msg: string) {
+      if (!toast) return;
+      toast.textContent = msg;
+      toast.hidden = false;
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.hidden = true;
+      }, 2600);
+    }
+
+    function toggleDialog(open?: boolean) {
+      if (!dialog) return;
+      const willOpen = open !== undefined ? open : dialog.hidden;
+      dialog.hidden = !willOpen;
+    }
+
+    pillBtn?.addEventListener('click', () => toggleDialog(true));
+    closeBtn?.addEventListener('click', () => toggleDialog(false));
+    backdrop?.addEventListener('click', () => toggleDialog(false));
+
+    let selectedIndex = -1;
+    function getItems(): HTMLElement[] {
+      return Array.from(
+        document.querySelectorAll(
+          '.lead-story, .side-story, .feed-card, .today-item, .news-item'
+        )
+      ) as HTMLElement[];
+    }
+
+    function highlightItem(index: number) {
+      const items = getItems();
+      items.forEach((it) => it.classList.remove('a4u-focused'));
+      if (index >= 0 && index < items.length) {
+        selectedIndex = index;
+        const current = items[selectedIndex];
+        current.classList.add('a4u-focused');
+        current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    // Attach copy button listeners to all cards
+    function setupCopyButtons() {
+      document.querySelectorAll('.js-copy-snippet').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const target = btn.closest('.feed-card, .lead-story, .side-story, .news-item') as HTMLElement;
+          if (target) copyItem(target);
+        });
+      });
+    }
+
+    function copyItem(el: HTMLElement) {
+      const title = el.querySelector('h3, h4, .today-title')?.textContent?.trim() || '';
+      const link = (el.querySelector('a') as HTMLAnchorElement)?.href || window.location.href;
+      const summary = el.querySelector('p')?.textContent?.trim() || '';
+      const source = el.querySelector('.src-line, .chip, .today-src')?.textContent?.replace(/source\s*·\s*/i, '').trim() || 'ai4you.site';
+
+      const markdown = `> **${title}**\n> ${summary}\n> Source: [${source}](${link}) — via ai4you.site`;
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(markdown).then(() => {
+          showToast('✓ Copied Markdown snippet to clipboard (Slack/Discord ready)');
+        });
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      // Don't capture when typing in form inputs
+      const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select') {
+        if (e.key === 'Escape') (e.target as HTMLElement).blur();
+        return;
+      }
+
+      if (e.key === '?') {
+        e.preventDefault();
+        toggleDialog();
+      } else if (e.key === 'Escape') {
+        if (dialog && !dialog.hidden) {
+          toggleDialog(false);
+        } else {
+          highlightItem(-1);
+          selectedIndex = -1;
+        }
+      } else if (e.key === 'j' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        const items = getItems();
+        if (items.length === 0) return;
+        const next = selectedIndex < items.length - 1 ? selectedIndex + 1 : 0;
+        highlightItem(next);
+      } else if (e.key === 'k' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        const items = getItems();
+        if (items.length === 0) return;
+        const prev = selectedIndex > 0 ? selectedIndex - 1 : items.length - 1;
+        highlightItem(prev);
+      } else if (e.key === 'Enter' || e.key === 'o') {
+        if (selectedIndex >= 0) {
+          const items = getItems();
+          const target = items[selectedIndex];
+          const a = target?.querySelector('a') as HTMLAnchorElement;
+          if (a && a.href) {
+            window.open(a.href, '_blank', 'noopener,noreferrer');
+          }
+        }
+      } else if (e.key === 'c') {
+        if (selectedIndex >= 0) {
+          const items = getItems();
+          if (items[selectedIndex]) copyItem(items[selectedIndex]);
+        }
+      } else if (e.key === '/') {
+        e.preventDefault();
+        const searchInput = (document.getElementById('matrix-search') ||
+          document.getElementById('news-filters') ||
+          document.getElementById('feed-filters')) as HTMLElement;
+        if (searchInput) {
+          searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          if ((searchInput as HTMLInputElement).focus) (searchInput as HTMLInputElement).focus();
+        }
+      } else if (e.key === 't') {
+        // Toggle theme
+        const current = document.documentElement.dataset.theme || 'auto';
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        try { localStorage.setItem('a4u-theme', next); } catch {}
+        showToast(`Theme switched to: ${next}`);
+      }
+    });
+
+    setupCopyButtons();
+  }
+
+  setupKeyboardNav();
+  document.addEventListener('astro:page-load', setupKeyboardNav);
+</script>

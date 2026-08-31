@@ -3,6 +3,8 @@
 import Layout from '../layouts/Layout.astro';
 import { supabase } from '../lib/supabase.js';
 import toolsStatic from '../data/tools.js';
+import ModelMatrix from '../components/ModelMatrix.astro';
+import TokenCalculator from '../components/TokenCalculator.astro';
 
 // Read shelf entries from the database (show_on_shelf = true), fall back to
 // the static list if the DB is unreachable or has no shelf items.
@@ -101,6 +103,11 @@ const cats = [
       </p>
     )}
   </section>
+
+  <div class="wrap">
+    <ModelMatrix />
+    <TokenCalculator title="Interactive Token Cost Comparison" subtitle="Calculate inference costs for tool automation, coding agents, and batch workflows." />
+  </div>
 
   <section class="wrap" style="padding-bottom:72px;" aria-label="How we pick tools">
     <div class="section-head"><h2>How tools get on the shelf</h2></div>

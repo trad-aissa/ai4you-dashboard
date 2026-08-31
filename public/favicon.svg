@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- ai4you.site — the wire pulse mark -->
-  <rect width="64" height="64" rx="15" fill="#1A1A19"/>
-  <path d="M10 33h9l5-13 8 24 5-13h13" fill="none" stroke="#FBFBFA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="53" cy="31" r="2.6" fill="#93C48E"/>
+  <!-- ai4you.site — developer wire telemetry mark -->
+  <rect width="64" height="64" rx="14" fill="#171614"/>
+  <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="#2C2B27" stroke-width="1.5"/>
+  <path d="M9 33h9l5.5-14 8 26 5.5-12h14" fill="none" stroke="#FBFBFA" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="53" cy="31" r="3.2" fill="#00E599"/>
 </svg>

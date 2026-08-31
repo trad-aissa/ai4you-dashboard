@@ -14,8 +14,10 @@ const { title, description, path = '', image, type = 'website', publishedTime, b
 
 const SITE = 'https://www.ai4you.site';
 const canonical = `${SITE}${path || '/'}`;
-const ogImage = image ? (image.startsWith('http') ? image : `${SITE}${image}`) : `${SITE}/og-default.png`;
-const ogImageAlt = 'ai4you.site — the model race, decoded for busy humans';
+const defaultDynamicOg = `${SITE}/api/og.svg?title=${encodeURIComponent(title)}&tag=${encodeURIComponent(type === 'article' ? 'DEEP DIVE · ARTICLE' : 'AI WIRE · FRONTIER')}`;
+const ogImage = image ? (image.startsWith('http') ? image : `${SITE}${image}`) : defaultDynamicOg;
+const ogImageType = ogImage.endsWith('.svg') ? 'image/svg+xml' : 'image/png';
+const ogImageAlt = `${title} — ai4you.site`;
 const desc = description ?? 'A calm, sourced briefing on AI: model releases, pricing changes and industry moves — plus the tools actually worth your money.';
 
 const breadcrumbLd = breadcrumbs?.length ? {
@@ -45,7 +47,7 @@ const breadcrumbLd = breadcrumbs?.length ? {
 <meta property="og:image" content={ogImage} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:type" content="image/png" />
+<meta property="og:image:type" content={ogImageType} />
 <meta property="og:image:alt" content={ogImageAlt} />
 <meta property="og:locale" content="en_US" />
 {publishedTime && <meta property="article:published_time" content={publishedTime} />}

@@ -12,6 +12,7 @@ import '@fontsource-variable/instrument-sans/wght-italic.css';
 import '@fontsource-variable/jetbrains-mono';
 
 import Seo from '../components/Seo.astro';
+import KeyboardNav from '../components/KeyboardNav.astro';
 
 interface Crumb { name: string; path: string }
 interface Props { title: string; description?: string; path?: string; image?: string; type?: 'website' | 'article'; publishedTime?: string; breadcrumbs?: Crumb[] }
@@ -104,6 +105,7 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
               <li><a href="/article">Deep dive</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/rss.xml">RSS feed</a></li>
+              <li><a href="/news.json" target="_blank">JSON feed (API)</a></li>
             </ul>
           </div>
           <div>
@@ -122,6 +124,7 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
         </div>
       </div>
     </footer>
+    <KeyboardNav />
 
     <button type="button" class="to-top" id="to-top" aria-label="Back to top" hidden>
       <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"></path></svg>
