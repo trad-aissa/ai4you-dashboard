@@ -1,7 +1,87 @@
 {
-  "updated": "2026-08-30T11:45:12.904Z",
+  "updated": "2026-08-31T12:40:51.278Z",
   "count": 80,
   "items": [
+    {
+      "id": "f0c23ddb6921",
+      "title": "Pocket's AI made my game ideas real. Now Meta controls the results.",
+      "url": "https://arstechnica.com/gaming/2026/08/pockets-ai-made-my-game-ideas-real-now-meta-controls-the-results/",
+      "source": "Ars Technica",
+      "date": "2026-08-31T10:00:34.000Z",
+      "snippet": "Interactive mobile \"gizmos\" are easy to make, hard to share outside Meta's platform."
+    },
+    {
+      "id": "21b15ed115fb",
+      "title": "Meta Security Researcher's AI Agent Accidentally Deleted Her Emails",
+      "url": "https://au.pcmag.com/ai/116091/meta-security-researchers-ai-agent-accidentally-deleted-her-emails",
+      "source": "Hacker News",
+      "date": "2026-08-31T07:23:47.000Z",
+      "snippet": "52 points · 45 comments on HN"
+    },
+    {
+      "id": "a8080320e24b",
+      "title": "OpenClaw 2.0, Accidentally",
+      "url": "https://openclaw.ai/blog/openclaw-2-accidentally",
+      "source": "Hacker News",
+      "date": "2026-08-31T03:38:02.000Z",
+      "snippet": "116 points · 136 comments on HN"
+    },
+    {
+      "id": "1298b618b7c6",
+      "title": "Why do I lose my passion and want to do nothing?",
+      "url": "https://news.ycombinator.com/item?id=49505014",
+      "source": "Hacker News",
+      "date": "2026-08-31T02:40:37.000Z",
+      "snippet": "83 points · 67 comments on HN"
+    },
+    {
+      "id": "f2a0380f36ec",
+      "title": "The U.S. is building barriers around drones and robots, but China has scale to get around them",
+      "url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/",
+      "source": "TechCrunch",
+      "date": "2026-08-31T02:34:00.000Z",
+      "snippet": "The U.S. is shutting out more foreign-made drones and robots. China’s scale means the global competition may simply move elsewhere."
+    },
+    {
+      "id": "f10775ba975c",
+      "title": "Continuous Diffusion Language Models (CDLM's)",
+      "url": "https://sander.ai/2026/08/24/continuous-dlms.html",
+      "source": "Hacker News",
+      "date": "2026-08-30T20:46:53.000Z",
+      "snippet": "117 points · 40 comments on HN"
+    },
+    {
+      "id": "a05533f3a710",
+      "title": "Musk’s faster path to more gas turbines comes with pollution problem",
+      "url": "https://techcrunch.com/2026/08/30/musks-faster-path-to-more-gas-turbines-comes-with-pollution-problem/",
+      "source": "TechCrunch",
+      "date": "2026-08-30T16:54:25.000Z",
+      "snippet": "Elon Musk says a secretive new SpaceX foundry will let him cast his own turbine blades and get gas power online 18 months faster than anyone else — but it's a bet on a fuel source that's already triggering lawsuits and h"
+    },
+    {
+      "id": "4538153b570f",
+      "title": "Texas Governor Abbott blocks funding for more Flock cameras",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras",
+      "source": "The Verge",
+      "date": "2026-08-30T15:35:10.000Z",
+      "snippet": "As backlash grows over Flock's AI surveillance cameras, Texas Governor Greg Abbott has frozen state spending on them. The move came just ahead of the publication of a Texas Tribune investigation that revealed the state s"
+    },
+    {
+      "id": "d42720224276",
+      "title": "Caterpillar is bringing to AI deployment what it learned from automating mining",
+      "url": "https://techcrunch.com/2026/08/30/caterpillar-is-bringing-to-ai-deployment-what-it-learned-from-automating-mining/",
+      "source": "TechCrunch",
+      "date": "2026-08-30T15:00:00.000Z",
+      "snippet": "Caterpillar has spent decades putting autonomous machines to work at remote mining sites. It's now bringing that experience to AI deployment."
+    },
+    {
+      "id": "34828da1c8e0",
+      "title": "No AI Fridays",
+      "url": "https://noaifridays.com/",
+      "source": "Hacker News",
+      "date": "2026-08-30T12:31:05.000Z",
+      "snippet": "276 points · 192 comments on HN"
+    },
     {
       "id": "ce11c9b872b5",
       "title": "Inside Meta’s push to put robots to work in data centers",
@@ -9,6 +89,22 @@
       "source": "Ars Technica",
       "date": "2026-08-30T11:03:47.000Z",
       "snippet": "The company is testing robots on tasks that can performed by technicians."
+    },
+    {
+      "id": "1190010667fb",
+      "title": "Fair Work Commission condemns 'plain wrong' AI legal advice",
+      "url": "https://www.abc.net.au/news/2026-08-29/fair-work-commission-condemns-ai-legal-advice/107089766",
+      "source": "Hacker News",
+      "date": "2026-08-30T10:20:11.000Z",
+      "snippet": "59 points · 31 comments on HN"
+    },
+    {
+      "id": "9aafa3abb8d1",
+      "title": "Open Oscar Server: open-source server compatible with AIM and ICQ clients",
+      "url": "https://github.com/mk6i/open-oscar-server",
+      "source": "Hacker News",
+      "date": "2026-08-30T00:33:35.000Z",
+      "snippet": "64 points · 20 comments on HN"
     },
     {
       "id": "a07c3116b1cc",
@@ -24,15 +120,15 @@
       "url": "https://pgaleone.eu/ai/2026/08/29/losing-savviness/",
       "source": "Hacker News",
       "date": "2026-08-29T18:38:52.000Z",
-      "snippet": "59 points · 75 comments on HN"
+      "snippet": "60 points · 78 comments on HN"
     },
     {
       "id": "202512972a82",
-      "title": "Sony Music and Warner Chappell are suing Anthropic",
+      "title": "Sony Music Publishing and Warner Chappell are suing Anthropic",
       "url": "https://www.theverge.com/ai-artificial-intelligence/986438/sony-music-warner-chappell-anthropic-lawsuit-copyright",
       "source": "The Verge",
       "date": "2026-08-29T18:19:53.000Z",
-      "snippet": "Sony Music and Warner Chappell have filed suit against Anthropic in the US District Court for the Northern District of California seeking damages for \"tens of thousands\" copyrighted works. The companies are asking for up"
+      "snippet": "Sony Music Publishing and Warner Chappell have filed suit against Anthropic in the US District Court for the Northern District of California seeking damages for \"tens of thousands\" copyrighted works. The companies are as"
     },
     {
       "id": "160a511db123",
@@ -48,7 +144,7 @@
       "url": "https://newsletter.eng-leadership.com/p/good-culture-is-the-biggest-productivity",
       "source": "Hacker News",
       "date": "2026-08-29T17:19:47.000Z",
-      "snippet": "403 points · 100 comments on HN"
+      "snippet": "465 points · 118 comments on HN"
     },
     {
       "id": "6077ac6ddf62",
@@ -56,7 +152,7 @@
       "url": "https://optimizedbyotto.com/post/why-open-source-projects-ban-ai/",
       "source": "Hacker News",
       "date": "2026-08-29T16:16:32.000Z",
-      "snippet": "62 points · 81 comments on HN"
+      "snippet": "66 points · 88 comments on HN"
     },
     {
       "id": "df33b5c46b3b",
@@ -64,7 +160,7 @@
       "url": "https://lwn.net/Articles/1091231/",
       "source": "Hacker News",
       "date": "2026-08-29T14:02:10.000Z",
-      "snippet": "489 points · 455 comments on HN"
+      "snippet": "508 points · 472 comments on HN"
     },
     {
       "id": "dcb10e4dd984",
@@ -88,7 +184,7 @@
       "url": "https://github.com/stemdeckapp/stemdeck",
       "source": "Hacker News",
       "date": "2026-08-29T01:24:13.000Z",
-      "snippet": "227 points · 61 comments on HN"
+      "snippet": "243 points · 63 comments on HN"
     },
     {
       "id": "1da15a1b03f8",
@@ -96,7 +192,7 @@
       "url": "https://groverlab.org/hnbfpr/2026-08-26-ai-counterfeit-cosmetics.html",
       "source": "Hacker News",
       "date": "2026-08-28T22:18:27.000Z",
-      "snippet": "59 points · 25 comments on HN"
+      "snippet": "62 points · 27 comments on HN"
     },
     {
       "id": "d63f08afee62",
@@ -152,7 +248,7 @@
       "url": "https://huggingface.co/zai-org/GLM-5.3",
       "source": "Hacker News",
       "date": "2026-08-28T15:20:13.000Z",
-      "snippet": "793 points · 275 comments on HN"
+      "snippet": "801 points · 281 comments on HN"
     },
     {
       "id": "3b3b421d1ca8",
@@ -160,7 +256,7 @@
       "url": "https://blog.brokk.ai/dont-use-musl-if-you-care-about-performance/",
       "source": "Hacker News",
       "date": "2026-08-28T15:16:07.000Z",
-      "snippet": "107 points · 71 comments on HN"
+      "snippet": "109 points · 75 comments on HN"
     },
     {
       "id": "c6fae4a04883",
@@ -184,7 +280,7 @@
       "url": "https://blog.luanti.org/2026/08/27/luanti-dmca-tracer-ai/",
       "source": "Hacker News",
       "date": "2026-08-28T06:33:57.000Z",
-      "snippet": "518 points · 151 comments on HN"
+      "snippet": "522 points · 151 comments on HN"
     },
     {
       "id": "092c8de02e8b",
@@ -296,7 +392,7 @@
       "url": "https://artificialanalysis.ai/hardware-inference-stack/mobile-phones",
       "source": "Hacker News",
       "date": "2026-08-27T19:12:03.000Z",
-      "snippet": "52 points · 4 comments on HN"
+      "snippet": "84 points · 18 comments on HN"
     },
     {
       "id": "0cbcba9659d7",
@@ -320,7 +416,7 @@
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/",
       "source": "Hacker News",
       "date": "2026-08-27T18:03:42.000Z",
-      "snippet": "361 points · 127 comments on HN"
+      "snippet": "362 points · 127 comments on HN"
     },
     {
       "id": "9eadc7db28e1",
@@ -352,7 +448,7 @@
       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/",
       "source": "Hacker News",
       "date": "2026-08-27T17:06:32.000Z",
-      "snippet": "296 points · 233 comments on HN"
+      "snippet": "296 points · 236 comments on HN"
     },
     {
       "id": "7529af836f99",
@@ -384,7 +480,7 @@
       "url": "https://forgeeks.net/nvidia-673-billion-ai-growth-forecast/",
       "source": "Hacker News",
       "date": "2026-08-27T15:04:16.000Z",
-      "snippet": "111 points · 108 comments on HN"
+      "snippet": "111 points · 113 comments on HN"
     },
     {
       "id": "740a2542039e",
@@ -488,7 +584,7 @@
       "url": "https://aiandeducation.mit.edu/report/",
       "source": "Hacker News",
       "date": "2026-08-27T13:07:45.000Z",
-      "snippet": "143 points · 83 comments on HN"
+      "snippet": "144 points · 83 comments on HN"
     },
     {
       "id": "3a7d70a0e7de",
@@ -545,102 +641,6 @@
       "source": "TechCrunch",
       "date": "2026-08-27T11:35:59.000Z",
       "snippet": "OpenAI has more than 100 million weekly active ChatGPT users in India, a huge chunk of whom are on the free or the lower-priced Go tiers."
-    },
-    {
-      "id": "1e2d4b65f672",
-      "title": "Australia Bans Generative A.I. From Official Music Charts",
-      "url": "https://www.nytimes.com/2026/08/25/world/australia/australia-ai-music-chart-ban.html",
-      "source": "Hacker News",
-      "date": "2026-08-27T10:48:54.000Z",
-      "snippet": "107 points · 99 comments on HN"
-    },
-    {
-      "id": "3062d8cdad5f",
-      "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
-      "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
-      "source": "OpenAI",
-      "date": "2026-08-27T09:00:00.000Z",
-      "snippet": "A randomized study of more than 1,000 students examines ChatGPT, critical thinking, originality, and student performance on a real-world university assignment."
-    },
-    {
-      "id": "885ea181f134",
-      "title": "Nvidia closes in on Hugging Face acquisition",
-      "url": "https://techcrunch.com/2026/08/26/nvidia-closes-in-on-hugging-face-acquisition/",
-      "source": "TechCrunch",
-      "date": "2026-08-27T06:32:51.000Z",
-      "snippet": "Nvidia has reportedly agreed to buy Hugging Face, the popular open source AI hub, for $12.9 billion in a move that would let Nvidia both protect its chip empire and jump back into the cloud business."
-    },
-    {
-      "id": "57e276283c19",
-      "title": "Expanding OpenAI’s presence in Brazil",
-      "url": "https://openai.com/index/expanding-our-presence-in-brazil",
-      "source": "OpenAI",
-      "date": "2026-08-27T03:00:00.000Z",
-      "snippet": "OpenAI is expanding its presence in Brazil, deepening engagement with developers, businesses, and communities to support AI adoption across the country."
-    },
-    {
-      "id": "c4803ca8eaaa",
-      "title": "Humanity has the debate about AI consciousness backwards",
-      "url": "https://economist.com/by-invitation/2026/08/20/humanity-has-the-debate-about-ai-consciousness-backwards",
-      "source": "Hacker News",
-      "date": "2026-08-27T02:37:07.000Z",
-      "snippet": "117 points · 376 comments on HN"
-    },
-    {
-      "id": "4595a6eb241a",
-      "title": "Laion Big Video Dataset",
-      "url": "https://projects.laion.ai/bvd/",
-      "source": "Hacker News",
-      "date": "2026-08-27T01:50:26.000Z",
-      "snippet": "91 points · 24 comments on HN"
-    },
-    {
-      "id": "fa7623ee1ba9",
-      "title": "CEO fired developers to make room for AI. Developers create open source AI CEO",
-      "url": "https://github.com/SenteLabsAI/OpenExecutive",
-      "source": "Hacker News",
-      "date": "2026-08-27T01:46:22.000Z",
-      "snippet": "1023 points · 713 comments on HN"
-    },
-    {
-      "id": "9180d12bb88b",
-      "title": "Viral AI startup Instinct has raised $350M at a $2.5B valuation",
-      "url": "https://techcrunch.com/2026/08/26/viral-ai-startup-instinct-has-raised-350-million-at-a-2-5-billion-valuation/",
-      "source": "TechCrunch",
-      "date": "2026-08-27T00:24:57.000Z",
-      "snippet": "The startup is only a year old but it has already generated a massive amount of hype (and money) while also spurring privacy concerns."
-    },
-    {
-      "id": "fbbe9e7cb9c5",
-      "title": "AI agents meant to replace Meta workers made “large-scale, disruptive actions”",
-      "url": "https://arstechnica.com/ai/2026/08/metas-scrapped-plans-to-go-ai-native-included-slashing-teams-by-60-percent/",
-      "source": "Ars Technica",
-      "date": "2026-08-26T21:25:27.000Z",
-      "snippet": "Report shows Meta's challenges replacing people with AI agents."
-    },
-    {
-      "id": "3e834173ba77",
-      "title": "Serve Markdown to AI Agents with Accept Headers",
-      "url": "https://acceptmarkdown.com/",
-      "source": "Hacker News",
-      "date": "2026-08-26T19:45:59.000Z",
-      "snippet": "176 points · 108 comments on HN"
-    },
-    {
-      "id": "e138211becc3",
-      "title": "Google announces Gemini 3.5 Transcribe for AI-powered speech-to-text",
-      "url": "https://arstechnica.com/ai/2026/08/google-announces-gemini-3-5-transcribe-for-ai-powered-speech-to-text/",
-      "source": "Ars Technica",
-      "date": "2026-08-26T19:19:22.000Z",
-      "snippet": "The AI that powers Gboard's Rambler is coming to more Google products, including Chrome."
-    },
-    {
-      "id": "83abfc082897",
-      "title": "Intelligent transcription with Gemini 3.5 Transcribe",
-      "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/",
-      "source": "Google DeepMind",
-      "date": "2026-08-26T17:01:00.000Z",
-      "snippet": "Now you can get more intelligent speech-to-text transcription with Gemini 3.5 Transcribe."
     }
   ]
 }
