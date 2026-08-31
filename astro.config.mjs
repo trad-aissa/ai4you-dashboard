@@ -4,5 +4,6 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://www.ai4you.site',
+  trailingSlash: 'never',
   integrations: [sitemap()],
 });

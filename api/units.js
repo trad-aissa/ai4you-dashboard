@@ -21,6 +21,10 @@ const ADMIN_EMAIL = process.env.SUPABASE_ADMIN_EMAIL || '';
 const ADMIN_PASSWORD = process.env.SUPABASE_ADMIN_PASSWORD || '';
 const ADMIN_SECRET = process.env.ADMIN_API_SECRET;
 
+if (ADMIN_SECRET && ADMIN_SECRET.length < 16) {
+  console.error('[api/units] ADMIN_API_SECRET too short (min 16 chars) — endpoint will reject all requests');
+}
+
 const VALID_TYPES = ['inline', 'button', 'card', 'banner', 'box'];
 
 const str = (v, max) => (typeof v === 'string' ? v.slice(0, max) : null);

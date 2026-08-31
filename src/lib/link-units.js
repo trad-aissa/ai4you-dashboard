@@ -15,7 +15,7 @@ const REL = 'sponsored nofollow noopener';
 const withSubId = (url, slug) => {
   try {
     const u = new URL(url);
-    if (![...u.searchParams.keys()].length) u.searchParams.set('sub', slug);
+    if (!u.searchParams.has('sub')) u.searchParams.set('sub', slug);
     return u.toString();
   } catch { return url; }
 };

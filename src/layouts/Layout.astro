@@ -64,7 +64,7 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
           <a href="/changelog" aria-current={Astro.url.pathname === '/changelog' ? 'page' : undefined}>Updates</a>
           <a href="/article" aria-current={Astro.url.pathname === '/article' ? 'page' : undefined}>Deep dive</a>
           <a href="/about" aria-current={Astro.url.pathname === '/about' ? 'page' : undefined}>About</a>
-          <a href="/admin" hidden aria-hidden="true">·</a>
+
           <div class="theme-switch" role="group" aria-label="Color theme">
             <button type="button" data-set-theme="light" aria-pressed="false" aria-label="Light theme">
               <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5 5l1.7 1.7M17.3 17.3 19 19M19 5l-1.7 1.7M6.7 17.3 5 19"></path></svg>
@@ -100,6 +100,7 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
               <li><a href="/best-writing-tools">Best writing tools</a></li>
               <li><a href="/learn">Learn by doing</a></li>
               <li><a href="/changelog">Claude Code & Codex updates</a></li>
+              <li><a href="/stories">Story archive</a></li>
               <li><a href="/article">Deep dive</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/rss.xml">RSS feed</a></li>

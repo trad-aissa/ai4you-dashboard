@@ -24,7 +24,19 @@ const chip = (c) =>
 
 const label = (c) =>
   ({ 'model-release': 'Model release', pricing: 'Pricing', product: 'Product', research: 'Research', industry: 'Industry' })[c] ?? 'News';
+
+const leadStoryLd = items.length > 0 ? JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'NewsArticle',
+  headline: items[0].headline,
+  datePublished: `${items[0].date}T12:00:00Z`,
+  author: { '@type': 'Organization', name: 'ai4you.site' },
+  publisher: { '@type': 'Organization', name: 'ai4you.site', logo: { '@type': 'ImageObject', url: 'https://www.ai4you.site/favicon.svg' } },
+  description: items[0].summary,
+}) : null;
 ---
+
+{leadStoryLd && <script type="application/ld+json" set:html={leadStoryLd} />}
 
 <section class="briefs" role="region" aria-label="Quick briefs ticker">
   <div class="wrap briefs-inner">
@@ -41,6 +53,7 @@ const label = (c) =>
   </div>
 </section>
 
+{items.length > 0 && (
 <section class="lead-section wrap" aria-label="Top stories">
   <div class="section-head">
     <h2>Top story</h2>
@@ -68,6 +81,7 @@ const label = (c) =>
     </aside>
   </div>
 </section>
+)}
 
 <section class="feed-section wrap" aria-label="Latest news feed">
   <div class="section-head">

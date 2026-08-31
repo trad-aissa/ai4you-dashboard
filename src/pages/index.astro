@@ -117,7 +117,7 @@ const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
     }
     const btn = form.querySelector('button');
     if (btn) btn.disabled = true;
-    const { error } = await supabase.from('newsletter_subscribers').insert({ email: v.toLowerCase() });
+    const { data: rows, error } = await supabase.from('newsletter_subscribers').insert({ email: v.toLowerCase() }).select();
     if (btn) btn.disabled = false;
     if (error) {
       if (error.code === '23505' || /duplicate|unique/i.test(error.message ?? '')) {
@@ -126,6 +126,10 @@ const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
       } else {
         setMsg("Couldn't subscribe right now — please try again in a minute.", false);
       }
+      return;
+    }
+    if (!rows || rows.length === 0) {
+      setMsg("Couldn't subscribe right now — please try again in a minute.", false);
       return;
     }
     setMsg('Thanks — you are on the list. The next brief lands in your inbox.', true);

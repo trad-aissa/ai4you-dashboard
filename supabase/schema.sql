@@ -12,7 +12,7 @@
 -- ⚠️ CHANGE THIS EMAIL to your real one:
 create or replace function admin_email() returns text
 language sql stable as $$
-  select 'you@example.com';
+  select 'trad.aissa.at@gmail.com';
 $$;
 
 -- Admin check: does the currently signed-in user have the admin email?
