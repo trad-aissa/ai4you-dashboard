@@ -130,13 +130,9 @@ a { color: inherit; }
 /* ---------- masthead ---------- */
 .masthead {
   border-bottom: 1px solid var(--hairline);
-  background: color-mix(in srgb, var(--canvas) 86%, transparent);
-  backdrop-filter: blur(10px) saturate(1.4);
-  -webkit-backdrop-filter: blur(10px) saturate(1.4);
+  background: var(--canvas);
   position: sticky; top: 0; z-index: 60;
-}
-@supports not (backdrop-filter: blur(1px)) {
-  .masthead { background: var(--canvas); }
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 .masthead .top {
   display: flex; align-items: center; justify-content: space-between;
