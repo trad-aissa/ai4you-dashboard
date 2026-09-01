@@ -35,13 +35,19 @@ if (tools.length === 0) {
   tools = toolsStatic; // DB empty or unreachable -> curated static list
 }
 
+// Only offer filters that actually match a card on the shelf — a category chip
+// that empties the grid reads as a broken page.
+const CATEGORIES = {
+  writing: 'Writing',
+  video: 'Video & audio',
+  seo: 'SEO',
+  marketing: 'Marketing',
+  productivity: 'Productivity',
+};
+const present = new Set(tools.map((t) => t.category));
 const cats = [
   { id: 'all', label: 'All' },
-  { id: 'writing', label: 'Writing' },
-  { id: 'video', label: 'Video & audio' },
-  { id: 'seo', label: 'SEO' },
-  { id: 'marketing', label: 'Marketing' },
-  { id: 'productivity', label: 'Productivity' },
+  ...Object.entries(CATEGORIES).filter(([id]) => present.has(id)).map(([id, label]) => ({ id, label })),
 ];
 ---
 
@@ -63,13 +69,15 @@ const cats = [
   </section>
 
   <section class="dir wrap" aria-label="Tools directory">
-    <div class="filters" id="tool-filters" role="group" aria-label="Filter tools by category">
-      {cats.map((c, i) => (
-        <button class:list={['filter-btn', { 'is-active': i === 0 }]} data-filter={c.id} aria-pressed={i === 0 ? 'true' : 'false'}>
-          {c.label}
-        </button>
-      ))}
-    </div>
+    {cats.length > 2 && (
+      <div class="filters" id="tool-filters" role="group" aria-label="Filter tools by category">
+        {cats.map((c, i) => (
+          <button class:list={['filter-btn', { 'is-active': i === 0 }]} data-filter={c.id} aria-pressed={i === 0 ? 'true' : 'false'}>
+            {c.label}
+          </button>
+        ))}
+      </div>
+    )}
     <div class="dir-grid" id="dir-grid">
       {tools.map((t) => (
         <article class="dir-card" data-cat={t.category}>
@@ -97,6 +105,7 @@ const cats = [
         </article>
       ))}
     </div>
+    <p class="feed-status hidden" id="tool-status" role="status"></p>
     {dbError && (
       <p class="feed-status" style="margin-top:20px;">
         Showing the curated starter shelf — live shelf sync is temporarily unavailable.
@@ -136,6 +145,11 @@ const cats = [
       const show = f === 'all' || card.dataset.cat === f;
       card.style.display = show ? '' : 'none';
       if (show) shown++;
+    }
+    const status = document.getElementById('tool-status');
+    if (status) {
+      status.textContent = shown ? '' : 'Nothing on the shelf in this category yet — check back soon.';
+      status.classList.toggle('hidden', shown > 0);
     }
   });
 </script>

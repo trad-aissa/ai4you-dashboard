@@ -1,10 +1,21 @@
 // ============================================================
 // ai4you.site — link unit renderer (shared by public pages)
-// Mirrors the v1 system: <div data-a4u="SLUG"></div> mounts a unit.
+// Drop one into a page with <LinkUnit slug="SLUG" /> (src/components/LinkUnit.astro).
 // Every unit carries rel="sponsored nofollow noopener", target="_blank",
 // a disclosure, and ?sub=SLUG attribution + click logging.
 // ============================================================
-import { logClick } from './supabase.js';
+import { getActiveUnits, logClick } from './supabase.js';
+
+// Build-time cache: every <LinkUnit> on every page shares one query.
+let _bySlug;
+/** Look up one active unit by slug. Returns null if missing, paused, or the DB is down. */
+export function unitBySlug(slug) {
+  _bySlug ??= getActiveUnits().then(
+    (units) => Object.fromEntries(units.map((u) => [u.slug, u])),
+    (e) => (console.error('[link-units] DB unreachable:', e?.message ?? e), {}),
+  );
+  return _bySlug.then((map) => map[slug] ?? null);
+}
 
 const esc = (s = '') =>
   String(s).replace(/[&<>"']/g, (c) =>

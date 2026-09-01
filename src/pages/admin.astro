@@ -33,7 +33,7 @@ import Layout from '../layouts/Layout.astro';
         <h2 id="form-title">New placement</h2>
         <div class="grid2">
           <div class="field">
-            <label for="f-slug">Slug (used as data-a4u value &amp; sub-id)</label>
+            <label for="f-slug">Slug (used as the LinkUnit slug &amp; sub-id)</label>
             <input id="f-slug" type="text" placeholder="jasper-inline-1" />
           </div>
           <div class="field">
@@ -98,7 +98,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="panel">
         <h2>Placements (<span id="count">0</span>)</h2>
         <div id="rows"></div>
-        <p class="hint">Place on any page with: <code>&lt;div data-a4u="SLUG"&gt;&lt;/div&gt;</code> — the build renders it automatically.</p>
+        <p class="hint">Place on any page with: <code>&lt;LinkUnit slug="SLUG" /&gt;</code> — import it from <code>~/components/LinkUnit.astro</code> and the build renders it. Changes go live on the next deploy.</p>
       </div>
 
       <div class="panel">
@@ -385,7 +385,7 @@ import Layout from '../layouts/Layout.astro';
     const toggle = e.target.closest('[data-toggle]');
     const del = e.target.closest('[data-del]');
     if (copy) {
-      const snippet = `<div data-a4u="${copy.dataset.copy}"></div>`;
+      const snippet = `<LinkUnit slug="${copy.dataset.copy}" />`;
       navigator.clipboard?.writeText(snippet).then(() => fmsg('Snippet copied.', true), () => {});
     }
     if (edit) fillForm(units.find((u) => u.id === edit.dataset.edit));

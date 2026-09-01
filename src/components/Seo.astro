@@ -14,8 +14,11 @@ const { title, description, path = '', image, type = 'website', publishedTime, b
 
 const SITE = 'https://www.ai4you.site';
 const canonical = `${SITE}${path || '/'}`;
-const defaultDynamicOg = `${SITE}/api/og.svg?title=${encodeURIComponent(title)}&tag=${encodeURIComponent(type === 'article' ? 'DEEP DIVE · ARTICLE' : 'AI WIRE · FRONTIER')}`;
-const ogImage = image ? (image.startsWith('http') ? image : `${SITE}${image}`) : defaultDynamicOg;
+// One static PNG for every page that doesn't pass its own `image`. Per-page cards
+// need a server runtime (crawlers never send query strings to a prerendered file)
+// and a raster format (no major platform renders an SVG og:image) — add the Vercel
+// adapter + @vercel/og if that ever earns its keep.
+const ogImage = image ? (image.startsWith('http') ? image : `${SITE}${image}`) : `${SITE}/og-default.png`;
 const ogImageType = ogImage.endsWith('.svg') ? 'image/svg+xml' : 'image/png';
 const ogImageAlt = `${title} — ai4you.site`;
 const desc = description ?? 'A calm, sourced briefing on AI: model releases, pricing changes and industry moves — plus the tools actually worth your money.';
