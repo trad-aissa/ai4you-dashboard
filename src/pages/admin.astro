@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
     <!-- ===== auth gate ===== -->
     <div id="auth" class="auth-card">
       <span class="brand">ai4you<em> · link dashboard</em></span>
-      <p class="gate-title">Sign in to manage link placements</p>
+      <h1 class="gate-title">Sign in to manage link placements</h1>
       <p class="gate-sub">Authentication is handled by Supabase. Only the admin email configured in <code>src/config.js</code> is allowed to make changes — enforced again at the database level.</p>
       <label class="visually-hidden" for="a-email">Email</label>
       <input id="a-email" type="email" placeholder="admin@yourdomain.com" autocomplete="username" />
@@ -125,7 +125,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .auth-card .brand { font-family: var(--display); font-size: 26px; margin-bottom: 14px; display: block; }
   .auth-card .brand em { font-style: italic; color: var(--muted); }
-  .gate-title { font: 600 15px/1.4 var(--sans); margin: 0 0 4px; }
+  .gate-title { font: 600 15px/1.4 var(--sans); margin: 0 0 4px; }  /* h1: the only one visible while signed out */
   .gate-sub { font-size: 13px; color: var(--muted); margin: 0 0 18px; line-height: 1.55; }
   .gate-sub code { font-family: var(--mono); font-size: 11.5px; }
   #auth input {

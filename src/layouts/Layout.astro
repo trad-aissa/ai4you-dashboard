@@ -11,6 +11,18 @@ import '@fontsource-variable/instrument-sans';
 import '@fontsource-variable/instrument-sans/wght-italic.css';
 import '@fontsource-variable/jetbrains-mono';
 
+// The three faces the first screen actually paints with. Without preload they
+// are discovered only after the stylesheet parses, so the hero swaps late and
+// the h1 reflows — that was ~0.08 of the homepage's CLS.
+import serifRegular from '@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2?url';
+import serifItalic from '@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2?url';
+import sansRegular from '@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2?url';
+// Preloading all three costs ~350ms of FCP on a throttled 4G phone and buys
+// CLS 0.081 -> 0.000. Everything still sits inside Google's "good" band, and a
+// hero that reflows under the reader is worse than one that paints slightly
+// later. Serif alone left /tools shifting, so the sans earns its slot too.
+const preloadFonts = [serifRegular, serifItalic, sansRegular];
+
 import Seo from '../components/Seo.astro';
 import KeyboardNav from '../components/KeyboardNav.astro';
 
@@ -28,6 +40,7 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
       try { document.documentElement.dataset.theme = localStorage.getItem('a4u-theme') || 'auto'; } catch {}
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {preloadFonts.map((href) => <link rel="preload" as="font" type="font/woff2" href={href} crossorigin />)}
     <title>{title}</title>
     <Seo title={title} description={description} path={path} image={image} type={type} publishedTime={publishedTime} breadcrumbs={breadcrumbs} />
     <slot name="head-extra" />

@@ -313,6 +313,7 @@ a { color: inherit; }
   display: flex; gap: 36px; overflow-x: auto; scrollbar-width: none;
   padding: 12px 0; scroll-snap-type: x proximity;
   /* without a fade the last headline just stops mid-word and reads as a bug */
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent);
   mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent);
 }
 .briefs-track::-webkit-scrollbar { display: none; }
@@ -356,8 +357,14 @@ a { color: inherit; }
 }
 .lead-story .why b { font-weight: 600; }
 .src-line { font-family: var(--mono); font-size: 11px; color: var(--faint); letter-spacing: 0.04em; }
-.src-line a { color: var(--muted); text-decoration: none; }
-.src-line a:hover { color: var(--ink); text-decoration: underline; }
+.src-line a {
+  color: var(--muted);
+  /* muted on faint is 1.2:1 — colour alone cannot mark these as links (WCAG 1.4.1) */
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.src-line a:hover { color: var(--ink); }
 
 .side-stories { display: flex; flex-direction: column; }
 .side-story { border-top: 1px solid var(--hairline); padding: 16px 0; }
@@ -807,6 +814,7 @@ body { padding-bottom: 72px; }
   .masthead nav {
     flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px;
     scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
     mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
   }
   .masthead nav::-webkit-scrollbar { display: none; }
