@@ -4,18 +4,7 @@
 // Every unit carries rel="sponsored nofollow noopener", target="_blank",
 // a disclosure, and ?sub=SLUG attribution + click logging.
 // ============================================================
-import { getActiveUnits, logClick } from './supabase.js';
-
-// Build-time cache: every <LinkUnit> on every page shares one query.
-let _bySlug;
-/** Look up one active unit by slug. Returns null if missing, paused, or the DB is down. */
-export function unitBySlug(slug) {
-  _bySlug ??= getActiveUnits().then(
-    (units) => Object.fromEntries(units.map((u) => [u.slug, u])),
-    (e) => (console.error('[link-units] DB unreachable:', e?.message ?? e), {}),
-  );
-  return _bySlug.then((map) => map[slug] ?? null);
-}
+import { logClick } from './track.js';
 
 const esc = (s = '') =>
   String(s).replace(/[&<>"']/g, (c) =>

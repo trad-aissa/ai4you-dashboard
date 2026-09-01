@@ -769,8 +769,19 @@ footer .baseline .disc { max-width: 62ch; font-size: 10.5px; line-height: 1.6; }
   .tool-cards { grid-template-columns: 1fr; }
   .dir-grid { grid-template-columns: 1fr; }
   footer .cols { grid-template-columns: 1fr; gap: 28px; }
-  .masthead .top { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .masthead .meta { text-align: left; }
+  /* The sticky masthead cost 187px here — 22% of a 390x844 phone, on every
+     scroll. Static and compact hands that back to the story. */
+  .masthead { position: static; }
+  .masthead .top { align-items: center; gap: 12px; padding: 12px 0 10px; }
+  .masthead .meta { display: none; }  /* date and tagline both repeat below the fold */
+  .masthead nav {
+    flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px;
+    scrollbar-width: none;
+    mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
+  }
+  .masthead nav::-webkit-scrollbar { display: none; }
+  .masthead nav a { white-space: nowrap; }
+  .masthead .theme-switch { margin-left: 8px; flex: none; }
   .briefs-inner { flex-direction: column; gap: 0; }
   .briefs .briefs-label { border-right: none; border-bottom: 1px solid var(--hairline); padding: 12px 0; margin-right: 0; }
   .briefs-track { padding-bottom: 12px; }

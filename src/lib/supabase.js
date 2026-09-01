@@ -1,5 +1,8 @@
 // ============================================================
 // ai4you.site — Supabase client (singleton)
+// Imported at build time and by /admin only. Public-page writes go
+// through src/lib/track.js, which needs no client library — keep it
+// that way or the 209KB bundle lands on every page again.
 // ============================================================
 import { createClient } from '@supabase/supabase-js';
 import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY } from '../config.js';
@@ -17,14 +20,13 @@ export async function getActiveUnits() {
   return data ?? [];
 }
 
-/** Log a click. Fire-and-forget: never blocks or breaks the page. */
-export function logClick(slug, page) {
-  // Privacy: store the referrer's origin only (never full URLs, which can
-  // carry personal data from other sites) — matches /about#privacy.
-  let ref = null;
-  try { ref = document.referrer ? new URL(document.referrer).origin : null; } catch { ref = null; }
-  supabase
-    .from('click_events')
-    .insert({ unit_slug: slug, page: page ?? location.pathname, ref })
-    .then(() => {}, () => {});
+// Build-time cache: every <LinkUnit> on every page shares one query.
+let _bySlug;
+/** Look up one active unit by slug. Returns null if missing, paused, or the DB is down. */
+export function unitBySlug(slug) {
+  _bySlug ??= getActiveUnits().then(
+    (units) => Object.fromEntries(units.map((u) => [u.slug, u])),
+    (e) => (console.error('[link-units] DB unreachable:', e?.message ?? e), {}),
+  );
+  return _bySlug.then((map) => map[slug] ?? null);
 }

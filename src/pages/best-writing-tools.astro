@@ -115,7 +115,7 @@ const affiliateSlugs = new Set(['jasper-best-writing', 'copyai-best-writing', 'g
 </Layout>
 
 <script>
-  import { logClick } from '../lib/supabase.js';
+  import { logClick } from '../lib/track.js';
   // Log affiliate CTA clicks under the placement's real slug (data-a4u-log),
   // not text-derived slugs — keeps click_events joinable with link_units.
   document.addEventListener('click', (e) => {
