@@ -93,6 +93,26 @@
     font-size: 14px;
   }
 
+  /* Collapsed to the icon at rest: a permanent 200px banner over the
+     bottom-left of every page is a lot of screen to spend on a hint. */
+  .hud-pill .hud-text {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: max-width 200ms ease, opacity 160ms ease;
+  }
+  .hud-pill:hover .hud-text,
+  .hud-pill:focus-visible .hud-text {
+    max-width: 220px;
+    opacity: 1;
+  }
+  .hud-pill:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hud-pill, .hud-pill .hud-text { transition: none; }
+  }
+
   .hud-pill kbd, .hud-keys kbd {
     display: inline-block;
     background: var(--canvas);
@@ -219,14 +239,16 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  @media (max-width: 600px) {
-    .hud-pill .hud-text {
-      display: none;
-    }
-  }
+
 </style>
 
 <script>
+  import { applyTheme } from '../lib/theme.js';
+
+  // The keydown listener lives on window, so it must be registered once even if
+  // setup re-runs (it would, under <ClientRouter />).
+  let keysBound = false;
+
   function setupKeyboardNav() {
     const dialog = document.getElementById('hud-dialog');
     const pillBtn = document.getElementById('hud-pill-btn');
@@ -305,6 +327,8 @@
       }
     }
 
+    if (!keysBound) {
+    keysBound = true;
     window.addEventListener('keydown', (e) => {
       // Leave every browser and OS chord alone. Without this, Ctrl+C overwrote
       // the clipboard with a story snippet and Ctrl+T flipped the theme.
@@ -364,14 +388,11 @@
           if ((searchInput as HTMLInputElement).focus) (searchInput as HTMLInputElement).focus();
         }
       } else if (e.key === 't') {
-        // Toggle theme
-        const current = document.documentElement.dataset.theme || 'auto';
-        const next = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.dataset.theme = next;
-        try { localStorage.setItem('a4u-theme', next); } catch {}
-        showToast(`Theme switched to: ${next}`);
+        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        showToast(`Theme switched to: ${applyTheme(next)}`);
       }
     });
+    }
 
     setupCopyButtons();
   }

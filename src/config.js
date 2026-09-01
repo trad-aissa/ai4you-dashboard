@@ -13,6 +13,11 @@ export const SITE = {
   url: 'https://www.ai4you.site',
 };
 
+// Editorial freshness. Bump these when you actually re-check, so the dates on
+// /tools, the model matrix and the lesson footers all move together.
+export const REVIEWED = 'August 2026';
+export const LESSONS_PUBLISHED = '2026-08-30';
+
 export const SUPABASE_URL = 'https://igiogbnoqitejrifzsfo.supabase.co';
 export const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_0qtoRYvDd2n79knR1yN3Kg_Mp1NUDKz';
 

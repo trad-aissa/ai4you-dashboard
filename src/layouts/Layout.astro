@@ -38,7 +38,6 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
     <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" id="meta-theme-light" content="#FBFBFA" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" id="meta-theme-dark" content="#171614" />
-    <meta name="view-transition" content="same-origin" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -95,7 +94,7 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
             <p>A calm, sourced briefing on artificial intelligence. We link to primary sources for every story, and we label every affiliate link.</p>
           </div>
           <div>
-            <h4>Sections</h4>
+            <h2>Sections</h2>
             <ul>
               <li><a href="/">Latest</a></li>
               <li><a href="/news">Headlines</a></li>
@@ -111,7 +110,7 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
             </ul>
           </div>
           <div>
-            <h4>Trust</h4>
+            <h2>Trust</h2>
             <ul>
               <li><a href="/about#disclosure">Affiliate disclosure</a></li>
               <li><a href="/about#privacy">Privacy</a></li>
@@ -133,27 +132,15 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
     </button>
 
     <script>
+      import { applyTheme, savedTheme } from '../lib/theme.js';
+
       // masthead date + footer year (vanilla, tiny)
       const d = document.getElementById('masthead-date');
       if (d) d.textContent = new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'long', day: 'numeric', year: 'numeric' });
       document.querySelectorAll('.js-year').forEach((n) => (n.textContent = String(new Date().getFullYear())));
 
       // theme switcher: auto (follow OS) / light / dark, persisted
-      const metaLight = document.getElementById('meta-theme-light');
-      const metaDark = document.getElementById('meta-theme-dark');
-      const applyTheme = (t) => {
-        document.documentElement.dataset.theme = t;
-        try { localStorage.setItem('a4u-theme', t); } catch {}
-        for (const b of document.querySelectorAll('[data-set-theme]')) {
-          b.setAttribute('aria-pressed', String(b.dataset.setTheme === t));
-        }
-        const forcedDark = t === 'dark', forcedLight = t === 'light';
-        if (metaLight) metaLight.content = forcedDark ? '#171614' : '#FBFBFA';
-        if (metaDark) metaDark.content = forcedLight ? '#FBFBFA' : '#171614';
-      };
-      let saved = null;
-      try { saved = localStorage.getItem('a4u-theme'); } catch {}
-      applyTheme(saved === 'light' || saved === 'dark' ? saved : 'auto');
+      applyTheme(savedTheme());
       for (const b of document.querySelectorAll('[data-set-theme]')) {
         b.addEventListener('click', () => applyTheme(b.dataset.setTheme));
       }

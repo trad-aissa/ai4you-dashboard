@@ -38,8 +38,6 @@ const products = [
 const fmt = (iso) => (iso ? new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : null);
 const PREVIEW = 4;
 const VISIBLE = 8; // releases shown per product before "Show older"
-// bullets contain sanitized inline HTML (<code>) from our own fetch pipeline
-const plain = (html) => html.replace(/<[^>]+>/g, '');
 ---
 
 <Layout title="Claude Code & Codex changelogs — every release, tracked · ai4you.site" path="/changelog" description="Every Claude Code and OpenAI Codex release, searchable and updated daily from the official repositories — so you always know what shipped." breadcrumbs={[{ name: 'Changelog', path: '/changelog' }]}>
@@ -72,7 +70,7 @@ const plain = (html) => html.replace(/<[^>]+>/g, '');
         {products.map((p, i) => (
           <nav class:list={['cl-index', { hidden: i !== 0 }]} id={`cl-index-${p.id}`} aria-label={`${p.name} versions`}>
             {p.releases.map((r, ri) => (
-              <a href={`#${p.id}-v${r.version}`} class="cl-index-link" data-searchable={`${r.version} ${r.bullets.map((b) => plain(b.rest)).join(' ')}`}>
+              <a href={`#${p.id}-v${r.version}`} class="cl-index-link" data-version={r.version}>
                 <span class="cl-i-v">{r.version}</span>
                 {ri === 0 && <span class="cl-i-latest">latest</span>}
               </a>
@@ -88,7 +86,7 @@ const plain = (html) => html.replace(/<[^>]+>/g, '');
         {p.releases.map((r, ri) => {
           const extra = r.bullets.length - PREVIEW;
           return (
-            <article class:list={['cl-release', { 'cl-older': ri >= VISIBLE }]} data-release>
+            <article class:list={['cl-release', { 'cl-older': ri >= VISIBLE }]} data-release={r.version}>
               <div class="cl-node" aria-hidden="true"></div>
               <header class="cl-head">
                 <h2 class="cl-version">v{r.version}</h2>
@@ -151,16 +149,17 @@ const plain = (html) => html.replace(/<[^>]+>/g, '');
     const product = document.getElementById(`cl-${pid}`);
     const index = document.getElementById(`cl-index-${pid}`);
     if (!product) return;
+    // Search the release text already in the DOM. Mirroring every bullet into a
+    // data-searchable attribute made this page ~40% larger for no new information.
     let shown = 0;
+    const matched = new Set();
     for (const rel of product.querySelectorAll('[data-release]')) {
-      const text = rel.textContent.toLowerCase();
-      const match = !q || text.includes(q);
+      const match = !q || rel.textContent.toLowerCase().includes(q);
       rel.hidden = !match;
-      if (match) shown++;
+      if (match) { shown++; matched.add(rel.dataset.release); }
     }
     for (const link of index?.querySelectorAll('.cl-index-link') ?? []) {
-      const match = !q || (link.dataset.searchable ?? '').toLowerCase().includes(q);
-      link.style.display = match ? '' : 'none';
+      link.style.display = matched.has(link.dataset.version) ? '' : 'none';
     }
     countEl.textContent = q ? `${shown} release${shown === 1 ? '' : 's'} matching “${searchInput.value.trim()}”` : '';
   }
@@ -218,7 +217,7 @@ const plain = (html) => html.replace(/<[^>]+>/g, '');
   .cl-product-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
   .cl-p-name { display: block; font: 600 14px/1.3 var(--sans); color: var(--ink); }
   .cl-p-meta { display: block; font-size: 11.5px; color: var(--muted); margin-top: 2px; }
-  .cl-p-latest { display: inline-block; font-family: var(--mono); font-size: 10px; color: var(--pale-green-fg); background: var(--pale-green-bg); border-radius: 999px; padding: 2px 8px; margin-top: 7px; letter-spacing: 0.02em; }
+  .cl-p-latest { display: inline-block; font-family: var(--mono); font-size: 11px; color: var(--pale-green-fg); background: var(--pale-green-bg); border-radius: 999px; padding: 2px 8px; margin-top: 7px; letter-spacing: 0.02em; }
   .cl-search { position: relative; }
   .cl-search svg { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); width: 14px; height: 14px; }
   .cl-search svg circle, .cl-search svg path { stroke: var(--faint); stroke-width: 1.6; fill: none; stroke-linecap: round; }
@@ -235,7 +234,7 @@ const plain = (html) => html.replace(/<[^>]+>/g, '');
     text-decoration: none; padding: 5px 8px; border-radius: 6px;
   }
   .cl-index-link:hover { color: var(--ink); background: var(--hover); }
-  .cl-i-latest { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pale-green-fg); }
+  .cl-i-latest { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pale-green-fg); }
   .cl-count { font: 500 12px/1.5 var(--sans); color: var(--muted); margin: 0; min-height: 18px; }
 
   /* --- timeline --- */
@@ -251,7 +250,7 @@ const plain = (html) => html.replace(/<[^>]+>/g, '');
   .cl-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
   .cl-version { font-family: var(--mono); font-size: 17px; font-weight: 600; margin: 0; letter-spacing: 0; }
   .cl-date { font-family: var(--mono); font-size: 11px; color: var(--faint); letter-spacing: 0.04em; }
-  .cl-n { font-family: var(--mono); font-size: 10.5px; color: var(--faint); }
+  .cl-n { font-family: var(--mono); font-size: 11px; color: var(--faint); }
   .cl-bullets { margin: 0; padding: 0; list-style: none; }
   .cl-bullets[hidden] { display: none; }
   .cl-bullets li {
@@ -269,7 +268,7 @@ const plain = (html) => html.replace(/<[^>]+>/g, '');
   .cl-bullets li.is-security::before { background: var(--pale-red-fg); }
   .cl-bullets li.is-removed::before { background: var(--pale-red-fg); }
   .cl-kind {
-    display: inline-block; font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em;
+    display: inline-block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
     text-transform: uppercase; border-radius: 4px; padding: 1px 6px; margin-right: 7px;
     position: relative; top: -1px;
   }

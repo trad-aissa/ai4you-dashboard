@@ -1,6 +1,7 @@
 -- ============================================================
--- ai4you.site — split the API's identity from the owner's login
--- 2026-09-02. Idempotent: safe to re-run.
+-- ai4you.site — security round, 2026-09-02. Idempotent: safe to re-run.
+-- 1. Split the API's identity from the owner's login  (SEC-2)
+-- 2. Let signed-in readers see the public site            (SEC-4)
 --
 -- WHY: api/units.js and scripts/add-unit.mjs both authenticate with
 -- SUPABASE_ADMIN_EMAIL/PASSWORD — which were the owner's real /admin
@@ -46,3 +47,28 @@ $$;
 --    SUPABASE_ADMIN_EMAIL / SUPABASE_ADMIN_PASSWORD at the bot, redeploy.
 -- 3. Put the same bot pair in .env.local so scripts/add-unit.mjs keeps
 --    working — your own dashboard password then lives nowhere on disk.
+
+
+-- ============================================================
+-- 2. Public policies were scoped to `anon`, so any signed-in user who is
+--    not the admin saw zero link units and could not log a click. The
+--    policies mean "the public", not "logged out".
+-- ============================================================
+drop policy if exists "public read active units" on link_units;
+create policy "public read active units" on link_units
+  for select to anon, authenticated using (active = true);
+
+drop policy if exists "public insert clicks" on click_events;
+create policy "public insert clicks" on click_events
+  for insert to anon, authenticated with check (
+    char_length(unit_slug) between 2 and 60
+    and (page is null or char_length(page) <= 200)
+    and (ref is null or char_length(ref) <= 500)
+  );
+
+drop policy if exists "public insert subscribers" on newsletter_subscribers;
+create policy "public insert subscribers" on newsletter_subscribers
+  for insert to anon, authenticated with check (
+    char_length(email) <= 254
+    and email ~* '^[^@\s]+@[^@\s]+\.[^@\s]{2,}$'
+  );

@@ -3,6 +3,7 @@
 import Layout from '../layouts/Layout.astro';
 import { supabase } from '../lib/supabase.js';
 import toolsStatic from '../data/tools.js';
+import { REVIEWED } from '../config.js';
 import ModelMatrix from '../components/ModelMatrix.astro';
 import TokenCalculator from '../components/TokenCalculator.astro';
 
@@ -53,7 +54,7 @@ const cats = [
 
 <Layout title="The tool shelf — AI tools worth paying for · ai4you.site" path="/tools" description="A curated shelf of AI tools with honest terms: commission rates printed on every card, every link labeled." breadcrumbs={[{ name: 'Tool shelf', path: '/tools' }]}>
   <section class="tools-hero wrap">
-    <span class="kicker">Curated · terms checked August 2026</span>
+    <span class="kicker">Curated · terms checked {REVIEWED}</span>
     <h1>The tool shelf.</h1>
     <p class="lede">
       Every AI tool here earns its place: we use them, we check their terms, and we say plainly
@@ -78,6 +79,7 @@ const cats = [
         ))}
       </div>
     )}
+    <h2 class="visually-hidden">Tools on the shelf</h2>
     <div class="dir-grid" id="dir-grid">
       {tools.map((t) => (
         <article class="dir-card" data-cat={t.category}>

@@ -27,6 +27,7 @@ const ago = (iso) => {
       <button class="filter-btn is-active" data-filter="all" aria-pressed="true">All sources</button>
       {sources.map((s) => <button class="filter-btn" data-filter={s} aria-pressed="false">{s}</button>)}
     </div>
+    <h2 class="visually-hidden">Today’s headlines</h2>
     <ul class="news-list" id="news-list">
       {items.map((i, idx) => (
         <li class:list={['news-item', { 'news-hidden': idx >= 20 }]} data-source={i.source}>
@@ -123,7 +124,7 @@ const ago = (iso) => {
   .news-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--hairline); }
   .news-item { border-bottom: 1px solid var(--hairline); padding: 18px 0; }
   .news-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
-  .news-when { font-family: var(--mono); font-size: 10.5px; color: var(--faint); letter-spacing: 0.04em; }
+  .news-when { font-family: var(--mono); font-size: 11px; color: var(--faint); letter-spacing: 0.04em; }
   .news-item h3 { font: 600 16.5px/1.35 var(--sans); letter-spacing: -0.01em; margin: 0 0 4px; }
   .news-item h3 a { text-decoration: none; }
   .news-item h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }

@@ -4,6 +4,7 @@
 import Layout from '../layouts/Layout.astro';
 import Seo from '../components/Seo.astro';
 import PreferredSources from '../components/PreferredSources.astro';
+import { REVIEWED } from '../config.js';
 
 const tools = [
   {
@@ -36,7 +37,13 @@ const tools = [
   },
 ];
 
-const affiliateSlugs = new Set(['jasper-best-writing', 'copyai-best-writing', 'grammarly-best-writing']);
+// These are plain vendor homepages until real tracking URLs are approved, so
+// they get plain rel, no disclosure and no click logging — claiming a
+// commission we cannot earn is worse than claiming none. Paste a tracking URL
+// (anything with a query string) and the link flips to affiliate on its own.
+// NOTE: each slug below also needs a link_units row before its clicks will
+// join to anything in the dashboard's Clicks table.
+const isAffiliate = (t) => { try { return new URL(t.url).search.length > 0; } catch { return false; } };
 ---
 
 <Layout title="The 4 Best AI Writing Tools in 2026 (Compared) · ai4you.site" path="/best-writing-tools" description="Jasper vs Copy.ai vs Grammarly vs free ChatGPT: which AI writing tool is actually worth your money in 2026 — tested, compared, with honest pros and cons." type="article" publishedTime="2026-08-28T09:00:00Z" breadcrumbs={[{ name: 'Best AI writing tools', path: '/best-writing-tools' }]}>
@@ -71,7 +78,7 @@ const affiliateSlugs = new Set(['jasper-best-writing', 'copyai-best-writing', 'g
     </div>
 
     <div class="prose">
-      <p><strong>TL;DR:</strong> If content is a revenue channel for your business, <a href="https://www.jasper.ai/" target="_blank" rel="sponsored nofollow noopener">Jasper</a> is worth the price. If you're automating outbound and GTM workflows, <a href="https://www.copy.ai/" target="_blank" rel="sponsored nofollow noopener">Copy.ai</a> wins. If you just need an editor everywhere, <a href="https://www.grammarly.com/" target="_blank" rel="sponsored nofollow noopener">Grammarly</a>. And if you're not ready to pay anything: free ChatGPT got shockingly good this month.</p>
+      <p><strong>TL;DR:</strong> If content is a revenue channel for your business, <a href="https://www.jasper.ai/" target="_blank" rel="noopener noreferrer">Jasper</a> is worth the price. If you're automating outbound and GTM workflows, <a href="https://www.copy.ai/" target="_blank" rel="noopener noreferrer">Copy.ai</a> wins. If you just need an editor everywhere, <a href="https://www.grammarly.com/" target="_blank" rel="noopener noreferrer">Grammarly</a>. And if you're not ready to pay anything: free ChatGPT got shockingly good this month.</p>
 
       {tools.map((t) => (
         <section style="border-top:1px solid var(--hairline);padding-top:36px;margin-top:40px;">
@@ -86,13 +93,13 @@ const affiliateSlugs = new Set(['jasper-best-writing', 'copyai-best-writing', 'g
             class="btn btn--primary"
             href={t.url}
             target="_blank"
-            rel={affiliateSlugs.has(t.slug) ? 'sponsored nofollow noopener' : 'noopener noreferrer'}
-            data-a4u-log={affiliateSlugs.has(t.slug) ? t.slug : undefined}
+            rel={isAffiliate(t) ? 'sponsored nofollow noopener' : 'noopener noreferrer'}
+            data-a4u-log={isAffiliate(t) ? t.slug : undefined}
           >
             Check out {t.name}
             <span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
           </a>
-          {affiliateSlugs.has(t.slug) && <p class="disclosure-mini" style="margin-top:8px;">Affiliate link — we may earn a commission at no extra cost to you.</p>}
+          {isAffiliate(t) && <p class="disclosure-mini" style="margin-top:8px;">Affiliate link — we may earn a commission at no extra cost to you.</p>}
         </section>
       ))}
 
@@ -104,12 +111,12 @@ const affiliateSlugs = new Set(['jasper-best-writing', 'copyai-best-writing', 'g
           <li><span class="n">3</span><span>Already writing, need an editor everywhere? → <b>Grammarly</b></span></li>
           <li><span class="n">4</span><span>Budget is zero? → <b>Free ChatGPT</b> — the 2026 free tier is genuinely frontier-class</span></li>
         </ul>
-        <p class="footnote"><strong>Last updated:</strong> August 28, 2026. Pricing and capabilities change frequently — verify with the vendor before purchasing. Free tiers mentioned reflect what we could verify at publication time.</p>
+        <p class="footnote"><strong>Last updated:</strong> {REVIEWED}. Pricing and capabilities change frequently — verify with the vendor before purchasing. Free tiers mentioned reflect what we could verify at publication time.</p>
       </section>
     </div>
 
     <div class="wrap" style="max-width:700px;margin:32px 0 0;padding:0;">
-      <PreferredSources theme="light" />
+      <PreferredSources />
     </div>
   </article>
 </Layout>
