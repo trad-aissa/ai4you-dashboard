@@ -7,8 +7,9 @@ import { REVIEWED } from '../config.js';
 import ModelMatrix from '../components/ModelMatrix.astro';
 import TokenCalculator from '../components/TokenCalculator.astro';
 
-// Read shelf entries from the database (show_on_shelf = true), fall back to
-// the static list if the DB is unreachable or has no shelf items.
+// The shelf is two things joined: live affiliate placements from the database
+// (dashboard -> "Show on the tool shelf"), and the curated list in
+// src/data/tools.js, which we recommend but earn nothing from.
 let tools = [];
 let dbError = null;
 try {
@@ -32,9 +33,12 @@ try {
   console.error('[tools] failed to load shelf from DB:', e?.message ?? e);
   dbError = true;
 }
-if (tools.length === 0) {
-  tools = toolsStatic; // DB empty or unreachable -> curated static list
-}
+// Ids never collide (database ids are link_units slugs), and a curated tool
+// "graduates" by getting a link_units row — the database entry then wins.
+const dbIds = new Set(tools.map((t) => t.id));
+tools = [...tools, ...toolsStatic.filter((t) => !dbIds.has(t.id))];
+
+const paidCount = tools.filter((t) => t.affiliate).length;
 
 // Only offer filters that actually match a card on the shelf — a category chip
 // that empties the grid reads as a broken page.
@@ -52,19 +56,24 @@ const cats = [
 ];
 ---
 
-<Layout title="The tool shelf — AI tools worth paying for · ai4you.site" path="/tools" description="A curated shelf of AI tools with honest terms: commission rates printed on every card, every link labeled." breadcrumbs={[{ name: 'Tool shelf', path: '/tools' }]}>
+<Layout title="The tool shelf — AI tools worth paying for · ai4you.site" path="/tools" description="A curated shelf of AI tools. Most of them pay us nothing — the few that do are labelled on the card, with the rate printed." breadcrumbs={[{ name: 'Tool shelf', path: '/tools' }]}>
   <section class="tools-hero wrap">
     <span class="kicker">Curated · terms checked {REVIEWED}</span>
     <h1>The tool shelf.</h1>
     <p class="lede">
-      Every AI tool here earns its place: we use them, we check their terms, and we say plainly
-      what their affiliate programs pay us. You pay the same either way.
+      Every tool here earns its place on merit. <strong>Most of them pay us nothing.</strong> Where we
+      do have an affiliate deal the card says so and prints what it pays — and you pay the same
+      either way.
     </p>
     <div class="affiliate-note" style="margin-top:28px;">
       <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 14.5 13.5h-13L8 1.5zM8 6.5v3M8 11.5v.01"/></svg>
       <span>
-        <b>Affiliate disclosure:</b> “Try” buttons may be affiliate links — if you subscribe through
-        one, we may earn a commission at no extra cost to you. <a href="/about#disclosure">Read the full disclosure</a>.
+        <b>Affiliate disclosure:</b> {paidCount === 1
+          ? `1 of the ${tools.length} tools below is an affiliate link`
+          : `${paidCount} of the ${tools.length} tools below are affiliate links`}, marked on the
+        card — if you subscribe through one we may earn a commission, at no extra cost to you.
+        The rest are plain recommendations that earn us nothing.
+        <a href="/about#disclosure">Read the full disclosure</a>.
       </span>
     </div>
   </section>
@@ -85,24 +94,28 @@ const cats = [
         <article class="dir-card" data-cat={t.category}>
           <div class="dir-top">
             <h3>{t.name}</h3>
-            {t.terms?.commission && <span class="rate">{t.terms.commission}</span>}
+            {t.affiliate && t.terms?.commission && <span class="rate">{t.terms.commission}</span>}
           </div>
           <p class="dir-body">{t.blurb}</p>
-          <div class="dir-terms">
-            {t.terms?.commission && <span class="term">Commission: {t.terms.commission}</span>}
-            {t.terms?.network && <span class="term">Network: {t.terms.network}</span>}
-          </div>
+          {t.affiliate && (t.terms?.commission || t.terms?.network) && (
+            <div class="dir-terms">
+              {t.terms?.commission && <span class="term">Commission: {t.terms.commission}</span>}
+              {t.terms?.network && <span class="term">Network: {t.terms.network}</span>}
+            </div>
+          )}
           <a
             class="btn btn--primary"
             href={t.url}
             target="_blank"
-            rel={t.affiliate ? 'sponsored nofollow noopener' : 'noopener noreferrer sponsored'}
+            rel={t.affiliate ? 'sponsored nofollow noopener' : 'noopener noreferrer'}
           >
             Try {t.name}
             <span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
           </a>
           <p class="disclosure-mini">
-            {t.affiliate ? 'Affiliate link — we may earn a commission at no extra cost to you.' : 'Plain link — affiliate details being verified.'}
+            {t.affiliate
+              ? 'Affiliate link — we may earn a commission at no extra cost to you.'
+              : 'Plain link — no affiliate deal here, we earn nothing if you sign up.'}
           </p>
         </article>
       ))}
@@ -124,7 +137,7 @@ const cats = [
     <div class="section-head"><h2>How tools get on the shelf</h2></div>
     <ul class="checklist">
       <li><span class="n">1</span><span><b>Real use first.</b> We only list tools we'd recommend to a friend — affiliate program or not.</span></li>
-      <li><span class="n">2</span><span><b>Terms in the open.</b> Commission rates are printed on every card. Stale terms get flagged.</span></li>
+      <li><span class="n">2</span><span><b>Terms in the open.</b> Where a tool pays us, the card prints the rate. Where it doesn't, the card says so too — most of this shelf earns us nothing.</span></li>
       <li><span class="n">3</span><span><b>No pay-to-rank.</b> Vendors cannot buy placement. Sponsored placements, if ever, will be labeled as such.</span></li>
       <li><span class="n">4</span><span><b>Labeled links, always.</b> Every affiliate link is tagged <code>rel="sponsored"</code> and disclosed next to the button.</span></li>
     </ul>
