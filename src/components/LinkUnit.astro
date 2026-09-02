@@ -1,0 +1,20 @@
+---
+// src/components/LinkUnit.astro — put a dashboard placement on a page.
+//   <LinkUnit slug="jasper-inline-1" />
+// Rendered at build time from link_units. A slug that is missing, paused, or
+// unreachable renders nothing, so a page never breaks over a placement.
+import { renderUnit } from '../lib/link-units.js';
+import { unitBySlug } from '../lib/supabase.js';
+
+interface Props { slug: string }
+const unit = await unitBySlug(Astro.props.slug);
+---
+
+{unit && <Fragment set:html={renderUnit(unit)} />}
+
+<script>
+  // Self-contained: any page holding a LinkUnit gets click logging.
+  // Astro hoists and dedupes this, and bindUnits() guards against double-binding.
+  import { bindUnits } from '../lib/link-units.js';
+  bindUnits(document);
+</script>

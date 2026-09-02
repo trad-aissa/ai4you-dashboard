@@ -33,12 +33,7 @@ export function GET() {
     })),
   };
 
-  return new Response(JSON.stringify(payload, null, 2), {
-    status: 200,
-    headers: {
-      'Content-Type': 'application/json; charset=utf-8',
-      'Access-Control-Allow-Origin': '*',
-      'Cache-Control': 'public, max-age=1800, s-maxage=3600',
-    },
-  });
+  // Prerendered to a file, so response headers set here are discarded —
+  // Cache-Control and CORS for this route live in vercel.json.
+  return new Response(JSON.stringify(payload, null, 2), { status: 200 });
 }

@@ -4,8 +4,10 @@
 //
 // Auth layers:
 //   1. Bearer token must match ADMIN_API_SECRET (env var, Vercel)
-//   2. Supabase email+password auth (env vars) — the same admin
-//      identity as the dashboard, so RLS remains the ONLY write path.
+//   2. Supabase email+password auth (env vars) — a bot identity that
+//      is_admin() accepts, so RLS remains the ONLY write path. Keep this
+//      separate from the owner's /admin password: see
+//      supabase/api-identity-2026-09-02.sql.
 // No service_role key is used anywhere in this project.
 //
 // No CORS headers are emitted on purpose: this endpoint is called

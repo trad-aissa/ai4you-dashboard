@@ -46,7 +46,7 @@ const apiModels = MODELS.filter((m) => !m.openWeights);
   <div class="calc-controls">
     <div class="control-box">
       <div class="control-head">
-        <label for="calc-in-tokens">Prompt / Input Tokens</label>
+        <label for="calc-in-range">Prompt / Input Tokens</label>
         <div class="val-pill"><span id="val-in-display">45,000</span> <span class="unit">tokens</span></div>
       </div>
       <input type="range" id="calc-in-range" min="500" max="250000" step="500" value="45000" class="calc-slider" />
@@ -60,7 +60,7 @@ const apiModels = MODELS.filter((m) => !m.openWeights);
 
     <div class="control-box">
       <div class="control-head">
-        <label for="calc-out-tokens">Completion / Output Tokens</label>
+        <label for="calc-out-range">Completion / Output Tokens</label>
         <div class="val-pill"><span id="val-out-display">2,500</span> <span class="unit">tokens</span></div>
       </div>
       <input type="range" id="calc-out-range" min="100" max="32000" step="100" value="2500" class="calc-slider" />
@@ -247,26 +247,33 @@ const apiModels = MODELS.filter((m) => !m.openWeights);
   }
 
   .val-pill .unit {
-    font-size: 10px;
+    font-size: 11px;
     color: var(--muted);
     font-weight: 400;
   }
 
   .calc-slider {
+    /* 24px of grabbable height (WCAG 2.2 target size) painted as a 6px track */
     width: 100%;
-    height: 6px;
-    border-radius: 4px;
-    background: var(--hairline-strong);
+    height: 24px;
+    background: none;
     outline: none;
     cursor: pointer;
     accent-color: var(--ink);
   }
+  .calc-slider::-webkit-slider-runnable-track {
+    height: 6px; border-radius: 4px; background: var(--hairline-strong);
+  }
+  .calc-slider::-moz-range-track {
+    height: 6px; border-radius: 4px; background: var(--hairline-strong);
+  }
+  .calc-slider:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
   .scale-ticks {
     display: flex;
     justify-content: space-between;
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 11px;
     color: var(--faint);
     margin-top: 6px;
   }
@@ -346,7 +353,7 @@ const apiModels = MODELS.filter((m) => !m.openWeights);
 
   .rate-tag {
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 11px;
     color: var(--faint);
   }
 
@@ -376,7 +383,7 @@ const apiModels = MODELS.filter((m) => !m.openWeights);
   }
 
   .cost-label {
-    font-size: 10px;
+    font-size: 11px;
     color: var(--muted);
   }
 

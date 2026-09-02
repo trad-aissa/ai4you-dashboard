@@ -1,10 +1,10 @@
 // ============================================================
 // ai4you.site — link unit renderer (shared by public pages)
-// Mirrors the v1 system: <div data-a4u="SLUG"></div> mounts a unit.
+// Drop one into a page with <LinkUnit slug="SLUG" /> (src/components/LinkUnit.astro).
 // Every unit carries rel="sponsored nofollow noopener", target="_blank",
 // a disclosure, and ?sub=SLUG attribution + click logging.
 // ============================================================
-import { logClick } from './supabase.js';
+import { logClick } from './track.js';
 
 const esc = (s = '') =>
   String(s).replace(/[&<>"']/g, (c) =>

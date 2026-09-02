@@ -22,6 +22,10 @@
   --pale-green-bg: #EDF3EC; --pale-green-fg: #346538;
   --pale-yellow-bg: #FBF3DB; --pale-yellow-fg: #956400;
   --pale-plum-bg: #F2ECF6; --pale-plum-fg: #6C4A8C;
+  /* Type scale. New rules should pick a rung rather than inventing a size;
+     the existing literals are being migrated onto these gradually. */
+  --fs-1: 12px; --fs-2: 13.5px; --fs-3: 15px; --fs-4: 16.5px;
+  --fs-5: 19px; --fs-6: 24px;   --fs-7: 34px;
   --display: 'Instrument Serif', 'Newsreader', Georgia, serif;
   --sans: 'Instrument Sans Variable', 'Instrument Sans', 'Switzer', 'SF Pro Text', system-ui, sans-serif;
   --mono: 'JetBrains Mono Variable', 'JetBrains Mono', 'Geist Mono', ui-monospace, 'Cascadia Mono', monospace;
@@ -171,7 +175,7 @@ a { color: inherit; }
   text-transform: uppercase; color: var(--muted);
 }
 .chip {
-  display: inline-block; font-family: var(--mono); font-size: 10.5px;
+  display: inline-block; font-family: var(--mono); font-size: 11px;
   letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
   padding: 3px 9px; border-radius: 999px; white-space: nowrap;
 }
@@ -230,7 +234,7 @@ a { color: inherit; }
   border: 1px solid var(--hairline);
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 10.5px;
+  font-size: 11px;
   padding: 2px 7px;
   border-radius: 4px;
   cursor: pointer;
@@ -247,16 +251,25 @@ a { color: inherit; }
 
 /* ---------- hero ---------- */
 .hero { padding: 52px 0 44px; }
+/* The hero block only ever filled ~55% of a 1160px wrap, which read as an
+   unfinished second column. Centre the measure so the whitespace is a choice. */
+@media (min-width: 961px) {
+  .hero { text-align: center; }
+  .hero h1, .hero .lede { margin-left: auto; margin-right: auto; }
+  .hero .lede { max-width: 60ch; }
+  .hero .btn-row { justify-content: center; }
+  .hero-pulse { margin-left: auto; margin-right: auto; }
+}
 .hero-pulse {
   display: block; width: 100%; max-width: 760px; height: 40px;
   margin-top: 26px;
   border: 1px solid var(--hairline); border-radius: 10px; background: var(--surface);
   padding: 8px 10px;
 }
-.hero-pulse .hp-base { stroke: var(--hairline-strong); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; opacity: 0.55; }
-.hero-pulse .hp-run { stroke: var(--pale-green-fg); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 320 1200; animation: hp-travel 4.5s linear infinite; }
+.hero-pulse .hp-base { stroke: var(--hairline-strong); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; opacity: 1; }
+.hero-pulse .hp-run { stroke: var(--pale-green-fg); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 340 560; animation: hp-travel 4.5s linear infinite; }
 .hero-pulse .hp-dot { fill: var(--pale-green-fg); animation: hp-blink 2.2s ease-in-out infinite; }
-@keyframes hp-travel { to { stroke-dashoffset: -1520; } }
+@keyframes hp-travel { to { stroke-dashoffset: -900; } }
 @keyframes hp-blink { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
 .hero .eyebrow {
   display: inline-flex; align-items: center; gap: 9px;
@@ -299,6 +312,9 @@ a { color: inherit; }
 .briefs-track {
   display: flex; gap: 36px; overflow-x: auto; scrollbar-width: none;
   padding: 12px 0; scroll-snap-type: x proximity;
+  /* without a fade the last headline just stops mid-word and reads as a bug */
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent);
 }
 .briefs-track::-webkit-scrollbar { display: none; }
 .brief-item {
@@ -307,8 +323,8 @@ a { color: inherit; }
 }
 .brief-item a { color: var(--ink); text-decoration: none; }
 .brief-item a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-.brief-item .src { font-family: var(--mono); font-size: 10.5px; color: var(--faint); text-transform: uppercase; letter-spacing: 0.06em; margin-right: 8px; }
-.brief-item time { font-family: var(--mono); font-size: 10.5px; color: var(--faint); margin-left: 8px; }
+.brief-item .src { font-family: var(--mono); font-size: 11px; color: var(--faint); text-transform: uppercase; letter-spacing: 0.06em; margin-right: 8px; }
+.brief-item time { font-family: var(--mono); font-size: 11px; color: var(--faint); margin-left: 8px; }
 
 /* ---------- lead grid ---------- */
 .lead-section { padding: 44px 0 40px; }
@@ -341,8 +357,14 @@ a { color: inherit; }
 }
 .lead-story .why b { font-weight: 600; }
 .src-line { font-family: var(--mono); font-size: 11px; color: var(--faint); letter-spacing: 0.04em; }
-.src-line a { color: var(--muted); text-decoration: none; }
-.src-line a:hover { color: var(--ink); text-decoration: underline; }
+.src-line a {
+  color: var(--muted);
+  /* muted on faint is 1.2:1 — colour alone cannot mark these as links (WCAG 1.4.1) */
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.src-line a:hover { color: var(--ink); }
 
 .side-stories { display: flex; flex-direction: column; }
 .side-story { border-top: 1px solid var(--hairline); padding: 16px 0; }
@@ -384,7 +406,7 @@ a { color: inherit; }
 .feed-card h3 a { text-decoration: none; }
 .feed-card h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .feed-card p { font-size: 13.5px; color: var(--muted); margin: 0 0 10px; }
-.feed-card .card-date { font-family: var(--mono); font-size: 10.5px; color: var(--faint); letter-spacing:0.04em; }
+.feed-card .card-date { font-family: var(--mono); font-size: 11px; color: var(--faint); letter-spacing:0.04em; }
 
 .feed-status {
   grid-column: 1 / -1; padding: 40px 20px; text-align: center;
@@ -425,7 +447,7 @@ a { color: inherit; }
 .wire-item .w { flex: 1; font-size: 13.5px; line-height: 1.45; }
 .wire-item .w a { color: var(--ink); text-decoration: none; }
 .wire-item .w a:hover { text-decoration: underline; text-underline-offset: 3px; }
-.wire-item .by { font-family: var(--mono); font-size: 10.5px; color: var(--faint); white-space: nowrap; }
+.wire-item .by { font-family: var(--mono); font-size: 11px; color: var(--faint); white-space: nowrap; }
 .wire-status {
   padding: 28px 18px; text-align: center;
   font-family: var(--mono); font-size: 12px; color: var(--muted);
@@ -446,7 +468,7 @@ a { color: inherit; }
 .tool-card h3 { font: 600 16px/1.3 var(--sans); margin: 0; }
 .tool-card .rate { font-family: var(--mono); font-size: 11px; color: var(--pale-green-fg); background: var(--pale-green-bg); padding: 3px 8px; border-radius: 999px; white-space: nowrap; }
 .tool-card p { font-size: 13.5px; color: var(--muted); margin: 0 0 16px; }
-.tool-card .disclosure-mini { font-family: var(--mono); font-size: 10px; color: var(--faint); letter-spacing: 0.02em; }
+.tool-card .disclosure-mini { font-family: var(--mono); font-size: 11px; color: var(--faint); letter-spacing: 0.02em; }
 
 /* ---------- newsletter ---------- */
 .newsletter { padding: 52px 0 60px; border-top: 1px solid var(--hairline); }
@@ -471,7 +493,7 @@ a { color: inherit; }
 .newsletter input[type="email"]::placeholder { color: var(--faint); }
 .newsletter input[type="email"]:focus { outline: none; border-color: var(--ink); }
 .newsletter input[type="email"]:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-.form-note { font-family: var(--mono); font-size: 10.5px; color: var(--faint); margin-top: 14px; letter-spacing: 0.03em; }
+.form-note { font-family: var(--mono); font-size: 11px; color: var(--faint); margin-top: 14px; letter-spacing: 0.03em; }
 .form-msg {
   margin-top: 14px; font-size: 13.5px; min-height: 20px;
 }
@@ -512,13 +534,13 @@ a { color: inherit; }
 .dir-card .dir-body { font-size: 13.5px; color: var(--muted); flex: 1; }
 .dir-card .dir-terms { display: flex; gap: 8px; flex-wrap: wrap; }
 .term {
-  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.02em;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.02em;
   border: 1px solid var(--hairline-strong); border-radius: 6px;
   padding: 4px 8px; color: var(--muted); background: var(--canvas);
 }
 .term b { color: var(--ink); font-weight: 500; }
 .dir-card .btn { align-self: flex-start; }
-.dir-card .disclosure-mini { font-family: var(--mono); font-size: 10px; color: var(--faint); }
+.dir-card .disclosure-mini { font-family: var(--mono); font-size: 11px; color: var(--faint); }
 
 /* ---------- article page ---------- */
 .article { padding: 64px 0 72px; }
@@ -610,7 +632,7 @@ a { color: inherit; }
   color: var(--faint); font-size: 14px; line-height: 1;
 }
 .lu-disc {
-  font-family: var(--mono); font-size: 10px; color: var(--faint);
+  font-family: var(--mono); font-size: 11px; color: var(--faint);
   letter-spacing: 0.02em;
 }
 .lu-disc summary {
@@ -649,7 +671,7 @@ a { color: inherit; }
 .lu--card .lu-disc, .lu--box .lu-disc { margin-top: 14px; }
 .lu--box { border-top: 2px solid var(--ink); }
 .lu-box-kicker {
-  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--pale-green-fg); margin: 0 0 10px;
 }
 
@@ -677,9 +699,9 @@ footer {
 footer .cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 28px; }
 footer .f-brand { font-family: var(--display); font-size: 24px; color: var(--ink); margin-bottom: 10px; }
 footer p { font-family: var(--sans); font-size: 12.5px; line-height: 1.65; margin: 0 0 6px; max-width: 44ch; }
-footer h4 { font: 600 11px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); margin: 0 0 12px; }
+footer h2 { font: 600 11px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); margin: 0 0 12px; }
 footer ul { list-style: none; margin: 0; padding: 0; }
-footer ul li { margin-bottom: 8px; }
+footer ul li { margin-bottom: 11px; }
 footer ul a { color: var(--muted); text-decoration: none; }
 footer ul a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 footer .baseline {
@@ -687,7 +709,7 @@ footer .baseline {
   display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   letter-spacing: 0.04em;
 }
-footer .baseline .disc { max-width: 62ch; font-size: 10.5px; line-height: 1.6; }
+footer .baseline .disc { max-width: 62ch; font-size: 11px; line-height: 1.6; }
 
 /* ---------- today's headlines (auto) ---------- */
 .today-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--hairline); }
@@ -698,9 +720,9 @@ footer .baseline .disc { max-width: 62ch; font-size: 10.5px; line-height: 1.6; }
 }
 .today-item:nth-child(even) { border-left: 1px solid var(--hairline); padding-left: 24px; }
 .today-item:hover .today-title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-.today-src { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pale-blue-fg); }
+.today-src { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pale-blue-fg); }
 .today-title { font: 500 14.5px/1.45 var(--sans); color: var(--ink); letter-spacing: -0.005em; }
-.today-when { font-family: var(--mono); font-size: 10.5px; color: var(--faint); }
+.today-when { font-family: var(--mono); font-size: 11px; color: var(--faint); }
 @media (max-width: 720px) {
   .today-grid { grid-template-columns: 1fr; }
   .today-item:nth-child(even) { border-left: none; padding-left: 0; }
@@ -727,6 +749,21 @@ footer .baseline .disc { max-width: 62ch; font-size: 10.5px; line-height: 1.6; }
 }
 .today-item, .news-item, .side-story { transition: background 160ms ease; border-radius: 6px; }
 .today-item:hover { background: color-mix(in srgb, var(--hover) 55%, transparent); }
+
+/* The HUD pill and the back-to-top button are both fixed with nothing
+   reserving space for them, so they landed on headings and card text. */
+body { padding-bottom: 72px; }
+
+/* WCAG 2.2 target size: standalone links (ones not sitting inside a sentence,
+   which are exempt) need 24px. Inline-flex keeps the visual weight identical. */
+.more, .calc-more-link, .a4u-pref-link, .filter-btn, .btn-copy-mini {
+  display: inline-flex; align-items: center; min-height: 24px;
+}
+@media (hover: none) {
+  /* keyboard shortcuts are unusable on touch — don't advertise them */
+  .dev-hud { display: none; }
+  body { padding-bottom: 56px; }
+}
 
 /* ---------- back to top ---------- */
 .to-top {
@@ -769,8 +806,20 @@ footer .baseline .disc { max-width: 62ch; font-size: 10.5px; line-height: 1.6; }
   .tool-cards { grid-template-columns: 1fr; }
   .dir-grid { grid-template-columns: 1fr; }
   footer .cols { grid-template-columns: 1fr; gap: 28px; }
-  .masthead .top { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .masthead .meta { text-align: left; }
+  /* The sticky masthead cost 187px here — 22% of a 390x844 phone, on every
+     scroll. Static and compact hands that back to the story. */
+  .masthead { position: static; }
+  .masthead .top { align-items: center; gap: 12px; padding: 12px 0 10px; }
+  .masthead .meta { display: none; }  /* date and tagline both repeat below the fold */
+  .masthead nav {
+    flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
+  }
+  .masthead nav::-webkit-scrollbar { display: none; }
+  .masthead nav a { white-space: nowrap; }
+  .masthead .theme-switch { margin-left: 8px; flex: none; }
   .briefs-inner { flex-direction: column; gap: 0; }
   .briefs .briefs-label { border-right: none; border-bottom: 1px solid var(--hairline); padding: 12px 0; margin-right: 0; }
   .briefs-track { padding-bottom: 12px; }

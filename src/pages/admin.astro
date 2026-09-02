@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
     <!-- ===== auth gate ===== -->
     <div id="auth" class="auth-card">
       <span class="brand">ai4you<em> · link dashboard</em></span>
-      <p class="gate-title">Sign in to manage link placements</p>
+      <h1 class="gate-title">Sign in to manage link placements</h1>
       <p class="gate-sub">Authentication is handled by Supabase. Only the admin email configured in <code>src/config.js</code> is allowed to make changes — enforced again at the database level.</p>
       <label class="visually-hidden" for="a-email">Email</label>
       <input id="a-email" type="email" placeholder="admin@yourdomain.com" autocomplete="username" />
@@ -33,7 +33,7 @@ import Layout from '../layouts/Layout.astro';
         <h2 id="form-title">New placement</h2>
         <div class="grid2">
           <div class="field">
-            <label for="f-slug">Slug (used as data-a4u value &amp; sub-id)</label>
+            <label for="f-slug">Slug (used as the LinkUnit slug &amp; sub-id)</label>
             <input id="f-slug" type="text" placeholder="jasper-inline-1" />
           </div>
           <div class="field">
@@ -98,7 +98,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="panel">
         <h2>Placements (<span id="count">0</span>)</h2>
         <div id="rows"></div>
-        <p class="hint">Place on any page with: <code>&lt;div data-a4u="SLUG"&gt;&lt;/div&gt;</code> — the build renders it automatically.</p>
+        <p class="hint">Place on any page with: <code>&lt;LinkUnit slug="SLUG" /&gt;</code> — import it from <code>~/components/LinkUnit.astro</code> and the build renders it. Changes go live on the next deploy.</p>
       </div>
 
       <div class="panel">
@@ -125,7 +125,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .auth-card .brand { font-family: var(--display); font-size: 26px; margin-bottom: 14px; display: block; }
   .auth-card .brand em { font-style: italic; color: var(--muted); }
-  .gate-title { font: 600 15px/1.4 var(--sans); margin: 0 0 4px; }
+  .gate-title { font: 600 15px/1.4 var(--sans); margin: 0 0 4px; }  /* h1: the only one visible while signed out */
   .gate-sub { font-size: 13px; color: var(--muted); margin: 0 0 18px; line-height: 1.55; }
   .gate-sub code { font-family: var(--mono); font-size: 11.5px; }
   #auth input {
@@ -175,7 +175,7 @@ import Layout from '../layouts/Layout.astro';
     border: 1px dashed var(--hairline-strong); border-radius: 8px; background: var(--surface);
     padding: 14px 16px; margin-bottom: 14px;
   }
-  .pcard-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin: 0 0 8px; }
+  .pcard-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin: 0 0 8px; }
   .pcard-actions { display: flex; gap: 8px; flex-wrap: wrap; }
   /* preview mockups */
   .pv-btn {
@@ -200,7 +200,7 @@ import Layout from '../layouts/Layout.astro';
   .pv-box { border-top: 2px solid var(--ink); }
   .pv-card strong, .pv-box strong { display: block; font: 600 14.5px/1.3 var(--sans); margin-bottom: 3px; }
   .pv-card em, .pv-box em { display: block; font: 400 12.5px/1.5 var(--sans); color: var(--muted); font-style: normal; margin-bottom: 10px; }
-  .pv-kicker { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pale-green-fg); margin: 0 0 6px; }
+  .pv-kicker { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pale-green-fg); margin: 0 0 6px; }
   @media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } }
 </style>
 
@@ -385,7 +385,7 @@ import Layout from '../layouts/Layout.astro';
     const toggle = e.target.closest('[data-toggle]');
     const del = e.target.closest('[data-del]');
     if (copy) {
-      const snippet = `<div data-a4u="${copy.dataset.copy}"></div>`;
+      const snippet = `<LinkUnit slug="${copy.dataset.copy}" />`;
       navigator.clipboard?.writeText(snippet).then(() => fmsg('Snippet copied.', true), () => {});
     }
     if (edit) fillForm(units.find((u) => u.id === edit.dataset.edit));

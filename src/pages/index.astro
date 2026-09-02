@@ -86,7 +86,7 @@ const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
         <input id="nl-email" name="email" type="email" placeholder="you@work.com" autocomplete="email" required />
         <button class="btn btn--primary" type="submit">Get the brief</button>
       </form>
-      <div style="margin-top:18px;display:flex;justify-content:center;"><PreferredSources theme="light" /></div>
+      <div style="margin-top:18px;display:flex;justify-content:center;"><PreferredSources /></div>
         <p class="form-msg" id="nl-msg" role="status" aria-live="polite"></p>
     </div>
   </section>
@@ -100,7 +100,7 @@ const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
 
 <script>
   import { bindUnits } from '../lib/link-units.js';
-  import { supabase } from '../lib/supabase.js';
+  import { subscribeEmail } from '../lib/track.js';
   bindUnits(document);
 
   // newsletter signup — writes to newsletter_subscribers (see supabase/upgrade-2026-08-30.sql)
@@ -122,22 +122,18 @@ const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
     }
     const btn = form.querySelector('button');
     if (btn) btn.disabled = true;
-    const { data: rows, error } = await supabase.from('newsletter_subscribers').insert({ email: v.toLowerCase() }).select();
+    const result = await subscribeEmail(v.toLowerCase());
     if (btn) btn.disabled = false;
-    if (error) {
-      if (error.code === '23505' || /duplicate|unique/i.test(error.message ?? '')) {
-        setMsg("You're already on the list — see you in the next brief.", true);
-        if (input) input.value = '';
-      } else {
-        setMsg("Couldn't subscribe right now — please try again in a minute.", false);
-      }
-      return;
-    }
-    if (!rows || rows.length === 0) {
+    if (result === 'error') {
       setMsg("Couldn't subscribe right now — please try again in a minute.", false);
       return;
     }
-    setMsg('Thanks — you are on the list. The next brief lands in your inbox.', true);
+    setMsg(
+      result === 'duplicate'
+        ? "You're already on the list — see you in the next brief."
+        : 'Thanks — you are on the list. The next brief lands in your inbox.',
+      true,
+    );
     if (input) input.value = '';
   });
 </script>

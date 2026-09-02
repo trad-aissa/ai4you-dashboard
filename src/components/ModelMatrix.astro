@@ -1,6 +1,7 @@
 ---
 // src/components/ModelMatrix.astro — searchable, sortable frontier model intelligence matrix
 import { MODELS } from '../data/models.js';
+import { REVIEWED } from '../config.js';
 
 interface Props {
   title?: string;
@@ -12,9 +13,9 @@ const { title = 'Frontier Model Intelligence Matrix' } = Astro.props;
 <section class="matrix-section" id="model-matrix" aria-label="Frontier Model Intelligence Matrix">
   <div class="matrix-head">
     <div>
-      <span class="kicker">Benchmarks &amp; Pricing · August 2026</span>
+      <span class="kicker">Benchmarks &amp; Pricing · checked {REVIEWED}</span>
       <h2>{title}</h2>
-      <p class="matrix-sub">Real-time parameters, context windows, token pricing, and tooling integrations across frontier &amp; open-weights AI models.</p>
+      <p class="matrix-sub">Context windows, token pricing, and tooling integrations across frontier &amp; open-weights AI models, checked {REVIEWED}.</p>
     </div>
     
     <div class="matrix-filter-bar">
@@ -262,7 +263,7 @@ const { title = 'Frontier Model Intelligence Matrix' } = Astro.props;
 
   .tool-tag {
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 11px;
     background: var(--surface);
     border: 1px solid var(--hairline);
     border-radius: 4px;

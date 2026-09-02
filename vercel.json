@@ -12,9 +12,24 @@
         { "key": "Cross-Origin-Resource-Policy", "value": "same-origin" },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://news.google.com https://*.google.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self' https://igiogbnoqitejrifzsfo.supabase.co https://hn.algolia.com https://news.google.com https://*.google.com; frame-src https://news.google.com https://*.google.com; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self' https://igiogbnoqitejrifzsfo.supabase.co https://hn.algolia.com; base-uri 'self'; form-action 'self'; object-src 'none'; frame-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
         }
       ]
+    },
+    {
+      "source": "/news.json",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=1800, s-maxage=3600" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "source": "/rss.xml",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=1800, s-maxage=3600" }]
+    },
+    {
+      "source": "/(llms.txt|llms-full.txt|og-default.png)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=86400" }]
     }
   ]
 }
