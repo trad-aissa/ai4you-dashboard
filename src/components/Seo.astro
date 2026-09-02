@@ -10,15 +10,17 @@ interface Props {
   publishedTime?: string;
   breadcrumbs?: Crumb[];  // emitted as BreadcrumbList JSON-LD
 }
+import { OG_CARDS, ogSlug } from '../data/og-cards.js';
+
 const { title, description, path = '', image, type = 'website', publishedTime, breadcrumbs } = Astro.props;
 
 const SITE = 'https://www.ai4you.site';
 const canonical = `${SITE}${path || '/'}`;
-// One static PNG for every page that doesn't pass its own `image`. Per-page cards
-// need a server runtime (crawlers never send query strings to a prerendered file)
-// and a raster format (no major platform renders an SVG og:image) — add the Vercel
-// adapter + @vercel/og if that ever earns its keep.
-const ogImage = image ? (image.startsWith('http') ? image : `${SITE}${image}`) : `${SITE}/og-default.png`;
+// Per-page card where we have copy for one (src/data/og-cards.js, rendered to
+// PNG at build time by src/pages/og/[...slug].png.ts), otherwise the shared
+// default. PNG because no major platform renders an SVG og:image.
+const cardPath = path && OG_CARDS[path] ? `/og/${ogSlug(path)}.png` : '/og-default.png';
+const ogImage = image ? (image.startsWith('http') ? image : `${SITE}${image}`) : `${SITE}${cardPath}`;
 const ogImageType = ogImage.endsWith('.svg') ? 'image/svg+xml' : 'image/png';
 const ogImageAlt = `${title} — ai4you.site`;
 const desc = description ?? 'A calm, sourced briefing on AI: model releases, pricing changes and industry moves — plus the tools actually worth your money.';
