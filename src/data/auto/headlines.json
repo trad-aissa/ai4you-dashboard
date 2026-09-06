@@ -1,14 +1,86 @@
 {
-  "updated": "2026-09-05T09:56:40.562Z",
+  "updated": "2026-09-06T10:15:20.249Z",
   "count": 80,
   "items": [
+    {
+      "id": "bbc054e1f15a",
+      "title": "AI, Tools and Transformation",
+      "url": "https://www.ben-evans.com/benedictevans/2026/9/3/ai-tools-and-transformation",
+      "source": "Hacker News",
+      "date": "2026-09-06T02:12:46.000Z",
+      "snippet": "62 points · 21 comments on HN"
+    },
+    {
+      "id": "921e4d073b7d",
+      "title": "Introducing GPT-6 Astra for developers",
+      "url": "https://simonwillison.net/2026/Sep/5/introducing-gpt-6-astra-for-developers/",
+      "source": "Simon Willison",
+      "date": "2026-09-05T23:27:48.000Z",
+      "snippet": "Introducing GPT-6 Astra for developers Blink and you'll miss it, but there's a familiar creature at 1m59s : Across the board, Astra has more attention to detail, better understanding of the user's prompt, and can build m"
+    },
+    {
+      "id": "a5bf96dbe6d6",
+      "title": "Seattle Times and Newsday are the latest publications to sue OpenAI and Microsoft",
+      "url": "https://techcrunch.com/2026/09/05/seattle-times-and-newsday-are-the-latest-publications-to-sue-openai-and-microsoft/",
+      "source": "TechCrunch",
+      "date": "2026-09-05T22:49:55.000Z",
+      "snippet": "Two more news organizations are suing OpenAI and Microsoft over the supposed use of their journalism to train AI."
+    },
+    {
+      "id": "f31be0c625cb",
+      "title": "OKF Agent Memory – Git-native persistent memory for AI coding agents",
+      "url": "https://github.com/okf-memory/okf-agent-memory",
+      "source": "Hacker News",
+      "date": "2026-09-05T22:15:52.000Z",
+      "snippet": "66 points · 20 comments on HN"
+    },
+    {
+      "id": "233803e667e5",
+      "title": "America's two largest school districts impose AI moratoriums",
+      "url": "https://www.techpolicy.press/americas-two-largest-school-districts-impose-ai-moratoriums/",
+      "source": "Hacker News",
+      "date": "2026-09-05T21:43:22.000Z",
+      "snippet": "59 points · 71 comments on HN"
+    },
+    {
+      "id": "e2a0f6185b9a",
+      "title": "Hikers rescued after using Google Gemini for planning",
+      "url": "https://techcrunch.com/2026/09/05/hikers-rescued-after-using-google-gemini-for-planning/",
+      "source": "TechCrunch",
+      "date": "2026-09-05T19:35:24.000Z",
+      "snippet": "The sheriff’s office said the hikers “were advised by Gemini to bring far less food and water than their group required.\""
+    },
+    {
+      "id": "5d4986f08b90",
+      "title": "OpenAI confirms ‘wiki incident,’ says it’s ‘working on a framework’ for more disclosure",
+      "url": "https://techcrunch.com/2026/09/05/openai-confirms-wiki-incident-says-its-working-on-a-framework-for-more-disclosure/",
+      "source": "TechCrunch",
+      "date": "2026-09-05T18:05:27.000Z",
+      "snippet": "OpenAI acknowledged its role in a recently reported incident where AI agents took over a German wiki forum."
+    },
+    {
+      "id": "ac5a64ceef28",
+      "title": "OpenAI admits to German wiki ‘incident’",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/990773/openai-german-wiki-incident",
+      "source": "The Verge",
+      "date": "2026-09-05T11:15:55.000Z",
+      "snippet": "OpenAI says it needs to overhaul how and when it reports instances of AI models attacking real-world targets. The acknowledgement comes as the company manages the fallout from reports that a swarm of its out-of-control a"
+    },
     {
       "id": "40d7d24c82bd",
       "title": "AI handles incidents, engineers lose touch with their systems",
       "url": "https://www.sylvainkalache.com/blog/ai-handles-incidents-engineers-lose-touch-with-their-systems",
       "source": "Hacker News",
       "date": "2026-09-05T07:52:50.000Z",
-      "snippet": "88 points · 60 comments on HN"
+      "snippet": "382 points · 333 comments on HN"
+    },
+    {
+      "id": "aa6c90f3238c",
+      "title": "GPT-6 Astra in code review: Gains, privacy, and cost",
+      "url": "https://www.coderabbit.ai/blog/gpt-6-astra-code-review-evaluation",
+      "source": "Hacker News",
+      "date": "2026-09-05T03:38:56.000Z",
+      "snippet": "72 points · 71 comments on HN"
     },
     {
       "id": "2d1aff01ef67",
@@ -16,7 +88,7 @@
       "url": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4-2",
       "source": "Hacker News",
       "date": "2026-09-05T00:04:14.000Z",
-      "snippet": "118 points · 41 comments on HN"
+      "snippet": "156 points · 64 comments on HN"
     },
     {
       "id": "266031deb404",
@@ -48,7 +120,7 @@
       "url": "https://openrouter.ai/openai/gpt-6-astra",
       "source": "Hacker News",
       "date": "2026-09-04T21:39:19.000Z",
-      "snippet": "227 points · 132 comments on HN"
+      "snippet": "313 points · 225 comments on HN"
     },
     {
       "id": "2f64692ac0d6",
@@ -64,7 +136,7 @@
       "url": "https://eebench.org/blog/can-ai-design-circuit-boards-yet/",
       "source": "Hacker News",
       "date": "2026-09-04T19:48:29.000Z",
-      "snippet": "261 points · 155 comments on HN"
+      "snippet": "408 points · 224 comments on HN"
     },
     {
       "id": "480cff7899eb",
@@ -88,7 +160,7 @@
       "url": "https://opentrailpaper.com",
       "source": "Hacker News",
       "date": "2026-09-04T17:18:08.000Z",
-      "snippet": "288 points · 102 comments on HN"
+      "snippet": "397 points · 125 comments on HN"
     },
     {
       "id": "4fd0827aa950",
@@ -104,7 +176,7 @@
       "url": "https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/",
       "source": "Hacker News",
       "date": "2026-09-04T16:24:50.000Z",
-      "snippet": "67 points · 31 comments on HN"
+      "snippet": "77 points · 33 comments on HN"
     },
     {
       "id": "980af6a6b7b0",
@@ -144,7 +216,7 @@
       "url": "https://www.nytimes.com/2026/09/04/technology/open-source-ai-anthropic-openai.html",
       "source": "Hacker News",
       "date": "2026-09-04T15:33:45.000Z",
-      "snippet": "297 points · 270 comments on HN"
+      "snippet": "325 points · 299 comments on HN"
     },
     {
       "id": "7e4db382f3f9",
@@ -184,7 +256,7 @@
       "url": "https://productrise.app/blog/google-ai-mode-prefers-more-expensive-products",
       "source": "Hacker News",
       "date": "2026-09-04T11:59:15.000Z",
-      "snippet": "383 points · 72 comments on HN"
+      "snippet": "394 points · 74 comments on HN"
     },
     {
       "id": "f23a53b84405",
@@ -216,7 +288,7 @@
       "url": "https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/",
       "source": "Hacker News",
       "date": "2026-09-04T10:30:57.000Z",
-      "snippet": "93 points · 2 comments on HN"
+      "snippet": "95 points · 2 comments on HN"
     },
     {
       "id": "4abbfbab9ab1",
@@ -232,7 +304,7 @@
       "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
       "source": "Hacker News",
       "date": "2026-09-04T09:03:00.000Z",
-      "snippet": "132 points · 35 comments on HN"
+      "snippet": "200 points · 44 comments on HN"
     },
     {
       "id": "73d7f7bb41fa",
@@ -280,7 +352,7 @@
       "url": "https://inference-docs.cerebras.ai/models/overview",
       "source": "Hacker News",
       "date": "2026-09-03T18:32:13.000Z",
-      "snippet": "681 points · 223 comments on HN"
+      "snippet": "687 points · 226 comments on HN"
     },
     {
       "id": "91a2b0e86629",
@@ -328,7 +400,7 @@
       "url": "https://www.sanders.senate.gov/press-releases/news-sanders-casar-introduce-legislation-to-ban-artificial-superintelligence-and-temporarily-pause-advanced-ai-development/",
       "source": "Hacker News",
       "date": "2026-09-03T17:20:29.000Z",
-      "snippet": "61 points · 79 comments on HN"
+      "snippet": "61 points · 83 comments on HN"
     },
     {
       "id": "fb930f0d98d9",
@@ -360,7 +432,7 @@
       "url": "https://ifm.ai/blog/k2/",
       "source": "Hacker News",
       "date": "2026-09-03T15:36:43.000Z",
-      "snippet": "332 points · 127 comments on HN"
+      "snippet": "335 points · 131 comments on HN"
     },
     {
       "id": "6d91c5f5c6e3",
@@ -384,7 +456,7 @@
       "url": "https://news.ycombinator.com/item?id=49551096",
       "source": "Hacker News",
       "date": "2026-09-03T15:07:01.000Z",
-      "snippet": "395 points · 688 comments on HN"
+      "snippet": "400 points · 701 comments on HN"
     },
     {
       "id": "56da2c8ef803",
@@ -440,7 +512,7 @@
       "url": "https://reactoratlas.com",
       "source": "Hacker News",
       "date": "2026-09-03T12:33:01.000Z",
-      "snippet": "68 points · 24 comments on HN"
+      "snippet": "75 points · 25 comments on HN"
     },
     {
       "id": "52a8d0c31484",
@@ -456,7 +528,7 @@
       "url": "https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html",
       "source": "Hacker News",
       "date": "2026-09-03T12:10:33.000Z",
-      "snippet": "325 points · 106 comments on HN"
+      "snippet": "327 points · 106 comments on HN"
     },
     {
       "id": "7a45b185cff5",
@@ -496,7 +568,7 @@
       "url": "https://www.kedglobal.com/artificial-intelligence/newsView/ked202607210007",
       "source": "Hacker News",
       "date": "2026-09-03T01:11:22.000Z",
-      "snippet": "459 points · 182 comments on HN"
+      "snippet": "466 points · 186 comments on HN"
     },
     {
       "id": "2e155b11d809",
@@ -536,7 +608,7 @@
       "url": "https://secondthoughts.ai/p/14-reasons-robotics-is-hard",
       "source": "Hacker News",
       "date": "2026-09-02T22:02:30.000Z",
-      "snippet": "127 points · 76 comments on HN"
+      "snippet": "128 points · 76 comments on HN"
     },
     {
       "id": "d8f710ced3b0",
@@ -544,7 +616,7 @@
       "url": "https://www.nytimes.com/2026/09/01/nyregion/ai-ban-schools-nyc.html",
       "source": "Hacker News",
       "date": "2026-09-02T20:57:04.000Z",
-      "snippet": "219 points · 180 comments on HN"
+      "snippet": "220 points · 180 comments on HN"
     },
     {
       "id": "800d247a22b0",
@@ -569,78 +641,6 @@
       "source": "Hacker News",
       "date": "2026-09-02T19:41:01.000Z",
       "snippet": "74 points · 85 comments on HN"
-    },
-    {
-      "id": "3e6570f9052d",
-      "title": "Muse Spark 1.3",
-      "url": "https://developer.meta.com/ai/models/muse-spark/",
-      "source": "Hacker News",
-      "date": "2026-09-02T19:35:04.000Z",
-      "snippet": "686 points · 448 comments on HN"
-    },
-    {
-      "id": "c5723bb99be0",
-      "title": "Introducing Muse Spark 1.3",
-      "url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
-      "source": "Hacker News",
-      "date": "2026-09-02T19:25:47.000Z",
-      "snippet": "66 points · 0 comments on HN"
-    },
-    {
-      "id": "916ec1df55ce",
-      "title": "Qantas Airbus A380 engine failure in 2010 (2023)",
-      "url": "https://admiralcloudberg.medium.com/a-matter-of-millimeters-the-story-of-qantas-flight-32-bdaa62dc98e7",
-      "source": "Hacker News",
-      "date": "2026-09-02T18:42:41.000Z",
-      "snippet": "178 points · 116 comments on HN"
-    },
-    {
-      "id": "b0c60d5e22ba",
-      "title": "Google releases Gemini 3.8 Flash, its third Flash model in six weeks",
-      "url": "https://arstechnica.com/ai/2026/09/google-releases-gemini-3-8-flash-its-third-flash-model-in-six-weeks/",
-      "source": "Ars Technica",
-      "date": "2026-09-02T18:13:54.000Z",
-      "snippet": "Google's Pro model updates are seemingly paused, but there's yet another Gemini Flash today."
-    },
-    {
-      "id": "97e3746f8f5e",
-      "title": "Trump may be forced to reveal secret rules feds use for AI safety testing",
-      "url": "https://arstechnica.com/tech-policy/2026/09/trump-may-be-forced-to-reveal-secret-rules-feds-use-for-ai-safety-testing/",
-      "source": "Ars Technica",
-      "date": "2026-09-02T17:58:33.000Z",
-      "snippet": "Trump’s secret reviews of frontier AI models may hide corruption, lawsuit says."
-    },
-    {
-      "id": "2140bd018ec6",
-      "title": "Amazon’s AI assistant can now spot fake emails from the company",
-      "url": "https://www.theverge.com/tech/988518/amazon-alexa-for-shopping-verify-emails",
-      "source": "The Verge",
-      "date": "2026-09-02T17:52:56.000Z",
-      "snippet": "Amazon is trying to combat impersonation scams with a new feature that allows you to use its AI assistant to determine whether an email, text message, or phone call actually came from the company. With the update, you ca"
-    },
-    {
-      "id": "8561de7d3711",
-      "title": "Pangram’s Max Spero on why AI detection is harder than ‘Real or Fake’",
-      "url": "https://techcrunch.com/video/pangrams-max-spero-on-why-ai-detection-is-harder-than-real-or-fake/",
-      "source": "TechCrunch",
-      "date": "2026-09-02T17:18:13.000Z",
-      "snippet": "The internet has a trust problem, and it’s not just because social media feeds are filling up with AI slop. AI-generated text and images are now making their way into job applications, product reviews, and even insurance"
-    },
-    {
-      "id": "52702342c41b",
-      "title": "We’re ‘dangerously close’ to dead internet theory, says Pangram’s CEO",
-      "url": "https://techcrunch.com/podcast/were-dangerously-close-to-dead-internet-theory-says-pangrams-ceo/",
-      "source": "TechCrunch",
-      "date": "2026-09-02T17:09:57.000Z",
-      "snippet": "The internet has a trust problem, and it’s not just because social media feeds are filling up with AI slop. AI-generated text and images are now making their way into job applications, product reviews, and even insurance"
-    },
-    {
-      "id": "5981cc5d14f7",
-      "title": "US government sides with OpenAI on issue of training LLMs on copyrighted material",
-      "url": "https://techcrunch.com/2026/09/02/u-s-government-sides-with-openai-on-issue-of-training-llms-on-copyrighted-material/",
-      "source": "TechCrunch",
-      "date": "2026-09-02T17:09:06.000Z",
-      "snippet": "\"The United States has a strong interest in continuing to develop a robust and competitive artificial intelligence industry that sets the standard for the practice and procedure of AI use globally,\" the brief reads."
     }
   ]
 }
