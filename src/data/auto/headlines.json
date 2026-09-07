@@ -1,14 +1,94 @@
 {
-  "updated": "2026-09-06T10:15:20.249Z",
+  "updated": "2026-09-07T11:34:36.974Z",
   "count": 80,
   "items": [
+    {
+      "id": "8186981bafa5",
+      "title": "The complex corporate web behind a $3.2 billion AI data center",
+      "url": "https://arstechnica.com/ai/2026/09/the-ai-data-center-boom-is-causing-new-accountability-problems/",
+      "source": "Ars Technica",
+      "date": "2026-09-07T11:00:03.000Z",
+      "snippet": "When multiple companies are behind one project, who bears responsibility for problems?"
+    },
+    {
+      "id": "d751cd674791",
+      "title": "I refused to train the AI that could replace me",
+      "url": "https://restofworld.org/2026/ai-training-jobs-expert-replacement/",
+      "source": "Hacker News",
+      "date": "2026-09-07T04:38:22.000Z",
+      "snippet": "86 points · 97 comments on HN"
+    },
+    {
+      "id": "e02ae19def6b",
+      "title": "Supporting independent journalism in Ukraine",
+      "url": "https://openai.com/index/supporting-independent-journalism-in-ukraine",
+      "source": "OpenAI",
+      "date": "2026-09-07T00:00:00.000Z",
+      "snippet": "OpenAI, AIRPPU and WAN-IFRA launch an AI program to help Ukrainian news organizations strengthen innovation, resilience, and independent journalism."
+    },
+    {
+      "id": "2f083f991a7f",
+      "title": "Seattle Times and Newsday sue OpenAI and Microsoft for infringement",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/990932/seattle-times-newsday-lawsuit-openai-microsoft",
+      "source": "The Verge",
+      "date": "2026-09-06T23:36:04.000Z",
+      "snippet": "The Seattle Times and Newsday are just the latest plaintiffs to take OpenAI to court, alleging copyright infringement. The two outlets say the company used their journalism as training data for its AI models without perm"
+    },
+    {
+      "id": "6a3a62ca594a",
+      "title": "Authors push back as publishers and agents make claims on Anthropic settlement",
+      "url": "https://techcrunch.com/2026/09/06/authors-push-back-as-publishers-and-agents-seek-share-of-anthropic-settlement/",
+      "source": "TechCrunch",
+      "date": "2026-09-06T20:47:37.000Z",
+      "snippet": "Authors say publishers seem to be claiming more than their fair share of settlement payments."
+    },
+    {
+      "id": "5325508b04b8",
+      "title": "Travis Kalanick’s Atoms might be getting into the robotaxi business",
+      "url": "https://techcrunch.com/2026/09/06/travis-kalanicks-atoms-might-be-getting-into-the-robotaxi-business/",
+      "source": "TechCrunch",
+      "date": "2026-09-06T16:45:00.000Z",
+      "snippet": "The Uber founder has said that Atoms will allow him to complete \"unfinished business.\""
+    },
+    {
+      "id": "5b887074ff6d",
+      "title": "How I feel about AI",
+      "url": "https://beza1e1.tuxen.de/ai_feelings.html",
+      "source": "Hacker News",
+      "date": "2026-09-06T15:00:19.000Z",
+      "snippet": "158 points · 253 comments on HN"
+    },
+    {
+      "id": "da53b7094d93",
+      "title": "A/I shuts down",
+      "url": "https://keepitfree.ai/announcements/a/i-shuts-down-stay-human/",
+      "source": "Hacker News",
+      "date": "2026-09-06T14:34:34.000Z",
+      "snippet": "587 points · 485 comments on HN"
+    },
+    {
+      "id": "a8e8f9dc895a",
+      "title": "An Alien Mind",
+      "url": "https://openai.com/index/an-alien-mind",
+      "source": "OpenAI",
+      "date": "2026-09-06T09:00:00.000Z",
+      "snippet": "Jakub Pachocki reflects on increasingly capable AI and the challenge of keeping it aligned. He calls for stronger safeguards and international coordination."
+    },
+    {
+      "id": "19672c4832d4",
+      "title": "Research acceleration: The view inside OpenAI",
+      "url": "https://openai.com/index/research-acceleration-view-inside-openai",
+      "source": "OpenAI",
+      "date": "2026-09-06T08:00:00.000Z",
+      "snippet": "Inside OpenAI, coding agents are reshaping AI research. Explore early data on agent usage, experiment velocity, task complexity, and research acceleration."
+    },
     {
       "id": "bbc054e1f15a",
       "title": "AI, Tools and Transformation",
       "url": "https://www.ben-evans.com/benedictevans/2026/9/3/ai-tools-and-transformation",
       "source": "Hacker News",
       "date": "2026-09-06T02:12:46.000Z",
-      "snippet": "62 points · 21 comments on HN"
+      "snippet": "152 points · 70 comments on HN"
     },
     {
       "id": "921e4d073b7d",
@@ -32,7 +112,7 @@
       "url": "https://github.com/okf-memory/okf-agent-memory",
       "source": "Hacker News",
       "date": "2026-09-05T22:15:52.000Z",
-      "snippet": "66 points · 20 comments on HN"
+      "snippet": "76 points · 25 comments on HN"
     },
     {
       "id": "233803e667e5",
@@ -40,7 +120,7 @@
       "url": "https://www.techpolicy.press/americas-two-largest-school-districts-impose-ai-moratoriums/",
       "source": "Hacker News",
       "date": "2026-09-05T21:43:22.000Z",
-      "snippet": "59 points · 71 comments on HN"
+      "snippet": "61 points · 74 comments on HN"
     },
     {
       "id": "e2a0f6185b9a",
@@ -59,6 +139,14 @@
       "snippet": "OpenAI acknowledged its role in a recently reported incident where AI agents took over a German wiki forum."
     },
     {
+      "id": "080a2933ee15",
+      "title": "Ask HN: Fable hacked my piano, can I release the results?",
+      "url": "https://news.ycombinator.com/item?id=49577129",
+      "source": "Hacker News",
+      "date": "2026-09-05T14:54:44.000Z",
+      "snippet": "174 points · 109 comments on HN"
+    },
+    {
       "id": "ac5a64ceef28",
       "title": "OpenAI admits to German wiki ‘incident’",
       "url": "https://www.theverge.com/ai-artificial-intelligence/990773/openai-german-wiki-incident",
@@ -72,7 +160,7 @@
       "url": "https://www.sylvainkalache.com/blog/ai-handles-incidents-engineers-lose-touch-with-their-systems",
       "source": "Hacker News",
       "date": "2026-09-05T07:52:50.000Z",
-      "snippet": "382 points · 333 comments on HN"
+      "snippet": "411 points · 341 comments on HN"
     },
     {
       "id": "aa6c90f3238c",
@@ -80,7 +168,7 @@
       "url": "https://www.coderabbit.ai/blog/gpt-6-astra-code-review-evaluation",
       "source": "Hacker News",
       "date": "2026-09-05T03:38:56.000Z",
-      "snippet": "72 points · 71 comments on HN"
+      "snippet": "72 points · 74 comments on HN"
     },
     {
       "id": "2d1aff01ef67",
@@ -88,7 +176,7 @@
       "url": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4-2",
       "source": "Hacker News",
       "date": "2026-09-05T00:04:14.000Z",
-      "snippet": "156 points · 64 comments on HN"
+      "snippet": "156 points · 65 comments on HN"
     },
     {
       "id": "266031deb404",
@@ -120,7 +208,7 @@
       "url": "https://openrouter.ai/openai/gpt-6-astra",
       "source": "Hacker News",
       "date": "2026-09-04T21:39:19.000Z",
-      "snippet": "313 points · 225 comments on HN"
+      "snippet": "318 points · 233 comments on HN"
     },
     {
       "id": "2f64692ac0d6",
@@ -136,7 +224,7 @@
       "url": "https://eebench.org/blog/can-ai-design-circuit-boards-yet/",
       "source": "Hacker News",
       "date": "2026-09-04T19:48:29.000Z",
-      "snippet": "408 points · 224 comments on HN"
+      "snippet": "419 points · 238 comments on HN"
     },
     {
       "id": "480cff7899eb",
@@ -160,7 +248,7 @@
       "url": "https://opentrailpaper.com",
       "source": "Hacker News",
       "date": "2026-09-04T17:18:08.000Z",
-      "snippet": "397 points · 125 comments on HN"
+      "snippet": "412 points · 131 comments on HN"
     },
     {
       "id": "4fd0827aa950",
@@ -176,7 +264,7 @@
       "url": "https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/",
       "source": "Hacker News",
       "date": "2026-09-04T16:24:50.000Z",
-      "snippet": "77 points · 33 comments on HN"
+      "snippet": "79 points · 34 comments on HN"
     },
     {
       "id": "980af6a6b7b0",
@@ -216,7 +304,7 @@
       "url": "https://www.nytimes.com/2026/09/04/technology/open-source-ai-anthropic-openai.html",
       "source": "Hacker News",
       "date": "2026-09-04T15:33:45.000Z",
-      "snippet": "325 points · 299 comments on HN"
+      "snippet": "330 points · 307 comments on HN"
     },
     {
       "id": "7e4db382f3f9",
@@ -256,7 +344,7 @@
       "url": "https://productrise.app/blog/google-ai-mode-prefers-more-expensive-products",
       "source": "Hacker News",
       "date": "2026-09-04T11:59:15.000Z",
-      "snippet": "394 points · 74 comments on HN"
+      "snippet": "396 points · 76 comments on HN"
     },
     {
       "id": "f23a53b84405",
@@ -304,7 +392,7 @@
       "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
       "source": "Hacker News",
       "date": "2026-09-04T09:03:00.000Z",
-      "snippet": "200 points · 44 comments on HN"
+      "snippet": "212 points · 45 comments on HN"
     },
     {
       "id": "73d7f7bb41fa",
@@ -352,7 +440,7 @@
       "url": "https://inference-docs.cerebras.ai/models/overview",
       "source": "Hacker News",
       "date": "2026-09-03T18:32:13.000Z",
-      "snippet": "687 points · 226 comments on HN"
+      "snippet": "689 points · 228 comments on HN"
     },
     {
       "id": "91a2b0e86629",
@@ -448,7 +536,7 @@
       "url": "https://status.x.ai/",
       "source": "Hacker News",
       "date": "2026-09-03T15:26:01.000Z",
-      "snippet": "159 points · 158 comments on HN"
+      "snippet": "160 points · 158 comments on HN"
     },
     {
       "id": "2d612f0c6e83",
@@ -456,7 +544,7 @@
       "url": "https://news.ycombinator.com/item?id=49551096",
       "source": "Hacker News",
       "date": "2026-09-03T15:07:01.000Z",
-      "snippet": "400 points · 701 comments on HN"
+      "snippet": "403 points · 703 comments on HN"
     },
     {
       "id": "56da2c8ef803",
@@ -512,7 +600,7 @@
       "url": "https://reactoratlas.com",
       "source": "Hacker News",
       "date": "2026-09-03T12:33:01.000Z",
-      "snippet": "75 points · 25 comments on HN"
+      "snippet": "77 points · 25 comments on HN"
     },
     {
       "id": "52a8d0c31484",
@@ -528,15 +616,7 @@
       "url": "https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html",
       "source": "Hacker News",
       "date": "2026-09-03T12:10:33.000Z",
-      "snippet": "327 points · 106 comments on HN"
-    },
-    {
-      "id": "7a45b185cff5",
-      "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
-      "url": "https://openai.com/index/playco-game-prototyping-with-astra",
-      "source": "OpenAI",
-      "date": "2026-09-03T12:00:00.000Z",
-      "snippet": "Using GPT-6 Astra, Playco built three themed game prototypes from one grey box foundation and reported 50% fewer manual fixes than with the previous model."
+      "snippet": "328 points · 107 comments on HN"
     },
     {
       "id": "be4a3c542626",
@@ -547,100 +627,20 @@
       "snippet": "Legora used GPT-6 Astra to review 41 documents in minutes, find all four planted errors, and improve performance by nearly 40% in this financial-review workflow."
     },
     {
+      "id": "7a45b185cff5",
+      "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
+      "url": "https://openai.com/index/playco-game-prototyping-with-astra",
+      "source": "OpenAI",
+      "date": "2026-09-03T12:00:00.000Z",
+      "snippet": "Using GPT-6 Astra, Playco built three themed game prototypes from one grey box foundation and reported 50% fewer manual fixes than with the previous model."
+    },
+    {
       "id": "c22774e46292",
       "title": "A dark horse enters China's AI race: StartLux",
       "url": "https://chinaonchina.com/article/chen-dawei-returns-enters-the-large-model-sector",
       "source": "Hacker News",
       "date": "2026-09-03T11:12:57.000Z",
       "snippet": "55 points · 29 comments on HN"
-    },
-    {
-      "id": "0f3b76bc480d",
-      "title": "GPT-6 Astra: A new generation of intelligence",
-      "url": "https://openai.com/index/gpt-6-astra",
-      "source": "OpenAI",
-      "date": "2026-09-03T11:00:00.000Z",
-      "snippet": "Introducing GPT-6 Astra, our most intelligent and aligned model yet, with state-of-the-art capabilities across computer use, coding, cybersecurity, and science."
-    },
-    {
-      "id": "39f0e38f4466",
-      "title": "Go grandmaster Shin defeats AI KataGo with a two-stone handicap",
-      "url": "https://www.kedglobal.com/artificial-intelligence/newsView/ked202607210007",
-      "source": "Hacker News",
-      "date": "2026-09-03T01:11:22.000Z",
-      "snippet": "466 points · 186 comments on HN"
-    },
-    {
-      "id": "2e155b11d809",
-      "title": "Safety overview: GPT-6 Astra",
-      "url": "https://openai.com/index/safety-overview-gpt-6-astra",
-      "source": "OpenAI",
-      "date": "2026-09-03T00:00:00.000Z",
-      "snippet": "GPT-6 Astra is our most capable broadly deployed model and our first to reach the Critical level of cybersecurity capability under our Preparedness Framework."
-    },
-    {
-      "id": "f3b8c7fe39ca",
-      "title": "The Builders Stage brings practical strategies for scaling startups to TechCrunch Disrupt 2026",
-      "url": "https://techcrunch.com/2026/09/02/the-builders-stage-brings-practical-strategies-for-scaling-startups-to-techcrunch-disrupt-2026/",
-      "source": "TechCrunch",
-      "date": "2026-09-02T23:01:00.000Z",
-      "snippet": "The Builders Stage is returning to TechCrunch Disrupt, bringing together founders, startup operators, and investors for practical conversations on what it takes to build and scale."
-    },
-    {
-      "id": "e54d1c1e8577",
-      "title": "Palo Alto Networks paid $500M for Thrive-backed Console, sources say",
-      "url": "https://techcrunch.com/2026/09/02/palo-alto-networks-paid-500m-for-thrive-backed-console-sources-say/",
-      "source": "TechCrunch",
-      "date": "2026-09-02T22:44:56.000Z",
-      "snippet": "The acquisition also leaves Sequoia-backed Serval as the de facto startup leader in AI IT service automation, industry watchers believe."
-    },
-    {
-      "id": "16bf1bec9e4b",
-      "title": "TechCrunch Disrupt 2026’s new Real World AI Stage features Nvidia, robots, and extinct animals",
-      "url": "https://techcrunch.com/2026/09/02/techcrunch-disrupt-2026s-new-real-world-ai-stage-features-nvidia-robots-and-extinct-animals/",
-      "source": "TechCrunch",
-      "date": "2026-09-02T22:24:09.000Z",
-      "snippet": "On our new Real World AI stage, we’ll be focusing on the intersection between the digital and physical, and all the ways we’ll continue to see a blending of the two."
-    },
-    {
-      "id": "e1203e982825",
-      "title": "Reasons robotics is hard",
-      "url": "https://secondthoughts.ai/p/14-reasons-robotics-is-hard",
-      "source": "Hacker News",
-      "date": "2026-09-02T22:02:30.000Z",
-      "snippet": "128 points · 76 comments on HN"
-    },
-    {
-      "id": "d8f710ced3b0",
-      "title": "Mamdani bans AI in NYC schools",
-      "url": "https://www.nytimes.com/2026/09/01/nyregion/ai-ban-schools-nyc.html",
-      "source": "Hacker News",
-      "date": "2026-09-02T20:57:04.000Z",
-      "snippet": "220 points · 180 comments on HN"
-    },
-    {
-      "id": "800d247a22b0",
-      "title": "OpenAI’s new reasoning technique alarms AI safety experts",
-      "url": "https://techcrunch.com/2026/09/02/openais-new-reasoning-technique-alarms-ai-safety-experts/",
-      "source": "TechCrunch",
-      "date": "2026-09-02T20:19:14.000Z",
-      "snippet": "OpenAI’s new Astra model will use “recurrent depth,” a technique that allows the model to operate outside of the sequential thinking that characterizes most reasoning models."
-    },
-    {
-      "id": "535ee29f1ad1",
-      "title": "Google says its new Gemini 3.8 Flash model ‘works harder’ but might cost more",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/988742/google-gemini-3-8-flash",
-      "source": "The Verge",
-      "date": "2026-09-02T20:11:40.000Z",
-      "snippet": "Google launched Gemini 3.8 Flash, arriving just a few weeks after its predecessor. The company claims the new model \"works harder\" than Gemini 3.7 Flash by performing more reasoning steps on complex tasks and \"calling to"
-    },
-    {
-      "id": "2b7be7a753bc",
-      "title": "The Post-AI Internet Doesn't Look Great",
-      "url": "https://www.jordangoodman.xyz/the-post-ai-internet-doesnt-look-great/",
-      "source": "Hacker News",
-      "date": "2026-09-02T19:41:01.000Z",
-      "snippet": "74 points · 85 comments on HN"
     }
   ]
 }
