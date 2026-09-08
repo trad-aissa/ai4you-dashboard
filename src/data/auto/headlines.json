@@ -1,7 +1,55 @@
 {
-  "updated": "2026-09-07T11:34:36.974Z",
+  "updated": "2026-09-08T10:34:16.033Z",
   "count": 80,
   "items": [
+    {
+      "id": "3045481d86a5",
+      "title": "Mistral raises €3B",
+      "url": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/",
+      "source": "Hacker News",
+      "date": "2026-09-08T05:06:23.000Z",
+      "snippet": "479 points · 336 comments on HN"
+    },
+    {
+      "id": "276c6225db64",
+      "title": "llm 0.35",
+      "url": "https://simonwillison.net/2026/Sep/7/llm/",
+      "source": "Simon Willison",
+      "date": "2026-09-07T23:54:54.000Z",
+      "snippet": "Release: llm 0.35 New OpenAI model: gpt-6-astra for GPT-6 Astra . Tags: openai , llm , gpt-6-astra"
+    },
+    {
+      "id": "bbd44de733a8",
+      "title": "Opaque recurrence, and other AI terms that you should probably know",
+      "url": "https://techcrunch.com/2026/09/07/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms/",
+      "source": "TechCrunch",
+      "date": "2026-09-07T19:24:00.000Z",
+      "snippet": "The rise of AI has brought an avalanche of new terms and slang. Here is a glossary with definitions of some of the most important words and phrases you might encounter."
+    },
+    {
+      "id": "6b53dde1b0f1",
+      "title": "AI Cold Showers",
+      "url": "https://allan.reyes.sh/posts/ai-cold-showers/",
+      "source": "Hacker News",
+      "date": "2026-09-07T19:05:39.000Z",
+      "snippet": "74 points · 12 comments on HN"
+    },
+    {
+      "id": "48bba5baa06d",
+      "title": "AI models ran real businesses: They sent $12,431 in fake invoices, lost $3,200",
+      "url": "https://www.bottlenecklabs.com/blog/benchmarking-7-autonomous-businesses",
+      "source": "Hacker News",
+      "date": "2026-09-07T18:24:32.000Z",
+      "snippet": "100 points · 117 comments on HN"
+    },
+    {
+      "id": "d1f74a46c409",
+      "title": "The complex corporate web behind a $3.2 billion AI data center",
+      "url": "https://arstechnica.com/features/2026/09/the-ai-data-center-boom-is-causing-new-accountability-problems/",
+      "source": "Ars Technica",
+      "date": "2026-09-07T11:00:03.000Z",
+      "snippet": "When multiple companies are behind one project, who bears responsibility for problems?"
+    },
     {
       "id": "8186981bafa5",
       "title": "The complex corporate web behind a $3.2 billion AI data center",
@@ -11,12 +59,36 @@
       "snippet": "When multiple companies are behind one project, who bears responsibility for problems?"
     },
     {
+      "id": "64868ada1cab",
+      "title": "Initial effects of AI technology on employment look positive",
+      "url": "https://www.economist.com/finance-and-economics/2026/09/04/the-jobs-apocalypse-is-postponed-an-ai-jobs-boom-is-here",
+      "source": "Hacker News",
+      "date": "2026-09-07T10:38:32.000Z",
+      "snippet": "87 points · 131 comments on HN"
+    },
+    {
+      "id": "8fb31a39b25a",
+      "title": "Speculative Decoding in vLLM on AMD GPUs",
+      "url": "https://vllm.ai/blog/2026-08-23-speculative-decoding-amd-gpus",
+      "source": "Hacker News",
+      "date": "2026-09-07T09:26:41.000Z",
+      "snippet": "137 points · 51 comments on HN"
+    },
+    {
+      "id": "d02abe3b70f4",
+      "title": "Show HN: Engrim – A universal, local-first SQLite memory engine for AI CLIs",
+      "url": "https://github.com/timgordontg/engrim",
+      "source": "Hacker News",
+      "date": "2026-09-07T04:49:36.000Z",
+      "snippet": "88 points · 51 comments on HN"
+    },
+    {
       "id": "d751cd674791",
       "title": "I refused to train the AI that could replace me",
       "url": "https://restofworld.org/2026/ai-training-jobs-expert-replacement/",
       "source": "Hacker News",
       "date": "2026-09-07T04:38:22.000Z",
-      "snippet": "86 points · 97 comments on HN"
+      "snippet": "94 points · 113 comments on HN"
     },
     {
       "id": "e02ae19def6b",
@@ -56,7 +128,7 @@
       "url": "https://beza1e1.tuxen.de/ai_feelings.html",
       "source": "Hacker News",
       "date": "2026-09-06T15:00:19.000Z",
-      "snippet": "158 points · 253 comments on HN"
+      "snippet": "162 points · 258 comments on HN"
     },
     {
       "id": "da53b7094d93",
@@ -64,7 +136,7 @@
       "url": "https://keepitfree.ai/announcements/a/i-shuts-down-stay-human/",
       "source": "Hacker News",
       "date": "2026-09-06T14:34:34.000Z",
-      "snippet": "587 points · 485 comments on HN"
+      "snippet": "628 points · 537 comments on HN"
     },
     {
       "id": "a8e8f9dc895a",
@@ -88,7 +160,7 @@
       "url": "https://www.ben-evans.com/benedictevans/2026/9/3/ai-tools-and-transformation",
       "source": "Hacker News",
       "date": "2026-09-06T02:12:46.000Z",
-      "snippet": "152 points · 70 comments on HN"
+      "snippet": "155 points · 76 comments on HN"
     },
     {
       "id": "921e4d073b7d",
@@ -112,7 +184,7 @@
       "url": "https://github.com/okf-memory/okf-agent-memory",
       "source": "Hacker News",
       "date": "2026-09-05T22:15:52.000Z",
-      "snippet": "76 points · 25 comments on HN"
+      "snippet": "79 points · 32 comments on HN"
     },
     {
       "id": "233803e667e5",
@@ -144,7 +216,7 @@
       "url": "https://news.ycombinator.com/item?id=49577129",
       "source": "Hacker News",
       "date": "2026-09-05T14:54:44.000Z",
-      "snippet": "174 points · 109 comments on HN"
+      "snippet": "289 points · 156 comments on HN"
     },
     {
       "id": "ac5a64ceef28",
@@ -160,7 +232,7 @@
       "url": "https://www.sylvainkalache.com/blog/ai-handles-incidents-engineers-lose-touch-with-their-systems",
       "source": "Hacker News",
       "date": "2026-09-05T07:52:50.000Z",
-      "snippet": "411 points · 341 comments on HN"
+      "snippet": "415 points · 342 comments on HN"
     },
     {
       "id": "aa6c90f3238c",
@@ -168,7 +240,7 @@
       "url": "https://www.coderabbit.ai/blog/gpt-6-astra-code-review-evaluation",
       "source": "Hacker News",
       "date": "2026-09-05T03:38:56.000Z",
-      "snippet": "72 points · 74 comments on HN"
+      "snippet": "74 points · 75 comments on HN"
     },
     {
       "id": "2d1aff01ef67",
@@ -176,11 +248,11 @@
       "url": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4-2",
       "source": "Hacker News",
       "date": "2026-09-05T00:04:14.000Z",
-      "snippet": "156 points · 65 comments on HN"
+      "snippet": "157 points · 65 comments on HN"
     },
     {
       "id": "266031deb404",
-      "title": "XDOF, just three months out of stealth, is in talks for a Series B at a $1.2B valuation",
+      "title": "XDOF, just 3 months out of stealth, is in talks for a Series B at a $1.2B valuation",
       "url": "https://techcrunch.com/2026/09/04/xdof-just-three-months-out-of-stealth-is-in-talks-for-a-series-b-at-a-1-2b-valuation/",
       "source": "TechCrunch",
       "date": "2026-09-04T23:36:14.000Z",
@@ -208,7 +280,7 @@
       "url": "https://openrouter.ai/openai/gpt-6-astra",
       "source": "Hacker News",
       "date": "2026-09-04T21:39:19.000Z",
-      "snippet": "318 points · 233 comments on HN"
+      "snippet": "319 points · 233 comments on HN"
     },
     {
       "id": "2f64692ac0d6",
@@ -224,7 +296,7 @@
       "url": "https://eebench.org/blog/can-ai-design-circuit-boards-yet/",
       "source": "Hacker News",
       "date": "2026-09-04T19:48:29.000Z",
-      "snippet": "419 points · 238 comments on HN"
+      "snippet": "421 points · 239 comments on HN"
     },
     {
       "id": "480cff7899eb",
@@ -248,7 +320,7 @@
       "url": "https://opentrailpaper.com",
       "source": "Hacker News",
       "date": "2026-09-04T17:18:08.000Z",
-      "snippet": "412 points · 131 comments on HN"
+      "snippet": "418 points · 132 comments on HN"
     },
     {
       "id": "4fd0827aa950",
@@ -264,7 +336,7 @@
       "url": "https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/",
       "source": "Hacker News",
       "date": "2026-09-04T16:24:50.000Z",
-      "snippet": "79 points · 34 comments on HN"
+      "snippet": "79 points · 35 comments on HN"
     },
     {
       "id": "980af6a6b7b0",
@@ -304,7 +376,7 @@
       "url": "https://www.nytimes.com/2026/09/04/technology/open-source-ai-anthropic-openai.html",
       "source": "Hacker News",
       "date": "2026-09-04T15:33:45.000Z",
-      "snippet": "330 points · 307 comments on HN"
+      "snippet": "331 points · 307 comments on HN"
     },
     {
       "id": "7e4db382f3f9",
@@ -344,7 +416,7 @@
       "url": "https://productrise.app/blog/google-ai-mode-prefers-more-expensive-products",
       "source": "Hacker News",
       "date": "2026-09-04T11:59:15.000Z",
-      "snippet": "396 points · 76 comments on HN"
+      "snippet": "399 points · 76 comments on HN"
     },
     {
       "id": "f23a53b84405",
@@ -392,7 +464,7 @@
       "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
       "source": "Hacker News",
       "date": "2026-09-04T09:03:00.000Z",
-      "snippet": "212 points · 45 comments on HN"
+      "snippet": "218 points · 45 comments on HN"
     },
     {
       "id": "73d7f7bb41fa",
@@ -440,7 +512,7 @@
       "url": "https://inference-docs.cerebras.ai/models/overview",
       "source": "Hacker News",
       "date": "2026-09-03T18:32:13.000Z",
-      "snippet": "689 points · 228 comments on HN"
+      "snippet": "690 points · 228 comments on HN"
     },
     {
       "id": "91a2b0e86629",
@@ -544,7 +616,7 @@
       "url": "https://news.ycombinator.com/item?id=49551096",
       "source": "Hacker News",
       "date": "2026-09-03T15:07:01.000Z",
-      "snippet": "403 points · 703 comments on HN"
+      "snippet": "404 points · 705 comments on HN"
     },
     {
       "id": "56da2c8ef803",
@@ -569,78 +641,6 @@
       "source": "The Verge",
       "date": "2026-09-03T15:00:00.000Z",
       "snippet": "Google is rolling out an updated AI weather model that's supposed to be more accurate, especially when it comes to predicting rain and snowfall. In the announcement today, the company says it's now able to make forecasts"
-    },
-    {
-      "id": "d44ccc0ba93d",
-      "title": "Nvidia buys Hugging Face, the GitHub of AI, for $13 billion",
-      "url": "https://arstechnica.com/ai/2026/09/nvidia-buys-hugging-face-the-github-of-ai-for-13-billion/",
-      "source": "Ars Technica",
-      "date": "2026-09-03T13:34:13.000Z",
-      "snippet": "Nvidia says Hugging Face will stay open even as the chipmaker takes control of a key AI hub."
-    },
-    {
-      "id": "5190d2a1dccd",
-      "title": "Daybreak for Frontline Defenders: $1B to protect essential services",
-      "url": "https://openai.com/index/daybreak-for-frontline-defenders",
-      "source": "OpenAI",
-      "date": "2026-09-03T13:15:00.000Z",
-      "snippet": "OpenAI introduces Daybreak for Frontline Defenders. A $1 billion commitment expands access to frontier cyber AI, training, and support for essential services."
-    },
-    {
-      "id": "8163e951a781",
-      "title": "Nvidia confirms it will buy Hugging Face for $12.9 billion",
-      "url": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/",
-      "source": "TechCrunch",
-      "date": "2026-09-03T12:42:45.000Z",
-      "snippet": "Nvidia said Hugging Face hosts over 3 million models and is used by over 18 million developers."
-    },
-    {
-      "id": "5d94818f3008",
-      "title": "Show HN: Reactor Atlas",
-      "url": "https://reactoratlas.com",
-      "source": "Hacker News",
-      "date": "2026-09-03T12:33:01.000Z",
-      "snippet": "77 points · 25 comments on HN"
-    },
-    {
-      "id": "52a8d0c31484",
-      "title": "Nvidia is buying Hugging Face for almost $13 billion",
-      "url": "https://www.theverge.com/tech/985474/nvidia-buying-hugging-face-deal",
-      "source": "The Verge",
-      "date": "2026-09-03T12:12:06.000Z",
-      "snippet": "Nvidia has agreed to buy Hugging Face for $12.93 billion, bringing one of the most popular hosting platforms for open-source AI models, datasets, and tools under the ownership of the world's biggest AI chipmaker. Hugging"
-    },
-    {
-      "id": "a0f5f526129b",
-      "title": "Nvidia to acquire Hugging Face",
-      "url": "https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html",
-      "source": "Hacker News",
-      "date": "2026-09-03T12:10:33.000Z",
-      "snippet": "328 points · 107 comments on HN"
-    },
-    {
-      "id": "be4a3c542626",
-      "title": "Legora reviewed 41 documents in minutes with GPT-6 Astra",
-      "url": "https://openai.com/index/legora-financial-statement-review-with-astra",
-      "source": "OpenAI",
-      "date": "2026-09-03T12:00:00.000Z",
-      "snippet": "Legora used GPT-6 Astra to review 41 documents in minutes, find all four planted errors, and improve performance by nearly 40% in this financial-review workflow."
-    },
-    {
-      "id": "7a45b185cff5",
-      "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
-      "url": "https://openai.com/index/playco-game-prototyping-with-astra",
-      "source": "OpenAI",
-      "date": "2026-09-03T12:00:00.000Z",
-      "snippet": "Using GPT-6 Astra, Playco built three themed game prototypes from one grey box foundation and reported 50% fewer manual fixes than with the previous model."
-    },
-    {
-      "id": "c22774e46292",
-      "title": "A dark horse enters China's AI race: StartLux",
-      "url": "https://chinaonchina.com/article/chen-dawei-returns-enters-the-large-model-sector",
-      "source": "Hacker News",
-      "date": "2026-09-03T11:12:57.000Z",
-      "snippet": "55 points · 29 comments on HN"
     }
   ]
 }
