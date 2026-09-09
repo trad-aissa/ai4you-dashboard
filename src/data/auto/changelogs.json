@@ -1,6 +1,49 @@
 {
-  "updated": "2026-09-08T10:34:16.033Z",
+  "updated": "2026-09-09T10:45:36.726Z",
   "claude-code": [
+    {
+      "version": "2.1.266",
+      "date": null,
+      "bullets": [
+        "Fixed a 2.1.265 regression affecting LLM-gateway and proxy setups: the undocumented <code>CLAUDE_CODE_USE_GATEWAY</code> environment variable, previously ignored unless <code>ANTHROPIC_BASE_URL</code> and <code>ANTHROPIC_AUTH_TOKEN</code> were both set, began forcing Cloud-gateway sign-in on its own in 2.1.265, so configurations that set it alongside an API key, <code>apiKeyHelper</code>, or custom auth headers failed every request with &quot;Not signed in to the Cloud gateway&quot;. The variable on its own is ignored again; no configuration change is needed"
+      ]
+    },
+    {
+      "version": "2.1.265",
+      "date": null,
+      "bullets": [
+        "Added <code>user.email</code> and <code>user.groups</code> to the telemetry Claude Desktop and Cowork send through a Claude apps gateway, matching terminal sessions",
+        "Added support for pointing <code>--plugin-dir</code> at a folder of plugins: each child folder with a manifest loads, and children added or removed while running are picked up",
+        "Added a 1 GB cap on tool results saved to disk; the in-conversation preview says when a saved file was truncated",
+        "Fixed resuming a foreground-spawned subagent changing its tool list and system prompt prefix, which broke prompt-cache reuse for that agent",
+        "Fixed agent teammates and resumed subagents moving SubagentStart hook context and preloaded skills out of the prompt prefix on later turns, which broke prompt-cache reuse",
+        "Fixed resume after the previous process died while a tool was running: the last prompt is no longer rewritten, and the interrupted tool call is kept and marked interrupted",
+        "Fixed <code>/model opusplan[1m]</code> being rejected with &quot;Model not found&quot;",
+        "Fixed syntax-highlighted code in permission prompts and messages sometimes omitting a character after a Ruby <code>?</code>, Erlang <code>$</code>, or Perl <code>$</code> sigil",
+        "Fixed the fullscreen transcript jumping by one row whenever the slash-command or @-file suggestion list opened or closed",
+        "Fixed a plugin path containing a backslash bypassing the symlink containment check on macOS and Linux",
+        "Fixed plugin directories whose names begin with two dots being wrongly refused as outside the plugin root",
+        "Fixed VS Code and SDK sessions occasionally requiring re-login when a session was closed while refreshing its token",
+        "Fixed Remote Control sessions sending the end-of-turn signal before the reply's last message, which could show a reply as finished in the Claude app before its last part arrived",
+        "Fixed background (<code>--bg</code>) sessions occasionally being retired mid-turn when a message arrived just before the idle timeout",
+        "Fixed Claude Code's own git status and diff probes running clean filters configured by a nested repository inside the working tree",
+        "Fixed the advisor tool and its instructions being re-decided per request from the request's model; the decision is now made once and announced in the conversation when it changes",
+        "Fixed artifact publish accepting connector tool names the connector doesn't expose; the publish is now refused when none of the declared tools exist, and warned when only some don't",
+        "Fixed <code>/add-dir </code> refusing to load a subdirectory's agents when managed settings lock only skills to plugins, and promising agents when only agents are locked",
+        "Fixed two-key keyboard shortcuts cancelling silently when the second key arrived more than a second later, as happens inside tmux; they now wait 3 seconds and show a notice when they time out",
+        "Fixed forked skills (<code>context: fork</code>) not streaming their kickoff prompt and, with <code>--forward-subagent-text</code>, their text turns as progress events in stream-json",
+        "Fixed a plugin's default component folder that the OS cannot check, such as a symlink loop, being silently skipped; it is now reported in <code>/plugin</code> with the error code",
+        "Fixed the Claude apps gateway's OTLP telemetry relay pausing all forwarding to a collector for 30 seconds after it rejected a few payloads as malformed or too large",
+        "Fixed <code>/plugin</code> Discover/Browse and <code>claude plugin list --json --available</code> showing no description or display name for marketplace plugins whose metadata lives only in their <code>plugin.json</code>",
+        "Fixed <code>/login</code> showing &quot;no gateway URL is configured&quot; when re-run in a session that signed in to a Claude apps gateway set by managed settings",
+        "Fixed <code>/model</code> claiming a model was &quot;saved as your default&quot; when the settings file couldn't be written; it now says the save failed and why",
+        "Fixed <code>/clear</code> from Remote Control waiting on SessionStart hooks and on open terminal dialogs before completing",
+        "Fixed the <code>/config</code> dialog changing height when switching between its tabs",
+        "Fixed resuming a workflow run after its container restarted; a resume whose run journal is missing now fails with a clear error instead of rerunning every agent",
+        "Fixed the <code>claude-api</code> skill's error-code reference: model access failures return 404 and unavailable beta headers return 400, not 403",
+        "Fixed non-interactive sessions (<code>-p</code> with stream-json input, Agent SDK, cloud sessions) resetting the shell working directory at each new user message; a <code>cd</code> now persists across turns"
+      ]
+    },
     {
       "version": "2.1.263",
       "date": null,
@@ -580,52 +623,37 @@
         "Windows: fixed auto mode repeatedly stopping for manual approval on ordinary <code>cd &amp;&amp; &gt; file</code> Bash commands (a 2.1.232 regression)",
         "Reverted the 2.1.232 Bash permission changes for Cygwin-style symlinks on Windows and for input redirections (<code>&lt; file</code>); a narrower version will return in a later release"
       ]
-    },
-    {
-      "version": "2.1.232",
-      "date": null,
-      "bullets": [
-        "Subagent forking is now on by default: a <code>subagent_type: &quot;fork&quot;</code> subagent inherits the full conversation and prompt cache, and non-teammate agent spawns in interactive sessions now run in the background by default",
-        "Type <code>@</code> in the prompt to mention another Claude session by name; Claude then uses <code>SendMessage</code> to reach that session directly",
-        "<code>SendMessage</code> now delivers to a bare name that exactly matches one live session, instead of asking to confirm with a ref first",
-        "Interactive sessions on one machine now keep unique names: starting or renaming a session to a name another live session already uses gives it a <code>name-word-word</code> variant and tells you",
-        "Added <code>/config</code> rows for &quot;Dialog expiry&quot; and &quot;Messages from your other sessions&quot; (cross-session inbound accept/hold/refuse)",
-        "Added secret redaction for GitLab token families (<code>glrt-</code>, <code>gloas-</code>, <code>glptt-</code>, <code>glagent-</code>, <code>glimt-</code>, <code>glsoat-</code>, <code>glcbt-</code>, <code>glft-</code>, <code>glffct-</code>) and full redaction of routable <code>glpat-</code>/<code>gldt-</code> tokens; the <code>glab</code> CLI config store gets the same sandbox and credential-path protection as <code>gh</code>",
-        "Added GitLab support to plugin marketplaces: bare <code>gitlab.com</code> repo URLs (including nested subgroups) now clone like <code>github.com</code> URLs, and clone auth-failure hints name your actual git host",
-        "Settings: <code>additionalMarketplaces</code> and <code>allowedMarketplaces</code> are now accepted as friendlier aliases for <code>extraKnownMarketplaces</code> and <code>strictKnownMarketplaces</code>",
-        "Enterprise policy: a url-typed <code>blockedMarketplaces</code> entry for a bare repo URL keeps blocking that URL when the CLI classifies it as a git clone",
-        "Gateway: the <code>desktop:</code> overlay now accepts every released Desktop setting (was 11 hand-listed keys), validated at boot against Desktop's own schema; unknown or invalid keys fail boot",
-        "Gateway: empty <code>managed.policies[].match.groups</code>/<code>admin.admin_groups</code> entries and malformed <code>email_domain</code> values (empty, or containing <code>@</code>, whitespace, or commas) now fail at boot instead of silently matching no one or granting admin access",
-        "Fable 5 is offered as an advisor in <code>/advisor</code> again for organizations with Fable access, with usage-credits consent set up through <code>/model fable</code>",
-        "Fixed a PowerShell permission bypass where variable-writing parameters could silently overwrite <code>$PSDefaultParameterValues</code> and redirect later commands' file access",
-        "Fixed a Windows permission bypass where Git Bash followed Cygwin-style symlinks that path validation saw as regular files; writes through them now require permission approval",
-        "Fixed nested git repositories inheriting trust from a parent directory; each repository now requires its own trust confirmation",
-        "Fixed MCP connections hanging for the full 30-second connect timeout when a server fails to answer or sends a malformed reply to the protocol-version probe",
-        "Fixed Remote Control sessions hosted by a bridge inside a cloud session inheriting that session's transcript or credentials",
-        "Fixed Remote Control sessions started from Claude Desktop or an IDE appearing as a new claude.ai session each time the local session was resumed; they now reattach to the existing one",
-        "Fixed Remote Control sessions appearing unreachable to newly attached clients while idle",
-        "Fixed Remote Control bridge sessions not restoring conversation history when the session worker restarts",
-        "Remote Control: resuming a conversation whose session was deleted from claude.ai or the app now starts a replacement instead of failing with a message about your login (regressed in v2.1.227)",
-        "Fixed Cloud gateway <code>/login</code> exiting silently or leaving an unresponsive terminal after &quot;Press Enter to continue&quot; when managed settings failed to load; the reason is now shown",
-        "Fixed voice mode on native builds getting stuck on &quot;listening…&quot; when the voice service rejected the connection; the rejection is now shown immediately",
-        "Fixed mTLS client certificate rotation requiring a restart; Claude Code now reloads the rotated cert and key automatically on connection errors",
-        "Fixed malformed AWS or Vertex region values being used to build request URLs; they now fall back to the default region",
-        "Fixed stream idle timeout errors failing the request instead of recovering on Bedrock, Vertex, and gateway deployments",
-        "Fixed content-sized overlays containing truncated text rendering one column too wide, and start-truncated text collapsing to an ellipsis",
-        "Fixed a stray garbled character where a long shell-command or agent-description preview was cut off mid-emoji",
-        "Fixed a startup race that could silently unregister a plugin marketplace due to concurrent writes to <code>known_marketplaces.json</code>",
-        "Fixed <code>/update</code> and <code>/tui</code> refusing to restart while work that survives the relaunch was running"
-      ]
-    },
-    {
-      "version": "2.1.231",
-      "date": null,
-      "bullets": [
-        "Fixed MCP OAuth sign-in failing with a redirect URI mismatch for servers that use a pre-registered OAuth client, such as Slack"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.154.0-alpha.11",
+      "date": "2026-09-09T09:14:16.000Z",
+      "bullets": [
+        "Release 0.154.0-alpha.11"
+      ]
+    },
+    {
+      "version": "0.154.0-alpha.10.2",
+      "date": "2026-09-09T07:55:45.000Z",
+      "bullets": [
+        "Release 0.154.0-alpha.10.2"
+      ]
+    },
+    {
+      "version": "0.154.0-alpha.8",
+      "date": "2026-09-08T23:15:41.000Z",
+      "bullets": [
+        "Release 0.154.0-alpha.8"
+      ]
+    },
+    {
+      "version": "0.154.0-alpha.7",
+      "date": "2026-09-08T17:44:04.000Z",
+      "bullets": [
+        "Release 0.154.0-alpha.7"
+      ]
+    },
     {
       "version": "0.154.0-alpha.6",
       "date": "2026-09-07T18:03:36.000Z",
@@ -740,34 +768,6 @@
       "date": "2026-09-01T06:15:12.000Z",
       "bullets": [
         "Release 0.153.0-alpha.2"
-      ]
-    },
-    {
-      "version": "0.153.0-alpha.1",
-      "date": "2026-09-01T04:40:58.000Z",
-      "bullets": [
-        "Release 0.153.0-alpha.1"
-      ]
-    },
-    {
-      "version": "0.152.0-alpha.7.2",
-      "date": "2026-09-01T00:30:15.000Z",
-      "bullets": [
-        "Release 0.152.0-alpha.7.2"
-      ]
-    },
-    {
-      "version": "0.152.0-alpha.7",
-      "date": "2026-08-31T16:18:27.000Z",
-      "bullets": [
-        "Release 0.152.0-alpha.7"
-      ]
-    },
-    {
-      "version": "0.152.0-alpha.6",
-      "date": "2026-08-31T02:12:53.000Z",
-      "bullets": [
-        "Release 0.152.0-alpha.6"
       ]
     }
   ]
