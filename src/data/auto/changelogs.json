@@ -1,6 +1,42 @@
 {
-  "updated": "2026-09-11T10:36:06.639Z",
+  "updated": "2026-09-12T10:04:46.083Z",
   "claude-code": [
+    {
+      "version": "2.1.269",
+      "date": null,
+      "bullets": [
+        "Added <code>claude plugin eval</code>: run a plugin's eval suite against Claude Code and get scored, reproducible results (JSON + HTML report); see <code>claude plugin eval --help</code>",
+        "Added <code>/output-style [name]</code> to list and switch output styles, including over Remote Control and in cloud and other headless sessions",
+        "Added a diff of the files a Bash command changed to the Bash tool result when the Bash tool handles file edits (setting <code>bashEditDiffEnabled</code>)",
+        "Added <code>OTEL_METRICS_INCLUDE_REPOSITORY</code> to tag OpenTelemetry metrics and events with <code>vcs.*</code> repository attributes; commit events get <code>vcs.ref.head.*</code> with <code>OTEL_LOG_TOOL_DETAILS</code>",
+        "Added <code>CLAUDE_CODE_GATEWAY_MODEL_DISCOVERY_TIMEOUT_MS</code> to extend the LLM gateway <code>/v1/models</code> discovery timeout (default 3s)",
+        "Added a spinner tip suggesting <code>/focus</code> for a view with just your prompt, a one-line work summary, and the response",
+        "Added <code>CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS</code> (1–256) to raise the Workflow tool's per-run concurrent agent limit for inference-bound fan-outs",
+        "Fixed the prompt cache being partially invalidated on the turn after a response was cut off at the output-token limit and automatically resumed",
+        "Fixed a case where resuming a session after interrupting Claude mid-thought could change how earlier context was re-sent, hurting prompt-cache reuse",
+        "Fixed F1/F2/F4 not working in kitty-protocol terminals and Delete in st, Alt+arrows acting as Escape in rxvt-unicode, and Shift+punctuation typing the unshifted key in WezTerm (regression in 2.1.247)",
+        "Fixed remote and headless sessions reporting &quot;waiting for your input&quot; while background agents were still running (set <code>CLAUDE_CODE_BG_TASKS_REPORT_RUNNING=0</code> to restore the old behavior)",
+        "Fixed the terminal's replies to capability queries (<code>^[[?1;2c</code>) appearing as stray text at startup in some terminals",
+        "Fixed rows at the top or bottom of the transcript going blank in fullscreen after resizing the terminal",
+        "Fixed a deny or ask permission rule starting with <code>!</code> applying beyond the settings source that wrote it; such a rule now applies only within its own source, and a bare <code>!</code> negation is ignored",
+        "Fixed the git status Claude is told after a compaction: it is now the current status, not the one from the start of the session",
+        "Fixed synced plugin MCP servers not connecting when a remote session resumes",
+        "Fixed resumed headless sessions losing a turn's replies when the model was switched or a request was retried mid-turn",
+        "Fixed terminal escape codes, line breaks and oversized text from a background task's on-disk record reaching the task list and task notifications when work is resumed",
+        "Fixed CMYK JPEG images failing to attach with &quot;cannot decode&quot;; they are now converted and resized like other JPEGs",
+        "Fixed the managed settings approval dialog not naming the collector for a gRPC telemetry endpoint set without a scheme",
+        "Fixed plugin <code>headersHelper</code> consent prompts showing a URL path that could be misread as a different host",
+        "Fixed plugin errors showing <code>[redacted URL]</code> in place of a relative Windows path with a folder name that starts with <code>@</code>",
+        "Fixed missing cursor in the permission-rule, auto-mode-rule, add-directory, session-rename and feedback-review text fields when the terminal's native cursor is enabled",
+        "Fixed repeated clicks on a <code>/fork</code> receipt, each under a second apart, never backgrounding the session right away while it waited for the current tool to finish",
+        "Fixed plugin LSP servers that reject <code>shutdown</code> params (e.g. rust-analyzer) being left running at session end; <code>exit</code> is now sent even if <code>shutdown</code> fails",
+        "Fixed the attribution reminder overriding a CLAUDE.md or memory rule against commit and pull request attribution; lines set by managed settings still apply",
+        "Fixed prompt suggestions being dropped for text in Japanese, Chinese, Thai and other languages written without spaces between words",
+        "Fixed synchronized output being assumed from the terminal's name in GNOME Terminal and Konsole versions that do not support it",
+        "Fixed <code>permission_denials</code> in <code>--output-format stream-json</code> results omitting Read, Edit and Write calls blocked by a path-scoped deny rule",
+        "Fixed sessions run through the SDK or the desktop app showing an unknown status in other sessions' agent list"
+      ]
+    },
     {
       "version": "2.1.268",
       "date": null,
@@ -608,34 +644,16 @@
         "Remote Control now marks a session offline within seconds when the CLI exits or its terminal closes",
         "<code>SendMessage</code> now refuses further messages to a session up front once a rapid burst would exceed what that session's inbox accepts, instead of reporting them sent while they were dropped"
       ]
-    },
-    {
-      "version": "2.1.235",
-      "date": null,
-      "bullets": [
-        "Added an optional <code>spellcheck</code> setting that underlines misspelled words in the prompt input as you type, using your installed <code>aspell</code>, <code>hunspell</code>, or <code>ispell</code>",
-        "Fixed whole-prompt-cache invalidation when a language server disconnected or reconnected mid-session",
-        "Fixed nested markdown list items misaligning at depth 3+ and added a hanging indent to wrapped list items in the terminal UI",
-        "Fixed prompt input highlights (slash commands, keywords, mentions) appearing shifted by one or more characters in some multi-line prompts",
-        "Fixed Shift+Tab inside the permission prompt's comment field approving the edit and granting session-wide edit permission instead of closing the field",
-        "Fixed the Agent tool advertising a general-purpose default in sessions where that agent is unavailable: an omitted <code>subagent_type</code> there now gets a clear error listing the available agents",
-        "Fixed notebook cell delete/replace approval dialogs silently omitting the existing cell content when the notebook or cell could not be read; the dialog now says why",
-        "Fixed slash commands run while Claude is responding showing HTML entities instead of the actual characters",
-        "Fixed the prompt footer not showing the &quot;Update installed&quot; restart notice after a background auto-update",
-        "Fixed the expanded task list (<code>ctrl+t</code>) always starting collapsed when resuming or relaunching into a session that still has open tasks",
-        "Improved memory and CPU usage while cloud sessions such as <code>/ultrareview</code> or <code>/autofix-pr</code> run in the background — their event streams are no longer re-scanned and re-rendered on every update",
-        "Improved permission dialogs: display text and &quot;don't ask again&quot; options now always match what a grant would cover, and &quot;don't ask again&quot; is withheld when contents cannot be fully displayed",
-        "Improved the embedded <code>grep</code> in native macOS/Linux builds: pathological patterns now fail fast instead of exhausting memory, and <code>-m N</code> with <code>-A/-C</code> prints correct context",
-        "Improved the context-limit error to say when auto-compact is off and point to <code>/config</code> to re-enable it",
-        "Vim mode: NORMAL mode and cursor position are now preserved when toggling the detailed transcript (ctrl+o) or closing a panel",
-        "Dialogs: arrow keys and Enter pressed in quick succession now select the option you navigated to instead of the previously highlighted one",
-        "<code>SendMessage</code> now refuses messages too large for cross-session delivery up front instead of silently dropping them",
-        "Remote Control: <code>claude rc</code> now applies the same enterprise-gateway availability check as interactive startup",
-        "[VSCode] Fixed focus jumping between open Claude tabs on its own when a window with several Claude panels is restored or reloaded"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.155.0-alpha.3.9",
+      "date": "2026-09-11T11:51:30.000Z",
+      "bullets": [
+        "Release 0.155.0-alpha.3.9"
+      ]
+    },
     {
       "version": "0.155.0-alpha.3.8",
       "date": "2026-09-11T09:18:04.000Z",
@@ -648,6 +666,13 @@
       "date": "2026-09-11T07:58:14.000Z",
       "bullets": [
         "Release 0.155.0-alpha.3.7"
+      ]
+    },
+    {
+      "version": "0.155.0-alpha.3.10",
+      "date": "2026-09-11T15:52:58.000Z",
+      "bullets": [
+        "Release 0.155.0-alpha.3.10"
       ]
     },
     {
@@ -776,20 +801,6 @@
       "date": "2026-09-04T19:01:32.000Z",
       "bullets": [
         "- Added GPT-6-Astra to the Amazon Bedrock model picker for Mantle and Runtime global/US routes. (#42805) - Corrected GPT-6-Astra’s guidance for asynchronous clarification questions to use the supported tool and recognize that it accepts text only. (#42809) Full Changelog: https://github.com/openai/codex/compare/rust-v0.153.2...rust-v0.153.3 - #42805 [0.153 hotfix] Add GPT-6-Astra to Amazon Bedrock catalogs @celia-oai - #42809 [0.153 hotfix] Update Astra async-question guidance @rhan-oai"
-      ]
-    },
-    {
-      "version": "0.153.2",
-      "date": "2026-09-03T23:53:12.000Z",
-      "bullets": [
-        "- Corrected the GPT-6-Astra Fast tier description to say “2x speed, increased usage” instead of “1.5x.” This changes only the displayed text, not how requests run. (#42632) Full Changelog: https://github.com/openai/codex/compare/rust-v0.153.1...rust-v0.153.2 - #42632 Fix GPT-6-Astra Fast tier description for 0.153.2 @anp-oai"
-      ]
-    },
-    {
-      "version": "0.153.1",
-      "date": "2026-09-03T21:02:56.000Z",
-      "bullets": [
-        "- Added support for configuring GPT-6-Astra through the API without changing the default model or showing it in the model picker. (#42605) Full Changelog: https://github.com/openai/codex/compare/rust-v0.153.0...rust-v0.153.1 - #42605 Backport GPT-6-Astra model catalog to 0.153 @anp-oai"
       ]
     }
   ]
