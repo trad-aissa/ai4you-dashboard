@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-12T10:04:46.083Z",
+  "updated": "2026-09-13T11:04:51.846Z",
   "count": 80,
   "items": [
     {
@@ -11,12 +11,156 @@
       "snippet": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models."
     },
     {
+      "id": "ae1c0b143270",
+      "title": "Why are AI agents lying, cheating and coordinating?",
+      "url": "https://yoshuabengio.org/en/publication/why-are-ai-agents-lying-cheating-and-coordinating",
+      "source": "Hacker News",
+      "date": "2026-09-13T01:22:31.000Z",
+      "snippet": "248 points · 320 comments on HN"
+    },
+    {
+      "id": "cd984f7c5be3",
+      "title": "Everyone should slow down AI development except for me",
+      "url": "https://xeiaso.net/notes/2026/everyone-slowdown-but-me/",
+      "source": "Hacker News",
+      "date": "2026-09-13T00:30:44.000Z",
+      "snippet": "509 points · 307 comments on HN"
+    },
+    {
+      "id": "3f37b0a02f79",
+      "title": "Generating running routes with GPT-6 Astra and ChatGPT Work",
+      "url": "https://simonwillison.net/2026/Sep/12/astra-running-routes/",
+      "source": "Simon Willison",
+      "date": "2026-09-12T23:56:42.000Z",
+      "snippet": "Here's a neat thing I had ChatGPT Work with GPT-6 Astra (Max) do this morning: I live at . Figure out 5K and 10K running routes from me that loop from my house. Use OSM data. It worked for 27 minutes and produced exactly"
+    },
+    {
+      "id": "ffba553be462",
+      "title": "AgentsDock: An IDE designed for agentic AI research",
+      "url": "https://agentsdock.net/",
+      "source": "Hacker News",
+      "date": "2026-09-12T23:45:58.000Z",
+      "snippet": "64 points · 29 comments on HN"
+    },
+    {
+      "id": "4022c7a7f9b5",
+      "title": "OpenAI’s rogue AI tried to hack another company in May",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/994383/openais-rogue-ai-rubygems-hack",
+      "source": "The Verge",
+      "date": "2026-09-12T21:41:36.000Z",
+      "snippet": "In May, hundreds of malicious and spam packages were uploaded to RubyGems, causing a serious disruption for the host. Now independent researchers have said that a swarm of OpenAI agents were responsible for the attack. N"
+    },
+    {
+      "id": "fe9d508504e5",
+      "title": "Sam Altman says OpenAI going public in 2026 would be ‘ill-advised’",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/994384/sam-altman-no-openai-ipo-ill-advised",
+      "source": "The Verge",
+      "date": "2026-09-12T21:16:28.000Z",
+      "snippet": "OpenAI CEO Sam Altman confirmed that there would be no OpenAI IPO in 2026 during an interview with Fortune. Over the course of 45 minutes, Altman discussed a variety of subjects including the Hugging Face hacking inciden"
+    },
+    {
+      "id": "16316487dc98",
+      "title": "Real-SWE: Benchmarking AI models on private, real-world, enterprise codebases",
+      "url": "https://withspecific.com/benchmarks/real-swe",
+      "source": "Hacker News",
+      "date": "2026-09-12T20:25:48.000Z",
+      "snippet": "246 points · 136 comments on HN"
+    },
+    {
+      "id": "e82b8a9af4fd",
+      "title": "OpenAI’s Sam Altman says it would be ‘ill-advised’ to go public in 2026",
+      "url": "https://techcrunch.com/2026/09/12/openais-sam-altman-says-it-would-be-ill-advised-to-go-public-in-2026/",
+      "source": "TechCrunch",
+      "date": "2026-09-12T20:19:16.000Z",
+      "snippet": "While OpenAI has filed confidentially for an IPO, the company will not be going public this year, according to CEO Sam Altman."
+    },
+    {
+      "id": "7658eb64cf66",
+      "title": "Anthropic CEO outlines plan to slow AI development",
+      "url": "https://techcrunch.com/2026/09/12/anthropic-ceo-outlines-plan-to-pace-the-frontier/",
+      "source": "TechCrunch",
+      "date": "2026-09-12T19:34:44.000Z",
+      "snippet": "Anthropic's Dario Amodei and OpenAI's Sam Altman seem to agree that it's time to \"pace the frontier.\" What would that actually look like?"
+    },
+    {
+      "id": "8fa0eaedf7f4",
+      "title": "Anthropic boss Dario Amodei calls for AI development to slow down",
+      "url": "https://www.bbc.com/news/articles/c14dpgm0rg4o",
+      "source": "Hacker News",
+      "date": "2026-09-12T16:56:52.000Z",
+      "snippet": "53 points · 107 comments on HN"
+    },
+    {
+      "id": "63c0cf89a6d3",
+      "title": "Anthropic CEO says it’s time to pump the brakes on AI",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/994337/anthropic-ceo-slow-down-ai-development",
+      "source": "The Verge",
+      "date": "2026-09-12T16:23:40.000Z",
+      "snippet": "Anthropic CEO Dario Amodei says the time has come to slow down AI development and will give third-party evaluators like METR access to its models to help ensure its \"adherence to safety practices and commitments.\" In a w"
+    },
+    {
+      "id": "c63b548b0537",
+      "title": "Nvidia is the central bank of AI",
+      "url": "https://www.economist.com/interactive/briefing/2026/09/03/nvidia-is-the-central-bank-of-ai",
+      "source": "Hacker News",
+      "date": "2026-09-12T15:08:27.000Z",
+      "snippet": "494 points · 344 comments on HN"
+    },
+    {
+      "id": "9e2152d865f0",
+      "title": "Trump is giving data centers a pass to pollute",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/994112/ai-data-center-pollution-health-epa",
+      "source": "The Verge",
+      "date": "2026-09-12T14:41:27.000Z",
+      "snippet": "President Donald Trump is weakening environmental regulations in the name of speeding up the construction of AI data centers, raising health risks for Americans, a cadre of former EPA officials said this week in a briefi"
+    },
+    {
+      "id": "6d826ddc5071",
+      "title": "LLMs are real, AI is fake",
+      "url": "https://pluralistic.net/2026/09/12/god-in-the-box/",
+      "source": "Hacker News",
+      "date": "2026-09-12T13:47:28.000Z",
+      "snippet": "70 points · 36 comments on HN"
+    },
+    {
+      "id": "3be8e4015381",
+      "title": "A few good ideas in programming languages",
+      "url": "https://prydt.xyz/blog/a-few-good-ideas-in-pl/",
+      "source": "Hacker News",
+      "date": "2026-09-12T13:07:52.000Z",
+      "snippet": "96 points · 61 comments on HN"
+    },
+    {
+      "id": "8b8c97af70ad",
+      "title": "The worst spam emails: iLands AI agent hustle",
+      "url": "https://tedium.co/2026/09/11/ilands-agents-email-spam-kaixin-tang/",
+      "source": "Hacker News",
+      "date": "2026-09-12T11:13:38.000Z",
+      "snippet": "113 points · 55 comments on HN"
+    },
+    {
+      "id": "55f997459685",
+      "title": "I spent $4,000 on a robot dog from China",
+      "url": "https://arstechnica.com/gadgets/2026/09/i-spent-4000-on-a-robot-dog-from-china/",
+      "source": "Ars Technica",
+      "date": "2026-09-12T11:00:53.000Z",
+      "snippet": "Unitree might be the world’s most important robotics company."
+    },
+    {
+      "id": "43166de57ac1",
+      "title": "OpenAI just wants to win",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/994255/openai-millennium-prize-problem-tristan-buckmaster-competition",
+      "source": "The Verge",
+      "date": "2026-09-12T11:00:00.000Z",
+      "snippet": "OpenAI has spent the last few years planting flags across the increasingly difficult terrain in mathematics. This week, it claimed one of its biggest prizes yet: a solution to a legendary Millennium Prize problem. In nor"
+    },
+    {
       "id": "09e50792b59f",
       "title": "Google stole open source code without crediting the authors (Artemis/Minitap)",
       "url": "https://www.minitap.ai/blog/i-expected-better-from-google",
       "source": "Hacker News",
       "date": "2026-09-12T02:39:39.000Z",
-      "snippet": "120 points · 22 comments on HN"
+      "snippet": "136 points · 26 comments on HN"
     },
     {
       "id": "c9efb3dfa17c",
@@ -24,7 +168,7 @@
       "url": "https://twitter.com/venturetwins/status/2098456905526211026",
       "source": "Hacker News",
       "date": "2026-09-12T00:24:36.000Z",
-      "snippet": "54 points · 38 comments on HN"
+      "snippet": "64 points · 71 comments on HN"
     },
     {
       "id": "17f9c1077b76",
@@ -32,7 +176,7 @@
       "url": "https://www.rubyhack.ai/",
       "source": "Hacker News",
       "date": "2026-09-11T23:17:42.000Z",
-      "snippet": "707 points · 395 comments on HN"
+      "snippet": "935 points · 582 comments on HN"
     },
     {
       "id": "fad5f970d050",
@@ -43,12 +187,20 @@
       "snippet": "The round for the two-year-old startup is coming together months after Mecka announced its Series A."
     },
     {
+      "id": "5744af84e793",
+      "title": "Houthis used Anthropic to develop guided weapons",
+      "url": "https://www.washingtonpost.com/technology/2026/09/11/rebels-used-anthropics-ai-bot-develop-guided-weapons-report-says/",
+      "source": "Hacker News",
+      "date": "2026-09-11T22:44:03.000Z",
+      "snippet": "59 points · 27 comments on HN"
+    },
+    {
       "id": "8f24b4306d6a",
       "title": "AI researchers debate how close we are to recursive self-improvement",
       "url": "https://www.dwarkesh.com/p/john-beren-charlie",
       "source": "Hacker News",
       "date": "2026-09-11T21:35:29.000Z",
-      "snippet": "103 points · 104 comments on HN"
+      "snippet": "117 points · 116 comments on HN"
     },
     {
       "id": "2619d8ade240",
@@ -120,7 +272,7 @@
       "url": "https://mathandai.org/",
       "source": "Hacker News",
       "date": "2026-09-11T17:45:12.000Z",
-      "snippet": "931 points · 896 comments on HN"
+      "snippet": "1198 points · 1176 comments on HN"
     },
     {
       "id": "3095f611415e",
@@ -128,7 +280,7 @@
       "url": "https://terrytao.wordpress.com/2026/09/11/a-severe-misalignment-of-ai-in-mathematics/",
       "source": "Hacker News",
       "date": "2026-09-11T17:30:26.000Z",
-      "snippet": "145 points · 10 comments on HN"
+      "snippet": "149 points · 10 comments on HN"
     },
     {
       "id": "6f95f2bec509",
@@ -144,7 +296,7 @@
       "url": "https://artificialworlds.net/blog/2026/09/11/feeling-sad-about-ai/",
       "source": "Hacker News",
       "date": "2026-09-11T16:50:51.000Z",
-      "snippet": "172 points · 280 comments on HN"
+      "snippet": "177 points · 307 comments on HN"
     },
     {
       "id": "b8f06fc0f836",
@@ -168,7 +320,7 @@
       "url": "https://www.unslop.news/",
       "source": "Hacker News",
       "date": "2026-09-11T16:08:50.000Z",
-      "snippet": "186 points · 79 comments on HN"
+      "snippet": "193 points · 80 comments on HN"
     },
     {
       "id": "b7ccd404c732",
@@ -176,7 +328,7 @@
       "url": "https://github.com/godot-pty/gpty",
       "source": "Hacker News",
       "date": "2026-09-11T16:03:05.000Z",
-      "snippet": "87 points · 45 comments on HN"
+      "snippet": "93 points · 48 comments on HN"
     },
     {
       "id": "c3aa33826442",
@@ -192,7 +344,7 @@
       "url": "https://sprinklz.io/public/pdwt4dve5uai",
       "source": "Hacker News",
       "date": "2026-09-11T15:52:49.000Z",
-      "snippet": "119 points · 54 comments on HN"
+      "snippet": "120 points · 57 comments on HN"
     },
     {
       "id": "b61e4d6a51b3",
@@ -200,7 +352,7 @@
       "url": "https://hcker.news/?ai=exclude",
       "source": "Hacker News",
       "date": "2026-09-11T15:01:19.000Z",
-      "snippet": "190 points · 85 comments on HN"
+      "snippet": "200 points · 88 comments on HN"
     },
     {
       "id": "62d35db41d4e",
@@ -216,7 +368,7 @@
       "url": "https://news.ycombinator.com/item?id=49657850",
       "source": "Hacker News",
       "date": "2026-09-11T13:11:04.000Z",
-      "snippet": "790 points · 373 comments on HN"
+      "snippet": "833 points · 387 comments on HN"
     },
     {
       "id": "499c7eee1e27",
@@ -232,7 +384,7 @@
       "url": "https://www.researchagenda.news/articles/the-waymo-effect.html",
       "source": "Hacker News",
       "date": "2026-09-11T11:17:50.000Z",
-      "snippet": "324 points · 298 comments on HN"
+      "snippet": "332 points · 299 comments on HN"
     },
     {
       "id": "09fcfd248f81",
@@ -240,7 +392,7 @@
       "url": "https://quesma.com/blog/does-rtk-make-ai-coding-cheaper/",
       "source": "Hacker News",
       "date": "2026-09-11T11:15:13.000Z",
-      "snippet": "162 points · 80 comments on HN"
+      "snippet": "167 points · 82 comments on HN"
     },
     {
       "id": "94f50d522a8d",
@@ -248,7 +400,7 @@
       "url": "https://ronjeffries.com/articles/-v026/x/t/",
       "source": "Hacker News",
       "date": "2026-09-11T10:19:59.000Z",
-      "snippet": "65 points · 179 comments on HN"
+      "snippet": "65 points · 181 comments on HN"
     },
     {
       "id": "c7d3c8aeae42",
@@ -264,7 +416,7 @@
       "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/",
       "source": "Hacker News",
       "date": "2026-09-11T04:52:20.000Z",
-      "snippet": "55 points · 43 comments on HN"
+      "snippet": "56 points · 45 comments on HN"
     },
     {
       "id": "c0aa79571560",
@@ -272,7 +424,7 @@
       "url": "https://www.bloomberg.com/news/articles/2026-09-11/openai-is-open-to-slowing-cutting-edge-ai-ceo-sam-altman-tells-staff",
       "source": "Hacker News",
       "date": "2026-09-11T01:05:59.000Z",
-      "snippet": "57 points · 96 comments on HN"
+      "snippet": "58 points · 104 comments on HN"
     },
     {
       "id": "9da9989ecc0c",
@@ -280,7 +432,7 @@
       "url": "https://system76.com/workstations/thelio-mira-ai",
       "source": "Hacker News",
       "date": "2026-09-10T23:10:06.000Z",
-      "snippet": "119 points · 125 comments on HN"
+      "snippet": "121 points · 128 comments on HN"
     },
     {
       "id": "31c8ff759101",
@@ -368,7 +520,7 @@
       "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
       "source": "Hacker News",
       "date": "2026-09-10T17:23:42.000Z",
-      "snippet": "175 points · 236 comments on HN"
+      "snippet": "181 points · 239 comments on HN"
     },
     {
       "id": "be0b34c9187b",
@@ -489,158 +641,6 @@
       "source": "OpenAI",
       "date": "2026-09-10T07:00:00.000Z",
       "snippet": "OpenAI and GSA will offer eligible federal, state, local, and tribal governments $0 license fees, 50% off usage, and expanded cyber defense support."
-    },
-    {
-      "id": "c599ab837d38",
-      "title": "DeepSeek v4.1 Flash",
-      "url": "https://twitter.com/deepseek_ai/status/2097930608790167907",
-      "source": "Hacker News",
-      "date": "2026-09-10T06:11:05.000Z",
-      "snippet": "1001 points · 571 comments on HN"
-    },
-    {
-      "id": "a78b26845fd5",
-      "title": "A Stupid Idea for AI Alignment We Came with by Looking at Specification Gaming",
-      "url": "https://slimemoldtimemold.com/2026/08/05/a-stupid-idea-for-ai-alignment-we-came-up-with-by-looking-at-the-list-of-specification-gaming-behaviours/",
-      "source": "Hacker News",
-      "date": "2026-09-10T01:59:51.000Z",
-      "snippet": "94 points · 64 comments on HN"
-    },
-    {
-      "id": "3ea6d390c706",
-      "title": "I'm sorry, you're not going to die from an AI-engineered supervirus",
-      "url": "https://blog.genesmindsmachines.com/p/im-sorry-youre-not-going-to-die-from",
-      "source": "Hacker News",
-      "date": "2026-09-10T01:02:44.000Z",
-      "snippet": "84 points · 124 comments on HN"
-    },
-    {
-      "id": "c1f34cbe9cec",
-      "title": "AI research startup Listen Labs scrubbed a $1.5B funding round for Salesforce talks",
-      "url": "https://techcrunch.com/2026/09/09/ai-research-startup-listen-labs-scrubbed-a-1-5b-funding-round-for-salesforce-talks/",
-      "source": "TechCrunch",
-      "date": "2026-09-10T00:00:37.000Z",
-      "snippet": "Listen Labs walked away from a signed Series C term sheet from Menlo Ventures, sources say."
-    },
-    {
-      "id": "4e410dad70fb",
-      "title": "Build more natural voice experiences with GPT‑Live‑1 in the API",
-      "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
-      "source": "OpenAI",
-      "date": "2026-09-10T00:00:00.000Z",
-      "snippet": "GPT‑Live‑1 brings natural, full-duplex voice conversations to the API, with stronger instruction following, custom voices, and telephony support."
-    },
-    {
-      "id": "2b26a8066576",
-      "title": "Introducing the Agents API",
-      "url": "https://openai.com/index/introducing-the-agents-api",
-      "source": "OpenAI",
-      "date": "2026-09-10T00:00:00.000Z",
-      "snippet": "Build and launch cloud agents with the Agents API, a managed service powered by the Codex harness for orchestration, long-running sessions, and tool use."
-    },
-    {
-      "id": "a341ae64bcd1",
-      "title": "Muse, the band, lost its social media handles to Muse, Meta's new AI agent",
-      "url": "https://www.engadget.com/2254419/muse-the-band-lost-its-social-media-handles-to-muse-meta-s-new-ai-agent/",
-      "source": "Hacker News",
-      "date": "2026-09-09T23:57:29.000Z",
-      "snippet": "183 points · 8 comments on HN"
-    },
-    {
-      "id": "2d26331197e7",
-      "title": "OpenAI adds a prominent AI doomer to its board of directors",
-      "url": "https://techcrunch.com/2026/09/09/openai-adds-a-prominent-ai-doomer-to-its-board-of-directors/",
-      "source": "TechCrunch",
-      "date": "2026-09-09T22:25:22.000Z",
-      "snippet": "Paul Christiano, an influential AI researcher focused on alignment, is joining the OpenAI Foundation as a member of its board."
-    },
-    {
-      "id": "9b8574f42722",
-      "title": "Massachusetts hits data centers with new clean power rules",
-      "url": "https://techcrunch.com/2026/09/09/massachusetts-hits-data-centers-with-new-clean-power-rules/",
-      "source": "TechCrunch",
-      "date": "2026-09-09T21:43:34.000Z",
-      "snippet": "Massachusetts has become the third state in as many months to slap new restrictions on data center development."
-    },
-    {
-      "id": "6e51b045209f",
-      "title": "Suno releases its first AI music model made with record industry help",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/991977/suno-releases-its-first-ai-music-model-made-with-record-industry-help",
-      "source": "The Verge",
-      "date": "2026-09-09T21:42:19.000Z",
-      "snippet": "Suno's new v6 AI music model is its first made with support from the record industry. Suno's Jack Brody told The Verge that v6 was \"trained from the ground up, with a new set of data that does not include the same data t"
-    },
-    {
-      "id": "243705570522",
-      "title": "OpenAI’s sly mathematical breakthrough sends a chill through academia",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/992953/openai-math-millennium-prize-navier-stokes",
-      "source": "The Verge",
-      "date": "2026-09-09T21:16:34.000Z",
-      "snippet": "OpenAI's announcement Tuesday that it has solved one of mathematics' legendary Millennium Prize problems should have been a moment of triumph. The result is both an undeniable achievement and a striking demonstration of "
-    },
-    {
-      "id": "d6f0852fba8f",
-      "title": "Read the Apple document explaining how new listening features still protect your privacy",
-      "url": "https://www.theverge.com/tech/992919/apple-siri-ai-audio-intelligence-privacy",
-      "source": "The Verge",
-      "date": "2026-09-09T20:44:43.000Z",
-      "snippet": "At Wednesday's iPhone Duo launch event, Apple announced a handful of new Siri AI Audio Intelligence features, including Siri Recap, Live Rewind, Sound Recognition, and Music Recognition. Alongside its announcement, Apple"
-    },
-    {
-      "id": "679dc40aaefa",
-      "title": "Apple Watch’s new AI features are normalizing the idea that technology is always listening",
-      "url": "https://techcrunch.com/2026/09/09/apple-watchs-new-ai-features-are-normalizing-the-idea-that-technology-is-always-listening/",
-      "source": "TechCrunch",
-      "date": "2026-09-09T20:24:48.000Z",
-      "snippet": "Apple says its new watches won’t save raw audio, but features that can transcribe recent speech and summarize ambient conversations raise new questions about consent, privacy, and how people behave when they know they co"
-    },
-    {
-      "id": "1fcac2698cde",
-      "title": "Six Chinese AI firms accused of aggressively copying US frontier models",
-      "url": "https://arstechnica.com/tech-policy/2026/09/six-chinese-ai-firms-accused-of-aggressively-copying-us-frontier-models/",
-      "source": "Ars Technica",
-      "date": "2026-09-09T20:06:28.000Z",
-      "snippet": "US urges AI firms to ID, then secretly switch, Chinese users to less-capable models."
-    },
-    {
-      "id": "28b798c31b50",
-      "title": "Everything Apple announced at its fall iPhone event, from the foldable iPhone Duo to an always-listening Apple Watch",
-      "url": "https://techcrunch.com/2026/09/09/everything-apple-announced-at-its-fall-iphone-event-from-the-foldable-iphone-duo-to-an-always-listening-apple-watch/",
-      "source": "TechCrunch",
-      "date": "2026-09-09T20:03:43.000Z",
-      "snippet": "The main event was the tech giant's highly anticipated first foldable phone, the iPhone Duo."
-    },
-    {
-      "id": "9289099b73c5",
-      "title": "Apple’s new iPhone camera mode promises to prove your photo isn’t AI",
-      "url": "https://www.theverge.com/tech/992766/apple-iphone-18-pro-reference-image",
-      "source": "The Verge",
-      "date": "2026-09-09T19:30:12.000Z",
-      "snippet": "Apple is launching a new way to prove that the picture you took isn't manipulated by AI. A new feature, called \"Reference Image,\" will arrive with the iPhone 18 Pro lineup later this month and is supposed to use the devi"
-    },
-    {
-      "id": "7522d1a44966",
-      "title": "The hinge for Apple’s new foldable phone was built with AI",
-      "url": "https://techcrunch.com/2026/09/09/the-hinge-for-apples-new-foldable-phone-was-built-with-ai/",
-      "source": "TechCrunch",
-      "date": "2026-09-09T19:21:48.000Z",
-      "snippet": "Apple says it used AI and 3D printing in the manufacturing process for its long-awaited foldable phone."
-    },
-    {
-      "id": "69504c919183",
-      "title": "I Don't Want to Interact with Stochastic Parrots",
-      "url": "https://ploum.net/2026-09-09-ai_policy.html",
-      "source": "Hacker News",
-      "date": "2026-09-09T18:33:28.000Z",
-      "snippet": "58 points · 65 comments on HN"
-    },
-    {
-      "id": "6e5ebd9079dc",
-      "title": "Apple’s revamped Health app will calculate your ‘health age’ and readiness score",
-      "url": "https://techcrunch.com/2026/09/09/apples-revamped-health-app-will-calculate-your-health-age-and-readiness-score/",
-      "source": "TechCrunch",
-      "date": "2026-09-09T18:16:29.000Z",
-      "snippet": "The update uses Apple Intelligence to make better sense of your health data."
     }
   ]
 }
