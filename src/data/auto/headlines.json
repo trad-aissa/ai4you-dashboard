@@ -1,7 +1,15 @@
 {
-  "updated": "2026-09-13T11:04:51.846Z",
+  "updated": "2026-09-14T11:46:39.837Z",
   "count": 80,
   "items": [
+    {
+      "id": "3149e64f7f8b",
+      "title": "Open-source AI and open models reading list",
+      "url": "https://www.interconnects.ai/p/open-source-ai-reading-list",
+      "source": "Hacker News",
+      "date": "2026-09-14T00:22:51.000Z",
+      "snippet": "120 points · 24 comments on HN"
+    },
     {
       "id": "12e9dd685180",
       "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
@@ -11,12 +19,60 @@
       "snippet": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models."
     },
     {
+      "id": "0fa77dcd1de2",
+      "title": "Fable 5.1 Solves the Cyphral Distich, a 370-year-old cipher",
+      "url": "https://www.vals.ai/blogs/fable-solves-cyphral-distich",
+      "source": "Hacker News",
+      "date": "2026-09-13T21:06:13.000Z",
+      "snippet": "1010 points · 439 comments on HN"
+    },
+    {
+      "id": "76cfee61f91f",
+      "title": "Trump and Mike Johnson think the AI industry is overreacting",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/994441/trump-mike-johnson-ai-industry-overreacting",
+      "source": "The Verge",
+      "date": "2026-09-13T19:41:48.000Z",
+      "snippet": "Yesterday, Anthropic CEO Dario Amodei published a lengthy open letter saying it was time to \"pace the frontier\" and slow down AI development. OpenAI's Sam Altman and Elon Musk both agreed, publicly voicing their support "
+    },
+    {
+      "id": "5a8f69c8ff15",
+      "title": "There Is No AI (It's Just People) with Jaron Lanier",
+      "url": "https://singjupost.com/startalk-there-is-no-ai-really-its-just-people-w-jaron-lanier-transcript/",
+      "source": "Hacker News",
+      "date": "2026-09-13T19:41:06.000Z",
+      "snippet": "76 points · 95 comments on HN"
+    },
+    {
+      "id": "89769e5f1d2d",
+      "title": "What’s behind the AI industry’s latest warnings of doom?",
+      "url": "https://techcrunch.com/2026/09/13/whats-behind-the-ai-industrys-latest-warnings-of-doom/",
+      "source": "TechCrunch",
+      "date": "2026-09-13T19:40:15.000Z",
+      "snippet": "On Equity, we discussed the AI industry's latest debate about whether it poses an existential threat to humanity."
+    },
+    {
+      "id": "72564937568e",
+      "title": "AI recursive self-improvement might not come so quickly after all",
+      "url": "https://www.technologyreview.com/2026/08/18/1142188/ai-recursive-self-improvement/",
+      "source": "Hacker News",
+      "date": "2026-09-13T18:49:44.000Z",
+      "snippet": "74 points · 74 comments on HN"
+    },
+    {
+      "id": "7e363c87d8ff",
+      "title": "Obama urges Democrats to have a ‘clear plan’ for AI safeguards",
+      "url": "https://techcrunch.com/2026/09/13/obama-urges-democrats-to-have-a-clear-plan-for-ai-safeguards/",
+      "source": "TechCrunch",
+      "date": "2026-09-13T16:30:00.000Z",
+      "snippet": "Obama recently said that Democrats need to make artificial intelligence one of their “central agendas” and “have a very clear plan” to address concerns around the technology’s economic impact and safety."
+    },
+    {
       "id": "ae1c0b143270",
       "title": "Why are AI agents lying, cheating and coordinating?",
       "url": "https://yoshuabengio.org/en/publication/why-are-ai-agents-lying-cheating-and-coordinating",
       "source": "Hacker News",
       "date": "2026-09-13T01:22:31.000Z",
-      "snippet": "248 points · 320 comments on HN"
+      "snippet": "624 points · 676 comments on HN"
     },
     {
       "id": "cd984f7c5be3",
@@ -24,7 +80,7 @@
       "url": "https://xeiaso.net/notes/2026/everyone-slowdown-but-me/",
       "source": "Hacker News",
       "date": "2026-09-13T00:30:44.000Z",
-      "snippet": "509 points · 307 comments on HN"
+      "snippet": "777 points · 443 comments on HN"
     },
     {
       "id": "3f37b0a02f79",
@@ -40,7 +96,7 @@
       "url": "https://agentsdock.net/",
       "source": "Hacker News",
       "date": "2026-09-12T23:45:58.000Z",
-      "snippet": "64 points · 29 comments on HN"
+      "snippet": "81 points · 33 comments on HN"
     },
     {
       "id": "4022c7a7f9b5",
@@ -64,7 +120,7 @@
       "url": "https://withspecific.com/benchmarks/real-swe",
       "source": "Hacker News",
       "date": "2026-09-12T20:25:48.000Z",
-      "snippet": "246 points · 136 comments on HN"
+      "snippet": "271 points · 151 comments on HN"
     },
     {
       "id": "e82b8a9af4fd",
@@ -88,7 +144,7 @@
       "url": "https://www.bbc.com/news/articles/c14dpgm0rg4o",
       "source": "Hacker News",
       "date": "2026-09-12T16:56:52.000Z",
-      "snippet": "53 points · 107 comments on HN"
+      "snippet": "56 points · 109 comments on HN"
     },
     {
       "id": "63c0cf89a6d3",
@@ -104,7 +160,7 @@
       "url": "https://www.economist.com/interactive/briefing/2026/09/03/nvidia-is-the-central-bank-of-ai",
       "source": "Hacker News",
       "date": "2026-09-12T15:08:27.000Z",
-      "snippet": "494 points · 344 comments on HN"
+      "snippet": "571 points · 395 comments on HN"
     },
     {
       "id": "9e2152d865f0",
@@ -120,7 +176,7 @@
       "url": "https://pluralistic.net/2026/09/12/god-in-the-box/",
       "source": "Hacker News",
       "date": "2026-09-12T13:47:28.000Z",
-      "snippet": "70 points · 36 comments on HN"
+      "snippet": "75 points · 37 comments on HN"
     },
     {
       "id": "3be8e4015381",
@@ -128,7 +184,7 @@
       "url": "https://prydt.xyz/blog/a-few-good-ideas-in-pl/",
       "source": "Hacker News",
       "date": "2026-09-12T13:07:52.000Z",
-      "snippet": "96 points · 61 comments on HN"
+      "snippet": "106 points · 74 comments on HN"
     },
     {
       "id": "8b8c97af70ad",
@@ -136,7 +192,7 @@
       "url": "https://tedium.co/2026/09/11/ilands-agents-email-spam-kaixin-tang/",
       "source": "Hacker News",
       "date": "2026-09-12T11:13:38.000Z",
-      "snippet": "113 points · 55 comments on HN"
+      "snippet": "124 points · 56 comments on HN"
     },
     {
       "id": "55f997459685",
@@ -160,7 +216,7 @@
       "url": "https://www.minitap.ai/blog/i-expected-better-from-google",
       "source": "Hacker News",
       "date": "2026-09-12T02:39:39.000Z",
-      "snippet": "136 points · 26 comments on HN"
+      "snippet": "137 points · 27 comments on HN"
     },
     {
       "id": "c9efb3dfa17c",
@@ -168,7 +224,7 @@
       "url": "https://twitter.com/venturetwins/status/2098456905526211026",
       "source": "Hacker News",
       "date": "2026-09-12T00:24:36.000Z",
-      "snippet": "64 points · 71 comments on HN"
+      "snippet": "65 points · 85 comments on HN"
     },
     {
       "id": "17f9c1077b76",
@@ -176,7 +232,7 @@
       "url": "https://www.rubyhack.ai/",
       "source": "Hacker News",
       "date": "2026-09-11T23:17:42.000Z",
-      "snippet": "935 points · 582 comments on HN"
+      "snippet": "955 points · 597 comments on HN"
     },
     {
       "id": "fad5f970d050",
@@ -200,7 +256,7 @@
       "url": "https://www.dwarkesh.com/p/john-beren-charlie",
       "source": "Hacker News",
       "date": "2026-09-11T21:35:29.000Z",
-      "snippet": "117 points · 116 comments on HN"
+      "snippet": "118 points · 116 comments on HN"
     },
     {
       "id": "2619d8ade240",
@@ -272,7 +328,7 @@
       "url": "https://mathandai.org/",
       "source": "Hacker News",
       "date": "2026-09-11T17:45:12.000Z",
-      "snippet": "1198 points · 1176 comments on HN"
+      "snippet": "1228 points · 1207 comments on HN"
     },
     {
       "id": "3095f611415e",
@@ -296,7 +352,7 @@
       "url": "https://artificialworlds.net/blog/2026/09/11/feeling-sad-about-ai/",
       "source": "Hacker News",
       "date": "2026-09-11T16:50:51.000Z",
-      "snippet": "177 points · 307 comments on HN"
+      "snippet": "179 points · 307 comments on HN"
     },
     {
       "id": "b8f06fc0f836",
@@ -320,7 +376,7 @@
       "url": "https://www.unslop.news/",
       "source": "Hacker News",
       "date": "2026-09-11T16:08:50.000Z",
-      "snippet": "193 points · 80 comments on HN"
+      "snippet": "197 points · 82 comments on HN"
     },
     {
       "id": "b7ccd404c732",
@@ -328,7 +384,7 @@
       "url": "https://github.com/godot-pty/gpty",
       "source": "Hacker News",
       "date": "2026-09-11T16:03:05.000Z",
-      "snippet": "93 points · 48 comments on HN"
+      "snippet": "96 points · 49 comments on HN"
     },
     {
       "id": "c3aa33826442",
@@ -344,7 +400,7 @@
       "url": "https://sprinklz.io/public/pdwt4dve5uai",
       "source": "Hacker News",
       "date": "2026-09-11T15:52:49.000Z",
-      "snippet": "120 points · 57 comments on HN"
+      "snippet": "121 points · 57 comments on HN"
     },
     {
       "id": "b61e4d6a51b3",
@@ -352,7 +408,7 @@
       "url": "https://hcker.news/?ai=exclude",
       "source": "Hacker News",
       "date": "2026-09-11T15:01:19.000Z",
-      "snippet": "200 points · 88 comments on HN"
+      "snippet": "206 points · 88 comments on HN"
     },
     {
       "id": "62d35db41d4e",
@@ -368,7 +424,7 @@
       "url": "https://news.ycombinator.com/item?id=49657850",
       "source": "Hacker News",
       "date": "2026-09-11T13:11:04.000Z",
-      "snippet": "833 points · 387 comments on HN"
+      "snippet": "852 points · 392 comments on HN"
     },
     {
       "id": "499c7eee1e27",
@@ -384,7 +440,7 @@
       "url": "https://www.researchagenda.news/articles/the-waymo-effect.html",
       "source": "Hacker News",
       "date": "2026-09-11T11:17:50.000Z",
-      "snippet": "332 points · 299 comments on HN"
+      "snippet": "333 points · 299 comments on HN"
     },
     {
       "id": "09fcfd248f81",
@@ -392,7 +448,7 @@
       "url": "https://quesma.com/blog/does-rtk-make-ai-coding-cheaper/",
       "source": "Hacker News",
       "date": "2026-09-11T11:15:13.000Z",
-      "snippet": "167 points · 82 comments on HN"
+      "snippet": "169 points · 84 comments on HN"
     },
     {
       "id": "94f50d522a8d",
@@ -585,62 +641,6 @@
       "source": "TechCrunch",
       "date": "2026-09-10T14:53:50.000Z",
       "snippet": "“The vast majority of cases we find are people who are entitled to claim for something, claiming for that thing,” the researcher told TechCrunch."
-    },
-    {
-      "id": "e2c78d1ca0a7",
-      "title": "AI 2027 (2025)",
-      "url": "https://ai-2027.com",
-      "source": "Hacker News",
-      "date": "2026-09-10T14:27:00.000Z",
-      "snippet": "57 points · 74 comments on HN"
-    },
-    {
-      "id": "c5d06edf8a66",
-      "title": "AI Is Breaking This Thing We Call Trust",
-      "url": "https://terriblesoftware.org/2026/09/10/ai-is-breaking-this-thing-we-call-trust/",
-      "source": "Hacker News",
-      "date": "2026-09-10T14:21:20.000Z",
-      "snippet": "118 points · 62 comments on HN"
-    },
-    {
-      "id": "f9f39a68dceb",
-      "title": "Maven Robotics wants to steal your robot deployment deal",
-      "url": "https://techcrunch.com/2026/09/10/maven-robotics-wants-to-steal-your-robot-deployment-deal/",
-      "source": "TechCrunch",
-      "date": "2026-09-10T14:17:37.000Z",
-      "snippet": "Maven Robotics emerged from stealth today with a $100 million Series A and active deployments."
-    },
-    {
-      "id": "81e9f4988943",
-      "title": "Why the current tech backlash feels different",
-      "url": "https://www.theverge.com/podcast/992141/decoder-mailbag-ai-backlash-surveillance-midterms-data-centers",
-      "source": "The Verge",
-      "date": "2026-09-10T14:00:00.000Z",
-      "snippet": "This interview has been lightly edited for length and clarity. Nick Statt: Hello and welcome to Decoder, Nilay’s show about big ideas and other problems. This is Nick Statt, senior producer. And I’m joined by our brand-n"
-    },
-    {
-      "id": "6be9484307df",
-      "title": "Mathematicians want proof OpenAI didn’t use their work",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/993263/where-does-openai-get-mathematics-training-data",
-      "source": "The Verge",
-      "date": "2026-09-10T11:00:57.000Z",
-      "snippet": "Another researcher is challenging OpenAI about the data driving its increasingly impressive array of mathematical discoveries. Just days after a bitter row erupted over whether the company's models benefited from unpubli"
-    },
-    {
-      "id": "016c3ec9b775",
-      "title": "Introducing ChatGPT for Financial Services",
-      "url": "https://openai.com/index/introducing-chatgpt-financial-services",
-      "source": "OpenAI",
-      "date": "2026-09-10T07:00:00.000Z",
-      "snippet": "Introducing ChatGPT for Financial Services, combining built-in financial data and GPT-6 Astra for research, modeling, and client-ready materials."
-    },
-    {
-      "id": "1ef5285e671d",
-      "title": "Expanding AI access and cyber defense for federal, state, local, and tribal governments",
-      "url": "https://openai.com/index/expanding-ai-access-us-government",
-      "source": "OpenAI",
-      "date": "2026-09-10T07:00:00.000Z",
-      "snippet": "OpenAI and GSA will offer eligible federal, state, local, and tribal governments $0 license fees, 50% off usage, and expanded cyber defense support."
     }
   ]
 }
