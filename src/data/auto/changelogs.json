@@ -1,6 +1,49 @@
 {
-  "updated": "2026-09-13T11:04:51.846Z",
+  "updated": "2026-09-15T11:03:49.861Z",
   "claude-code": [
+    {
+      "version": "2.1.272",
+      "date": null,
+      "bullets": [
+        "Bug fixes and reliability improvements"
+      ]
+    },
+    {
+      "version": "2.1.271",
+      "date": null,
+      "bullets": [
+        "Added fast mode in Claude Code Remote sessions (cloud and self-hosted runners): the host's fast-mode setting or <code>/fast</code> typed in the session applies where your organization allows it",
+        "Added mouse support to the <code>/config</code> panel in fullscreen mode: the wheel scrolls the settings list, a click on a setting's value changes it, and the row under the pointer is highlighted",
+        "Added <code>claude self-hosted-runner --drain-marker-file </code>: when that file exists at a SIGTERM drain, the runner reports its exit to the server as a host drain (telemetry only)",
+        "Added per-command <code>allowed_domains</code> to Bash, PowerShell and Monitor in auto mode with sandboxing: the hosts a command needs are reviewed with it and opened for it alone; other hosts are refused",
+        "Added <code>omitClaudeMd</code> to agent frontmatter and <code>--agents</code> JSON, letting custom and plugin subagents run without user, project and local CLAUDE.md files; managed policy files still load",
+        "Added <code>--accept-command </code> to <code>claude plugin install</code> and <code>claude plugin update</code> to accept exactly the command a previous <code>--json</code> run displayed, instead of <code>-y</code>",
+        "Added support for a <code>multiplier</code> above 1, up to 10, in the <code>modelPricing</code> managed setting and the Claude apps gateway <code>pricing</code> block, for marked-up internal chargeback rates",
+        "Added a spinner tip pointing Bedrock, Vertex AI, Foundry and LLM gateway users to the Claude desktop app; the claude.ai desktop app tip now suggests <code>/desktop</code>, which offers to download the app",
+        "Fixed a cached organization policy being reused after switching accounts, organizations, or API keys, and the policy not refreshing until the hourly check when the credential changes mid-session",
+        "Fixed the tool and command lists not updating when the organization policy finishes loading after startup or changes mid-session",
+        "Fixed an enterprise <code>managed-mcp.json</code> that can't be read or parsed being ignored: it now keeps exclusive MCP control (user, project and plugin servers don't load) and warns at startup",
+        "Fixed org policy being fetched through, and rejected by, third-party local proxies set via <code>ANTHROPIC_UNIX_SOCKET</code>; they are again treated like other custom gateways, including for Remote Control",
+        "Fixed cloud sessions rejecting every subagent tool call (&quot;updatedInput … failed schema validation&quot;) when a workflow or agent approval was applied after the session's worker restarted",
+        "Fixed <code>/fast off</code> answering &quot;Fast mode unavailable&quot; instead of turning fast mode off when the organization has fast mode disabled",
+        "Fixed sessions started with <code>CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECK</code> re-sending fast requests every turn after the API rejected fast mode; the rejection now stands and its reason is shown",
+        "Fixed fast mode under <code>CLAUDE_CODE_RETRY_WATCHDOG</code> failing the turn on a usage-credits limit, or retrying an overload at fast speed, instead of falling back to standard speed",
+        "Fixed Bash permission checks missing the file that <code>fmt</code>, <code>column</code> and similar commands read when it follows an option the checker doesn't recognize",
+        "Fixed Bash permission checks skipping files a wildcard expands to when the wildcard sits in a command's pattern or option value (for example <code>grep -v dir/* file</code>)",
+        "Fixed Bash permission checks so that shell variable declaration flags cannot misrepresent the command being run",
+        "Fixed Bash commands with two directory changes, a subshell, or a <code>cd</code>+<code>git</code> chain skipping the prompt under <code>permissions.blockReadsOutsideWorkingDirectories</code> in bypass and auto mode",
+        "Fixed a stale <code>.git/config.lock</code> breaking <code>git checkout -b</code>, <code>git push -u</code> and <code>git config</code> for the rest of a session after a sandboxed command failed to start (Linux)",
+        "Fixed settings file changes made outside the session going unnoticed on macOS machines whose system file-event service is saturated; the watcher now falls back to polling",
+        "Fixed resumed <code>claude -p</code> sessions whose tools all come from MCP servers failing with &quot;At least one tool must have defer_loading=false&quot;",
+        "Fixed turns failing with &quot;API returned an empty or malformed response&quot; when an LLM gateway returns the non-streaming reply as <code>text/plain</code>",
+        "Fixed sustained high CPU usage and repeated tool-list requests when an MCP server sends <code>list_changed</code> notifications in a tight loop",
+        "Fixed MCP OAuth mishandling client registrations: denying consent forced a new one, one for another redirect URI was reused, and a concurrent write could delete a valid one or keep a mismatched one",
+        "Fixed tool search returning no match when Claude selects an MCP tool by its bare name instead of its full <code>mcp__server__tool</code> name",
+        "Fixed Ctrl+O cancelling pending MCP server reconnects, and <code>/mcp</code> sent from Remote Control failing while the transcript view is open",
+        "Fixed the Claude in Chrome prompt telling the model to load tools through ToolSearch when ToolSearch is unavailable",
+        "Fixed cross-session messages held by the receiving session's permission-mode policy leaving no trace: headless senders now get a delivery notice, and <code>SendMessage</code> results no longer imply it was read"
+      ]
+    },
     {
       "version": "2.1.270",
       "date": null,
@@ -571,53 +614,37 @@
         "Fixed vim mode in the agent view: Escape now switches to NORMAL mode and keeps your text instead of clearing the prompt",
         "Fixed the <code>selection:copy</code> keybinding silently dropping a text selection that had been extended with Shift+Arrow keys"
       ]
-    },
-    {
-      "version": "2.1.238",
-      "date": null,
-      "bullets": [
-        "Added a <code>keybindingFlavor</code> setting: set it to <code>&quot;readline&quot;</code> to make Ctrl+W in the prompt delete back to the previous whitespace, as in Bash; the default (<code>&quot;classic&quot;</code>) is unchanged",
-        "Plugin marketplaces: <code>headersHelper</code> on a url marketplace or a catalog entry runs a command that mints HTTP headers (e.g. a short-lived token) for catalog and same-origin archive fetches",
-        "A catalog entry's <code>headersHelper</code> runs only when you install or update that plugin, after its command is shown; <code>claude plugin install/update</code> ask <code>[y/N]</code> (or pass <code>-y</code>)",
-        "Added <code>claude self-hosted-runner --defer-shutdown-max-min </code>: on SIGTERM, keep serving attached sessions, park what is left after that many minutes, then exit",
-        "Added <code>claude self-hosted-runner --proxy-authorization-command</code> / <code>--proxy-authorization-file</code> for egress proxies that require a freshly issued <code>Proxy-Authorization</code> header on every connection",
-        "Fixed unbounded memory growth in long interactive sessions: subagent tool results are now released once they leave the recent display window",
-        "Fixed custom, project, and plugin output styles drifting back to the default voice mid-session",
-        "Fixed <code>CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION=true</code> not keeping prompt suggestions on when your account is near, but not over, its usage limit",
-        "Fixed worktree-isolation Bash refusals telling you to remove a redirect when the command had none",
-        "Fixed self-hosted runners occasionally being removed by the server after a single slow or lost poll request, handing their healthy session to another runner",
-        "Fixed MCP elicitation dialogs showing nothing for URLs longer than 4,096 characters, and permission prompts dropping the &quot;don't ask again&quot; option when the project path didn't fit the terminal width",
-        "Fixed leftover <code>/tmp/claude-*-cwd</code> files when a Bash command is killed, times out, or is interrupted",
-        "Fixed held Backspace being ignored on terminals that send Ctrl+H for Backspace when keystrokes arrive in large bursts (slow SSH/mosh links)",
-        "Fixed text-wrapping in permission prompt diffs: lines containing wide multi-code-point characters (such as emoji) or tabs are no longer clipped",
-        "Fixed killing a suspended (Ctrl+Z) session sometimes leaving the terminal in bracketed-paste mode with the cursor hidden",
-        "Fixed stdio MCP servers receiving a <code>server/discover</code> request before <code>initialize</code>, forcing lazy servers to start their backend on every session open",
-        "Fixed a proxy's refusal of a connection being reported as a generic network error instead of naming the proxy",
-        "Fixed the <code>/model</code> and <code>/effort</code> cache-miss warning appearing when the prompt cache had already expired",
-        "Fixed per-task Stop from the Remote Control tasks panel doing nothing on CLI-hosted sessions",
-        "Fixed remote sessions exiting when a client delivered a user message without a valid role",
-        "Fixed Remote Control sessions started by <code>claude remote-control</code> inheriting session-scoped environment variables from the launching shell",
-        "Fixed a Remote Control session whose process crashed staying unavailable until <code>claude remote-control</code> was restarted; it can now be reused when you next message it",
-        "Fixed Remote Control messages sent from the web or Desktop while Claude is mid-turn disappearing from the transcript after the turn finishes",
-        "Fixed Remote Control model picks made on a phone or web not updating the model shown in the terminal",
-        "Fixed Remote Control disconnecting with &quot;login expired&quot; when a brief network hiccup delays renewing your sign-in; it now retries and stays connected",
-        "Fixed Remote Control reporting a failed reconnect on sign-out; signing out now ends the session with a clear message",
-        "Fixed <code>ListAgents</code>/<code>SendMessage</code> reporting &quot;Remote Control is not connected&quot; in sessions run by <code>claude remote-control</code> (server mode) or Desktop/IDE hosts; they now list and reach Remote Control peers",
-        "Fixed <code>ListAgents</code> and <code>SendMessage</code> exposing the idle worker that the agent view pre-warms for your next background session; it now appears only once a task claims it",
-        "Cross-session messaging: sending to a session on this machine that refuses inbound messages (e.g. <code>crossSessionInbound: &quot;refuse&quot;</code>) now reports &quot;refused&quot; to the sender instead of a silent success",
-        "Cross-session messaging: a session whose inbox drops your messages (rate limit or full queue) now tells your session, instead of the messages vanishing silently"
-      ]
-    },
-    {
-      "version": "2.1.237",
-      "date": null,
-      "bullets": [
-        "Fixed prompt caching for sessions using an LLM gateway or custom base URL",
-        "Added a built-in &quot;Concise&quot; output style: Claude leads with results and skips preamble and narration, while doing the work just as thoroughly. Select it under Output style in /config."
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.155.0-alpha.6",
+      "date": "2026-09-15T02:00:26.000Z",
+      "bullets": [
+        "Release 0.155.0-alpha.6"
+      ]
+    },
+    {
+      "version": "0.155.0-alpha.5",
+      "date": "2026-09-15T00:31:51.000Z",
+      "bullets": [
+        "Release 0.155.0-alpha.5"
+      ]
+    },
+    {
+      "version": "0.155.0-alpha.4",
+      "date": "2026-09-14T11:48:08.000Z",
+      "bullets": [
+        "Release 0.155.0-alpha.4"
+      ]
+    },
+    {
+      "version": "0.155.0-alpha.2.4",
+      "date": "2026-09-14T23:04:27.000Z",
+      "bullets": [
+        "Release 0.155.0-alpha.2.4"
+      ]
+    },
     {
       "version": "0.155.0-alpha.3.9",
       "date": "2026-09-11T11:51:30.000Z",
@@ -744,34 +771,6 @@
       "date": "2026-09-08T23:15:41.000Z",
       "bullets": [
         "Release 0.154.0-alpha.8"
-      ]
-    },
-    {
-      "version": "0.154.0-alpha.7",
-      "date": "2026-09-08T17:44:04.000Z",
-      "bullets": [
-        "Release 0.154.0-alpha.7"
-      ]
-    },
-    {
-      "version": "0.154.0-alpha.6",
-      "date": "2026-09-07T18:03:36.000Z",
-      "bullets": [
-        "Release 0.154.0-alpha.6"
-      ]
-    },
-    {
-      "version": "0.153.4",
-      "date": "2026-09-04T23:25:48.000Z",
-      "bullets": [
-        "- Fixed Astra’s visibility in the bundled model picker and made it the bundled default when no model is explicitly configured. (#42874) - Updated Astra’s guidance to use asynchronous questions only when the tool is available in the session. (#42878) Full Changelog: https://github.com/openai/codex/compare/rust-v0.153.3...rust-v0.153.4 - #42874 [0.153 hotfix] Show Astra in bundled model picker @rhan-oai - #42878 [0.153 hotfix] Qualify Astra async-question guidance by tool availability @rhan-oai"
-      ]
-    },
-    {
-      "version": "0.153.3",
-      "date": "2026-09-04T19:01:32.000Z",
-      "bullets": [
-        "- Added GPT-6-Astra to the Amazon Bedrock model picker for Mantle and Runtime global/US routes. (#42805) - Corrected GPT-6-Astra’s guidance for asynchronous clarification questions to use the supported tool and recognize that it accepts text only. (#42809) Full Changelog: https://github.com/openai/codex/compare/rust-v0.153.2...rust-v0.153.3 - #42805 [0.153 hotfix] Add GPT-6-Astra to Amazon Bedrock catalogs @celia-oai - #42809 [0.153 hotfix] Update Astra async-question guidance @rhan-oai"
       ]
     }
   ]

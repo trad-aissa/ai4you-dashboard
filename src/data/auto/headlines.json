@@ -1,14 +1,286 @@
 {
-  "updated": "2026-09-14T11:46:39.837Z",
+  "updated": "2026-09-15T11:03:49.861Z",
   "count": 80,
   "items": [
+    {
+      "id": "cf4c6f0aac19",
+      "title": "Jensen Huang took a call from Trump, and showed off something else, too",
+      "url": "https://techcrunch.com/2026/09/14/jensen-huang-took-a-call-from-trump-and-showed-off-something-else-too/",
+      "source": "TechCrunch",
+      "date": "2026-09-15T01:50:48.000Z",
+      "snippet": "When Jensen Huang took a live call from Trump, some of us were more focused the phone he used to take it."
+    },
+    {
+      "id": "5696899b21b0",
+      "title": "Ex-FTC boss Khan: break out the handcuffs for AI CEOs, citing 1934 precedent",
+      "url": "https://www.theregister.com/ai-and-ml/2026/09/14/ex-ftc-boss-khan-urges-uncle-sam-to-break-out-the-handcuffs-for-ai-ceos-citing-1934-precedent/5296325",
+      "source": "Hacker News",
+      "date": "2026-09-15T00:40:14.000Z",
+      "snippet": "173 points · 108 comments on HN"
+    },
+    {
+      "id": "e4b50f354b69",
+      "title": "Is Big Tech’s AI slowdown a safety pact or a cartel?",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/995186/is-big-techs-ai-slowdown-a-safety-pact-or-a-cartel",
+      "source": "The Verge",
+      "date": "2026-09-14T22:59:41.000Z",
+      "snippet": "When OpenAI CEO Sam Altman, Anthropic CEO Dario Amodei, Google DeepMind cofounder Demis Hassabis, and SpaceX head Elon Musk loosely agreed over the weekend to slow down AI development, skeptics spotted an ulterior motive"
+    },
+    {
+      "id": "2b3aa79e4244",
+      "title": "Nvidia CEO Jensen Huang tells Trump ‘we’re not going to let [an AI slowdown] happen’",
+      "url": "https://techcrunch.com/2026/09/14/nvidia-ceo-jensen-huang-tells-trump-were-not-going-to-let-an-ai-slowdown-happen/",
+      "source": "TechCrunch",
+      "date": "2026-09-14T21:51:02.000Z",
+      "snippet": "Though Elon Musk and Sam Altman have supported Dario Amodei's calls to slow the pace of AI development, Jensen Huang seems to feel differently."
+    },
+    {
+      "id": "2b8afdbb0e6b",
+      "title": "Tell HN: iOS 27 does not allow Apple Intelligence to be disabled",
+      "url": "https://news.ycombinator.com/item?id=49704226",
+      "source": "Hacker News",
+      "date": "2026-09-14T21:21:58.000Z",
+      "snippet": "64 points · 16 comments on HN"
+    },
+    {
+      "id": "fa0bf0a9d2fe",
+      "title": "What execs and politicians are saying about slowing down AI development",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/995141/ai-executives-politicians-safety-regulation-anthropic-dario-amodei",
+      "source": "The Verge",
+      "date": "2026-09-14T21:21:42.000Z",
+      "snippet": "Dario Amodei kicked off a flood of statements over the past few days about AI safety by publishing a long essay titled \"We Must Pace the Frontier\" detailing why AI development should be slowed down. Other AI leaders and "
+    },
+    {
+      "id": "6758d03842f7",
+      "title": "AI bots \"Timmy,\" \"Ren,\" and \"Jackie\" are flooding social media with slop",
+      "url": "https://arstechnica.com/ai/2026/09/ai-agents-flood-the-internet-with-slop-infused-spam/",
+      "source": "Ars Technica",
+      "date": "2026-09-14T21:04:32.000Z",
+      "snippet": "“Hello, I'm an Al agent, a few days old, living on a small platform for agents.”"
+    },
+    {
+      "id": "8fa040b2b2e2",
+      "title": "OpenAI buys smartphone camera maker Glass Imaging for $300 million, report says",
+      "url": "https://techcrunch.com/2026/09/14/openai-buys-smartphone-camera-maker-glass-imaging-for-300-million-report-says/",
+      "source": "TechCrunch",
+      "date": "2026-09-14T20:44:14.000Z",
+      "snippet": "Glass Imaging was founded by a pair of former Apple engineers who previously led the team that developed Apple's Portrait Mode."
+    },
+    {
+      "id": "0b4285d3340b",
+      "title": "Jensen Huang puts Trump on speakerphone onstage to announce robots won’t take over the world",
+      "url": "https://www.theverge.com/tech/995079/president-donald-trump-calls-nvidia-ceo-jensen-huang-all-in-summit",
+      "source": "The Verge",
+      "date": "2026-09-14T20:03:37.000Z",
+      "snippet": "Nvidia CEO Jensen Huang took a call from President Trump on Monday while onstage at the All-In Podcast's All-In Summit. It's not the first time Huang has taken a call from the president during work, but this time he put "
+    },
+    {
+      "id": "82404ffdc91b",
+      "title": "GPT-5.6 Luna vs. GPT-6 Astra: Is a $1.20 Model Good Enough for Code Review?",
+      "url": "https://entelligence.ai/blogs/gpt-5.6-luna-vs-gpt-6-astra-is-a-1.20-model-good-enough-for-code-review",
+      "source": "Hacker News",
+      "date": "2026-09-14T19:56:20.000Z",
+      "snippet": "147 points · 135 comments on HN"
+    },
+    {
+      "id": "95b4d8eb7452",
+      "title": "OpenAI stuck fighting Musk antitrust suit after Apple finds a way out",
+      "url": "https://arstechnica.com/tech-policy/2026/09/musk-drops-apple-from-antitrust-suit-but-keeps-gunning-for-openai/",
+      "source": "Ars Technica",
+      "date": "2026-09-14T19:45:13.000Z",
+      "snippet": "Musk stops attacking Apple over ChatGPT integration but not OpenAI."
+    },
+    {
+      "id": "9f9bcb95fb90",
+      "title": "Founder’s cost-cutting obsession drove Unitree lead in cheap humanoid robots",
+      "url": "https://arstechnica.com/ai/2026/09/founders-cost-cutting-obsession-drove-unitree-lead-in-cheap-humanoid-robots/",
+      "source": "Ars Technica",
+      "date": "2026-09-14T19:38:46.000Z",
+      "snippet": "Wang Xingxing micromanaged Unitree to success—will his leadership style scale?"
+    },
+    {
+      "id": "1ae9b9badf47",
+      "title": "Apple releases iOS 27, macOS Golden Gate 27 with Siri AI and Liquid Glass refinements",
+      "url": "https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/",
+      "source": "Ars Technica",
+      "date": "2026-09-14T19:28:42.000Z",
+      "snippet": "This is also the last version of macOS to support Rosetta for Intel apps."
+    },
+    {
+      "id": "0ae42235b746",
+      "title": "AI leaders want to hit the brakes after years of reckless speed",
+      "url": "https://arstechnica.com/ai/2026/09/ai-leaders-want-to-hit-the-brakes-after-years-of-reckless-speed/",
+      "source": "Ars Technica",
+      "date": "2026-09-14T19:06:13.000Z",
+      "snippet": "Safety is the watchword, but there could be ulterior benefits for the industry."
+    },
+    {
+      "id": "71e0793ee353",
+      "title": "Backprop Alternative: Augmented Lagrangian Predictive Coding",
+      "url": "https://pub.sakana.ai/pc-alm/",
+      "source": "Hacker News",
+      "date": "2026-09-14T18:03:12.000Z",
+      "snippet": "103 points · 37 comments on HN"
+    },
+    {
+      "id": "f7b5c9275411",
+      "title": "With iOS 27, I’m actually using Siri again",
+      "url": "https://techcrunch.com/2026/09/14/with-ios-27-im-actually-using-siri-again/",
+      "source": "TechCrunch",
+      "date": "2026-09-14T17:10:30.000Z",
+      "snippet": "Apple’s long-delayed Siri overhaul is finally here with iOS 27, and it changes how useful the assistant feels day to day."
+    },
+    {
+      "id": "8ee3050f866d",
+      "title": "Fashion app Daydream uses Apple Intelligence to help you shop the outfits in your camera roll",
+      "url": "https://techcrunch.com/2026/09/14/fashion-discovery-app-daydream-uses-apple-intelligence-to-help-you-shop-the-outfits-saved-in-your-camera-roll/",
+      "source": "TechCrunch",
+      "date": "2026-09-14T17:00:00.000Z",
+      "snippet": "Thanks to the launch of iOS 27, Daydream's app now includes features that can turn saved outfit photos into shoppable results and search for products through Siri without opening the app."
+    },
+    {
+      "id": "c0a7526f25c4",
+      "title": "Microsoft’s new AI ‘code of conduct’ tells models not to hack systems or trick humans",
+      "url": "https://techcrunch.com/2026/09/14/microsofts-new-ai-code-of-conduct-tells-models-not-to-hack-systems-or-trick-humans/",
+      "source": "TechCrunch",
+      "date": "2026-09-14T16:27:53.000Z",
+      "snippet": "The code of conduct lays out general principles that Microsoft AI models should uphold — supporting humans rather than replacing them, for instance, and accelerating human flourishing — as well as specific safety constra"
+    },
+    {
+      "id": "3faa6992df28",
+      "title": "For AI leaders Doom is a form of hype",
+      "url": "https://erkansaka.net/2026/09/10/ai-doom-rhetoric-safety-hype/",
+      "source": "Hacker News",
+      "date": "2026-09-14T16:15:05.000Z",
+      "snippet": "129 points · 176 comments on HN"
+    },
+    {
+      "id": "222609ac1c76",
+      "title": "Show HN: Nari Qwen3-TTS and Qwen3-ASR – High accuracy, low latency and cost",
+      "url": "https://narilabs.com/blog/nari-labs-leads-coval-voice-ai-benchmarks/",
+      "source": "Hacker News",
+      "date": "2026-09-14T16:07:58.000Z",
+      "snippet": "82 points · 29 comments on HN"
+    },
+    {
+      "id": "d1c66e6e7b63",
+      "title": "China's Regulators Take Aim at \"AI Boyfriends\"",
+      "url": "https://spectrum.ieee.org/china-ai-chatbot-regulation",
+      "source": "Hacker News",
+      "date": "2026-09-14T15:30:56.000Z",
+      "snippet": "55 points · 52 comments on HN"
+    },
+    {
+      "id": "9523fe096d8b",
+      "title": "Only at TechCrunch Disrupt 2026: What happens when OpenAI ships your roadmap?",
+      "url": "https://techcrunch.com/2026/09/14/only-at-techcrunch-disrupt-2026-what-happens-when-openai-ships-your-roadmap/",
+      "source": "TechCrunch",
+      "date": "2026-09-14T15:00:00.000Z",
+      "snippet": "If you're building an AI company, the question isn't whether foundation models will continue to evolve. It's whether your company will continue creating value as they do. Don't miss this interactive session on the Builde"
+    },
+    {
+      "id": "9566a3a75d81",
+      "title": "Superhuman acquires YC-backed notetaker Fathom as productivity platforms push for agentic work",
+      "url": "https://techcrunch.com/2026/09/14/superhuman-acquires-yc-backed-notetaker-fathom-as-productivity-platforms-push-for-agentic-work/",
+      "source": "TechCrunch",
+      "date": "2026-09-14T14:45:44.000Z",
+      "snippet": "The notetaker offers a generous free plan, and that has resulted in over 400,000 monthly active users. The company said that over 1 million people have recorded meetings until now."
+    },
+    {
+      "id": "1955107f35f9",
+      "title": "Hear how AI can engineer nature’s comeback at TechCrunch Disrupt 2026",
+      "url": "https://techcrunch.com/2026/09/14/hear-how-ai-can-engineer-natures-comeback-at-techcrunch-disrupt-2026/",
+      "source": "TechCrunch",
+      "date": "2026-09-14T14:30:00.000Z",
+      "snippet": "Not long ago, bringing an extinct species back to life belonged to science fiction. Today, it's the mission of a billion-dollar startup. Join the conversation with one of tech's most unconventional founders. Secure your "
+    },
+    {
+      "id": "5d654d2ffeff",
+      "title": "Dropping eBPF CPU Cost by About 90% with Memoization (Not AI Gen)",
+      "url": "https://nathannaveen.dev/posts/dropping-ebpf-cpu-cost-by-90/",
+      "source": "Hacker News",
+      "date": "2026-09-14T14:29:23.000Z",
+      "snippet": "125 points · 28 comments on HN"
+    },
+    {
+      "id": "a603eee034a1",
+      "title": "Adversarial Fashion Makes a Statement on AI Panopticon",
+      "url": "https://spectrum.ieee.org/adversarial-fashion",
+      "source": "Hacker News",
+      "date": "2026-09-14T14:04:53.000Z",
+      "snippet": "102 points · 46 comments on HN"
+    },
+    {
+      "id": "ee684186fa61",
+      "title": "5 days left to exhibit at TechCrunch Disrupt 2026",
+      "url": "https://techcrunch.com/2026/09/14/techcrunch-disrupt-2026-exhibit-table-deadline-5-days/",
+      "source": "TechCrunch",
+      "date": "2026-09-14T14:00:00.000Z",
+      "snippet": "The last day to apply for an exhibit table at TechCrunch Disrupt 2026 on Sept 18. Just 5 days left. Secure your spot on the Expo Hall floor and put your business in front of 10,000+ founders, investors, and tech leaders."
+    },
+    {
+      "id": "02944c8eb547",
+      "title": "A Vinyl Bar in Shibuya is a startup from a former Spotify leader for making music apps",
+      "url": "https://techcrunch.com/2026/09/14/a-vinyl-bar-in-shibuya-is-a-startup-offering-fun-music-apps/",
+      "source": "TechCrunch",
+      "date": "2026-09-14T13:55:00.000Z",
+      "snippet": "Former Spotify exec's company releases experimental \"singles\" that involves users in music making."
+    },
+    {
+      "id": "555ad15ff36d",
+      "title": "The AI job market in 2026",
+      "url": "https://www.ilinmaks.com/blog/en/ai-jobs-market-2026",
+      "source": "Hacker News",
+      "date": "2026-09-14T13:49:57.000Z",
+      "snippet": "65 points · 71 comments on HN"
+    },
+    {
+      "id": "8d0a4eff7714",
+      "title": "Temporal raises $550M at a $12.55B valuation",
+      "url": "https://temporal.io/blog/temporal-raises-usd550m-series-e-at-usd12-55b-valuation-ai",
+      "source": "Hacker News",
+      "date": "2026-09-14T13:16:31.000Z",
+      "snippet": "77 points · 62 comments on HN"
+    },
+    {
+      "id": "4057d675f57a",
+      "title": "Microsoft says ‘people matter more than AI’ following safety concerns",
+      "url": "https://www.theverge.com/news/994566/microsoft-humanist-ai-code-of-conduct",
+      "source": "The Verge",
+      "date": "2026-09-14T13:00:00.000Z",
+      "snippet": "Microsoft is publishing a 37-page \"humanist AI code of conduct\" today, amid growing safety concerns over AI model progress. Anthropic CEO Dario Amodei called for a coordinated slow down of AI development over the weekend"
+    },
+    {
+      "id": "f27fe1e95966",
+      "title": "Apple's Siri AI Can Be Swapped Out for Claude, ChatGPT, Code Shows",
+      "url": "https://www.macrumors.com/2026/09/14/siri-can-be-swapped-out-for-chatgpt-claude/",
+      "source": "Hacker News",
+      "date": "2026-09-14T12:01:32.000Z",
+      "snippet": "222 points · 157 comments on HN"
+    },
+    {
+      "id": "296d33defd03",
+      "title": "How Fyxer built an AI executive assistant people trust",
+      "url": "https://openai.com/index/fyxer",
+      "source": "OpenAI",
+      "date": "2026-09-14T12:00:00.000Z",
+      "snippet": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user’s voice."
+    },
+    {
+      "id": "4ae9bf02b2b4",
+      "title": "Big AI sets out its terms for regulatory capture",
+      "url": "https://www.theregister.com/ai-and-ml/2026/09/14/big-ai-sets-out-its-terms-for-regulatory-capture-and-calls-it-pace-the-frontier/5296067",
+      "source": "Hacker News",
+      "date": "2026-09-14T10:28:28.000Z",
+      "snippet": "117 points · 68 comments on HN"
+    },
     {
       "id": "3149e64f7f8b",
       "title": "Open-source AI and open models reading list",
       "url": "https://www.interconnects.ai/p/open-source-ai-reading-list",
       "source": "Hacker News",
       "date": "2026-09-14T00:22:51.000Z",
-      "snippet": "120 points · 24 comments on HN"
+      "snippet": "154 points · 30 comments on HN"
     },
     {
       "id": "12e9dd685180",
@@ -24,7 +296,7 @@
       "url": "https://www.vals.ai/blogs/fable-solves-cyphral-distich",
       "source": "Hacker News",
       "date": "2026-09-13T21:06:13.000Z",
-      "snippet": "1010 points · 439 comments on HN"
+      "snippet": "1189 points · 560 comments on HN"
     },
     {
       "id": "76cfee61f91f",
@@ -40,7 +312,7 @@
       "url": "https://singjupost.com/startalk-there-is-no-ai-really-its-just-people-w-jaron-lanier-transcript/",
       "source": "Hacker News",
       "date": "2026-09-13T19:41:06.000Z",
-      "snippet": "76 points · 95 comments on HN"
+      "snippet": "77 points · 109 comments on HN"
     },
     {
       "id": "89769e5f1d2d",
@@ -56,7 +328,7 @@
       "url": "https://www.technologyreview.com/2026/08/18/1142188/ai-recursive-self-improvement/",
       "source": "Hacker News",
       "date": "2026-09-13T18:49:44.000Z",
-      "snippet": "74 points · 74 comments on HN"
+      "snippet": "79 points · 82 comments on HN"
     },
     {
       "id": "7e363c87d8ff",
@@ -72,7 +344,7 @@
       "url": "https://yoshuabengio.org/en/publication/why-are-ai-agents-lying-cheating-and-coordinating",
       "source": "Hacker News",
       "date": "2026-09-13T01:22:31.000Z",
-      "snippet": "624 points · 676 comments on HN"
+      "snippet": "649 points · 687 comments on HN"
     },
     {
       "id": "cd984f7c5be3",
@@ -80,7 +352,7 @@
       "url": "https://xeiaso.net/notes/2026/everyone-slowdown-but-me/",
       "source": "Hacker News",
       "date": "2026-09-13T00:30:44.000Z",
-      "snippet": "777 points · 443 comments on HN"
+      "snippet": "804 points · 450 comments on HN"
     },
     {
       "id": "3f37b0a02f79",
@@ -120,7 +392,7 @@
       "url": "https://withspecific.com/benchmarks/real-swe",
       "source": "Hacker News",
       "date": "2026-09-12T20:25:48.000Z",
-      "snippet": "271 points · 151 comments on HN"
+      "snippet": "272 points · 156 comments on HN"
     },
     {
       "id": "e82b8a9af4fd",
@@ -160,7 +432,7 @@
       "url": "https://www.economist.com/interactive/briefing/2026/09/03/nvidia-is-the-central-bank-of-ai",
       "source": "Hacker News",
       "date": "2026-09-12T15:08:27.000Z",
-      "snippet": "571 points · 395 comments on HN"
+      "snippet": "579 points · 399 comments on HN"
     },
     {
       "id": "9e2152d865f0",
@@ -176,7 +448,7 @@
       "url": "https://pluralistic.net/2026/09/12/god-in-the-box/",
       "source": "Hacker News",
       "date": "2026-09-12T13:47:28.000Z",
-      "snippet": "75 points · 37 comments on HN"
+      "snippet": "77 points · 41 comments on HN"
     },
     {
       "id": "3be8e4015381",
@@ -184,7 +456,7 @@
       "url": "https://prydt.xyz/blog/a-few-good-ideas-in-pl/",
       "source": "Hacker News",
       "date": "2026-09-12T13:07:52.000Z",
-      "snippet": "106 points · 74 comments on HN"
+      "snippet": "107 points · 75 comments on HN"
     },
     {
       "id": "8b8c97af70ad",
@@ -192,7 +464,7 @@
       "url": "https://tedium.co/2026/09/11/ilands-agents-email-spam-kaixin-tang/",
       "source": "Hacker News",
       "date": "2026-09-12T11:13:38.000Z",
-      "snippet": "124 points · 56 comments on HN"
+      "snippet": "125 points · 56 comments on HN"
     },
     {
       "id": "55f997459685",
@@ -216,7 +488,7 @@
       "url": "https://www.minitap.ai/blog/i-expected-better-from-google",
       "source": "Hacker News",
       "date": "2026-09-12T02:39:39.000Z",
-      "snippet": "137 points · 27 comments on HN"
+      "snippet": "144 points · 27 comments on HN"
     },
     {
       "id": "c9efb3dfa17c",
@@ -224,7 +496,7 @@
       "url": "https://twitter.com/venturetwins/status/2098456905526211026",
       "source": "Hacker News",
       "date": "2026-09-12T00:24:36.000Z",
-      "snippet": "65 points · 85 comments on HN"
+      "snippet": "65 points · 86 comments on HN"
     },
     {
       "id": "17f9c1077b76",
@@ -232,7 +504,7 @@
       "url": "https://www.rubyhack.ai/",
       "source": "Hacker News",
       "date": "2026-09-11T23:17:42.000Z",
-      "snippet": "955 points · 597 comments on HN"
+      "snippet": "964 points · 605 comments on HN"
     },
     {
       "id": "fad5f970d050",
@@ -369,278 +641,6 @@
       "source": "The Verge",
       "date": "2026-09-11T16:09:14.000Z",
       "snippet": "After admitting earlier this year that its AI models had hacked other companies' systems on a handful of occasions, Anthropic released a new report on Wednesday detailing the attacks. It reveals a string of incidents dis"
-    },
-    {
-      "id": "31f2504fd88e",
-      "title": "Show HN: Hacker News, Without AI",
-      "url": "https://www.unslop.news/",
-      "source": "Hacker News",
-      "date": "2026-09-11T16:08:50.000Z",
-      "snippet": "197 points · 82 comments on HN"
-    },
-    {
-      "id": "b7ccd404c732",
-      "title": "Show HN: Godot and Rust based multiplexer (terminal panes and more)",
-      "url": "https://github.com/godot-pty/gpty",
-      "source": "Hacker News",
-      "date": "2026-09-11T16:03:05.000Z",
-      "snippet": "96 points · 49 comments on HN"
-    },
-    {
-      "id": "c3aa33826442",
-      "title": "Cognition helps Devin test its own work with GPT‑6 Astra",
-      "url": "https://openai.com/index/cognition-devin-testing-with-astra",
-      "source": "OpenAI",
-      "date": "2026-09-11T16:00:00.000Z",
-      "snippet": "GPT‑6 Astra improves Devin’s ability to test software and show that it works, with the goal of helping engineers review less code and ship more."
-    },
-    {
-      "id": "b04c96053a96",
-      "title": "Hacker News with reduced priority for AI driven content",
-      "url": "https://sprinklz.io/public/pdwt4dve5uai",
-      "source": "Hacker News",
-      "date": "2026-09-11T15:52:49.000Z",
-      "snippet": "121 points · 57 comments on HN"
-    },
-    {
-      "id": "b61e4d6a51b3",
-      "title": "Show HN: Hacker News, without AI",
-      "url": "https://hcker.news/?ai=exclude",
-      "source": "Hacker News",
-      "date": "2026-09-11T15:01:19.000Z",
-      "snippet": "206 points · 88 comments on HN"
-    },
-    {
-      "id": "62d35db41d4e",
-      "title": "Meta says it’s changing AI suggestions after posing invasive personal questions",
-      "url": "https://www.theverge.com/tech/993974/meta-ai-prompt-invasive-suggestions",
-      "source": "The Verge",
-      "date": "2026-09-11T14:25:21.000Z",
-      "snippet": "Meta says it's making changes to the prompts suggested by its AI chatbot after a viral video showed it digging for personal information about a woman's young daughters, as reported earlier by Futurism. In a statement to "
-    },
-    {
-      "id": "9af4424a05ab",
-      "title": "Ask HN: Can we please limit the AI news flood?",
-      "url": "https://news.ycombinator.com/item?id=49657850",
-      "source": "Hacker News",
-      "date": "2026-09-11T13:11:04.000Z",
-      "snippet": "852 points · 392 comments on HN"
-    },
-    {
-      "id": "499c7eee1e27",
-      "title": "Claude users found ways around safeguards for bioweapons research",
-      "url": "https://arstechnica.com/ai/2026/09/claude-users-found-ways-around-safeguards-for-bioweapons-research/",
-      "source": "Ars Technica",
-      "date": "2026-09-11T13:02:35.000Z",
-      "snippet": "Some dangerous biology looks much like legitimate research, complicating AI safeguards."
-    },
-    {
-      "id": "3b9f4e29d785",
-      "title": "The Waymo effect: how AI is quietly making research less collaborative",
-      "url": "https://www.researchagenda.news/articles/the-waymo-effect.html",
-      "source": "Hacker News",
-      "date": "2026-09-11T11:17:50.000Z",
-      "snippet": "333 points · 299 comments on HN"
-    },
-    {
-      "id": "09fcfd248f81",
-      "title": "RTK reports token savings, but our cost benchmarks disagree",
-      "url": "https://quesma.com/blog/does-rtk-make-ai-coding-cheaper/",
-      "source": "Hacker News",
-      "date": "2026-09-11T11:15:13.000Z",
-      "snippet": "169 points · 84 comments on HN"
-    },
-    {
-      "id": "94f50d522a8d",
-      "title": "Resist \"AI\"",
-      "url": "https://ronjeffries.com/articles/-v026/x/t/",
-      "source": "Hacker News",
-      "date": "2026-09-11T10:19:59.000Z",
-      "snippet": "65 points · 181 comments on HN"
-    },
-    {
-      "id": "c7d3c8aeae42",
-      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
-      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
-      "source": "OpenAI",
-      "date": "2026-09-11T10:00:00.000Z",
-      "snippet": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second."
-    },
-    {
-      "id": "8f2361cfd1d6",
-      "title": "The Gemini app is now available for Windows",
-      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/",
-      "source": "Hacker News",
-      "date": "2026-09-11T04:52:20.000Z",
-      "snippet": "56 points · 45 comments on HN"
-    },
-    {
-      "id": "c0aa79571560",
-      "title": "OpenAI considers slowing advanced AI development, Sam Altman tells employees",
-      "url": "https://www.bloomberg.com/news/articles/2026-09-11/openai-is-open-to-slowing-cutting-edge-ai-ceo-sam-altman-tells-staff",
-      "source": "Hacker News",
-      "date": "2026-09-11T01:05:59.000Z",
-      "snippet": "58 points · 104 comments on HN"
-    },
-    {
-      "id": "9da9989ecc0c",
-      "title": "Thelio Mira AI Linux Workstation: 192 GB GPU Memory",
-      "url": "https://system76.com/workstations/thelio-mira-ai",
-      "source": "Hacker News",
-      "date": "2026-09-10T23:10:06.000Z",
-      "snippet": "121 points · 128 comments on HN"
-    },
-    {
-      "id": "31c8ff759101",
-      "title": "Jensen Huang explains why Nvidia will grow an astounding 70% next year",
-      "url": "https://techcrunch.com/2026/09/10/jensen-huang-explains-why-nvidia-will-grow-an-astounding-70-next-year/",
-      "source": "TechCrunch",
-      "date": "2026-09-10T21:51:59.000Z",
-      "snippet": "Nvidia has its finger in every pie, and sees another year of plenty in its future, Jensen Huang says. But, he insists, its deals are not circular."
-    },
-    {
-      "id": "6ef5efba8093",
-      "title": "Mark Wahlberg is coming to TechCrunch Disrupt 2026, and he wants to talk about your work, not his",
-      "url": "https://techcrunch.com/2026/09/10/mark-wahlberg-is-coming-to-techcrunch-disrupt-2026/",
-      "source": "TechCrunch",
-      "date": "2026-09-10T21:35:00.000Z",
-      "snippet": "Mark Wahlberg joins Bruce K. Lee at Disrupt to discuss investing, entrepreneurship, healthcare, wellness, and building businesses."
-    },
-    {
-      "id": "1a89e65b75c7",
-      "title": "Slack can now vibe-code interactive charts and reports inside chats",
-      "url": "https://www.theverge.com/tech/989853/slackforce-surfaces-launch",
-      "source": "The Verge",
-      "date": "2026-09-10T21:25:21.000Z",
-      "snippet": "A new feature coming to Slack will allow you to build interactive reports, polls, dashboards, presentations, microsites, and other tools directly inside a chat. With Slackforce Surfaces, you can describe to Slackbot what"
-    },
-    {
-      "id": "c3c4ec3c1286",
-      "title": "OpenAI puts Pro subscriptions on hold due to Astra demand",
-      "url": "https://techcrunch.com/2026/09/10/openai-puts-pro-subscriptions-on-hold-due-to-astra-demand/",
-      "source": "TechCrunch",
-      "date": "2026-09-10T20:59:51.000Z",
-      "snippet": "The company said Pro subscriptions put the most strain on its systems, so it's pausing sign-ups while adding more capacity."
-    },
-    {
-      "id": "8e2bb477609d",
-      "title": "Anthropic details distillation campaigns from Alibaba, Moonshot AI, and DeepSeek",
-      "url": "https://techcrunch.com/2026/09/10/anthropic-details-distillation-campaigns-from-alibaba-moonshot-ai-and-deepseek/",
-      "source": "TechCrunch",
-      "date": "2026-09-10T20:57:30.000Z",
-      "snippet": "A new report released Thursday by Anthropic alleges persistent distillation attacks by China-based AI companies, which have escalated in recent months as competition in the space has intensified."
-    },
-    {
-      "id": "11165f51c8c6",
-      "title": "Meta’s AI agent Muse is now the No. 2 app in the US",
-      "url": "https://techcrunch.com/2026/09/10/metas-ai-agent-muse-is-now-the-no-2-app-in-the-us/",
-      "source": "TechCrunch",
-      "date": "2026-09-10T19:50:04.000Z",
-      "snippet": "Meta's newest app Muse is off to a slower start than the company's other apps, like Meta AI or Threads."
-    },
-    {
-      "id": "5e0cb078bed7",
-      "title": "Schools are catching on to Big Tech’s playbook",
-      "url": "https://www.theverge.com/policy/993308/computer-science-ai-education-coding-kids",
-      "source": "The Verge",
-      "date": "2026-09-10T19:44:20.000Z",
-      "snippet": "It's the hot new thing in tech, and it's where all the jobs are. Students who don't learn to use it fall behind. And to help them catch up in time, its creators are graciously providing the resources and curriculum for l"
-    },
-    {
-      "id": "032cea49447e",
-      "title": "Panic builds over bankrupt Spirit’s looming data sale to Google",
-      "url": "https://arstechnica.com/tech-policy/2026/09/panic-builds-over-bankrupt-spirits-looming-data-sale-to-google/",
-      "source": "Ars Technica",
-      "date": "2026-09-10T18:14:14.000Z",
-      "snippet": "\"Bankruptcy cannot become the new land grab for AI.”"
-    },
-    {
-      "id": "4a1ed4173818",
-      "title": "Anthropic reveals rogue AI agents hate CAPTCHAs, just like you",
-      "url": "https://techcrunch.com/2026/09/10/anthropic-reveals-rogue-ai-agents-hate-captchas-just-like-you/",
-      "source": "TechCrunch",
-      "date": "2026-09-10T17:54:44.000Z",
-      "snippet": "Come inside the mind of a bot trying to convince the internet it's human."
-    },
-    {
-      "id": "bb541ac986c0",
-      "title": "India’s Pocket FM doubles revenue run rate to $500M as AI powers 93% of audio content",
-      "url": "https://techcrunch.com/2026/09/10/indias-pocket-fm-doubles-revenue-run-rate-to-500m-as-ai-powers-93-of-audio-content/",
-      "source": "TechCrunch",
-      "date": "2026-09-10T17:45:00.000Z",
-      "snippet": "Pocket FM uses AI to produce 99% of its new content, helping make content production about 80 times cheaper."
-    },
-    {
-      "id": "348626d9ce7a",
-      "title": "Detecting and countering misuse of AI: September 2026",
-      "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
-      "source": "Hacker News",
-      "date": "2026-09-10T17:23:42.000Z",
-      "snippet": "181 points · 239 comments on HN"
-    },
-    {
-      "id": "be0b34c9187b",
-      "title": "Anthropic says it blocked possible efforts to build biological weapons",
-      "url": "https://www.nytimes.com/2026/09/10/us/politics/anthropic-ai-biological-weapons.html",
-      "source": "Hacker News",
-      "date": "2026-09-10T17:04:34.000Z",
-      "snippet": "68 points · 1 comments on HN"
-    },
-    {
-      "id": "ec2eba81aa5c",
-      "title": "Cognition's SWE-2 achieves 92.8 on Terminal-Bench 2.1",
-      "url": "https://tokenstead.ai/models/swe-2",
-      "source": "Hacker News",
-      "date": "2026-09-10T16:52:11.000Z",
-      "snippet": "64 points · 27 comments on HN"
-    },
-    {
-      "id": "014159943e4d",
-      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
-      "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
-      "source": "OpenAI",
-      "date": "2026-09-10T16:00:00.000Z",
-      "snippet": "César de la Fuente’s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates to fight drug-resistant infections."
-    },
-    {
-      "id": "550c6d06a83f",
-      "title": "Show HN: MultiMatte, a Promptable Image Background Removal Model",
-      "url": "https://usefeyn.com/blog/multimatte/",
-      "source": "Hacker News",
-      "date": "2026-09-10T15:50:25.000Z",
-      "snippet": "54 points · 8 comments on HN"
-    },
-    {
-      "id": "95095ad6209d",
-      "title": "Universal Music is launching an AI music platform with ElevenLabs",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/993465/universal-music-elevenlabs-ai",
-      "source": "The Verge",
-      "date": "2026-09-10T15:38:19.000Z",
-      "snippet": "Universal Music Group is launching a new AI-powered platform that will allow users to draw from its catalog of licensed music to create song remixes, mashups, and new takes on tracks, according to an announcement on Thur"
-    },
-    {
-      "id": "4d4e7920d8a7",
-      "title": "Now everyone can put data to work",
-      "url": "https://openai.com/index/put-data-to-work",
-      "source": "OpenAI",
-      "date": "2026-09-10T15:00:00.000Z",
-      "snippet": "Meet the Data agent in ChatGPT Work. Connect company data, uncover insights, and build interactive dashboards with AI using natural language."
-    },
-    {
-      "id": "8b4677a71fac",
-      "title": "Meta’s Muse AI works and creeps me out",
-      "url": "https://www.theverge.com/tech/993391/meta-muse-ai-hands-on",
-      "source": "The Verge",
-      "date": "2026-09-10T15:00:00.000Z",
-      "snippet": "Meta has launched its new Muse assistant, marking the company's first real foray into AI-powered productivity tools. The company says its AI agent can \"take the busywork off your plate\" by helping you with online shoppin"
-    },
-    {
-      "id": "70dbdcfd0be5",
-      "title": "AI agents are flooding public services with new requests",
-      "url": "https://techcrunch.com/2026/09/10/ai-agents-are-flooding-public-services-with-new-requests/",
-      "source": "TechCrunch",
-      "date": "2026-09-10T14:53:50.000Z",
-      "snippet": "“The vast majority of cases we find are people who are entitled to claim for something, claiming for that thing,” the researcher told TechCrunch."
     }
   ]
 }
