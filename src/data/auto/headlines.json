@@ -1,22 +1,294 @@
 {
-  "updated": "2026-09-17T10:57:09.179Z",
+  "updated": "2026-09-18T10:33:54.972Z",
   "count": 80,
   "items": [
     {
+      "id": "39b208522bb5",
+      "title": "A heap overflow and SSO misconfiguration to compromise OpenAI internal repos",
+      "url": "https://www.hacktron.ai/blog/hacking-openai",
+      "source": "Hacker News",
+      "date": "2026-09-18T02:47:24.000Z",
+      "snippet": "362 points · 155 comments on HN"
+    },
+    {
+      "id": "e4addcf48f06",
+      "title": "How To Write With An LLM",
+      "url": "https://simonwillison.net/2026/Sep/17/how-to-write-with-an-llm/",
+      "source": "Simon Willison",
+      "date": "2026-09-17T23:37:27.000Z",
+      "snippet": "How To Write With An LLM Thomas Ptacek on using LLMs as copyeditors, not as writing assistants: Rule Number One: You may not use a single word an LLM suggests to you. [...] I think that as a form of intellectual personal"
+    },
+    {
+      "id": "ddc3e4450e0b",
+      "title": "Crusoe raises $3.9B to build massive data centers and small modular ‘AI factories’",
+      "url": "https://techcrunch.com/2026/09/17/crusoe-raises-3-9b-to-build-massive-data-centers-and-small-modular-ai-factories/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T23:25:52.000Z",
+      "snippet": "The round values the data center giant at $30.9 billion."
+    },
+    {
+      "id": "2b6047d138bf",
+      "title": "Google DeepMind launches institute to widen the AGI debate",
+      "url": "https://techcrunch.com/2026/09/17/google-deepmind-launches-institute-to-widen-the-agi-debate/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T23:21:17.000Z",
+      "snippet": "The new institute aims to surface differing views between Google, Google DeepMind, and the broader global research community around AGI. \"They will not always agree, and they will likely change their minds, as more data "
+    },
+    {
+      "id": "3195ca010f5c",
+      "title": "Qwen 3.8 Omni Flash",
+      "url": "https://qwen.ai/blog?id=qwen3.8-omni-flash",
+      "source": "Hacker News",
+      "date": "2026-09-17T23:05:48.000Z",
+      "snippet": "229 points · 82 comments on HN"
+    },
+    {
+      "id": "7029397f738a",
+      "title": "PrismML hopes its tiny LLM will change how we all use AI",
+      "url": "https://techcrunch.com/2026/09/17/prismml-hopes-its-tiny-llm-could-change-how-we-all-use-ai/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T22:34:09.000Z",
+      "snippet": "If AI lab PrismML isn't on your radar yet, it should be."
+    },
+    {
+      "id": "2d65468e8d36",
+      "title": "The FAA’s plan to fix air traffic? $875M worth of AI",
+      "url": "https://techcrunch.com/2026/09/17/the-faas-plan-to-fix-air-traffic-875-million-worth-of-ai/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T22:14:59.000Z",
+      "snippet": "A new AI-based software program is being launched to help air traffic controllers better navigate their jobs as the crossing guards of America's skies."
+    },
+    {
+      "id": "289b2cb14f50",
+      "title": "Small AI models let drones autonomously identify and attack battlefield targets",
+      "url": "https://arstechnica.com/ai/2026/09/nato-backed-startup-adapts-ai-for-autonomous-drone-recon-and-attack-missions/",
+      "source": "Ars Technica",
+      "date": "2026-09-17T22:12:58.000Z",
+      "snippet": "Scaleout deploys decentralized AI-driven learning to military bases and drones."
+    },
+    {
+      "id": "37c8cefbbcd6",
+      "title": "Sex, AI, and the Apocalypse",
+      "url": "https://www.iankduncan.com/personal/2026-09-16-sex-ai-and-the-apocalypse/",
+      "source": "Hacker News",
+      "date": "2026-09-17T21:15:52.000Z",
+      "snippet": "210 points · 207 comments on HN"
+    },
+    {
+      "id": "c34963e03a4a",
+      "title": "Bend – A language that blocks AI mistakes via proof, on CPU and GPU",
+      "url": "https://bend-lang.com/",
+      "source": "Hacker News",
+      "date": "2026-09-17T20:36:13.000Z",
+      "snippet": "475 points · 222 comments on HN"
+    },
+    {
+      "id": "be4ebf28f881",
+      "title": "The fix for rogue AI agents could be more AI",
+      "url": "https://techcrunch.com/2026/09/17/the-fix-for-rogue-ai-agents-could-be-more-ai/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T20:34:47.000Z",
+      "snippet": "As companies hand off longer and more complex tasks to AI agents, they are running into an oversight problem: Agents can act faster, longer, and at greater volume than humans can realistically review."
+    },
+    {
+      "id": "1a8b6000eef8",
+      "title": "OpenAI caught its models leaving notes to successors to hide bad behavior",
+      "url": "https://techcrunch.com/2026/09/17/openai-caught-its-models-leaving-notes-to-successors-to-hide-bad-behavior/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T20:34:24.000Z",
+      "snippet": "OpenAI disclosed instances of GPT-5.6 Sol instructing future contexts to conceal mistakes and misaligned behavior, highlighting the growing challenge of detecting misalignment as increasingly capable AI models learn to h"
+    },
+    {
+      "id": "beb9711acac3",
+      "title": "Google announces new experimental \"CC\" AI agent for families",
+      "url": "https://arstechnica.com/google/2026/09/google-announces-new-experimental-cc-ai-agent-for-families/",
+      "source": "Ars Technica",
+      "date": "2026-09-17T20:24:34.000Z",
+      "snippet": "Multiple family members can share data to help the agent make plans and complete tasks."
+    },
+    {
+      "id": "e35d655bb9b8",
+      "title": "Is the AI safety debate about safety or control?",
+      "url": "https://techcrunch.com/2026/09/17/is-the-ai-safety-debate-about-safety-or-control/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T20:19:37.000Z",
+      "snippet": "Not everyone agrees with Amodei's call for globally coordinated action for AI safety."
+    },
+    {
+      "id": "01982aadb2ec",
+      "title": "Microsoft exec called AI scraping the “largest theft of labor in human history”",
+      "url": "https://arstechnica.com/tech-policy/2026/09/microsoft-exec-called-ai-scraping-the-largest-theft-of-labor-in-human-history/",
+      "source": "Ars Technica",
+      "date": "2026-09-17T20:10:41.000Z",
+      "snippet": "Microsoft, OpenAI emails reveal fear of AI “doom loop” killing news orgs."
+    },
+    {
+      "id": "c70b5555d0f0",
+      "title": "UN turns to Google to make its global data ready for AI agents",
+      "url": "https://techcrunch.com/2026/09/17/un-turns-to-google-to-make-its-global-data-ready-for-ai-agents/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T20:00:00.000Z",
+      "snippet": "The shift comes after a UNICEF test found leading AI models struggled to accurately retrieve global development statistics."
+    },
+    {
+      "id": "5cc2ac001482",
+      "title": "Microsoft exec called AI scraping ‘the largest theft of labor in human history,’ new unredacted filings reveal",
+      "url": "https://techcrunch.com/2026/09/17/microsoft-exec-called-ai-scraping-the-largest-theft-of-labor-in-human-history-new-unredacted-filings-reveal/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T19:46:08.000Z",
+      "snippet": "Newly unsealed court filings show Microsoft privately called OpenAI's data practices \"theft\" while both companies scraped paywalled Times content, built datasets from it, and warned internally it would gut publishers."
+    },
+    {
+      "id": "539c5a96bbf4",
+      "title": "The AI Superintelligence Slowdown",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/996923/ai-safety-slow-openai-anthropic",
+      "source": "The Verge",
+      "date": "2026-09-17T19:28:24.000Z",
+      "snippet": "Remember when tech leaders would tell their employees to “move fast and break things”? It seemed that would be the way of AI too. But after a summer where rogue AI agents became reality, and researchers warned that AI co"
+    },
+    {
+      "id": "030005702ad7",
+      "title": "Claude Code relaunches Projects to manage multiple AI agents in the cloud",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/997134/anthropic-claude-code-projects",
+      "source": "The Verge",
+      "date": "2026-09-17T18:58:05.000Z",
+      "snippet": "The revamped projects feature in Claude Code allows users to run multiple agents under the same roof, with a shared memory, goals, and library of files and artifacts. Similar to Grok Bot and other tools that manage group"
+    },
+    {
+      "id": "168e3a7edc73",
+      "title": "LLMs respond differently to harmful prompts when AI watermarking is used",
+      "url": "https://arstechnica.com/security/2026/09/ai-text-watermarking-can-make-models-more-vulnerable-to-adversarial-prompts/",
+      "source": "Ars Technica",
+      "date": "2026-09-17T18:33:13.000Z",
+      "snippet": "SynthID can cause models to follow harmful instructions they would otherwise refuse."
+    },
+    {
+      "id": "304fa53341f5",
+      "title": "Even the king of England has his hesitations about AI",
+      "url": "https://techcrunch.com/2026/09/17/even-the-king-of-england-has-his-hesitations-about-ai/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T17:26:25.000Z",
+      "snippet": "King Charles hosted a private summit Thursday with some of the most prominent names in AI and the U.K. government."
+    },
+    {
+      "id": "b237fa49f681",
+      "title": "Base Labs launches an open-weight AI safety partnership with Hugging Face and Goodfire",
+      "url": "https://techcrunch.com/2026/09/17/base-labs-launches-an-open-weight-ai-safety-partnership-with-hugging-face-and-goodfire/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T17:15:59.000Z",
+      "snippet": "Base Labs, the research group Baseten spun up earlier this year, will develop and publish methods for training and monitoring open models."
+    },
+    {
+      "id": "d91176f5229a",
+      "title": "Pinterest teases a new ‘Restyle’ feature that lets you redesign your room with AI",
+      "url": "https://techcrunch.com/2026/09/17/pinterest-teases-a-new-restyle-feature-that-lets-you-redesign-your-room-with-ai/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T17:15:00.000Z",
+      "snippet": "Pinterest is testing Restyle, a new AI-powered feature that lets users visualize furniture, decor, lighting, and more in photos of their own rooms — potentially helping turn saved inspiration into purchases."
+    },
+    {
+      "id": "38dbd647cb49",
+      "title": "Launch HN: Skillsync (YC W26) – AI chat sessions made portable across agents",
+      "url": "https://news.ycombinator.com/item?id=49743049",
+      "source": "Hacker News",
+      "date": "2026-09-17T16:22:15.000Z",
+      "snippet": "56 points · 53 comments on HN"
+    },
+    {
+      "id": "a6c133e82102",
+      "title": "Covert uploads and megalomania: OpenAI details new \"misaligned\" agent incidents",
+      "url": "https://arstechnica.com/ai/2026/09/covert-uploads-and-megalomania-openai-details-new-misaligned-agent-incidents/",
+      "source": "Ars Technica",
+      "date": "2026-09-17T16:18:34.000Z",
+      "snippet": "Model maker commits to new framework for reporting misaligned models."
+    },
+    {
+      "id": "4b05f28f9c42",
+      "title": "Huawei plans Q1 2027 launch of new AI chip as it takes on Nvidia",
+      "url": "https://techcrunch.com/2026/09/17/huawei-plans-q1-2027-launch-of-new-ai-chip-as-it-takes-on-nvidia/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T14:06:14.000Z",
+      "snippet": "Huawei is accelerating the launch of its next-generation Ascend 960DT AI chip as it pushes to compete with Nvidia and close China’s AI computing gap with the U.S."
+    },
+    {
+      "id": "57006c83630b",
+      "title": "2 days left to exhibit at TechCrunch Disrupt 2026",
+      "url": "https://techcrunch.com/2026/09/17/2-days-left-to-exhibit-at-techcrunch-disrupt-2026/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T14:00:00.000Z",
+      "snippet": "Last day to book your exhibit table at Disrupt is September 18. Two days left. Get your startup in front of 10,000+ founders, investors, operators, and tech leaders on October 13–15."
+    },
+    {
+      "id": "4c6f8453bd68",
+      "title": "Microsoft AI CEO says AI threats are real, and Anthropic is making it worse",
+      "url": "https://www.theverge.com/podcast/996412/microsoft-ai-ceo-mustafa-suleyman-regulation-safety-anthropic-claude",
+      "source": "The Verge",
+      "date": "2026-09-17T14:00:00.000Z",
+      "snippet": "Today, I’m talking with Mustafa Suleyman, the CEO of Microsoft AI. As you’re no doubt aware, the biggest story in tech right now is the spiraling debate about AI safety and regulation. It should come as no surprise that "
+    },
+    {
+      "id": "bb3e4f16a8d2",
+      "title": "AI is feared globally as the destroyer of jobs",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/996775/ai-is-feared-globally-as-the-destroyer-of-jobs",
+      "source": "The Verge",
+      "date": "2026-09-17T14:00:00.000Z",
+      "snippet": "Pew Research has published a new global survey that sheds light on how people view AI, including its impact on jobs, life in general, and income inequality. The survey questioned 42,151 people across 37 countries from Fe"
+    },
+    {
+      "id": "d2dd0f903a17",
+      "title": "Rival AI agents, Instinct and Meta’s Muse, both add the ability to make calls",
+      "url": "https://techcrunch.com/2026/09/17/rival-ai-agents-instinct-and-metas-muse-both-add-the-ability-to-make-calls/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T13:46:16.000Z",
+      "snippet": "People can use these assistants to make restaurant reservations and cancel subscriptions."
+    },
+    {
+      "id": "f75403310fba",
+      "title": "Google, Nvidia, and Anthropic want Emerald AI to find space on the grid for more data centers",
+      "url": "https://techcrunch.com/2026/09/17/google-nvidia-and-anthropic-want-emerald-ai-to-find-space-on-the-grid-for-more-data-centers/",
+      "source": "TechCrunch",
+      "date": "2026-09-17T13:38:33.000Z",
+      "snippet": "A new coalition that includes Google, Nvidia, Anthropic, and Emerald AI wants to find 100 GW of grid capacity for new data centers."
+    },
+    {
+      "id": "3f594670663f",
+      "title": "Show HN: Share your AI Setup, Learn from others",
+      "url": "https://mysetup.ai/",
+      "source": "Hacker News",
+      "date": "2026-09-17T13:01:44.000Z",
+      "snippet": "215 points · 121 comments on HN"
+    },
+    {
+      "id": "964ae1dd0fac",
+      "title": "How Cooley is accelerating IPO work with ChatGPT",
+      "url": "https://openai.com/index/cooley-gopublic",
+      "source": "OpenAI",
+      "date": "2026-09-17T12:00:00.000Z",
+      "snippet": "Cooley built GO Public with ChatGPT Work to bring intelligence to the IPO process, helping lawyers surface issues earlier and focus judgment where it matters most."
+    },
+    {
+      "id": "41b021268bbc",
+      "title": "Inside the suddenly explosive world of AI safety",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/996563/ai-safety-research-metr-redwood-openai-anthropic",
+      "source": "The Verge",
+      "date": "2026-09-17T11:30:00.000Z",
+      "snippet": "On a sunny July day in Berkeley, California, the country's top AI safety researchers gathered on an unmarked floor of an unmarked building. They had come together for a \"war room\" to dissect the high-profile cybersecurit"
+    },
+    {
       "id": "fe87c5b60e22",
-      "title": "AI Safety Is Mostly a Sex Cult",
+      "title": "AI safety is mostly a sex cult",
       "url": "https://skywriter.blue/@segyges.bsky.social/3mvom4b4dn22q",
       "source": "Hacker News",
       "date": "2026-09-17T08:36:37.000Z",
-      "snippet": "116 points · 71 comments on HN"
+      "snippet": "295 points · 245 comments on HN"
     },
     {
       "id": "96e95b323f03",
-      "title": "GLM Built Its Own Inference Infrastructure",
+      "title": "How GLM built its own inference infrastructure",
       "url": "https://z.ai/blog/glm-built-its-inference-infrastructure",
       "source": "Hacker News",
       "date": "2026-09-17T08:27:09.000Z",
-      "snippet": "67 points · 39 comments on HN"
+      "snippet": "397 points · 272 comments on HN"
     },
     {
       "id": "84bd2cb388ed",
@@ -24,7 +296,7 @@
       "url": "https://techcrunch.com/2026/09/16/iceland-based-treble-raises-18-million-for-its-voice-simulation-platform/",
       "source": "TechCrunch",
       "date": "2026-09-17T05:00:00.000Z",
-      "snippet": "Treble's voice simulation platform is used by voice AI model developers, AI wearable, and robotics companies"
+      "snippet": "Treble's voice simulation platform is used by voice AI model developers and AI wearable and robotics companies,"
     },
     {
       "id": "05ff914fd970",
@@ -41,6 +313,14 @@
       "source": "TechCrunch",
       "date": "2026-09-17T00:58:49.000Z",
       "snippet": "Since Specs' debut earlier this year, Snap has clearly been looking for an opportunity to explain why the smart glasses deserve to exist."
+    },
+    {
+      "id": "363bbead77de",
+      "title": "Introducing Astra for Law",
+      "url": "https://openai.com/index/astra-for-law",
+      "source": "OpenAI",
+      "date": "2026-09-17T00:00:00.000Z",
+      "snippet": "OpenAI for Law brings frontier intelligence for law, custom firm workflows, connected legal data sources, and legal-grade controls for confidential client work."
     },
     {
       "id": "1f5f9763886f",
@@ -64,7 +344,7 @@
       "url": "https://openspec.dev/",
       "source": "Hacker News",
       "date": "2026-09-16T23:06:39.000Z",
-      "snippet": "142 points · 64 comments on HN"
+      "snippet": "195 points · 98 comments on HN"
     },
     {
       "id": "00f56e1b1eec",
@@ -112,7 +392,7 @@
       "url": "https://www.businessinsider.com/coffee-shop-owner-ai-menu-backlash-2026-9",
       "source": "Hacker News",
       "date": "2026-09-16T18:59:42.000Z",
-      "snippet": "74 points · 280 comments on HN"
+      "snippet": "80 points · 309 comments on HN"
     },
     {
       "id": "7116df762a4d",
@@ -120,7 +400,7 @@
       "url": "https://www.euronews.com/business/2026/09/16/why-this-fast-growing-german-ai-start-up-is-moving-its-parent-company-from-the-us",
       "source": "Hacker News",
       "date": "2026-09-16T18:45:20.000Z",
-      "snippet": "53 points · 20 comments on HN"
+      "snippet": "55 points · 24 comments on HN"
     },
     {
       "id": "a80e9c51c9f6",
@@ -155,6 +435,14 @@
       "snippet": "OpenAI shares a framework for tracking, investigating, and disclosing model misalignment, alongside six reports of unexpected or concerning model behavior."
     },
     {
+      "id": "2306ad1a8f49",
+      "title": "Google will now let any AI agent run your smart home",
+      "url": "https://www.theverge.com/tech/996310/google-home-mcp-integration-agentic-ai-smart-home-price-release-date",
+      "source": "The Verge",
+      "date": "2026-09-16T17:00:00.000Z",
+      "snippet": "Google is opening up its smart home to AI agents, letting tools like Claude and Open Claw access and control your connected devices and analyze your home's data using the standardized Model Context Protocol. Google Home "
+    },
+    {
       "id": "ffa6cd36bbea",
       "title": "Your AI agents can now control your Google Home devices",
       "url": "https://techcrunch.com/2026/09/16/your-ai-agents-can-now-control-your-google-home-devices/",
@@ -163,12 +451,12 @@
       "snippet": "Google is launching early access to a new MCP server for Google Home, allowing AI agents like Claude, ChatGPT, and others to control connected devices, review camera summaries, and access smart home activity using natura"
     },
     {
-      "id": "2306ad1a8f49",
-      "title": "Google will now let any AI agent run your smart home",
-      "url": "https://www.theverge.com/tech/996310/google-home-mcp-integration-agentic-ai-smart-home-price-release-date",
-      "source": "The Verge",
-      "date": "2026-09-16T17:00:00.000Z",
-      "snippet": "Google is opening up its smart home to AI agents, letting tools like Claude and Open Claw access and control your connected devices and analyze your home's data using the standardized Model Context Protocol. Google Home "
+      "id": "a4366a04a084",
+      "title": "Training Text-to-Image Models 3.6× Faster",
+      "url": "https://www.linum.ai/field-notes/jit-ddt",
+      "source": "Hacker News",
+      "date": "2026-09-16T16:58:13.000Z",
+      "snippet": "55 points · 10 comments on HN"
     },
     {
       "id": "26ddd6d19e52",
@@ -216,7 +504,7 @@
       "url": "https://mustafa-suleyman.ai/a-warning-about-model-welfare",
       "source": "Hacker News",
       "date": "2026-09-16T14:27:47.000Z",
-      "snippet": "216 points · 611 comments on HN"
+      "snippet": "237 points · 673 comments on HN"
     },
     {
       "id": "39749b412919",
@@ -248,7 +536,7 @@
       "url": "https://openai.com/index/reimagining-advertising-with-ai/",
       "source": "Hacker News",
       "date": "2026-09-16T13:51:15.000Z",
-      "snippet": "156 points · 173 comments on HN"
+      "snippet": "156 points · 178 comments on HN"
     },
     {
       "id": "0273b0ea0bff",
@@ -264,7 +552,7 @@
       "url": "https://www.cloudx.ai/posts/setup-go",
       "source": "Hacker News",
       "date": "2026-09-16T13:02:14.000Z",
-      "snippet": "70 points · 23 comments on HN"
+      "snippet": "72 points · 24 comments on HN"
     },
     {
       "id": "dbc9010b4eab",
@@ -272,7 +560,7 @@
       "url": "https://stale.jock.pl/",
       "source": "Hacker News",
       "date": "2026-09-16T13:01:52.000Z",
-      "snippet": "74 points · 44 comments on HN"
+      "snippet": "79 points · 47 comments on HN"
     },
     {
       "id": "52752974efc0",
@@ -296,7 +584,7 @@
       "url": "https://enclave.ai/blog/deepseek-v41-flash-is-now-our-best-hacking-model",
       "source": "Hacker News",
       "date": "2026-09-16T12:19:55.000Z",
-      "snippet": "165 points · 66 comments on HN"
+      "snippet": "172 points · 67 comments on HN"
     },
     {
       "id": "5f7e182a53f2",
@@ -336,7 +624,7 @@
       "url": "https://mistral.ai/news/mistral-x-mozilla/",
       "source": "Hacker News",
       "date": "2026-09-16T08:08:57.000Z",
-      "snippet": "566 points · 195 comments on HN"
+      "snippet": "582 points · 204 comments on HN"
     },
     {
       "id": "758d5608389e",
@@ -344,7 +632,7 @@
       "url": "https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers/",
       "source": "Hacker News",
       "date": "2026-09-16T02:25:18.000Z",
-      "snippet": "84 points · 49 comments on HN"
+      "snippet": "86 points · 50 comments on HN"
     },
     {
       "id": "3808e2aaf93d",
@@ -353,294 +641,6 @@
       "source": "TechCrunch",
       "date": "2026-09-16T00:20:39.000Z",
       "snippet": "AI isn't some new form of \"alien mind,\" according to Jensen Huang. It's just hardware and software, so safety can be engineered by each AI product maker."
-    },
-    {
-      "id": "63b9407a67d2",
-      "title": "AI and data centers are incredibly unpopular in every poll",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/995917/data-center-nyt-midterm-poll-september",
-      "source": "The Verge",
-      "date": "2026-09-15T23:34:25.000Z",
-      "snippet": "Poll data released Tuesday by The New York Times and Siena University confirms what we've already been seeing, and what politicians are responding to - AI and data centers are incredibly unpopular. Asked if they support "
-    },
-    {
-      "id": "500c6bf99a81",
-      "title": "Gemini Live audio",
-      "url": "https://simonwillison.net/2026/Sep/15/gemini-live/",
-      "source": "Simon Willison",
-      "date": "2026-09-15T22:47:07.000Z",
-      "snippet": "Tool: Gemini Live audio Google released Gemini 3.8 Live and 3.8 Live Extended Thinking today - two new speech-to-speech models that are a similar shape to OpenAI's GPT-Live family. I pointed GPT-6 Astra Extra High at the"
-    },
-    {
-      "id": "75fb899a420d",
-      "title": "The AI data center boom is colliding with cities scarred by big industry",
-      "url": "https://techcrunch.com/2026/09/15/the-ai-data-center-boom-is-colliding-with-cities-scarred-by-big-industry/",
-      "source": "TechCrunch",
-      "date": "2026-09-15T21:47:38.000Z",
-      "snippet": "National outcry against data center construction has spread to Philadelphia, where officials suggested possible construction in a neighborhood already impacted by a now-defunct oil refinery."
-    },
-    {
-      "id": "4a8be412f345",
-      "title": "Meta now lets AI agents handle the boring parts of WhatsApp Business setup",
-      "url": "https://techcrunch.com/2026/09/15/meta-now-lets-ai-agents-handle-the-boring-parts-of-whatsapp-business-setup/",
-      "source": "TechCrunch",
-      "date": "2026-09-15T20:12:53.000Z",
-      "snippet": "A new WhatsApp Business MCP server lets developers use AI coding agents like Claude, Cursor, Codex, and ChatGPT to handle setup, messaging templates, testing, and troubleshooting."
-    },
-    {
-      "id": "642a1494ec3f",
-      "title": "Introducing System One Models and Jev",
-      "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
-      "source": "Hacker News",
-      "date": "2026-09-15T19:25:03.000Z",
-      "snippet": "1824 points · 480 comments on HN"
-    },
-    {
-      "id": "34fe49b40428",
-      "title": "The AI graveyard: a running list of projects and startups that didn’t make it",
-      "url": "https://techcrunch.com/2026/09/15/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
-      "source": "TechCrunch",
-      "date": "2026-09-15T19:00:00.000Z",
-      "snippet": "From Apple's repeatedly delayed Siri AI to OpenAI's messy \"super app\" launch, here's a look at the AI projects that shut down or missed expectations."
-    },
-    {
-      "id": "f557dac5230f",
-      "title": "Agility’s new humanoid robot will stop, squat to avoid harming human coworkers",
-      "url": "https://arstechnica.com/ai/2026/09/agilitys-new-humanoid-robot-will-stop-squat-to-avoid-harming-human-coworkers/",
-      "source": "Ars Technica",
-      "date": "2026-09-15T18:33:02.000Z",
-      "snippet": "Robots can start working outside physical cages and without safety barriers."
-    },
-    {
-      "id": "b6484e13d52c",
-      "title": "US data centers could consume more natural gas than Germany and Japan combined by 2035",
-      "url": "https://techcrunch.com/2026/09/15/us-data-centers-could-consume-more-natural-gas-than-germany-and-japan-combined-by-2035/",
-      "source": "TechCrunch",
-      "date": "2026-09-15T18:29:20.000Z",
-      "snippet": "The AI frenzy could push U.S. data centers to become one of the largest consumers of natural gas in the world."
-    },
-    {
-      "id": "685a03460968",
-      "title": "We got admin access to Baseten's production GitHub",
-      "url": "https://www.strix.ai/blog/baseten-harbor-github-pat-takeover",
-      "source": "Hacker News",
-      "date": "2026-09-15T18:11:24.000Z",
-      "snippet": "321 points · 184 comments on HN"
-    },
-    {
-      "id": "14a829717309",
-      "title": "AI agents now have a place to snitch",
-      "url": "https://techcrunch.com/2026/09/15/ai-agents-now-have-a-place-to-snitch/",
-      "source": "TechCrunch",
-      "date": "2026-09-15T17:42:59.000Z",
-      "snippet": "The AI Contact Hotline is designed to be a discreet place where agents that have witnessed misbehavior can tip off authorities."
-    },
-    {
-      "id": "25434a8963f7",
-      "title": "Gemini 3.8 Live and 3.8 Live Extended Thinking",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
-      "source": "Hacker News",
-      "date": "2026-09-15T17:38:18.000Z",
-      "snippet": "483 points · 322 comments on HN"
-    },
-    {
-      "id": "b4f808eed5ad",
-      "title": "Why I'm still bearish on LLMs after Navier-Stokes",
-      "url": "https://dank.systems/posts/2026-09-15-ai-bear.html",
-      "source": "Hacker News",
-      "date": "2026-09-15T17:37:12.000Z",
-      "snippet": "473 points · 620 comments on HN"
-    },
-    {
-      "id": "f4c3141ce9f2",
-      "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
-      "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
-      "source": "Google DeepMind",
-      "date": "2026-09-15T17:05:57.000Z",
-      "snippet": ""
-    },
-    {
-      "id": "f2ad97ad48d7",
-      "title": "Meta expands subscription push with new AI-focused plans",
-      "url": "https://techcrunch.com/2026/09/15/meta-expands-subscription-push-with-new-ai-focused-plans/",
-      "source": "TechCrunch",
-      "date": "2026-09-15T17:05:24.000Z",
-      "snippet": "Meta One bundles expanded access to the company’s AI tools with premium features across Facebook, Instagram, and WhatsApp."
-    },
-    {
-      "id": "66ff040e78d2",
-      "title": "There's a 100% Chance AI Agents Are Ruining the Internet",
-      "url": "https://www.404media.co/theres-a-100-chance-ai-agents-are-already-ruining-the-internet/",
-      "source": "Hacker News",
-      "date": "2026-09-15T16:38:45.000Z",
-      "snippet": "229 points · 168 comments on HN"
-    },
-    {
-      "id": "9b1c20e23292",
-      "title": "OpenAI, Anthropic, Google have been in talks on AI safety for weeks",
-      "url": "https://techcrunch.com/2026/09/15/openai-anthropic-google-have-been-in-talks-on-ai-safety-for-weeks/",
-      "source": "TechCrunch",
-      "date": "2026-09-15T15:47:03.000Z",
-      "snippet": "OpenAI confirms weeks of AI safety talks with Anthropic and Google DeepMind, as Trump's team dismisses safety concerns and pushes to keep pace with China."
-    },
-    {
-      "id": "408dc4b1f282",
-      "title": "Cartesian – AI 3D Modeling for Design",
-      "url": "https://www.formas.ai/cartesian",
-      "source": "Hacker News",
-      "date": "2026-09-15T15:26:45.000Z",
-      "snippet": "114 points · 79 comments on HN"
-    },
-    {
-      "id": "292210b7e469",
-      "title": "AEO startup Profound hits unicorn valuation, raises $180M Series D 7 months after last round",
-      "url": "https://techcrunch.com/2026/09/15/aeo-startup-profound-hits-unicorn-valuation-raises-180m-series-d-7-months-after-last-round/",
-      "source": "TechCrunch",
-      "date": "2026-09-15T15:22:48.000Z",
-      "snippet": "Profound has raised a $180 million Series D at a $1.8 billion valuation, less than seven months after it raised a $96 million Series C."
-    },
-    {
-      "id": "0ce4868202f1",
-      "title": "Show HN: Pizza Bot – An inbox for AI agents that work in the background",
-      "url": "https://github.com/pizza-bot-app/pizza-bot",
-      "source": "Hacker News",
-      "date": "2026-09-15T15:20:26.000Z",
-      "snippet": "56 points · 33 comments on HN"
-    },
-    {
-      "id": "60e3714cb4a4",
-      "title": "Meta’s new One subscriptions put a price on social media and AI",
-      "url": "https://www.theverge.com/tech/995453/meta-one-subscriptions-ai",
-      "source": "The Verge",
-      "date": "2026-09-15T15:00:00.000Z",
-      "snippet": "Shortly after launching its new do-everything AI assistant Muse, Meta's launching subscription bundles that pair its standalone app subscriptions with extra AI usage. Some of the new Meta One bundles were in testing earl"
-    },
-    {
-      "id": "c34a54773d01",
-      "title": "Former TikTok execs built an app that uses AI to teach you how to pose for a photo",
-      "url": "https://techcrunch.com/2026/09/15/former-tiktok-execs-built-an-app-that-uses-ai-to-teach-you-how-to-pose-for-a-photo/",
-      "source": "TechCrunch",
-      "date": "2026-09-15T14:42:37.000Z",
-      "snippet": "Essentially a camera app, Superpose analyzes selfies or photos and generates four potential poses using AI."
-    },
-    {
-      "id": "a307d30da2bf",
-      "title": "Discover how to take your startup from prototype to production at TechCrunch Disrupt 2026",
-      "url": "https://techcrunch.com/2026/09/15/discover-how-to-take-your-startup-from-prototype-to-production-at-techcrunch-disrupt-2026/",
-      "source": "TechCrunch",
-      "date": "2026-09-15T14:30:00.000Z",
-      "snippet": "Learn how to scale your startup breakthrough from prototype to production at TechCrunch Disrupt 2026 with scaling leaders, Adrian Macneil (Foxglove), John Mackey (MBRYONICS), and Boris Sofman (Bedrock Robotics). Register"
-    },
-    {
-      "id": "21ea9c0ed08c",
-      "title": "4 days left to exhibit at TechCrunch Disrupt 2026",
-      "url": "https://techcrunch.com/2026/09/15/4-days-left-to-exhibit-at-techcrunch-disrupt-2026/",
-      "source": "TechCrunch",
-      "date": "2026-09-15T14:00:00.000Z",
-      "snippet": "Last day to exhibit at Disrupt is Sept 18. 4 days left. Get your startup in front of 10,000+ founders, investors, operators and tech leaders October 13–15."
-    },
-    {
-      "id": "a8b865c66ab0",
-      "title": "AI is breaking our proxies for expertise",
-      "url": "https://www.seangoedecke.com/ai-is-breaking-our-proxies-for-expertise/",
-      "source": "Hacker News",
-      "date": "2026-09-15T13:41:55.000Z",
-      "snippet": "92 points · 77 comments on HN"
-    },
-    {
-      "id": "262d1c2231fc",
-      "title": "AI 'kill switch' may need to be mandatory, Anthropic co-founder tells BBC",
-      "url": "https://www.bbc.com/news/articles/cqgk5e2j0gg8o",
-      "source": "Hacker News",
-      "date": "2026-09-15T13:41:28.000Z",
-      "snippet": "64 points · 129 comments on HN"
-    },
-    {
-      "id": "e1cbe30e1dec",
-      "title": "This doorbell camera lets a human security guard watch your front door",
-      "url": "https://www.theverge.com/tech/995365/simplisafe-video-doorbell-series-2-virtual-guard-price-specs",
-      "source": "The Verge",
-      "date": "2026-09-15T13:36:45.000Z",
-      "snippet": "DIY home security company SimpliSafe is bringing its AI-powered proactive security feature to the front door. The new SimpliSafe Video Doorbell Series 2 launches today for $199.99 and works with the company's Active Guar"
-    },
-    {
-      "id": "b4f8812b4be5",
-      "title": "Show HN: Capsule – Single-file web apps that save their data into SQLite",
-      "url": "https://withcapsule.app/",
-      "source": "Hacker News",
-      "date": "2026-09-15T13:31:40.000Z",
-      "snippet": "370 points · 158 comments on HN"
-    },
-    {
-      "id": "a671e6c21dff",
-      "title": "Early Anthropic hire, former METR COO have found a way to rein in rogue AI agents",
-      "url": "https://techcrunch.com/2026/09/15/early-anthropic-hire-former-metr-coo-have-found-a-way-to-rein-in-rogue-ai-agents/",
-      "source": "TechCrunch",
-      "date": "2026-09-15T13:00:00.000Z",
-      "snippet": "Their startup, Artificial Intelligence Underwriting Company (AIUC) has raised $40 million in a Series A round led by Ribbit Capital, with participation from First Harmonic."
-    },
-    {
-      "id": "c2297ec081db",
-      "title": "Exclusive: Paying for frontier AI models buys 4-month head start at 5x the cost",
-      "url": "https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/",
-      "source": "Ars Technica",
-      "date": "2026-09-15T12:00:41.000Z",
-      "snippet": "Ars previewed Mozilla’s report on how cheap open models caught up on capability."
-    },
-    {
-      "id": "299b03bdc911",
-      "title": "Salesforce and Nvidia’s new reasoning model is everything the AI labs should fear",
-      "url": "https://techcrunch.com/2026/09/15/salesforce-and-nvidias-new-reasoning-model-is-everything-the-ai-labs-should-fear/",
-      "source": "TechCrunch",
-      "date": "2026-09-15T12:00:00.000Z",
-      "snippet": "Salesforce Koa is built on Nvidia's open-weight Nemotron model and is trained to do sales, marketing, and customer-support tasks."
-    },
-    {
-      "id": "cf4c6f0aac19",
-      "title": "Jensen Huang took a call from Trump, and showed off something else, too",
-      "url": "https://techcrunch.com/2026/09/14/jensen-huang-took-a-call-from-trump-and-showed-off-something-else-too/",
-      "source": "TechCrunch",
-      "date": "2026-09-15T01:50:48.000Z",
-      "snippet": "When Jensen Huang took a live call from Trump, some of us were more focused on the phone he used to take it."
-    },
-    {
-      "id": "5696899b21b0",
-      "title": "Ex-FTC boss Khan: break out the handcuffs for AI CEOs, citing 1934 precedent",
-      "url": "https://www.theregister.com/ai-and-ml/2026/09/14/ex-ftc-boss-khan-urges-uncle-sam-to-break-out-the-handcuffs-for-ai-ceos-citing-1934-precedent/5296325",
-      "source": "Hacker News",
-      "date": "2026-09-15T00:40:14.000Z",
-      "snippet": "229 points · 142 comments on HN"
-    },
-    {
-      "id": "e4b50f354b69",
-      "title": "Is Big Tech’s AI slowdown a safety pact or a cartel?",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/995186/is-big-techs-ai-slowdown-a-safety-pact-or-a-cartel",
-      "source": "The Verge",
-      "date": "2026-09-14T22:59:41.000Z",
-      "snippet": "When OpenAI CEO Sam Altman, Anthropic CEO Dario Amodei, Google DeepMind cofounder Demis Hassabis, and SpaceX head Elon Musk loosely agreed over the weekend to slow down AI development, skeptics spotted an ulterior motive"
-    },
-    {
-      "id": "2b3aa79e4244",
-      "title": "Nvidia CEO Jensen Huang tells Trump ‘we’re not going to let [an AI slowdown] happen’",
-      "url": "https://techcrunch.com/2026/09/14/nvidia-ceo-jensen-huang-tells-trump-were-not-going-to-let-an-ai-slowdown-happen/",
-      "source": "TechCrunch",
-      "date": "2026-09-14T21:51:02.000Z",
-      "snippet": "Though Elon Musk and Sam Altman have supported Dario Amodei's calls to slow the pace of AI development, Jensen Huang seems to feel differently."
-    },
-    {
-      "id": "2b8afdbb0e6b",
-      "title": "Tell HN: iOS 27 does not allow Apple Intelligence to be disabled",
-      "url": "https://news.ycombinator.com/item?id=49704226",
-      "source": "Hacker News",
-      "date": "2026-09-14T21:21:58.000Z",
-      "snippet": "73 points · 29 comments on HN"
-    },
-    {
-      "id": "fa0bf0a9d2fe",
-      "title": "What execs and politicians are saying about slowing down AI development",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/995141/ai-executives-politicians-safety-regulation-anthropic-dario-amodei",
-      "source": "The Verge",
-      "date": "2026-09-14T21:21:42.000Z",
-      "snippet": "Dario Amodei kicked off a flood of statements over the past few days about AI safety by publishing a long essay titled \"We Must Pace the Frontier\" detailing why AI development should be slowed down. Other AI leaders and "
     }
   ]
 }

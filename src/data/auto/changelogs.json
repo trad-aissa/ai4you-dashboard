@@ -1,6 +1,49 @@
 {
-  "updated": "2026-09-17T10:57:09.179Z",
+  "updated": "2026-09-18T10:33:54.972Z",
   "claude-code": [
+    {
+      "version": "2.1.276",
+      "date": null,
+      "bullets": [
+        "Fixed every request failing with <code>400 … Input tag 'advisor_20260301'</code> when <code>ANTHROPIC_BASE_URL</code> points at a proxy or gateway (2.1.275 regression)"
+      ]
+    },
+    {
+      "version": "2.1.275",
+      "date": null,
+      "bullets": [
+        "Added the signed-in account to Claude apps gateway sign-in: when the gateway names it, you confirm it before the credential is saved, and <code>/status</code> shows it",
+        "Added a send-now key (ctrl+enter, or ctrl+x ctrl+s) that interrupts the current turn and sends all queued messages at once; sent and queued messages show in gray until the model receives them",
+        "Added a startup warning when a configured <code>otelHeadersHelper</code> fails, so sessions that silently export no telemetry are noticed",
+        "Added syncing of the skills and plugins enabled on your claude.ai account to terminal sessions signed in with it; opt out with <code>syncClaudeAiSkills: false</code> or <code>syncClaudeAiPlugins: false</code>",
+        "Added <code>/plugin install --marketplace </code>, which offers to add the marketplace before installing the plugin",
+        "Fixed a restored memory file's age note changing between requests after a compaction or resume, which caused prompt cache misses",
+        "Fixed <code>--forward-subagent-text</code> stream-json and SDK output dropping the messages of subagents spawned by a <code>context: fork</code> skill, and of forked skills invoked by a subagent or another forked skill",
+        "Fixed @-mention file suggestions being buried below MCP resources when using a custom <code>fileSuggestion</code> command or typing <code>@.</code>/<code>@./</code>",
+        "Fixed fullscreen mode placing background-task completion notices beneath a long turn's collapsed tool row instead of where they arrived; each notice now closes the open row",
+        "Fixed <code>claude plugin marketplace update</code> deleting a GitHub marketplace's local copy when the fetch failed and the marketplace was named after its repository",
+        "Fixed plugin and marketplace messages, logs and <code>claude plugin marketplace list</code> showing a password or token stored in a git, ssh or marketplace URL",
+        "Fixed a resumed cloud session leaving an unanswered question open in the transcript after a queued message superseded it",
+        "Fixed vim mode placing the cursor one character right after a dot-repeated &quot;!&quot; or a fast-typed &quot;i!&quot; switched a non-empty prompt into shell mode",
+        "Fixed fullscreen mode freezing or blanking for several seconds when scrolling up past a large file diff",
+        "Fixed a stray ``-style closing tag occasionally appearing in responses",
+        "Fixed plugin messages, logs and the VS Code plugin dialog showing the wrong server for some git addresses",
+        "Fixed a terminal <code>API Error: 400</code> on every turn for users behind a network gateway that rewrites API error responses when a beta request header is rejected",
+        "Fixed sandboxed Bash commands on Linux reporting exit code 0 for failed commands when the shell is zsh",
+        "Fixed the Read tool hanging instead of reporting an error when part of a large file could not be decoded under memory pressure",
+        "Fixed <code>--resume</code>, the resume picker preview, resumed background agents and the transcript view failing on a session whose saved history contains a malformed task-reminder or @-file attachment entry",
+        "Fixed a crash when resuming a conversation whose transcript contains a malformed message entry, and a fullscreen crash when such a conversation received new messages while scrolled up",
+        "Fixed sessions failing to resume or start when their saved transcript contains a malformed message content block",
+        "Fixed Grep, Glob and @-file suggestions hanging or running out of memory on searches over the 20MB output cap, and system ripgrep reporting &quot;no matches&quot; instead of an error after a flood of warnings",
+        "Fixed <code>/rewind</code> in a forked or background session restoring a zero-filled or truncated file when the session's file-history backups could not be fully copied",
+        "Fixed fullscreen sessions sometimes exiting with &quot;Claude Code exited after an unrecoverable interface error&quot; when typing fast or holding a key with the slash-command dropdown open",
+        "Fixed background sessions crashing and restarting their worker when a command fed through stdin ran on a machine that had run out of file descriptors",
+        "Fixed a crash at launch when <code>~/.claude.json</code> holds a malformed <code>mcpNeedsAuthNoticed</code> value",
+        "Fixed <code>--resume</code> and <code>--continue</code> dropping a conversation's earlier thinking when a built-in tool it started with has since been switched off by a server-side flag",
+        "Fixed text selected with the mouse in the fullscreen <code>claude --resume</code> session picker never reaching the clipboard",
+        "Fixed plugin reload previews replacing a running session's extracted plugin files when the plugin was loaded from a <code>--plugin-dir</code> or <code>--plugin-url</code> archive"
+      ]
+    },
     {
       "version": "2.1.274",
       "date": null,
@@ -600,52 +643,51 @@
       "bullets": [
         "Fixed a crash on startup on Linux distributions that ship glibc 2.44 (for example Arch Linux, CachyOS and Fedora Rawhide)"
       ]
-    },
-    {
-      "version": "2.1.243",
-      "date": null,
-      "bullets": [
-        "Added a Loops breakdown to <code>/usage</code>: per-loop run count, total tokens, tokens per run, and last run, so runaway or chatty <code>/loop</code> tasks are easy to spot",
-        "Added <code>modelPicker</code> setting: curate the <code>/model</code> picker with an ordered, labeled list of models (any id spelling, including Vertex/Bedrock ids), appended to or replacing the built-in lineup",
-        "Added <code>promptCacheTtl</code> and <code>subagentPromptCacheTtl</code> settings so API-key and cloud-provider users can keep a 1-hour prompt cache on the main conversation while subagents stay at 5 minutes",
-        "Added <code>modelPricing</code> managed setting so an organization's contracted per-model rates and discount multiplier are used for <code>/cost</code>, the status line, and telemetry cost figures instead of list price",
-        "Added a keyless sign-in under <code>/login</code> → Anthropic Console: &quot;Sign in with your Console account&quot; (recommended) alongside creating an API key, so organizations that don't allow API keys can sign in",
-        "Added a <code>Skipped sources</code> line to <code>/status</code> that lists managed settings sources (for example <code>managed-settings.json</code>) present but not applied because a higher-precedence managed source is active",
-        "Added a <code>managed</code> marker in <code>/mcp</code> and <code>/plugins</code> on claude.ai connectors whose authentication is managed by your organization",
-        "Added a tip pointing claude.ai users who haven't connected GitHub for Claude Code on the web to <code>/web-setup</code>",
-        "Added a <code>/status</code> line showing whether GitHub is connected for Claude Code on the web (Pro/Max), pointing to <code>/web-setup</code> when it isn't",
-        "Added the model (and effort level) each subagent ran on to <code>/tasks</code> and the agent detail dialogs",
-        "Fixed remote MCP servers in non-interactive (<code>-p</code>) and SDK sessions never recovering after a dropped connection; they now reconnect automatically or report as failed",
-        "Fixed MCP server sign-in started from the desktop app failing with &quot;Invalid redirect URI&quot; on servers that support client ID metadata documents (for example Linear)",
-        "Fixed auto mode staying unavailable at startup when a temporary server-side disable was cached and later flag fetches failed",
-        "Fixed auto mode tool calls being denied as &quot;temporarily unavailable&quot; after about a minute of waiting when the API was briefly overloaded and asked the client to retry",
-        "Fixed the <code>/model</code> picker silently ignoring an Ultracode selection; picking Ultracode now applies it to the current session",
-        "Fixed <code>/resume</code> only listing the 50 most recent sessions; the picker now loads more as you scroll",
-        "Fixed cloud sessions resuming after a mid-turn restart with a pending hook or background-task notification re-sent as the prompt instead of the normal continuation message",
-        "Fixed cross-session messaging silently turning off inside user namespaces and rootless containers after the 2.1.232 socket-directory hardening",
-        "Fixed text that hangs outside its container (for example the sign-in URL in <code>/login</code>) losing its leading columns when another part of the screen repaints",
-        "Fixed <code>spellcheck</code> not underlining a misspelled word typed directly after an emoji",
-        "Fixed background subagents not waking when their last background Bash task completes",
-        "Fixed sessions going silent for 10+ minutes when the Anthropic API never starts a response: the request now times out after ~3 minutes, retries once, then shows <code>API Error: No response from API</code>",
-        "Fixed auth, model-availability, and other client-generated error messages rendering like model output instead of as error lines",
-        "Fixed workload identity federation in CI: processes in one job share the exchanged token instead of re-exchanging the single-use token; a rejected exchange fails fast with the server's message",
-        "Fixed server-managed <code>companyAnnouncements</code> not showing at startup in a session that began with signing in (for example the first launch after <code>/logout</code>)",
-        "Fixed hook <code>if</code> conditions like <code>Bash(cat *)</code> firing on unrelated Bash commands when the command contained <code>$()</code> or backtick command substitution followed by more arguments",
-        "Fixed plugin dependencies declared with a <code>marketplace</code> field never resolving when both plugins are loaded together via <code>--plugin-dir</code>",
-        "Fixed <code>/reload-plugins</code> keeping the LSP tool after the last LSP plugin is disabled; it now also warns before an LSP plugin change that would re-read the conversation",
-        "Fixed <code>--agents</code> silently ignoring invalid JSON or invalid agent definitions; it now exits with a clear error, like <code>--mcp-config</code>",
-        "Fixed <code>/status</code> showing &quot;Found invalid entries in: .&quot; with no filename when <code>~/.claude.json</code> has an invalid MCP server entry"
-      ]
-    },
-    {
-      "version": "2.1.241",
-      "date": null,
-      "bullets": [
-        "Bug fixes and reliability improvements"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.156.0-alpha.2",
+      "date": "2026-09-18T04:56:20.000Z",
+      "bullets": [
+        "Release 0.156.0-alpha.2"
+      ]
+    },
+    {
+      "version": "0.155.0-alpha.9.2",
+      "date": "2026-09-18T03:09:42.000Z",
+      "bullets": [
+        "Release 0.155.0-alpha.9.2"
+      ]
+    },
+    {
+      "version": "0.155.0",
+      "date": "2026-09-17T23:14:43.000Z",
+      "bullets": [
+        "- Added experimental <code>/voice</code> conversations with live transcripts and microphone controls on supported builds, enabled through <code>/experimental</code>. (#43581, #43651, #44331) - The TUI now shows live reasoning summaries in the status row and completion timestamps after successful turns. (#43558, #43921) - Added task hiding, archiving, and deletion in the agents overview, plus worktree ownership details and confirmed deletion of clean managed worktrees. (#43942, #44424, #44433) - Added Touch ID verification for MCP requests in local TUI sessions on supported Macs. (#43624, #43712, #43715) - Added configurable daemon update schedules and <code>codex app-server daemon update</code>; saved threads and active goals can recover after daemon restarts. (#43542, #43562, #44314) - Amazon Bedrock can now obtain AWS credentials from configured commands, with caching, expiration-based refresh, and authentication recovery. (#44028) - Accepted prompts are now saved even when compaction fails before a turn starts. (#44487) - Fixed missed tmux resizes, transcript viewport restoration, and stale history appearing after switching threads. (#43603, #43889, #43994) - MCP servers now report expired OAuth credentials accurately and provide reconnect guidance when token refresh fails. (#43947, #44359) - Automatic approval reviews now preserve complete actions and authorization evidence more reliably, retry transient failures, and distinguish review failures from unsafe-action findings. (#44482, #44569, #44570) - Switching accounts now invalidates remote-control sessions, cached WebSocket state, and model catalogs belonging to the previous identity. (#43906, #44341, #44489) - Blocked Windows-process escapes from restricted WSL sandboxes and hardened brokered shell snapshots against credential exposure. (#44286, #43909, #44040) - Aligned Python SDK and runtime publishing with stable CLI releases, using matching versions and verifying runtime assets before SDK publication. (#44067) Full Changelog: https://github.com/openai/codex/compare/rust-v0.154.0...rust-v0.155.0 - #43521 Preserve standalone release pins during daemon updates @copyberry - #43524 Restrict MCP user verification and add workspace-scoped identity @copyberry - #43527 Discount an approval's own code-mode wrapper from Guardian score lag @copyberry - #43529 Ensure the standalone updater runs on managed daemon starts @copyberry - #43533 Fix jemalloc tools and compiler flags for Bazel musl builds @copyberry - #43534 Preserve Guardian context sections and share planned-action rendering @copyberry - #43538 Move Guardian permission context into the shared section registry @copyberry - #43540 Preserve the multi-agent version when forking at a turn cutoff @copyberry - #43542 Make app-server daemon automatic updates configurable @copyberry - #43545 Preserve fork runtime versions without loading full model context @copyberry - #43547 Add user-verification provider abstractions and RPC adapters @copyberry - #43552 Record the launched app-server executable identity in PID files @copyberry - #43558 Show completion timestamps after successful TUI turns @copyberry - #43562 Add an explicit app-server daemon update command @copyberry - #43568 Wire app-server user verification RPCs to the native provider @copyberry - #43570 Manage synchronous Guardian reviewers through the thread manager @copyberry - #43572 Make the managed app-server shutdown grace period configurable @copyberry - #43576 Group adjacent computer actions in the TUI @copyberry - #43581 Add live WebRTC voice conversations to the TUI @copyberry - #43584 Remove a stale transcript field assignment from the TUI @copyberry - #43595 Centralize bounded Guardian review evidence in guardian-context @copyberry - #43597 Move trusted tool metadata into shared Guardian context @copyberry - #43599 Move trusted skill evidence into the Guardian context registry @copyberry - #43601 Move Guardian image selection into shared context sections @copyberry - #43602 Move Guardian REPL evidence rendering into the shared context registry @copyberry - #43603 Recover missed tmux resize notifications in the TUI @copyberry - #43604 Exclude base instructions from the bundled model catalog @copyberry - #43619 Add a stable TUI/app-server version comparison helper @copyberry - #43621 Add worktree classification to thread telemetry @copyberry - #43622 Warn when the connected Codex service is older than the CLI @copyberry - #43624 Add macOS user verification with Secure Enclave signing @copyberry - #43645 Expand TUI regression coverage for realtime voice conversations @copyberry - #43651 Add voice mute shortcut and recording activity indicators @copyberry - #43656 Animate live voice transcripts with split-flap tiles @copyberry - #43676 Style spoken prompts and link workspace files in voice transcripts @copyberry - #43683 Move voice controls into a dedicated composer strip @copyberry - #43690 Make the voice mute shortcut configurable in the TUI @copyberry - #43695 Stabilize realtime voice meter sampling across redraws @copyberry - #43698 Make older app-server notices configurable in the TUI @copyberry - #43699 Preserve split-flap animation state when voice transcripts scroll @copyberry - #43702 Add a TUI user verification prompt component @copyberry - #43704 Disable clock synchronization in the voice audio sink @copyberry - #43708 Add TUI request bookkeeping for user verification @copyberry - #43712 Enable MCP user verification in the TUI @copyberry - #43715 Enable user verification for the bundled TUI on supported devices @copyberry - #43790 Limit app-server storage metrics to session directories @copyberry - #43795 Pin request reasoning effort while configuration overrides are active @copyberry - #43796 Preserve reasoning effort through compaction and reset it on success @copyberry - #43797 Add configurable memory versions with isolated storage @copyberry - #43798 Batch non-user history eviction to preserve Guardian transcript deltas @copyberry - #43799 Prioritize human evidence in memory v2 extraction @copyberry - #43800 Add summary-only extraction for memory v2 @copyberry - #43805 Centralize Guardian context composition @copyberry - #43806 Centralize Guardian transcript policy in context profiles @copyberry - #43808 Move v2 extraction chunking into the memory writer @copyberry - #43813 Add dedicated memory v2 consolidation and read prompts @copyberry - #43827 Add memory dual writing and v2 readiness reporting @copyberry - #43842 Wait for parent idle before rollback in guardian fork tests @copyberry - #43844 Add staged enterprise OIDC login and coordinated logout @copyberry - #43846 Include completed commentary in the <code>/copy</code> picker @copyberry - #43848 Preserve runtime workspace roots across thread resume @copyberry - #43853 Add canonical permission translation for MXC execution requests @copyberry - #43870 Close MCP stderr readers on client teardown @copyberry - #43873 Handle undefined values before JSON serialization in code mode @copyberry - #43876 Detach Unix hook commands from the controlling terminal @copyberry - #43884 Close active network proxy connections on teardown @copyberry - #43889 Fix transcript viewer restoration and half-page scrolling @copyberry - #43894 Preserve thread identity in code-mode tool dispatch traces @copyberry - #43895 Preserve <code>__oailb</code> routing cookies in ChatGPT HTTP clients @copyberry - #43897 Persist provider and auth identity with model catalog caches @copyberry - #43900 Propagate Apps tool refreshes to existing threads @copyberry - #43903 Extract Windows deny-read glob scan planning into protocol @copyberry - #43906 Scope model catalog caches to the current provider and auth identity @copyberry - #43907 Preserve complete shell snapshot exports through filtering and replay @copyberry - #43909 Protect shell snapshots when credential brokerage is enabled @copyberry - #43912 Keep Guardian reviewers on summary-based compaction @copyberry - #43913 Add tracing for project instructions and filesystem sandbox operations @copyberry - #43915 Remove the repository devcontainer configurations @copyberry - #43918 Expose the queued event count on <code>CodexThread</code> @copyberry - #43921 Show streaming reasoning summaries in the TUI status row @copyberry - #43925 Add cancellation for native user-verification RPCs @copyberry - #43927 Rename thread artifacts to attachments in the state database @copyberry - #43930 Avoid Windows sandbox setup for irrelevant proxy port changes @copyberry - #43934 Track voice session lifecycle metrics in the TUI @copyberry - #43936 Stabilize subagent and unified exec test fixtures @copyberry - #43937 Tag TUI startup metrics with terminal and multiplexer categories @copyberry - #43939 Add executor-context filesystem permission helpers @copyberry - #43942 Show worktree owner details and add confirmed deletion @copyberry - #43943 Gate new turn submissions on host shutdown admission @copyberry - #43947 Surface MCP reconnect signals when expired OAuth tokens cannot refresh @copyberry - #43948 Show configured app-server updater settings in doctor @copyberry - #43949 Add transactional thread attachment mutations to the state runtime @copyberry - #43950 Keep app-server thread RPCs active until delegated work completes @copyberry - #43953 Preserve per-image generation IDs in image generation analytics @copyberry - #43954 Cache protected shell snapshots and harden capture cleanup @copyberry - #43956 Increase the TUI thread capability test stack to 12 MiB @copyberry - #43959 Gate new app-server work during graceful shutdown @copyberry - #43961 Use curly apostrophes in protocol error messages @copyberry - #43966 Heap-allocate the resume future in the legacy history test @copyberry - #43983 Bundle signed voice resources in macOS releases @copyberry - #43994 Clear stale transcript history when switching threads @copyberry - #44002 Encapsulate executed tool call metadata recording @copyberry - #44025 Refresh workspace lockfile before building macOS voice releases @copyberry - #44027 Support image attachments in agents overview background tasks @copyberry - #44028 Add AWS credential export commands for Amazon Bedrock @copyberry - #44032 Generate Python SDK types from repository app-server schemas @copyberry - #44038 Handle copied credentials in the broker and shell snapshots @copyberry - #44040 Harden credential handling in shell snapshots and replay @copyberry - #44043 Use <code>StartThreadOptions</code> across thread fork APIs @copyberry - #44049 Extract credential broker environment and registry helpers @copyberry - #44053 Test Python SDK against the built CLI and installed runtime @copyberry - #44055 Gate Python SDK publishing on runtime availability and verify PyPI files @copyberry - #44056 Add configurable credential providers to the network proxy @copyberry - #44060 Raise Guardian's action review limit to 200,000 bytes @copyberry - #44061 Build Python SDK artifacts before publishing the runtime @copyberry - #44062 Fix voice runtime release builds and packaging @copyberry - #44066 Extend configured credential brokerage to embedded aliases @copyberry - #44067 Publish Python packages after stable CLI releases @copyberry - #44068 Preserve credential broker destinations across environment filtering @copyberry - #44070 Reject empty audio payloads in data URLs @copyberry - #44072 Support configured credential providers across shell snapshots @copyberry - #44077 Refactor credential-broker tunnel protocol detection @copyberry - #44080 Make staged macOS voice runtimes writable before packaging @copyberry - #44084 Expose Python SDK history selection and per-turn options @copyberry - #44086 Add untrusted external messages to the Python SDK @copyberry - #44089 Support credential brokering in plaintext HTTP tunnels @copyberry - #44101 Handle empty voice arguments in macOS release packaging @copyberry - #44121 Reuse MCP bindings while cached servers remain dormant @copyberry - #44138 Coordinate rollout compression with active thread writers @copyberry - #44164 Add Guardian context cost and request token telemetry @copyberry - #44166 Add aggregate budget enforcement for Guardian context @copyberry - #44175 Attach compressed rollouts to diagnostic reports as JSONL @copyberry - #44176 Reduce TUI stack usage during session transitions @copyberry - #44181 Use explicit histogram buckets for Guardian context metrics @copyberry - #44183 Release persistent writers when session startup is cancelled @copyberry - #44198 Preserve voice indicator styles during composer sparkle effects @copyberry - #44200 Use captured step settings when building model context @copyberry - #44202 Use captured step model settings for extension context @copyberry - #44207 Measure total exec-server request duration including queueing @copyberry - #44226 Continue rollout searches when a compressed rollout cannot be searched @copyberry - #44227 Extract Guardian review policy into a dedicated crate @copyberry - #44238 Fix MCP elicitation cancellation and reset state on reconnect @copyberry - #44241 Handle credential provider source remapping across config layers @copyberry - #44242 Use captured step settings for tool planning and execution @copyberry - #44243 Use the originating model when recording conversation history @copyberry - #44248 Preserve tool output truncation budgets across resume and fork @copyberry - #44249 Normalize image detail for the receiving model @copyberry - #44250 Remove retired model entries while preserving migration prompts @copyberry - #44252 Move synchronous Guardian orchestration into the reviewer extension @copyberry - #44255 Always use streamed remote compaction for supported providers @copyberry - #44259 Remove the Windows <code>/sandbox-add-read-dir</code> slash command @copyberry - #44273 Remove the unused legacy remote compaction implementation @copyberry - #44276 Avoid duplicate reasoning effort updates during turn recovery @copyberry - #44277 Surface environment startup failure reasons to the model @copyberry - #44281 Enforce complete request budgets for Guardian reviews @copyberry - #44283 Persist loaded threads before managed daemon shutdown @copyberry - #44284 Add telemetry for the Windows system config namespace @copyberry - #44285 Preserve prewarmed reasoning effort across replay and early rollback @copyberry - #44286 Block WSL interop escapes from restricted filesystem sandboxes @copyberry - #44288 Prevent command hooks from hanging on blocked stdin @copyberry - #44289 Expand MXC volume grants and resolve deny globs @copyberry - #44290 Allow user-requested goal pauses through <code>update_goal</code> @copyberry - #44293 Enforce the async Guardian classifier's complete input budget @copyberry - #44297 Isolate the hook pipe I/O timeout test from shell startup files @copyberry - #44298 Set turn triggers for guardian and memory requests @copyberry - #44299 Record thread recovery candidates on managed daemon shutdown @copyberry - #44307 Add opt-in provisioned macOS CLI release candidates @copyberry - #44311 Honor shared Retry-After deadlines for remote control @copyberry - #44314 Restore saved threads when the managed daemon restarts @copyberry - #44318 Give hosted Codex Apps an independent MCP protocol opt-in @copyberry - #44320 Block goals after three empty automatic continuation turns @copyberry - #44325 Return the prompt hash in upload responses @copyberry - #44327 Prevent filesystem-root read denies in the Windows sandbox @copyberry - #44328 Clear pending TUI questions when accepting a new prompt @copyberry - #44330 Add paginated thread attachment listing to the state runtime @copyberry - #44331 Expose voice conversations in experimental features @copyberry - #44332 Persist disabled plugin IDs in thread settings @copyberry - #44336 Add bounded tool-result metadata support to executed tool calls @copyberry - #44337 Return to the agent command center after archiving on shared servers @copyberry - #44341 Bind remote-control sessions to their authentication owner @copyberry - #44344 Open tasks with Right from the agents overview @copyberry - #44346 Support native verification in MCP tool continuations @copyberry - #44349 Distinguish forked sessions in session-start hooks @copyberry - #44350 Add thread attachment operations with coordinated deletion @copyberry - #44352 Remove path-bearing fields from Guardian review analytics @copyberry - #44354 Extract shared footer hint wrapping in the TUI @copyberry - #44359 Report OAuth authentication failures in MCP status snapshots @copyberry - #44360 Return focus to the agents overview composer on Escape @copyberry - #44377 Update the forked-thread hook test to use <code>StartThreadOptions</code> @copyberry - #44392 Add opt-in model discovery for OpenAI API keys @copyberry - #44400 Start Python SDK turn subscriptions at their attachment point @copyberry - #44424 Add a hide shortcut to the agents overview @copyberry - #44433 Add archive and delete actions to the agents overview @copyberry - #44472 Harden Code Mode tool-call completeness tracking @copyberry - #44482 Improve Guardian retries and review failure reporting @copyberry - #44487 Preserve incoming prompts when pre-turn compaction fails @copyberry - #44489 Reset cached WebSocket state when auth ownership changes @copyberry - #44492 Distinguish HTTP quota errors from rate limits @copyberry - #44493 Bound MCP descriptions separately from Guardian action JSON @copyberry - #44521 Decouple session isolation from subagent attribution @copyberry - #44523 Bound app-server stdio shutdown and handle Unix SIGTERM gracefully @copyberry - #44536 Move Guardian reviewer settings and execution into the reviewer crate @copyberry - #44544 Move Guardian reporting and denial accounting into the extension @copyberry - #44548 Add MIME-filtered resource listing for Codex Apps @copyberry - #44564 Add app-server APIs for stored thread attachments @copyberry - #44569 Preserve complete actions in Guardian approval reviews @copyberry - #44570 Preserve Guardian authorization evidence until request budgeting @copyberry - #44571 Allow extensions to select MCP protocol mode per HTTP server @copyberry - #44574 Use captured action settings for Guardian reviews @copyberry - #44575 Tie network approval reviews to their originating execution @copyberry - #44580 Support symbolic <code>:root</code> filesystem policies in MXC @copyberry - #44586 Remove <code>repo_url</code> from skill invocation analytics events @copyberry"
+      ]
+    },
+    {
+      "version": "0.156.0-alpha.1",
+      "date": "2026-09-18T00:23:01.000Z",
+      "bullets": [
+        "Release 0.156.0-alpha.1"
+      ]
+    },
+    {
+      "version": "0.155.0-alpha.18",
+      "date": "2026-09-17T22:37:07.000Z",
+      "bullets": [
+        "Release 0.155.0-alpha.18"
+      ]
+    },
+    {
+      "version": "0.155.0-alpha.17",
+      "date": "2026-09-17T21:16:29.000Z",
+      "bullets": [
+        "Release 0.155.0-alpha.17"
+      ]
+    },
     {
       "version": "0.155.0-alpha.16",
       "date": "2026-09-17T04:34:06.000Z",
@@ -740,48 +782,6 @@
       "date": "2026-09-15T02:00:26.000Z",
       "bullets": [
         "Release 0.155.0-alpha.6"
-      ]
-    },
-    {
-      "version": "0.155.0-alpha.5",
-      "date": "2026-09-15T00:31:51.000Z",
-      "bullets": [
-        "Release 0.155.0-alpha.5"
-      ]
-    },
-    {
-      "version": "0.155.0-alpha.4",
-      "date": "2026-09-14T11:48:08.000Z",
-      "bullets": [
-        "Release 0.155.0-alpha.4"
-      ]
-    },
-    {
-      "version": "0.155.0-alpha.2.4",
-      "date": "2026-09-14T23:04:27.000Z",
-      "bullets": [
-        "Release 0.155.0-alpha.2.4"
-      ]
-    },
-    {
-      "version": "0.155.0-alpha.3.9",
-      "date": "2026-09-11T11:51:30.000Z",
-      "bullets": [
-        "Release 0.155.0-alpha.3.9"
-      ]
-    },
-    {
-      "version": "0.155.0-alpha.3.8",
-      "date": "2026-09-11T09:18:04.000Z",
-      "bullets": [
-        "Release 0.155.0-alpha.3.8"
-      ]
-    },
-    {
-      "version": "0.155.0-alpha.3.7",
-      "date": "2026-09-11T07:58:14.000Z",
-      "bullets": [
-        "Release 0.155.0-alpha.3.7"
       ]
     }
   ]
