@@ -1,6 +1,50 @@
 {
-  "updated": "2026-09-18T10:33:54.972Z",
+  "updated": "2026-09-19T10:17:54.547Z",
   "claude-code": [
+    {
+      "version": "2.1.278",
+      "date": null,
+      "bullets": [
+        "Changed auto mode for Claude API and Enterprise users, and on Bedrock, Vertex, Foundry and gateways, to default to the server-side classifier, which does not charge for classifier overhead (<code>CLAUDE_CODE_AUTO_MODE_SERVER=0</code> opts out on Bedrock, Vertex, Foundry and gateways); warns on billed fallback. See https://code.claude.com/docs/en/auto-mode-classifier-billing",
+        "Added an <code>Auto mode server</code> row to <code>/status</code> showing whether this session's auto mode classifier runs on the server"
+      ]
+    },
+    {
+      "version": "2.1.277",
+      "date": null,
+      "bullets": [
+        "Added AGENTS.md support: in a project with no CLAUDE.md, Claude Code reads AGENTS.md instead; change it under &quot;Project instructions&quot; in <code>/config</code> (not yet on Bedrock, Vertex or Foundry)",
+        "Added <code>CLAUDE_GATEWAY_PROXY_IS_EGRESS_BOUNDARY=1</code> for Claude apps gateways whose only egress is a forward proxy: every outbound request hands the proxy the hostname instead of resolving it locally",
+        "Added an optional <code>headers:</code> map on Claude apps gateway upstreams, to send static headers to a proxy you run in front of a provider",
+        "Added a line saying a background task's update is waiting when it finishes while a panel such as <code>/tasks</code> is open",
+        "Fixed <code>claude -p</code> and Agent SDK sessions that could hang with no result after an internal error; they now report the error and exit with code 1",
+        "Fixed conversations failing every request with &quot;text content blocks must be non-empty&quot; when an earlier assistant turn held an empty text block beside other content, including after <code>--resume</code>",
+        "Fixed being unexpectedly logged out when an older Claude Code build (for example an IDE extension's bundled CLI) runs on the same machine as the current one",
+        "Fixed interactive start-up hanging or showing an error for <code>ANTHROPIC_API_KEY</code> users when <code>~/.claude.json</code> holds a malformed <code>customApiKeyResponses</code> value",
+        "Fixed update checks erroring every 30 minutes, and <code>claude update</code> hanging when a minimum or maximum version is set, if a proxy returns an invalid version; a malformed <code>minimumVersion</code> is now ignored",
+        "Fixed <code>claude update</code> on winget- or apk-managed installs reporting &quot;up to date&quot; when the version lookup failed",
+        "Fixed <code>claude plugin install</code> sometimes failing and breaking the installed copy when reinstalling a plugin version that a session or another program was using; an unchanged copy is now left alone",
+        "Fixed Grep and Glob reporting no matches when the search could not start because the system was out of processes, memory or file handles; they now return an error saying so",
+        "Fixed the Write tool silently ending the turn as a declined permission when the target path is an existing directory; it now reports a clear error",
+        "Fixed the Edit tool treating an escaped backslash followed by <code>uXXXX</code> text as a <code>\\uXXXX</code> escape, which could make an edit of a non-ASCII character rewrite an escaped backslash sequence instead",
+        "Fixed the Edit tool reporting &quot;Invalid regular expression: regular expression too large&quot; instead of &quot;String not found in file&quot; when a very large edit containing non-ASCII text did not match the file",
+        "Fixed a turn ending early with &quot;Path contains null bytes&quot; when a tool call's file path contained <code>\\u0000</code> written as an escape sequence; escaped control characters now stay as literal text",
+        "Fixed background sessions (<code>claude --bg</code>) exiting when a plugin's LSP server exited or closed its stdin",
+        "Fixed a crash (&quot;Type error&quot;) when opening <code>/mcp</code> or <code>/plugin manage</code> with a malformed <code>claudeAiMcpEverConnected</code> value in <code>~/.claude.json</code>",
+        "Fixed a crash at launch when <code>~/.claude.json</code> holds a malformed <code>theme</code> value",
+        "Fixed a crash (&quot;unrecoverable interface error&quot;) when the prompt held text containing terminal color codes, for example a prompt recalled from history or text loaded from the external editor",
+        "Fixed a crash when resuming a session whose saved history holds an assistant message stored as a plain string",
+        "Fixed sessions on slow or heavily loaded machines sometimes exiting with &quot;Claude Code exited after an unrecoverable interface error&quot; when the first spinner appeared",
+        "Fixed a rare case where the screen could stop updating for the rest of the session after an internal rendering error",
+        "Fixed a rare case on Windows where a turn could stop with an error such as &quot;Out of memory&quot; right after Claude replied, so that reply's tool calls never ran",
+        "Fixed sessions continued after <code>/clear</code> (restart, <code>--continue</code>, <code>--resume</code>) missing part of their first message when a SessionStart hook printed output, causing a full prompt-cache miss",
+        "Fixed messages from other agents (such as a subagent's SendMessage) that arrived mid-turn showing up below the &quot;Ran N shell commands&quot; row instead of where they arrived",
+        "Fixed the &quot;copied&quot; notice not appearing after drag-selecting text in the fullscreen <code>/resume</code> picker and other panels that cover the prompt area",
+        "Fixed <code>$TMPDIR</code> expanding empty in Bash commands that run outside the sandbox while sandboxing is enabled",
+        "Fixed WebFetch and WebSearch in Cowork cloud sessions not telling Claude why a request was refused, such as a used-up fetch budget or an admin policy",
+        "Fixed the Claude apps gateway's telemetry relay ignoring a collector hostname or domain listed in <code>NO_PROXY</code> when a proxy is set"
+      ]
+    },
     {
       "version": "2.1.276",
       "date": null,
@@ -600,52 +644,52 @@
         "Changed terminal hyperlinks in rendered markdown: link targets that point at a network or automounter path, contain a control character, or lead with an invisible character now render as plain text",
         "Changed the prompt-footer PR badge to skip its GitHub re-check on terminal refocus when the last check is under a minute old"
       ]
-    },
-    {
-      "version": "2.1.246",
-      "date": null,
-      "bullets": [
-        "Added a startup warning for Bash allow rules with a wildcard before the subcommand (e.g. <code>Bash(git * main)</code>), since they also match options inserted before the subcommand",
-        "Added an Auto mode tab to <code>/permissions</code> for viewing and editing auto mode classifier rules",
-        "Added the turn's completion time to the end-of-turn duration line, e.g. <code>✻ Sautéed for 23s · done 6:05 PM</code>",
-        "Fixed fullscreen mode showing a blank transcript after resizing the terminal and jumping to the bottom until the next keypress",
-        "Fixed a severe transcript slowdown when a diff contained a very long single line (e.g. a base64 string); such lines now render truncated with a marker",
-        "Fixed erratic fullscreen scrolling when positioned at an earlier message, including jump-to-bottom getting stuck mid-transcript",
-        "Fixed background sessions failing to open after 45 seconds when Claude Code's starting directory had been deleted, the machine had slept, or the host is slow to start processes",
-        "Fixed background sessions failing to open with &quot;Couldn't start the background service … EACCES&quot; when another Claude Code process was re-installing the npm package at that moment",
-        "Fixed markdown rendering being disabled for a whole message when its first 500 characters contained no markdown, and for <code>+</code>/<code>N)</code> lists and setext headings",
-        "Fixed MCP tool calls interrupted by an incoming message in headless/remote sessions being reported to the model as &quot;completed with no output&quot; instead of an explicit interrupted error",
-        "Fixed MCP tool arguments being sent as JSON strings when the parameter's schema is empty (<code>{}</code>), instead of their real type",
-        "Fixed a command interrupted mid-run showing as &quot;Ran 1 shell command&quot; with no sign it was cut",
-        "Fixed pressing ← or running <code>/background</code> during a dynamic workflow restarting its finished subagents; it now asks first and says how many subagents would restart",
-        "Fixed opening a just-started session in <code>claude agents</code> while its worker was still booting (common on Windows) stopping it with &quot;was stopped while the respawn was in flight&quot;",
-        "Fixed <code>claude agents</code> listing a backgrounded named session twice; backgrounding the same conversation again now numbers the new row (e.g. <code>my-session (2)</code>)",
-        "Fixed the background retention sweep removing git worktrees under <code>.claude/worktrees/</code> that you created yourself when an old background-session record pointed at them",
-        "Fixed auto mode tool calls being denied as &quot;temporarily unavailable&quot; on very large sessions by scaling the safety-check deadline with prompt size",
-        "Fixed the plugin cache creating duplicate SHA-named directories for the same plugin",
-        "Fixed plugin skills whose frontmatter <code>name</code> already includes the <code>:</code> prefix showing it doubled in the slash menu (e.g. <code>/plugin:plugin:skill</code>)",
-        "Fixed <code>claude plugin update</code> failing for an installed plugin given its bare name (only the fully-qualified name worked)",
-        "Fixed plugin installation failing when <code>plugin.json</code> was saved with a UTF-8 byte-order mark (BOM)",
-        "Fixed <code>/reload-plugins</code> reporting 0 skills for plugins that define skills under <code>skills/*/SKILL.md</code>",
-        "Fixed hook error messages showing a literal <code>${CLAUDE_PLUGIN_ROOT}</code> instead of the resolved plugin path",
-        "Fixed <code>/rename</code> replacing the theme's prompt border color (including a custom theme's <code>promptBorder</code>) with the default cyan; the border now keeps your theme's color unless you pick one with <code>/color</code>",
-        "Fixed custom theme diff colors (<code>diffAdded</code>/<code>diffRemoved</code> and their dimmed variants) being ignored in diffs and the <code>/theme</code> preview",
-        "Fixed a <code>keybindings.json</code> binding with an unknown action name silently deadening that key; it is now skipped so the default binding keeps working, and a warning is logged under <code>--debug</code>",
-        "Fixed <code>/stats</code> activity heatmap showing each day's activity one cell off (Sunday's count under Monday) in timezones east of UTC",
-        "Fixed <code>/fork</code> from an already-forked or backgrounded session starting the new session with an empty conversation",
-        "Fixed prompts beginning with <code>/--</code> (e.g. Lean doc comments) being rejected as an unknown slash command instead of being sent to Claude",
-        "Fixed the <code>@</code> file picker staying open after the typed text stopped matching a real path"
-      ]
-    },
-    {
-      "version": "2.1.245",
-      "date": null,
-      "bullets": [
-        "Fixed a crash on startup on Linux distributions that ship glibc 2.44 (for example Arch Linux, CachyOS and Fedora Rawhide)"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.156.0-alpha.7",
+      "date": "2026-09-19T04:08:15.000Z",
+      "bullets": [
+        "Release 0.156.0-alpha.7"
+      ]
+    },
+    {
+      "version": "0.156.0-alpha.6",
+      "date": "2026-09-19T02:18:41.000Z",
+      "bullets": [
+        "Release 0.156.0-alpha.6"
+      ]
+    },
+    {
+      "version": "0.155.1",
+      "date": "2026-09-18T20:03:04.000Z",
+      "bullets": [
+        "- New local TUI sessions now leave reasoning summaries disabled by default, fixing request rejection by providers that do not support them.",
+        "Explicit reasoning-summary settings remain respected. (#46467) Full Changelog: https://github.com/openai/codex/compare/rust-v0.155.0...rust-v0.155.1 - #46467 Restore none as the TUI reasoning summary default (@celia-oai)"
+      ]
+    },
+    {
+      "version": "0.156.0-alpha.5",
+      "date": "2026-09-19T00:22:35.000Z",
+      "bullets": [
+        "Release 0.156.0-alpha.5"
+      ]
+    },
+    {
+      "version": "0.156.0-alpha.4",
+      "date": "2026-09-18T21:18:45.000Z",
+      "bullets": [
+        "Release 0.156.0-alpha.4"
+      ]
+    },
+    {
+      "version": "0.156.0-alpha.3",
+      "date": "2026-09-18T18:20:37.000Z",
+      "bullets": [
+        "Release 0.156.0-alpha.3"
+      ]
+    },
     {
       "version": "0.156.0-alpha.2",
       "date": "2026-09-18T04:56:20.000Z",
@@ -740,48 +784,6 @@
       "date": "2026-09-16T21:43:35.000Z",
       "bullets": [
         "Release 0.155.0-alpha.13"
-      ]
-    },
-    {
-      "version": "0.155.0-alpha.12",
-      "date": "2026-09-16T18:25:35.000Z",
-      "bullets": [
-        "Release 0.155.0-alpha.12"
-      ]
-    },
-    {
-      "version": "0.155.0-alpha.11",
-      "date": "2026-09-16T17:13:20.000Z",
-      "bullets": [
-        "Release 0.155.0-alpha.11"
-      ]
-    },
-    {
-      "version": "0.155.0-alpha.10",
-      "date": "2026-09-16T04:20:06.000Z",
-      "bullets": [
-        "Release 0.155.0-alpha.10"
-      ]
-    },
-    {
-      "version": "0.155.0-alpha.8",
-      "date": "2026-09-15T22:26:34.000Z",
-      "bullets": [
-        "Release 0.155.0-alpha.8"
-      ]
-    },
-    {
-      "version": "0.155.0-alpha.7",
-      "date": "2026-09-15T21:09:02.000Z",
-      "bullets": [
-        "Release 0.155.0-alpha.7"
-      ]
-    },
-    {
-      "version": "0.155.0-alpha.6",
-      "date": "2026-09-15T02:00:26.000Z",
-      "bullets": [
-        "Release 0.155.0-alpha.6"
       ]
     }
   ]
