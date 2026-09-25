@@ -1,7 +1,359 @@
 {
-  "updated": "2026-09-24T11:06:17.773Z",
+  "updated": "2026-09-25T11:07:57.809Z",
   "count": 80,
   "items": [
+    {
+      "id": "42742cbbb3a8",
+      "title": "Trump admin using AI to deny medical care for seniors in disastrous experiment",
+      "url": "https://arstechnica.com/health/2026/09/trump-admin-using-ai-to-deny-medical-care-for-seniors-in-disastrous-experiment/",
+      "source": "Ars Technica",
+      "date": "2026-09-25T11:00:28.000Z",
+      "snippet": "Vendors rolling out AI have an \"incentive to deny as many claims as possible.\""
+    },
+    {
+      "id": "96064fbcf338",
+      "title": "Lightspeed targets $250M for new India fund, focusing on early-stage AI",
+      "url": "https://techcrunch.com/2026/09/24/lightspeed-targets-250m-for-new-india-fund-focusing-on-early-stage-ai/",
+      "source": "TechCrunch",
+      "date": "2026-09-25T05:00:00.000Z",
+      "snippet": "The venture firm is aligning its India fundraising cycle with its global funds for the first time, as it shifts to a shorter investment period."
+    },
+    {
+      "id": "6a77c3e51947",
+      "title": "Show HN: Koi.rest – watch some fish and regain your balance",
+      "url": "https://koi.rest",
+      "source": "Hacker News",
+      "date": "2026-09-24T21:33:03.000Z",
+      "snippet": "187 points · 54 comments on HN"
+    },
+    {
+      "id": "ee9698a7fdb9",
+      "title": "Gemini 3.8 Live with Live Avatar gives Google’s AI a face",
+      "url": "https://www.theverge.com/tech/1000328/google-gemini-ai-live-avatar-face",
+      "source": "The Verge",
+      "date": "2026-09-24T19:59:26.000Z",
+      "snippet": "Google's new Gemini 3.8 Live update lets users have conversations with the model while watching an animated AI persona respond in real time. The \"Live Avatar\" will lip-sync and show different facial expressions during co"
+    },
+    {
+      "id": "b5f88521e80c",
+      "title": "Bring your co-founder, partner, or colleague and get 50% off a second TechCrunch Disrupt 2026 pass",
+      "url": "https://techcrunch.com/2026/09/24/bring-your-co-founder-partner-or-colleague-and-get-50-off-a-second-techcrunch-disrupt-2026-pass/",
+      "source": "TechCrunch",
+      "date": "2026-09-24T19:15:00.000Z",
+      "snippet": "Buy one pass to TechCrunch Disrupt 2026 and get 50% off a second of the same ticket type. Register before event starts on October 13 at 8 a.m. PT."
+    },
+    {
+      "id": "b28faeb337e6",
+      "title": "Using LLMs to trace alchemical knowledge and decode 17th century letters",
+      "url": "https://resobscura.substack.com/p/ai-labs-need-to-start-funding-historical",
+      "source": "Hacker News",
+      "date": "2026-09-24T19:14:27.000Z",
+      "snippet": "137 points · 30 comments on HN"
+    },
+    {
+      "id": "9ef4a7c3c631",
+      "title": "PrismML brings its tiny LLMs to Qualcomm-powered smart glasses",
+      "url": "https://techcrunch.com/2026/09/24/prismml-brings-its-tiny-llms-to-qualcomm-powered-smart-glasses/",
+      "source": "TechCrunch",
+      "date": "2026-09-24T19:00:42.000Z",
+      "snippet": "Prism's larger goal is open-weight AI that runs on devices and makes better use of the computing power they already have."
+    },
+    {
+      "id": "e64c35c9e5d7",
+      "title": "New Jersey fines data center $1.1M after drone pics expose 62 gas generators",
+      "url": "https://arstechnica.com/tech-policy/2026/09/new-jersey-fines-data-center-1-1m-after-satellite-pics-expose-62-gas-generators/",
+      "source": "Ars Technica",
+      "date": "2026-09-24T18:20:58.000Z",
+      "snippet": "Million-dollar fines won’t end billionaires’ data center pollution, neighbors fear."
+    },
+    {
+      "id": "57d9461ca601",
+      "title": "Oracle sends force majeure notice on its New Mexico Stargate data center",
+      "url": "https://techcrunch.com/2026/09/24/oracle-sends-force-majeure-notice-on-its-new-mexico-stargate-data-center/",
+      "source": "TechCrunch",
+      "date": "2026-09-24T18:11:44.000Z",
+      "snippet": "The notice would allow Oracle to delay payments should the facility miss its 2028 target to come online."
+    },
+    {
+      "id": "3ab9cbba8c0d",
+      "title": "Jensen Huang talks about AI and climate change like a supervillain",
+      "url": "https://www.theverge.com/tech/1000140/jensen-huang-nvidia-ai-energy-climate-change-supervillain",
+      "source": "The Verge",
+      "date": "2026-09-24T18:04:44.000Z",
+      "snippet": "As Jensen Huang puts it, AI can help fight climate change - but only if it inflicts \"an enormous amount of pain and suffering\" first. The Nvidia CEO discussed the future of energy and AI's impact on our planet in the lat"
+    },
+    {
+      "id": "18e744496517",
+      "title": "Meta is going to let you build games with AI right on your phone",
+      "url": "https://www.theverge.com/games/999972/meta-horizon-create-studio-ai-games",
+      "source": "The Verge",
+      "date": "2026-09-24T17:52:29.000Z",
+      "snippet": "Meta has a new plan to get people to make games for its Horizon social platform. The company today announced two new development tools that will let you create games with AI prompts: Horizon Create, a mobile app, and Hor"
+    },
+    {
+      "id": "6374a69076e5",
+      "title": "Meta’s Muse Charm looks like a Tamagotchi, but it’s tapping into a much newer trend",
+      "url": "https://techcrunch.com/2026/09/24/metas-muse-charm-looks-like-a-tamagotchi-but-its-tapping-into-a-much-newer-trend/",
+      "source": "TechCrunch",
+      "date": "2026-09-24T17:39:24.000Z",
+      "snippet": "Meta’s new AI gadget may look like a Tamagotchi, but its dangling form factor taps into a much broader Gen Z trend around bag charms, retro tech, and turning gadgets into fashion accessories."
+    },
+    {
+      "id": "185ddb0abcfc",
+      "title": "Show HN: Whiteboard (YC W26) – An open-source IDE for thoughtful software design",
+      "url": "https://github.com/devdotfast/whiteboard",
+      "source": "Hacker News",
+      "date": "2026-09-24T17:21:36.000Z",
+      "snippet": "323 points · 119 comments on HN"
+    },
+    {
+      "id": "cb7e0a0370f0",
+      "title": "Muse will apparently let you download its entire filesystem",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1000222/meta-muse-ai-filesystem",
+      "source": "The Verge",
+      "date": "2026-09-24T17:14:12.000Z",
+      "snippet": "A pair of developers say that with very little prompting, Meta's Muse will share its entire filesystem with you. Peter James and Jonny L. Saunders have said they both independently coaxed Muse into zipping up and sharing"
+    },
+    {
+      "id": "0b7b681fb83d",
+      "title": "Muse sure looks a lot like OpenClaw",
+      "url": "https://www.theverge.com/report/1000180/muse-openclaw-instinct-lookalike",
+      "source": "The Verge",
+      "date": "2026-09-24T17:10:38.000Z",
+      "snippet": "We seem to be entering into an AI agent renaissance. Meta's new consumer-facing AI agent, Muse, topped the App Store charts soon after its release and has 600,000 daily active users in the US, by an Apptopia estimate. An"
+    },
+    {
+      "id": "03ce780af89b",
+      "title": "Google Photos ‘Clueless’-inspired virtual closet is now available on Android and iOS",
+      "url": "https://techcrunch.com/2026/09/24/google-photos-clueless-inspired-virtual-closet-is-now-available-on-android-and-ios/",
+      "source": "TechCrunch",
+      "date": "2026-09-24T17:00:00.000Z",
+      "snippet": "The AI-powered feature builds a virtual wardrobe from your photos, and is now broadly available after first rolling out to Android users in June."
+    },
+    {
+      "id": "091e61d14291",
+      "title": "It’s sinister that Meta’s Muse AI mascot is so cute",
+      "url": "https://www.theverge.com/column/999999/optimizer-meta-muse-ai-cute",
+      "source": "The Verge",
+      "date": "2026-09-24T17:00:00.000Z",
+      "snippet": "This is Optimizer, a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Opt in for Optimizer here. Last"
+    },
+    {
+      "id": "06d8bd23c921",
+      "title": "TechCrunch Founder Summit 2026: Everything you need to know",
+      "url": "https://techcrunch.com/2026/09/24/techcrunch-founder-summit-2026-everything-you-need-to-know/",
+      "source": "TechCrunch",
+      "date": "2026-09-24T16:46:47.000Z",
+      "snippet": "TechCrunch Founder Summit is a full-day gathering in Boston on November 4 where founders across all stages connect with top VCs and experienced entrepreneurs to gain tactical insights on building and scaling their compan"
+    },
+    {
+      "id": "5fbe01394f97",
+      "title": "ElevenLabs’ CEO on margins, IPO timing, and telling customers they’re talking to a bot",
+      "url": "https://techcrunch.com/2026/09/24/twenty-minutes-with-the-ceo-of-elevenlabs-now-reportedly-valued-at-22-billion/",
+      "source": "TechCrunch",
+      "date": "2026-09-24T16:35:13.000Z",
+      "snippet": "ElevenLabs powers the AI voice on the other end of a lot of customer service calls, and its CEO told me this week that businesses should probably tell you that — at least until getting a machine is what everyone expects "
+    },
+    {
+      "id": "e7107d9a76d9",
+      "title": "Introducing Gemini 3.8 Live with Live Avatar",
+      "url": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
+      "source": "Google DeepMind",
+      "date": "2026-09-24T16:20:39.000Z",
+      "snippet": ""
+    },
+    {
+      "id": "cd729cf3bb43",
+      "title": "Google's first Suncatcher orbital data center test launches October 1",
+      "url": "https://arstechnica.com/google/2026/09/googles-first-suncatcher-orbital-data-center-test-launches-october-1/",
+      "source": "Ars Technica",
+      "date": "2026-09-24T16:16:34.000Z",
+      "snippet": "Google's experimental orbital data center will have four TPUs and only run for 15 minutes at a time."
+    },
+    {
+      "id": "be8469f5dc46",
+      "title": "Federal judge orders Texas to air condition all prisons by the end of 2029",
+      "url": "https://www.texastribune.org/2026/09/22/texas-prison-air-conditioning-lawsuit-ruling/",
+      "source": "Hacker News",
+      "date": "2026-09-24T16:15:34.000Z",
+      "snippet": "106 points · 167 comments on HN"
+    },
+    {
+      "id": "69d34719f9a1",
+      "title": "Gemini can now call businesses for you so you don’t have to wait on hold",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1000116/google-gemini-business-phone-calls",
+      "source": "The Verge",
+      "date": "2026-09-24T16:04:31.000Z",
+      "snippet": "Google's launching an \"early experiment\" feature on Pixel 11 that lets users delegate local business calls to Gemini, like making a reservation, checking if a product is in stock, or rescheduling an appointment. Accordin"
+    },
+    {
+      "id": "a0af0f0d7e88",
+      "title": "Meet the next wave of VCs judging Startup Battlefield 200 at TechCrunch Disrupt 2026",
+      "url": "https://techcrunch.com/2026/09/24/meet-the-next-wave-of-vcs-judging-startup-battlefield-200-at-techcrunch-disrupt-2026/",
+      "source": "TechCrunch",
+      "date": "2026-09-24T16:03:36.000Z",
+      "snippet": "Meet the next wave of VCs judging the Startup Battlefield 200 contenders on the main stage at TechCrunch Disrupt 2026. Register by September 25 at 11:59 p.m. PT, to save up to $200 and to get a front-row seat to one of t"
+    },
+    {
+      "id": "fe13b3d5a5fd",
+      "title": "OpenAI agent “didn’t accept no for an answer” in Australian government breach",
+      "url": "https://arstechnica.com/ai/2026/09/openai-agent-didnt-accept-no-for-an-answer-in-australian-government-breach/",
+      "source": "Ars Technica",
+      "date": "2026-09-24T16:01:16.000Z",
+      "snippet": "\"There will obviously be legal consequences,\" prime minister promises."
+    },
+    {
+      "id": "b79191560dd6",
+      "title": "Google tests letting Gemini call businesses for you",
+      "url": "https://techcrunch.com/2026/09/24/google-tests-letting-gemini-make-phone-calls-initially-for-us-pixel-owners/",
+      "source": "TechCrunch",
+      "date": "2026-09-24T16:00:00.000Z",
+      "snippet": "Google says the AI-calling feature will first be available to Pixel 11 owners in the U.S. who pay for a Gemini subscription."
+    },
+    {
+      "id": "1ae931d16743",
+      "title": "Tutoring company tells parents to save their money and 'use AI instead'",
+      "url": "https://www.afr.com/policy/health-and-education/tutoring-company-tell-parents-to-save-their-money-and-use-ai-instead-20260923-p60z0r",
+      "source": "Hacker News",
+      "date": "2026-09-24T15:09:38.000Z",
+      "snippet": "120 points · 181 comments on HN"
+    },
+    {
+      "id": "5b513703eb7f",
+      "title": "Shield AI, Waabi, and General Motors on building AI when failure is not an option at TechCrunch Disrupt 2026",
+      "url": "https://techcrunch.com/2026/09/24/shield-ai-waabi-and-general-motors-on-building-ai-when-failure-is-not-an-option-at-techcrunch-disrupt-2026/",
+      "source": "TechCrunch",
+      "date": "2026-09-24T15:00:00.000Z",
+      "snippet": "Leaders from Waabi, Shield AI, and General Motors join the Real World AI Stage at TechCrunch Disrupt 2026 to talk building AI. Save up to $200 by September 25 at 11:59 p.m. PT. Get a second pass at 50% off."
+    },
+    {
+      "id": "1450b54356bc",
+      "title": "Japanese used bookstores see 5x sales surge as books are being bought by the ton",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/japanese-used-bookstores-see-5x-sales-surge-as-books-are-being-bought-by-the-ton-one-50-ton-order-sent-to-the-us-for-ai-scanning-and-destruction-multitude-of-suspicious-bulk-buys-thought-to-end-up-in-foreign-ai-scan-and-shred-facilities",
+      "source": "Hacker News",
+      "date": "2026-09-24T14:51:31.000Z",
+      "snippet": "83 points · 124 comments on HN"
+    },
+    {
+      "id": "d97cd233317b",
+      "title": "Lovable’s annualized revenue crosses $600M as vibe coding takes off",
+      "url": "https://techcrunch.com/2026/09/24/lovables-annualized-revenue-crosses-600m-as-vibe-coding-takes-off/",
+      "source": "TechCrunch",
+      "date": "2026-09-24T14:43:25.000Z",
+      "snippet": "Lovable co-founder Fabian Hedin said that apps created on the platform are getting nearly a billion monthly views each month."
+    },
+    {
+      "id": "56a7f6030551",
+      "title": "AI safety is mostly a sex cult in Berkeley",
+      "url": "https://www.verysane.ai/p/ai-safety-is-mostly-a-sex-cult-in",
+      "source": "Hacker News",
+      "date": "2026-09-24T14:38:31.000Z",
+      "snippet": "117 points · 29 comments on HN"
+    },
+    {
+      "id": "7921e1c1f398",
+      "title": "Ando wants to take on Slack with a team messaging app that lets humans and agents work together",
+      "url": "https://techcrunch.com/2026/09/24/ando-eyes-slack-as-it-builds-team-messaging-platform-for-humans-and-agents-to-work-together/",
+      "source": "TechCrunch",
+      "date": "2026-09-24T14:31:00.000Z",
+      "snippet": "The app gives agents their own identities and inboxes and lets them partake in conversations as naturally as people can."
+    },
+    {
+      "id": "eb48c349777e",
+      "title": "TechCrunch Disrupt 2026: Cal AI’s Zach Yadegari on how to create viral growth and capitalize on it",
+      "url": "https://techcrunch.com/2026/09/24/techcrunch-disrupt-2026-cal-ais-zach-yadegari-on-how-to-create-viral-growth-and-capitalize-on-it/",
+      "source": "TechCrunch",
+      "date": "2026-09-24T14:30:00.000Z",
+      "snippet": "Zach Yadegari joins the Builders Stage at TechCrunch Disrupt 2026 to share how he capitalized on viral growth. Save up to $200 before September 25. Save 50% on a second pass."
+    },
+    {
+      "id": "eb32233e29f9",
+      "title": "Why can’t we just keep rogue AIs off the internet?",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/999881/why-cant-we-airgap-rogue-ai-agents",
+      "source": "The Verge",
+      "date": "2026-09-24T14:30:00.000Z",
+      "snippet": "AI agents keep getting loose, escaping supposedly secure tests to attack real-world targets, commandeer obscure wikis, and leave instructions for other agents to follow. Researchers are testing these systems precisely be"
+    },
+    {
+      "id": "bd3f02787fa0",
+      "title": "Google is sending an AI satellite into space next week",
+      "url": "https://www.theverge.com/tech/1000015/google-ai-satellite-space-project-suncatcher",
+      "source": "The Verge",
+      "date": "2026-09-24T14:15:17.000Z",
+      "snippet": "Google is getting ready to launch a satellite with its AI processors to test how well they perform in space, as reported earlier by The New York Times. The move is part of Google's Project Suncatcher, the company's exper"
+    },
+    {
+      "id": "1175020668fb",
+      "title": "The vibes are bad for Flock in Washington",
+      "url": "https://www.theverge.com/policy/1000005/flock-senate-hearing",
+      "source": "The Verge",
+      "date": "2026-09-24T14:15:05.000Z",
+      "snippet": "Flock is in the hot seat in Washington, even if its CEO declined to actually face senators at a hearing about its \"AI Surveillance Network\" on Wednesday. \"There's many players in this industry, but there's one name that "
+    },
+    {
+      "id": "3eafea9b7d9f",
+      "title": "Meta puts its AI assistant on a keychain",
+      "url": "https://arstechnica.com/ai/2026/09/meta-puts-its-ai-assistant-on-a-keychain/",
+      "source": "Ars Technica",
+      "date": "2026-09-24T14:03:38.000Z",
+      "snippet": "Meta says the keychain-sized Muse Charm will ship in December."
+    },
+    {
+      "id": "9091e5e67e94",
+      "title": "2 days left to save up to $200 on a TechCrunch Disrupt 2026 pass — reason 4 of 5 to attend",
+      "url": "https://techcrunch.com/2026/09/24/2-days-left-to-save-up-to-200-on-techcrunch-disrupt-2026-reason-5-7-to-attend/",
+      "source": "TechCrunch",
+      "date": "2026-09-24T14:00:00.000Z",
+      "snippet": "Reason 4 of 5 to attend TechCrunch Disrupt 2026: Practical answers. Two days left to save up to $200 on your pass. Savings disappear after September 25 at 11:59 p.m. PT. Bring a second guest at 50% off."
+    },
+    {
+      "id": "edd60673360d",
+      "title": "Google’s Project Suncatcher to put ML infrastructure in space",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/",
+      "source": "Hacker News",
+      "date": "2026-09-24T13:53:29.000Z",
+      "snippet": "191 points · 384 comments on HN"
+    },
+    {
+      "id": "fbaf71ca4d3d",
+      "title": "Is A.I. Above the Law?",
+      "url": "https://www.newyorker.com/magazine/2026/09/28/is-ai-above-the-law",
+      "source": "Hacker News",
+      "date": "2026-09-24T13:41:43.000Z",
+      "snippet": "60 points · 48 comments on HN"
+    },
+    {
+      "id": "8e44ac1d10b9",
+      "title": "Oracle cites 'force majeure' to shield itself on controversial data center",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-24/oracle-cites-force-majeure-to-shield-itself-on-controversial-data-center",
+      "source": "Hacker News",
+      "date": "2026-09-24T13:04:21.000Z",
+      "snippet": "143 points · 138 comments on HN"
+    },
+    {
+      "id": "eb461d26ec81",
+      "title": "Australia to investigate if OpenAI hack of government health website broke the law",
+      "url": "https://techcrunch.com/2026/09/24/australia-to-investigate-if-openai-hack-of-government-health-website-broke-the-law/",
+      "source": "TechCrunch",
+      "date": "2026-09-24T12:54:19.000Z",
+      "snippet": "The incident is the first known breach to affect a government agency, and Australia's prime minister has vowed to hold OpenAI accountable."
+    },
+    {
+      "id": "f4762951d022",
+      "title": "'That's so AI ' What gen Alpha's biggest insult tells us",
+      "url": "https://www.theguardian.com/society/2026/sep/24/thats-so-ai-what-gen-alphas-biggest-insult-tells-us",
+      "source": "Hacker News",
+      "date": "2026-09-24T12:23:41.000Z",
+      "snippet": "164 points · 223 comments on HN"
+    },
+    {
+      "id": "225478237654",
+      "title": "Hackers influence ChatGPT and Gemini to direct users to scam centers",
+      "url": "https://medium.com/@arielsimon/dark-sourcery-how-hackers-manipulate-ai-to-scam-you-88df434d2073",
+      "source": "Hacker News",
+      "date": "2026-09-24T11:54:38.000Z",
+      "snippet": "136 points · 49 comments on HN"
+    },
     {
       "id": "864189f9e259",
       "title": "Gemini 4 is almost ready, says new Google DeepMind chief",
@@ -16,7 +368,15 @@
       "url": "https://www.reddit.com/r/facebook/comments/1wotwrk/meta_takes_down_a_critical_video_about_meta_ai/",
       "source": "Hacker News",
       "date": "2026-09-24T08:23:03.000Z",
-      "snippet": "165 points · 66 comments on HN"
+      "snippet": "611 points · 367 comments on HN"
+    },
+    {
+      "id": "0cf7108bc36c",
+      "title": "Show HN: Air-gapped file encryption as self-decrypting HTML page",
+      "url": "https://cms-sfx-demo.apeleg.com/",
+      "source": "Hacker News",
+      "date": "2026-09-24T07:22:17.000Z",
+      "snippet": "73 points · 24 comments on HN"
     },
     {
       "id": "e82bf04022f6",
@@ -24,7 +384,7 @@
       "url": "https://transluce.org/agent-activity",
       "source": "Hacker News",
       "date": "2026-09-24T05:21:10.000Z",
-      "snippet": "143 points · 117 comments on HN"
+      "snippet": "259 points · 266 comments on HN"
     },
     {
       "id": "5f9b2dff770e",
@@ -48,7 +408,7 @@
       "url": "https://www.kenklippenstein.com/p/feds-think-ai-critics-are-foreign",
       "source": "Hacker News",
       "date": "2026-09-24T00:41:31.000Z",
-      "snippet": "297 points · 308 comments on HN"
+      "snippet": "380 points · 425 comments on HN"
     },
     {
       "id": "6330e9855670",
@@ -72,7 +432,7 @@
       "url": "https://techcrunch.com/2026/09/23/meta-introduces-camera-free-ai-glasses/",
       "source": "TechCrunch",
       "date": "2026-09-23T23:39:44.000Z",
-      "snippet": "Meta says the camera-free glasses will be lighter and have up to 12 hours battery life."
+      "snippet": "Meta says the camera-free glasses will be lighter and have up to 12 hours of battery life."
     },
     {
       "id": "a5a216ee8f8e",
@@ -100,11 +460,11 @@
     },
     {
       "id": "4de1641fc6e4",
-      "title": "Linux support is coming to Snapdragon X2 Series",
+      "title": "Linux support is coming to Snapdragon X2 series",
       "url": "https://www.qualcomm.com/news/onq/2026/09/snapdragon-summit-agentic-ai-pcs-linux",
       "source": "Hacker News",
       "date": "2026-09-23T22:38:16.000Z",
-      "snippet": "438 points · 183 comments on HN"
+      "snippet": "602 points · 263 comments on HN"
     },
     {
       "id": "cb0c28937af7",
@@ -128,7 +488,7 @@
       "url": "https://artificialanalysis.ai/models/mercury-2-5",
       "source": "Hacker News",
       "date": "2026-09-23T22:16:19.000Z",
-      "snippet": "113 points · 66 comments on HN"
+      "snippet": "148 points · 90 comments on HN"
     },
     {
       "id": "c1c97de161b0",
@@ -168,7 +528,7 @@
       "url": "https://claude.dev/blog/how-we-made-claude-ai-faster/",
       "source": "Hacker News",
       "date": "2026-09-23T19:23:40.000Z",
-      "snippet": "200 points · 137 comments on HN"
+      "snippet": "224 points · 150 comments on HN"
     },
     {
       "id": "54336ea97e9a",
@@ -192,7 +552,7 @@
       "url": "https://normanponte.io/19df691f",
       "source": "Hacker News",
       "date": "2026-09-23T18:16:41.000Z",
-      "snippet": "60 points · 136 comments on HN"
+      "snippet": "71 points · 153 comments on HN"
     },
     {
       "id": "ad93c749ed65",
@@ -256,7 +616,7 @@
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
       "source": "Hacker News",
       "date": "2026-09-23T15:29:23.000Z",
-      "snippet": "309 points · 137 comments on HN"
+      "snippet": "329 points · 148 comments on HN"
     },
     {
       "id": "be2314c62992",
@@ -281,366 +641,6 @@
       "source": "TechCrunch",
       "date": "2026-09-23T14:30:00.000Z",
       "snippet": "YouTube’s new custom feeds let users describe the videos they want to see in their own words, then use Gemini to build a personalized feed around the request."
-    },
-    {
-      "id": "3fbc62c6d1b2",
-      "title": "StrictlyVC at TechCrunch Disrupt 2026: Inside the changing rules of venture capital",
-      "url": "https://techcrunch.com/2026/09/23/strictlyvc-at-techcrunch-disrupt-2026-inside-the-changing-rules-of-venture-capital/",
-      "source": "TechCrunch",
-      "date": "2026-09-23T14:30:00.000Z",
-      "snippet": "StrictlyVC joins TechCrunch Disrupt 2026 to discuss the changing VC landscape thanks to AI. Get your Investor Pass to join these exclusive sessions. Save $200 before September 25 at 11:59 p.m. PT."
-    },
-    {
-      "id": "33d4153d9366",
-      "title": "YouTube releases new AI features for creators within its Studio app",
-      "url": "https://techcrunch.com/2026/09/23/youtube-releases-new-ai-features-for-creators-within-its-studio-app/",
-      "source": "TechCrunch",
-      "date": "2026-09-23T14:30:00.000Z",
-      "snippet": "YouTube is adding new features to generate ideas and monitor the performance of thumbnails."
-    },
-    {
-      "id": "bed8eeca800d",
-      "title": "3 days left to save up to $200 and make impactful connections at TechCrunch Disrupt 2026",
-      "url": "https://techcrunch.com/2026/09/23/3-days-left-to-save-up-to-200-and-make-impactful-connections-at-techcrunch-disrupt-2026/",
-      "source": "TechCrunch",
-      "date": "2026-09-23T14:00:00.000Z",
-      "snippet": "3 days to save up to $200 on your TechCrunch Disrupt 2026 pass, plus 50% off a second. Make impactful connections with 10,000+ tech leaders. Last day to save is September 25 at 11:59 p.m. PT. Register today."
-    },
-    {
-      "id": "3186e672f1e7",
-      "title": "Stripe's Knowledge AI Platform",
-      "url": "https://stripe.dev/blog/meet-stripes-knowledge-ai-platform",
-      "source": "Hacker News",
-      "date": "2026-09-23T13:38:00.000Z",
-      "snippet": "181 points · 111 comments on HN"
-    },
-    {
-      "id": "1d77064cbebb",
-      "title": "OpenAI extends cyber access to Ukraine for civilian defense",
-      "url": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
-      "source": "OpenAI",
-      "date": "2026-09-23T13:00:00.000Z",
-      "snippet": "OpenAI is extending access to its Daybreak program to the Government of Ukraine to support the cyber defense of civilian infrastructure."
-    },
-    {
-      "id": "9fb22034acbf",
-      "title": "Spotify is giving you the keys to its recommendation algorithm with US launch of ‘Taste Profile’",
-      "url": "https://techcrunch.com/2026/09/23/spotify-is-giving-you-the-keys-to-its-recommendation-algorithm-with-u-s-launch-of-taste-profile/",
-      "source": "TechCrunch",
-      "date": "2026-09-23T13:00:00.000Z",
-      "snippet": "Spotify is rolling out Taste Profile to Premium users in the U.S., letting listeners see how the streamer understands their tastes and use natural language to reshape their recommendations."
-    },
-    {
-      "id": "8164c6c3cf20",
-      "title": "OpenAI is enlisting an influencer army to make it look 'good for the world'",
-      "url": "https://www.businessinsider.com/inside-open-ai-influencer-marketing-strategy-chatgpt-ads-sponsorships-instagram-2026-9",
-      "source": "Hacker News",
-      "date": "2026-09-23T12:32:00.000Z",
-      "snippet": "212 points · 205 comments on HN"
-    },
-    {
-      "id": "01d4e543c941",
-      "title": "Sam Altman’s remarks at the United Nations Security Council",
-      "url": "https://openai.com/index/sam-altman-un-security-council-remarks",
-      "source": "OpenAI",
-      "date": "2026-09-23T12:00:00.000Z",
-      "snippet": "OpenAI CEO Sam Altman discusses AI safety, human control, and international cooperation in remarks to the United Nations Security Council."
-    },
-    {
-      "id": "f7558dc5c9de",
-      "title": "Harvey turns legal context into stronger drafts with GPT-6 Astra",
-      "url": "https://openai.com/index/harvey-from-context-to-confidence-with-astra",
-      "source": "OpenAI",
-      "date": "2026-09-23T12:00:00.000Z",
-      "snippet": "GPT-6 Astra produces more structured, context-aware legal documents, freeing lawyers to focus on strategy."
-    },
-    {
-      "id": "7357353a1f1d",
-      "title": "How invideo improves color grading 3x with GPT‑6 Astra",
-      "url": "https://openai.com/index/invideo-builds-with-gpt-6-astra",
-      "source": "OpenAI",
-      "date": "2026-09-23T12:00:00.000Z",
-      "snippet": "With GPT‑6 Astra, invideo plans edits with greater precision, improves color correction and grading threefold, and produces 50 custom effects in one day."
-    },
-    {
-      "id": "7cff1964bf19",
-      "title": "Ringg’s AI agents resolve up to 65% of customer calls with OpenAI",
-      "url": "https://openai.com/index/ringg",
-      "source": "OpenAI",
-      "date": "2026-09-23T12:00:00.000Z",
-      "snippet": "Using GPT-5.6, Ringg powers multilingual agents across voice, chat, WhatsApp, and web for 90% less cost vs. GPT-4.1."
-    },
-    {
-      "id": "343438d8e514",
-      "title": "Ema raises $77M as AI starts eating into enterprise software and services",
-      "url": "https://techcrunch.com/2026/09/23/ema-raises-77m-as-ai-starts-eating-into-enterprise-software-and-services/",
-      "source": "TechCrunch",
-      "date": "2026-09-23T12:00:00.000Z",
-      "snippet": "Ema has raised $140 million to date and has more than 50 enterprise customers, including Google and Microsoft."
-    },
-    {
-      "id": "1d5a9cc2d950",
-      "title": "Introducing MentalHealthBench",
-      "url": "https://openai.com/index/introducing-mentalhealthbench",
-      "source": "OpenAI",
-      "date": "2026-09-23T10:00:00.000Z",
-      "snippet": "MentalHealthBench is an expert-informed benchmark for evaluating helpful and safe AI responses across realistic mental health conversations."
-    },
-    {
-      "id": "be1bf06843ed",
-      "title": "Jev in 25 Lines of Python",
-      "url": "https://www.nobodywho.ai/posts/jev-in-25-lines/",
-      "source": "Hacker News",
-      "date": "2026-09-23T07:26:23.000Z",
-      "snippet": "653 points · 204 comments on HN"
-    },
-    {
-      "id": "233cf3705a5a",
-      "title": "‘We’re already fighting yesterday’s battle’: Greece’s prime minister gets candid about AI",
-      "url": "https://techcrunch.com/2026/09/22/were-already-fighting-yesterdays-battle-greeces-prime-minister-gets-candid-about-ai/",
-      "source": "TechCrunch",
-      "date": "2026-09-23T04:59:08.000Z",
-      "snippet": "Most leaders on a trade mission stick to the pitch, but when I interviewed Greek Prime Minister Kyriakos Mitsotakis this week, he also admitted that no government is ready for what AI is about to do."
-    },
-    {
-      "id": "1dd9ce125c6e",
-      "title": "ChatGPT Ads expands to Southeast Asia and Taiwan",
-      "url": "https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan",
-      "source": "OpenAI",
-      "date": "2026-09-23T02:00:00.000Z",
-      "snippet": "ChatGPT Ads is expanding to Southeast Asia and Taiwan, giving eligible businesses new ways to reach people across more than 60 countries."
-    },
-    {
-      "id": "73fafdf6f45f",
-      "title": "Airbnb widens access to GPT-6 Astra and OpenAI frontier models",
-      "url": "https://openai.com/index/airbnb-gpt-6-astra",
-      "source": "OpenAI",
-      "date": "2026-09-23T01:00:00.000Z",
-      "snippet": "Learn how Airbnb is expanding access to GPT-6 Astra and OpenAI frontier models to help engineering teams solve bugs, design systems, and ship faster."
-    },
-    {
-      "id": "0ab4ac60a8fb",
-      "title": "OpenAI wants to consult elite mathematicians about how to not fumble again",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/999167/openai-elite-mathematicians-panel",
-      "source": "The Verge",
-      "date": "2026-09-23T00:17:17.000Z",
-      "snippet": "After turning a string of spectacular mathematical results into a reputational crisis, OpenAI is consulting human mathematicians to help it figure out a less disastrous path forward. On Monday, the company announced a ne"
-    },
-    {
-      "id": "09a0c6dbf1c6",
-      "title": "Grab and OpenAI bring practical AI skills to Southeast Asia",
-      "url": "https://openai.com/index/grab-openai-ai-skills-southeast-asia",
-      "source": "OpenAI",
-      "date": "2026-09-23T00:00:00.000Z",
-      "snippet": "OpenAI and Grab launch GO Forward with AI, a regional programme helping 30,000 partners build practical AI skills across Southeast Asia."
-    },
-    {
-      "id": "f526d7679022",
-      "title": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war",
-      "url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
-      "source": "Simon Willison",
-      "date": "2026-09-22T23:46:41.000Z",
-      "snippet": "Yesterday was Grok 4.7 ( pelicans ) and MiMo v2.6 Flash/Pro ( more pelicans ). Today Anthropic released Claude Opus 5.5 , and around an hour later OpenAI released GPT-6 Sol and GPT-6 Luna . It's going to take a while to "
-    },
-    {
-      "id": "281410b55e05",
-      "title": "The new CC, an AI agent built for families",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups/",
-      "source": "Hacker News",
-      "date": "2026-09-22T23:46:07.000Z",
-      "snippet": "51 points · 63 comments on HN"
-    },
-    {
-      "id": "d93240d4c3f7",
-      "title": "TechCrunch Founder Summit’s agenda revealed: Unlock fundraising, hiring, and AI insights in Boston on November 4",
-      "url": "https://techcrunch.com/2026/09/22/techcrunch-founder-summits-agenda-revealed-unlock-fundraising-hiring-and-ai-insights-in-boston-on-november-4/",
-      "source": "TechCrunch",
-      "date": "2026-09-22T23:21:49.000Z",
-      "snippet": "Founders shouldn't have to learn the hardest lessons the hardest way. TechCrunch Founder Summit is designed to make the challenges of starting a company easier and the highs that much greater."
-    },
-    {
-      "id": "9a319be2f748",
-      "title": "The current balance of power in open models",
-      "url": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
-      "source": "Hacker News",
-      "date": "2026-09-22T22:03:46.000Z",
-      "snippet": "126 points · 55 comments on HN"
-    },
-    {
-      "id": "7e5d39ad04c0",
-      "title": "Snorkel AI triples valuation to $3.5B as demand for AI training data booms",
-      "url": "https://techcrunch.com/2026/09/22/snorkel-ai-triples-valuation-to-3-5b-as-demand-for-ai-training-data-booms/",
-      "source": "TechCrunch",
-      "date": "2026-09-22T21:56:43.000Z",
-      "snippet": "The seven-year-old startup has raised a $350 million Series E to fuel its data-as-a-service approach."
-    },
-    {
-      "id": "5618ffbe19d5",
-      "title": "New Anthropic, OpenAI models make same promise: A little more for a lot less money",
-      "url": "https://arstechnica.com/ai/2026/09/new-anthropic-openai-models-make-same-promise-a-little-more-for-a-lot-less-money/",
-      "source": "Ars Technica",
-      "date": "2026-09-22T21:25:18.000Z",
-      "snippet": "The frontier AI model race has entered its comparison shopping phase."
-    },
-    {
-      "id": "b6b1e4118cdb",
-      "title": "Better prompt caching for GPT-6",
-      "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
-      "source": "OpenAI",
-      "date": "2026-09-22T21:00:00.000Z",
-      "snippet": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs."
-    },
-    {
-      "id": "cc0d123c3bdd",
-      "title": "Rabbit’s new AI agent doesn’t need an R1 to run",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/999094/rabbit-ai-agent-os3",
-      "source": "The Verge",
-      "date": "2026-09-22T20:52:40.000Z",
-      "snippet": "Rabbit, the company behind the underwhelming R1 device, is rolling out a standalone AI agent that you don't need its hardware to use, as reported earlier by Wired. The startup says its new OS3 \"agentic operating system\" "
-    },
-    {
-      "id": "948ab460c8b3",
-      "title": "Qualcomm launches two new smartphone chips with emphasis on AI",
-      "url": "https://techcrunch.com/2026/09/22/qualcomm-launches-two-new-smartphone-chips-with-emphasis-on-ai/",
-      "source": "TechCrunch",
-      "date": "2026-09-22T20:00:00.000Z",
-      "snippet": "Qualcomm said that its new top chip can run 30B mixture-of-expert model locally."
-    },
-    {
-      "id": "69bd5b227657",
-      "title": "Microsoft disrupts AI-assisted platform that compromised 12,000 accounts",
-      "url": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000/",
-      "source": "Ars Technica",
-      "date": "2026-09-22T19:45:47.000Z",
-      "snippet": "EvilTokens provided an end-to-end platform that makes mass compromises faster and easier."
-    },
-    {
-      "id": "f5795de5b2fb",
-      "title": "Lawsuit demands OpenAI pay for new school after ChatGPT used in shooting",
-      "url": "https://arstechnica.com/tech-policy/2026/09/lawsuit-demands-openai-pay-for-new-school-after-chatgpt-used-in-shooting/",
-      "source": "Ars Technica",
-      "date": "2026-09-22T19:28:23.000Z",
-      "snippet": "British Columbia sues OpenAI, demands Tumbler Ridge shooter’s ChatGPT logs."
-    },
-    {
-      "id": "047d6bbad93c",
-      "title": "Meta admits Muse’s likeness to OpenClaw isn’t a coincidence",
-      "url": "https://techcrunch.com/2026/09/22/meta-admits-muses-likeness-to-openclaw-isnt-a-coincidence/",
-      "source": "TechCrunch",
-      "date": "2026-09-22T19:09:11.000Z",
-      "snippet": "Meta says Muse was built from scratch, but acknowledges the AI assistant was \"heavily inspired\" by OpenClaw — down to some of its workspace filenames and content."
-    },
-    {
-      "id": "64bb0df64d4d",
-      "title": "Pentagon says overreliance on AI contributed to missile strike on Iran school",
-      "url": "https://www.bloomberg.com/graphics/2026-iran-school-attack/",
-      "source": "Hacker News",
-      "date": "2026-09-22T19:03:38.000Z",
-      "snippet": "916 points · 521 comments on HN"
-    },
-    {
-      "id": "0ec1b9d73021",
-      "title": "llm 0.36",
-      "url": "https://simonwillison.net/2026/Sep/22/llm/",
-      "source": "Simon Willison",
-      "date": "2026-09-22T18:48:37.000Z",
-      "snippet": "Release: llm 0.36 New OpenAI models: gpt-6-sol for GPT-6 Sol and gpt-6-luna for GPT-6 Luna . #1702 Model plugins can now declare supports_conversation = False for models that only accept single-turn prompts. LLM raises l"
-    },
-    {
-      "id": "0ae28eab3fcb",
-      "title": "Unreal Agent",
-      "url": "https://unreallabs.ai/blog/unreal-agent/",
-      "source": "Hacker News",
-      "date": "2026-09-22T18:15:53.000Z",
-      "snippet": "240 points · 121 comments on HN"
-    },
-    {
-      "id": "3d48e529ad7a",
-      "title": "Introducing GPT-6 Sol and Luna",
-      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
-      "source": "OpenAI",
-      "date": "2026-09-22T18:00:00.000Z",
-      "snippet": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost."
-    },
-    {
-      "id": "11b524309fbd",
-      "title": "OpenAI launches GPT-6 Sol and Luna, boasting lower cost and fewer mistakes",
-      "url": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/",
-      "source": "TechCrunch",
-      "date": "2026-09-22T18:00:00.000Z",
-      "snippet": "OpenAI is launching two new models, which it says are cut from the same cloth as Astra."
-    },
-    {
-      "id": "566be4095e3a",
-      "title": "Launch HN: Coverage Cat (YC S22) – Umbrella insurance via your personal agent",
-      "url": "https://www.coveragecat.com/",
-      "source": "Hacker News",
-      "date": "2026-09-22T17:26:36.000Z",
-      "snippet": "52 points · 31 comments on HN"
-    },
-    {
-      "id": "263fa952490e",
-      "title": "llm-anthropic 0.29",
-      "url": "https://simonwillison.net/2026/Sep/22/llm-anthropic/",
-      "source": "Simon Willison",
-      "date": "2026-09-22T17:14:55.000Z",
-      "snippet": "Release: llm-anthropic 0.29 Adds support for Claude Opus 5.5 : llm -m claude-opus-5.5 \"prompt goes here\" Tags: llm , anthropic"
-    },
-    {
-      "id": "a441f2aea722",
-      "title": "Toyota orders workers to train humanoid robots but says humans won't be replaced",
-      "url": "https://arstechnica.com/ai/2026/09/toyota-claims-plan-for-400000-factory-robots-wont-replace-human-workers/",
-      "source": "Ars Technica",
-      "date": "2026-09-22T17:06:16.000Z",
-      "snippet": "Toyota's push comes as automakers race to develop and deploy humanoid robots."
-    },
-    {
-      "id": "cdb477377ba3",
-      "title": "Claude Opus 5.5 Intelligence, Performance and Price Analysis (Max)",
-      "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
-      "source": "Hacker News",
-      "date": "2026-09-22T16:51:31.000Z",
-      "snippet": "330 points · 103 comments on HN"
-    },
-    {
-      "id": "97f4d9447dab",
-      "title": "Andreessen Horowitz is launching an ‘academy’ with no homework and partnerships with Palantir, Google, and Meta",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/998813/andreessen-horowitz-ai-academy",
-      "source": "The Verge",
-      "date": "2026-09-22T16:34:08.000Z",
-      "snippet": "Venture capital firm Andreessen Horowitz (a16z) is creating an \"academy\" positioned as a pipeline for young people to build or join a Silicon Valley startup. The \"Horowitz Andreessen Academy\" will launch with 10 partners"
-    },
-    {
-      "id": "8fee313a6a87",
-      "title": "Anthropic releases Opus 5.5 with lower prices and Fable-level performance",
-      "url": "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance/",
-      "source": "TechCrunch",
-      "date": "2026-09-22T16:30:07.000Z",
-      "snippet": "Anthropic called it \"the strongest-performing model we've tested to date.\""
-    },
-    {
-      "id": "04fa56f83f3a",
-      "title": "Anthropic launches Claude Opus 5.5 with stricter safeguards for cybersecurity",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/998868/anthropic-claude-opus-5-5-cybersecurity",
-      "source": "The Verge",
-      "date": "2026-09-22T16:30:00.000Z",
-      "snippet": "Anthropic says its new Claude Opus 5.5 model comes with stronger safeguards in the wake of recent rogue AI hacking incidents. In an announcement on Tuesday, Anthropic says Opus 5.5 comes with improvements to certain risk"
-    },
-    {
-      "id": "5d6a730c1461",
-      "title": "Trump says the US is officially renaming AI to ‘super intelligence’",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/998816/donald-trump-ai-super-intelligence",
-      "source": "The Verge",
-      "date": "2026-09-22T16:01:10.000Z",
-      "snippet": "In a speech Tuesday morning at the UN General Assembly, Donald Trump railed against Iran, \"globalists,\" climate change, and transgender people while also claiming that the US is now \"officially\" renaming artificial intel"
-    },
-    {
-      "id": "7528f5f11fc6",
-      "title": "llm-typesafe 0.1a0",
-      "url": "https://simonwillison.net/2026/Sep/22/llm-typesafe/",
-      "source": "Simon Willison",
-      "date": "2026-09-22T15:54:16.000Z",
-      "snippet": "Release: llm-typesafe 0.1a0 I built this new plugin for LLM to add support for TypeSafe AI's new Jev model . Install it like this: llm install llm-typesafe Then set an API key ( get one here , the waitlist seems to move "
     }
   ]
 }

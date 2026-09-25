@@ -1,6 +1,42 @@
 {
-  "updated": "2026-09-24T11:06:17.773Z",
+  "updated": "2026-09-25T11:07:57.809Z",
   "claude-code": [
+    {
+      "version": "2.1.282",
+      "date": null,
+      "bullets": [
+        "Added a <code>maxProseWidth</code> setting that caps the width of Claude's prose in wide terminals while tables and code blocks keep the full width",
+        "Added a startup notice, and <code>/status</code> and <code>claude doctor</code> entries, listing telemetry variables in a project's settings files that were ignored or that turned telemetry off",
+        "Added the <code>allowClaudeInChromeWithManagedMcp</code> managed setting to let <code>claude --chrome</code> run alongside an exclusive <code>managed-mcp.json</code>; the error shown when Chrome is blocked now names it",
+        "Added <code>store.readiness_grace_seconds</code> to the Claude apps gateway so <code>/readyz</code> can stay ready through a short Postgres outage such as a database failover",
+        "Added a scrollbar to the <code>/feedback</code> drafts list in fullscreen mode; it appears while the mouse is over the list",
+        "Fixed every request failing with a 400 error in conversations whose history holds web search results the API cannot decrypt (for example, from a turn answered through a third-party gateway)",
+        "Fixed more cases of continued or resumed sessions (<code>--continue</code>, <code>--resume</code>) re-sending earlier messages in a changed form, which could make the API drop Claude's earlier reasoning",
+        "Fixed earlier extended thinking being dropped when <code>/model</code>, <code>/rename</code>, <code>/artifacts</code> or another immediate slash command was used while Claude was working",
+        "Fixed continued or resumed conversations losing earlier extended thinking when relaunched with a <code>--tools</code> list that leaves out a built-in tool offered earlier in the conversation",
+        "Fixed sessions failing on every turn with an &quot;Invalid <code>data</code> in <code>redacted_thinking</code> block&quot; API error; Claude Code now drops the conversation's thinking blocks and retries once",
+        "Fixed compaction failing when the summarization request is refused; it now retries on a fallback model",
+        "Fixed a failed turn (&quot;Effort 'xhigh' isn't available with thinking turned off&quot;) after a safety-related model switch in sessions with thinking off and effort above high",
+        "Fixed an unanswered Fable usage-credits prompt switching models in SDK-hosted sessions such as Claude Desktop; the turn now ends instead, and Remote Control clients now see the model-switch notice",
+        "Fixed <code>/model</code> with a full Fable model id stopping at an API error instead of opening the usage-credits prompt when the plan needs usage credits that aren't turned on yet",
+        "Fixed requests failing for up to a minute with an &quot;another Claude Code process is refreshing it&quot; login error after that other process was closed or killed mid-refresh",
+        "Fixed sessions started while another Claude Code window was refreshing the sign-in (common with several VS Code windows) not retrying their organization policy fetch",
+        "Fixed CLAUDE.md and rules being read at startup through a repository symlink reaching macOS's <code>/Network</code> via <code>..</code> or a <code>/.vol</code>-style kernel path, or a rules link to macOS's <code>/home</code> being listed",
+        "Fixed Bash permission rules with a mid-pattern <code>:*</code> being skipped in settings files while <code>--allowedTools</code> honored them; they now work from every source, with a startup warning on how they match",
+        "Fixed a command approved on a restored permission prompt running twice when a remote session's worker restarted",
+        "Fixed managed settings ignoring a mistyped value for boolean lock keys such as <code>disableClaudeAiConnectors</code> or <code>allowManagedPermissionRulesOnly</code>; the lock now applies and startup names the key",
+        "Fixed managed <code>permissions</code>, <code>autoMode</code>, <code>worktree</code> and <code>attribution</code> settings being ignored entirely when one nested value was invalid; the rest of the block now still applies",
+        "Fixed repository, user and <code>--add-dir</code> skills, commands and skills-directory plugin manifests pre-approving their own tools via <code>allowed-tools</code> under managed <code>allowManagedPermissionRulesOnly</code>",
+        "Fixed safeguard block messages on Amazon Bedrock and Bedrock Mantle not showing a request ID; block messages now also show the message ID",
+        "Vertex AI: Fixed web search not being offered for models Claude Code doesn't recognize yet, such as newly released ones",
+        "Fixed Bash and PowerShell hiding a full disk quota behind &quot;Exit code 1&quot; and leaving large output files in temp",
+        "Fixed tool input validation errors naming only an unknown, missing or mistyped parameter when other parameters in the same call were also invalid; those are now listed too",
+        "Fixed pasted multi-line text being submitted line by line after the terminal's bracketed paste mode was reset mid-session",
+        "Fixed the prompt's example text flashing and disappearing at startup in projects with a <code>SessionStart</code> hook",
+        "Fixed a blank screen flashing before the first frame when starting in fullscreen mode",
+        "Fixed garbled, misplaced rows in the non-fullscreen renderer after the screen got shorter while still taller than the terminal, e.g. deleting a prompt line while a shell command streams output"
+      ]
+    },
     {
       "version": "2.1.281",
       "date": null,
@@ -85,7 +121,7 @@
       "version": "2.1.277",
       "date": null,
       "bullets": [
-        "Added AGENTS.md support: in a project with no CLAUDE.md, Claude Code reads AGENTS.md instead; change it under &quot;Project instructions&quot; in <code>/config</code> (not yet on Bedrock, Vertex or Foundry)",
+        "Added AGENTS.md support: in a project with no CLAUDE.md, Claude Code reads AGENTS.md instead; change it under &quot;Project instructions&quot; in <code>/config</code>",
         "Added <code>CLAUDE_GATEWAY_PROXY_IS_EGRESS_BOUNDARY=1</code> for Claude apps gateways whose only egress is a forward proxy: every outbound request hands the proxy the hostname instead of resolving it locally",
         "Added an optional <code>headers:</code> map on Claude apps gateway upstreams, to send static headers to a proxy you run in front of a provider",
         "Added a line saying a background task's update is waiting when it finishes while a panel such as <code>/tasks</code> is open",
@@ -637,16 +673,30 @@
         "Fixed SDK and cloud sessions hanging indefinitely when an SDK MCP server's handshake acknowledgment was lost; the wait now times out after 70 seconds and marks only that server failed",
         "Fixed self-hosted runner leaving a stuck session's Bash tool processes running after the session was force-stopped"
       ]
-    },
-    {
-      "version": "2.1.250",
-      "date": null,
-      "bullets": [
-        "Bug fixes and reliability improvements"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.157.0",
+      "date": "2026-09-25T02:31:06.000Z",
+      "bullets": [
+        "- Added GPT-6 Sol and Luna, including Amazon Bedrock support and migration prompts for older models. (#47332, #47347) - Enabled fullscreen transcripts by default and added Shift-click to extend text selections. (#47178, #47414) - Enabled automatic background-server startup for eligible interactive sessions, with recovery choices when server settings are incompatible. (#47179, #47318) - Added an <code>f</code> shortcut to fork conversations open in another app, preserving drafts and queued prompts. (#47185) - Made <code>/import</code> available in remote sessions and local background-server sessions. (#47317) - Improved terminal rendering with Unicode bullets, checkboxes, aligned equations, and optimization notation. (#47191, #47322) - Preserved active voice conversations when switching threads. (#47381) - Recovered unsent question answers into the composer when turns end, without disrupting active history searches. (#47422, #47423) - Respected tmux mouse settings and restored native scrollback for Terminal.app over SSH in automatic screen mode. (#47399, #47417) - Fixed configured proxy routing for realtime connections and standalone web search, including search redirects. (#47101, #47142, #47204) - Added retries for transient file-upload failures and increased the upload timeout to five minutes. (#47122, #47393) - Enforced network restrictions across redirects and ongoing HTTP and WebSocket traffic, including cancellation when policy changes revoke access. (#47389, #47407) Full Changelog: https://github.com/openai/codex/compare/rust-v0.156.0...rust-v0.157.0 - #47063 Add a partial index for agent message board root posts @jif-oai - #47064 Stop redundant message-board reads when limits reach one @jif-oai - #47065 Deduplicate deprecation notices in the TUI transcript @etraut-openai - #47068 Highlight selected newlines in the transcript view @etraut-openai - #47073 Wait for thread idle in Guardian context budget tests @jif-oai - #47074 Refresh host-supplied cloud skills at turn startup @TAFOYA-OAI - #47075 Include attributed previews in agent message board notifications @jif-oai - #47077 Serialize environment updates and cancel removed pending attachments @sayan-oai - #47079 Mask daemon socket paths exposed through ancestor bind mounts @nicksteele-oai - #47081 Track cumulative MCP attribution across requests and thread history @peilin-openai - #47082 Show the voice toggle in the TUI shortcut overlay @etraut-openai - #47083 Extract per-thread enrichment into a dedicated async helper @aibrahim-oai - #47084 Avoid building a host SQLite driver for SQLx macros @aibrahim-oai - #47085 Update model catalog descriptions and GPT-5.6-Sol priority @andrewgu-oai - #47086 Format analytics credit usage with consistent decimal precision @fcoury-oai - #47088 Disable unused default dependency features @aibrahim-oai - #47089 Centralize JSON-RPC response serialization through payloads @aibrahim-oai - #47094 Restrict Unix local MCP servers to stdio descriptors @yuzhu-oai - #47095 Remove the <code>rust-release-prepare</code> workflow @andrewgu-oai - #47096 Keep TUI hints immediately above the composer @fcoury-oai - #47100 Preserve assistant answers in bounded TUI task responses @etraut-openai - #47101 Honor configured proxies for realtime WebSocket connections @celia-oai - #47106 Preserve originating turn metadata for yielded skill calls @eddie-openai - #47108 Preserve required Windows runtime variables for filesystem helpers @iceweasel-oai - #47112 Lowercase the retry hint for conversations open in another app @fcoury-oai - #47113 Persist thread creator identity in rollouts and SQLite @nornagon-openai - #47114 Preserve and expose thread item lifecycle timestamps @chiam-oai - #47116 Honor the configured product SKU in remote plugin requests @jessedu-oai - #47118 Support model-catalog overrides for Code Mode tool messages @rhan-oai - #47121 Pass thread IDs to attachment uploads @kchainani-oai - #47122 Increase OpenAI file blob upload timeout from 60 seconds to 5 minutes @wilkes-oai - #47125 Add extra policy configuration for Guardian reviews @won-openai - #47129 Preserve foreign working directories in extension tool environments @anp-oai - #47130 Remove the <code>ultrafast</code> service tier from <code>gpt-5.6-sol</code> @andrewgu-oai - #47132 Support caller-provided MITM CAs in the network proxy @viyatb-oai - #47137 Prevent horizontal transcript selection from triggering autoscroll @imac-oai - #47142 Honor system proxy settings for standalone web search @celia-oai - #47143 Extract exec-server CLI startup into a dedicated module @anp-oai - #47149 Update code mode catalog snapshot hashes @andrewgu-oai - #47155 Ignore stale thread-close notifications after resuming a thread @etraut-openai - #47158 Harden gateway OAuth credential persistence and error redaction @alexsong-oai - #47159 Expose HTTP origins in MCP server status @frantic-openai - #47162 Apply workspace routing to Guardian v2 classifier requests @acrognale-oai - #47170 Add explicit gateway login control and authentication status @alexsong-oai - #47174 Preserve empty cell metadata under pending tool-call pressure @ningyi-oai - #47178 Enable the fullscreen transcript by default @etraut-openai - #47179 Enable automatic daemon startup by default @etraut-openai - #47185 Allow forking conversations locked by another app in the TUI @fcoury-oai - #47191 Render aligned equations and optimization notation in TUI math @etraut-openai - #47199 Separate thread preparation from execution persistence @dermanyang-oai - #47204 Resolve proxy routes for standalone web search redirects @celia-oai - #47207 Add explicit gateway OAuth sign-in to app-server @alexsong-oai - #47212 Preserve MCP request trace context across transport workers @bromano-oai - #47235 Route multi-agent spawning through <code>SpawnRequest</code> @jif-oai - #47236 Suppress agent message board notifications to the post author @jif-oai - #47240 Prevent V2 agent eviction from racing with queued messages @jif-oai - #47244 Centralize agent resume handling in <code>LocalAgentControl</code> @jif-oai - #47248 Add explicit app and account targets to MCP resource reads @victor-openai - #47249 Drop descendant channel posts from retained remote compaction v2 history @jif-oai - #47252 Return agent snapshots from <code>close_agent</code> @jif-oai - #47257 Preserve explicit message-board unsubscribes when posting @jif-oai - #47258 Test spawn settings reporting after child removal @jif-oai - #47259 Subscribe authors to message-board channels created by posting @jif-oai - #47263 Expose hosted plugin extensions in app-server summaries @victor-openai - #47267 Stream agent snapshots from local status subscriptions @jif-oai - #47271 Implement <code>AgentControl</code> for <code>LocalAgentControl</code> @jif-oai - #47272 Allow Guardian sync review across compaction hash differences @felixxia-oai - #47275 Enable Guardian thread context by default @felixxia-oai - #47281 Add regression coverage for message board unsubscribe persistence @jif-oai - #47287 Update the Guardian extra-policy snapshot for retained instructions @felixxia-oai - #47292 Consolidate agent operations in the <code>AgentControl</code> implementation @jif-oai - #47301 Separate local agent runtime state from controller handles @jif-oai - #47302 Use compact display metadata for Guardian review threads @charliemarsh-oai - #47303 Clean up legacy Guardian thread metadata in SQLite @charliemarsh-oai - #47317 Enable <code>/import</code> in remote and local daemon sessions @etraut-openai - #47318 Offer explicit recovery for incompatible background servers @etraut-openai - #47319 Match agent status symbols to the selected row style @etraut-openai - #47320 Fix Escape navigation in read-only agent sessions @etraut-openai - #47321 Honor the system clock preference across more TUI timestamps @etraut-openai - #47322 Render TUI Markdown lists with Unicode bullets and checkboxes @etraut-openai - #47323 Persist resume metadata in compaction checkpoints @owenlin0 - #47325 Keep report reason tags within Sentry limits @ningyi-oai - #47326 Restrict MCP OAuth authorization endpoints to HTTP(S) @viyatb-oai - #47327 Preserve image generation request IDs on failure @chrisdong-oai - #47329 Standardize TUI menu description wording and punctuation @etraut-openai - #47330 Identify failed SQLite databases in <code>codex doctor</code> output @dkovalenko-oai - #47331 Avoid redundant spacing above the transcript composer @fcoury-oai - #47332 Add GPT-6 Sol and Luna to the model catalog @andrewgu-oai - #47338 Move the activity inspection hint into keyboard shortcut help @fcoury-oai - #47340 Add conditional turn interruption that preserves pending input @pmccrary-oai - #47342 Skip stored title lookups for ephemeral forks @keyz - #47347 Add GPT-6 Sol and Luna to Amazon Bedrock catalogs @celia-oai - #47348 Overlap subagent spawn persistence and clean up cancelled children @owenlin0 - #47349 Move plugin recommendations into developer context @adaley-openai - #47350 Reuse cloud skill catalogs across turns until invalidated @hlevy-openai - #47353 Preserve <code>invalid_prompt</code> as a distinct error classification @rennie-openai - #47355 Reserve spacing after recaps at the transcript tail @fcoury-oai - #47358 Color paths and URLs in <code>codex doctor</code> by check status @dkovalenko-oai - #47360 Preserve user prompt URL destinations across terminal widths @fcoury-oai - #47361 Restrict Windows sandbox default object access to the logon session @viyatb-oai - #47362 Bound inbound exec-server requests across client transports @viyatb-oai - #47365 Resume model context from the latest compaction boundary @owenlin0 - #47369 Overlap agent metadata reads when resuming a V2 root @vkg-oai - #47375 Add an opt-in preference for the local MXC sandbox @iceweasel-oai - #47377 Add opt-in reasoning status for realtime V3 delegations @guinness-oai - #47380 Route TUI voice controls through the app @etraut-openai - #47381 Keep voice conversations running across TUI thread navigation @etraut-openai - #47382 Show a voice badge in the agents overview @etraut-openai - #47384 Restore composer hints after clearing selection at the transcript bottom @fcoury-oai - #47389 Enforce network policy throughout HTTP and WebSocket requests @acrognale-oai - #47393 Retry transient OpenAI file blob upload failures @mtsui-oai - #47397 Refresh bundled model metadata and instructions @andrewgu-oai - #47399 Respect tmux mouse settings in fullscreen and overlays @fcoury-oai - #47407 Enforce application network policy across app-server requests @acrognale-oai - #47408 Enforce application network policy for AWS auth and telemetry @acrognale-oai - #47410 Honor network policy in remote control and recover remote execution @acrognale-oai - #47411 Apply shared network policy throughout embedded Codex startup @acrognale-oai - #47413 Cache decrypted gateway OAuth secrets per backend @charliemarsh-oai - #47414 Support Shift-click to extend transcript selections @etraut-openai - #47417 Use native scrollback for Terminal.app over SSH in auto mode @fcoury-oai - #47422 Recover unsent question drafts when TUI turns end @imac-oai - #47423 Preserve history search during background draft recovery @imac-oai - #47424 Clear pending async question notifications when turns end @imac-oai - #47428 Apply inherited environment settings at turn boundaries @sayan-oai - #47435 Allow environment selection updates during an active turn @sayan-oai - #47437 Stabilize retry timing and WebSocket tests @anp-oai"
+      ]
+    },
+    {
+      "version": "0.158.0-alpha.13",
+      "date": "2026-09-25T04:29:26.000Z",
+      "bullets": [
+        "Release 0.158.0-alpha.13"
+      ]
+    },
+    {
+      "version": "0.158.0-alpha.9",
+      "date": "2026-09-24T17:49:16.000Z",
+      "bullets": [
+        "Release 0.158.0-alpha.9"
+      ]
+    },
     {
       "version": "0.158.0-alpha.8",
       "date": "2026-09-24T07:12:02.000Z",
@@ -659,6 +709,34 @@
       "date": "2026-09-24T05:28:27.000Z",
       "bullets": [
         "Release 0.158.0-alpha.7"
+      ]
+    },
+    {
+      "version": "0.158.0-alpha.12",
+      "date": "2026-09-25T00:54:29.000Z",
+      "bullets": [
+        "Release 0.158.0-alpha.12"
+      ]
+    },
+    {
+      "version": "0.158.0-alpha.11",
+      "date": "2026-09-24T23:23:08.000Z",
+      "bullets": [
+        "Release 0.158.0-alpha.11"
+      ]
+    },
+    {
+      "version": "0.158.0-alpha.10",
+      "date": "2026-09-24T20:58:11.000Z",
+      "bullets": [
+        "Release 0.158.0-alpha.10"
+      ]
+    },
+    {
+      "version": "0.157.0-alpha.11.1",
+      "date": "2026-09-24T21:50:10.000Z",
+      "bullets": [
+        "Release 0.157.0-alpha.11.1"
       ]
     },
     {
@@ -737,55 +815,6 @@
       "date": "2026-09-22T18:00:16.000Z",
       "bullets": [
         "Release 0.157.0-alpha.9"
-      ]
-    },
-    {
-      "version": "0.157.0-alpha.8",
-      "date": "2026-09-22T12:34:27.000Z",
-      "bullets": [
-        "Release 0.157.0-alpha.8"
-      ]
-    },
-    {
-      "version": "0.157.0-alpha.7",
-      "date": "2026-09-22T07:00:44.000Z",
-      "bullets": [
-        "Release 0.157.0-alpha.7"
-      ]
-    },
-    {
-      "version": "0.157.0-alpha.6",
-      "date": "2026-09-22T05:50:02.000Z",
-      "bullets": [
-        "Release 0.157.0-alpha.6"
-      ]
-    },
-    {
-      "version": "0.157.0-alpha.5",
-      "date": "2026-09-22T04:26:43.000Z",
-      "bullets": [
-        "Release 0.157.0-alpha.5"
-      ]
-    },
-    {
-      "version": "0.157.0-alpha.4",
-      "date": "2026-09-22T03:01:53.000Z",
-      "bullets": [
-        "Release 0.157.0-alpha.4"
-      ]
-    },
-    {
-      "version": "0.157.0-alpha.3",
-      "date": "2026-09-22T01:38:20.000Z",
-      "bullets": [
-        "Release 0.157.0-alpha.3"
-      ]
-    },
-    {
-      "version": "0.157.0-alpha.10",
-      "date": "2026-09-22T22:07:05.000Z",
-      "bullets": [
-        "Release 0.157.0-alpha.10"
       ]
     }
   ]
