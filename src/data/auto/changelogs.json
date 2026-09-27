@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-26T10:48:30.082Z",
+  "updated": "2026-09-27T11:23:47.859Z",
   "claude-code": [
     {
       "version": "2.1.283",
@@ -677,6 +677,41 @@
   ],
   "codex": [
     {
+      "version": "0.159.0-alpha.9",
+      "date": "2026-09-27T06:37:13.000Z",
+      "bullets": [
+        "Release 0.159.0-alpha.9"
+      ]
+    },
+    {
+      "version": "0.159.0-alpha.8",
+      "date": "2026-09-27T04:48:42.000Z",
+      "bullets": [
+        "Release 0.159.0-alpha.8"
+      ]
+    },
+    {
+      "version": "0.159.0-alpha.7",
+      "date": "2026-09-27T01:24:11.000Z",
+      "bullets": [
+        "Release 0.159.0-alpha.7"
+      ]
+    },
+    {
+      "version": "0.159.0-alpha.6",
+      "date": "2026-09-26T20:07:52.000Z",
+      "bullets": [
+        "Release 0.159.0-alpha.6"
+      ]
+    },
+    {
+      "version": "0.159.0-alpha.5",
+      "date": "2026-09-26T17:34:23.000Z",
+      "bullets": [
+        "Release 0.159.0-alpha.5"
+      ]
+    },
+    {
       "version": "0.159.0-alpha.4",
       "date": "2026-09-26T06:21:38.000Z",
       "bullets": [
@@ -688,6 +723,13 @@
       "date": "2026-09-26T04:51:49.000Z",
       "bullets": [
         "Release 0.158.0-alpha.2.1"
+      ]
+    },
+    {
+      "version": "0.158.0-alpha.15.2",
+      "date": "2026-09-27T00:02:58.000Z",
+      "bullets": [
+        "Release 0.158.0-alpha.15.2"
       ]
     },
     {
@@ -773,49 +815,6 @@
       "date": "2026-09-24T05:28:27.000Z",
       "bullets": [
         "Release 0.158.0-alpha.7"
-      ]
-    },
-    {
-      "version": "0.158.0-alpha.12",
-      "date": "2026-09-25T00:54:29.000Z",
-      "bullets": [
-        "Release 0.158.0-alpha.12"
-      ]
-    },
-    {
-      "version": "0.158.0-alpha.11",
-      "date": "2026-09-24T23:23:08.000Z",
-      "bullets": [
-        "Release 0.158.0-alpha.11"
-      ]
-    },
-    {
-      "version": "0.158.0-alpha.10",
-      "date": "2026-09-24T20:58:11.000Z",
-      "bullets": [
-        "Release 0.158.0-alpha.10"
-      ]
-    },
-    {
-      "version": "0.157.0-alpha.11.1",
-      "date": "2026-09-24T21:50:10.000Z",
-      "bullets": [
-        "Release 0.157.0-alpha.11.1"
-      ]
-    },
-    {
-      "version": "0.156.1",
-      "date": "2026-09-23T02:41:36.000Z",
-      "bullets": [
-        "- Choose GPT-6 Sol or GPT-6 Luna from the model picker.",
-        "The rate-limit switch prompt now recommends GPT-6 Luna. (#47405) Full Changelog: https://github.com/openai/codex/compare/rust-v0.156.0...rust-v0.156.1 - #47405 [hotfix 0.156.0] Add GPT-6 Sol and Luna to the model catalog (#47332) @imac-oai"
-      ]
-    },
-    {
-      "version": "0.158.0-alpha.6",
-      "date": "2026-09-23T23:41:29.000Z",
-      "bullets": [
-        "Release 0.158.0-alpha.6"
       ]
     }
   ]
