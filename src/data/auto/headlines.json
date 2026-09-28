@@ -1,7 +1,143 @@
 {
-  "updated": "2026-09-27T11:23:47.858Z",
+  "updated": "2026-09-28T12:54:11.734Z",
   "count": 80,
   "items": [
+    {
+      "id": "d6ebb3bfb87e",
+      "title": "Microsoft goes quiet after church groups ask for 1% of data center costs",
+      "url": "https://arstechnica.com/tech-policy/2026/09/microsoft-goes-quiet-after-church-groups-ask-for-1-of-data-center-costs/",
+      "source": "Ars Technica",
+      "date": "2026-09-28T11:00:09.000Z",
+      "snippet": "“Microsoft claims to want to be a good neighbor, but the jury is still out.\""
+    },
+    {
+      "id": "f4bfc1031e8d",
+      "title": "AI companies in race to demonstrate their model most threatening to humanity",
+      "url": "https://thecivilian.co.nz/2026/09/27/ai-companies-in-fierce-arms-race-to-demonstrate-their-model-is-the-most-existentially-threatening-to-humanity/",
+      "source": "Hacker News",
+      "date": "2026-09-28T08:35:40.000Z",
+      "snippet": "199 points · 111 comments on HN"
+    },
+    {
+      "id": "00e0e3a4ad2d",
+      "title": "Quoting Muse AI Agent",
+      "url": "https://simonwillison.net/2026/Sep/28/muse-ai-agent/",
+      "source": "Simon Willison",
+      "date": "2026-09-28T04:01:30.000Z",
+      "snippet": "Bad news on the MX Keys Mini pickup. Usman showed up at your building around 9:15 and waited, messaged a bunch of times, and nobody came down. He left angry at 9:38 and left a negative rating. Worse, my auto-reply told h"
+    },
+    {
+      "id": "f1d69bd4c806",
+      "title": "Thinking fast and slow in AI: The role of metacognition (2021)",
+      "url": "https://arxiv.org/abs/2110.01834",
+      "source": "Hacker News",
+      "date": "2026-09-28T03:23:53.000Z",
+      "snippet": "127 points · 43 comments on HN"
+    },
+    {
+      "id": "4692bb4bba3b",
+      "title": "Microsoft drops Copilot+ branding from its new laptops",
+      "url": "https://www.windowscentral.com/microsoft/windows-11/the-copilot-pc-brand-is-dead-microsoft-and-pc-makers-quietly-pull-back-on-tarnished-windows-11-ai-pc-branding",
+      "source": "Hacker News",
+      "date": "2026-09-28T02:46:27.000Z",
+      "snippet": "54 points · 2 comments on HN"
+    },
+    {
+      "id": "f888e76b31aa",
+      "title": "As A.I. makes law firms more efficient, clients ask: 'Where's my discount?'",
+      "url": "https://www.nytimes.com/2026/09/26/business/dealbook/ai-law-discount-billable-hour.html",
+      "source": "Hacker News",
+      "date": "2026-09-28T01:30:17.000Z",
+      "snippet": "133 points · 139 comments on HN"
+    },
+    {
+      "id": "9c14e3f08427",
+      "title": "Engram is a sampler that turns broken AI hallucinations into music",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1001193/engram-sampler-ai-hallucinations-music",
+      "source": "The Verge",
+      "date": "2026-09-27T20:46:36.000Z",
+      "snippet": "Music startup Thoughtful Things has just launched the Kickstarter campaign for its first instrument, Engram. It's a sampler and groovebox that uses AI to mangle incoming audio and even hallucinate completely new sounds. "
+    },
+    {
+      "id": "79b213b7598a",
+      "title": "Anthropic’s CEO is about to have dinner with President Trump",
+      "url": "https://techcrunch.com/2026/09/27/anthropics-ceo-is-about-to-have-dinner-with-president-trump/",
+      "source": "TechCrunch",
+      "date": "2026-09-27T20:34:28.000Z",
+      "snippet": "This will be the first one-on-one meeting between Dario Amodei and Donald Trump"
+    },
+    {
+      "id": "eaa520eb586c",
+      "title": "Can Muse overcome Meta’s trust issues?",
+      "url": "https://techcrunch.com/2026/09/27/can-muse-overcome-metas-trust-issues/",
+      "source": "TechCrunch",
+      "date": "2026-09-27T19:57:30.000Z",
+      "snippet": "On Equity, we discussed how Meta's AI announcement managed to steal the spotlight from OpenAI and Anthropic."
+    },
+    {
+      "id": "22159f2ce872",
+      "title": "Imp is a full port of DSPy to the BEAM",
+      "url": "https://github.com/deepfates/imp",
+      "source": "Hacker News",
+      "date": "2026-09-27T19:28:23.000Z",
+      "snippet": "84 points · 7 comments on HN"
+    },
+    {
+      "id": "a365d26f319b",
+      "title": "Ember-1",
+      "url": "https://fireworks.ai/blog/ember-1",
+      "source": "Hacker News",
+      "date": "2026-09-27T17:31:53.000Z",
+      "snippet": "508 points · 225 comments on HN"
+    },
+    {
+      "id": "b04934350ff5",
+      "title": "Calling the AI bluff: Adding \"Do not guess\" cut made-up claims from 71% to 20%",
+      "url": "https://earnanhonestdollar.com/bench",
+      "source": "Hacker News",
+      "date": "2026-09-27T17:24:17.000Z",
+      "snippet": "60 points · 14 comments on HN"
+    },
+    {
+      "id": "ed2cbcca51ab",
+      "title": "OpenAI agents tried to ‘bruteforce’ a UN website",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1001178/openai-agents-bruteforce-un-website",
+      "source": "The Verge",
+      "date": "2026-09-27T17:21:07.000Z",
+      "snippet": "Security researcher Rowan Howard-Jones says that OpenAI agents scanned the UN Conference on Trade and Development's (UNCTAD) statistics site over 16,000 times between April and June. While the incident doesn't quite rise"
+    },
+    {
+      "id": "8884274c1b64",
+      "title": "Anthropic’s Dario Amodei gets the SNL treatment",
+      "url": "https://techcrunch.com/2026/09/27/anthropics-dario-amodei-gets-the-snl-treatment/",
+      "source": "TechCrunch",
+      "date": "2026-09-27T16:30:00.000Z",
+      "snippet": "\"AI is the devil and I its maker.\""
+    },
+    {
+      "id": "f13e6555ace6",
+      "title": "OpenAI halts training of latest models as reports mount of AI agents going rogue",
+      "url": "https://www.theguardian.com/technology/2026/sep/27/openai-halts-training-of-latest-models-as-reports-mount-of-ai-agents-going-rogue",
+      "source": "Hacker News",
+      "date": "2026-09-27T16:29:38.000Z",
+      "snippet": "58 points · 116 comments on HN"
+    },
+    {
+      "id": "4aa8cdc749d3",
+      "title": "There are no \"rogue\" AI agents",
+      "url": "https://eoinhiggins.substack.com/p/there-are-no-rogue-ai-agents",
+      "source": "Hacker News",
+      "date": "2026-09-27T16:19:46.000Z",
+      "snippet": "371 points · 255 comments on HN"
+    },
+    {
+      "id": "6352c31fe11c",
+      "title": "Show HN: TinyAIArena watch AI agents battle it out",
+      "url": "https://tinyaiarena.com/",
+      "source": "Hacker News",
+      "date": "2026-09-27T15:51:28.000Z",
+      "snippet": "111 points · 44 comments on HN"
+    },
     {
       "id": "b09c672e4408",
       "title": "Google tests buying from Walmart-owned Flipkart through Gemini and AI Mode in India",
@@ -32,7 +168,7 @@
       "url": "https://www.privatemode.ai/blog/system-one-from-glm-flash",
       "source": "Hacker News",
       "date": "2026-09-26T15:49:04.000Z",
-      "snippet": "100 points · 39 comments on HN"
+      "snippet": "133 points · 58 comments on HN"
     },
     {
       "id": "c6fb97f6187a",
@@ -56,7 +192,7 @@
       "url": "https://www.lasso.security/blog/the-provenance-tax-understanding-the-impact-of-llm-watermarking-on-ai-agent-behavior",
       "source": "Hacker News",
       "date": "2026-09-26T13:05:36.000Z",
-      "snippet": "56 points · 71 comments on HN"
+      "snippet": "57 points · 71 comments on HN"
     },
     {
       "id": "bba51812540b",
@@ -64,7 +200,7 @@
       "url": "https://www.lemonde.fr/en/economy/article/2026/09/24/arthur-mensch-ceo-of-french-start-up-mistral-ai-ai-is-software-it-can-be-controlled_6757890_19.html",
       "source": "Hacker News",
       "date": "2026-09-26T12:52:04.000Z",
-      "snippet": "93 points · 162 comments on HN"
+      "snippet": "98 points · 169 comments on HN"
     },
     {
       "id": "ab6a90f5d123",
@@ -72,15 +208,7 @@
       "url": "https://blog.bustikiller.com/2026/09/25/one-month-without-ai.html",
       "source": "Hacker News",
       "date": "2026-09-26T10:08:21.000Z",
-      "snippet": "175 points · 223 comments on HN"
-    },
-    {
-      "id": "4692bb4bba3b",
-      "title": "The Copilot+ PC brand is dead",
-      "url": "https://www.windowscentral.com/microsoft/windows-11/the-copilot-pc-brand-is-dead-microsoft-and-pc-makers-quietly-pull-back-on-tarnished-windows-11-ai-pc-branding",
-      "source": "Hacker News",
-      "date": "2026-09-26T09:55:38.000Z",
-      "snippet": "104 points · 66 comments on HN"
+      "snippet": "183 points · 226 comments on HN"
     },
     {
       "id": "1fe1b6ab723e",
@@ -112,7 +240,7 @@
       "url": "https://www.reuters.com/business/ftc-chair-pushes-back-treating-ai-agents-independent-actors-2026-09-25/",
       "source": "Hacker News",
       "date": "2026-09-25T22:49:41.000Z",
-      "snippet": "67 points · 21 comments on HN"
+      "snippet": "71 points · 21 comments on HN"
     },
     {
       "id": "df19e6663c5f",
@@ -144,7 +272,7 @@
       "url": "https://www.tai-dr.com/",
       "source": "Hacker News",
       "date": "2026-09-25T20:37:56.000Z",
-      "snippet": "111 points · 111 comments on HN"
+      "snippet": "111 points · 113 comments on HN"
     },
     {
       "id": "28eff29135c5",
@@ -296,7 +424,7 @@
       "url": "https://www.cnbc.com/2026/09/25/pentagon-anthropic-ai-risk-appeals-court.html",
       "source": "Hacker News",
       "date": "2026-09-25T15:29:25.000Z",
-      "snippet": "491 points · 870 comments on HN"
+      "snippet": "496 points · 883 comments on HN"
     },
     {
       "id": "31c366282409",
@@ -304,7 +432,7 @@
       "url": "https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models",
       "source": "Hacker News",
       "date": "2026-09-25T15:27:35.000Z",
-      "snippet": "176 points · 106 comments on HN"
+      "snippet": "177 points · 106 comments on HN"
     },
     {
       "id": "6c0af3a44940",
@@ -328,7 +456,7 @@
       "url": "https://www.bloomberg.com/news/articles/2026-09-25/microsoft-abandons-personal-ai-chatbot-race-with-copilot-reboot",
       "source": "Hacker News",
       "date": "2026-09-25T14:07:08.000Z",
-      "snippet": "149 points · 143 comments on HN"
+      "snippet": "156 points · 148 comments on HN"
     },
     {
       "id": "a6198b47e92b",
@@ -384,7 +512,7 @@
       "url": "https://dashbit.co/blog/evolving-ai-era",
       "source": "Hacker News",
       "date": "2026-09-25T02:34:39.000Z",
-      "snippet": "104 points · 62 comments on HN"
+      "snippet": "136 points · 97 comments on HN"
     },
     {
       "id": "6a77c3e51947",
@@ -392,7 +520,7 @@
       "url": "https://koi.rest",
       "source": "Hacker News",
       "date": "2026-09-24T21:33:03.000Z",
-      "snippet": "223 points · 62 comments on HN"
+      "snippet": "226 points · 65 comments on HN"
     },
     {
       "id": "ddf8ab4c5189",
@@ -400,7 +528,7 @@
       "url": "https://thelastsoftwareengineer.substack.com/p/how-i-changed-teaching-after-ai-managed",
       "source": "Hacker News",
       "date": "2026-09-24T20:51:50.000Z",
-      "snippet": "217 points · 193 comments on HN"
+      "snippet": "295 points · 277 comments on HN"
     },
     {
       "id": "ee9698a7fdb9",
@@ -424,7 +552,7 @@
       "url": "https://resobscura.substack.com/p/ai-labs-need-to-start-funding-historical",
       "source": "Hacker News",
       "date": "2026-09-24T19:14:27.000Z",
-      "snippet": "170 points · 43 comments on HN"
+      "snippet": "173 points · 44 comments on HN"
     },
     {
       "id": "9ef4a7c3c631",
@@ -480,7 +608,7 @@
       "url": "https://github.com/devdotfast/whiteboard",
       "source": "Hacker News",
       "date": "2026-09-24T17:21:36.000Z",
-      "snippet": "412 points · 141 comments on HN"
+      "snippet": "420 points · 141 comments on HN"
     },
     {
       "id": "cb7e0a0370f0",
@@ -513,134 +641,6 @@
       "source": "The Verge",
       "date": "2026-09-24T17:00:00.000Z",
       "snippet": "This is Optimizer, a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Opt in for Optimizer here. Last"
-    },
-    {
-      "id": "06d8bd23c921",
-      "title": "TechCrunch Founder Summit 2026: Everything you need to know",
-      "url": "https://techcrunch.com/2026/09/24/techcrunch-founder-summit-2026-everything-you-need-to-know/",
-      "source": "TechCrunch",
-      "date": "2026-09-24T16:46:47.000Z",
-      "snippet": "TechCrunch Founder Summit is a full-day gathering in Boston on November 4 where founders across all stages connect with top VCs and experienced entrepreneurs to gain tactical insights on building and scaling their compan"
-    },
-    {
-      "id": "5fbe01394f97",
-      "title": "ElevenLabs’ CEO on margins, IPO timing, and telling customers they’re talking to a bot",
-      "url": "https://techcrunch.com/2026/09/24/twenty-minutes-with-the-ceo-of-elevenlabs-now-reportedly-valued-at-22-billion/",
-      "source": "TechCrunch",
-      "date": "2026-09-24T16:35:13.000Z",
-      "snippet": "ElevenLabs powers the AI voice on the other end of a lot of customer service calls, and its CEO told me this week that businesses should probably tell you that — at least until getting a machine is what everyone expects "
-    },
-    {
-      "id": "e7107d9a76d9",
-      "title": "Introducing Gemini 3.8 Live with Live Avatar",
-      "url": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
-      "source": "Google DeepMind",
-      "date": "2026-09-24T16:20:39.000Z",
-      "snippet": ""
-    },
-    {
-      "id": "cd729cf3bb43",
-      "title": "Google's first Suncatcher orbital data center test launches October 1",
-      "url": "https://arstechnica.com/google/2026/09/googles-first-suncatcher-orbital-data-center-test-launches-october-1/",
-      "source": "Ars Technica",
-      "date": "2026-09-24T16:16:34.000Z",
-      "snippet": "Google's experimental orbital data center will have four TPUs and only run for 15 minutes at a time."
-    },
-    {
-      "id": "be8469f5dc46",
-      "title": "Federal judge orders Texas to air condition all prisons by the end of 2029",
-      "url": "https://www.texastribune.org/2026/09/22/texas-prison-air-conditioning-lawsuit-ruling/",
-      "source": "Hacker News",
-      "date": "2026-09-24T16:15:34.000Z",
-      "snippet": "117 points · 201 comments on HN"
-    },
-    {
-      "id": "69d34719f9a1",
-      "title": "Gemini can now call businesses for you so you don’t have to wait on hold",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1000116/google-gemini-business-phone-calls",
-      "source": "The Verge",
-      "date": "2026-09-24T16:04:31.000Z",
-      "snippet": "Google's launching an \"early experiment\" feature on Pixel 11 that lets users delegate local business calls to Gemini, like making a reservation, checking if a product is in stock, or rescheduling an appointment. Accordin"
-    },
-    {
-      "id": "a0af0f0d7e88",
-      "title": "Meet the next wave of VCs judging Startup Battlefield 200 at TechCrunch Disrupt 2026",
-      "url": "https://techcrunch.com/2026/09/24/meet-the-next-wave-of-vcs-judging-startup-battlefield-200-at-techcrunch-disrupt-2026/",
-      "source": "TechCrunch",
-      "date": "2026-09-24T16:03:36.000Z",
-      "snippet": "Meet the next wave of VCs judging the Startup Battlefield 200 contenders on the main stage at TechCrunch Disrupt 2026. Register by September 25 at 11:59 p.m. PT, to save up to $200 and to get a front-row seat to one of t"
-    },
-    {
-      "id": "fe13b3d5a5fd",
-      "title": "OpenAI agent “didn’t accept no for an answer” in Australian government breach",
-      "url": "https://arstechnica.com/ai/2026/09/openai-agent-didnt-accept-no-for-an-answer-in-australian-government-breach/",
-      "source": "Ars Technica",
-      "date": "2026-09-24T16:01:16.000Z",
-      "snippet": "\"There will obviously be legal consequences,\" prime minister promises."
-    },
-    {
-      "id": "b79191560dd6",
-      "title": "Google tests letting Gemini call businesses for you",
-      "url": "https://techcrunch.com/2026/09/24/google-tests-letting-gemini-make-phone-calls-initially-for-us-pixel-owners/",
-      "source": "TechCrunch",
-      "date": "2026-09-24T16:00:00.000Z",
-      "snippet": "Google says the AI-calling feature will first be available to Pixel 11 owners in the U.S. who pay for a Gemini subscription."
-    },
-    {
-      "id": "1ae931d16743",
-      "title": "Tutoring company tells parents to save their money and 'use AI instead'",
-      "url": "https://www.afr.com/policy/health-and-education/tutoring-company-tell-parents-to-save-their-money-and-use-ai-instead-20260923-p60z0r",
-      "source": "Hacker News",
-      "date": "2026-09-24T15:09:38.000Z",
-      "snippet": "142 points · 231 comments on HN"
-    },
-    {
-      "id": "5b513703eb7f",
-      "title": "Shield AI, Waabi, and General Motors on building AI when failure is not an option at TechCrunch Disrupt 2026",
-      "url": "https://techcrunch.com/2026/09/24/shield-ai-waabi-and-general-motors-on-building-ai-when-failure-is-not-an-option-at-techcrunch-disrupt-2026/",
-      "source": "TechCrunch",
-      "date": "2026-09-24T15:00:00.000Z",
-      "snippet": "Leaders from Waabi, Shield AI, and General Motors join the Real World AI Stage at TechCrunch Disrupt 2026 to talk building AI. Save up to $200 by September 25 at 11:59 p.m. PT. Get a second pass at 50% off."
-    },
-    {
-      "id": "1450b54356bc",
-      "title": "Japanese used bookstores see 5x sales surge as books are being bought by the ton",
-      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/japanese-used-bookstores-see-5x-sales-surge-as-books-are-being-bought-by-the-ton-one-50-ton-order-sent-to-the-us-for-ai-scanning-and-destruction-multitude-of-suspicious-bulk-buys-thought-to-end-up-in-foreign-ai-scan-and-shred-facilities",
-      "source": "Hacker News",
-      "date": "2026-09-24T14:51:31.000Z",
-      "snippet": "92 points · 128 comments on HN"
-    },
-    {
-      "id": "d97cd233317b",
-      "title": "Lovable’s annualized revenue crosses $600M as vibe coding takes off",
-      "url": "https://techcrunch.com/2026/09/24/lovables-annualized-revenue-crosses-600m-as-vibe-coding-takes-off/",
-      "source": "TechCrunch",
-      "date": "2026-09-24T14:43:25.000Z",
-      "snippet": "Lovable co-founder Fabian Hedin said that apps created on the platform are getting nearly a billion monthly views each month."
-    },
-    {
-      "id": "56a7f6030551",
-      "title": "AI safety is mostly a sex cult in Berkeley",
-      "url": "https://www.verysane.ai/p/ai-safety-is-mostly-a-sex-cult-in",
-      "source": "Hacker News",
-      "date": "2026-09-24T14:38:31.000Z",
-      "snippet": "120 points · 30 comments on HN"
-    },
-    {
-      "id": "7921e1c1f398",
-      "title": "Ando wants to take on Slack with a team messaging app that lets humans and agents work together",
-      "url": "https://techcrunch.com/2026/09/24/ando-eyes-slack-as-it-builds-team-messaging-platform-for-humans-and-agents-to-work-together/",
-      "source": "TechCrunch",
-      "date": "2026-09-24T14:31:00.000Z",
-      "snippet": "The app gives agents their own identities and inboxes and lets them partake in conversations as naturally as people can."
-    },
-    {
-      "id": "eb48c349777e",
-      "title": "TechCrunch Disrupt 2026: Cal AI’s Zach Yadegari on how to create viral growth and capitalize on it",
-      "url": "https://techcrunch.com/2026/09/24/techcrunch-disrupt-2026-cal-ais-zach-yadegari-on-how-to-create-viral-growth-and-capitalize-on-it/",
-      "source": "TechCrunch",
-      "date": "2026-09-24T14:30:00.000Z",
-      "snippet": "Zach Yadegari joins the Builders Stage at TechCrunch Disrupt 2026 to share how he capitalized on viral growth. Save up to $200 before September 25. Save 50% on a second pass."
     }
   ]
 }
