@@ -1,6 +1,42 @@
 {
-  "updated": "2026-09-29T12:07:22.100Z",
+  "updated": "2026-09-30T11:55:01.151Z",
   "claude-code": [
+    {
+      "version": "2.1.285",
+      "date": null,
+      "bullets": [
+        "Added <code>CLAUDE_CODE_DISABLE_WEB_FETCH</code> environment variable to turn off the WebFetch tool",
+        "Added <code>claude --desktop</code> to open the Claude desktop app on the current directory, or on a session with <code>--continue</code> / <code>--resume </code>",
+        "Added <code>claude plugin configure </code> to show a plugin's options and which are unset, or save new values read from stdin with <code>--values-stdin</code>",
+        "Added <code>.=</code> to <code>claude plugin install --config</code>, so a bundled <code>.mcpb</code> MCP server's own settings can be set at install time and it starts without visiting <code>/plugin</code> → Configure",
+        "Added <code>allowedProviders</code> managed setting to limit which API providers a machine may use (Anthropic API, a custom endpoint, Bedrock, Mantle, Vertex AI, Foundry, Claude Platform on AWS, or a Cloud gateway)",
+        "Added <code>CLAUDE_CODE_NONSTREAMING_TIMEOUT_RETRIES</code> environment variable to cap re-sends of a non-streaming fallback request that timed out",
+        "Fixed <code>claude -p</code> with <code>CLAUDE_CODE_FORK_SUBAGENT=1</code>: a subagent's own Agent call now runs in the foreground, so the subagent gets the child's result",
+        "Fixed plugin and marketplace installs and updates over SSH ignoring the ssh program set in <code>GIT_SSH</code> or in your git config's <code>core.sshCommand</code>",
+        "Fixed Claude Code refusing to start when the OS denies reading the managed settings file; it now warns and starts without that file's policies. Other read errors and unparseable files stop every session",
+        "Fixed cloud sessions that restarted after their conversation was compacted refusing the next update to an artifact the session had already read or published",
+        "Fixed <code>claude plugin disable</code> and <code>enable</code> with a full <code>name@marketplace</code> id changing a settings entry in another letter case instead of the installed plugin's own",
+        "Fixed files attached to a message sent over Remote Control being left out after a single failed download; a network error, timeout or server error is now retried up to twice",
+        "Fixed switching models mid-session with a <code>set_model</code> request (such as the Agent SDK's <code>setModel</code>) leaving the new model on the built-in output-token limit and auto-compact window until restart",
+        "Fixed redacted logs and transcripts showing part of a URL password that contains <code>@</code>, or all of it when the URL writes its <code>@</code> as <code>%40</code>",
+        "Fixed SSH passphrase and new-host prompts from worktree and <code>/teleport</code> fetches taking over the terminal; these fetches now fail fast instead of asking",
+        "Fixed switching off an MCP server added mid-session in SDK and <code>-p</code> sessions leaving its tools available",
+        "Fixed <code>claude -p --permission-prompt-tool</code>: a background subagent's permission request now goes to the prompt tool instead of being auto-denied",
+        "Fixed <code>claude mcp list</code> and <code>claude mcp get</code>, and the not-found error of <code>claude mcp remove</code>, <code>login</code> and <code>logout</code>, printing line breaks and terminal escape sequences from MCP server names and values",
+        "Fixed sandbox auto-allow asking for approval on every run of many inline scripts (<code>python3 -c</code>, <code>node -e</code>) just because they contain <code>=</code>",
+        "Fixed fork subagents not keeping the session's plan mode or <code>dontAsk</code> mode: a fork now runs under its parent's permission mode and cannot exit plan mode",
+        "Fixed <code>claude remote-control --help</code> saying <code>--[no-]chrome</code> defaults to the machine's <code>/chrome</code> setting; spawned sessions keep Claude in Chrome off unless <code>--chrome</code> is passed",
+        "Fixed background subagents in auto mode prompting a second, redundant reply after each report",
+        "Fixed cloud session creation and <code>/remote-env</code> reading only the newest 20 of an account's environments",
+        "Fixed Remote Control marking a message as read as soon as it arrived instead of when Claude started on it, and losing a message still queued when the terminal quit (it now arrives on the next resume)",
+        "Fixed installing a plugin with <code>claude plugin install</code> or <code>/plugin</code> putting it into an installed plugin's cache or data folder when their ids differ only in <code>.</code>, <code>-</code>, <code>@</code> or (macOS, Windows) capitals; the install is now refused",
+        "Fixed hooks and SDK permission callbacks seeing a missing or outdated plan on ExitPlanMode when the plan was written in the same response",
+        "Fixed the first reply in cloud sessions arriving tens of milliseconds late, a regression in 2.1.283",
+        "Fixed sessions that authenticate with <code>ANTHROPIC_AUTH_TOKEN</code> against the Anthropic API never loading the organization's policy",
+        "Fixed a failed <code>agent()</code>, <code>parallel()</code> or <code>pipeline()</code> call that a workflow script awaits later, or not at all, being treated as an unhandled promise rejection, which could end a background session",
+        "Fixed synchronous hooks hanging Claude Code while a background process the hook started (for example <code>some-daemon &amp;</code>) kept its output open; the hook now finishes shortly after its own process exits"
+      ]
+    },
     {
       "version": "2.1.284",
       "date": null,
@@ -663,51 +699,64 @@
         "Fixed Claude Code failing to launch on macOS 12 (Monterey), a regression introduced in 2.1.255",
         "Fixed remote and scheduled sessions failing with &quot;user messages must have non-empty content&quot; after a re-sent permission approval could not be applied"
       ]
-    },
-    {
-      "version": "2.1.257",
-      "date": null,
-      "bullets": [
-        "Added Claude Fable 5.1 (<code>claude-fable-5-1</code>), now the default Fable model — 1M context, $10/$50 per Mtok with $0.25/Mtok cache reads",
-        "Added &quot;Time format&quot; (<code>timeFormat</code>) and <code>timeZone</code> settings: 12-hour, 24-hour, 24-hour UTC, or a strftime pattern for the turn-end clock and transcript-view timestamps",
-        "Added a Containment Escape rule to auto mode so cloud metadata-credential fetches, egress evasion, and cross-tenant reach are no longer auto-approved unless your environment marks them expected",
-        "Added <code>CLAUDE_CODE_SUBAGENT_MODEL_FORCE</code> to apply <code>CLAUDE_CODE_SUBAGENT_MODEL</code> (or the main model) to every subagent, ignoring per-spawn and agent-definition model overrides",
-        "Added <code>s</code> in <code>/effort</code> to change effort for the current session only, matching <code>/model</code>",
-        "Added a <code>/doctor</code> warning for stale sandbox mask files left by a killed session",
-        "Added a one-time prompt in auto mode before the first file read outside the working directories, with the option to block such reads (<code>permissions.blockReadsOutsideWorkingDirectories</code>)",
-        "Added support for a gateway-supplied <code>description</code> on discovered <code>/model</code> picker entries (<code>CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY</code>); entries without one still read &quot;From gateway&quot;",
-        "Fixed settings in a <code>.claude/</code> folder created after startup not being picked up until restart",
-        "Fixed sessions dispatched from an agent view opened with <code>←</code> always starting in the original session's permission mode, overriding the target directory's <code>defaultMode</code> and the agent's <code>permissionMode</code>",
-        "Fixed <code>keybindings.json</code> rebinds of Ctrl+G being ignored in <code>claude agents</code>; its Ctrl+S / Ctrl+T are now rebindable via the new <code>Agents</code> context",
-        "Fixed background sessions failing to start on macOS npm installs during a self-update, and on Windows when a stale daemon lock file pointed at a reused process id",
-        "Fixed the working spinner stopping while a response streams behind a slash-command panel",
-        "Fixed a background session's <code>state.json</code> <code>detail</code> repeating its own dispatch prompt after a scheduled wake-up",
-        "Fixed <code>claude agents</code> keeping a background session you re-prompted buried in Completed after it finished again; Completed now orders by the latest finish",
-        "Fixed <code>claude --bg</code> from a directory that was just deleted reporting &quot;backgrounded&quot; and leaving a crashed session row; it now prints the reason and exits 1",
-        "Fixed Remote Control connecting mid-session re-sending the Bash tool definition, causing a prompt-cache miss",
-        "Fixed a doubly-listed custom <code>Authorization</code> header overriding the configured credential on Bedrock, Mantle, Vertex, and WIF, and the Vertex setup wizard picking up a leftover Anthropic profile from <code>~/.config/anthropic</code>",
-        "Fixed Claude apps gateway sending stray host <code>Authorization</code> or profile headers to Foundry, Vertex, and Bedrock, and Foundry Entra ID upstreams not starting when <code>ANTHROPIC_FOUNDRY_API_KEY</code> is set",
-        "Fixed a leftover Anthropic API key or auth token being sent alongside your Foundry subscription key in API-key mode",
-        "Fixed <code>/schedule</code> routines whose prompt was saved without a message role and then ran with nothing to do",
-        "Fixed <code>claude agents</code> not saying that a background session is waiting for you to approve a message from another session, or who sent it",
-        "Fixed a prompt stashed with Ctrl+S inside an opened background session being lost when the session went idle or was stopped and then reopened",
-        "Fixed telemetry (OTEL) settings pushed through server-managed settings being ignored on warm starts, including desktop-app Code sessions",
-        "Fixed a teammate permission request being answered twice when the leader's mailbox write was briefly locked",
-        "Fixed a phantom duplicate slash-command row rendering below the in-flight turn while a command's auto-continued response streamed",
-        "Fixed <code>policyHelper</code> <code>timeoutMs</code> and <code>refreshIntervalMs</code> values above the timer maximum (2147483647) causing failures or re-runs every millisecond; they are now clamped",
-        "Fixed the token counter freezing or crawling after switching to another subagent's transcript, and made background subagents' and teammates' counters update live while a response streams",
-        "Fixed sandbox network hosts written with a trailing dot (<code>example.com.</code>): a <code>deniedDomains</code> entry didn't block the host inside the sandbox, and &quot;don't ask again&quot; for such a host kept prompting",
-        "Fixed dismissing the Remote Control consent prompt (Esc, or <code>n</code> at <code>claude remote-control</code>) counting as consent, so the next request connected without asking"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.161.0-alpha.4",
+      "date": "2026-09-30T11:49:10.000Z",
+      "bullets": [
+        "Release 0.161.0-alpha.4"
+      ]
+    },
+    {
+      "version": "0.161.0-alpha.3",
+      "date": "2026-09-30T02:24:58.000Z",
+      "bullets": [
+        "Release 0.161.0-alpha.3"
+      ]
+    },
+    {
+      "version": "0.160.0-alpha.6.1",
+      "date": "2026-09-30T01:09:54.000Z",
+      "bullets": [
+        "Release 0.160.0-alpha.6.1"
+      ]
+    },
+    {
+      "version": "0.159.2",
+      "date": "2026-09-29T23:57:16.000Z",
+      "bullets": [
+        "- Suppressed console windows flashing on Windows when Codex launches background processes and sandboxed commands. (#49385) Full Changelog: https://github.com/openai/codex/compare/rust-v0.159.1...rust-v0.159.2 - #49385 [0.159] Backport Windows console suppression for 0.159.2 @andrewgu-oai"
+      ]
+    },
+    {
+      "version": "0.159.1",
+      "date": "2026-09-29T20:32:34.000Z",
+      "bullets": [
+        "- Added GPT-6.1 Sol as the default model in the bundled catalog and Amazon Bedrock Mantle and Runtime catalogs. (#49323, #49342) Full Changelog: https://github.com/openai/codex/compare/rust-v0.159.0...rust-v0.159.1 - #49323 [0.159] Prepare 0.159.1 release backports @andrewgu-oai - #49342 [0.159] Backport GPT-6.1 Sol Bedrock catalogs @celia-oai"
+      ]
+    },
     {
       "version": "0.159.0",
       "date": "2026-09-29T08:05:42.000Z",
       "bullets": [
         "- Opt-in <code>instant_interrupt</code> lets new input steer Codex during model responses or long-running code-mode calls. (#48135, #48141) - New sessions get a compact welcome screen and consistent headers, with occasional tips during and after turns. (#48513, #48562, #48352) - The warnings viewer dismisses reviewed warnings when closed; press <code>k</code> to keep one for later. (#48205, #48206) - You can scroll the transcript while deciding whether to implement a plan. (#48805) - Native Mermaid rendering supports more flowchart edges, labels, and node groups. (#48814, #48895) - App-server clients can paginate thread history from a specific item. (#48151) - Windows launches avoid stray console windows for MCP servers, code-mode hosts, and piped commands; restrictive launchers can fall back to embedded mode. (#48138, #48238, #48483, #48491) - Copying transcript selections preserves Markdown tables, formatting, and significant whitespace.",
         "More terminals now copy automatically on selection. (#48548, #48549, #48469) - Blank sessions retain drafts when switching tasks, and threads can be archived and listed before their first turn. (#48628, #48828, #48199) - Local ChatGPT sign-in opens the browser reliably; onboarding also provides a shortcut to copy the login link. (#48502, #48544) - Approved commands retain explicit filesystem denials, and <code>.aws</code> directories are protected by default under writable roots. (#48155, #48176) - Fixed macOS TLS access in network-enabled sandboxes and remote environments that require proxy access. (#48565, #48198) - Removed automatic follow-up prompt suggestions and the <code>tui.prompt_suggestions</code> setting. (#48621) - Removed the bundled <code>plugin-creator</code> skill. (#48604) Full Changelog: https://github.com/openai/codex/compare/rust-v0.158.0...rust-v0.159.0 - #48135 Add opt-in code-mode yielding on new user input @pakrym-oai - #48138 Suppress console windows when spawning the code-mode host on Windows @zm-oai - #48141 Preempt model responses when new user input arrives @pakrym-oai - #48143 Preserve executor MCP credential boundaries across reconnects @rreichel3-oai - #48151 Add item anchors to <code>thread/items/list</code> pagination @btraut-openai - #48155 Preserve filesystem denials when preparing approved commands @viyatb-oai - #48157 Allow Windows daemon launches with residual job membership @etraut-openai - #48158 Fix Guardian retained context spacing and empty assistant handling @olliem-oai - #48168 Generate unique exec-server process IDs for every request @sdcoffey - #48174 Preserve usage limit windows in turn and compaction analytics @rhan-oai - #48176 Protect <code>.aws</code> directories under sandbox writable roots @jackz100 - #48187 Fix zsh alias quoting in sourced shell snapshots @jif-oai - #48190 Bound agent message board SSE frames before parsing @jif-oai - #48197 Optimize <code>blake3</code> in Bazel fastbuilds @jif-oai - #48198 Honor execution environment proxy requirements @seanh-oai - #48199 Keep archived threads with empty previews visible in listings @acrognale-oai - #48200 Extract Responses header conversion into a shared module @anp-oai - #48205 Dismiss viewed TUI warnings when closing the viewer @fcoury-oai - #48206 Add a keep-and-next action to the warnings viewer @fcoury-oai - #48207 Preserve queued output for observers during code-mode termination @pakrym-oai - #48211 Keep Codex visible during external editor handoff @etraut-openai - #48213 Isolate executable fixture copies in CLI tests on Linux @jif-oai - #48222 Preserve late result metadata for truncated code-mode calls @ningyi-oai - #48224 Preserve model and access program pairs during compaction @jamy-OAI - #48229 Extract Responses failure parsing into a dedicated module @anp-oai - #48238 Suppress console windows for local Windows MCP servers @malsamiri-oai - #48272 Prevent Windows daemon launches from retaining launcher stdio @zm-oai - #48318 Keep TUI reconnect attempts running until the shared deadline @etraut-openai - #48344 Preserve tool metadata for OpenAI provider endpoint overrides @peilin-openai - #48350 Display reconnect commands on a separate line @etraut-openai - #48352 Show turn tips while working and after completion in the TUI @fcoury-oai - #48353 Stabilize skill catalogs across executor availability changes @vkg-oai - #48469 Default to copying transcript selections in more terminals @fcoury-oai - #48483 Prevent console windows for piped Windows child processes @fcoury-oai - #48489 Fix Mermaid shape, relationship, and state description parsing @etraut-openai - #48491 Fall back to embedded mode under restrictive Windows launchers @fcoury-oai - #48502 Fix ChatGPT browser sign-in for local app servers @etraut-openai - #48508 Preserve WebSocket continuations when steering a turn @pakrym-oai - #48513 Refresh the TUI welcome screen for new sessions @fcoury-oai - #48531 Add context to Windows sandbox runtime registration errors @zm-oai - #48544 Make onboarding login links easier to copy @etraut-openai - #48547 Fade blossom replays back to the idle state @fcoury-oai - #48548 Preserve table cell source metadata through TUI rendering @fcoury-oai - #48549 Preserve Markdown tables and whitespace when copying TUI responses @fcoury-oai - #48551 Fix TUI math rendering for zero and big wedge expressions @etraut-openai - #48560 Keep working tips stable during transcript interaction @fcoury-oai - #48562 Use a consistent borderless session header in the TUI @fcoury-oai - #48565 Allow macOS TLS trust evaluation in network-enabled Seatbelt profiles @winston-openai - #48568 Allow exec-server to proxy permitted private IPs upstream @open-matt - #48574 Preserve deferred tool namespace names before descriptions @adaley-openai - #48575 Allow provisioned executors more time to come online @richardopenai - #48604 Remove the bundled <code>plugin-creator</code> skill @martinauyeung-oai - #48611 Centralize persistent mode enablement checks @alishobeiri-oai - #48621 Remove follow-up prompt suggestions from the TUI @etraut-openai - #48623 Preserve empty Markdown list markers in the TUI @etraut-openai - #48626 Stop showing previous-session summaries when switching TUI sessions @etraut-openai - #48628 Preserve blank TUI sessions when switching tasks @etraut-openai - #48643 Set the provisioned macOS CLI bundle name to ChatGPT @riley-oai - #48646 Fix the session-start helper call in the command center test @etraut-openai - #48686 Remove WebSocket headers and tool payloads from info logs @chess-oai - #48724 Prevent Linux ETXTBSY races in MCP stdio tests @jif-oai - #48725 Retain confirmed Code Mode messages for Guardian reviews @ankushg - #48727 Centralize executable fixture creation to avoid Linux ETXTBSY races @jif-oai - #48754 Render <code>/status</code> without borders and wrap long values @fcoury-oai - #48757 Match TUI status shimmer timing to desktop headers @fcoury-oai - #48761 Show hidden output line counts in compact terminal activity @fcoury-oai - #48764 Preserve MCP app resource URIs without defaulting display mode @victor-openai - #48772 Fix Unix socket connections through long symlink paths @etraut-openai - #48775 Match pinned transcript headers to the original prompt style @etraut-openai - #48776 Remove the <code>current</code> badge from TUI task rows @etraut-openai - #48779 Preserve independent Guardian history across parent compaction @felixxia-oai - #48783 Add single-server MCP status discovery with thread connection reuse @victor-openai - #48796 Add opt-in structured errors for Guardian circuit-breaker interruptions @won-openai - #48799 Fix SGR mouse reporting for Windows terminal capture @etraut-openai - #48800 Use the terminal palette for ordered Markdown list markers @etraut-openai - #48805 Allow transcript wheel scrolling while a modal is open @fcoury-oai - #48807 Show short turn durations in TUI completion footers @fcoury-oai - #48812 Add history-aware prewarming for idle threads @vkg-oai - #48814 Preserve punctuation and semicolons in Mermaid labels @etraut-openai - #48819 Use explicit histogram buckets for tool and skill context metrics @mzeng-openai - #48824 Keep voice RTP timestamps aligned to 20 ms packets @bc-openai - #48827 Show a hand pointer over transcript links in Ghostty and Kitty @bc-openai - #48828 Allow archiving threads before their first turn @bc-openai - #48829 Wait briefly for the Windows sandbox provisioning service to start @zm-oai - #48830 Show a short, neutral TUI interruption notice @fcoury-oai - #48895 Expand native Mermaid flowchart syntax support @etraut-openai - #48973 Isolate realtime auth fallback test from startup prewarm @jif-oai - #48982 Prevent message-board notifications from reopening final answers @eknight-oai"
+      ]
+    },
+    {
+      "version": "0.161.0-alpha.2",
+      "date": "2026-09-29T18:32:11.000Z",
+      "bullets": [
+        "Release 0.161.0-alpha.2"
+      ]
+    },
+    {
+      "version": "0.161.0-alpha.1",
+      "date": "2026-09-29T16:22:41.000Z",
+      "bullets": [
+        "Release 0.161.0-alpha.1"
       ]
     },
     {
@@ -793,55 +842,6 @@
       "date": "2026-09-27T21:09:15.000Z",
       "bullets": [
         "Release 0.159.0-alpha.10"
-      ]
-    },
-    {
-      "version": "0.158.0-alpha.15.3",
-      "date": "2026-09-27T19:18:13.000Z",
-      "bullets": [
-        "Release 0.158.0-alpha.15.3"
-      ]
-    },
-    {
-      "version": "0.159.0-alpha.6",
-      "date": "2026-09-26T20:07:52.000Z",
-      "bullets": [
-        "Release 0.159.0-alpha.6"
-      ]
-    },
-    {
-      "version": "0.159.0-alpha.5",
-      "date": "2026-09-26T17:34:23.000Z",
-      "bullets": [
-        "Release 0.159.0-alpha.5"
-      ]
-    },
-    {
-      "version": "0.159.0-alpha.4",
-      "date": "2026-09-26T06:21:38.000Z",
-      "bullets": [
-        "Release 0.159.0-alpha.4"
-      ]
-    },
-    {
-      "version": "0.158.0-alpha.2.1",
-      "date": "2026-09-26T04:51:49.000Z",
-      "bullets": [
-        "Release 0.158.0-alpha.2.1"
-      ]
-    },
-    {
-      "version": "0.158.0-alpha.15.2",
-      "date": "2026-09-27T00:02:58.000Z",
-      "bullets": [
-        "Release 0.158.0-alpha.15.2"
-      ]
-    },
-    {
-      "version": "0.158.0-alpha.15.1",
-      "date": "2026-09-26T02:58:19.000Z",
-      "bullets": [
-        "Release 0.158.0-alpha.15.1"
       ]
     }
   ]
