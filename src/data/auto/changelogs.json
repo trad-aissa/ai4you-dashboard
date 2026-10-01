@@ -1,6 +1,42 @@
 {
-  "updated": "2026-09-30T11:55:01.151Z",
+  "updated": "2026-10-01T12:26:00.844Z",
   "claude-code": [
+    {
+      "version": "2.1.286",
+      "date": null,
+      "bullets": [
+        "Added a count such as &quot;2 of 5&quot; to the permission prompt when several permission requests stack up",
+        "Added mouse support for the &quot;N more&quot; rows of lists in fullscreen mode: click one to jump to that end of the list, with hover and pressed states",
+        "Fixed several Claude Code processes and IDE extensions each opening a login browser when gcpAuthRefresh or awsAuthRefresh credentials expire",
+        "Fixed <code>claude --resume</code> and <code>--continue</code> sometimes losing every turn after a batch of parallel tool calls when the earlier session crashed or was killed",
+        "Fixed API 400 errors after a tool or hook returned an object, number or boolean instead of text, including in resumed sessions",
+        "Fixed cloud sessions with very large histories never waking up because the container was stopped while the transcript was still loading",
+        "Fixed the Claude apps gateway's spend meter pricing 1-hour prompt cache writes at the cheaper 5-minute rate, and counting only the first model call's input tokens on streamed turns that run a server-side tool such as web search",
+        "Fixed macOS sessions still showing &quot;Not logged in&quot; or &quot;Login expired&quot; after <code>/login</code> succeeds in another Claude Code window when a leftover <code>~/.claude/.credentials.json</code> exists",
+        "Fixed every turn failing when the Anthropic API refuses the model your default or a model alias resolves to: Claude Code now retries once on the previous model of the same tier",
+        "Fixed Remote Control sessions (including <code>claude remote-control</code>) staying connected after your organization's policy turns Remote Control off; they now disconnect with a notice",
+        "Fixed refusal and <code>--fallback-model</code> retries failing when the fallback model can't run fast; they now run at standard speed, with a one-time notice in interactive sessions",
+        "Fixed headless sessions repeating the &quot;MCP servers require authentication&quot; reminder after a successful re-authentication when the MCP discovery cache is enabled",
+        "Fixed <code>claude auth status</code> reporting a Console sign-in's stored API key as <code>claude.ai</code>; it now reports <code>api_key</code>, and the VS Code extension treats that session as an API key session",
+        "Fixed <code>/status</code> listing an Anthropic profile beside an API key as if both were in effect; the profile is now marked as not in use",
+        "Fixed Claude not being told when a file attached to a message sent over Remote Control did not arrive, and a file sometimes getting only 10 seconds for its last download try",
+        "Fixed a Remote Control message that arrived while Claude Code was exiting being marked delivered and then never answered; it now stays queued for the session's next run",
+        "Fixed MCP error messages showing a credential's value when &quot;Bearer&quot; or &quot;Basic&quot; came before its key name",
+        "Fixed percent-encoded Bearer tokens being only partly masked in error messages",
+        "Fixed redacted logs and transcripts showing a secret whose key name has an invisible character inside, such as a zero-width space",
+        "Fixed logs and transcripts showing part of a URL password that contains punctuation such as <code>)</code>, quotes, <code>]</code>, <code>&amp;</code> or a second <code>@</code>, or that runs past a <code>/</code> to a bracketed host such as <code>[::1]</code> in an ssh URL",
+        "Fixed the session transcript in the zip that <code>/feedback</code> saves to disk containing invalid JSON lines after secret redaction",
+        "Fixed MCP connectors listing no tools for up to a day after their server dropped the older MCP handshake",
+        "Fixed a repeat MCP sign-in request from Claude replacing the pending sign-in link, which could stop that link from working",
+        "Fixed <code>/usage</code> not crediting an MCP server for a tool call made while that server was still connecting or had only just connected, such as right after a restart",
+        "Fixed plugins enabled on claude.ai occasionally going missing from Claude Code for a session after a transient server error",
+        "Fixed a message typed into a running subagent showing twice in its transcript after the subagent read it",
+        "Fixed subagent hand-back messages showing a raw task id instead of the agent's name when the subagent had no registered name",
+        "Fixed foreground subagents sometimes missing the task-tracking tools (TaskCreate/Get/Update/List, TodoWrite) in sessions that have them enabled",
+        "Fixed subagents spawned with worktree isolation loading the project CLAUDE.md and its imports a second time from the worktree copy on their first file read",
+        "Fixed Workflow tool subagents being restarted from their original prompt when a connection stalled for a few minutes mid-response"
+      ]
+    },
     {
       "version": "2.1.285",
       "date": null,
@@ -691,17 +727,65 @@
         "Fixed worktree-isolated sessions refusing common Bash loops, xargs pipelines and launcher-wrapped commands that cannot reach the main checkout",
         "Improved terminal resize and first-render performance for long responses by reusing text measurements"
       ]
-    },
-    {
-      "version": "2.1.258",
-      "date": null,
-      "bullets": [
-        "Fixed Claude Code failing to launch on macOS 12 (Monterey), a regression introduced in 2.1.255",
-        "Fixed remote and scheduled sessions failing with &quot;user messages must have non-empty content&quot; after a re-sent permission approval could not be applied"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.161.0-alpha.9",
+      "date": "2026-10-01T08:35:22.000Z",
+      "bullets": [
+        "Release 0.161.0-alpha.9"
+      ]
+    },
+    {
+      "version": "0.161.0-alpha.8",
+      "date": "2026-10-01T06:24:10.000Z",
+      "bullets": [
+        "Release 0.161.0-alpha.8"
+      ]
+    },
+    {
+      "version": "0.161.0-alpha.7",
+      "date": "2026-10-01T03:54:35.000Z",
+      "bullets": [
+        "Release 0.161.0-alpha.7"
+      ]
+    },
+    {
+      "version": "0.161.0-alpha.6",
+      "date": "2026-10-01T02:34:10.000Z",
+      "bullets": [
+        "Release 0.161.0-alpha.6"
+      ]
+    },
+    {
+      "version": "0.161.0-alpha.11",
+      "date": "2026-10-01T12:20:46.000Z",
+      "bullets": [
+        "Release 0.161.0-alpha.11"
+      ]
+    },
+    {
+      "version": "0.161.0-alpha.10",
+      "date": "2026-10-01T10:26:38.000Z",
+      "bullets": [
+        "Release 0.161.0-alpha.10"
+      ]
+    },
+    {
+      "version": "0.159.3",
+      "date": "2026-09-30T22:57:34.000Z",
+      "bullets": [
+        "- Eligible local sessions signed in with ChatGPT can now show optional reminders to complete account security setup. (#49744) Full Changelog: https://github.com/openai/codex/compare/rust-v0.159.2...rust-v0.159.3 - #49744 [0.159] Backport account security setup reminders for 0.159.3 @andrewgu-oai"
+      ]
+    },
+    {
+      "version": "0.161.0-alpha.5",
+      "date": "2026-09-30T19:57:33.000Z",
+      "bullets": [
+        "Release 0.161.0-alpha.5"
+      ]
+    },
     {
       "version": "0.161.0-alpha.4",
       "date": "2026-09-30T11:49:10.000Z",
@@ -714,6 +798,13 @@
       "date": "2026-09-30T02:24:58.000Z",
       "bullets": [
         "Release 0.161.0-alpha.3"
+      ]
+    },
+    {
+      "version": "0.160.0-alpha.6.2",
+      "date": "2026-10-01T00:08:35.000Z",
+      "bullets": [
+        "Release 0.160.0-alpha.6.2"
       ]
     },
     {
@@ -779,69 +870,6 @@
       "date": "2026-09-29T01:32:32.000Z",
       "bullets": [
         "Release 0.160.0-alpha.3"
-      ]
-    },
-    {
-      "version": "0.160.0-alpha.2",
-      "date": "2026-09-28T19:51:45.000Z",
-      "bullets": [
-        "Release 0.160.0-alpha.2"
-      ]
-    },
-    {
-      "version": "0.159.0-alpha.13",
-      "date": "2026-09-28T15:20:06.000Z",
-      "bullets": [
-        "Release 0.159.0-alpha.13"
-      ]
-    },
-    {
-      "version": "0.159.0-alpha.12",
-      "date": "2026-09-28T03:18:46.000Z",
-      "bullets": [
-        "Release 0.159.0-alpha.12"
-      ]
-    },
-    {
-      "version": "0.158.0-alpha.15.4",
-      "date": "2026-09-28T01:46:24.000Z",
-      "bullets": [
-        "Release 0.158.0-alpha.15.4"
-      ]
-    },
-    {
-      "version": "0.159.0-alpha.9",
-      "date": "2026-09-27T06:37:13.000Z",
-      "bullets": [
-        "Release 0.159.0-alpha.9"
-      ]
-    },
-    {
-      "version": "0.159.0-alpha.8",
-      "date": "2026-09-27T04:48:42.000Z",
-      "bullets": [
-        "Release 0.159.0-alpha.8"
-      ]
-    },
-    {
-      "version": "0.159.0-alpha.7",
-      "date": "2026-09-27T01:24:11.000Z",
-      "bullets": [
-        "Release 0.159.0-alpha.7"
-      ]
-    },
-    {
-      "version": "0.159.0-alpha.11",
-      "date": "2026-09-28T00:20:35.000Z",
-      "bullets": [
-        "Release 0.159.0-alpha.11"
-      ]
-    },
-    {
-      "version": "0.159.0-alpha.10",
-      "date": "2026-09-27T21:09:15.000Z",
-      "bullets": [
-        "Release 0.159.0-alpha.10"
       ]
     }
   ]
