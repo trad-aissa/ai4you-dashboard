@@ -1,6 +1,42 @@
 {
-  "updated": "2026-10-02T11:52:28.230Z",
+  "updated": "2026-10-03T11:05:27.600Z",
   "claude-code": [
+    {
+      "version": "2.1.288",
+      "date": null,
+      "bullets": [
+        "Added <code>$.ui.selection()</code> for mods: returns the text you last selected in fullscreen mode and, when the selection lies within one transcript row, that row",
+        "Added a built-in <code>gh api</code> to cloud sessions whose image has no GitHub CLI, and fixed the built-in sending control characters from file names, jq filters or GitHub errors to the terminal",
+        "Added recovery for a prompt cleared with Ctrl+C: pressing Up on the empty prompt brings the draft back, including pasted text and images",
+        "Added a re-authenticate prompt when an MCP server asks for more OAuth scope during a tool call",
+        "Added <code>--max-findings |all</code> to /code-review to report more or fewer findings than the usual limit; the choice is reused until you pass <code>--max-findings default</code>",
+        "Added Ctrl+F to find a session by name and Alt+↑/↓ to jump between groups in the agents view; both, and rename, can be rebound in keybindings.json",
+        "Added a screen reader mode announcement of the new permission mode when you approve a plan, including with Shift+Tab",
+        "Fixed mid-response API timeouts failing the turn: non-interactive sessions and subagents now continue from the partial response, and thinking-only responses are retried",
+        "Fixed long conversations failing with &quot;Prompt is too long&quot; instead of auto-compacting when the last reply reported zero token usage",
+        "Fixed <code>--resume</code> sometimes dropping files and other context that a compaction had just restored",
+        "Fixed a resumed session sometimes not saving the last response of a turn, so that the next <code>--resume</code> showed the prompt unanswered",
+        "Fixed resume occasionally loading a transcript cut short when the same session rewrote the file during the load",
+        "Fixed resuming a conversation started on 2.1.286 or earlier dropping the model's earlier thinking",
+        "Fixed session titles, memory recall and prompt hooks failing on Mantle or behind gateways that reject structured outputs; added <code>CLAUDE_CODE_DISABLE_STRUCTURED_OUTPUTS</code> to turn structured outputs off",
+        "Fixed auto mode denials pointing Claude at a Bash permission rule when the blocked tool was not Bash",
+        "Fixed auto mode on Bedrock and Mantle switching to the local classifier for the rest of the session after a request to an older model, such as a WebFetch summary or a <code>sonnet</code> subagent",
+        "Fixed cloud sessions that restarted on a newly picked model replying with that model after the server refused it",
+        "Fixed Cowork cloud sessions staying marked as waiting for input after a WebFetch permission prompt for an unapproved URL went unanswered for five minutes",
+        "Fixed prompt suggestions not appearing on a phone that joins a Cowork cloud session started on another device",
+        "Fixed a mod's button sometimes running a different button's action when pressed on a view drawn before Claude Code restarted",
+        "Fixed a plugin's pane showing nothing when one <code>Code</code> element held a diff that does not parse; it now draws as plain code",
+        "Fixed plugin LSP servers receiving literal <code>${user_config.*}</code> and <code>${CLAUDE_PLUGIN_ROOT}</code> placeholders in <code>initializationOptions</code> and <code>settings</code> instead of substituted values or manifest defaults",
+        "Fixed a plugin's <code>tool.call</code> hook making Bash fail and file searches read the wrong folder in subagents that run in a worktree",
+        "Fixed <code>git-subdir</code> plugin installs failing, or caching an incomplete plugin, on older git (before 2.39, e.g. Ubuntu 22.04's 2.34)",
+        "Fixed plugins loaded with <code>--plugin-dir</code> not showing &quot;Configure options&quot; in <code>/plugin</code>",
+        "Fixed background sessions ending when a plugin was reloaded or disabled while one of its timers or reads was still running",
+        "Fixed sandboxed heredocs with an unquoted delimiter (<code>python3 &lt;&lt;EOF</code>) asking for approval on every run under sandbox auto-allow when the body holds only plain text and simple <code>$VAR</code> references",
+        "Fixed Bash tool permission check to prompt before a <code>BASHPID</code> assignment whose value the shell would evaluate as arithmetic, instead of allowing it silently",
+        "Fixed fullscreen sessions exiting with &quot;unrecoverable interface error&quot; when opening the background tasks dialog while a plugin or mod showed rows above the prompt",
+        "Fixed Claude reporting a message to another session as delivered when that session held it: the notice now says it wasn't delivered and names the session, and in SDK sessions Claude can now learn of it mid-turn"
+      ]
+    },
     {
       "version": "2.1.287",
       "date": null,
@@ -691,45 +727,37 @@
         "Fixed <code>SendMessage</code> to an offline Remote Control session on another machine reading as delivered; the result now says delivery is queued until that machine reconnects",
         "Fixed plugin install hints from CLIs run in background Bash commands: they are now detected, and the raw `` tag no longer leaks into the conversation"
       ]
-    },
-    {
-      "version": "2.1.260",
-      "date": null,
-      "bullets": [
-        "Added a diff panel that opens beside the conversation in fullscreen mode and shows your uncommitted changes as Claude edits; toggle it with <code>/diff</code>",
-        "Added a likely cause for prompt-cache misses (e.g. tool definitions or system prompt changed, idle past the TTL) to <code>/cost</code> and the status line's <code>prompt_cache</code> field",
-        "Added <code>/reload-plugins</code> to headless sessions, so it appears in the Claude Code Desktop and SDK command lists",
-        "Added a text form of <code>/advisor</code> (<code>/advisor</code>, <code>/advisor </code>, <code>/advisor off</code>) for the desktop app, Remote Control, and other headless (<code>-p</code>/Agent SDK) sessions",
-        "Added <code>oidc.scope_on_refresh</code> to the Claude apps gateway for IdPs that return an id_token on refresh only when asked for <code>openid</code> again",
-        "Added Claude apps gateway support for newer Claude Desktop keys in <code>desktop</code> policy blocks, including <code>userPluginMarketplacesEnabled</code> and <code>userPluginUploadsEnabled</code>",
-        "Fixed <code>Edit</code>/<code>Write</code>/<code>Read</code> permission rules whose path contains parentheses being dropped as invalid or ignored by the Bash sandbox, which left &quot;read-only&quot; folders writable",
-        "Fixed one file permission rule with an uncompilable pattern (e.g. an unclosed <code>[</code>) making every file edit fail with <code>Invalid regular expression</code>; such a deny rule now guards the literal path it spells",
-        "Fixed Bash permission checks auto-approving zsh commands that hide a command substitution in a REPORTTIME, REPORTMEMORY or DIRSTACKSIZE assignment; these now prompt for approval",
-        "Fixed Bedrock model discovery, token counting and AWS SSO/STS credential calls failing with &quot;unable to get local issuer certificate&quot; when the corporate root CA is only in the OS certificate store",
-        "Fixed <code>permissions.blockReadsOutsideWorkingDirectories</code> on macOS hiding the user's git config from sandboxed git and hiding a worktree-isolated sub-agent's own checkout",
-        "Fixed managed settings not loading for claude.ai Enterprise/Team users who also had a leftover API key from an earlier <code>/login</code>",
-        "Fixed <code>/status</code> listing a signed-in claude.ai account and a configured API key as if both were in effect; the credential not in use is now marked",
-        "Fixed managed <code>skillOverrides</code> entries keyed on a bundled skill's alias (e.g. <code>checkup</code> for <code>/doctor</code>) not applying, and <code>Skill(name)</code> deny rules not covering a nested skill listed as <code>:name</code>",
-        "Fixed <code>model: fable</code> agents ignoring the <code>[1m]</code> tag on an <code>ANTHROPIC_DEFAULT_FABLE_MODEL</code> pin and silently running with a 200K context window",
-        "Fixed the <code>/model</code> picker not showing Fable 5.1 for organizations that can use it, which was only accepted when typed as <code>/model claude-fable-5-1</code>",
-        "Fixed prompt caching on Claude Fable 5.1 not covering the context attached after tool results, so it was re-sent as uncached input on every tool-call turn",
-        "Fixed model switching staying blocked for the rest of the session after a plugin hook load failure; each switch now re-checks and the refusal names the cause",
-        "Fixed model switching being blocked for the session when an organization-managed plugin's marketplace could not be loaded",
-        "Fixed SDK-provided MCP servers (e.g. Desktop connectors) sometimes missing from the first turn and only appearing on the next one",
-        "Fixed Claude in Chrome tools failing with &quot;Not connected&quot; mid-task in cloud-hosted claude.ai sessions when a connector was added or removed",
-        "Fixed flags, joined emoji and accented letters splitting across wrapped lines, and stale text staying on screen when a flag or joined emoji falls in the terminal's last two columns (now shown as <code>…</code>)",
-        "Fixed Remote Control accepting a model pick that is not a valid model name; it is now refused with an error instead of failing on the next message",
-        "Fixed <code>/rewind</code> and <code>--rewind-files</code> reporting success when checkpoint backup files were missing and nothing was actually restored",
-        "Fixed <code>/rewind</code> leaving stale file-read tracking from the rewound-away turns, which caused &quot;File unchanged since last read&quot; stubs and full-file re-injection after external edits",
-        "Fixed <code>-p --resume</code>/<code>--continue</code> (as used by the desktop app) failing on every retry once a session's worktree directory lost its git metadata; it now fails once, then resumes without the worktree",
-        "Fixed a subagent that resumed another agent via SendMessage never being woken by that agent's completion (the notification went to the main conversation instead)",
-        "Fixed agent teams: an in-process teammate's transcript losing messages, or going blank, during long API retry waits (e.g. under <code>CLAUDE_CODE_RETRY_WATCHDOG</code>) as retry notices evicted real messages",
-        "Fixed a session that moved to the background appearing twice in ListAgents (once as a phantom &quot;interactive&quot; twin with the same name) and receiving SendMessage deliveries in the viewer",
-        "Fixed intermittent &quot;task output swap refused&quot; errors when many sessions share a project directory"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.162.0-alpha.9",
+      "date": "2026-10-03T01:24:32.000Z",
+      "bullets": [
+        "Release 0.162.0-alpha.9"
+      ]
+    },
+    {
+      "version": "0.162.0-alpha.10",
+      "date": "2026-10-03T09:55:41.000Z",
+      "bullets": [
+        "Release 0.162.0-alpha.10"
+      ]
+    },
+    {
+      "version": "0.162.0-alpha.8",
+      "date": "2026-10-02T22:37:58.000Z",
+      "bullets": [
+        "Release 0.162.0-alpha.8"
+      ]
+    },
+    {
+      "version": "0.162.0-alpha.7",
+      "date": "2026-10-02T13:48:03.000Z",
+      "bullets": [
+        "Release 0.162.0-alpha.7"
+      ]
+    },
     {
       "version": "0.162.0-alpha.6",
       "date": "2026-10-02T11:45:43.000Z",
@@ -840,34 +868,6 @@
       "date": "2026-10-01T19:37:00.000Z",
       "bullets": [
         "Release 0.159.0-alpha.12.1"
-      ]
-    },
-    {
-      "version": "0.159.3",
-      "date": "2026-09-30T22:57:34.000Z",
-      "bullets": [
-        "- Eligible local sessions signed in with ChatGPT can now show optional reminders to complete account security setup. (#49744) Full Changelog: https://github.com/openai/codex/compare/rust-v0.159.2...rust-v0.159.3 - #49744 [0.159] Backport account security setup reminders for 0.159.3 @andrewgu-oai"
-      ]
-    },
-    {
-      "version": "0.161.0-alpha.5",
-      "date": "2026-09-30T19:57:33.000Z",
-      "bullets": [
-        "Release 0.161.0-alpha.5"
-      ]
-    },
-    {
-      "version": "0.161.0-alpha.4",
-      "date": "2026-09-30T11:49:10.000Z",
-      "bullets": [
-        "Release 0.161.0-alpha.4"
-      ]
-    },
-    {
-      "version": "0.161.0-alpha.3",
-      "date": "2026-09-30T02:24:58.000Z",
-      "bullets": [
-        "Release 0.161.0-alpha.3"
       ]
     }
   ]
