@@ -1,14 +1,118 @@
 {
-  "updated": "2026-10-04T11:46:52.373Z",
+  "updated": "2026-10-05T13:35:39.681Z",
   "count": 80,
   "items": [
+    {
+      "id": "ec6a33d8c160",
+      "title": "OpenAI is sticking more ads in ChatGPT",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1004655/openai-chatgpt-visual-ads",
+      "source": "The Verge",
+      "date": "2026-10-05T13:09:48.000Z",
+      "snippet": "OpenAI's latest ad format will put images of sponsored products and services on your screen. The ads, which OpenAI will begin testing in the US later this month, will \"initially\" appear when you generate images with Chat"
+    },
+    {
+      "id": "8219cfaf573d",
+      "title": "Can Safeworld convince people that GenAI robots won’t hurt them?",
+      "url": "https://techcrunch.com/2026/10/05/can-safeworld-convince-people-that-gen-ai-robots-wont-hurt-them/",
+      "source": "TechCrunch",
+      "date": "2026-10-05T12:00:00.000Z",
+      "snippet": "Safeworld is building digital humans to make sure robots don't hurt the real ones."
+    },
+    {
+      "id": "3cbec84de8bf",
+      "title": "Building advertising for the way people use AI",
+      "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+      "source": "OpenAI",
+      "date": "2026-10-05T10:00:00.000Z",
+      "snippet": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers."
+    },
+    {
+      "id": "a5a880c6829c",
+      "title": "Our minds aren’t equipped to handle AI",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1003794/ai-education-computational-model-thought",
+      "source": "The Verge",
+      "date": "2026-10-05T10:00:00.000Z",
+      "snippet": "Norbert Wiener, godfather of cybernetics, once said, \"The thought of every age is reflected in its technique.\" For the past century, our thought has been reflected in our computers, including by those in the AI industry."
+    },
+    {
+      "id": "00aaae6618c7",
+      "title": "Google froze its open source bug bounty program due to a ‘significant rise’ in AI submissions",
+      "url": "https://techcrunch.com/2026/10/04/google-froze-its-open-source-bug-bounty-program-due-to-a-significant-rise-in-ai-submissions/",
+      "source": "TechCrunch",
+      "date": "2026-10-04T20:31:07.000Z",
+      "snippet": "AI slop seems to be overwhelming bug bounty programs."
+    },
+    {
+      "id": "bbc50510cd13",
+      "title": "Can ‘super intelligence’ and a non-binding safety pact solve AI’s image problem?",
+      "url": "https://techcrunch.com/2026/10/04/can-super-intelligence-and-a-non-binding-safety-pact-solve-ais-image-problem/",
+      "source": "TechCrunch",
+      "date": "2026-10-04T20:08:34.000Z",
+      "snippet": "On Equity, we discussed the Trump administration's attempts to rebrand AI."
+    },
+    {
+      "id": "39a92cd5dba9",
+      "title": "Homa: The end of TCP for AI clusters [video]",
+      "url": "https://www.youtube.com/watch?v=eZ8WWZzoaR0",
+      "source": "Hacker News",
+      "date": "2026-10-04T19:42:25.000Z",
+      "snippet": "78 points · 46 comments on HN"
+    },
+    {
+      "id": "cb4cee0e9eb9",
+      "title": "NJ’s former Lt Gov is using AI to say he’s innocent of sexual harassment",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1004549/well-if-ai-said-it-it-must-be-true",
+      "source": "The Verge",
+      "date": "2026-10-04T16:16:04.000Z",
+      "snippet": "New Jersey's lieutenant governor Dale Caldwell was forced to resign on September 25th after an investigation found he had sexually harassed a staffer and repeatedly violated ethics rules. The now-former Lt. governor has "
+    },
+    {
+      "id": "d5a8ffd2dd50",
+      "title": "An AI couldn’t beat humans at StarCraft, so it decided to cheat",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1004543/openai-gpt-cheat-starcraft",
+      "source": "The Verge",
+      "date": "2026-10-04T15:21:59.000Z",
+      "snippet": "StarSkirmish pits AI-made StarCraft-playing bots against one another, as well as against human-made bots. OpenAI's GPT-6 Astra and Claude Opus 5.5 were essentially tied as the best-performing AI-made bots, but they could"
+    },
+    {
+      "id": "8aaa4b741173",
+      "title": "Trump unveils his new Super Intelligence Force",
+      "url": "https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/",
+      "source": "TechCrunch",
+      "date": "2026-10-04T15:15:10.000Z",
+      "snippet": "This new task force is Trump's latest response to the debate over AI safety."
+    },
+    {
+      "id": "567a67be4150",
+      "title": "Show HN: AI search for every photo and every frame of video on macOS",
+      "url": "https://github.com/allenv0/SCM",
+      "source": "Hacker News",
+      "date": "2026-10-04T09:24:52.000Z",
+      "snippet": "155 points · 71 comments on HN"
+    },
+    {
+      "id": "1515667754ef",
+      "title": "How to scale intent, quality, and artistry with AI [video]",
+      "url": "https://www.youtube.com/watch?v=GLvFTMtw4Jk",
+      "source": "Hacker News",
+      "date": "2026-10-04T08:41:58.000Z",
+      "snippet": "92 points · 36 comments on HN"
+    },
+    {
+      "id": "778a42f69a53",
+      "title": "What's the future for pure math research in the age of AI?",
+      "url": "https://writings.stephenwolfram.com/2026/09/whats-the-future-for-pure-math-research-in-the-age-of-ai/",
+      "source": "Hacker News",
+      "date": "2026-10-04T07:53:45.000Z",
+      "snippet": "63 points · 51 comments on HN"
+    },
     {
       "id": "c83b565fc251",
       "title": "Religious scholars met with Anthropic",
       "url": "https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html",
       "source": "Hacker News",
       "date": "2026-10-04T02:34:22.000Z",
-      "snippet": "87 points · 206 comments on HN"
+      "snippet": "163 points · 423 comments on HN"
     },
     {
       "id": "83913d49e914",
@@ -16,7 +120,7 @@
       "url": "https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken",
       "source": "Hacker News",
       "date": "2026-10-03T22:18:13.000Z",
-      "snippet": "263 points · 3 comments on HN"
+      "snippet": "267 points · 3 comments on HN"
     },
     {
       "id": "9d6f5059688b",
@@ -24,7 +128,7 @@
       "url": "https://www.telegraph.co.uk/business/2026/10/02/anthropic-lobbied-pope-to-argue-ai-conscious-being/",
       "source": "Hacker News",
       "date": "2026-10-03T19:33:10.000Z",
-      "snippet": "55 points · 83 comments on HN"
+      "snippet": "58 points · 97 comments on HN"
     },
     {
       "id": "7d102ed41736",
@@ -32,7 +136,7 @@
       "url": "https://www.astralcodexten.com/p/our-ai-midwife",
       "source": "Hacker News",
       "date": "2026-10-03T19:12:27.000Z",
-      "snippet": "63 points · 61 comments on HN"
+      "snippet": "63 points · 64 comments on HN"
     },
     {
       "id": "b4375628050b",
@@ -40,7 +144,7 @@
       "url": "https://aviationa2z.com/index.php/2026/08/19/two-american-airlines-flights-end-up-with-same-flight-numbers-again/",
       "source": "Hacker News",
       "date": "2026-10-03T19:07:18.000Z",
-      "snippet": "60 points · 34 comments on HN"
+      "snippet": "62 points · 34 comments on HN"
     },
     {
       "id": "f8ba7ef56487",
@@ -56,7 +160,7 @@
       "url": "https://www.neowin.net/news/system76-bans-ai-generated-code-across-many-of-its-cosmic-codebases/",
       "source": "Hacker News",
       "date": "2026-10-03T17:57:03.000Z",
-      "snippet": "106 points · 156 comments on HN"
+      "snippet": "117 points · 167 comments on HN"
     },
     {
       "id": "260f481c2a62",
@@ -64,7 +168,7 @@
       "url": "https://fortune.com/2026/10/01/ai-godfather-yann-lecun-has-zero-concerns-about-human-extinction-says-anthropic-ceo-dario-amodei-is-deuded/",
       "source": "Hacker News",
       "date": "2026-10-03T17:44:29.000Z",
-      "snippet": "168 points · 231 comments on HN"
+      "snippet": "405 points · 791 comments on HN"
     },
     {
       "id": "f1c80105d2f2",
@@ -112,7 +216,7 @@
       "url": "https://www.bbc.com/news/articles/cwgkvygg5nzvo",
       "source": "Hacker News",
       "date": "2026-10-03T13:34:18.000Z",
-      "snippet": "71 points · 60 comments on HN"
+      "snippet": "76 points · 61 comments on HN"
     },
     {
       "id": "ac5b8cc843fd",
@@ -120,7 +224,7 @@
       "url": "https://www.twz.com/air/former-sr-71-engineer-talks-nasas-blackbird-revival-program",
       "source": "Hacker News",
       "date": "2026-10-03T07:32:47.000Z",
-      "snippet": "67 points · 37 comments on HN"
+      "snippet": "116 points · 78 comments on HN"
     },
     {
       "id": "83485a4ee257",
@@ -176,7 +280,7 @@
       "url": "https://github.com/anteloc/ldraw-nova",
       "source": "Hacker News",
       "date": "2026-10-02T20:00:15.000Z",
-      "snippet": "146 points · 49 comments on HN"
+      "snippet": "156 points · 50 comments on HN"
     },
     {
       "id": "001fe0e44261",
@@ -184,7 +288,7 @@
       "url": "https://gadgets.muse.ai",
       "source": "Hacker News",
       "date": "2026-10-02T19:26:54.000Z",
-      "snippet": "244 points · 108 comments on HN"
+      "snippet": "250 points · 110 comments on HN"
     },
     {
       "id": "c73e85837247",
@@ -200,7 +304,7 @@
       "url": "https://pipod.dev/",
       "source": "Hacker News",
       "date": "2026-10-02T19:10:38.000Z",
-      "snippet": "101 points · 39 comments on HN"
+      "snippet": "116 points · 47 comments on HN"
     },
     {
       "id": "d3db30efe56f",
@@ -296,7 +400,7 @@
       "url": "https://mondobe.com/ai-makes-me-sad",
       "source": "Hacker News",
       "date": "2026-10-02T15:18:00.000Z",
-      "snippet": "193 points · 240 comments on HN"
+      "snippet": "195 points · 243 comments on HN"
     },
     {
       "id": "d3446779ff0f",
@@ -321,6 +425,14 @@
       "source": "TechCrunch",
       "date": "2026-10-02T14:00:00.000Z",
       "snippet": "Today is the last day to book your exhibit table at TechCrunch Disrupt 2026. From October 13–15, 10,000+ founders, investors, operators, and tech leaders will arrive at San Francisco’s Moscone West looking for companies,"
+    },
+    {
+      "id": "19dbdc1f6661",
+      "title": "Decision models like Jev don't beat LLM-as-a-judge or traditional classifiers",
+      "url": "https://developers.redhat.com/articles/2026/10/02/benchmarking-ai-decision-models-against-traditional-guardrails",
+      "source": "Hacker News",
+      "date": "2026-10-02T13:47:41.000Z",
+      "snippet": "109 points · 36 comments on HN"
     },
     {
       "id": "b3a9a516e91b",
@@ -352,7 +464,7 @@
       "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/",
       "source": "Hacker News",
       "date": "2026-10-02T11:13:02.000Z",
-      "snippet": "80 points · 76 comments on HN"
+      "snippet": "80 points · 77 comments on HN"
     },
     {
       "id": "73c638c1d365",
@@ -360,7 +472,7 @@
       "url": "https://www.figure.ai/news/f-02-decommission",
       "source": "Hacker News",
       "date": "2026-10-02T10:57:27.000Z",
-      "snippet": "88 points · 50 comments on HN"
+      "snippet": "89 points · 50 comments on HN"
     },
     {
       "id": "b7dd82503263",
@@ -384,7 +496,7 @@
       "url": "https://www.frogandtoad.ai/",
       "source": "Hacker News",
       "date": "2026-10-01T22:23:38.000Z",
-      "snippet": "572 points · 127 comments on HN"
+      "snippet": "582 points · 129 comments on HN"
     },
     {
       "id": "17bfcacf3c39",
@@ -416,7 +528,7 @@
       "url": "https://bfl.ai/models/flux-3-image",
       "source": "Hacker News",
       "date": "2026-10-01T19:24:29.000Z",
-      "snippet": "431 points · 96 comments on HN"
+      "snippet": "437 points · 96 comments on HN"
     },
     {
       "id": "280d0a9a74fa",
@@ -456,7 +568,7 @@
       "url": "https://stoppels.ch/goalposts/",
       "source": "Hacker News",
       "date": "2026-10-01T17:32:43.000Z",
-      "snippet": "201 points · 268 comments on HN"
+      "snippet": "202 points · 271 comments on HN"
     },
     {
       "id": "e7f973146b85",
@@ -528,119 +640,7 @@
       "url": "https://news.ycombinator.com/item?id=49922569",
       "source": "Hacker News",
       "date": "2026-10-01T15:02:07.000Z",
-      "snippet": "263 points · 280 comments on HN"
-    },
-    {
-      "id": "4deaa90c9e63",
-      "title": "Ask HN: Who wants to be hired? (October 2026)",
-      "url": "https://news.ycombinator.com/item?id=49922568",
-      "source": "Hacker News",
-      "date": "2026-10-01T15:02:07.000Z",
-      "snippet": "127 points · 482 comments on HN"
-    },
-    {
-      "id": "9c6f1560c622",
-      "title": "OpenAI’s new agent is a shot at Meta — but can it compete with free?",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1003399/meta-openai-ai-agents-muse-dots-battle",
-      "source": "The Verge",
-      "date": "2026-10-01T14:36:50.000Z",
-      "snippet": "At OpenAI's annual DevDay conference, the company pulled out all the stops to compete with its rivals - primarily Meta, whose Muse AI agent platform has seen early runaway success. CEO Sam Altman walked onstage to cheers"
-    },
-    {
-      "id": "2be59ecee0ce",
-      "title": "Photon held a funeral for mobile apps. Now it has $4.5M to help replace them with agents.",
-      "url": "https://techcrunch.com/2026/10/01/photon-held-a-funeral-for-mobile-apps-now-it-has-4-5m-to-help-replace-them-with-agents/",
-      "source": "TechCrunch",
-      "date": "2026-10-01T14:00:00.000Z",
-      "snippet": "The startup helps developers build AI agents that work over iMessage, SMS/RCS, email, and other messaging platforms. It's a bet that consumers will increasingly use agents instead of downloading apps."
-    },
-    {
-      "id": "adb45e048c1d",
-      "title": "Inside our months-long investigation into Kevin O’Leary’s Utah data center debacle",
-      "url": "https://www.theverge.com/podcast/1002851/utah-ai-data-center-stratos-kevin-oleary-investigation-backlash",
-      "source": "The Verge",
-      "date": "2026-10-01T14:00:00.000Z",
-      "snippet": "Today I’m talking with Josh Dzieza, a longtime features writer here at The Verge, about Kevin O’Leary’s plans to build a massive data center in Utah. The idea was to build the world’s biggest data center — a 40,000-acre "
-    },
-    {
-      "id": "651ee7f27edc",
-      "title": "Meta Uses A.I. Data Centers to Avoid Billions in Federal Taxes",
-      "url": "https://www.nytimes.com/2026/09/30/technology/meta-ai-data-centers-taxes.html",
-      "source": "Hacker News",
-      "date": "2026-10-01T13:05:51.000Z",
-      "snippet": "255 points · 248 comments on HN"
-    },
-    {
-      "id": "409dbd5781b4",
-      "title": "An AI sovereign wealth fund isn't progressive – it's techno-imperialism",
-      "url": "https://www.ft.com/content/bc178357-793b-45d8-ae3b-d5929159c243",
-      "source": "Hacker News",
-      "date": "2026-10-01T13:01:02.000Z",
-      "snippet": "90 points · 65 comments on HN"
-    },
-    {
-      "id": "ce92721ad1b1",
-      "title": "FTC is investigating OpenAI, Anthropic and other AI companies over product risks",
-      "url": "https://www.cnbc.com/2026/09/30/ftc-ai-probe-openai-anthropic.html",
-      "source": "Hacker News",
-      "date": "2026-10-01T13:00:55.000Z",
-      "snippet": "210 points · 160 comments on HN"
-    },
-    {
-      "id": "498d9d05d6fc",
-      "title": "Hearing tech startup Legato launches its AI hearing glasses",
-      "url": "https://techcrunch.com/2026/10/01/hearing-tech-startup-legato-launches-its-ai-hearing-glasses/",
-      "source": "TechCrunch",
-      "date": "2026-10-01T13:00:00.000Z",
-      "snippet": "The glasses stem from the startup’s goal of making hearing care more accessible by addressing the cost, comfort, and stigma associated with traditional hearing aids."
-    },
-    {
-      "id": "de11222dc23d",
-      "title": "Satlyt, founded by a former Google and SpaceX product manager, raises $8M to run AI on satellites",
-      "url": "https://techcrunch.com/2026/10/01/satlyt-founded-by-a-former-google-and-spacex-product-manager-raises-8m-to-run-ai-on-satellites/",
-      "source": "TechCrunch",
-      "date": "2026-10-01T12:00:00.000Z",
-      "snippet": "Satlyt wants to be the Android of orbital computing, offering open software that works on many companies' satellites, versus SpaceX's closed, all-in-one iPhone-style approach."
-    },
-    {
-      "id": "5afad699a57c",
-      "title": "Elon Musk’s Grokipedia has a ‘newly refreshed’ design",
-      "url": "https://www.theverge.com/tech/1003068/elon-musk-grokipedia-v-0-3-spacexai",
-      "source": "The Verge",
-      "date": "2026-10-01T00:23:45.000Z",
-      "snippet": "Grokipedia, SpaceXAI's AI-powered competitor to Wikipedia, recently started incorporating edits again, and today, it got some design tweaks as part of a v0.3 update, including a new logo and refreshes to its homepage and"
-    },
-    {
-      "id": "3bba52758573",
-      "title": "The Den frees up 10-15 hours a week to grow with ChatGPT Work",
-      "url": "https://openai.com/index/the-den-family-social",
-      "source": "OpenAI",
-      "date": "2026-10-01T00:00:00.000Z",
-      "snippet": "As it opens a new location, the social club prepares grant applications in 2 hours instead of 3 days and liquor-license materials in 3 hours instead of 4 days."
-    },
-    {
-      "id": "1237634e7f12",
-      "title": "Google releases Gemini 4 Argon, called its most powerful model yet",
-      "url": "https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/",
-      "source": "TechCrunch",
-      "date": "2026-09-30T23:43:07.000Z",
-      "snippet": "Google has released its latest Gemini model, marketing it as a workhorse for coding and cybersecurity work."
-    },
-    {
-      "id": "f9953f3a0f91",
-      "title": "Valor, Atreides, and Sequoia back AI startup Flow Engineering at $750M valuation",
-      "url": "https://techcrunch.com/2026/09/30/valor-atreides-and-sequoia-back-ai-startup-flow-engineering-at-750m-valuation/",
-      "source": "TechCrunch",
-      "date": "2026-09-30T21:07:40.000Z",
-      "snippet": "Flow Engineering, which is bringing AI agents to hardware design, also landed Roelof Botha as an angel investor and board member."
-    },
-    {
-      "id": "4aba897202c0",
-      "title": "Gemini 4 Argon (High): Intelligence, Performance and Price Analysis",
-      "url": "https://artificialanalysis.ai/models/gemini-4-argon",
-      "source": "Hacker News",
-      "date": "2026-09-30T20:50:28.000Z",
-      "snippet": "111 points · 61 comments on HN"
+      "snippet": "266 points · 301 comments on HN"
     }
   ]
 }
