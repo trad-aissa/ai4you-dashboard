@@ -1,6 +1,50 @@
 {
-  "updated": "2026-10-05T13:35:39.681Z",
+  "updated": "2026-10-06T12:44:42.956Z",
   "claude-code": [
+    {
+      "version": "2.1.291",
+      "date": null,
+      "bullets": [
+        "Fixed a regression in 2.1.290 where cloud sessions could drop answers to permission prompts",
+        "Fixed a regression in 2.1.288 where the last messages of a session could be lost when quitting"
+      ]
+    },
+    {
+      "version": "2.1.290",
+      "date": null,
+      "bullets": [
+        "Added <code>serverToolUses</code> to the result of a mod's <code>turn.step</code> hook: the tool calls the API ran itself (the advisor), each with its id, name, input, start and end",
+        "Added <code>agentId</code> to the <code>tool.check</code> event of plugin hooks, so a hook can tell a subagent's permission check from the main session's",
+        "Added <code>ceiling</code> to the question and verdict a mod's <code>tool.check</code> hook reads, naming the approval an organization requires for a tool",
+        "Added <code>ThemeKey</code> and <code>Color</code> types to the plugin hooks typings, so an editor lists the theme colors a mod's drawing can name",
+        "Added to <code>claude plugin validate</code>: each hook a mod registers at a gating site is listed with whether it has a <code>.catch</code> (<code>gatingHooks</code> under <code>--json</code>)",
+        "Added a Deny button to the Claude apps gateway's sign-in approval page: it ends the pending sign-in, so the waiting terminal stops within seconds",
+        "Added <code>claude attach </code> and <code>claude logs </code>: part of a session name works in place of the id",
+        "Added <code>/claude-api managed-agents-onboard </code> to set up the Managed Agents pattern a page describes as <code>ant apply</code> files",
+        "Added <code>/claude-api managed-agents-onboard </code> to build a Console quickstart template, such as <code>deep-researcher</code>, with the <code>ant</code> CLI",
+        "Added a warning when a managed settings file is a link to a file outside the managed settings folder",
+        "Added a /status and doctor warning when managed settings ignore user-configured sandbox allowRead paths or allowed domains",
+        "Fixed requests failing behind proxies and gateways that reject one of Claude Code's beta headers with a status other than 400, or together with a second beta",
+        "Fixed long sessions with hundreds of images getting stuck on &quot;Request rejected as unprocessable by the model&quot; errors",
+        "Fixed a turn ending at once when the API's output content filter stopped a reply while Claude was still thinking; the request is now retried once before the error is shown",
+        "Fixed resumed subagents and teammates losing their earlier thinking and prompt cache after receiving a message mid-run",
+        "Fixed WebFetch silently dropping page text past 100,000 characters; it now says how much was unread and takes an <code>offset</code> to read on",
+        "Fixed a crash (&quot;Maximum call stack size exceeded&quot;) when a response nested lists or quotes thousands of levels deep",
+        "Fixed <code>/rewind</code> not listing a prompt sent while Claude was still working",
+        "Fixed scheduled tasks (<code>/loop</code> with an interval, reminders) silently not coming back on resume once the conversation was compacted; covers compactions made from this version on",
+        "Fixed scheduled tasks set in the foreground never firing after a ← or <code>/background</code> hand-off, and recurring ones firing an extra run on every resume, respawn or fork",
+        "Fixed headless <code>--json-schema</code> runs exiting non-zero with <code>is_error: true</code> on a <code>success</code> result when the connection dropped after the structured output was already delivered",
+        "Fixed plan mode letting the auto mode classifier approve non-read-only connector tools that carry a server-pushed ask policy",
+        "Fixed a project <code>CLAUDE.md</code>, rule or <code>AGENTS.md</code> symlinked outside the working directories loading under <code>permissions.blockReadsOutsideWorkingDirectories</code> or a <code>Read</code> deny rule",
+        "Fixed URL allow and deny patterns with a wildcard inside an <code>xn--</code> host label matching differently from one process to the next",
+        "Fixed an MCP server provided by your organization being relisted as your own after signing in or reconnecting, including from a late result in headless and SDK sessions",
+        "Fixed <code>/ultrareview</code> dropping uncommitted changes without a warning on Windows when <code>git stash create</code> failed, and refusing them after a <code>git add -N</code> file was deleted or moved",
+        "Fixed the <code>plansDirectory</code> setting's project-root check for paths that contain a backslash on macOS and Linux",
+        "Fixed replies in very long Remote Control and cloud sessions that could appear a block at a time instead of streaming in",
+        "Fixed the background daemon's log passing terminal control characters to the screen under <code>claude daemon run</code> and <code>claude daemon logs</code>; they now show as <code>\\uXXXX</code> escapes",
+        "Self-hosted runner: Fixed a crafted, very long line of a session's error output freezing the runner for several seconds"
+      ]
+    },
     {
       "version": "2.1.289",
       "date": null,
@@ -681,52 +725,30 @@
       "bullets": [
         "Fixed a 2.1.265 regression affecting LLM-gateway and proxy setups: the undocumented <code>CLAUDE_CODE_USE_GATEWAY</code> environment variable, previously ignored unless <code>ANTHROPIC_BASE_URL</code> and <code>ANTHROPIC_AUTH_TOKEN</code> were both set, began forcing Cloud-gateway sign-in on its own in 2.1.265, so configurations that set it alongside an API key, <code>apiKeyHelper</code>, or custom auth headers failed every request with &quot;Not signed in to the Cloud gateway&quot;. The variable on its own is ignored again; no configuration change is needed"
       ]
-    },
-    {
-      "version": "2.1.265",
-      "date": null,
-      "bullets": [
-        "Added <code>user.email</code> and <code>user.groups</code> to the telemetry Claude Desktop and Cowork send through a Claude apps gateway, matching terminal sessions",
-        "Added support for pointing <code>--plugin-dir</code> at a folder of plugins: each child folder with a manifest loads, and children added or removed while running are picked up",
-        "Added a 1 GB cap on tool results saved to disk; the in-conversation preview says when a saved file was truncated",
-        "Fixed resuming a foreground-spawned subagent changing its tool list and system prompt prefix, which broke prompt-cache reuse for that agent",
-        "Fixed agent teammates and resumed subagents moving SubagentStart hook context and preloaded skills out of the prompt prefix on later turns, which broke prompt-cache reuse",
-        "Fixed resume after the previous process died while a tool was running: the last prompt is no longer rewritten, and the interrupted tool call is kept and marked interrupted",
-        "Fixed <code>/model opusplan[1m]</code> being rejected with &quot;Model not found&quot;",
-        "Fixed syntax-highlighted code in permission prompts and messages sometimes omitting a character after a Ruby <code>?</code>, Erlang <code>$</code>, or Perl <code>$</code> sigil",
-        "Fixed the fullscreen transcript jumping by one row whenever the slash-command or @-file suggestion list opened or closed",
-        "Fixed a plugin path containing a backslash bypassing the symlink containment check on macOS and Linux",
-        "Fixed plugin directories whose names begin with two dots being wrongly refused as outside the plugin root",
-        "Fixed VS Code and SDK sessions occasionally requiring re-login when a session was closed while refreshing its token",
-        "Fixed Remote Control sessions sending the end-of-turn signal before the reply's last message, which could show a reply as finished in the Claude app before its last part arrived",
-        "Fixed background (<code>--bg</code>) sessions occasionally being retired mid-turn when a message arrived just before the idle timeout",
-        "Fixed Claude Code's own git status and diff probes running clean filters configured by a nested repository inside the working tree",
-        "Fixed the advisor tool and its instructions being re-decided per request from the request's model; the decision is now made once and announced in the conversation when it changes",
-        "Fixed artifact publish accepting connector tool names the connector doesn't expose; the publish is now refused when none of the declared tools exist, and warned when only some don't",
-        "Fixed <code>/add-dir </code> refusing to load a subdirectory's agents when managed settings lock only skills to plugins, and promising agents when only agents are locked",
-        "Fixed two-key keyboard shortcuts cancelling silently when the second key arrived more than a second later, as happens inside tmux; they now wait 3 seconds and show a notice when they time out",
-        "Fixed forked skills (<code>context: fork</code>) not streaming their kickoff prompt and, with <code>--forward-subagent-text</code>, their text turns as progress events in stream-json",
-        "Fixed a plugin's default component folder that the OS cannot check, such as a symlink loop, being silently skipped; it is now reported in <code>/plugin</code> with the error code",
-        "Fixed the Claude apps gateway's OTLP telemetry relay pausing all forwarding to a collector for 30 seconds after it rejected a few payloads as malformed or too large",
-        "Fixed <code>/plugin</code> Discover/Browse and <code>claude plugin list --json --available</code> showing no description or display name for marketplace plugins whose metadata lives only in their <code>plugin.json</code>",
-        "Fixed <code>/login</code> showing &quot;no gateway URL is configured&quot; when re-run in a session that signed in to a Claude apps gateway set by managed settings",
-        "Fixed <code>/model</code> claiming a model was &quot;saved as your default&quot; when the settings file couldn't be written; it now says the save failed and why",
-        "Fixed <code>/clear</code> from Remote Control waiting on SessionStart hooks and on open terminal dialogs before completing",
-        "Fixed the <code>/config</code> dialog changing height when switching between its tabs",
-        "Fixed resuming a workflow run after its container restarted; a resume whose run journal is missing now fails with a clear error instead of rerunning every agent",
-        "Fixed the <code>claude-api</code> skill's error-code reference: model access failures return 404 and unavailable beta headers return 400, not 403",
-        "Fixed non-interactive sessions (<code>-p</code> with stream-json input, Agent SDK, cloud sessions) resetting the shell working directory at each new user message; a <code>cd</code> now persists across turns"
-      ]
-    },
-    {
-      "version": "2.1.263",
-      "date": null,
-      "bullets": [
-        "Bug fixes and reliability improvements"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.161.0-alpha.13.1",
+      "date": "2026-10-06T05:27:02.000Z",
+      "bullets": [
+        "Release 0.161.0-alpha.13.1"
+      ]
+    },
+    {
+      "version": "0.160.1",
+      "date": "2026-10-05T18:29:37.000Z",
+      "bullets": [
+        "- Preserve <code>SYSTEMROOT</code>, <code>TEMP</code>, and <code>TMP</code> when launching remote stdio MCP servers with explicitly configured remote environment variables, allowing Unix hosts to retain the Windows executor's startup environment. - #51121: Backport Windows remote MCP environment preservation to 0.160."
+      ]
+    },
+    {
+      "version": "0.162.0-alpha.16",
+      "date": "2026-10-05T21:37:19.000Z",
+      "bullets": [
+        "Release 0.162.0-alpha.16"
+      ]
+    },
     {
       "version": "0.162.0-alpha.15",
       "date": "2026-10-05T13:10:52.000Z",
@@ -844,27 +866,6 @@
       "date": "2026-10-01T08:35:22.000Z",
       "bullets": [
         "Release 0.161.0-alpha.9"
-      ]
-    },
-    {
-      "version": "0.161.0-alpha.8",
-      "date": "2026-10-01T06:24:10.000Z",
-      "bullets": [
-        "Release 0.161.0-alpha.8"
-      ]
-    },
-    {
-      "version": "0.161.0-alpha.7",
-      "date": "2026-10-01T03:54:35.000Z",
-      "bullets": [
-        "Release 0.161.0-alpha.7"
-      ]
-    },
-    {
-      "version": "0.161.0-alpha.6",
-      "date": "2026-10-01T02:34:10.000Z",
-      "bullets": [
-        "Release 0.161.0-alpha.6"
       ]
     }
   ]
