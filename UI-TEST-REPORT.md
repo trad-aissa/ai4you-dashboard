@@ -1,47 +1,109 @@
 # UI Test Report — ai4you.site
-**Date:** 2026-08-29 · **Target:** https://www.ai4you.site (production) · **Suite:** headless Edge (puppeteer-core) + code-level audits
 
-## Scope
-7 pages (/, /tools, /article, /about, /terms, /best-writing-tools, /admin) × 2 viewports (1440×900 desktop, 390×844 mobile) + 5 interaction flows.
+**Date:** 2026-10-06
 
-## Runtime results (final run): 19/19 PASS
+**Public target:** fresh local production build (`dist/`)
 
-### Per-page checks (desktop + mobile each)
-| Page | Status | Console errors | Failed requests | H-overflow | Broken images |
-|---|---|---|---|---|---|
-| / | 200 | 0 | 0 | none | 0 |
-| /tools | 200 | 0 | 0 | none | 0 |
-| /article | 200 | 0 | 0 | none | 0 |
-| /about | 200 | 0 | 0 | none | 0 |
-| /terms | 200 | 0 | 0 | none | 0 |
-| /best-writing-tools | 200 | 0 | 0 | none | 0 |
-| /admin | 200 | 0 | 0 | none | 0 |
+**Admin target:** `https://www.ai4you.site`
 
-### Interaction checks
-| Flow | Result |
-|---|---|
-| News category filter (filter → filtered → restore) | PASS |
-| Newsletter validation (bad email → error; good → success) | PASS |
-| Live Wire HN feed (fetch + render + cache) | PASS |
-| Nav to /tools | PASS |
-| Tools category filter (mobile) | PASS |
+## Public quality result: PASS
 
-## Bugs found during testing (all fixed + deployed)
-1. **Preferred Sources script 404** (all pages with the badge): the script URL I used (`www.gstatic.com/pg/ssogp.min.js`) did not exist — I had written it from memory. **Fix:** replaced with Google's official embed (`news.google.com/swg/js/v1/publisher.js` + `<div google-add-preferred-source-btn>`, per developers.google.com/search/docs/appearance/preferred-sources). Verified live: button iframe loads.
-2. **Live Wire missing on homepage**: the v2 Astro rebuild never included the HN wire section/script (v1 had it). **Fix:** restored section + extracted `src/lib/wire.js` module (cache TTL 15 min, error fallback, refresh button). Verified live: 12 items render.
-3. **(Earlier same-day)** hero invisible without JS — CSS entrance animation made JS-independent (see 2026-08-27 fix).
+Run with:
 
-## Code-level audit coverage (mainline, no subagent — see note)
-- **Contrast:** design tokens verified at design time (ink #1A1A19 on #FBFBFA ≈ 16.4:1; muted #6E6D6A on canvas ≈ 5.5:1; link #1F6C9F ≈ 5.6:1; pale chip pairs ≥ 4.6:1). `--faint` (#9B9A96, ≈2.8:1) used only for mono meta ≥11px — a MODERATE flag; acceptable as decorative metadata but upgradeable.
-- **Links:** all 8 internal/canonical URLs 200 (re-verified post-deploy); external publisher links were verified at research time; gstatic 404 found & fixed.
-- **A11y structure:** skip-link, single h1/page, aria-pressed filters, aria-live status regions, labeled newsletter input, alt/aria-hidden on SVGs — implemented in v1/v2 builds (spot-verified during fixes).
+```bash
+npm run test:quality
+```
 
-## Test limitations / not covered
-- Three parallel audit subagents (a11y deep-dive, responsive deep-dive, full external-link crawl) failed with LLM provider errors and produced no reports; their coverage was partially replaced by mainline checks above. A dedicated axe-core + full external-link crawl run is recommended later.
-- No Lighthouse run in this pass (recommend running once domain DNS is fully settled).
-- Admin dashboard tested read-only (no credential attempts by design).
+This command completed successfully and covered Astro diagnostics, a production build, Playwright UI/accessibility/link audits, and Lighthouse.
+
+### Astro diagnostics and build
+
+- Scoped typed-source diagnostics: **0 errors, 0 warnings, 0 hints** across 24 files.
+- Static production build: **30 pages built successfully**.
+- The diagnostics baseline is `tsconfig.quality.json`; legacy untyped inline scripts inside `.astro` files remain behavior-tested by Playwright instead of being treated as strict TypeScript.
+
+### Playwright route matrix
+
+Ten routes were tested at 1440×900 desktop and 390×844 mobile:
+
+- `/`
+- `/news`
+- `/tools`
+- `/learn`
+- `/changelog`
+- `/article`
+- `/about`
+- `/terms`
+- `/best-writing-tools`
+- `/admin`
+
+Result: **20/20 page/viewport checks passed**.
+
+Every check covers:
+
+- HTTP navigation failures
+- browser exceptions and console errors
+- failed network requests
+- horizontal overflow
+- broken images
+- axe serious/critical accessibility violations
+
+No serious or critical axe violations were found.
+
+### Link audit
+
+- Internal links: **30/30 reachable**
+- External links: **134/134 reachable**
+- 27 external responses returned expected anti-bot/auth/rate-limit statuses and were classified as reachable rather than broken.
+
+The first crawl found an active seeded placement pointing to `example.com/REPLACE_ME`. Public link-unit rendering now rejects placeholder/non-publishable URLs, and the fresh build passes the full crawl.
+
+### Contrast verification
+
+The current `--faint` token meets WCAG AA for normal text in both themes:
+
+- Light `#75746E` on `#FBFBFA`: **4.53:1**
+- Dark `#8B897F` on `#171614`: **5.15:1**
+- Dark `#8B897F` on `#201F1C`: **4.70:1**
+
+### Lighthouse
+
+Thresholds are performance ≥75, accessibility ≥90, best practices ≥90, and SEO ≥90.
+
+| Route | Performance | Accessibility | Best practices | SEO |
+|---|---:|---:|---:|---:|
+| `/` | 97 | 100 | 100 | 100 |
+| `/news` | 97 | 100 | 100 | 100 |
+| `/tools` | 96 | 100 | 100 | 100 |
+| `/learn` | 98 | 100 | 100 | 100 |
+| `/article` | 96 | 100 | 100 | 100 |
+
+All Lighthouse thresholds passed.
+
+### Dependency audit
+
+`npm audit --omit=dev` reports **0 production vulnerabilities** after applying non-breaking dependency updates. Two moderate dev-only advisories remain in `satori`'s `fflate` dependency; npm only offers a forced breaking downgrade, so it was not applied.
+
+## Admin CRUD journey: PASS
+
+`scripts/test-admin.mjs` completed the real production workflow through `/admin`:
+
+1. Signed in with the configured owner test credentials.
+2. Created a uniquely named `e2e-*` placement.
+3. Edited it.
+4. Paused and resumed it.
+5. Deleted it.
+6. Signed out.
+
+The successful run left no temporary placement behind. A preceding failed assertion also verified the authenticated `finally` cleanup path by removing its temporary row before exiting.
+
+## CI coverage
+
+`.github/workflows/quality.yml` runs public quality checks for pull requests, `master` pushes, and manual dispatches. The live admin job runs only for trusted `master` pushes/manual dispatches and receives credentials from repository secrets; forked pull requests never receive them.
 
 ## Artifacts
-- Raw results: `ai4you-dashboard/.cluster/ui-test/ui-results.json`
-- 14 screenshots (7 pages × 2 viewports): `ai4you-dashboard/.cluster/ui-test/*.png`
-- Test suite (rerunnable): `ai4you-dashboard/scripts/run-ui-tests.mjs` → `node scripts/run-ui-tests.mjs`
+
+Generated files are gitignored under `.cluster/quality/`:
+
+- `.cluster/quality/ui-audit.json`
+- `.cluster/quality/lighthouse/*.json`

@@ -10,7 +10,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test:ui": "node scripts/run-ui-tests.mjs"
+    "check": "astro check --tsconfig tsconfig.quality.json",
+    "test:ui": "node scripts/run-ui-tests.mjs",
+    "test:lighthouse": "node scripts/run-lighthouse.mjs",
+    "test:admin": "node scripts/test-admin.mjs",
+    "test:quality": "npm run check && npm run build && npm run test:ui && npm run test:lighthouse"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
@@ -25,9 +29,14 @@
     "esbuild": true
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.13.0",
     "@fontsource/jetbrains-mono": "^5.3.0",
     "@resvg/resvg-js": "^2.6.2",
+    "chrome-launcher": "^1.2.2",
+    "lighthouse": "^13.5.0",
     "playwright": "^1.62.1",
-    "satori": "^0.33.4"
+    "satori": "^0.33.4",
+    "typescript": "^6.0.3"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    ".astro/types.d.ts",
+    "astro.config.mjs",
+    "api/**/*.js",
+    "scripts/**/*.mjs",
+    "src/**/*.js",
+    "src/**/*.ts"
+  ],
+  "exclude": ["dist"]
+}

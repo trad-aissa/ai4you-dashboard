@@ -12,6 +12,17 @@ const esc = (s = '') =>
 
 const REL = 'sponsored nofollow noopener';
 
+const isPublishableUrl = (value) => {
+  try {
+    const url = new URL(value);
+    return /^https?:$/.test(url.protocol)
+      && !['example.com', 'www.example.com'].includes(url.hostname)
+      && !/replace[_-]?me/i.test(`${url.pathname}${url.search}`);
+  } catch {
+    return false;
+  }
+};
+
 const withSubId = (url, slug) => {
   try {
     const u = new URL(url);
@@ -58,7 +69,9 @@ const renderers = {
 };
 
 /** Render a unit's HTML (used at build time and client-side). */
-export const renderUnit = (u) => (renderers[u.type] || renderers.card)(u);
+export const renderUnit = (u) => isPublishableUrl(u?.url)
+  ? (renderers[u.type] || renderers.card)(u)
+  : '';
 
 /** Mount server-rendered or client-rendered units and bind click logging. */
 export function bindUnits(root = document) {
