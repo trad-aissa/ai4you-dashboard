@@ -1,6 +1,50 @@
 {
-  "updated": "2026-10-07T12:38:40.995Z",
+  "updated": "2026-10-08T12:48:20.176Z",
   "claude-code": [
+    {
+      "version": "2.1.294",
+      "date": null,
+      "bullets": [
+        "Fixed <code>prompt</code> and <code>agent</code> hooks written as instructions (such as &quot;Block commands that...&quot;) allowing what they should block",
+        "Improved how <code>prompt</code> hooks on Stop and SubagentStop written as instructions (such as &quot;Carry on if the build is broken&quot;) are judged, so Claude is less likely to stop early"
+      ]
+    },
+    {
+      "version": "2.1.293",
+      "date": null,
+      "bullets": [
+        "Added Claude Haiku 5.5 (<code>claude-haiku-5-5</code>), now the default Haiku model on the Anthropic API — 1M context, $0.10/$0.50 per Mtok ($0.50/$2.50 for prompts over 100K)",
+        "Added <code>agentType</code> to the <code>subagentStatusLine</code> payload, so scripts can tell custom subagent types apart",
+        "Added <code>isDeferred</code> to <code>$.tool.register</code> for mods: <code>false</code> lists the tool's schema in the prompt from the start instead of behind tool search",
+        "Fixed Claude sometimes treating its own last actions before a context compaction as done after it, and retracting or redoing finished work",
+        "Fixed a memory leak where an HTTP MCP connection kept every request it had sent until it closed",
+        "Fixed a message sent while Claude was working being lost when <code>←</code> moved the session to the background; if a queued message can't move, <code>←</code> now stays put and says so",
+        "Fixed <code>/model</code> effort ←/→ wrapping past the highest or lowest level, which could accidentally save Low as a model's default effort",
+        "Fixed <code>/tui</code> disconnecting Claude in Chrome in a session started with <code>--chrome</code>, and ignoring <code>--no-chrome</code>",
+        "Fixed Claude being told to continue or message subagents with <code>SendMessage</code> in sessions, including resumed ones, where a host, a permission rule or a <code>--tools</code> list removed that tool",
+        "Fixed subagents and <code>--agent</code> sessions being told a built-in tool was disabled for the whole session when only their own tool list left it out",
+        "Fixed a claude.ai-synced skill's edited description sometimes not reaching the model until a new conversation or <code>/clear</code>",
+        "Fixed <code>claude logs</code>, <code>stop</code>, <code>kill</code>, <code>rm</code> and <code>claude daemon status</code>, <code>stop</code>, <code>uninstall</code> sometimes signing you out when your login had expired or was about to",
+        "Fixed the footer's agents count disappearing after a momentary failure to read the sessions folder (for example, too many open files)",
+        "Fixed a custom agent named <code>worker</code> being shown as &quot;Agent&quot; when it starts, and the agent detail dialog's title losing the agent type once the agent finishes",
+        "Fixed the Artifact tool's transcript row briefly reading <code>Artifact(&quot;(unprintable path)&quot;)</code> while a publish call was still streaming in",
+        "Fixed the <code>/ultrareview</code> upload on Linux wrongly refusing some repositories, such as one inside another checkout, over a settings file that &quot;could not be parsed&quot; while a sandboxed command was running",
+        "Fixed the <code>/ultrareview</code> upload's refusal over split-index files advising a git command that could leave git unable to read its index",
+        "Fixed replies in very long Remote Control and cloud sessions that could still appear a block at a time instead of streaming in",
+        "Fixed Remote Control uploading a session's starting history again after every credential recovery",
+        "Fixed PushNotification reporting &quot;Remote Control inactive&quot; in sessions started with <code>claude remote-control</code>",
+        "Fixed a mod's hooks on <code>classic.*</code> events being skipped while the plugin hooks worker restarts, which left settings hooks to answer without them",
+        "Fixed <code>claude plugin test</code> failing for mods that call <code>$.session.append</code>; tests can read the appended rows back with the new <code>mock.session</code>",
+        "Fixed <code>claude plugin eval</code> refusing every Bash-granting run on Macs with Docker Desktop (links under <code>~/.docker/bin</code>); the refusal now names which part of a credential store held the link",
+        "Fixed the Claude apps gateway refusing to start when a <code>desktop</code> policy sets Claude Desktop's built-in browser keys, such as <code>builtinBrowserEnabled</code>",
+        "Fixed <code>claude agents</code> offering bypass permissions that background sessions then ignored when consent was saved only in <code>.claude/settings.local.json</code> or a <code>--settings</code> file; it now asks for consent first, and a session that ignores bypass shows a short notice that stays",
+        "Fixed <code>←</code> backgrounding a session after 10 seconds while the prompt held unsent text (it now cancels the move) or a question was waiting for your answer",
+        "Fixed Esc, or No without feedback, on a permission prompt not stopping the turn when <code>←</code> had just been pressed to move the session to the background",
+        "Fixed the agents view briefly replacing the session list with placeholder rows when the sessions folder could not be read (for example, too many open files)",
+        "Fixed path-scoped rules and nested CLAUDE.md files not loading when Claude views a file with a single-file cat, head, tail, sed -n or grep command in the Bash tool instead of the Read tool",
+        "Fixed pasted text that begins and ends with the same words sometimes being sent to Claude as if it had been typed"
+      ]
+    },
     {
       "version": "2.1.292",
       "date": null,
@@ -682,86 +726,55 @@
         "Fixed <code>permission_denials</code> in <code>--output-format stream-json</code> results omitting Read, Edit and Write calls blocked by a path-scoped deny rule",
         "Fixed sessions run through the SDK or the desktop app showing an unknown status in other sessions' agent list"
       ]
-    },
-    {
-      "version": "2.1.268",
-      "date": null,
-      "bullets": [
-        "Added to the Claude apps gateway: with <code>pricing:</code> set in <code>gateway.yaml</code>, signed-in Claude Code clients receive the same rates through managed settings, so <code>/cost</code> and telemetry match the spend meter",
-        "Added a startup warning for gateways when <code>access_control.allow_cidrs</code> is empty, and a one-time warning the first time a request arrives from a public address",
-        "Added the <code>gatewayInternalNetworks</code> managed setting, letting administrators allow <code>/login</code> to a Claude apps gateway on their organization's own public IPv4 block",
-        "Added <code>claude self-hosted-runner --remove-session-state</code> (default off): delete each session's per-session directories under <code>/_sessions/</code> when the session ends",
-        "Added <code>configDirectory</code> to the output of <code>claude auth status --json</code>",
-        "Added <code>--json</code> to <code>claude plugin install</code>, <code>uninstall</code>, <code>update</code>, <code>enable</code> and <code>disable</code>, and <code>errorDetails</code>/<code>noteDetails</code> to each row of <code>claude plugin list --json</code>",
-        "Added browser-tab icons for published artifacts, chosen by Claude to match each page",
-        "Fixed every turn failing with HTTP 400 on third-party Anthropic-compatible endpoints (<code>ANTHROPIC_BASE_URL</code>) since 2.1.265: a regex in the Artifact tool's input schema that those endpoints reject",
-        "Fixed WebFetch hanging indefinitely on a server that keeps the response open without finishing; a fetch now fails after 300 seconds. Set <code>CLAUDE_CODE_WEBFETCH_DEADLINE_MS</code> to override the deadline (0 turns it off)",
-        "Fixed a respawned in-process teammate picking up tools or a system prompt from a same-named agent file in a folder you have not trusted",
-        "Fixed sustained high CPU usage: a busy loop in long-running idle sessions no longer pins a CPU core, and rapid terminal focus reports during a session recap no longer keep the CPU high",
-        "Fixed Claude sometimes replying &quot;your message came through empty&quot; after an MCP tool call",
-        "Fixed deny and ask permission rules on symlinked directories (<code>/etc</code>, <code>/tmp</code>, <code>/var</code> on macOS; <code>/bin</code> on Linux) not applying when a path was given by its real location, and Bash commands ignoring deny rules written on a symlinked path spelling",
-        "Fixed a case where a Read or Edit deny rule did not apply when an <code>env -C</code>, <code>eval</code> or similar command the permission checker cannot analyze was on the same line",
-        "Fixed plugin and marketplace errors showing a token or password from a git source URL",
-        "Fixed <code>/mcp</code> and <code>/plugin</code> server details, <code>claude mcp list</code>/<code>get</code>, and MCP login errors showing secrets resolved from <code>${VAR}</code> placeholders in MCP configs",
-        "Fixed prompt caching and extended thinking breaking mid-session for SDK sessions using <code>excludeDynamicSections</code>: the first message is no longer re-rendered each request",
-        "Fixed entitled users being told a model is restricted after restart or in the Desktop Code tab when a cached model-access denial was stale",
-        "Fixed a running session silently switching to the organization's default model when another Claude Code process refreshed a stale model-access entry",
-        "Fixed long-context 429s on Fable models showing the usage-credits consent prompt instead of the 1M-context message on Pro and Team plans",
-        "Fixed workload identity federation via a profile (as claude-code-action configures it): processes sharing the profile could fail mid-run with <code>401 … jti reused</code>",
-        "Fixed MCP server OAuth sign-in failing with &quot;No available ports for OAuth redirect&quot; when the local callback port range can't be bound",
-        "Fixed the conversation summary produced by <code>/compact</code> and auto-compact mangling text that contained <code>$</code> sequences",
-        "Fixed resuming a conversation that ended with <code>/compact</code>: its restored-file notes now load in the same order on every resume",
-        "Fixed SDK prompt suggestions, side questions and <code>/rename</code> sending the conversation from before a compaction",
-        "Fixed <code>@</code> file and <code>/</code> command suggestions not appearing after recalling a previous prompt with the up arrow and editing it",
-        "Fixed <code>claude agents</code>: pressing ← again at a natural pace to go back to the agent list no longer gets ignored until you pause for over a second",
-        "Fixed <code>claude agents</code> session delete getting stuck when a worktree can't be removed: the message names the cause and next step, and for a git worktree ctrl+x again deletes the directory anyway",
-        "Fixed background agent and workflow rows in the agents panel expanding to many lines when their text contained line breaks",
-        "Fixed Claude in Slack sessions losing their Slack tools when org managed settings set an MCP allowlist"
-      ]
-    },
-    {
-      "version": "2.1.267",
-      "date": null,
-      "bullets": [
-        "Added <code>maxEffortLevel</code> setting (top-level or per model under <code>modelSettings</code>): caps the effort level on every provider, including Bedrock, Vertex and Foundry; users can still pick a lower level",
-        "Added <code>--system-prompt-snapshot off</code> to render the system prompt fresh on every request instead of reusing the conversation's recorded prompt (for iterating on prompt text)",
-        "Fixed Cowork scheduled tasks in the cloud failing at startup for organizations whose managed settings require sandboxing",
-        "Fixed <code>/context</code> and other local command output rendering blank on mobile clients",
-        "Fixed shift+enter and option+backspace not working after reconnecting to a tmux or ssh session inside an agent view",
-        "Fixed the dim last-prompt header not appearing at the top of the conversation when scrolling up in fullscreen mode",
-        "Fixed Workflow <code>agent()</code> calls with large output schemas being refused in auto mode instead of being checked by the safety classifier",
-        "Fixed a case where a marketplace entry path containing a backslash could bypass the containment check for fetched marketplaces on macOS and Linux",
-        "Fixed expired AWS or Google Cloud credentials under a host app such as Claude Desktop retrying ten times with a generic &quot;request failed&quot; before the re-authenticate error appeared",
-        "Fixed resuming a session after <code>/compact</code> or another slash command ran via <code>-p --resume</code>: a spurious &quot;Continue from where you left off.&quot; turn is no longer inserted",
-        "Fixed resuming a large session (transcript over 5 MB): parallel tool calls and their hook output are no longer dropped from the reloaded conversation",
-        "Fixed managed <code>allowedHttpHookUrls</code>, <code>httpHookAllowedEnvVars</code> and <code>allowedChannelPlugins</code> to admit nothing, not everything, when unreadable",
-        "Fixed <code>/login</code> on machines whose managed settings require Claude apps gateway sign-in: Esc now closes the dialog instead of doing nothing",
-        "Fixed artifact publishes cut off by a dropped connection mid-upload: they now retry once when Claude Code can tell the upload never completed, instead of reporting an unknown outcome",
-        "Fixed <code>effort:</code> frontmatter on custom commands, skills, and subagents being ignored on models whose default effort is still pinned (Opus 4.7, Opus 4.8, Fable 5)",
-        "Fixed artifact publish failing with an unhelpful error when the page file isn't valid UTF-8 or contains a replacement character (U+FFFD); the error now names the line and column to fix",
-        "Fixed <code>claude agents</code> <code>@</code> directory menu not listing repositories created after the session started",
-        "Fixed Remote Control clients that join a Claude Desktop or VS Code session showing a stale permission mode until it was changed again",
-        "Fixed <code>claude remote-control</code> exiting and dropping every attached session when its server credential expires (about 30 days after start); the host now re-registers and keeps going",
-        "Fixed the usage-limit warning flickering on and off during a session when requests for different models or modes report different limit windows",
-        "Fixed earlier reasoning being dropped when an MCP server re-sends, or a built-in tool re-renders, a tool the model already loaded",
-        "Fixed a tool that disappears mid-conversation, from a disconnected MCP server or an upgrade, rewriting the tool list and discarding earlier thinking",
-        "Fixed a background worker forked from a conversation adding EnterWorktree to the conversation's tool block mid-session, which broke prompt-cache reuse",
-        "Fixed mid-session MCP and plugin tools being added to the tool list in sessions without ToolSearch, which broke prompt-cache reuse; supported models now receive them as deferred definitions",
-        "Fixed switching models with /model re-sending every tool definition (a prompt-cache miss); commit and PR attribution text now arrives as a conversation note that updates on model changes",
-        "Fixed resumed sessions rewriting the inline tool set when an MCP connector reconnects at a different moment than before",
-        "Fixed resumed sessions re-rendering tool descriptions instead of replaying the recorded ones when the first turn ran a tool",
-        "Fixed prompt-cache misses and dropped extended thinking when a claude.ai connector's tools change between a session and its resume",
-        "Fixed resumed sessions rewriting earlier MCP tool announcements (and dropping extended thinking) before their connectors reconnect",
-        "Fixed a prompt-cache break when a print-mode (<code>-p</code>) conversation is resumed interactively: the system prompt prefix no longer changes"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.162.0-alpha.20",
+      "date": "2026-10-08T02:25:14.000Z",
+      "bullets": [
+        "Release 0.162.0-alpha.20"
+      ]
+    },
+    {
+      "version": "0.162.0-alpha.18.1",
+      "date": "2026-10-08T02:47:34.000Z",
+      "bullets": [
+        "Release 0.162.0-alpha.18.1"
+      ]
+    },
+    {
+      "version": "0.162.0-alpha.17.2",
+      "date": "2026-10-08T07:30:45.000Z",
+      "bullets": [
+        "Release 0.162.0-alpha.17.2"
+      ]
+    },
     {
       "version": "0.162.0-alpha.18",
       "date": "2026-10-07T02:04:32.000Z",
       "bullets": [
         "Release 0.162.0-alpha.18"
+      ]
+    },
+    {
+      "version": "0.162.0-alpha.17.1",
+      "date": "2026-10-07T23:56:43.000Z",
+      "bullets": [
+        "Release 0.162.0-alpha.17.1"
+      ]
+    },
+    {
+      "version": "0.161.0",
+      "date": "2026-10-07T15:58:45.000Z",
+      "bullets": [
+        "- GPT-6.1 Sol is now the default model in the bundled and Amazon Bedrock catalogs. (#49318, #49339) - Amazon Bedrock supports multi-agent V2 and Ultra reasoning on compatible models; Bedrock Mantle also accepts AWS GovCloud regions. (#49345, #49813) - Sign in to MCP servers from an active terminal session with <code>/mcp login </code>. (#49290) - Choose your microphone, speaker, and microphone input channels for voice conversations, with preferences saved locally. (#49437, #49836) - Daybreak is opt-in through <code>--enable cli_daybreak</code> or <code>features.cli_daybreak=true</code>; <code>daybreak=true</code> alone is insufficient.",
+        "By default, controls and indicators are hidden, <code>/daybreak</code> is unavailable, and automatic Cyber routing is omitted—even for saved Daybreak threads.",
+        "Saved preferences remain intact.",
+        "Opt-in routing requires eligible ChatGPT sign-in, the OpenAI provider, and advertised model/program support. (#49856, #49858, #49859, #49861, #51207) - Select a Cyber access program per turn with <code>codex exec --cyber-access-program</code> or the TypeScript SDK’s <code>cyberAccessProgram</code> option.",
+        "The explicit exec override remains available with <code>cli_daybreak</code> disabled and leaves the saved choice unchanged. (#49939, #51207) - Approved filesystem escalation can now grant broader write access while preserving denied reads and network restrictions.",
+        "Background tasks retain their originating turn’s permissions. (#49353, #49880) - Explicit launch permissions survive terminal reconnects and new sessions, while implicit client settings no longer overwrite server or saved-thread web-search settings. (#49809, #49799) - Elevated Windows terminal sessions can start using an embedded server, and sandboxed PowerShell preserves relative paths beneath protected user profiles. (#49855, #49690) - Enter correctly submits buffered input after paste detection expires, including in Vim insert mode. (#49810) - Thread resume includes the latest committed history.",
+        "Startup detects recoverable SQLite corruption earlier and preserves damaged databases as backups. (#49599, #49701) - Responses retries and WebSocket-to-HTTP fallback honor server retry guidance, reducing premature failures during overload. (#49441) - Authentication guidance now accounts for keyring storage instead of implying credentials always reside in <code>auth.json</code>. (#49361) - Publishing an older alpha or hotfix no longer moves npm alpha tags backward. (#49704) Full Changelog: https://github.com/openai/codex/compare/rust-v0.160.0...rust-v0.161.0 - #49246 Use executable fixture copying in the bundled bwrap test @felixxia-oai - #49257 Allow Guardian cached approvals with incomplete root context @felixxia-oai - #49260 Restrict enterprise MCP auth and fail closed on config refresh @nicksteele-oai - #49261 Preserve Windows sandbox runner launch errors @zm-oai - #49262 Trace turn phases and correlate accepted input with turns @jif-oai - #49266 Remove the remote agent message board client README @jif-oai - #49267 Support remote agent message boards in multi-agent sessions @jif-oai - #49269 Preserve thread overrides and cloud policy validity during config reloads @nicksteele-oai - #49275 Isolate realtime conversation tests from Responses prewarm connections @felixxia-oai - #49276 Enable enterprise MCP sign-in and account-scoped grant cleanup @nicksteele-oai - #49277 Avoid a turn teardown race in the Guardian agent message test @felixxia-oai - #49280 Restrict capability roots to captured turn environments @miz-openai - #49286 Model exec-server session attachment state as an enum @jif-oai - #49290 Add <code>/mcp login </code> to the TUI @nicksteele-oai - #49294 Record Guardian context mode in review and classification telemetry @felixxia-oai - #49295 Simplify configuration fingerprint canonicalization @jif-oai - #49297 Scan the session index backwards for batch thread name lookups @jif-oai - #49300 Compact the inline hidden tag buffer once per chunk @jif-oai - #49305 Batch metadata reads when resolving thread names @jif-oai - #49308 Run piped legacy Windows sandbox processes without a console @etraut-openai - #49312 Notify parent agents when Guardian stops a subagent @jif-oai - #49316 Bump taiki-e/install-action to v2.87.21 in CI setup @jgershen-oai - #49318 Add GPT-6.1 Sol as the default catalog model @andrewgu-oai - #49325 Retry Windows sandbox runner logon once on error 1056 @zm-oai - #49330 Keep remote control reconnect backoff capped during sustained failures @yansenzhou-oai - #49332 Clean up canceled exec-server RPC requests immediately @jif-oai - #49339 Add GPT-6.1 Sol to Bedrock catalogs and make it the default @celia-oai - #49345 Enable multi-agent V2 and Ultra reasoning on Amazon Bedrock @celia-oai - #49353 Allow approved filesystem escalation while preserving denied reads @viyatb-oai - #49357 Continue Markdown blockquotes when pasting multiline text @bc-openai - #49360 Carry shell invocation metadata and report executor PATH directories @anp-oai - #49361 Clarify credential storage wording across authentication UI and docs @celia-oai - #49369 Update Bedrock GPT-6 Sol catalog tests to expect multi-agent V2 @celia-oai - #49379 Compile hook matchers during discovery @jif-oai - #49384 Track credential storage outcomes and redact sensitive errors @celia-oai - #49388 Fix Windows path inference for opaque URIs with slash prefixes @dkovalenko-oai - #49389 Serialize tests that share Windows sandbox accounts @jgershen-oai - #49392 Add attributed MCP OAuth credential storage telemetry @celia-oai - #49395 Remove randomized greetings from TUI session headers @etraut-openai - #49401 Preserve live tool-call metadata across request windows @ningyi-oai - #49403 Add an experimental flag for bundled tools in login shells @anp-oai - #49406 Support explicit cyber access programs with OpenAI API keys @julee-oai - #49407 Recover exec-server sessions after environment info timeouts @vivi - #49408 Compare tool call metadata in the recorder refresh test @euroelessar - #49411 Bind the app-server time provider to a local variable @euroelessar - #49414 Filter graceful shutdown guard and trigger traces from SQLite logs @dkovalenko-oai - #49415 Truncate input text in protocol debug output @dkovalenko-oai - #49416 Omit payloads from multiline ANSI warnings @dkovalenko-oai - #49424 Infer Windows UNC paths with forward and mixed slashes @dkovalenko-oai - #49425 Prune diagnostic logs periodically by age and database size @dkovalenko-oai - #49426 Enable analytics by default for daemon-launched app servers @bc-openai - #49432 Preserve bootstrap discovery across authentication changes @cooper-oai - #49437 Add local audio device selection to TUI voice settings @bc-openai - #49441 Honor server retry advice across Responses retries and fallback @anp-oai - #49444 Use <code>memrchr</code> to find newlines in reverse JSONL scans @btraut-openai - #49467 Restore executor tool paths after login shell startup @anp-oai - #49472 Use server-authoritative permissions in the TUI @etraut-openai - #49473 Use the rmcp SDK for enterprise-managed token exchanges @nicksteele-oai - #49475 Complete turn abort callbacks before emitting terminal events @euroelessar - #49478 Discover and validate MCP authorization servers before ID-JAG exchange @nicksteele-oai - #49480 Add experimental thread prediction protocol types @keyz - #49489 Add regression coverage for account switches between analytics batches @anp-oai - #49517 Add a fork shortcut to the TUI command center @etraut-openai - #49560 Add an opt-in model catalog to multi-agent context @jif-oai - #49564 Copy selected file paths as plain text in the TUI @fcoury-oai - #49584 Skip host skill discovery for Guardian reviews @jif-oai - #49595 Make the strict network approval test independent of request order @jif-oai - #49598 Persist explicit user goal edits in model history @felixxia-oai - #49599 Return authoritative replay history when resuming a thread @felixxia-oai - #49600 Reuse unchanged history snapshots when resuming threads @felixxia-oai - #49624 Use server authentication for explicit remote session commands @cooper-oai - #49642 Allow managed requirements to disable the Windows MXC sandbox @iceweasel-oai - #49675 Serialize Responses routing fields before large inputs @jbeckwith-oai - #49678 Escape command drafts when recovering question answers @imac-oai - #49683 Add a managed feature gate for in-app voice @vishnu-oai - #49686 Deliver remote message board notifications to active turns @jif-oai - #49689 Export skill invocation events through OpenTelemetry @jif-oai - #49690 Preserve PowerShell relative paths in the elevated Windows sandbox @johnl-oai - #49692 Keep compressed rollout snippet searches on one blocking worker @npancha-openai - #49693 Move thread history projection into one blocking task @charliemarsh-oai - #49694 Batch rollout listing scans on cancellable blocking workers @charliemarsh-oai - #49696 Make exec-server file reads cancellable between chunks @charliemarsh-oai - #49701 Detect SQLite corruption during startup and preserve recovery backups @dkovalenko-oai - #49702 Rename exec-server file handle management identifiers @anp-oai - #49704 Prevent npm alpha dist-tags from moving backward @imac-oai - #49706 Upgrade the argument comment lint toolchain and Dylint @tamird - #49708 Move session index I/O off async runtime threads @charliemarsh-oai - #49710 Classify SQLite corruption using typed error codes @dkovalenko-oai - #49712 Avoid full-string scans in token-budget truncation @jif-oai - #49713 Remove repository-local Codex guidance, skills, and environment config @anp-oai - #49714 Decouple API-key cyber access programs from model discovery @julee-oai - #49715 Add account security setup reminders to the TUI @dennyku - #49778 Define exec-server protocol types for streamed file writes @anp-oai - #49781 Include the environment's MXC backend in MCP sandbox metadata @zm-oai - #49782 Clean up process groups for failed shell snapshot captures @jif-oai - #49783 Preserve background thread requests when forking in the TUI @etraut-openai - #49784 Add a requirements feature gate for the browser annotation API @tepman-oai - #49785 Persist empty paginated threads when naming them @rd-oai - #49786 Clarify V2 spawn model override guidance for context catalogs @jif-oai - #49787 Remove <code>AGENTS.md</code> from Bazel core test data @andrewgu-oai - #49792 Add retained conversation support to Guardian async sampling @felixxia-oai - #49793 Add conversation mode to Guardian v2 async classification @felixxia-oai - #49795 Avoid duplicate sync reviews in Guardian classifier continuations @felixxia-oai - #49796 Deduplicate Guardian retained-context omission notices @felixxia-oai - #49798 Share cached exec-server environment info with Arc @anp-oai - #49799 Preserve server web-search settings in the TUI @etraut-openai - #49800 Allow cleanup of replay-only side conversations with missing threads @bc-openai - #49801 Update the Rust toolchain action for argument-comment linting @andrewgu-oai - #49804 Use platform-specific modifier labels in TUI shortcut hints @bc-openai - #49805 Add capability-gated writable file streams to the exec-server client @anp-oai - #49806 Accept unknown Codex error variants in the app-server protocol @anp-oai - #49807 Enable API-key model discovery by default @andrewgu-oai - #49809 Preserve local launch permissions across TUI sessions and reconnects @etraut-openai - #49810 Flush expired paste bursts before handling Enter @bc-openai - #49811 Handle unsupported <code>fs/writeBlock</code> requests in exec-server @anp-oai - #49812 Move shadow skill ranking off the turn preparation path @vkg-oai - #49813 Support AWS GovCloud regions for Amazon Bedrock Mantle @alexsong-oai - #49814 Add coordinated shutdown for local agent trees @owenlin0 - #49816 Remove browser-open success messages from the TUI @bc-openai - #49817 Add an advisory Bedrock GovCloud requirements check @alexsong-oai - #49818 Use dedicated parameters for sandboxed file opens @anp-oai - #49819 Recover daemon startup and updater re-exec after cwd deletion @etraut-openai - #49822 Box the resume future in the agents overview permissions test @sayan-oai - #49835 Clarify service tier default save errors in the TUI @etraut-openai - #49836 Allow microphone channel selection for voice conversations @bc-openai - #49843 Preserve daemon diagnostics and include updater logs in reports @etraut-openai - #49846 Capture host-supplied extension data for each turn @sayan-oai - #49847 Persist world-state snapshots alongside rendered context @pakrym-oai - #49850 Launch Windows daemon children in a dedicated working directory @etraut-openai - #49852 Improve diagnostics for report attachment failures @dkovalenko-oai - #49855 Use embedded mode for elevated Windows TUI sessions @etraut-openai - #49856 Support Daybreak selection in <code>codex exec</code> @etraut-openai - #49857 Use the model catalog to select TUI cyber refusal guidance @etraut-openai - #49858 Add a persistent <code>/daybreak</code> toggle to the TUI @etraut-openai - #49859 Honor Daybreak settings in TUI continuations and background tasks @etraut-openai - #49861 Add Daybreak state to the status line and terminal title @etraut-openai - #49867 Update elevated-launch warning snapshot to use <code>⌃o</code> for copy @etraut-openai - #49874 Point usage and credit links to ChatGPT settings @etraut-openai - #49875 Decouple TUI startup presentation from execution configuration @etraut-openai - #49876 Remove personality plumbing from the TUI @etraut-openai - #49880 Bind permission grants to the originating turn @anp-oai - #49894 Return world-state snapshots and context updates together @pakrym-oai - #49898 Scope extension filesystem access to callback permissions @anp-oai - #49910 Preserve validation errors for invalid TUI keybindings @etraut-openai - #49912 Respect approval policies in temporary structured threads @etraut-openai - #49939 Add per-turn Cyber access program selection to exec and the SDK @mldangelo-oai - #49946 Prevent stale file search results from being labeled with a new query @jif-oai - #49951 Include preceding assistant context in Guardian sender reviews @jif-oai - #49956 Cache the placeholder regex for MCP hook argument expansion @jif-oai - #49959 Test session index thread-name append and removal @jif-oai - #49972 Share byte buffers across exec-server output chunks @jif-oai - #49987 Add renewable EMA HTTP authentication and credential versioning @nicksteele-oai - #49993 Preserve the async Guardian history prefix as retained context changes @felixxia-oai"
       ]
     },
     {
@@ -860,41 +873,6 @@
       "date": "2026-10-02T11:45:43.000Z",
       "bullets": [
         "Release 0.162.0-alpha.6"
-      ]
-    },
-    {
-      "version": "0.162.0-alpha.5",
-      "date": "2026-10-02T08:11:11.000Z",
-      "bullets": [
-        "Release 0.162.0-alpha.5"
-      ]
-    },
-    {
-      "version": "0.162.0-alpha.4",
-      "date": "2026-10-02T05:44:28.000Z",
-      "bullets": [
-        "Release 0.162.0-alpha.4"
-      ]
-    },
-    {
-      "version": "0.162.0-alpha.3",
-      "date": "2026-10-02T03:38:25.000Z",
-      "bullets": [
-        "Release 0.162.0-alpha.3"
-      ]
-    },
-    {
-      "version": "0.162.0-alpha.2",
-      "date": "2026-10-02T01:44:23.000Z",
-      "bullets": [
-        "Release 0.162.0-alpha.2"
-      ]
-    },
-    {
-      "version": "0.160.0",
-      "date": "2026-10-01T20:19:13.000Z",
-      "bullets": [
-        "- Browse older tasks in the agent command center with a keyboard-accessible “Show more” action. (#49106) - Select transcript text and paste with middle-click in fullscreen mode on supported local Linux X11 terminals. (#49112) - Start sessions outside a project with workspace defaults when policy permits, and restore saved permissions when resuming. (#49160) - Added opt-in Guardian review capabilities to retrieve earlier user instructions and include context from agent handoffs. (#49036, #49057) - Unsent queued messages now resume after reconnection once uncertain submissions are resolved, avoiding duplicate sends. (#49105) - The terminal UI now preserves server provider, reasoning-summary, and verbosity settings and shows the correct sessions in resume and fork history. (#49144, #49161, #49171) - Fixed Windows sandbox PowerShell fallbacks and long-path permission repairs, and suppressed unwanted console windows from background helpers. (#49019, #49058, #49098, #49164, #49386) - Subagents now retain environments that are still starting and receive their configuration or preparation failure. (#49075) - Prevented SQLite stalls during connection setup and logging, and surfaced initialization errors instead of masking them as timeouts. (#49032, #49102) - Explicit provider model catalogs no longer include unsupported bundled models or reuse stale entries after refresh failures. (#49135) - Clarified how provider credentials use the configured storage backend and how <code>env_key</code> identifies the API-key environment variable. (#49118) - Reduced repeated plugin-loading work by caching parsed manifests and reusing HTTP connections for remote plugin requests. (#49099, #49100) - Added background reclamation of unused log database space to reduce disk usage. (#49069) Full Changelog: https://github.com/openai/codex/compare/rust-v0.159.0...rust-v0.160.0 - #48983 Avoid full metadata rewrites for thread timestamp updates @jif-oai - #49000 Isolate the memory startup metadata test from Git enrichment @jif-oai - #49019 Use a compatible PowerShell fallback for the Windows MXC sandbox @iceweasel-oai - #49028 Use the numeric ioctl value in the macOS sandbox policy @aionescu-oai - #49031 Clarify ChatGPT sign-in success copy @bc-openai - #49032 Avoid SQLite stalls from connection setup and stderr span logging @jif-oai - #49036 Add opt-in conversation history retrieval to Guardian reviews @felixxia-oai - #49037 Show the Plan mode cycling hint in the fullscreen status line @fcoury-oai - #49038 Preserve encrypted agent messages in Guardian reviews @felixxia-oai - #49041 Copy selections within inline code as plain text @fcoury-oai - #49043 Update Pro plan display names in the TUI @etraut-openai - #49057 Add handoff-aware root context for Guardian reviews @jif-oai - #49058 Fix Windows sandbox ACL repair for long runtime paths @darius-oai - #49060 Update Guardian messaging snapshots for native agent messages @dkovalenko-oai - #49065 Update Guardian handoff snapshot for separate agent messages @cassirer-openai - #49067 Keep configuration values out of Windows sandbox policy events @zm-oai - #49069 Reclaim unused SQLite log database pages in the background @dkovalenko-oai - #49073 Surface realtime voice catalog failures in the TUI @etraut-openai - #49074 Propagate Cargo package versions to Bazel Rust targets @tamird - #49075 Preserve pending environments when spawning subagents @sayan-oai - #49076 Avoid collecting unused Git metadata in skill analytics @tamird - #49079 Update and centralize TUI subscription labels @etraut-openai - #49082 Skip remote Git discovery for Guardian diff paths @jif-oai - #49084 Track app-server running turns incrementally @tamird - #49089 Render follow-up directive labels in the TUI and copied responses @etraut-openai - #49093 Simplify startup promotions to platform-specific desktop app tips @etraut-openai - #49096 Update <code>h2</code> from 0.4.16 to 0.4.19 in Cargo and Bazel lockfiles @cassirer-openai - #49097 Notify lifecycle extensions of compaction usage limits @xli-oai - #49098 Resolve Windows sandbox PowerShell fallbacks on the exec server @zm-oai - #49099 Cache parsed plugin manifests across plugin workflows @dkovalenko-oai - #49100 Reuse the HTTP connection pool for remote plugin requests @dkovalenko-oai - #49102 Preserve SQLite vacuum modes and surface pool initialization errors @bc-openai - #49103 Balance Windows Bazel test shards using duration estimates @jgershen-oai - #49105 Resume unsent TUI input after reconnecting @etraut-openai - #49106 Add history pagination to the agent command center @bc-openai - #49112 Add X11 primary selection and middle-click paste support @fcoury-oai - #49114 Point remote compaction tests at the mock ChatGPT server @OLI-OAI - #49117 Attribute analytics requests to each thread's product SKU @papayo-oai - #49118 Correct provider authentication storage documentation @celia-oai - #49119 Add recovery guidance to content-filter retries @won-openai - #49127 Deduplicate cloud and executor skill listings before budgeting @TAFOYA-OAI - #49130 Move content-filter guidance into the shared Responses retry handler @won-openai - #49135 Treat explicit provider model catalogs as authoritative @andrewgu-oai - #49136 Remove the plus separator after Option symbols in TUI key hints @bc-openai - #49138 Expose original error details to turn lifecycle contributors @bryanashley - #49144 Preserve server reasoning summary and verbosity settings in the TUI @etraut-openai - #49145 Hide reasoning summary settings in <code>/status</code> for server connections @etraut-openai - #49147 Simplify cloud task base URL normalization @akira-oai - #49153 Omit blockquote markers when copying quoted selections in the TUI @bc-openai - #49160 Support projectless TUI sessions with workspace defaults @etraut-openai - #49161 Honor app-server provider defaults in the TUI @etraut-openai - #49164 Suppress Windows console windows for background subprocesses @etraut-openai - #49171 Fix model provider lookup for TUI history @etraut-openai - #49386 [0.160] Backport remaining Windows console fix to frozen alpha.6 @andrewgu-oai - #49763 [0.160] Backport maintenance-line catalog and security reminder updates @andrewgu-oai"
       ]
     }
   ]
