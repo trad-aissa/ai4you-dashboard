@@ -1,14 +1,206 @@
 {
-  "updated": "2026-10-09T12:33:56.604Z",
+  "updated": "2026-10-10T11:54:30.819Z",
   "count": 80,
   "items": [
     {
+      "id": "cf5de6151a45",
+      "title": "Anthropic can’t reliably control its AI agents. It’s cutting off its internal evals from the live internet instead",
+      "url": "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/",
+      "source": "TechCrunch",
+      "date": "2026-10-10T00:18:32.000Z",
+      "snippet": "Anthropic said it \"turned off live internet access\" for \"all our internal evaluations\" until further notice."
+    },
+    {
+      "id": "b84b725dfc39",
+      "title": "Rewriting Prime Agent in Rust",
+      "url": "https://www.primeintellect.ai/blog/prime-agent-rust",
+      "source": "Hacker News",
+      "date": "2026-10-09T23:06:25.000Z",
+      "snippet": "53 points · 18 comments on HN"
+    },
+    {
+      "id": "5df45c581313",
+      "title": "Ukraine’s drones knock out AI data center belonging to \"Russia’s Google\"",
+      "url": "https://arstechnica.com/gadgets/2026/10/ukraines-drones-knock-out-ai-data-center-belonging-to-russias-google/",
+      "source": "Ars Technica",
+      "date": "2026-10-09T22:04:07.000Z",
+      "snippet": "One damaged data center has supercomputers used for training Yandex’s AI model."
+    },
+    {
+      "id": "d9ded0e84259",
+      "title": "Anthropic AI model submits false tip on unsolved Philly murder, police say",
+      "url": "https://www.nbcphiladelphia.com/news/local/anthropic-ai-model-submits-false-tip-on-unsolved-philly-murder-police-say/4477051/",
+      "source": "Hacker News",
+      "date": "2026-10-09T22:00:35.000Z",
+      "snippet": "174 points · 126 comments on HN"
+    },
+    {
+      "id": "ac2c548222f7",
+      "title": "The maker of non-text AI model Jev valued at $7.5B just weeks after launch",
+      "url": "https://techcrunch.com/2026/10/09/the-maker-of-non-text-ai-model-jev-valued-at-7-5b-just-weeks-after-launch/",
+      "source": "TechCrunch",
+      "date": "2026-10-09T21:41:29.000Z",
+      "snippet": "What has users and large corporations so excited about Jev is TypeSafe’s claim that it works significantly faster and uses far fewer tokens than LLMs."
+    },
+    {
+      "id": "0ad44f3ce5c4",
+      "title": "Anthropic’s AI gave Philadelphia police a fake tip about an unsolved homicide",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1009090/anthropic-fake-homicide-information-philadelphia-pd-tip",
+      "source": "The Verge",
+      "date": "2026-10-09T21:15:38.000Z",
+      "snippet": "An Anthropic AI model provided false information about an unsolved homicide to a Philadelphia Police Department (PPD) tipline, according to a report from 6abc. In a statement released on Friday, the PPD said the AI model"
+    },
+    {
+      "id": "9f4f46039e3d",
+      "title": "AI coding agents generate more code, but not more software",
+      "url": "https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/",
+      "source": "Ars Technica",
+      "date": "2026-10-09T19:43:50.000Z",
+      "snippet": "Study finds coding efficiency gains get \"absorbed\" by human review \"bottleneck.\""
+    },
+    {
+      "id": "6794814fc09c",
+      "title": "An Anthropic AI model sent a false homicide tip to Philadelphia police",
+      "url": "https://techcrunch.com/2026/10/09/an-anthropic-ai-model-sent-a-false-homicide-tip-to-philadelphia-police/",
+      "source": "TechCrunch",
+      "date": "2026-10-09T19:36:56.000Z",
+      "snippet": "Anthropic did not discover this behavior until over two months after its AI submitted the false tip."
+    },
+    {
+      "id": "d07dddd55da2",
+      "title": "‘Pure insanity’: Mathematicians will need years to make sense of OpenAI’s latest drop",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1008726/openai-mathematics-solutions-chaos",
+      "source": "The Verge",
+      "date": "2026-10-09T19:09:44.000Z",
+      "snippet": "\"Staggering.\" \"Overwhelming.\" \"Unprecedented.\" \"Surreal.\" \"Pure insanity.\" Those were among the descriptions more than three dozen mathematicians reached for in conversations with The Verge as they tried to make sense of"
+    },
+    {
+      "id": "9304db4f19bb",
+      "title": "AI disqualification yields new Nikon Small World in Motion winner",
+      "url": "https://arstechnica.com/science/2026/10/winning-nikon-small-world-in-motion-video-disqualified-for-ai-use/",
+      "source": "Ars Technica",
+      "date": "2026-10-09T18:44:06.000Z",
+      "snippet": "New winner is Nguyen Nam Nhat of Vietnam for video of a roundworm and single-celled Dileptus."
+    },
+    {
+      "id": "f11f2c288c2c",
+      "title": "Nikon microscopic video competition winner disqualified for using generative AI",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1008930/nikon-small-world-in-motion-winner-ai",
+      "source": "The Verge",
+      "date": "2026-10-09T18:06:57.000Z",
+      "snippet": "Nikon says the video that originally won first place in its Small World in Motion contest \"did not comply with the competition rules regarding generative AI.\" BBC reports that the original first place video from Dr. Ning"
+    },
+    {
+      "id": "84d5b4b8b9e3",
+      "title": "What mathematicians should know about the Lean Theorem Prover: reliability & AI",
+      "url": "https://terrytao.wordpress.com/2026/10/09/what-mathematicians-should-know-about-the-lean-theorem-proverquestions-of-reliability-and-ai/",
+      "source": "Hacker News",
+      "date": "2026-10-09T17:42:12.000Z",
+      "snippet": "133 points · 28 comments on HN"
+    },
+    {
+      "id": "04902b83f5b9",
+      "title": "Typesafe AI raises $870M at $7.5B",
+      "url": "https://typesafe.ai/blog/series-ai",
+      "source": "Hacker News",
+      "date": "2026-10-09T17:02:31.000Z",
+      "snippet": "382 points · 287 comments on HN"
+    },
+    {
+      "id": "fd6b62e24c31",
+      "title": "Amazon and others are done keeping data center deals secret. Is it enough to build trust?",
+      "url": "https://techcrunch.com/video/amazon-and-others-are-done-keeping-data-center-deals-secret-is-it-enough-to-build-trust/",
+      "source": "TechCrunch",
+      "date": "2026-10-09T16:56:42.000Z",
+      "snippet": "Amazon says it will stop using NDAs when negotiating data center deals with local governments, following a similar move from Microsoft earlier this year. Secrecy has fueled community backlash against AI infrastructure, w"
+    },
+    {
+      "id": "3e5144fcace1",
+      "title": "Amazon drops data center NDAs, and AI agents want your credit card",
+      "url": "https://techcrunch.com/podcast/amazon-drops-data-center-ndas-and-ai-agents-want-your-credit-card/",
+      "source": "TechCrunch",
+      "date": "2026-10-09T16:53:02.000Z",
+      "snippet": "Amazon says it will stop using NDAs when negotiating data center deals with local governments, following a similar move from Microsoft earlier this year. Secrecy has fueled community backlash against AI infrastructure, w"
+    },
+    {
+      "id": "edf79715fb8e",
+      "title": "Danu Robotics’ fight to build a better recycling robot",
+      "url": "https://techcrunch.com/2026/10/09/danu-robotics-fight-to-build-a-better-recycling-robot/",
+      "source": "TechCrunch",
+      "date": "2026-10-09T16:45:00.000Z",
+      "snippet": "For six years, Danu founder Amy Ma has been working on a better way to sort recyclable waste."
+    },
+    {
+      "id": "304a6e318051",
+      "title": "We can’t help treating AI like it’s human. But should we?",
+      "url": "https://techcrunch.com/2026/10/09/we-cant-help-treating-ai-like-its-human-but-should-we/",
+      "source": "TechCrunch",
+      "date": "2026-10-09T16:40:14.000Z",
+      "snippet": "\"When we are drawn into even the most primitive exchanges with a relational artifact, we believe it cares for us,\" Dr. Sherry Turkle writes. \"And we are wired to care for it in return.\""
+    },
+    {
+      "id": "b7942fed5b9f",
+      "title": "a16z’s Olivia Moore on the state of consumer AI",
+      "url": "https://techcrunch.com/2026/10/09/a16zs-olivia-moore-on-the-state-of-consumer-ai/",
+      "source": "TechCrunch",
+      "date": "2026-10-09T15:43:33.000Z",
+      "snippet": "Moore sees a huge opportunity in consumer AI, particularly if the industry can tap into revenue streams beyond just subscriptions and API charges."
+    },
+    {
+      "id": "e0e388931715",
+      "title": "Trump’s attempt to rename AI is looking awfully artificial",
+      "url": "https://www.theverge.com/policy/1008677/trump-super-intelligence-ai-rebranding",
+      "source": "The Verge",
+      "date": "2026-10-09T14:25:43.000Z",
+      "snippet": "President Donald Trump has a knack for turning words against his enemies. His first successful presidential run was built on monikers like \"Little Marco\" and \"Crooked Hillary\"; he changed \"fake news\" from a phrase descri"
+    },
+    {
+      "id": "522b768897b6",
+      "title": "Court throws out killer's sentence after judge said he loved AI video of victim",
+      "url": "https://www.nbcnews.com/news/us-news/sentence-vacated-ai-video-dead-victim-rcna601457",
+      "source": "Hacker News",
+      "date": "2026-10-09T14:14:08.000Z",
+      "snippet": "71 points · 74 comments on HN"
+    },
+    {
+      "id": "e6bbf4ee8129",
+      "title": "TechCrunch Disrupt 2026 starts in 4 days — lock in your pass savings of up to $100 before prices rise",
+      "url": "https://techcrunch.com/2026/10/09/techcrunch-disrupt-2026-starts-in-4-days-lock-in-your-pass-savings-of-up-to-100-before-prices-rise/",
+      "source": "TechCrunch",
+      "date": "2026-10-09T14:00:00.000Z",
+      "snippet": "Four days until TechCrunch Disrupt 2026 starts, when 10,000 founders, investors, and tech leaders gather in San Francisco's Moscone West on October 13-15. Save up to $100 on your price. Plus, save 50% on a second pass of"
+    },
+    {
+      "id": "3e04105beca7",
+      "title": "Instinct was the buzziest AI agent around — can it survive Muse?",
+      "url": "https://www.theverge.com/tech/1008254/instinct-agent-ai-hands-on-muse-dots",
+      "source": "The Verge",
+      "date": "2026-10-09T14:00:00.000Z",
+      "snippet": "Before there were cute little guys, there was Instinct. In August, the startup got its AI agent to market with an unusual playbook: invite-only, no marketing, and barely so much as a website. And yet, Instinct quickly be"
+    },
+    {
+      "id": "1be26c9145a7",
+      "title": "Iranian campaign planted fake articles in real U.S. publications using ChatGPT",
+      "url": "https://www.washingtonpost.com/technology/2026/10/09/chatgpt-users-iran-planted-ai-generated-articles-us-news-media/",
+      "source": "Hacker News",
+      "date": "2026-10-09T12:21:24.000Z",
+      "snippet": "187 points · 167 comments on HN"
+    },
+    {
+      "id": "5632765a2575",
+      "title": "Pointing AI at archives found a forgotten meteorite, lost rhinos, and more",
+      "url": "https://jessewaites.com/blog/post/i-pointed-ai-at-400-years-of-archives/",
+      "source": "Hacker News",
+      "date": "2026-10-09T11:36:20.000Z",
+      "snippet": "152 points · 78 comments on HN"
+    },
+    {
       "id": "595085953aee",
-      "title": "Let your AI agents paint big arrows, boxes and text on your screen",
+      "title": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
       "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
       "source": "Hacker News",
       "date": "2026-10-09T11:03:48.000Z",
-      "snippet": "90 points · 30 comments on HN"
+      "snippet": "400 points · 177 comments on HN"
     },
     {
       "id": "15717a6b7c9a",
@@ -19,12 +211,28 @@
       "snippet": "OpenAI is standing firm on its decision to fire three safety researchers after an investigation found they committed \"a significant breach of trust.\" In a post on X on Friday, the company said Jasmine Wang, Tomek Korbak "
     },
     {
+      "id": "71b5c0c81e2a",
+      "title": "Show HN: Apogee: Rebuilding Mozilla's Orbit, fully local and private",
+      "url": "https://github.com/darshi1337/apogee",
+      "source": "Hacker News",
+      "date": "2026-10-09T07:36:19.000Z",
+      "snippet": "64 points · 2 comments on HN"
+    },
+    {
       "id": "edd58468d564",
       "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
       "url": "https://openai.com/index/sophos",
       "source": "OpenAI",
       "date": "2026-10-09T07:00:00.000Z",
       "snippet": "Discover how Sophos uses OpenAI’s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight."
+    },
+    {
+      "id": "90995f7dbc9c",
+      "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
+      "url": "https://openai.com/index/asana-browser-agent",
+      "source": "OpenAI",
+      "date": "2026-10-09T07:00:00.000Z",
+      "snippet": "Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models."
     },
     {
       "id": "df7e5433800b",
@@ -48,7 +256,7 @@
       "url": "https://biohub.org/news/virtual-biology-initiative-expansion/",
       "source": "Hacker News",
       "date": "2026-10-08T20:46:25.000Z",
-      "snippet": "133 points · 19 comments on HN"
+      "snippet": "146 points · 20 comments on HN"
     },
     {
       "id": "4079389ad67f",
@@ -72,7 +280,7 @@
       "url": "https://cointelegraph.com/news/justin-drake-urges-crypto-bunker-mode-as-ai-could-break-wallet-security-within-months",
       "source": "Hacker News",
       "date": "2026-10-08T19:17:51.000Z",
-      "snippet": "63 points · 59 comments on HN"
+      "snippet": "65 points · 64 comments on HN"
     },
     {
       "id": "7dcbf8a5afe0",
@@ -140,11 +348,11 @@
     },
     {
       "id": "ba390530e9c6",
-      "title": "Anthropic bans ‘abusive or cruel behavior’ toward Claude",
+      "title": "Anthropic bans 'abusive or cruel behavior' towards Claude",
       "url": "https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude",
-      "source": "The Verge",
-      "date": "2026-10-08T17:00:00.000Z",
-      "snippet": "Anthropic is making changes to its usage policy for the first time in over a year to reflect new and high-risk cases of misuse - including election interference, weapons development, surveillance, and health and financia"
+      "source": "Hacker News",
+      "date": "2026-10-08T17:08:02.000Z",
+      "snippet": "88 points · 214 comments on HN"
     },
     {
       "id": "7bdbb68374d5",
@@ -152,7 +360,7 @@
       "url": "https://www.cnbc.com/2026/10/08/open-ai-revenue-nvidia-oracle-coreweave.html",
       "source": "Hacker News",
       "date": "2026-10-08T16:45:58.000Z",
-      "snippet": "405 points · 274 comments on HN"
+      "snippet": "424 points · 300 comments on HN"
     },
     {
       "id": "40d84c5f67bb",
@@ -160,7 +368,7 @@
       "url": "https://opper.ai/jevman-benchmark/",
       "source": "Hacker News",
       "date": "2026-10-08T16:34:13.000Z",
-      "snippet": "65 points · 16 comments on HN"
+      "snippet": "74 points · 23 comments on HN"
     },
     {
       "id": "1eaf0f76ffce",
@@ -168,7 +376,7 @@
       "url": "https://openrouter.ai/stepfun/step-5-preview",
       "source": "Hacker News",
       "date": "2026-10-08T16:20:20.000Z",
-      "snippet": "133 points · 32 comments on HN"
+      "snippet": "143 points · 38 comments on HN"
     },
     {
       "id": "112b5f00879d",
@@ -291,6 +499,14 @@
       "snippet": "Full-stack safety solution for physical AI is being used by robotics companies."
     },
     {
+      "id": "c16275af740e",
+      "title": "Show HN: Proton Drive for Linux",
+      "url": "https://oss.lsantos.dev/proton-drive-linux-fs/",
+      "source": "Hacker News",
+      "date": "2026-10-08T09:10:42.000Z",
+      "snippet": "93 points · 32 comments on HN"
+    },
+    {
       "id": "3a0428350fd0",
       "title": "Microsoft event debuts new AI-friendly hardware and Windows changes",
       "url": "https://arstechnica.com/gadgets/2026/10/microsoft-event-debuts-new-ai-friendly-hardware-and-windows-changes/",
@@ -352,7 +568,7 @@
       "url": "https://www.rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai/",
       "source": "Hacker News",
       "date": "2026-10-07T18:49:40.000Z",
-      "snippet": "370 points · 381 comments on HN"
+      "snippet": "375 points · 382 comments on HN"
     },
     {
       "id": "a5b44d5e4c84",
@@ -416,7 +632,7 @@
       "url": "https://agent.reviews/",
       "source": "Hacker News",
       "date": "2026-10-07T16:59:11.000Z",
-      "snippet": "68 points · 49 comments on HN"
+      "snippet": "71 points · 49 comments on HN"
     },
     {
       "id": "b5ad26925301",
@@ -425,222 +641,6 @@
       "source": "TechCrunch",
       "date": "2026-10-07T16:53:46.000Z",
       "snippet": "Meta launches new AI tools after discovering ads on its platforms that may look normal but direct users to harmful content elsewhere online."
-    },
-    {
-      "id": "6598f51df759",
-      "title": "Study: Claude, ChatGPT Offer Different Shopping Prices Based on Wealth",
-      "url": "https://www.bloomberg.com/news/newsletters/2026-10-07/study-claude-chatgpt-ai-bots-offer-different-shopping-prices-based-on-wealth",
-      "source": "Hacker News",
-      "date": "2026-10-07T16:07:08.000Z",
-      "snippet": "97 points · 40 comments on HN"
-    },
-    {
-      "id": "ee6859a51c49",
-      "title": "ChatGPT is getting college planning tools",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1005194/openai-chatgpt-teens-college-planner-notecards",
-      "source": "The Verge",
-      "date": "2026-10-07T16:00:00.000Z",
-      "snippet": "OpenAI is bringing new tools to ChatGPT for Teens, a mode for teens introduced in August with safeguards and break reminders, to help users with the college application process. \"College Planner brings together applicati"
-    },
-    {
-      "id": "b8b3b1c51400",
-      "title": "Muse launches on the iPad",
-      "url": "https://www.theverge.com/tech/1006813/muse-ai-agent-ios-app-ipad-support",
-      "source": "The Verge",
-      "date": "2026-10-07T15:37:23.000Z",
-      "snippet": "After launching nearly a month ago and spending several weeks as the top free app in Apple's App Store, the latest update to Meta's Muse iOS app introduces native support for the iPad. A Mac version of Meta's agentic AI "
-    },
-    {
-      "id": "5d700d9f9aca",
-      "title": "Healthleap raises $38M for its AI that flags hospital patients who may need a closer look",
-      "url": "https://techcrunch.com/2026/10/07/healthleap-raises-38m-for-its-ai-that-flags-hospital-patients-who-may-need-a-closer-look/",
-      "source": "TechCrunch",
-      "date": "2026-10-07T15:07:08.000Z",
-      "snippet": "The financing includes an $8M seed round co-led by Sequoia Capital and First Round Capital, and a $30 million Series A led by Hummingbird Ventures."
-    },
-    {
-      "id": "c1d0cf6b00ca",
-      "title": "Tony Fadell on why the first wave of AI gadgets failed — and what comes next",
-      "url": "https://techcrunch.com/2026/10/07/tony-fadell-on-why-the-first-wave-of-ai-gadgets-failed-and-what-comes-next/",
-      "source": "TechCrunch",
-      "date": "2026-10-07T14:41:38.000Z",
-      "snippet": "The “father of the iPod” says the first generation of AI gadgets failed to solve real problems — and the next wave will need to earn consumers’ trust."
-    },
-    {
-      "id": "4c9b009d21f8",
-      "title": "Google invests millions in Mark Zuckerberg’s efforts to create a ‘virtual cell’",
-      "url": "https://www.theverge.com/tech/1006766/google-meta-biohub-investment-virtual-cell",
-      "source": "The Verge",
-      "date": "2026-10-07T14:40:52.000Z",
-      "snippet": "Google DeepMind, Meta, and AI drug discovery startup Isomorphic Labs are jointly investing $300 million into an initiative to create a \"virtual cell\" that researchers can use to combat disease, as reported earlier by Reu"
-    },
-    {
-      "id": "3dcafb3a31cf",
-      "title": "Google experiments with an AI-powered gaming platform",
-      "url": "https://techcrunch.com/2026/10/07/google-experiments-with-an-ai-powered-gaming-platform/",
-      "source": "TechCrunch",
-      "date": "2026-10-07T14:36:23.000Z",
-      "snippet": "Google Labs is working on a new AI-powered game-creation platform called Playground for users to build browser-based games using simple text prompts."
-    },
-    {
-      "id": "814772bc922c",
-      "title": "OpenAI’s Alexander Embiricos is coming to TechCrunch Disrupt 2026 — days after the launch of Dots",
-      "url": "https://techcrunch.com/2026/10/07/openais-alexander-embiricos-is-coming-to-techcrunch-disrupt-2026-days-after-the-launch-of-dots/",
-      "source": "TechCrunch",
-      "date": "2026-10-07T14:30:00.000Z",
-      "snippet": "OpenAI’s Alexander Embiricos is coming to the AI Stage at TechCrunch Disrupt 2026, just days after the launch of Dots. Join this conversation by registering for your pass. Get you pass now to save up to $100 and get a se"
-    },
-    {
-      "id": "57e294dfcc77",
-      "title": "SynthID Detector",
-      "url": "https://synthid.com/",
-      "source": "Hacker News",
-      "date": "2026-10-07T14:16:44.000Z",
-      "snippet": "126 points · 98 comments on HN"
-    },
-    {
-      "id": "d5ce11bd19f2",
-      "title": "Get hands-on: The full lineup of interactive roundtables at TechCrunch Disrupt 2026",
-      "url": "https://techcrunch.com/2026/10/07/get-hands-on-the-full-lineup-of-interactive-roundtables-at-techcrunch-disrupt-2026/",
-      "source": "TechCrunch",
-      "date": "2026-10-07T14:15:00.000Z",
-      "snippet": "From Nvidia and Chime to Obvious Ventures and Anthropic, explore the entire roundtable agenda at TechCrunch Disrupt 2026. Register now to save up to $100 on your pass and get a second pass at 50% off."
-    },
-    {
-      "id": "e1ff572449c9",
-      "title": "Mistral says \"Le Chonk\" can challenge the best AI models",
-      "url": "https://arstechnica.com/ai/2026/10/mistral-says-le-chonk-can-challenge-the-best-ai-models/",
-      "source": "Ars Technica",
-      "date": "2026-10-07T14:12:37.000Z",
-      "snippet": "Mistral says Le Chonk can rival top closed models while remaining open-weight."
-    },
-    {
-      "id": "5f65c4d68146",
-      "title": "AI-assisted proof of optimal packing for 11 squares",
-      "url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized",
-      "source": "Hacker News",
-      "date": "2026-10-07T14:10:55.000Z",
-      "snippet": "118 points · 54 comments on HN"
-    },
-    {
-      "id": "eba1d4222709",
-      "title": "Google rolls out improved SynthID AI content detector, now available globally",
-      "url": "https://arstechnica.com/ai/2026/10/google-rolls-out-improved-synthid-ai-content-detector-now-available-globally/",
-      "source": "Ars Technica",
-      "date": "2026-10-07T14:00:08.000Z",
-      "snippet": "The new SynthID website can now identify AI content from Google, OpenAI, and more."
-    },
-    {
-      "id": "9d9fcd082b29",
-      "title": "6 days to TechCrunch Disrupt 2026: Save on your pass before doors open",
-      "url": "https://techcrunch.com/2026/10/07/6-days-to-techcrunch-disrupt-2026-save-on-your-pass-before-doors-open/",
-      "source": "TechCrunch",
-      "date": "2026-10-07T14:00:00.000Z",
-      "snippet": "In 6 days, 10,000+ people from across the global startup and tech ecosystem will come together at San Francisco’s Moscone West for TechCrunch Disrupt 2026. If you’re planning to be one of them, register for your ticket b"
-    },
-    {
-      "id": "e4ccf311f643",
-      "title": "Google’s new SynthID website can identify AI-generated media",
-      "url": "https://techcrunch.com/2026/10/07/googles-new-synthid-website-can-identify-ai-generated-media/",
-      "source": "TechCrunch",
-      "date": "2026-10-07T14:00:00.000Z",
-      "snippet": "Google on Tuesday launched a new site that lets anyone verify whether a piece of media, be it an image, a video, or an audio clip, is generated using AI."
-    },
-    {
-      "id": "22643d6fcb19",
-      "title": "Google Playground: Create and play custom games",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
-      "source": "Hacker News",
-      "date": "2026-10-07T12:28:36.000Z",
-      "snippet": "160 points · 230 comments on HN"
-    },
-    {
-      "id": "ad4e14640e35",
-      "title": "Helping teens learn, plan, and shape the future of AI",
-      "url": "https://openai.com/index/teens-learn-and-plan",
-      "source": "OpenAI",
-      "date": "2026-10-07T12:00:00.000Z",
-      "snippet": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council."
-    },
-    {
-      "id": "8b63f191edc0",
-      "title": "AI could upend food delivery",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1005726/doordash-ai-agentic-food-delivery-bites",
-      "source": "The Verge",
-      "date": "2026-10-07T12:00:00.000Z",
-      "snippet": "DoorDash, the leading food delivery app, processed 970 million orders in its second quarter this year and generated $4.5 billion in revenue. A 10-person startup called Bites is a blip in comparison: It has just around 30"
-    },
-    {
-      "id": "8a00b6d91e6b",
-      "title": "Reasons to Dislike AI Coding",
-      "url": "https://www.sicpers.info/2026/10/reasons-to-dislike-ai-coding/",
-      "source": "Hacker News",
-      "date": "2026-10-07T09:15:00.000Z",
-      "snippet": "79 points · 112 comments on HN"
-    },
-    {
-      "id": "f81ac359aaf4",
-      "title": "ChatGPT for Teens is an ‘unacceptable risk,’ says Common Sense Media",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1006355/openai-chatgpt-for-teens-common-sense-media",
-      "source": "The Verge",
-      "date": "2026-10-07T09:00:00.000Z",
-      "snippet": "Common Sense Media, a nonprofit that offers reviews of apps, services, and entertainment with a focus on youth safety, today said that OpenAI's ChatGPT for Teens is an \"unacceptable risk.\" ChatGPT for Teens, introduced i"
-    },
-    {
-      "id": "36fcca2d6cdd",
-      "title": "Forever junior: Skills AI can't develop for you",
-      "url": "https://tech.criteo.com/blog/human-skills-ai-cant-develop-junior-engineers/",
-      "source": "Hacker News",
-      "date": "2026-10-07T08:00:06.000Z",
-      "snippet": "80 points · 60 comments on HN"
-    },
-    {
-      "id": "04e9dc3828b5",
-      "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
-      "url": "https://openai.com/index/radisson",
-      "source": "OpenAI",
-      "date": "2026-10-07T07:00:00.000Z",
-      "snippet": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips."
-    },
-    {
-      "id": "58df322f46a9",
-      "title": "Show HN: NanoMuse – An open-source AI agent for your phone and computer",
-      "url": "https://github.com/nano-muse/nanoMuse",
-      "source": "Hacker News",
-      "date": "2026-10-07T03:30:44.000Z",
-      "snippet": "63 points · 22 comments on HN"
-    },
-    {
-      "id": "40c4d27cba86",
-      "title": "OpenAI “rogue” agent activities found on Wikimedia projects",
-      "url": "https://simonwillison.net/2026/Oct/7/openai-rogue-agents-wikimedia/",
-      "source": "Simon Willison",
-      "date": "2026-10-07T00:16:45.000Z",
-      "snippet": "OpenAI “rogue” agent activities found on Wikimedia projects Given how tempting a target wikis are for rogue agent swarms, it's not a huge surprise that Wikipedia found evidence of that activity once they went looking: Th"
-    },
-    {
-      "id": "0ca1450969b5",
-      "title": "GPT-6 and Intelligent UI for everyone",
-      "url": "https://openai.com/index/gpt-6-for-everyone",
-      "source": "OpenAI",
-      "date": "2026-10-07T00:00:00.000Z",
-      "snippet": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly."
-    },
-    {
-      "id": "088d385baf40",
-      "title": "South Korea says AI agents appear to have been used to hack the country's banks",
-      "url": "https://www.reuters.com/world/south-koreas-lee-says-ai-appears-have-been-used-bank-hacks-2026-10-06/",
-      "source": "Hacker News",
-      "date": "2026-10-06T23:50:33.000Z",
-      "snippet": "100 points · 32 comments on HN"
-    },
-    {
-      "id": "e4feb1bf5e69",
-      "title": "OpenAI drops another batch of mathematical breakthroughs",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1005004/openai-math-release-github",
-      "source": "The Verge",
-      "date": "2026-10-06T23:26:38.000Z",
-      "snippet": "OpenAI has revealed solutions to a number of long-standing mathematics problems produced by an unreleased frontier model in a batch of 722 manuscripts, covering 372 result families that group related papers. It extends a"
     }
   ]
 }
