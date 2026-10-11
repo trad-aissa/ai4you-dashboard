@@ -1,7 +1,127 @@
 {
-  "updated": "2026-10-10T11:54:30.819Z",
+  "updated": "2026-10-11T12:05:53.244Z",
   "count": 80,
   "items": [
+    {
+      "id": "ea95eacbd85b",
+      "title": "Learning to use local AI is exciting, overwhelming, and frustrating",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1008484/learning-local-ai-hermes-qwen-model-mac-studio-testing-diary-progress",
+      "source": "The Verge",
+      "date": "2026-10-11T11:00:00.000Z",
+      "snippet": "I'm embarking on a journey I've so far been hesitant to go on: actually using AI on the regular. Giving my most personal data to cloud services has been a major hold up for me, but it's increasingly possible to run power"
+    },
+    {
+      "id": "68fdf4ebf9ab",
+      "title": "500B Tokens Later: Letting AI Agents Decompile a First-Person Shooter",
+      "url": "https://momo5502.com/posts/2026-10-09-game-decompilation/",
+      "source": "Hacker News",
+      "date": "2026-10-11T02:02:38.000Z",
+      "snippet": "107 points · 78 comments on HN"
+    },
+    {
+      "id": "35dc91695d5d",
+      "title": "Satya Nadella says we should assume all AI models are ‘compromised’",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+      "source": "The Verge",
+      "date": "2026-10-10T22:10:17.000Z",
+      "snippet": "In a lengthy post on X, Microsoft's CEO laid out his views on the dangers posed by highly advanced AI models and how to confront those risks. Nadella says we can no longer accept a world where AI is treated as a \"set of "
+    },
+    {
+      "id": "d05facb80f7a",
+      "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+      "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+      "source": "TechCrunch",
+      "date": "2026-10-10T21:47:51.000Z",
+      "snippet": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI."
+    },
+    {
+      "id": "9fe15a12a7df",
+      "title": "Apple discloses deal to hire team and license tech from personalized podcast startup Huxe",
+      "url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/",
+      "source": "TechCrunch",
+      "date": "2026-10-10T19:50:00.000Z",
+      "snippet": "Is Apple hoping to get into the AI-generated podcast business?"
+    },
+    {
+      "id": "e77e9ae83492",
+      "title": "DistroKid has been quietly taking down songs in response to UMG lawsuit",
+      "url": "https://www.theverge.com/entertainment/1009309/distrokid-take-down-songs-umg-lawsuit",
+      "source": "The Verge",
+      "date": "2026-10-10T18:52:07.000Z",
+      "snippet": "Artists are taking to social media to complain that DistroKid has unceremoniously removed their work without notice. Now DistroKid has confirmed to The Verge that the takedowns are a direct response to claims made by UMG"
+    },
+    {
+      "id": "611aad146f37",
+      "title": "Nvidia in talks to acquire US 'open' model startup Reflection AI",
+      "url": "https://www.ft.com/content/052610c5-22b4-4dd4-932e-b7f9f0628b6a",
+      "source": "Hacker News",
+      "date": "2026-10-10T18:48:35.000Z",
+      "snippet": "165 points · 105 comments on HN"
+    },
+    {
+      "id": "1e9dd88c3c5b",
+      "title": "Tom Brown used GOP ties to broker a $1.25B/month SpaceX compute deal",
+      "url": "https://wsj.com/tech/ai/tom-brown-athropic-669005ad",
+      "source": "Hacker News",
+      "date": "2026-10-10T15:04:38.000Z",
+      "snippet": "134 points · 52 comments on HN"
+    },
+    {
+      "id": "6801da099ead",
+      "title": "3 days to TechCrunch Disrupt 2026: Meet the startups before they hit mainstream",
+      "url": "https://techcrunch.com/2026/10/10/3-days-to-disrupt-2026-meet-the-startups-before-they-hit-mainstream/",
+      "source": "TechCrunch",
+      "date": "2026-10-10T15:00:00.000Z",
+      "snippet": "TechCrunch Disrupt 2026 takes place October 13-15 in San Francisco. Over 300 startups will show what they’ve built to 10,000 tech leaders. Plus, 250+ speakers are ready to share insights across 200+ sessions. Register be"
+    },
+    {
+      "id": "75605f0265e3",
+      "title": "My personal AI agent posted my bank details on company Slack",
+      "url": "https://www.businessinsider.com/personal-ai-agent-grok-bot-posted-bank-details-company-slack-2026-10",
+      "source": "Hacker News",
+      "date": "2026-10-10T14:46:16.000Z",
+      "snippet": "61 points · 66 comments on HN"
+    },
+    {
+      "id": "0decde66c5ee",
+      "title": "Anthropic is cutting off its internal evaluations from the internet",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet",
+      "source": "The Verge",
+      "date": "2026-10-10T14:41:16.000Z",
+      "snippet": "After a recent spate of high-profile incidents in which AI agents escaped containment, Anthropic is cutting off internet access for all internal evaluations. In a report Friday, the company detailed \"unintended model act"
+    },
+    {
+      "id": "a893947d303d",
+      "title": "Here are the top AI agents that can live in your text messages",
+      "url": "https://techcrunch.com/2026/10/10/all-the-ai-agents-that-can-live-in-your-text-messages/",
+      "source": "TechCrunch",
+      "date": "2026-10-10T14:00:00.000Z",
+      "snippet": "We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work."
+    },
+    {
+      "id": "0ea9d786e45e",
+      "title": "AI agent makers are promising privacy — will they deliver?",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1009051/privacy-ai-agent-promises-openai-meta-muse-dots",
+      "source": "The Verge",
+      "date": "2026-10-10T13:00:00.000Z",
+      "snippet": "At this year's OpenAI DevDay, CEO Sam Altman unveiled the company's new AI agent Dots - and told the crowd that the company wants to \"set a new standard for privacy in frontier AI.\" OpenAI would spend the day taking veil"
+    },
+    {
+      "id": "6b75dae75d97",
+      "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
+      "url": "https://github.com/rociiu/talorys",
+      "source": "Hacker News",
+      "date": "2026-10-10T10:52:09.000Z",
+      "snippet": "301 points · 137 comments on HN"
+    },
+    {
+      "id": "1e9353808d14",
+      "title": "AI Data Centers Not Paying Their Costs, Will Keep Using NDAs and Seek Tax Breaks",
+      "url": "https://www.warren.senate.gov/newsroom/press-releases/ai-data-center-companies-reveal-to-warren-blumenthal-van-hollen-they-are-not-paying-their-full-costs-will-continue-using-ndas-and-seeking-tax-breaks/",
+      "source": "Hacker News",
+      "date": "2026-10-10T09:30:03.000Z",
+      "snippet": "56 points · 8 comments on HN"
+    },
     {
       "id": "cf5de6151a45",
       "title": "Anthropic can’t reliably control its AI agents. It’s cutting off its internal evals from the live internet instead",
@@ -16,7 +136,15 @@
       "url": "https://www.primeintellect.ai/blog/prime-agent-rust",
       "source": "Hacker News",
       "date": "2026-10-09T23:06:25.000Z",
-      "snippet": "53 points · 18 comments on HN"
+      "snippet": "64 points · 20 comments on HN"
+    },
+    {
+      "id": "19ef2b55f63c",
+      "title": "Recent AI models struggled to match a human algorithmic innovation",
+      "url": "https://epoch.ai/publications/innovationeval",
+      "source": "Hacker News",
+      "date": "2026-10-09T22:14:40.000Z",
+      "snippet": "88 points · 82 comments on HN"
     },
     {
       "id": "5df45c581313",
@@ -32,7 +160,7 @@
       "url": "https://www.nbcphiladelphia.com/news/local/anthropic-ai-model-submits-false-tip-on-unsolved-philly-murder-police-say/4477051/",
       "source": "Hacker News",
       "date": "2026-10-09T22:00:35.000Z",
-      "snippet": "174 points · 126 comments on HN"
+      "snippet": "209 points · 154 comments on HN"
     },
     {
       "id": "ac2c548222f7",
@@ -96,7 +224,7 @@
       "url": "https://terrytao.wordpress.com/2026/10/09/what-mathematicians-should-know-about-the-lean-theorem-proverquestions-of-reliability-and-ai/",
       "source": "Hacker News",
       "date": "2026-10-09T17:42:12.000Z",
-      "snippet": "133 points · 28 comments on HN"
+      "snippet": "198 points · 58 comments on HN"
     },
     {
       "id": "04902b83f5b9",
@@ -104,7 +232,7 @@
       "url": "https://typesafe.ai/blog/series-ai",
       "source": "Hacker News",
       "date": "2026-10-09T17:02:31.000Z",
-      "snippet": "382 points · 287 comments on HN"
+      "snippet": "439 points · 348 comments on HN"
     },
     {
       "id": "fd6b62e24c31",
@@ -160,7 +288,7 @@
       "url": "https://www.nbcnews.com/news/us-news/sentence-vacated-ai-video-dead-victim-rcna601457",
       "source": "Hacker News",
       "date": "2026-10-09T14:14:08.000Z",
-      "snippet": "71 points · 74 comments on HN"
+      "snippet": "73 points · 74 comments on HN"
     },
     {
       "id": "e6bbf4ee8129",
@@ -184,7 +312,7 @@
       "url": "https://www.washingtonpost.com/technology/2026/10/09/chatgpt-users-iran-planted-ai-generated-articles-us-news-media/",
       "source": "Hacker News",
       "date": "2026-10-09T12:21:24.000Z",
-      "snippet": "187 points · 167 comments on HN"
+      "snippet": "193 points · 170 comments on HN"
     },
     {
       "id": "5632765a2575",
@@ -192,7 +320,7 @@
       "url": "https://jessewaites.com/blog/post/i-pointed-ai-at-400-years-of-archives/",
       "source": "Hacker News",
       "date": "2026-10-09T11:36:20.000Z",
-      "snippet": "152 points · 78 comments on HN"
+      "snippet": "183 points · 89 comments on HN"
     },
     {
       "id": "595085953aee",
@@ -200,7 +328,7 @@
       "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
       "source": "Hacker News",
       "date": "2026-10-09T11:03:48.000Z",
-      "snippet": "400 points · 177 comments on HN"
+      "snippet": "413 points · 189 comments on HN"
     },
     {
       "id": "15717a6b7c9a",
@@ -216,7 +344,7 @@
       "url": "https://github.com/darshi1337/apogee",
       "source": "Hacker News",
       "date": "2026-10-09T07:36:19.000Z",
-      "snippet": "64 points · 2 comments on HN"
+      "snippet": "66 points · 3 comments on HN"
     },
     {
       "id": "edd58468d564",
@@ -233,6 +361,14 @@
       "source": "OpenAI",
       "date": "2026-10-09T07:00:00.000Z",
       "snippet": "Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models."
+    },
+    {
+      "id": "2e6728fbeba0",
+      "title": "Mxc: Microsoft Execution Containers version 1.0.0",
+      "url": "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/",
+      "source": "Hacker News",
+      "date": "2026-10-09T06:52:49.000Z",
+      "snippet": "196 points · 57 comments on HN"
     },
     {
       "id": "df7e5433800b",
@@ -256,7 +392,7 @@
       "url": "https://biohub.org/news/virtual-biology-initiative-expansion/",
       "source": "Hacker News",
       "date": "2026-10-08T20:46:25.000Z",
-      "snippet": "146 points · 20 comments on HN"
+      "snippet": "148 points · 20 comments on HN"
     },
     {
       "id": "4079389ad67f",
@@ -280,7 +416,7 @@
       "url": "https://cointelegraph.com/news/justin-drake-urges-crypto-bunker-mode-as-ai-could-break-wallet-security-within-months",
       "source": "Hacker News",
       "date": "2026-10-08T19:17:51.000Z",
-      "snippet": "65 points · 64 comments on HN"
+      "snippet": "66 points · 65 comments on HN"
     },
     {
       "id": "7dcbf8a5afe0",
@@ -352,7 +488,7 @@
       "url": "https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude",
       "source": "Hacker News",
       "date": "2026-10-08T17:08:02.000Z",
-      "snippet": "88 points · 214 comments on HN"
+      "snippet": "90 points · 225 comments on HN"
     },
     {
       "id": "7bdbb68374d5",
@@ -360,7 +496,7 @@
       "url": "https://www.cnbc.com/2026/10/08/open-ai-revenue-nvidia-oracle-coreweave.html",
       "source": "Hacker News",
       "date": "2026-10-08T16:45:58.000Z",
-      "snippet": "424 points · 300 comments on HN"
+      "snippet": "429 points · 301 comments on HN"
     },
     {
       "id": "40d84c5f67bb",
@@ -368,7 +504,7 @@
       "url": "https://opper.ai/jevman-benchmark/",
       "source": "Hacker News",
       "date": "2026-10-08T16:34:13.000Z",
-      "snippet": "74 points · 23 comments on HN"
+      "snippet": "78 points · 23 comments on HN"
     },
     {
       "id": "1eaf0f76ffce",
@@ -376,7 +512,7 @@
       "url": "https://openrouter.ai/stepfun/step-5-preview",
       "source": "Hacker News",
       "date": "2026-10-08T16:20:20.000Z",
-      "snippet": "143 points · 38 comments on HN"
+      "snippet": "146 points · 38 comments on HN"
     },
     {
       "id": "112b5f00879d",
@@ -504,143 +640,7 @@
       "url": "https://oss.lsantos.dev/proton-drive-linux-fs/",
       "source": "Hacker News",
       "date": "2026-10-08T09:10:42.000Z",
-      "snippet": "93 points · 32 comments on HN"
-    },
-    {
-      "id": "3a0428350fd0",
-      "title": "Microsoft event debuts new AI-friendly hardware and Windows changes",
-      "url": "https://arstechnica.com/gadgets/2026/10/microsoft-event-debuts-new-ai-friendly-hardware-and-windows-changes/",
-      "source": "Ars Technica",
-      "date": "2026-10-08T00:00:24.000Z",
-      "snippet": "Get ready for more AI in your Windows and more AI on the desktop."
-    },
-    {
-      "id": "077dea1e8a7a",
-      "title": "Disrupting AI-enabled “false front” operations",
-      "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations",
-      "source": "OpenAI",
-      "date": "2026-10-08T00:00:00.000Z",
-      "snippet": "OpenAI disrupted two AI-enabled influence operations that used false-front journalists and a think tank to spread geopolitical messaging."
-    },
-    {
-      "id": "0598a3e5bb11",
-      "title": "“Software is over”: Bold AI developer takes aim at Adobe with open source clones",
-      "url": "https://arstechnica.com/ai/2026/10/software-is-over-bold-ai-developer-takes-aim-at-adobe-with-open-source-clones/",
-      "source": "Ars Technica",
-      "date": "2026-10-07T21:56:42.000Z",
-      "snippet": "Opus-built Creative Cloud alternatives are ambitious, free, and nowhere near finished."
-    },
-    {
-      "id": "6dcb3088ac59",
-      "title": "Claude Haiku 5.5",
-      "url": "https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/",
-      "source": "Simon Willison",
-      "date": "2026-10-07T20:56:21.000Z",
-      "snippet": "As previously promised , here's Anthropic's new fast, low cost model: Introducing Claude Haiku 5.5 . The previous Haiku, 4.5, was very much showing its age. It came out almost a year ago , and was priced at $1/million in"
-    },
-    {
-      "id": "9b80120014fd",
-      "title": "Nous Research confirms it hit $1.5B valuation, launches AI agents for business users",
-      "url": "https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/",
-      "source": "TechCrunch",
-      "date": "2026-10-07T20:48:45.000Z",
-      "snippet": "The developer of Hermes Agent raised a $90 million Series B."
-    },
-    {
-      "id": "09299f670c92",
-      "title": "Microsoft releases new Nvidia-chip AI PCs with revamped Windows 11",
-      "url": "https://techcrunch.com/2026/10/07/microsoft-releases-new-nvidia-chip-ai-pcs-with-revamped-windows-11/",
-      "source": "TechCrunch",
-      "date": "2026-10-07T20:22:37.000Z",
-      "snippet": "Microsoft revealed the specs and price for its Surface Laptop Ultra, AI PCs that run on Nvidia chips that are designed to run AI models and agents."
-    },
-    {
-      "id": "876648c3358f",
-      "title": "ChatGPT’s ‘Intelligent UI’ update fills its responses with pictures, charts, and buttons",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1007276/openai-chatgpt-intelligent-ui-gpt-6",
-      "source": "The Verge",
-      "date": "2026-10-07T19:10:42.000Z",
-      "snippet": "OpenAI is launching a new Intelligent UI feature in ChatGPT that allows the chatbot to answer your questions with interactive visuals. The update, which is rolling out to all users alongside GPT-6, gives ChatGPT the abil"
-    },
-    {
-      "id": "c51d0157709e",
-      "title": "Meta and Microsoft take steps to reduce employee usage of Claude AI",
-      "url": "https://www.rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai/",
-      "source": "Hacker News",
-      "date": "2026-10-07T18:49:40.000Z",
-      "snippet": "375 points · 382 comments on HN"
-    },
-    {
-      "id": "a5b44d5e4c84",
-      "title": "Everything announced at Microsoft’s Surface Laptop Ultra event",
-      "url": "https://www.theverge.com/tech/1007147/microsoft-surface-laptop-ultra-windows-event-everything-announced",
-      "source": "The Verge",
-      "date": "2026-10-07T18:42:22.000Z",
-      "snippet": "Microsoft just wrapped up a big Windows and Surface-focused keynote in San Francisco. The biggest announcement was arguably the release details about the Surface Laptop Ultra, its new laptop that’s powered by Nvidia’s RT"
-    },
-    {
-      "id": "769d4c9aeb15",
-      "title": "Meta’s Muse launches on iPad just a month after its mobile debut",
-      "url": "https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/",
-      "source": "TechCrunch",
-      "date": "2026-10-07T18:30:57.000Z",
-      "snippet": "Meta’s AI agent Muse is now available on iPad, just a month after its mobile debut, as the company rapidly expands the assistant’s reach and integrations."
-    },
-    {
-      "id": "69c1beaf0367",
-      "title": "ChatGPT for Teens keeps teens talking, even during mental health crises",
-      "url": "https://techcrunch.com/2026/10/07/chatgpt-for-teens-keeps-teens-talking-even-during-mental-health-crises/",
-      "source": "TechCrunch",
-      "date": "2026-10-07T18:15:28.000Z",
-      "snippet": "ChatGPT’s teen safeguards are meant to protect vulnerable users, but new testing found the chatbot continues encouraging engagement during crises and potentially encourages unhealthy relationships with the AI itself."
-    },
-    {
-      "id": "9c7dd462aa5a",
-      "title": "Microsoft is giving Copilot more control over Windows and your files",
-      "url": "https://www.theverge.com/tech/1007113/microsoft-windows-copilot-ai-control-search-hybrid-intelligence",
-      "source": "The Verge",
-      "date": "2026-10-07T18:01:20.000Z",
-      "snippet": "At today's Windows and Surface event, Microsoft showed off an upgrade to its Copilot AI system that will give it access to local files on your PC and the ability to take actions across the OS. It's part of an idea Micros"
-    },
-    {
-      "id": "a5478fc42d69",
-      "title": "ChatGPT is getting a lot more visual, with the launch of a new interface",
-      "url": "https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/",
-      "source": "TechCrunch",
-      "date": "2026-10-07T18:00:19.000Z",
-      "snippet": "OpenAI is launching a new user interface that will bring interactive visuals to ChatGPT."
-    },
-    {
-      "id": "2943f1910056",
-      "title": "Fraudster jailed for using 10K bots and AI songs to outstream Taylor Swift",
-      "url": "https://arstechnica.com/tech-policy/2026/10/outstreaming-taylor-swift-is-easy-with-10k-bots-and-ai-songs-fraudster-admits/",
-      "source": "Ars Technica",
-      "date": "2026-10-07T17:57:39.000Z",
-      "snippet": "Man gets 18 months for AI scheme stealing $8M in music streaming royalties."
-    },
-    {
-      "id": "2c81a4fbc76b",
-      "title": "Surface RTX Spark Dev Box is available for preorder for $5,999",
-      "url": "https://www.theverge.com/tech/1006915/microsoft-surface-rtx-spark-dev-box-preorder",
-      "source": "The Verge",
-      "date": "2026-10-07T17:46:44.000Z",
-      "snippet": "Microsoft's Nvidia-powered Surface RTX Spark Dev Box is available for preorder now and is slated to ship in November for just about $6,000. It's pricier than the DGX Spark mini PC Nvidia launched last year, but PC prices"
-    },
-    {
-      "id": "65c75f24c642",
-      "title": "Show HN: Agent.reviews – Where AI agents read and write reviews on tools",
-      "url": "https://agent.reviews/",
-      "source": "Hacker News",
-      "date": "2026-10-07T16:59:11.000Z",
-      "snippet": "71 points · 49 comments on HN"
-    },
-    {
-      "id": "b5ad26925301",
-      "title": "Meta rolls out new AI tools to detect ads that secretly lead to child sexual abuse material",
-      "url": "https://techcrunch.com/2026/10/07/meta-rolls-out-new-ai-tools-to-detect-ads-that-secretly-lead-to-child-sexual-abuse-material/",
-      "source": "TechCrunch",
-      "date": "2026-10-07T16:53:46.000Z",
-      "snippet": "Meta launches new AI tools after discovering ads on its platforms that may look normal but direct users to harmful content elsewhere online."
+      "snippet": "117 points · 43 comments on HN"
     }
   ]
 }
