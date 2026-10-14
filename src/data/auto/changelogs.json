@@ -1,6 +1,42 @@
 {
-  "updated": "2026-10-13T13:33:45.768Z",
+  "updated": "2026-10-14T11:10:28.375Z",
   "claude-code": [
+    {
+      "version": "2.1.299",
+      "date": null,
+      "bullets": [
+        "Added <code>CLAUDE_CODE_DISABLE_FILE_MENTIONS</code> environment variable: Claude gets the paths of <code>@</code> file mentions to read with its file tools, not the files' contents",
+        "Added idle compaction in the terminal: a 200K+ token conversation left idle for about 54 minutes is compacted before its one-hour prompt cache expires, so your next message doesn't reprocess it all",
+        "Added <code>CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS</code> to change idle compaction's 200K-token minimum; <code>&quot;idleCompaction&quot;: false</code> in settings.json turns it off. Both need v2.1.290 or later",
+        "Added <code>$.prompt.media</code> so a <code>prompt.submit</code> hook of a mod installed by managed settings can read the bytes of an image or document attached to the prompt",
+        "Added <code>$.session.identity()</code> for mods installed by managed settings: how the session is signed in, and its organization and email when managed <code>forceLoginOrgUUID</code> lists that organization",
+        "Added <code>size</code>, <code>weight</code>, <code>mono</code> and <code>tabular</code> to a mod's <code>Text</code> and named spacing steps (<code>xs</code> to <code>xl</code>) to its <code>Box</code>; <code>bold</code> is deprecated in favor of <code>weight</code>",
+        "Added <code>--shutdown-drain-sec</code> to <code>claude self-hosted-runner orchestrator</code>: on SIGTERM it stops polling and gives the poll in flight and running spawn hooks up to that many seconds to finish",
+        "Added the skill's frontmatter, source, plugin name and file path to what a mod's <code>skill.prompt</code> hook receives",
+        "Added <code>/effort</code> and <code>/fast</code> in agent view to set what new sessions start with; a bare <code>/model</code>, <code>/effort</code> or <code>/fast</code> there now opens a picker",
+        "Added a &quot;safe mode&quot; line to the agents view peek panel for background sessions started with <code>--safe-mode</code>",
+        "Added a one-time note when plan mode won't ask before most edits or commands because bypass permissions is available",
+        "Added <code>--disallow-tools</code> and a <code>disallowed_tools</code> case field to <code>claude plugin eval</code> to keep specific built-in tools, such as Agent, out of eval runs",
+        "Added support for turning off the attribution block in Claude Desktop's Code tab: set <code>CLAUDE_CODE_ATTRIBUTION_HEADER=0</code> in the <code>env</code> of a Claude apps gateway's <code>code</code> policy",
+        "Added a field to the attribution block in Claude Code sessions behind a Claude apps gateway; remove the block with <code>CLAUDE_CODE_ATTRIBUTION_HEADER=0</code>",
+        "Added a <code>queue</code> door to the <code>session.append</code> mod hook, so a mod can make the transcript's queue records differ from the prompt as sent",
+        "Added a note in <code>/plugin</code> and <code>claude plugin validate</code> naming a mod's hooks that are skipped where an organization manages Claude Code",
+        "Added <code>/usage</code> warnings for max effort, workflows, always-on context and large tool results",
+        "Fixed the error for a denied cloud session, which could point to the wrong organization when a key from <code>apiKeyHelper</code> was in use",
+        "Fixed sessions on a gateway-specific model name behind a custom <code>ANTHROPIC_BASE_URL</code> ending with &quot;Prompt is too long · automatic compaction failed&quot; near 200K tokens instead of sending the request",
+        "Fixed a mod that submits a prompt at the end of every turn keeping a headless run going past <code>--max-turns</code>, <code>--max-budget-usd</code>, an interrupt, or the end of the host's conversation",
+        "Fixed cloud sessions sometimes showing the model's follow-up text after a tool group's one-line label",
+        "Fixed the Write and Edit tools creating a mod in a session's mods folder without asking in accept-edits mode when the config directory's path has no <code>.claude</code> in it",
+        "Fixed installed mods that kept running in an open session after being turned off remotely; they now unload between turns",
+        "Fixed Edit and Retry in Cowork and claude.ai cloud sessions failing on a message stopped while its <code>UserPromptSubmit</code> or mod <code>prompt.submit</code> hooks were still running (regression in 2.1.296)",
+        "Fixed an agent teammate started without a description keeping part of a credential from its prompt in the task description shown for it",
+        "Fixed the claude.ai view of a Remote Control or cloud session freezing when a large batch of events could not finish uploading over a slow connection",
+        "Fixed a sandboxed shell command being able to write into a <code>--plugin-dir</code> folder, whose code Claude Code reloads and runs outside the sandbox",
+        "Fixed memory growth under heavy debug logging (<code>--debug</code>, <code>--debug-file</code>), and a hang on exit when the debug log is on a disk or network mount that stops accepting writes",
+        "Fixed memory growing without bound when debug output goes to stderr and the parent process stops reading it",
+        "Fixed rm prompts on shell <code>-c</code> scripts that don't run <code>rm</code>. An rm built at run time in a script Claude Code can't read no longer prompts unless <code>CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT=1</code>"
+      ]
+    },
     {
       "version": "2.1.296",
       "date": null,
@@ -719,50 +755,35 @@
       "bullets": [
         "Bug fixes and reliability improvements"
       ]
-    },
-    {
-      "version": "2.1.271",
-      "date": null,
-      "bullets": [
-        "Added fast mode in Claude Code Remote sessions (cloud and self-hosted runners): the host's fast-mode setting or <code>/fast</code> typed in the session applies where your organization allows it",
-        "Added mouse support to the <code>/config</code> panel in fullscreen mode: the wheel scrolls the settings list, a click on a setting's value changes it, and the row under the pointer is highlighted",
-        "Added <code>claude self-hosted-runner --drain-marker-file </code>: when that file exists at a SIGTERM drain, the runner reports its exit to the server as a host drain (telemetry only)",
-        "Added per-command <code>allowed_domains</code> to Bash, PowerShell and Monitor in auto mode with sandboxing: the hosts a command needs are reviewed with it and opened for it alone; other hosts are refused",
-        "Added <code>omitClaudeMd</code> to agent frontmatter and <code>--agents</code> JSON, letting custom and plugin subagents run without user, project and local CLAUDE.md files; managed policy files still load",
-        "Added <code>--accept-command </code> to <code>claude plugin install</code> and <code>claude plugin update</code> to accept exactly the command a previous <code>--json</code> run displayed, instead of <code>-y</code>",
-        "Added support for a <code>multiplier</code> above 1, up to 10, in the <code>modelPricing</code> managed setting and the Claude apps gateway <code>pricing</code> block, for marked-up internal chargeback rates",
-        "Added a spinner tip pointing Bedrock, Vertex AI, Foundry and LLM gateway users to the Claude desktop app; the claude.ai desktop app tip now suggests <code>/desktop</code>, which offers to download the app",
-        "Fixed a cached organization policy being reused after switching accounts, organizations, or API keys, and the policy not refreshing until the hourly check when the credential changes mid-session",
-        "Fixed the tool and command lists not updating when the organization policy finishes loading after startup or changes mid-session",
-        "Fixed an enterprise <code>managed-mcp.json</code> that can't be read or parsed being ignored: it now keeps exclusive MCP control (user, project and plugin servers don't load) and warns at startup",
-        "Fixed org policy being fetched through, and rejected by, third-party local proxies set via <code>ANTHROPIC_UNIX_SOCKET</code>; they are again treated like other custom gateways, including for Remote Control",
-        "Fixed cloud sessions rejecting every subagent tool call (&quot;updatedInput … failed schema validation&quot;) when a workflow or agent approval was applied after the session's worker restarted",
-        "Fixed <code>/fast off</code> answering &quot;Fast mode unavailable&quot; instead of turning fast mode off when the organization has fast mode disabled",
-        "Fixed sessions started with <code>CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECK</code> re-sending fast requests every turn after the API rejected fast mode; the rejection now stands and its reason is shown",
-        "Fixed fast mode under <code>CLAUDE_CODE_RETRY_WATCHDOG</code> failing the turn on a usage-credits limit, or retrying an overload at fast speed, instead of falling back to standard speed",
-        "Fixed Bash permission checks missing the file that <code>fmt</code>, <code>column</code> and similar commands read when it follows an option the checker doesn't recognize",
-        "Fixed Bash permission checks skipping files a wildcard expands to when the wildcard sits in a command's pattern or option value (for example <code>grep -v dir/* file</code>)",
-        "Fixed Bash permission checks so that shell variable declaration flags cannot misrepresent the command being run",
-        "Fixed Bash commands with two directory changes, a subshell, or a <code>cd</code>+<code>git</code> chain skipping the prompt under <code>permissions.blockReadsOutsideWorkingDirectories</code> in bypass and auto mode",
-        "Fixed a stale <code>.git/config.lock</code> breaking <code>git checkout -b</code>, <code>git push -u</code> and <code>git config</code> for the rest of a session after a sandboxed command failed to start (Linux)",
-        "Fixed settings file changes made outside the session going unnoticed on macOS machines whose system file-event service is saturated; the watcher now falls back to polling",
-        "Fixed resumed <code>claude -p</code> sessions whose tools all come from MCP servers failing with &quot;At least one tool must have defer_loading=false&quot;",
-        "Fixed turns failing with &quot;API returned an empty or malformed response&quot; when an LLM gateway returns the non-streaming reply as <code>text/plain</code>",
-        "Fixed sustained high CPU usage and repeated tool-list requests when an MCP server sends <code>list_changed</code> notifications in a tight loop",
-        "Fixed MCP OAuth mishandling client registrations: denying consent forced a new one, one for another redirect URI was reused, and a concurrent write could delete a valid one or keep a mismatched one",
-        "Fixed tool search returning no match when Claude selects an MCP tool by its bare name instead of its full <code>mcp__server__tool</code> name",
-        "Fixed Ctrl+O cancelling pending MCP server reconnects, and <code>/mcp</code> sent from Remote Control failing while the transcript view is open",
-        "Fixed the Claude in Chrome prompt telling the model to load tools through ToolSearch when ToolSearch is unavailable",
-        "Fixed cross-session messages held by the receiving session's permission-mode policy leaving no trace: headless senders now get a delivery notice, and <code>SendMessage</code> results no longer imply it was read"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.163.0-alpha.11",
+      "date": "2026-10-14T03:27:29.000Z",
+      "bullets": [
+        "Release 0.163.0-alpha.11"
+      ]
+    },
+    {
+      "version": "0.163.0-alpha.9",
+      "date": "2026-10-13T15:47:20.000Z",
+      "bullets": [
+        "Release 0.163.0-alpha.9"
+      ]
+    },
     {
       "version": "0.163.0-alpha.8",
       "date": "2026-10-13T13:14:41.000Z",
       "bullets": [
         "Release 0.163.0-alpha.8"
+      ]
+    },
+    {
+      "version": "0.163.0-alpha.10",
+      "date": "2026-10-13T19:04:12.000Z",
+      "bullets": [
+        "Release 0.163.0-alpha.10"
       ]
     },
     {
@@ -882,27 +903,6 @@
       "date": "2026-10-05T21:37:19.000Z",
       "bullets": [
         "Release 0.162.0-alpha.16"
-      ]
-    },
-    {
-      "version": "0.162.0-alpha.15",
-      "date": "2026-10-05T13:10:52.000Z",
-      "bullets": [
-        "Release 0.162.0-alpha.15"
-      ]
-    },
-    {
-      "version": "0.162.0-alpha.14",
-      "date": "2026-10-05T02:05:59.000Z",
-      "bullets": [
-        "Release 0.162.0-alpha.14"
-      ]
-    },
-    {
-      "version": "0.162.0-alpha.13",
-      "date": "2026-10-04T15:42:32.000Z",
-      "bullets": [
-        "Release 0.162.0-alpha.13"
       ]
     }
   ]
