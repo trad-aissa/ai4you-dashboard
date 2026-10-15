@@ -1,6 +1,42 @@
 {
-  "updated": "2026-10-14T11:10:28.375Z",
+  "updated": "2026-10-15T10:51:20.433Z",
   "claude-code": [
+    {
+      "version": "2.1.300",
+      "date": null,
+      "bullets": [
+        "Added <code>virtualText</code> to a mod's prompt decorations: text drawn in the prompt box that never enters the draft or the submitted prompt",
+        "Added <code>cache_creation_5m_tokens</code> and <code>cache_creation_1h_tokens</code> to the OpenTelemetry <code>api_request</code> event, splitting cache writes by lifetime",
+        "Added <code>$.ui.view({ agentId })</code> for mods: shows an agent's transcript in the main view when you ask, and <code>$.ui.view({})</code> goes back",
+        "Added a <code>dir</code> prop on a mod's <code>Text</code> for right-to-left text: on Windows and in VS Code's terminal its rows read in that direction and sit flush right",
+        "Added <code>/advisor</code> on Claude Platform on AWS; no advisor runs until you pick one with <code>/advisor</code>, <code>advisorModel</code> or <code>--advisor</code>, and <code>CLAUDE_CODE_DISABLE_ADVISOR_TOOL=1</code> turns it off",
+        "Added OpenTelemetry GenAI semantic-convention attributes to trace spans, such as <code>gen_ai.provider.name</code>, <code>gen_ai.conversation.id</code>, <code>gen_ai.tool.name</code> and <code>error.type</code>",
+        "Added support for rewriting a workflow agent's <code>prompt</code> and <code>model</code> in the <code>agent.spawn</code> mod hook, which could only refuse workflow agents before",
+        "Added the <code>prompt.change</code> mod hook, raised when the prompt box's text changes without a typed edit: a recalled history entry, a clear, an undo, or a plugin's fill",
+        "Fixed cloud sessions telling Claude that an organization policy blocked a host when the session's own network settings did",
+        "Fixed <code>/autocompact</code> warning about high token usage when you choose a smaller auto-compact window",
+        "Fixed SessionEnd hooks sometimes not running when you exit while a background command is still running",
+        "Fixed <code>claude --help</code> naming a removed tool in its description of <code>--restricted</code>",
+        "Fixed <code>claude agents</code> not refreshing any pull request's status when the data for one of them came back incomplete",
+        "Fixed Claude being told a background agent was lost, not resumable, after a cloud session's container was replaced, when the agent had already been resumed once",
+        "Fixed subagents you had typed messages to disappearing from <code>/tasks</code> shortly after finishing, leaving no way back to the conversation",
+        "Fixed a completed parent agent dropping off the breadcrumb (its child shown re-rooted at top level) while you were viewing the child",
+        "Fixed the agents view taking a typed word such as &quot;up&quot;, &quot;down&quot; or &quot;escape&quot; for that key when input arrived in a burst, which could move the peek mid-reply or clear a draft",
+        "Fixed automatic tool search (<code>ENABLE_TOOL_SEARCH=auto</code>) turning off part-way through a conversation, for example while MCP servers reconnect after a resume",
+        "Fixed a login refused by <code>forceLoginOrgUUID</code> leaving the refused organization's token stored, or live after <code>/login</code>",
+        "Fixed the diff view in Claude Desktop and Remote Control sessions not noticing a conflicted cherry-pick or revert in reftable repositories",
+        "Fixed the Artifact tool's verbose and ctrl+o line reading <code>Artifact(&quot;(unprintable path)&quot;)</code> while a call's input arrives; its row now shows &quot;Waiting…&quot; and &quot;Running…&quot; as Bash's does",
+        "Fixed the first transcript entry written after resuming a session being lost when a crash had cut the transcript's last line short",
+        "Fixed <code>/branch</code> dropping messages, and <code>claude purge</code> skipping subfolder projects, when they contain a Unicode line or paragraph separator (U+2028, U+2029)",
+        "Fixed plugin <code>WorktreeCreate</code> and <code>WorktreeRemove</code> hooks not running when Claude Code starts with <code>--worktree</code> (not yet with <code>--tmux</code>)",
+        "Fixed OpenTelemetry <code>tool_result</code> events missing <code>git_commit_id</code> after <code>git commit -q</code> in repositories using reftable ref storage",
+        "Fixed a prompt that a mod's <code>prompt.submit</code> hook rewrote or dropped still being recorded as typed in the OpenTelemetry <code>user_prompt</code> event and interaction span, and in session title requests",
+        "Fixed a note meant for Claude about mod hot-reloading appearing in the transcript as if you had typed it",
+        "Fixed agent hooks ignoring their <code>model</code>: aliases like <code>haiku</code> now resolve, a subagent's model no longer overrides it, and an unavailable model falls back to the caller's instead of allowing the action",
+        "Fixed <code>--worktree</code> sessions sometimes starting from the wrong commit when a tag or branch was named like a commit ID, and their starting git status naming a branch other than the new worktree's",
+        "Fixed the branch showing as &quot;.invalid&quot; and <code>--worktree</code> failing to reopen a worktree in repositories using git's reftable ref storage"
+      ]
+    },
     {
       "version": "2.1.299",
       "date": null,
@@ -748,13 +784,6 @@
         "Improved the cloud-session GitHub error for an IP allow list, a suspended app installation or SAML single sign-on to show the cause instead of a generic install hint",
         "Improved <code>/autofix-pr</code>: when <code>gh pr view</code> fails it now shows gh's own error (sign-in, SAML, rate limit) instead of a generic exit-code line"
       ]
-    },
-    {
-      "version": "2.1.272",
-      "date": null,
-      "bullets": [
-        "Bug fixes and reliability improvements"
-      ]
     }
   ],
   "codex": [
@@ -763,6 +792,13 @@
       "date": "2026-10-14T03:27:29.000Z",
       "bullets": [
         "Release 0.163.0-alpha.11"
+      ]
+    },
+    {
+      "version": "0.163.0-alpha.10.1",
+      "date": "2026-10-14T20:45:55.000Z",
+      "bullets": [
+        "Release 0.163.0-alpha.10.1"
       ]
     },
     {
@@ -896,13 +932,6 @@
       "date": "2026-10-05T18:29:37.000Z",
       "bullets": [
         "- Preserve <code>SYSTEMROOT</code>, <code>TEMP</code>, and <code>TMP</code> when launching remote stdio MCP servers with explicitly configured remote environment variables, allowing Unix hosts to retain the Windows executor's startup environment. - #51121: Backport Windows remote MCP environment preservation to 0.160."
-      ]
-    },
-    {
-      "version": "0.162.0-alpha.16",
-      "date": "2026-10-05T21:37:19.000Z",
-      "bullets": [
-        "Release 0.162.0-alpha.16"
       ]
     }
   ]
