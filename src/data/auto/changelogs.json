@@ -1,6 +1,13 @@
 {
-  "updated": "2026-10-17T10:08:30.246Z",
+  "updated": "2026-10-19T12:06:50.504Z",
   "claude-code": [
+    {
+      "version": "2.1.303",
+      "date": null,
+      "bullets": [
+        "Bug fixes and reliability improvements"
+      ]
+    },
     {
       "version": "2.1.302",
       "date": null,
@@ -748,45 +755,16 @@
       "bullets": [
         "Fixed every request failing with <code>400 … Input tag 'advisor_20260301'</code> when <code>ANTHROPIC_BASE_URL</code> points at a proxy or gateway (2.1.275 regression)"
       ]
-    },
-    {
-      "version": "2.1.275",
-      "date": null,
-      "bullets": [
-        "Added the signed-in account to Claude apps gateway sign-in: when the gateway names it, you confirm it before the credential is saved, and <code>/status</code> shows it",
-        "Added a send-now key (ctrl+enter, or ctrl+x ctrl+s) that interrupts the current turn and sends all queued messages at once; sent and queued messages show in gray until the model receives them",
-        "Added a startup warning when a configured <code>otelHeadersHelper</code> fails, so sessions that silently export no telemetry are noticed",
-        "Added syncing of the skills and plugins enabled on your claude.ai account to terminal sessions signed in with it; opt out with <code>syncClaudeAiSkills: false</code> or <code>syncClaudeAiPlugins: false</code>",
-        "Added <code>/plugin install --marketplace </code>, which offers to add the marketplace before installing the plugin",
-        "Fixed a restored memory file's age note changing between requests after a compaction or resume, which caused prompt cache misses",
-        "Fixed <code>--forward-subagent-text</code> stream-json and SDK output dropping the messages of subagents spawned by a <code>context: fork</code> skill, and of forked skills invoked by a subagent or another forked skill",
-        "Fixed @-mention file suggestions being buried below MCP resources when using a custom <code>fileSuggestion</code> command or typing <code>@.</code>/<code>@./</code>",
-        "Fixed fullscreen mode placing background-task completion notices beneath a long turn's collapsed tool row instead of where they arrived; each notice now closes the open row",
-        "Fixed <code>claude plugin marketplace update</code> deleting a GitHub marketplace's local copy when the fetch failed and the marketplace was named after its repository",
-        "Fixed plugin and marketplace messages, logs and <code>claude plugin marketplace list</code> showing a password or token stored in a git, ssh or marketplace URL",
-        "Fixed a resumed cloud session leaving an unanswered question open in the transcript after a queued message superseded it",
-        "Fixed vim mode placing the cursor one character right after a dot-repeated &quot;!&quot; or a fast-typed &quot;i!&quot; switched a non-empty prompt into shell mode",
-        "Fixed fullscreen mode freezing or blanking for several seconds when scrolling up past a large file diff",
-        "Fixed a stray ``-style closing tag occasionally appearing in responses",
-        "Fixed plugin messages, logs and the VS Code plugin dialog showing the wrong server for some git addresses",
-        "Fixed a terminal <code>API Error: 400</code> on every turn for users behind a network gateway that rewrites API error responses when a beta request header is rejected",
-        "Fixed sandboxed Bash commands on Linux reporting exit code 0 for failed commands when the shell is zsh",
-        "Fixed the Read tool hanging instead of reporting an error when part of a large file could not be decoded under memory pressure",
-        "Fixed <code>--resume</code>, the resume picker preview, resumed background agents and the transcript view failing on a session whose saved history contains a malformed task-reminder or @-file attachment entry",
-        "Fixed a crash when resuming a conversation whose transcript contains a malformed message entry, and a fullscreen crash when such a conversation received new messages while scrolled up",
-        "Fixed sessions failing to resume or start when their saved transcript contains a malformed message content block",
-        "Fixed Grep, Glob and @-file suggestions hanging or running out of memory on searches over the 20MB output cap, and system ripgrep reporting &quot;no matches&quot; instead of an error after a flood of warnings",
-        "Fixed <code>/rewind</code> in a forked or background session restoring a zero-filled or truncated file when the session's file-history backups could not be fully copied",
-        "Fixed fullscreen sessions sometimes exiting with &quot;Claude Code exited after an unrecoverable interface error&quot; when typing fast or holding a key with the slash-command dropdown open",
-        "Fixed background sessions crashing and restarting their worker when a command fed through stdin ran on a machine that had run out of file descriptors",
-        "Fixed a crash at launch when <code>~/.claude.json</code> holds a malformed <code>mcpNeedsAuthNoticed</code> value",
-        "Fixed <code>--resume</code> and <code>--continue</code> dropping a conversation's earlier thinking when a built-in tool it started with has since been switched off by a server-side flag",
-        "Fixed text selected with the mouse in the fullscreen <code>claude --resume</code> session picker never reaching the clipboard",
-        "Fixed plugin reload previews replacing a running session's extracted plugin files when the plugin was loaded from a <code>--plugin-dir</code> or <code>--plugin-url</code> archive"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.164.0-alpha.4",
+      "date": "2026-10-19T10:42:34.000Z",
+      "bullets": [
+        "Release 0.164.0-alpha.4"
+      ]
+    },
     {
       "version": "0.164.0-alpha.3",
       "date": "2026-10-17T04:03:25.000Z",
@@ -926,13 +904,6 @@
       "date": "2026-10-08T07:30:45.000Z",
       "bullets": [
         "Release 0.162.0-alpha.17.2"
-      ]
-    },
-    {
-      "version": "0.162.0-alpha.18",
-      "date": "2026-10-07T02:04:32.000Z",
-      "bullets": [
-        "Release 0.162.0-alpha.18"
       ]
     }
   ]
