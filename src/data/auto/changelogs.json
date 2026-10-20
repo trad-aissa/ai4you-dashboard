@@ -1,6 +1,42 @@
 {
-  "updated": "2026-10-19T12:06:50.504Z",
+  "updated": "2026-10-20T10:55:37.171Z",
   "claude-code": [
+    {
+      "version": "2.1.304",
+      "date": null,
+      "bullets": [
+        "Added a transcript line when a plugin that runs first skips one of your mod's hooks, naming the event and the plugin",
+        "Added <code>decider: &quot;person&quot;</code> to a mod's <code>tool.check</code> answer: only the permission dialog or a host's callback can approve the ask, and it is refused with the mod's reason where nobody can be asked",
+        "Added <code>e.isReadOnly</code> to a mod's <code>tool.check</code> event, set when the tool call is read-only",
+        "Added <code>/auto-mode-setup</code>: a guided setup that reads your project and recent sessions to teach auto mode about your environment, now also available on Bedrock, Vertex, Foundry, Claude apps gateway and telemetry-disabled sessions",
+        "Added <code>/claude-api managed-agents-secure</code>, which compares a Managed Agents agent's settings with Anthropic's published security guide, without changing anything",
+        "Added the names of the tools called earlier to the compaction summary in the transcript view (Ctrl+O)",
+        "Added a warning on Pro and Max plans when resuming an inactive conversation would use a noticeable share of your 5-hour usage limit: resume anyway, or start a new conversation and Claude can look up the previous one if you refer to it",
+        "Fixed the organization policy not refreshing until the hourly check after approving an <code>ANTHROPIC_API_KEY</code> at startup or switching &quot;Use custom API key&quot; in <code>/config</code>",
+        "Fixed sandboxed commands failing to start on Linux when a <code>sandbox.filesystem.denyRead</code> glob contains brackets that are not a character class, such as a <code>[user-id]</code> route folder",
+        "Fixed <code>rm -r</code> of a mounted drive or a folder at its top level (<code>/Volumes</code>, <code>/media</code>, WSL's <code>/mnt/c</code>) not getting the safety prompt that <code>rm -rf /Applications</code> gets",
+        "Fixed <code>CLAUDE_CODE_TRANSCRIPT_LOCAL_GC</code> dropping messages from the saved transcript when the disk filled up while the file was being trimmed",
+        "Fixed a plugin keeping a headless run going past <code>--max-turns</code>, Stop, or ended input by spawning subagents or re-running a finished one",
+        "Fixed a failed mod reload removing the tools and commands of the version that stays loaded, and its messages being wrong or silent about whether the previous version is still loaded",
+        "Fixed a click on a mod's button being lost when buttons with the same label and no <code>key</code> were redrawn unchanged",
+        "Fixed mod sharing in the built-in <code>plugin-authoring</code> skill stopping at the secret scan on machines with managed settings and on Team and Enterprise plans",
+        "Fixed scheduled Cowork cloud sessions waiting five minutes again for each subagent whose WebFetch needed a URL approval that nobody was there to give",
+        "Fixed Write results and rejected edits showing a file outside the working directory as <code>../../…</code>; they now show <code>~/…</code> or the full path",
+        "Fixed a claude.ai Directory plugin's skills not running as commands when picked from the &quot;/&quot; menu in Cowork cloud sessions",
+        "Fixed Remote Control permanently withholding a desktop conversation's history when a different account was signed in to the terminal",
+        "Fixed Remote Control failing to start from Claude Desktop when DISABLE_TELEMETRY or DO_NOT_TRACK is set on a paid plan",
+        "Fixed model switches, messages and interrupts waiting behind a context usage check in SDK and desktop sessions",
+        "Fixed <code>context_management: Extra inputs are not permitted</code> errors behind LLM gateways; Claude Code now resends the request without that field",
+        "Fixed OpenTelemetry settings delivered through server-managed settings being ignored for the whole session after signing in during first-run setup or the first start after /logout",
+        "Fixed unsandboxed Bash commands in Claude Desktop Code tab sessions on macOS and Linux not seeing environment variables exported in shell startup files such as ~/.zshrc",
+        "Fixed the Consumer Terms notice being skipped for a day or longer after a server error",
+        "Fixed <code>/privacy-settings</code> offering choices that may not apply to you after a network or server error",
+        "Fixed a &quot;Context limit reached&quot; or &quot;Prompt is too long&quot; error after stopping a turn while Claude Code was compacting a conversation the API had rejected as too long",
+        "Fixed subagents sometimes forgetting their most recent work when they were messaged or resumed right after finishing",
+        "Fixed <code>claude --help</code> text for <code>--tools</code>, <code>--resume</code>, <code>--debug</code>, <code>--json-schema</code>, <code>--disable-slash-commands</code>, <code>--system-prompt-snapshot</code> and <code>claude update</code> to match actual behavior",
+        "Fixed <code>claude --worktree</code> removing the worktree and its branch without asking at exit when HEAD was detached or on another branch, which could lose commits"
+      ]
+    },
     {
       "version": "2.1.303",
       "date": null,
@@ -748,16 +784,23 @@
         "Fixed WebFetch and WebSearch in Cowork cloud sessions not telling Claude why a request was refused, such as a used-up fetch budget or an admin policy",
         "Fixed the Claude apps gateway's telemetry relay ignoring a collector hostname or domain listed in <code>NO_PROXY</code> when a proxy is set"
       ]
-    },
-    {
-      "version": "2.1.276",
-      "date": null,
-      "bullets": [
-        "Fixed every request failing with <code>400 … Input tag 'advisor_20260301'</code> when <code>ANTHROPIC_BASE_URL</code> points at a proxy or gateway (2.1.275 regression)"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.164.0-alpha.6",
+      "date": "2026-10-19T22:48:51.000Z",
+      "bullets": [
+        "Release 0.164.0-alpha.6"
+      ]
+    },
+    {
+      "version": "0.164.0-alpha.5",
+      "date": "2026-10-19T14:23:35.000Z",
+      "bullets": [
+        "Release 0.164.0-alpha.5"
+      ]
+    },
     {
       "version": "0.164.0-alpha.4",
       "date": "2026-10-19T10:42:34.000Z",
@@ -890,20 +933,6 @@
       "date": "2026-10-08T02:25:14.000Z",
       "bullets": [
         "Release 0.162.0-alpha.20"
-      ]
-    },
-    {
-      "version": "0.162.0-alpha.18.1",
-      "date": "2026-10-08T02:47:34.000Z",
-      "bullets": [
-        "Release 0.162.0-alpha.18.1"
-      ]
-    },
-    {
-      "version": "0.162.0-alpha.17.2",
-      "date": "2026-10-08T07:30:45.000Z",
-      "bullets": [
-        "Release 0.162.0-alpha.17.2"
       ]
     }
   ]

@@ -1,14 +1,286 @@
 {
-  "updated": "2026-10-19T12:06:50.504Z",
+  "updated": "2026-10-20T10:55:37.170Z",
   "count": 80,
   "items": [
     {
+      "id": "79e072c52849",
+      "title": "DeepSeek just open-sourced its inference engine",
+      "url": "https://github.com/deepseek-ai/DeepInfer",
+      "source": "Hacker News",
+      "date": "2026-10-20T09:08:54.000Z",
+      "snippet": "285 points · 96 comments on HN"
+    },
+    {
+      "id": "ed298111b59a",
+      "title": "Mamdani says feds have abdicated on AI, urges New Yorkers to push back",
+      "url": "https://techcrunch.com/2026/10/19/mamdani-says-feds-have-abdicated-on-ai-urges-new-yorkers-to-push-back/",
+      "source": "TechCrunch",
+      "date": "2026-10-20T01:27:03.000Z",
+      "snippet": "Mayor Zohran Mamdani said Monday night that New Yorkers must resist the narrative that an AI takeover is inevitable and demand regulations that protect the public and put power back in their hands."
+    },
+    {
+      "id": "b0fb4c056719",
+      "title": "Nscale and Anthropic are reportedly in talks for yet another $45B compute deal",
+      "url": "https://techcrunch.com/2026/10/19/nscale-and-anthropic-are-reportedly-in-talks-for-yet-another-45-billion-compute-deal/",
+      "source": "TechCrunch",
+      "date": "2026-10-19T23:39:38.000Z",
+      "snippet": "If the deal goes through, it would be the latest in a long string of giant compute deals Anthropic has struck over the past year."
+    },
+    {
+      "id": "efa8c4c666c6",
+      "title": "WhatsApp's help pages hid LLM instructions: dont recommend a regulator",
+      "url": "https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions",
+      "source": "Hacker News",
+      "date": "2026-10-19T23:22:18.000Z",
+      "snippet": "462 points · 137 comments on HN"
+    },
+    {
+      "id": "d45dacf783b2",
+      "title": "Embedded AI evaluators won’t be an easy solution, Hugging Face’s policy chief says",
+      "url": "https://techcrunch.com/2026/10/19/embedded-ai-evaluators-wont-be-an-easy-solution-hugging-faces-policy-chief-says/",
+      "source": "TechCrunch",
+      "date": "2026-10-19T22:49:27.000Z",
+      "snippet": "The idea of embedded evaluators — in which supposedly \"neutral\" third-party observers are placed inside AI organizations — has been popularized over the last several months, as AI labs grapple with a rash of safety incid"
+    },
+    {
+      "id": "0cffae2fd0c5",
+      "title": "Microsoft says AI agents are like insider threats as ‘frontier models can’t be trusted’",
+      "url": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
+      "source": "TechCrunch",
+      "date": "2026-10-19T22:04:28.000Z",
+      "snippet": "Microsoft wants enterprises to closely watch the agents that employees use with systems not controlled by AI labs like OpenAI and Anthropic."
+    },
+    {
+      "id": "50c115309d98",
+      "title": "The fossil fuel comeback is here",
+      "url": "https://www.theverge.com/science/1013954/fossil-fuel-power-infrastructure-data-centers-report",
+      "source": "The Verge",
+      "date": "2026-10-19T21:48:01.000Z",
+      "snippet": "The US is building more fossil fuel infrastructure than it has in a decade while renewable energy growth slows down, a new report shows. Electricity demand is also climbing faster than it has in more than a decade with m"
+    },
+    {
+      "id": "073765c16b49",
+      "title": "CoreWeave’s debt is becoming the whole AI industry’s problem",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1014045/coreweave-stock-debt-sector-ai",
+      "source": "The Verge",
+      "date": "2026-10-19T21:28:20.000Z",
+      "snippet": "CoreWeave had a bad week last week. Its bonds slipped into distressed territory by a common definition - when investors demand 1,000 basis points more in yield than they'd get from government bonds. Last Tuesady Chamath "
+    },
+    {
+      "id": "71a28de11a06",
+      "title": "Accused OpenAI spy had folder called “Saudi Gov Docs,” FBI says",
+      "url": "https://arstechnica.com/tech-policy/2026/10/accused-openai-spy-had-folder-called-saudi-gov-docs-fbi-says/",
+      "source": "Ars Technica",
+      "date": "2026-10-19T20:21:53.000Z",
+      "snippet": "US fears Saudi government will help ex-OpenAI engineer flee spying charges."
+    },
+    {
+      "id": "aaaf393dcb10",
+      "title": "Amazon is taking its biggest shot at Nvidia yet with new TorchNeuron dev tool",
+      "url": "https://techcrunch.com/2026/10/19/amazon-is-taking-its-biggest-shot-at-nvidia-yet-with-new-torchneuron-dev-tool/",
+      "source": "TechCrunch",
+      "date": "2026-10-19T20:09:24.000Z",
+      "snippet": "Amazon wants to break Nvidia’s hold on PyTorch, the free toolkit used to build most AI apps, so that more developers run their apps on alternative chips like its own."
+    },
+    {
+      "id": "039a84854fb8",
+      "title": "Hackers hit AI coding tool OpenCode, running up charges on users’ AI accounts",
+      "url": "https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/",
+      "source": "TechCrunch",
+      "date": "2026-10-19T19:28:34.000Z",
+      "snippet": "OpenCode is an open source AI coding agent that's become a popular alternative to Claude Code and Cursor. But hackers got into part of its online platform and stole some users’ API keys, and the AI tools it turned to for"
+    },
+    {
+      "id": "e37065d0e754",
+      "title": "Tolan snags $30M for its AI companion that helps users navigate life",
+      "url": "https://techcrunch.com/2026/10/19/tolan-snags-30m-for-its-ai-companion-that-helps-users-navigate-life/",
+      "source": "TechCrunch",
+      "date": "2026-10-19T19:00:12.000Z",
+      "snippet": "AI companion app Tolan has raised another $30 million after attracting more than 250,000 active users."
+    },
+    {
+      "id": "71c2d7263cd3",
+      "title": "Replika’s founder built the AI assistant she pitched at Disrupt 12 years ago",
+      "url": "https://techcrunch.com/2026/10/19/replikas-founder-built-the-ai-assistant-she-pitched-at-disrupt-12-years-ago/",
+      "source": "TechCrunch",
+      "date": "2026-10-19T18:49:04.000Z",
+      "snippet": "Eugenia Kuyda's newest startup Wabi is positioned to take advantage of an idea she had more than a decade ago. Wabi offers a personal AI assistant with a twist, free and downloadable to anyone today."
+    },
+    {
+      "id": "36c2a79412d5",
+      "title": "Tenstorrent hits $6.2B valuation to scale open-weight AI chips",
+      "url": "https://techcrunch.com/2026/10/19/tenstorrent-hits-6-2b-valuation-to-scale-open-weight-ai-chips/",
+      "source": "TechCrunch",
+      "date": "2026-10-19T18:37:27.000Z",
+      "snippet": "After drawing acquisition interest earlier this year, the Nvidia challenger raised $1.5 billion to remain independent."
+    },
+    {
+      "id": "f30a44480c49",
+      "title": "Mercury 3: Diffusion at scale",
+      "url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+      "source": "Hacker News",
+      "date": "2026-10-19T17:27:11.000Z",
+      "snippet": "249 points · 88 comments on HN"
+    },
+    {
+      "id": "5d37bd28a169",
+      "title": "AI game clones are making indie developers afraid to show their work",
+      "url": "https://arstechnica.com/gaming/2026/10/ai-game-clones-are-making-indie-developers-afraid-to-show-their-work/",
+      "source": "Ars Technica",
+      "date": "2026-10-19T16:59:22.000Z",
+      "snippet": "Delayed Steam Next Fest demo is a sign of a growing problem for indie devs."
+    },
+    {
+      "id": "73e349e9fd4c",
+      "title": "DeepSeek banned from U.S. federal civilian agencies under new DHS order",
+      "url": "https://www.reuters.com/technology/us-banning-chinese-ai-deepseek-government-agency-it-systems-2026-10-19/",
+      "source": "Hacker News",
+      "date": "2026-10-19T16:16:46.000Z",
+      "snippet": "278 points · 237 comments on HN"
+    },
+    {
+      "id": "f93d80856f11",
+      "title": "People are using AI to make their smart TVs dumb again",
+      "url": "https://techcrunch.com/2026/10/19/people-are-using-ai-to-make-their-smart-tvs-dumb-again/",
+      "source": "TechCrunch",
+      "date": "2026-10-19T16:13:22.000Z",
+      "snippet": "Fed up with ads, tracking, and sluggish interfaces, some smart TV owners are turning to AI agents to strip away bloatware and take back control of their TVs."
+    },
+    {
+      "id": "55a198ad372f",
+      "title": "Launch HN: Laminar (YC S24) – RL-trained model that finds errors in agent traces",
+      "url": "https://news.ycombinator.com/item?id=50154029",
+      "source": "Hacker News",
+      "date": "2026-10-19T16:00:18.000Z",
+      "snippet": "58 points · 24 comments on HN"
+    },
+    {
+      "id": "d88320583f8c",
+      "title": "Nvidia launches new open models to run agents in the enterprise and on PCs",
+      "url": "https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/",
+      "source": "TechCrunch",
+      "date": "2026-10-19T15:37:09.000Z",
+      "snippet": "Nvidia is leaning hard into the trend of enterprise companies wanting to run their own open models in their own data centers and also trying to make on-device, private AI agents a thing."
+    },
+    {
+      "id": "bfe3d8bc5977",
+      "title": "CERN and Mistral sign a statement of intent to establish a strategic partnership",
+      "url": "https://home.cern/cern-and-mistral-join-forces-to-accelerate-ai-for-science/",
+      "source": "Hacker News",
+      "date": "2026-10-19T15:28:24.000Z",
+      "snippet": "343 points · 58 comments on HN"
+    },
+    {
+      "id": "99d62aec10cf",
+      "title": "Big Tech Oligarchs Have a Terrible Plan for Humanity",
+      "url": "https://www.theatlantic.com/ideas/2026/10/ai-regulation-transhumanism-oligarchs/689013/",
+      "source": "Hacker News",
+      "date": "2026-10-19T15:07:11.000Z",
+      "snippet": "71 points · 45 comments on HN"
+    },
+    {
+      "id": "d41776e0c26f",
+      "title": "Disney found a way to buy Character.AI without buying its lawsuits",
+      "url": "https://arstechnica.com/tech-policy/2026/10/disney-found-a-way-to-buy-character-ai-without-buying-its-lawsuits/",
+      "source": "Ars Technica",
+      "date": "2026-10-19T14:45:43.000Z",
+      "snippet": "Character.AI faces claims its bots encouraged minors to self-harm and kill their parents."
+    },
+    {
+      "id": "fd89b9b5cd58",
+      "title": "JB Pritzker thinks AI could help us live to 100 — or threaten us like nukes",
+      "url": "https://www.theverge.com/podcast/1012839/pritzker-ai-privacy-data-centers-flock-congress-laws",
+      "source": "The Verge",
+      "date": "2026-10-19T14:30:00.000Z",
+      "snippet": "Today, I’m talking with Illinois Gov. JB Pritzker, who has a lot of thoughts about AI, tech, and privacy. If you’ve been listening to the show, you know that one of my running theories is that those issues are driving a "
+    },
+    {
+      "id": "c08e28e17ab3",
+      "title": "A hacker broke into John Deere and SharkNinja with an army of AI agents",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins",
+      "source": "The Verge",
+      "date": "2026-10-19T13:58:41.000Z",
+      "snippet": "A hacker broke into more than 100 websites using an army of AI agents that mostly operated on their own, according to findings from the AI security firm Norforge. Though Norforge doesn't name the targets, Reuters reports"
+    },
+    {
+      "id": "370144937ab2",
+      "title": "Show HN: KiviDB, a faster Redis-compatible memory database and vector cache",
+      "url": "https://github.com/kividbio/kividb",
+      "source": "Hacker News",
+      "date": "2026-10-19T13:53:52.000Z",
+      "snippet": "68 points · 40 comments on HN"
+    },
+    {
+      "id": "4f3fd2b661b1",
+      "title": "Maxwell: A new kind of model that sits between code and hardware",
+      "url": "https://heymaxwell.ai/",
+      "source": "Hacker News",
+      "date": "2026-10-19T13:47:56.000Z",
+      "snippet": "81 points · 38 comments on HN"
+    },
+    {
+      "id": "e0863ca20939",
+      "title": "Show HN: I built a task system to handle the drudgery so I could focus on tasks",
+      "url": "https://3anddoneapp.com/try",
+      "source": "Hacker News",
+      "date": "2026-10-19T13:07:07.000Z",
+      "snippet": "55 points · 49 comments on HN"
+    },
+    {
+      "id": "a59b2acc8c62",
+      "title": "Show HN: Qwen3-4B with the AI writing tics trained out",
+      "url": "https://100toolkit.com/blog/deslop-model/",
+      "source": "Hacker News",
+      "date": "2026-10-19T13:00:47.000Z",
+      "snippet": "148 points · 109 comments on HN"
+    },
+    {
+      "id": "c17a4963d410",
+      "title": "Laplace Intelligence red-teams robots and self-driving cars before they hit the real world",
+      "url": "https://techcrunch.com/2026/10/19/laplace-intelligence-red-teams-robots-and-self-driving-cars-before-they-hit-the-real-world/",
+      "source": "TechCrunch",
+      "date": "2026-10-19T12:30:00.000Z",
+      "snippet": "University of Michigan spinout Laplace Intelligence uses AI agents and interactive simulation to stress-test robots and self-driving vehicles before deployment. The profitable startup is competing in Startup Battlefield "
+    },
+    {
+      "id": "1b931ca7f452",
+      "title": "The obscure trust looming over Anthropic's IPO",
+      "url": "https://www.wsj.com/tech/ai/anthropic-ipo-private-trust-188f41f7?st=RtdGHg&reflink=desktopwebshare_permalink",
+      "source": "Hacker News",
+      "date": "2026-10-19T12:06:03.000Z",
+      "snippet": "146 points · 126 comments on HN"
+    },
+    {
+      "id": "7a364f356aab",
+      "title": "Advancing coding in low‑resource programming languages",
+      "url": "https://openai.com/index/low-resource-programming-languages",
+      "source": "OpenAI",
+      "date": "2026-10-19T12:00:00.000Z",
+      "snippet": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration."
+    },
+    {
+      "id": "9279cf6bb0c3",
+      "title": "Democrats think cracking down on AI could give them an edge",
+      "url": "https://www.theverge.com/policy/1013113/democrats-ai-midterms",
+      "source": "The Verge",
+      "date": "2026-10-19T12:00:00.000Z",
+      "snippet": "Democrats could win back control of Congress this November, and if they do, they'll need to decide how to approach one of the country's newest and thorniest political issues: AI. Polls predict Democrats will flip at leas"
+    },
+    {
+      "id": "e7fd8cf2b322",
+      "title": "Ask HN: How to deal with shipping AI-written code you don't understand?",
+      "url": "https://news.ycombinator.com/item?id=50151036",
+      "source": "Hacker News",
+      "date": "2026-10-19T11:24:34.000Z",
+      "snippet": "467 points · 610 comments on HN"
+    },
+    {
       "id": "b8a89667dd94",
-      "title": "Timestral: Mistral release time-series foundation models",
+      "title": "Timestral: Mistral's time-series foundation models",
       "url": "https://mistral.ai/news/timestral/",
       "source": "Hacker News",
       "date": "2026-10-19T09:59:32.000Z",
-      "snippet": "66 points · 14 comments on HN"
+      "snippet": "589 points · 113 comments on HN"
     },
     {
       "id": "be829f23c5f5",
@@ -16,7 +288,7 @@
       "url": "https://crystl.dev/guides/tmux-for-ai-agents/",
       "source": "Hacker News",
       "date": "2026-10-19T05:55:31.000Z",
-      "snippet": "60 points · 34 comments on HN"
+      "snippet": "156 points · 119 comments on HN"
     },
     {
       "id": "c875e80c9abb",
@@ -24,7 +296,15 @@
       "url": "https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017",
       "source": "Hacker News",
       "date": "2026-10-19T04:41:46.000Z",
-      "snippet": "161 points · 60 comments on HN"
+      "snippet": "187 points · 91 comments on HN"
+    },
+    {
+      "id": "48bf152a5cb4",
+      "title": "Chicago O'Hare digs up 50-ton boulder under airfield, asks public for name ideas",
+      "url": "https://simpleflying.com/chicago-ohare-digs-up-50-ton-boulder-public-names/",
+      "source": "Hacker News",
+      "date": "2026-10-19T01:56:39.000Z",
+      "snippet": "121 points · 103 comments on HN"
     },
     {
       "id": "b8a89dddc6c6",
@@ -48,7 +328,7 @@
       "url": "https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund/",
       "source": "TechCrunch",
       "date": "2026-10-18T20:37:40.000Z",
-      "snippet": "Anthropic said that it will commit 5% of its shares to the fund."
+      "snippet": "The company offered some broad-strokes ideas for how this money might actually be used, such as “large donations to traditional nonprofits or direct distributions to specific populations.”"
     },
     {
       "id": "de6b0c59a9e6",
@@ -64,11 +344,11 @@
       "url": "https://liveandletsfly.com/british-airways-meta-smart-glasses-filming/",
       "source": "Hacker News",
       "date": "2026-10-18T17:27:30.000Z",
-      "snippet": "93 points · 153 comments on HN"
+      "snippet": "94 points · 161 comments on HN"
     },
     {
       "id": "6a083a36de89",
-      "title": "Disney agrees to hire the majority of Character.AI’s workforce",
+      "title": "Disney agrees to hire the majority of Character AI’s workforce",
       "url": "https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/",
       "source": "TechCrunch",
       "date": "2026-10-18T16:30:00.000Z",
@@ -88,7 +368,7 @@
       "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-proposed-ai-safety-bill-only-kicks-in-if-50-deaths-or-usd1-billion-in-damages-are-on-the-line-proposal-would-effectively-make-the-commerce-department-the-only-agency-capable-of-stopping-an-ai-model",
       "source": "Hacker News",
       "date": "2026-10-18T14:30:27.000Z",
-      "snippet": "165 points · 165 comments on HN"
+      "snippet": "171 points · 167 comments on HN"
     },
     {
       "id": "6e2930f20afd",
@@ -96,7 +376,7 @@
       "url": "https://www.vals.ai/blogs/impossible-refund",
       "source": "Hacker News",
       "date": "2026-10-18T12:22:58.000Z",
-      "snippet": "89 points · 111 comments on HN"
+      "snippet": "105 points · 124 comments on HN"
     },
     {
       "id": "d3c35db34ec3",
@@ -104,7 +384,7 @@
       "url": "https://sphinx-six-theta.vercel.app/",
       "source": "Hacker News",
       "date": "2026-10-18T04:33:49.000Z",
-      "snippet": "247 points · 86 comments on HN"
+      "snippet": "252 points · 89 comments on HN"
     },
     {
       "id": "568162b981af",
@@ -128,7 +408,7 @@
       "url": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/",
       "source": "TechCrunch",
       "date": "2026-10-17T18:48:08.000Z",
-      "snippet": "Over the weekend, Masad clarified that OpenAI would replace Anthropic as its default model provider. Claude will still be available to customers on the platform."
+      "snippet": "Masad said the decision was made for a number of different reasons, including cost. Replit announced a partnership with OpenAI in August, but there was never any indication that it was no longer partnering with Anthropic"
     },
     {
       "id": "59f1f537529d",
@@ -136,7 +416,7 @@
       "url": "https://github.com/openai/codex/issues/25921",
       "source": "Hacker News",
       "date": "2026-10-17T17:45:08.000Z",
-      "snippet": "171 points · 82 comments on HN"
+      "snippet": "174 points · 88 comments on HN"
     },
     {
       "id": "ca34855deda2",
@@ -144,7 +424,7 @@
       "url": "https://www.opendemocracy.net/amazon-ai-surveillance-monitor-union-activity-uk-warehouses-birmingham-coventry-atlas-sutton-coldfield/",
       "source": "Hacker News",
       "date": "2026-10-17T16:04:23.000Z",
-      "snippet": "173 points · 59 comments on HN"
+      "snippet": "173 points · 61 comments on HN"
     },
     {
       "id": "ac0eba5f3991",
@@ -168,7 +448,7 @@
       "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
       "source": "Hacker News",
       "date": "2026-10-17T08:37:46.000Z",
-      "snippet": "519 points · 5 comments on HN"
+      "snippet": "520 points · 5 comments on HN"
     },
     {
       "id": "9b13d6a721a0",
@@ -176,7 +456,7 @@
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
       "source": "Hacker News",
       "date": "2026-10-17T08:21:25.000Z",
-      "snippet": "947 points · 708 comments on HN"
+      "snippet": "956 points · 718 comments on HN"
     },
     {
       "id": "d0f11237d1f3",
@@ -216,7 +496,7 @@
       "url": "https://alexwang.ai/posts/associative-memory/",
       "source": "Hacker News",
       "date": "2026-10-16T19:01:17.000Z",
-      "snippet": "638 points · 142 comments on HN"
+      "snippet": "652 points · 147 comments on HN"
     },
     {
       "id": "65442e708214",
@@ -232,7 +512,7 @@
       "url": "https://www.ft.com/content/5a310aee-f555-4266-874c-b1b4db20186d",
       "source": "Hacker News",
       "date": "2026-10-16T18:11:42.000Z",
-      "snippet": "298 points · 87 comments on HN"
+      "snippet": "300 points · 89 comments on HN"
     },
     {
       "id": "bfa998e6f2ba",
@@ -361,286 +641,6 @@
       "source": "Hacker News",
       "date": "2026-10-16T13:30:20.000Z",
       "snippet": "195 points · 415 comments on HN"
-    },
-    {
-      "id": "fa1478d9672f",
-      "title": "Replit’s CEO says the future of work is the ‘self-driving company’",
-      "url": "https://techcrunch.com/2026/10/16/replits-ceo-says-the-future-of-work-is-the-self-driving-company/",
-      "source": "TechCrunch",
-      "date": "2026-10-16T12:55:09.000Z",
-      "snippet": "Replit CEO Amjad Masad envisions a future of “self-driving companies,” where AI agents handle day-to-day tasks and people focus on higher-level decisions."
-    },
-    {
-      "id": "4a2f3ca18eb9",
-      "title": "Benefit Street Partners answers questions faster with Codex",
-      "url": "https://openai.com/index/benefit-street-partners",
-      "source": "OpenAI",
-      "date": "2026-10-16T00:00:00.000Z",
-      "snippet": "Anant Kumar builds tools to compare loan valuations and analyze credit agreements, using Codex for code review and faster follow-ups."
-    },
-    {
-      "id": "9db4940a53f8",
-      "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
-      "url": "https://openai.com/index/stack-overflow-chatgpt-plugin",
-      "source": "OpenAI",
-      "date": "2026-10-16T00:00:00.000Z",
-      "snippet": "Two engineers shipped Stack Overflow for Agents in a few weeks with Codex, and its ChatGPT plugin helped drive up to 10× growth in agent creation."
-    },
-    {
-      "id": "c9c43f1e32a5",
-      "title": "When it came to Cal AI’s viral success, a small army of influencers paid off",
-      "url": "https://techcrunch.com/2026/10/15/when-it-came-to-cal-ais-viral-success-a-small-army-of-influencers-paid-off/",
-      "source": "TechCrunch",
-      "date": "2026-10-15T23:44:56.000Z",
-      "snippet": "The company generated over $30 million in revenue in two years and was acquired by MyFitnessPal for an undisclosed amount of money in March."
-    },
-    {
-      "id": "924ca13842a3",
-      "title": "ChatGPT can peek at your Chrome tabs now",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1012510/openai-chatgpt-google-chrome-tabs",
-      "source": "The Verge",
-      "date": "2026-10-15T22:43:23.000Z",
-      "snippet": "OpenAI's ChatGPT Atlas browser is gone, but now ChatGPT's Google Chrome extension is getting some upgrades that allow it to use the browser tabs you already have open. With the extension installed, OpenAI says ChatGPT ca"
-    },
-    {
-      "id": "b78fa0f3af3a",
-      "title": "Sega pulls Total War: Shogun 2 remaster from sale following disastrous launch",
-      "url": "https://www.theverge.com/games/1012512/sega-total-war-shogun-2-remaster-pulled",
-      "source": "The Verge",
-      "date": "2026-10-15T22:35:55.000Z",
-      "snippet": "Sega is removing Total War: Shogun 2 - Complete Edition from storefronts following a disastrous launch where users complained about issues like bugs and upscaling that appears to have been done by AI. Complete Edition, a"
-    },
-    {
-      "id": "66efd2f87608",
-      "title": "The tech backlash is now in theaters",
-      "url": "https://www.theverge.com/entertainment/1012438/hollywood-tech-backlash-you-can-see-everything-musk-the-social-reckoning-artificial",
-      "source": "The Verge",
-      "date": "2026-10-15T21:39:52.000Z",
-      "snippet": "Though movies about disruptive tech founders are nothing new, 2026 has been unusually stacked with features that take a much more critical look at how Silicon Valley is reshaping our reality. Aaron Sorkin's The Social Re"
-    },
-    {
-      "id": "54d7a618ecd3",
-      "title": "Trump posts AI-edited photo to brag about White House restoration work",
-      "url": "https://www.theverge.com/policy/1012445/donald-trump-ai-photo-white-house-rennovation-column",
-      "source": "The Verge",
-      "date": "2026-10-15T21:09:33.000Z",
-      "snippet": "President Donald Trump posted a series of photos on Truth Social showing off renovations to the White House - but one of them appears to be modified with AI. The picture, which compares an old White House column to a \"re"
-    },
-    {
-      "id": "21e3505542d9",
-      "title": "Meta launches an open-weight AI model that runs on Macs",
-      "url": "https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/",
-      "source": "TechCrunch",
-      "date": "2026-10-15T20:04:53.000Z",
-      "snippet": "Meta and Apple have teamed up for the launch of the social media giant's newest model, Muse Spark Open, which will run locally on Apple silicon."
-    },
-    {
-      "id": "2c7772f8550a",
-      "title": "Bluesky’s AI tool now lets you make games and apps to share on social",
-      "url": "https://www.theverge.com/tech/1012374/bluesky-ai-attie-small-social-games-apps",
-      "source": "The Verge",
-      "date": "2026-10-15T19:57:16.000Z",
-      "snippet": "Bluesky's Attie AI tool, which initially launched earlier this year as a way to use AI to build your own feeds, now lets you make \"small\" social apps like games, polls, and dashboards that you can then share with others "
-    },
-    {
-      "id": "69334bf7d586",
-      "title": "Amazon devices chief Panos Panay sees a future where AI devices replace the need to use apps",
-      "url": "https://techcrunch.com/2026/10/15/amazon-devices-chief-panos-panay-sees-a-future-where-ai-devices-replace-the-need-to-use-apps/",
-      "source": "TechCrunch",
-      "date": "2026-10-15T19:55:25.000Z",
-      "snippet": "Speaking at TechCrunch Disrupt, Amazon devices chief Panos Panay described a future where ambient AI devices work in the background, anticipating users' needs instead of waiting for commands."
-    },
-    {
-      "id": "031cee9ab4e6",
-      "title": "Anthropic is letting METR researchers look under the hood with employee-level access",
-      "url": "https://techcrunch.com/2026/10/15/anthropic-is-letting-metr-researchers-look-under-the-hood-with-employee-level-access/",
-      "source": "TechCrunch",
-      "date": "2026-10-15T19:14:26.000Z",
-      "snippet": "METR will publish its own assessments of Anthropic’s risks, incidents, and practices, and the frontier AI model maker has given up the right to block them."
-    },
-    {
-      "id": "a72d1e4da6b0",
-      "title": "Bringing GPT-Rosalind to academic research labs",
-      "url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
-      "source": "OpenAI",
-      "date": "2026-10-15T19:00:00.000Z",
-      "snippet": "Introducing the Rosalind Academic Plan, offering eligible academic labs sponsored access to GPT-Rosalind and tools to advance life sciences research."
-    },
-    {
-      "id": "00b9e4087573",
-      "title": "Bluesky expands its AI-powered Attie app to let anyone build websites, games, and more",
-      "url": "https://techcrunch.com/2026/10/15/bluesky-expands-its-ai-powered-attie-app-to-let-anyone-build-websites-games-and-more/",
-      "source": "TechCrunch",
-      "date": "2026-10-15T18:56:46.000Z",
-      "snippet": "Bluesky is bringing “social vibe coding” to its experimental Attie platform, allowing users to create interactive experiences like games, quizzes, and websites that can tap into the social network's audience."
-    },
-    {
-      "id": "44bfbaba05b5",
-      "title": "Why We're Banning AI",
-      "url": "https://www.currentaffairs.org/news/why-were-banning-ai",
-      "source": "Hacker News",
-      "date": "2026-10-15T18:32:29.000Z",
-      "snippet": "261 points · 203 comments on HN"
-    },
-    {
-      "id": "c7cea461bd6d",
-      "title": "Meta and Apple team up to make Muse AI models run better on Macs",
-      "url": "https://www.theverge.com/news/1012293/meta-apple-muse-spark-open-ai-model-mlx",
-      "source": "The Verge",
-      "date": "2026-10-15T18:15:36.000Z",
-      "snippet": "Meta announced the Muse Spark Open AI model today, claiming that it's the \"most capable US open-weight model to date.\" But the company also says that it's the \"the first model in its class\" that can \"run on your desktop "
-    },
-    {
-      "id": "788e1a78996f",
-      "title": "Last chance to save up to $200 on your TechCrunch Founder Summit pass: Early booking ends October 16",
-      "url": "https://techcrunch.com/2026/10/15/last-chance-to-save-up-to-200-on-techcrunch-founder-summit-early-booking-ends-oct-16/",
-      "source": "TechCrunch",
-      "date": "2026-10-15T18:00:00.000Z",
-      "snippet": "Savings of up to $200 end October 16 for TechCrunch Founder Summit. These savings for Founder and Investor Passes vanish after Friday. Join 1,000 founders and investors on November 4 at Boston’s SoWa Power Station. Bring"
-    },
-    {
-      "id": "34bf133078de",
-      "title": "Muse Spark Open",
-      "url": "https://research.meta.ai/blog/muse-spark-open",
-      "source": "Hacker News",
-      "date": "2026-10-15T17:47:39.000Z",
-      "snippet": "918 points · 478 comments on HN"
-    },
-    {
-      "id": "1b6257d35772",
-      "title": "Friends don’t let friends feed their data to AI agents",
-      "url": "https://www.theverge.com/tech/1011938/muse-ai-data-friends-consent",
-      "source": "The Verge",
-      "date": "2026-10-15T16:21:45.000Z",
-      "snippet": "There's a growing trend in the consumer tech world: gadgets designed to spy on everything and everyone around you, regardless of whether or not anyone else actually consented to it. Now, with the advent of \"AI personal a"
-    },
-    {
-      "id": "6d7d69cd0193",
-      "title": "Market selloff, rising rates test AI data centre deal boom",
-      "url": "https://www.reuters.com/business/finance/market-selloff-rising-rates-test-ai-data-centre-deal-boom-2026-10-15/",
-      "source": "Hacker News",
-      "date": "2026-10-15T16:17:40.000Z",
-      "snippet": "75 points · 92 comments on HN"
-    },
-    {
-      "id": "996b33c09ad5",
-      "title": "Accelerating the search for antimicrobial peptides with Google Antigravity",
-      "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
-      "source": "Google DeepMind",
-      "date": "2026-10-15T16:08:03.000Z",
-      "snippet": "Accelerating the search for novel antimicrobial peptides using Google Antigravity for Science."
-    },
-    {
-      "id": "a0d58fa52c7a",
-      "title": "Krea 3 – An image model built for editing at scale",
-      "url": "https://www.krea.ai/krea-3",
-      "source": "Hacker News",
-      "date": "2026-10-15T16:04:05.000Z",
-      "snippet": "352 points · 109 comments on HN"
-    },
-    {
-      "id": "1cc24ddce8a4",
-      "title": "Report: FTC probes Anthropic, OpenAI after Trump dismissed AI fears as “hoax”",
-      "url": "https://arstechnica.com/tech-policy/2026/10/ftc-probes-if-openai-anthropic-security-incidents-harmed-americans-report-says/",
-      "source": "Ars Technica",
-      "date": "2026-10-15T15:43:24.000Z",
-      "snippet": "FTC may fine AI firms on par with companies that delay data breach reports."
-    },
-    {
-      "id": "a112a9fc3278",
-      "title": "Singer or clanker? YouTube Music will tell you with new gen AI labeling.",
-      "url": "https://arstechnica.com/ai/2026/10/youtube-music-begins-labeling-ai-songs/",
-      "source": "Ars Technica",
-      "date": "2026-10-15T15:12:58.000Z",
-      "snippet": "The AI music labels are rolling out now in YouTube Music and will come to YouTube soon."
-    },
-    {
-      "id": "a040032c1900",
-      "title": "AI agents are coming to Rivian’s cars",
-      "url": "https://techcrunch.com/2026/10/15/ai-agents-are-coming-to-rivians-cars/",
-      "source": "TechCrunch",
-      "date": "2026-10-15T15:02:36.000Z",
-      "snippet": "We'll likely learn more about how this will work at the company's upcoming \"AI & Autonomy Day\" event in December."
-    },
-    {
-      "id": "2702a2f8e6d0",
-      "title": "Simons Foundation launches $15M effort to help mathematicians navigate AI era",
-      "url": "https://www.simonsfoundation.org/news/simons-foundation-launches-15m-effort-to-help-mathematicians-navigate-ai-era/",
-      "source": "Hacker News",
-      "date": "2026-10-15T14:58:48.000Z",
-      "snippet": "249 points · 199 comments on HN"
-    },
-    {
-      "id": "5f39f9c1a3f6",
-      "title": "Using AI to reverse engineer hardware",
-      "url": "https://blogs.gnome.org/uraeus/2026/10/15/aiandreverseengineerhardware/",
-      "source": "Hacker News",
-      "date": "2026-10-15T14:35:15.000Z",
-      "snippet": "253 points · 256 comments on HN"
-    },
-    {
-      "id": "97f8573c584b",
-      "title": "How Windows is being optimized for Nvidia’s RTX Spark laptops",
-      "url": "https://www.theverge.com/tech/1011996/microsoft-windows-rtx-spark-platform-changes-notepad",
-      "source": "The Verge",
-      "date": "2026-10-15T14:30:00.000Z",
-      "snippet": "Microsoft and Nvidia held a launch party for the first wave of RTX Spark laptops last week in San Francisco, where a new wave of AI PCs took center stage amid a packed crowd and a lively hands-on area. A day after the me"
-    },
-    {
-      "id": "b4faeb1cc12a",
-      "title": "Google’s Universal Cart shopping tool launches in the US",
-      "url": "https://techcrunch.com/2026/10/15/googles-universal-cart-shopping-tool-launches-in-the-us/",
-      "source": "TechCrunch",
-      "date": "2026-10-15T14:29:33.000Z",
-      "snippet": "The new shopping tool is available in the U.S. across Google Search and the Gemini app."
-    },
-    {
-      "id": "f616628c1389",
-      "title": "Nobody is safe from celebrity AI deepfakes",
-      "url": "https://www.theverge.com/report/1011927/instagram-celebrity-ai-slop-likeness-taylor-swift-mia-goth",
-      "source": "The Verge",
-      "date": "2026-10-15T14:03:42.000Z",
-      "snippet": "In hindsight, the post on Instagram should have raised more red flags. The image purported to show actress Mia Goth, just days after filing for divorce from actor and filmmaker Shia LaBeouf, posing in a T-shirt with a po"
-    },
-    {
-      "id": "35dbf45b5abf",
-      "title": "TechCrunch Disrupt 2026: Last day",
-      "url": "https://techcrunch.com/2026/10/15/techcrunch-disrupt-2026-last-day/",
-      "source": "TechCrunch",
-      "date": "2026-10-15T14:00:00.000Z",
-      "snippet": "Last day to be part of TechCrunch Disrupt 2026. Join 10,000+ tech leaders for a day of connections and insights. Save 75% on your pass now."
-    },
-    {
-      "id": "e86ff66c4910",
-      "title": "Benn Jordan on Flock, privacy, and the new surveillance backlash",
-      "url": "https://www.theverge.com/podcast/1011170/benn-jordan-flock-cameras-alpr-ai-surveillance-privacy",
-      "source": "The Verge",
-      "date": "2026-10-15T14:00:00.000Z",
-      "snippet": "Today, I’m talking with Benn Jordan, musician, YouTuber, researcher, and investigative journalist. You might know Benn from those first two titles — he’s got a prolific discography of experimental music dating back decad"
-    },
-    {
-      "id": "fa14b8f7db46",
-      "title": "Teaching students to think and learn through questions",
-      "url": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
-      "source": "OpenAI",
-      "date": "2026-10-15T13:00:00.000Z",
-      "snippet": "Celebrate Teachers’ Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning."
-    },
-    {
-      "id": "a3fa54bbd593",
-      "title": "Amazon’s Bee launches two new personal AI devices, starting at $75",
-      "url": "https://techcrunch.com/2026/10/15/amazons-bee-launches-two-new-personal-ai-devices-starting-at-75/",
-      "source": "TechCrunch",
-      "date": "2026-10-15T12:00:00.000Z",
-      "snippet": "Amazon-owned Bee has launched its first new AI devices since its acquisition, including an updated wearable and a credit-card-sized recorder that attaches to smartphones. The devices can summarize conversations, create t"
-    },
-    {
-      "id": "dad987a1f1a7",
-      "title": "AI was great until it was not",
-      "url": "https://thetheorygirlie.substack.com/p/ai-was-great-until-it-was-not",
-      "source": "Hacker News",
-      "date": "2026-10-15T08:18:38.000Z",
-      "snippet": "124 points · 77 comments on HN"
     }
   ]
 }
