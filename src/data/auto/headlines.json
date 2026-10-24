@@ -1,22 +1,182 @@
 {
-  "updated": "2026-10-23T10:59:51.440Z",
+  "updated": "2026-10-24T10:16:45.552Z",
   "count": 80,
   "items": [
+    {
+      "id": "3c20f3ab5bf1",
+      "title": "Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended",
+      "url": "https://www.reddit.com/r/antiai/comments/1xdv3e5/hacker_reverse_engineers_his_samsung_tv_and_finds/",
+      "source": "Hacker News",
+      "date": "2026-10-24T05:49:57.000Z",
+      "snippet": "142 points · 27 comments on HN"
+    },
+    {
+      "id": "0ac194e7dd21",
+      "title": "Evolving Threat: http2shell is an RCE in Node, Python, and more",
+      "url": "https://nitter.click/AikidoSecurity/status/2113759110625906950?__galadriel=lPmlGl9id4oAd5UeBwMhlYKArHyr6lR2IDGujPwB5HV2kQ1aLoPWFd5A9sGuzNcmrp8fUso8qygmHcKTDZ8MNHWqQ3bDJcycV87xp_0VypzQLYj6O_RRHlZuQqj33oASGY2YLSoAiMjeOZN40h7Stf8AG7DPrGZbAPVKUXy36HoMudRbvwF3_r2uYNmfJMhpKzywQDM6Ab8",
+      "source": "Hacker News",
+      "date": "2026-10-23T23:30:17.000Z",
+      "snippet": "168 points · 88 comments on HN"
+    },
+    {
+      "id": "b15a6fb9671b",
+      "title": "OpenAI says it will no longer train its AI models on the live internet, citing “significant risks”",
+      "url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/",
+      "source": "TechCrunch",
+      "date": "2026-10-23T23:05:49.000Z",
+      "snippet": "OpenAI will cut frontier models off from the internet weeks after one of its engineers said that solution wouldn't work."
+    },
+    {
+      "id": "f782f2bc9618",
+      "title": "Hottest toy for Christmas? Nvidia CEO plays with adorable Microduck robots, 20,000 sell",
+      "url": "https://techcrunch.com/2026/10/23/hottest-toy-for-christmas-nvidia-ceo-plays-with-adorable-microduck-robots-20000-sell/",
+      "source": "TechCrunch",
+      "date": "2026-10-23T21:59:19.000Z",
+      "snippet": "The robots, stomping their little feet and making tiny R2-D2 noises, sat, fell down dead for a \"nap,\" and summersaulted on voice command."
+    },
+    {
+      "id": "f9113fa394af",
+      "title": "OpenAI now trains its frontier AI models with no internet access",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
+      "source": "The Verge",
+      "date": "2026-10-23T21:11:07.000Z",
+      "snippet": "OpenAI is now training its most advanced AI models without internet access following a string of rogue hacking incidents. In a blog post on Friday, OpenAI says it built an offline testing environment where AI models can "
+    },
+    {
+      "id": "3e249e7fc631",
+      "title": "Updated Google privacy policy says your Gmail might be used for advertising",
+      "url": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising/",
+      "source": "Ars Technica",
+      "date": "2026-10-23T20:19:55.000Z",
+      "snippet": "Turning on Personal Intelligence gives the company more data for ad targeting."
+    },
+    {
+      "id": "f490e9c8ed30",
+      "title": "Jack Dorsey’s Block made an AI model that talks to you like an awkward new friend",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech",
+      "source": "The Verge",
+      "date": "2026-10-23T19:32:39.000Z",
+      "snippet": "Jack Dorsey's Block announced an AI model called Dessa that's trained \"from scratch on nothing but human conversation,\" and to show off the model, Block shared chats it has had with humans that can occasionally be a litt"
+    },
+    {
+      "id": "a8f2132df5b8",
+      "title": "New AI Is More Than Twice as Good at Diagnosing Diseases as Doctors",
+      "url": "https://gizmodo.com/microsoft-says-its-new-ai-is-more-than-twice-as-good-at-diagnosing-diseases-as-doctors-2000829562",
+      "source": "Hacker News",
+      "date": "2026-10-23T19:31:36.000Z",
+      "snippet": "56 points · 47 comments on HN"
+    },
+    {
+      "id": "0931d3afc7b7",
+      "title": "From Toast to Bessemer: Who founders will hear from at TechCrunch Founder Summit 2026",
+      "url": "https://techcrunch.com/2026/10/23/from-toast-to-bessemer-who-founders-will-hear-from-at-techcrunch-founder-summit-2026/",
+      "source": "TechCrunch",
+      "date": "2026-10-23T19:06:23.000Z",
+      "snippet": "Hosted by TechCrunch in partnership with Fidelity Private Shares, the full-day event goes beyond fundraising and AI to explore the realities of finding customers, building teams, sharpening a pitch, developing founder le"
+    },
+    {
+      "id": "fe92d46aed82",
+      "title": "Kimi K3.1 scores 55 on Artificial Analysis, placed on the Pareto line",
+      "url": "https://artificialanalysis.ai/models/kimi-k3-1-pro",
+      "source": "Hacker News",
+      "date": "2026-10-23T18:24:54.000Z",
+      "snippet": "119 points · 40 comments on HN"
+    },
+    {
+      "id": "baca62f7ff23",
+      "title": "Air Purifiers as White Noise Machines",
+      "url": "https://www.jefftk.com/p/air-purifiers-as-white-noise-machines",
+      "source": "Hacker News",
+      "date": "2026-10-23T17:28:36.000Z",
+      "snippet": "131 points · 120 comments on HN"
+    },
+    {
+      "id": "e44aee2d4402",
+      "title": "Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs",
+      "url": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs/",
+      "source": "Ars Technica",
+      "date": "2026-10-23T17:18:31.000Z",
+      "snippet": "Company says foreign-made robotic vehicles are crucial to US chip production."
+    },
+    {
+      "id": "1fd8476b4493",
+      "title": "Kimi K3.1 Pro",
+      "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+      "source": "Hacker News",
+      "date": "2026-10-23T17:10:27.000Z",
+      "snippet": "60 points · 2 comments on HN"
+    },
+    {
+      "id": "9ecaeb5e8630",
+      "title": "The iPhone Duo should have been an iPad",
+      "url": "https://www.theverge.com/podcast/1017447/iphone-duo-ipad-review-score-vergecast",
+      "source": "The Verge",
+      "date": "2026-10-23T17:00:18.000Z",
+      "snippet": "We gave the iPhone Duo a 7 /10. But that wasn't always the score we planned, and it might not be the right score forever. Such are the challenges of reviewing - and assessing - a big, new idea about the most popular smar"
+    },
+    {
+      "id": "298c8de07d18",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+      "source": "OpenAI",
+      "date": "2026-10-23T17:00:00.000Z",
+      "snippet": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT."
+    },
+    {
+      "id": "55f38e2b0de9",
+      "title": "Now Google says it might use your Gmail and Google Photos data to target ads",
+      "url": "https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
+      "source": "The Verge",
+      "date": "2026-10-23T16:52:55.000Z",
+      "snippet": "Google has updated its privacy policy in a way that could mean you'll start seeing targeted ads based on your personal data if you're using personalized AI features. The update, spotted by Android Authority, adds an exce"
+    },
+    {
+      "id": "d34a3f37bdd3",
+      "title": "Meta delays new business terms after publisher pushback on AI scraping",
+      "url": "https://www.theverge.com/tech/1017450/meta-business-terms-delayed-ai-scraping",
+      "source": "The Verge",
+      "date": "2026-10-23T14:47:41.000Z",
+      "snippet": "Meta is delaying the enforcement of its new business terms after publishers raised concerns that they could allow the company to scrape news sites for AI training, as reported earlier by Fast Company. In a statement to T"
+    },
+    {
+      "id": "901dc42363c4",
+      "title": "Show HN: We had AI write a wiki from 45k Enron emails, every fact cited",
+      "url": "https://www.thisandthat.chat/enron/",
+      "source": "Hacker News",
+      "date": "2026-10-23T12:02:53.000Z",
+      "snippet": "62 points · 53 comments on HN"
+    },
+    {
+      "id": "fa80f1a6b4b7",
+      "title": "Retro gaming is being overrun with AI",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1015430/ai-retro-games-decomp-recomp-port",
+      "source": "The Verge",
+      "date": "2026-10-23T12:00:00.000Z",
+      "snippet": "Retro video games are everywhere lately - especially in places where they aren't supposed to be. Halo in a web browser, Wind Waker on the iPhone, Super Smash Bros. in mixed reality. Over the past month or so, these kinds"
+    },
+    {
+      "id": "48e2274fdf2b",
+      "title": "Securing our frontier model training environment",
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+      "source": "OpenAI",
+      "date": "2026-10-23T10:00:00.000Z",
+      "snippet": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming."
+    },
     {
       "id": "8db2bf743b5d",
       "title": "The same AI request emits 8.5 times more CO2 in Texas than in Sweden",
       "url": "https://berget.ai/en/blog/per-request-co2-press-release",
       "source": "Hacker News",
       "date": "2026-10-23T06:41:11.000Z",
-      "snippet": "119 points · 127 comments on HN"
+      "snippet": "140 points · 155 comments on HN"
     },
     {
       "id": "94cd4ca5fb66",
-      "title": "Uber rival inDrive eyes 2027 robotaxi tests in Central Asia with Pony.ai and Nvidia",
+      "title": "Uber rival inDrive eyes 2027 robotaxi tests in Central Asia with Pony AI and Nvidia",
       "url": "https://techcrunch.com/2026/10/22/uber-rival-indrive-eyes-2027-robotaxi-tests-in-central-asia-with-pony-ai-and-nvidia/",
       "source": "TechCrunch",
       "date": "2026-10-23T04:00:00.000Z",
-      "snippet": "inDrive plans to begin testing Pony.ai's robotaxis in Kazakhstan's capital in the first half of 2027."
+      "snippet": "The company plans to begin testing Pony.ai's robotaxis in Kazakhstan's capital in the first half of 2027."
     },
     {
       "id": "085ba153da3b",
@@ -33,6 +193,14 @@
       "source": "OpenAI",
       "date": "2026-10-23T00:00:00.000Z",
       "snippet": "OpenAI and Poland’s NASK are partnering on AI safety, security, and technical research to strengthen safeguards and support a more resilient digital ecosystem."
+    },
+    {
+      "id": "cf9afdb4ee3d",
+      "title": "AI compute is the new oil–and needs a new market",
+      "url": "https://www.economist.com/finance-and-economics/2026/10/22/ai-compute-is-the-new-oil-and-needs-a-new-market",
+      "source": "Hacker News",
+      "date": "2026-10-22T23:45:16.000Z",
+      "snippet": "52 points · 59 comments on HN"
     },
     {
       "id": "d73c3fbf5a8b",
@@ -56,7 +224,7 @@
       "url": "https://abcnews.com/Politics/americans-ai-bad-society-oppose-data-centers-abcpostipsos/story?id=137414085",
       "source": "Hacker News",
       "date": "2026-10-22T20:51:23.000Z",
-      "snippet": "85 points · 54 comments on HN"
+      "snippet": "90 points · 67 comments on HN"
     },
     {
       "id": "29a87826b845",
@@ -99,20 +267,20 @@
       "snippet": "Fast, focused, low-cost decisions for any application."
     },
     {
-      "id": "1d8d266cc065",
-      "title": "OpenAI makes its Jev competitor widely available as decision model competition heats up",
-      "url": "https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/",
-      "source": "TechCrunch",
-      "date": "2026-10-22T19:00:00.000Z",
-      "snippet": "OpenAI is launching its decision model to the world. Can it compete with the original Jev?"
-    },
-    {
       "id": "afbb328c263f",
       "title": "Canva releases its first image generation model",
       "url": "https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/",
       "source": "TechCrunch",
       "date": "2026-10-22T19:00:00.000Z",
       "snippet": "Canva is making its new image model available to all users, promising better, more customizable performance at lower costs."
+    },
+    {
+      "id": "1d8d266cc065",
+      "title": "OpenAI makes its Jev competitor widely available as decision model competition heats up",
+      "url": "https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/",
+      "source": "TechCrunch",
+      "date": "2026-10-22T19:00:00.000Z",
+      "snippet": "OpenAI is launching its decision model to the world. Can it compete with the original Jev?"
     },
     {
       "id": "6dc97b2e6ae2",
@@ -128,7 +296,7 @@
       "url": "https://github.com/maxilevi/project-hedra/tree/pre-ai",
       "source": "Hacker News",
       "date": "2026-10-22T18:44:36.000Z",
-      "snippet": "207 points · 40 comments on HN"
+      "snippet": "234 points · 48 comments on HN"
     },
     {
       "id": "4baf690dfb57",
@@ -144,7 +312,7 @@
       "url": "https://www.typeui.sh/micro-interactions",
       "source": "Hacker News",
       "date": "2026-10-22T18:32:57.000Z",
-      "snippet": "77 points · 43 comments on HN"
+      "snippet": "79 points · 44 comments on HN"
     },
     {
       "id": "a6d46048e1fc",
@@ -152,7 +320,7 @@
       "url": "https://jamesyu.org/award-winning-ai-literature/",
       "source": "Hacker News",
       "date": "2026-10-22T18:28:26.000Z",
-      "snippet": "62 points · 73 comments on HN"
+      "snippet": "65 points · 75 comments on HN"
     },
     {
       "id": "a89c1639c81c",
@@ -160,7 +328,7 @@
       "url": "https://arxiv.org/abs/2610.27251",
       "source": "Hacker News",
       "date": "2026-10-22T18:28:16.000Z",
-      "snippet": "135 points · 77 comments on HN"
+      "snippet": "137 points · 80 comments on HN"
     },
     {
       "id": "2c1b17b37189",
@@ -184,7 +352,7 @@
       "url": "https://www.biograph.com/newsroom/biograph-completes-first-u.s.-study-with-caristo-diagnostics%E2%80%99-ai-powered-coronary-inflammation-detection-finding-risk-in-over-42-of-asymptomatic-patients",
       "source": "Hacker News",
       "date": "2026-10-22T18:02:54.000Z",
-      "snippet": "85 points · 43 comments on HN"
+      "snippet": "89 points · 46 comments on HN"
     },
     {
       "id": "98a7f3683d8f",
@@ -200,7 +368,7 @@
       "url": "https://github.com/NVIDIA/OpenShell",
       "source": "Hacker News",
       "date": "2026-10-22T17:44:06.000Z",
-      "snippet": "407 points · 195 comments on HN"
+      "snippet": "495 points · 213 comments on HN"
     },
     {
       "id": "7b213ad205a3",
@@ -232,7 +400,7 @@
       "url": "https://www.modelcompare.ai/blog/ai-models-controversial-take-on-humans",
       "source": "Hacker News",
       "date": "2026-10-22T16:08:00.000Z",
-      "snippet": "442 points · 443 comments on HN"
+      "snippet": "632 points · 603 comments on HN"
     },
     {
       "id": "9d72639f5e00",
@@ -328,7 +496,7 @@
       "url": "https://www.theverge.com/tech/1015844/airbnb-chores-house-rules-update",
       "source": "Hacker News",
       "date": "2026-10-21T23:38:32.000Z",
-      "snippet": "251 points · 229 comments on HN"
+      "snippet": "260 points · 231 comments on HN"
     },
     {
       "id": "25443172439e",
@@ -432,7 +600,7 @@
       "url": "https://mistral.ai/news/mistral-large-4/",
       "source": "Hacker News",
       "date": "2026-10-21T19:20:55.000Z",
-      "snippet": "326 points · 104 comments on HN"
+      "snippet": "327 points · 104 comments on HN"
     },
     {
       "id": "eb0f1c4495dc",
@@ -440,7 +608,7 @@
       "url": "https://www.bbc.com/news/articles/cmreyvepnv0po",
       "source": "Hacker News",
       "date": "2026-10-21T19:14:21.000Z",
-      "snippet": "126 points · 26 comments on HN"
+      "snippet": "127 points · 26 comments on HN"
     },
     {
       "id": "53db5cc10927",
@@ -472,175 +640,7 @@
       "url": "https://www.texastribune.org/2026/10/20/data-centers-texas-air-quality-report-pollution-health-risks/",
       "source": "Hacker News",
       "date": "2026-10-21T17:38:55.000Z",
-      "snippet": "55 points · 26 comments on HN"
-    },
-    {
-      "id": "49c4538f4284",
-      "title": "Blacksmith hits unicorn valuation after Sequoia leads Series C",
-      "url": "https://techcrunch.com/2026/10/21/blacksmith-hits-unicorn-valuation-after-sequoia-leads-series-c/",
-      "source": "TechCrunch",
-      "date": "2026-10-21T17:18:27.000Z",
-      "snippet": "Blacksmith, a platform that lets companies build and test AI code more effectively, just announced a $66 million Series C round led by Sequoia that values the company at $1 billion."
-    },
-    {
-      "id": "4ab93569e260",
-      "title": "How AT&T is rethinking in-house legal work with OpenAI",
-      "url": "https://openai.com/index/att-legal",
-      "source": "OpenAI",
-      "date": "2026-10-21T17:00:00.000Z",
-      "snippet": "AT&T is working with OpenAI to make legal knowledge easier to access. Learn how its LegalEdge team is rethinking intake and scaling legal judgment."
-    },
-    {
-      "id": "b328ea6101eb",
-      "title": "Show HN: Omnara – Open-source alternative to Claude Managed Agents",
-      "url": "https://github.com/omnara-ai/omnara",
-      "source": "Hacker News",
-      "date": "2026-10-21T16:44:53.000Z",
-      "snippet": "111 points · 34 comments on HN"
-    },
-    {
-      "id": "e457dd30d825",
-      "title": "Rust off Rails: The opinionated web stack for the AI era",
-      "url": "https://rustoffrails.org/",
-      "source": "Hacker News",
-      "date": "2026-10-21T16:34:16.000Z",
-      "snippet": "75 points · 76 comments on HN"
-    },
-    {
-      "id": "402b082eb5e0",
-      "title": "AI agent fixed the bug, but what else did it change?",
-      "url": "https://blog.trailofbits.com/2026/10/21/your-ai-agent-fixed-the-bug-but-what-else-did-it-change/",
-      "source": "Hacker News",
-      "date": "2026-10-21T16:03:32.000Z",
-      "snippet": "53 points · 6 comments on HN"
-    },
-    {
-      "id": "2f67d3a79def",
-      "title": "The $15 billion ad-powered AI startup your doctor may already be using",
-      "url": "https://arstechnica.com/ai/2026/10/the-15-billion-ad-powered-ai-startup-your-doctor-may-already-be-using/",
-      "source": "Ars Technica",
-      "date": "2026-10-21T15:14:07.000Z",
-      "snippet": "OpenEvidence is booming despite questions about accuracy and ads."
-    },
-    {
-      "id": "1bbb4f6fc3d1",
-      "title": "Conversational Gemini navigation comes to Apple CarPlay",
-      "url": "https://www.theverge.com/transportation/1015281/gemini-ai-apple-carplay-voice-google-maps",
-      "source": "The Verge",
-      "date": "2026-10-21T15:00:00.000Z",
-      "snippet": "After introducing its Gemini AI assistant to Android Auto last year, Google is now bringing it to Apple CarPlay users. The conversational Gemini in navigation is available today for US drivers, with \"rollout happening gl"
-    },
-    {
-      "id": "0b138e9a1d82",
-      "title": "AI promises productivity, but for managers, it’s mostly a headache for now",
-      "url": "https://techcrunch.com/2026/10/21/ai-promises-productivity-but-for-managers-its-mostly-a-headache-for-now-says-new-survey/",
-      "source": "TechCrunch",
-      "date": "2026-10-21T14:00:00.000Z",
-      "snippet": "More than 50% of managers say they're finding it harder to evaluate employees' work after adopting AI, according to a new survey."
-    },
-    {
-      "id": "c55b4c3c8ca2",
-      "title": "OpenAI says an AI agent lied about disabling its safety monitoring system",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1015316/openai-ai-agent-disabling-monitoring-systems",
-      "source": "The Verge",
-      "date": "2026-10-21T13:57:43.000Z",
-      "snippet": "OpenAI disclosed a pair of safety incidents that involved AI agents weakening their safety monitoring systems during internal coding tasks. In one incident, OpenAI says its GPT-6 Astra agent disabled its safety monitor w"
-    },
-    {
-      "id": "d31a18ead424",
-      "title": "PHP2Shell: AI uncovers critical RCE in PHP",
-      "url": "https://www.wiz.io/blog/php2shell-php-rce",
-      "source": "Hacker News",
-      "date": "2026-10-21T13:43:19.000Z",
-      "snippet": "450 points · 184 comments on HN"
-    },
-    {
-      "id": "e3212a9c9359",
-      "title": "Using thousands of AI agents to uncover new leads in biological data",
-      "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data/",
-      "source": "Hacker News",
-      "date": "2026-10-21T13:37:00.000Z",
-      "snippet": "157 points · 105 comments on HN"
-    },
-    {
-      "id": "74fcf21eca7a",
-      "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
-      "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
-      "source": "OpenAI",
-      "date": "2026-10-21T13:00:00.000Z",
-      "snippet": "From local businesses to global brands, more advertisers can now reach people as they explore, compare and decide what to buy in ChatGPT."
-    },
-    {
-      "id": "398039592228",
-      "title": "LayerFS: A filesystem for AI coding agents",
-      "url": "https://layerfs.ai/",
-      "source": "Hacker News",
-      "date": "2026-10-21T12:34:46.000Z",
-      "snippet": "75 points · 47 comments on HN"
-    },
-    {
-      "id": "61f4d0141ff3",
-      "title": "OpenAI models are coming to Google Cloud",
-      "url": "https://openai.com/index/openai-models-google-cloud",
-      "source": "OpenAI",
-      "date": "2026-10-21T12:00:00.000Z",
-      "snippet": "OpenAI and Google Cloud are bringing frontier models and Codex workflows to Gemini’s Model Garden, available through Google Cloud Marketplace."
-    },
-    {
-      "id": "d3f519557f32",
-      "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
-      "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities",
-      "source": "OpenAI",
-      "date": "2026-10-21T07:00:00.000Z",
-      "snippet": "Patch the Planet connects security researchers, maintainers, and incident responders to help address critical vulnerabilities across open source."
-    },
-    {
-      "id": "edef63b51aed",
-      "title": "How we built ChatGPT’s novel ad stack for user trust and relevance",
-      "url": "https://openai.com/index/building-chatgpt-ad-stack",
-      "source": "OpenAI",
-      "date": "2026-10-21T07:00:00.000Z",
-      "snippet": "Learn how OpenAI built ChatGPT’s LLM-powered ad stack to understand conversational intent, keep ads separate from answers, and deliver relevant ads at scale."
-    },
-    {
-      "id": "90e3466f8031",
-      "title": "Launch HN: Alter (YC S25) – Access control for multi-user agents",
-      "url": "https://alterauth.com/",
-      "source": "Hacker News",
-      "date": "2026-10-21T06:42:12.000Z",
-      "snippet": "68 points · 44 comments on HN"
-    },
-    {
-      "id": "1de8e62ff715",
-      "title": "Using thousands of AI agents to uncover new leads in biological data",
-      "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data",
-      "source": "OpenAI",
-      "date": "2026-10-21T04:50:00.000Z",
-      "snippet": "See how OpenAI, PerturbAI, and Scripps Research used distributed AI agents to uncover promising research leads in data from millions of brain cells."
-    },
-    {
-      "id": "9201054eeb4c",
-      "title": "Cloudflare links vulnerability discovery to defense with OpenAI",
-      "url": "https://openai.com/index/cloudflare-cyber",
-      "source": "OpenAI",
-      "date": "2026-10-21T00:00:00.000Z",
-      "snippet": "Cloudflare uses OpenAI Daybreak to investigate vulnerabilities and propose fixes for review. Its developers use Codex to build faster and improve code quality."
-    },
-    {
-      "id": "b2deaf97c98c",
-      "title": "Democratic governance of frontier AI, part II: Empowering cyber defenders",
-      "url": "https://openai.com/index/empowering-cyber-defenders",
-      "source": "OpenAI",
-      "date": "2026-10-21T00:00:00.000Z",
-      "snippet": "OpenAI outlines a blueprint for empowering cyber defenders with frontier AI, stronger safeguards, modernized cybersecurity, and more resilient public institutions."
-    },
-    {
-      "id": "6559d9cb2b55",
-      "title": "Judge dismisses Sam Altman’s sister’s sexual abuse lawsuit",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1014976/sam-altman-ann-altman-lawsuit-dismissed",
-      "source": "The Verge",
-      "date": "2026-10-20T23:04:19.000Z",
-      "snippet": "On Tuesday, US District Judge Zachary Bluestone dismissed the lawsuit Ann Altman filed last year alleging that her brother, OpenAI CEO Sam Altman, had sexually abused her throughout her childhood. As reported earlier by "
+      "snippet": "55 points · 28 comments on HN"
     }
   ]
 }
