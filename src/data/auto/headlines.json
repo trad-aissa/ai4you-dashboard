@@ -1,14 +1,134 @@
 {
-  "updated": "2026-10-25T10:42:40.649Z",
+  "updated": "2026-10-26T12:15:00.240Z",
   "count": 80,
   "items": [
+    {
+      "id": "1bb180ff2772",
+      "title": "Cognitive Mercantilism: AI panic resembles fears of early capitalism",
+      "url": "https://contraptions.venkateshrao.com/p/cognitive-mercantilism",
+      "source": "Hacker News",
+      "date": "2026-10-26T04:11:40.000Z",
+      "snippet": "69 points · 75 comments on HN"
+    },
+    {
+      "id": "600522d60bd8",
+      "title": "Apollo says AI has delivered 'zero financial payoff' outside the tech industry",
+      "url": "https://www.businessinsider.com/apollo-ai-zero-financial-payoff-corporate-america-economic-analysis-2026-10",
+      "source": "Hacker News",
+      "date": "2026-10-25T22:49:06.000Z",
+      "snippet": "60 points · 37 comments on HN"
+    },
+    {
+      "id": "a6feae291b1a",
+      "title": "Grok releases the first seven minutes of its AI-generated ‘Odyssey’",
+      "url": "https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/",
+      "source": "TechCrunch",
+      "date": "2026-10-25T21:31:16.000Z",
+      "snippet": "The footage looks okay, as long as you're not seeking artistry, inspiration, or human interest."
+    },
+    {
+      "id": "f27e36157157",
+      "title": "AI didn't cause the tech jobs bust, but it explains why there's no recovery",
+      "url": "https://vithushansylvester.com/writing/the-real-impact-of-ai-on-tech-jobs",
+      "source": "Hacker News",
+      "date": "2026-10-25T18:42:23.000Z",
+      "snippet": "57 points · 25 comments on HN"
+    },
+    {
+      "id": "71334093a413",
+      "title": "AI delivers ‘zero financial payoff’ to most companies, Apollo economist says",
+      "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+      "source": "TechCrunch",
+      "date": "2026-10-25T16:57:32.000Z",
+      "snippet": "\"Despite massive investments and widespread hype around artificial intelligence, the technology has delivered zero financial payoff to corporate America outside of tech.\""
+    },
+    {
+      "id": "c5b94bc0897a",
+      "title": "A mathematician reads the AI future",
+      "url": "https://www.theatlantic.com/ideas/2026/10/ai-math-human-future/689133/",
+      "source": "Hacker News",
+      "date": "2026-10-25T16:31:21.000Z",
+      "snippet": "64 points · 87 comments on HN"
+    },
+    {
+      "id": "2af7003f0e2f",
+      "title": "AI use leads UC Berkeley math professor to see 'no point' in grading homework",
+      "url": "https://www.dailycal.org/news/campus/academics/ai-use-leads-uc-berkeley-math-professor-to-see-no-point-in-grading-homework/article_bdf1eae2-c08b-491f-b9f1-81a7cea177de.html",
+      "source": "Hacker News",
+      "date": "2026-10-25T16:28:26.000Z",
+      "snippet": "221 points · 320 comments on HN"
+    },
+    {
+      "id": "4262d71f08be",
+      "title": "The hottest AI wearables and gadgets you should know about",
+      "url": "https://techcrunch.com/2026/10/25/the-hottest-ai-wearables-and-gadgets-you-should-know-about/",
+      "source": "TechCrunch",
+      "date": "2026-10-25T14:10:00.000Z",
+      "snippet": "We compiled a list of all the hottest AI wearables, including Muse Charm, Bee, Friend, Plaud, and more."
+    },
+    {
+      "id": "ed94fe60f3e1",
+      "title": "R/open source bans all solo projects and projects using LLMs",
+      "url": "https://www.reddit.com/r/opensource/comments/1xelcuf/your_tokens_arent_valuable_no_more_ai",
+      "source": "Hacker News",
+      "date": "2026-10-25T14:05:03.000Z",
+      "snippet": "88 points · 111 comments on HN"
+    },
+    {
+      "id": "b366ba776fde",
+      "title": "r/opensource just banned AI, non-English speakers, and more",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1018217/reddit-opensource-ai-ban",
+      "source": "The Verge",
+      "date": "2026-10-25T13:25:32.000Z",
+      "snippet": "The mods at r/opensource posted new submission rules that, among other things, banned projects that use AI. The post made Saturday evening opens by saying, \"If your project uses AI, is made by AI, or is intended for AI, "
+    },
+    {
+      "id": "8a99d48c2aa4",
+      "title": "Imagine an AI future where being banned means you are now economically useless",
+      "url": "https://twitter.com/boneGPT/status/2114035719853265264",
+      "source": "Hacker News",
+      "date": "2026-10-25T12:47:20.000Z",
+      "snippet": "98 points · 78 comments on HN"
+    },
+    {
+      "id": "99c99157c7fa",
+      "title": "Google’s AI search changes upended online publishing",
+      "url": "https://www.theverge.com/column/1017983/google-ai-search-online-publishing",
+      "source": "The Verge",
+      "date": "2026-10-25T12:00:00.000Z",
+      "snippet": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more about AI's impact on the web, follow Emma Roth. The Stepback arrives in our subscribers' inboxes on Sunday at 8AM "
+    },
+    {
+      "id": "b82b80f16782",
+      "title": "Nikon photography contest winner loses title after scientists spot signs of AI",
+      "url": "https://www.techspot.com/news/114171-nikon-photography-contest-winner-loses-title-after-scientists.html",
+      "source": "Hacker News",
+      "date": "2026-10-25T09:51:17.000Z",
+      "snippet": "141 points · 78 comments on HN"
+    },
     {
       "id": "2325af3360e0",
       "title": "Cerebras Deploys Trillion-Parameter AI Models",
       "url": "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras",
       "source": "Hacker News",
       "date": "2026-10-25T01:33:49.000Z",
-      "snippet": "179 points · 60 comments on HN"
+      "snippet": "356 points · 135 comments on HN"
+    },
+    {
+      "id": "a9e08b18c9f8",
+      "title": "Show HN: Hurston-1 open source TTS that speak Southern American and Afro-English",
+      "url": "https://huggingface.co/destined/hurston-1",
+      "source": "Hacker News",
+      "date": "2026-10-25T01:30:13.000Z",
+      "snippet": "61 points · 25 comments on HN"
+    },
+    {
+      "id": "e66601c5b3c1",
+      "title": "Show HN: ADRs for AI – Deliberation records for human–AI work, versioned in Git",
+      "url": "https://adrs.systems",
+      "source": "Hacker News",
+      "date": "2026-10-25T00:43:47.000Z",
+      "snippet": "53 points · 30 comments on HN"
     },
     {
       "id": "8f5707e9a13c",
@@ -16,7 +136,7 @@
       "url": "https://www.apricitas.io/p/ai-and-the-fall-of-the-creative-class",
       "source": "Hacker News",
       "date": "2026-10-24T23:11:54.000Z",
-      "snippet": "371 points · 378 comments on HN"
+      "snippet": "526 points · 562 comments on HN"
     },
     {
       "id": "0509c80e85fb",
@@ -32,7 +152,7 @@
       "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
       "source": "Hacker News",
       "date": "2026-10-24T19:47:19.000Z",
-      "snippet": "558 points · 583 comments on HN"
+      "snippet": "629 points · 660 comments on HN"
     },
     {
       "id": "b0af889ad05f",
@@ -56,7 +176,7 @@
       "url": "https://dreamlabs.ai/research/dream-1/",
       "source": "Hacker News",
       "date": "2026-10-24T18:23:24.000Z",
-      "snippet": "168 points · 77 comments on HN"
+      "snippet": "180 points · 77 comments on HN"
     },
     {
       "id": "81c8fd74d5e2",
@@ -64,7 +184,7 @@
       "url": "https://arxiv.org/abs/2610.29162",
       "source": "Hacker News",
       "date": "2026-10-24T18:04:57.000Z",
-      "snippet": "204 points · 171 comments on HN"
+      "snippet": "247 points · 199 comments on HN"
     },
     {
       "id": "35d668020c86",
@@ -96,7 +216,23 @@
       "url": "https://torrentfreak.com/ai-assisted-paper-on-z-library-cites-a-torrentfreak-article-that-doesnt-exist/",
       "source": "Hacker News",
       "date": "2026-10-24T11:18:54.000Z",
-      "snippet": "96 points · 52 comments on HN"
+      "snippet": "97 points · 61 comments on HN"
+    },
+    {
+      "id": "c873206e381f",
+      "title": "ThinkRail from JetBrains",
+      "url": "https://thinkrail.ai/",
+      "source": "Hacker News",
+      "date": "2026-10-24T08:08:42.000Z",
+      "snippet": "57 points · 83 comments on HN"
+    },
+    {
+      "id": "0436d405cacf",
+      "title": "Broccoli2Shell: Brotli decoder RCE in Node.js, Python and more",
+      "url": "https://broccoli2shell.com/",
+      "source": "Hacker News",
+      "date": "2026-10-24T08:06:39.000Z",
+      "snippet": "397 points · 213 comments on HN"
     },
     {
       "id": "69696c78864a",
@@ -120,7 +256,7 @@
       "url": "https://nitter.click/AikidoSecurity/status/2113759110625906950?__galadriel=lPmlGl9id4oAd5UeBwMhlYKArHyr6lR2IDGujPwB5HV2kQ1aLoPWFd5A9sGuzNcmrp8fUso8qygmHcKTDZ8MNHWqQ3bDJcycV87xp_0VypzQLYj6O_RRHlZuQqj33oASGY2YLSoAiMjeOZN40h7Stf8AG7DPrGZbAPVKUXy36HoMudRbvwF3_r2uYNmfJMhpKzywQDM6Ab8",
       "source": "Hacker News",
       "date": "2026-10-23T23:30:17.000Z",
-      "snippet": "183 points · 97 comments on HN"
+      "snippet": "186 points · 95 comments on HN"
     },
     {
       "id": "b15a6fb9671b",
@@ -192,7 +328,7 @@
       "url": "https://www.jefftk.com/p/air-purifiers-as-white-noise-machines",
       "source": "Hacker News",
       "date": "2026-10-23T17:28:36.000Z",
-      "snippet": "175 points · 162 comments on HN"
+      "snippet": "176 points · 170 comments on HN"
     },
     {
       "id": "e44aee2d4402",
@@ -248,7 +384,7 @@
       "url": "https://www.thisandthat.chat/enron/",
       "source": "Hacker News",
       "date": "2026-10-23T12:02:53.000Z",
-      "snippet": "67 points · 56 comments on HN"
+      "snippet": "70 points · 56 comments on HN"
     },
     {
       "id": "fa80f1a6b4b7",
@@ -272,7 +408,7 @@
       "url": "https://berget.ai/en/blog/per-request-co2-press-release",
       "source": "Hacker News",
       "date": "2026-10-23T06:41:11.000Z",
-      "snippet": "142 points · 157 comments on HN"
+      "snippet": "143 points · 157 comments on HN"
     },
     {
       "id": "94cd4ca5fb66",
@@ -304,7 +440,7 @@
       "url": "https://www.economist.com/finance-and-economics/2026/10/22/ai-compute-is-the-new-oil-and-needs-a-new-market",
       "source": "Hacker News",
       "date": "2026-10-22T23:45:16.000Z",
-      "snippet": "53 points · 62 comments on HN"
+      "snippet": "53 points · 63 comments on HN"
     },
     {
       "id": "d73c3fbf5a8b",
@@ -328,7 +464,7 @@
       "url": "https://abcnews.com/Politics/americans-ai-bad-society-oppose-data-centers-abcpostipsos/story?id=137414085",
       "source": "Hacker News",
       "date": "2026-10-22T20:51:23.000Z",
-      "snippet": "91 points · 67 comments on HN"
+      "snippet": "91 points · 68 comments on HN"
     },
     {
       "id": "29a87826b845",
@@ -400,7 +536,7 @@
       "url": "https://github.com/maxilevi/project-hedra/tree/pre-ai",
       "source": "Hacker News",
       "date": "2026-10-22T18:44:36.000Z",
-      "snippet": "236 points · 48 comments on HN"
+      "snippet": "239 points · 48 comments on HN"
     },
     {
       "id": "4baf690dfb57",
@@ -505,142 +641,6 @@
       "source": "Hacker News",
       "date": "2026-10-22T16:08:00.000Z",
       "snippet": "650 points · 623 comments on HN"
-    },
-    {
-      "id": "9d72639f5e00",
-      "title": "Uber puts all 30,000 employees on ChatGPT Work",
-      "url": "https://techcrunch.com/2026/10/22/uber-puts-all-30000-employees-on-chatgpt-work/",
-      "source": "TechCrunch",
-      "date": "2026-10-22T16:00:00.000Z",
-      "snippet": "The ride-share giant previously deployed a much smaller pilot for ChatGPT Work but is now taking the enterprise agent company-wide."
-    },
-    {
-      "id": "540e896edf86",
-      "title": "OpenAI, Anthropic, and Nvidia had record lobbying quarters",
-      "url": "https://www.theverge.com/policy/1016585/openai-anthropic-nvidia-lobbying-records",
-      "source": "The Verge",
-      "date": "2026-10-22T15:50:30.000Z",
-      "snippet": "It was a busy summer for AI lobbyists. Anthropic, OpenAI, and Nvidia each had their highest-spending lobbying quarter between July and September, federal disclosures show. Nvidia spent the most of the group at $2.2 milli"
-    },
-    {
-      "id": "c625905b3719",
-      "title": "Hackers got a four-day head start on epic PHP2Shell vulnerability",
-      "url": "https://arstechnica.com/security/2026/10/hackers-got-a-four-day-head-start-on-epic-php2shell-vulnerability/",
-      "source": "Ars Technica",
-      "date": "2026-10-22T15:25:02.000Z",
-      "snippet": "Hackers were already probing the bug before defenders were told it existed."
-    },
-    {
-      "id": "0bffbef0359b",
-      "title": "Spotify’s current AI bet is about being the music service that agents choose",
-      "url": "https://techcrunch.com/2026/10/22/spotifys-current-ai-bet-is-about-being-the-music-service-that-agents-choose/",
-      "source": "TechCrunch",
-      "date": "2026-10-22T15:03:58.000Z",
-      "snippet": "Spotify co-CEO Gustav Söderström explains why the rise of AI agents could be good news for the music service."
-    },
-    {
-      "id": "e66e9796ba6b",
-      "title": "Beyond tree cover: mapping the world’s forest types",
-      "url": "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/",
-      "source": "Google DeepMind",
-      "date": "2026-10-22T14:30:24.000Z",
-      "snippet": "A global map categorizing every 10-meter patch of land on Earth into distinct forest types."
-    },
-    {
-      "id": "6aa970c38b49",
-      "title": "Claude Duet app is Anthropic’s bet on agents",
-      "url": "https://techcrunch.com/2026/10/22/claude-duet-app-is-anthropics-bet-on-agents/",
-      "source": "TechCrunch",
-      "date": "2026-10-22T13:53:26.000Z",
-      "snippet": "Claude Duet is available through waitlist for Pro and Max plan users."
-    },
-    {
-      "id": "a4344d39d17a",
-      "title": "Nirva raises $33M for a pendant that only listens to you",
-      "url": "https://techcrunch.com/2026/10/22/nirva-raises-33m-for-a-pendant-that-only-listens-to-you/",
-      "source": "TechCrunch",
-      "date": "2026-10-22T13:26:52.000Z",
-      "snippet": "Nirva will ship its $249 ambient AI pendant by the end of the year."
-    },
-    {
-      "id": "779cc50e4b9b",
-      "title": "DeepSeek reportedly raises $15B days after US restrictions",
-      "url": "https://techcrunch.com/2026/10/22/deepseek-reportedly-raises-15b-days-after-us-restrictions/",
-      "source": "TechCrunch",
-      "date": "2026-10-22T13:11:13.000Z",
-      "snippet": "DeepSeek has reportedly raised $15 billion in one of China's largest funding rounds, just days after the U.S. ordered federal agencies to remove its technology over national security concerns."
-    },
-    {
-      "id": "e106504eaece",
-      "title": "Eiliko maker says it’s hiring an ‘’independent security firm’ after Verge report on its insecure robots",
-      "url": "https://www.theverge.com/news/1015824/eiliko-energize-lab-statement-on-robot-hack-breach",
-      "source": "The Verge",
-      "date": "2026-10-22T11:00:00.000Z",
-      "snippet": "Eiliko, a cute robot charm you can hang on your bag with built-in AI conversations, turned out to be a security nightmare. It told owners that \"your secrets are safe with me,\" but hackers could easily read complete trans"
-    },
-    {
-      "id": "63c31ca523f9",
-      "title": "What FDE means at OpenAI",
-      "url": "https://openai.com/index/forward-deployed-engineering-means",
-      "source": "OpenAI",
-      "date": "2026-10-22T06:00:00.000Z",
-      "snippet": "What forward deployed engineering means at OpenAI"
-    },
-    {
-      "id": "ba6fa07d677a",
-      "title": "Uber brings ChatGPT Work to all employees with OpenAI",
-      "url": "https://openai.com/index/uber-chatgpt-work-rollout",
-      "source": "OpenAI",
-      "date": "2026-10-22T00:00:00.000Z",
-      "snippet": "Uber is rolling out ChatGPT Work to more than 30,000 employees, helping teams research, analyze data, create presentations, and complete complex workflows."
-    },
-    {
-      "id": "5d41f3374c71",
-      "title": "Airbnb bans making guests do dishes and take out the trash",
-      "url": "https://www.theverge.com/tech/1015844/airbnb-chores-house-rules-update",
-      "source": "Hacker News",
-      "date": "2026-10-21T23:38:32.000Z",
-      "snippet": "261 points · 235 comments on HN"
-    },
-    {
-      "id": "25443172439e",
-      "title": "Blackstone’s Jas Khaira says fears over AI-buildout debt are overblown",
-      "url": "https://techcrunch.com/2026/10/21/blackstones-jas-khaira-says-fears-over-ai-buildout-debt-are-overblown/",
-      "source": "TechCrunch",
-      "date": "2026-10-21T22:51:22.000Z",
-      "snippet": "Blackstone’s AI head on why the PE giant isn't panicked by market jitters."
-    },
-    {
-      "id": "c1d080de5b43",
-      "title": "Meta wants to pay for its broad AI buildout with a newly created class of stock",
-      "url": "https://techcrunch.com/2026/10/21/meta-wants-to-pay-for-its-broad-ai-buildout-with-a-newly-created-class-of-stock/",
-      "source": "TechCrunch",
-      "date": "2026-10-21T22:45:34.000Z",
-      "snippet": "The social media giant is planning a new stock strategy to help power its broad investments in AI models and services."
-    },
-    {
-      "id": "eaa3fbf80042",
-      "title": "Data centers could erase decades of air quality gains",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1015958/data-center-pollution-rising-report",
-      "source": "The Verge",
-      "date": "2026-10-21T22:33:44.000Z",
-      "snippet": "A rush of new data centers could bring air pollution roaring back to levels not seen since the 2000s in Texas, which has become ground zero for the physical infrastructure behind generative AI. New and proposed data cent"
-    },
-    {
-      "id": "86bbef590f28",
-      "title": "Meta to create a new class of shares to fund AI push",
-      "url": "https://www.theverge.com/tech/1015799/meta-shares-class-ai-q3-2026-earnings",
-      "source": "The Verge",
-      "date": "2026-10-21T21:30:02.000Z",
-      "snippet": "Meta says it's issuing a new class of shares to fund its AI initiatives. As part of its third-quarter earnings report released on Wednesday, the company says the non-voting stock will also go toward potential acquisition"
-    },
-    {
-      "id": "063c29a16ff7",
-      "title": "TechCrunch Founder Summit 2026: Everything you need to know",
-      "url": "https://techcrunch.com/2026/10/21/techcrunch-founder-summit-2026-everything-you-need-to-know/",
-      "source": "TechCrunch",
-      "date": "2026-10-21T21:16:20.000Z",
-      "snippet": "TechCrunch Founder Summit is a full-day gathering in Boston on November 4 where founders across all stages connect with top VCs and experienced entrepreneurs to gain tactical insights on building and scaling their compan"
     }
   ]
 }
