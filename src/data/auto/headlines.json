@@ -1,14 +1,278 @@
 {
-  "updated": "2026-10-26T12:15:00.240Z",
+  "updated": "2026-10-27T11:35:40.354Z",
   "count": 80,
   "items": [
+    {
+      "id": "b007bafd9ff1",
+      "title": "Nvidia backs Indian startup helping companies run AI models with fewer GPUs",
+      "url": "https://techcrunch.com/2026/10/27/nvidia-backs-indian-startup-helping-companies-run-ai-models-with-fewer-gpus/",
+      "source": "TechCrunch",
+      "date": "2026-10-27T11:00:00.000Z",
+      "snippet": "Simplismart says its annualized revenue run rate has grown 14-fold in six months, with the U.S. accounting for more than half its revenue."
+    },
+    {
+      "id": "415aa97d276f",
+      "title": "Data center backlash is uniting America",
+      "url": "https://www.theverge.com/policy/1019152/data-centers-midterm-elections",
+      "source": "The Verge",
+      "date": "2026-10-27T10:00:00.000Z",
+      "snippet": "If there's one issue that seems to activate all kinds of voters in 2026, it's data centers. The rapid buildout of these massive server storage facilities - and the infrastructure construction and expenses that come with "
+    },
+    {
+      "id": "eb967c2830c0",
+      "title": "The Mythical Man-Month in the Age of AI",
+      "url": "https://j11g.com/the-mythical-man-month-in-the-age-of-ai",
+      "source": "Hacker News",
+      "date": "2026-10-27T06:25:37.000Z",
+      "snippet": "193 points · 137 comments on HN"
+    },
+    {
+      "id": "858bf7d244f3",
+      "title": "How OpenAI turned its coding tools into dots, an always-on personal assistant",
+      "url": "https://techcrunch.com/2026/10/26/how-openai-turned-its-coding-tools-into-dots-an-always-on-personal-assistant/",
+      "source": "TechCrunch",
+      "date": "2026-10-27T02:00:00.000Z",
+      "snippet": "Alexander Embiricos, the OpenAI executive responsible for dots, never wants to have a meeting with someone else's AI agent."
+    },
+    {
+      "id": "543832a6d832",
+      "title": "Cohere says Alibaba’s Qwen model tried to send a file to Beijing",
+      "url": "https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/",
+      "source": "TechCrunch",
+      "date": "2026-10-27T01:12:21.000Z",
+      "snippet": "An AI model said it wouldn’t use any tools, then tried to send something to a server in Beijing anyway, and while researchers say it’s probably a training quirk and not espionage, the whole thing has people asking how mu"
+    },
+    {
+      "id": "51b6dc021077",
+      "title": "GPT-6.1 Terra",
+      "url": "https://simonwillison.net/2026/Oct/26/gpt-61-terra/",
+      "source": "Simon Willison",
+      "date": "2026-10-26T23:53:07.000Z",
+      "snippet": "GPT-6.1 Terra It's always interesting to note which aspects of a new model are emphasized in the release announcement. In the case of GPT-6.1 Terra, OpenAI went with visual reasoning and computer use: We’re introducing G"
+    },
+    {
+      "id": "bba291662c45",
+      "title": "OpenAI announces three big science discoveries and a new way to work with academics",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics",
+      "source": "The Verge",
+      "date": "2026-10-26T23:34:58.000Z",
+      "snippet": "Less than a month after its mass release of hundreds of manuscripts that it said contained solutions to long-standing mathematics questions, OpenAI is back with three more \"major\" discoveries in math, computer science, a"
+    },
+    {
+      "id": "bfdba109b967",
+      "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses)",
+      "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
+      "source": "Hacker News",
+      "date": "2026-10-26T22:41:48.000Z",
+      "snippet": "142 points · 47 comments on HN"
+    },
+    {
+      "id": "250e5d8f3024",
+      "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
+      "url": "https://openai.com/index/greptile-code-review-codex-astra",
+      "source": "OpenAI",
+      "date": "2026-10-26T22:00:00.000Z",
+      "snippet": "How Greptile uses GPT-6 Astra to test user workflows, Daybreak to strengthen security, and Codex to reduce rework."
+    },
+    {
+      "id": "96b9f45bb2e6",
+      "title": "Anthropic is burning gas to feed the AI boom",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1018994/anthropic-ipo-ai-data-center-energy-climate-risk",
+      "source": "The Verge",
+      "date": "2026-10-26T21:45:31.000Z",
+      "snippet": "As it prepares to go public, Anthropic's S-1 filing makes generative AI's methane dependency glaringly obvious. \"Competition for access to electrical supply and data center locations with adequate power availability is i"
+    },
+    {
+      "id": "51591f2531c3",
+      "title": "Proton to 'Re-Interview' Staff About AI to See Who Gets to Keep Their Job",
+      "url": "https://www.404media.co/proton-to-re-interview-staff-about-ai-to-see-who-gets-to-keep-their-job/",
+      "source": "Hacker News",
+      "date": "2026-10-26T21:13:59.000Z",
+      "snippet": "68 points · 30 comments on HN"
+    },
+    {
+      "id": "5d5ff332a0b6",
+      "title": "Apple releases iOS and macOS 27.2 with new Siri AI features, new Music logo",
+      "url": "https://arstechnica.com/apple/2026/10/apple-releases-ios-and-macos-27-2-with-new-siri-ai-features-new-music-logo/",
+      "source": "Ars Technica",
+      "date": "2026-10-26T20:04:16.000Z",
+      "snippet": "Included is the ability to limit which applications Siri can directly access."
+    },
+    {
+      "id": "830f46d3a8fd",
+      "title": "ICE plan to buy robot dogs spurs protest from hundreds of Boston Dynamics employees",
+      "url": "https://arstechnica.com/ai/2026/10/boston-dynamics-employees-want-to-block-sale-of-robot-dogs-to-ice/",
+      "source": "Ars Technica",
+      "date": "2026-10-26T18:50:41.000Z",
+      "snippet": "US robotics company stands by ICE deal as more than 300 employees warn of risk."
+    },
+    {
+      "id": "2500a6aad874",
+      "title": "The RealReal won’t let AI agents hog designer clothing",
+      "url": "https://www.theverge.com/news/1018713/meta-muse-agentic-shopping-ai-the-realreal",
+      "source": "The Verge",
+      "date": "2026-10-26T17:30:55.000Z",
+      "snippet": "The RealReal, a secondhand luxury fashion consignment retailer, said it's updating its bot defense system, effectively making it harder for AI agents to shop on its site. The change comes days after The Verge reported th"
+    },
+    {
+      "id": "71784ce3534e",
+      "title": "Highway thieves are spoofing GPS to steal millions in data center-bound cargo",
+      "url": "https://arstechnica.com/tech-policy/2026/10/highway-thieves-are-spoofing-gps-to-steal-millions-in-data-center-bound-cargo/",
+      "source": "Ars Technica",
+      "date": "2026-10-26T17:26:36.000Z",
+      "snippet": "Investigators explain how highway thieves stole $100M in data center equipment."
+    },
+    {
+      "id": "4a8f41d180d7",
+      "title": "Five weird details from Anthropic’s IPO filing",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1018738/anthropic-ipo-s1-filing-weird-details",
+      "source": "The Verge",
+      "date": "2026-10-26T17:10:23.000Z",
+      "snippet": "Anthropic has finally filed its S-1 prospectus with the SEC, a document designed to give investors a look under the hood of its business, from how much its executives are making and plans for spending its IPO billions to"
+    },
+    {
+      "id": "0c7a0e584035",
+      "title": "Anthropic’s IPO filing reveals its strategy for keeping enterprise customers hooked",
+      "url": "https://techcrunch.com/2026/10/26/anthropics-ipo-filing-reveals-its-strategy-for-keeping-enterprise-customers-hooked/",
+      "source": "TechCrunch",
+      "date": "2026-10-26T16:49:42.000Z",
+      "snippet": "Anthropic’s S-1 shows more than half of its $100,000-plus customers now use both the Claude Platform and a first-party app, a cross-selling playbook reminiscent of Amazon that’s making enterprise customers stickier."
+    },
+    {
+      "id": "4a24365e960e",
+      "title": "SpaceX locks in $40B GPU financing deal with Apollo",
+      "url": "https://techcrunch.com/2026/10/26/spacex-locks-in-40b-gpu-financing-deal-with-apollo/",
+      "source": "TechCrunch",
+      "date": "2026-10-26T16:46:36.000Z",
+      "snippet": "The financing gives SpaceX another way to fund its rapidly expanding AI ambitions without relying solely on traditional debt markets."
+    },
+    {
+      "id": "ce5ce5fc43fb",
+      "title": "Concerning behavior from a popular open-weight AI model",
+      "url": "https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model",
+      "source": "Hacker News",
+      "date": "2026-10-26T16:35:44.000Z",
+      "snippet": "306 points · 120 comments on HN"
+    },
+    {
+      "id": "8cfee209e93b",
+      "title": "Show HN: Hob - Open-source, on device alternative to Claude Cowork and ChatGPT",
+      "url": "https://github.com/FrigadeHQ/hob",
+      "source": "Hacker News",
+      "date": "2026-10-26T16:12:29.000Z",
+      "snippet": "148 points · 34 comments on HN"
+    },
+    {
+      "id": "b8f740314eab",
+      "title": "Microsoft offers buyouts to 60,000 employees",
+      "url": "https://www.theverge.com/tech/1018666/microsoft-expands-buyouts-60000-employees-eligible",
+      "source": "The Verge",
+      "date": "2026-10-26T15:58:27.000Z",
+      "snippet": "Microsoft is offering voluntary buyouts to up to 60,000 employees across the US, UK, Canada, and India. In a message to employees, Microsoft chief people officer Amy Coleman writes that this gives staff members \"the oppo"
+    },
+    {
+      "id": "2c43c284058f",
+      "title": "Anthropic officially files for its public debut",
+      "url": "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/",
+      "source": "TechCrunch",
+      "date": "2026-10-26T14:35:22.000Z",
+      "snippet": "Anthropic has officially filed for an IPO, revealing soaring revenue, mounting losses, major enterprise adoption, and an unusual governance structure designed to preserve founder control and its AI safety mission."
+    },
+    {
+      "id": "6a47f3e0c881",
+      "title": "Tesla gave up the EV crown. Now it wants to win the autonomy race.",
+      "url": "https://arstechnica.com/cars/2026/10/tesla-wants-ai-and-software-to-be-its-next-profit-engine/",
+      "source": "Ars Technica",
+      "date": "2026-10-26T14:30:27.000Z",
+      "snippet": "Tesla hopes autonomy subscriptions can deliver the margins car sales cannot."
+    },
+    {
+      "id": "f16aefe89a6e",
+      "title": "Working with academic communities to build scientific understanding",
+      "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+      "source": "OpenAI",
+      "date": "2026-10-26T14:30:00.000Z",
+      "snippet": "OpenAI shares model results on the Kakeya conjecture, Exponential Time Hypothesis, and quantum chromodynamics—and how researchers can verify and build on them."
+    },
+    {
+      "id": "df88ce95d957",
+      "title": "Kevin Roose is AGI-pilled. Why aren’t you?",
+      "url": "https://www.theverge.com/podcast/1018264/kevin-roose-the-agi-chronicles-machine-gods-podcast-youtube-openai-anthropic",
+      "source": "The Verge",
+      "date": "2026-10-26T14:00:00.000Z",
+      "snippet": "Today, I’m talking to Kevin Roose, journalist and author of the new book The AGI Chronicles, which details the recent and explosive transformation of the AI industry. Kevin was a longtime New York Times reporter and host"
+    },
+    {
+      "id": "1a1d4bf2fc11",
+      "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+      "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+      "source": "OpenAI",
+      "date": "2026-10-26T13:45:00.000Z",
+      "snippet": "CodeRabbit uses GPT-6.1 Sol to investigate security risks across complex codebases. Its security agent helps developers review findings and proposed fixes."
+    },
+    {
+      "id": "a0064ee100f0",
+      "title": "Anthropic’s IPO filing lays out a plan to ‘revolutionize every area of human endeavor’ with AI",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1018476/anthropic-ipo-details-s1-filed-sec",
+      "source": "The Verge",
+      "date": "2026-10-26T13:32:49.000Z",
+      "snippet": "Anthropic has filed its S-1 prospectus with the Securities and Exchange Commission, preparing the company behind Claude to beat OpenAI to the punch with an IPO. In a filing with the SEC, Anthropic said it plans to list o"
+    },
+    {
+      "id": "9c0a98fa46a8",
+      "title": "Can AI help solve the COBOL code crisis?",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1018434/cobol-migration-legacy-code-openai-anthropic",
+      "source": "The Verge",
+      "date": "2026-10-26T13:15:00.000Z",
+      "snippet": "What do the IRS, banks, airlines, and government infrastructure around the world have in common? They're all running on systems propped up by antique computer code that nobody dares touch, lest everything come crashing d"
+    },
+    {
+      "id": "6da005897fea",
+      "title": "Brown student maps the hidden global labor powering AI",
+      "url": "https://www.brown.edu/news/2026-10-26/ai-data-workers",
+      "source": "Hacker News",
+      "date": "2026-10-26T12:58:27.000Z",
+      "snippet": "179 points · 171 comments on HN"
+    },
+    {
+      "id": "64d59b55a8fb",
+      "title": "ChatGPT’s expanding world of work",
+      "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
+      "source": "OpenAI",
+      "date": "2026-10-26T10:00:00.000Z",
+      "snippet": "Explore OpenAI Signals data on 165 work activities across nearly 100 countries, revealing how people use ChatGPT for work and how usage changes over time."
+    },
+    {
+      "id": "eb7708c5f537",
+      "title": "How Fanatics and OpenAI streamline the fan experience",
+      "url": "https://openai.com/index/fanatics-streamline-fan-experience",
+      "source": "OpenAI",
+      "date": "2026-10-26T07:00:00.000Z",
+      "snippet": "Fanatics uses OpenAI to help fans complete their game-day outfits with Shop the Look. Testing across roughly 30,000 MLB products showed 10% higher engagement."
+    },
+    {
+      "id": "8f2f08b6e197",
+      "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
+      "url": "https://openai.com/index/openai-cut-incident-investigation",
+      "source": "OpenAI",
+      "date": "2026-10-26T07:00:00.000Z",
+      "snippet": "See how OpenAI engineers use Codex Ultrafast to investigate incidents in minutes. Explore faster security analysis, code refactoring, and daily workflows."
+    },
     {
       "id": "1bb180ff2772",
       "title": "Cognitive Mercantilism: AI panic resembles fears of early capitalism",
       "url": "https://contraptions.venkateshrao.com/p/cognitive-mercantilism",
       "source": "Hacker News",
       "date": "2026-10-26T04:11:40.000Z",
-      "snippet": "69 points · 75 comments on HN"
+      "snippet": "80 points · 114 comments on HN"
+    },
+    {
+      "id": "1758535ac6be",
+      "title": "Introducing GPT-6.1 Terra",
+      "url": "https://openai.com/index/introducing-gpt-6-1-terra",
+      "source": "OpenAI",
+      "date": "2026-10-26T00:00:00.000Z",
+      "snippet": "Bringing fast and capable computer use to everyone"
     },
     {
       "id": "600522d60bd8",
@@ -16,7 +280,7 @@
       "url": "https://www.businessinsider.com/apollo-ai-zero-financial-payoff-corporate-america-economic-analysis-2026-10",
       "source": "Hacker News",
       "date": "2026-10-25T22:49:06.000Z",
-      "snippet": "60 points · 37 comments on HN"
+      "snippet": "72 points · 58 comments on HN"
     },
     {
       "id": "a6feae291b1a",
@@ -32,7 +296,7 @@
       "url": "https://vithushansylvester.com/writing/the-real-impact-of-ai-on-tech-jobs",
       "source": "Hacker News",
       "date": "2026-10-25T18:42:23.000Z",
-      "snippet": "57 points · 25 comments on HN"
+      "snippet": "88 points · 56 comments on HN"
     },
     {
       "id": "71334093a413",
@@ -48,7 +312,7 @@
       "url": "https://www.theatlantic.com/ideas/2026/10/ai-math-human-future/689133/",
       "source": "Hacker News",
       "date": "2026-10-25T16:31:21.000Z",
-      "snippet": "64 points · 87 comments on HN"
+      "snippet": "70 points · 129 comments on HN"
     },
     {
       "id": "2af7003f0e2f",
@@ -56,7 +320,7 @@
       "url": "https://www.dailycal.org/news/campus/academics/ai-use-leads-uc-berkeley-math-professor-to-see-no-point-in-grading-homework/article_bdf1eae2-c08b-491f-b9f1-81a7cea177de.html",
       "source": "Hacker News",
       "date": "2026-10-25T16:28:26.000Z",
-      "snippet": "221 points · 320 comments on HN"
+      "snippet": "237 points · 328 comments on HN"
     },
     {
       "id": "4262d71f08be",
@@ -72,7 +336,7 @@
       "url": "https://www.reddit.com/r/opensource/comments/1xelcuf/your_tokens_arent_valuable_no_more_ai",
       "source": "Hacker News",
       "date": "2026-10-25T14:05:03.000Z",
-      "snippet": "88 points · 111 comments on HN"
+      "snippet": "90 points · 129 comments on HN"
     },
     {
       "id": "b366ba776fde",
@@ -88,7 +352,7 @@
       "url": "https://twitter.com/boneGPT/status/2114035719853265264",
       "source": "Hacker News",
       "date": "2026-10-25T12:47:20.000Z",
-      "snippet": "98 points · 78 comments on HN"
+      "snippet": "98 points · 79 comments on HN"
     },
     {
       "id": "99c99157c7fa",
@@ -104,7 +368,7 @@
       "url": "https://www.techspot.com/news/114171-nikon-photography-contest-winner-loses-title-after-scientists.html",
       "source": "Hacker News",
       "date": "2026-10-25T09:51:17.000Z",
-      "snippet": "141 points · 78 comments on HN"
+      "snippet": "144 points · 88 comments on HN"
     },
     {
       "id": "2325af3360e0",
@@ -112,7 +376,7 @@
       "url": "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras",
       "source": "Hacker News",
       "date": "2026-10-25T01:33:49.000Z",
-      "snippet": "356 points · 135 comments on HN"
+      "snippet": "366 points · 142 comments on HN"
     },
     {
       "id": "a9e08b18c9f8",
@@ -120,7 +384,7 @@
       "url": "https://huggingface.co/destined/hurston-1",
       "source": "Hacker News",
       "date": "2026-10-25T01:30:13.000Z",
-      "snippet": "61 points · 25 comments on HN"
+      "snippet": "66 points · 25 comments on HN"
     },
     {
       "id": "e66601c5b3c1",
@@ -128,7 +392,7 @@
       "url": "https://adrs.systems",
       "source": "Hacker News",
       "date": "2026-10-25T00:43:47.000Z",
-      "snippet": "53 points · 30 comments on HN"
+      "snippet": "66 points · 54 comments on HN"
     },
     {
       "id": "8f5707e9a13c",
@@ -136,7 +400,7 @@
       "url": "https://www.apricitas.io/p/ai-and-the-fall-of-the-creative-class",
       "source": "Hacker News",
       "date": "2026-10-24T23:11:54.000Z",
-      "snippet": "526 points · 562 comments on HN"
+      "snippet": "541 points · 582 comments on HN"
     },
     {
       "id": "0509c80e85fb",
@@ -147,12 +411,20 @@
       "snippet": "BBC's Blue Planet III is looking to prove its authenticity by leaving in the less-than-perfect shots. Previous incarnations of the nature series were defined by their gorgeous, crystal-clear footage that seemed almost to"
     },
     {
+      "id": "770c71828f23",
+      "title": "Will AI expose the rickety infrastructure of the internet?",
+      "url": "https://techcrunch.com/2026/10/24/will-ai-expose-the-rickety-infrastructure-of-the-internet/",
+      "source": "TechCrunch",
+      "date": "2026-10-24T20:15:33.000Z",
+      "snippet": "The moment you realize the internet is \"held together by glue and dreams.\""
+    },
+    {
       "id": "074b7d5e1602",
       "title": "No signs of AI payoff outside the tech sector",
       "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
       "source": "Hacker News",
       "date": "2026-10-24T19:47:19.000Z",
-      "snippet": "629 points · 660 comments on HN"
+      "snippet": "641 points · 668 comments on HN"
     },
     {
       "id": "b0af889ad05f",
@@ -184,7 +456,7 @@
       "url": "https://arxiv.org/abs/2610.29162",
       "source": "Hacker News",
       "date": "2026-10-24T18:04:57.000Z",
-      "snippet": "247 points · 199 comments on HN"
+      "snippet": "255 points · 201 comments on HN"
     },
     {
       "id": "35d668020c86",
@@ -192,7 +464,7 @@
       "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
       "source": "TechCrunch",
       "date": "2026-10-24T16:00:00.000Z",
-      "snippet": "Block said that the voice model can run locally on a MacBook M4 Max"
+      "snippet": "Typically, speech models are paired with a large language model for knowledge retrieval. Block said that Dessa's knowledge stems from the conversational data it has."
     },
     {
       "id": "110fd09f65f2",
@@ -224,7 +496,7 @@
       "url": "https://thinkrail.ai/",
       "source": "Hacker News",
       "date": "2026-10-24T08:08:42.000Z",
-      "snippet": "57 points · 83 comments on HN"
+      "snippet": "57 points · 84 comments on HN"
     },
     {
       "id": "0436d405cacf",
@@ -232,7 +504,7 @@
       "url": "https://broccoli2shell.com/",
       "source": "Hacker News",
       "date": "2026-10-24T08:06:39.000Z",
-      "snippet": "397 points · 213 comments on HN"
+      "snippet": "401 points · 218 comments on HN"
     },
     {
       "id": "69696c78864a",
@@ -260,7 +532,7 @@
     },
     {
       "id": "b15a6fb9671b",
-      "title": "OpenAI says it will no longer train its AI models on the live internet, citing “significant risks”",
+      "title": "OpenAI says it will no longer train its AI models on the live internet, citing ‘significant risks’",
       "url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/",
       "source": "TechCrunch",
       "date": "2026-10-23T23:05:49.000Z",
@@ -304,7 +576,7 @@
       "url": "https://gizmodo.com/microsoft-says-its-new-ai-is-more-than-twice-as-good-at-diagnosing-diseases-as-doctors-2000829562",
       "source": "Hacker News",
       "date": "2026-10-23T19:31:36.000Z",
-      "snippet": "66 points · 58 comments on HN"
+      "snippet": "66 points · 60 comments on HN"
     },
     {
       "id": "0931d3afc7b7",
@@ -320,7 +592,7 @@
       "url": "https://artificialanalysis.ai/models/kimi-k3-1-pro",
       "source": "Hacker News",
       "date": "2026-10-23T18:24:54.000Z",
-      "snippet": "120 points · 41 comments on HN"
+      "snippet": "121 points · 42 comments on HN"
     },
     {
       "id": "baca62f7ff23",
@@ -328,7 +600,7 @@
       "url": "https://www.jefftk.com/p/air-purifiers-as-white-noise-machines",
       "source": "Hacker News",
       "date": "2026-10-23T17:28:36.000Z",
-      "snippet": "176 points · 170 comments on HN"
+      "snippet": "176 points · 172 comments on HN"
     },
     {
       "id": "e44aee2d4402",
@@ -369,278 +641,6 @@
       "source": "The Verge",
       "date": "2026-10-23T16:52:55.000Z",
       "snippet": "Google has updated its privacy policy in a way that could mean you'll start seeing targeted ads based on your personal data if you're using personalized AI features. The update, spotted by Android Authority, adds an exce"
-    },
-    {
-      "id": "d34a3f37bdd3",
-      "title": "Meta delays new business terms after publisher pushback on AI scraping",
-      "url": "https://www.theverge.com/tech/1017450/meta-business-terms-delayed-ai-scraping",
-      "source": "The Verge",
-      "date": "2026-10-23T14:47:41.000Z",
-      "snippet": "Meta is delaying the enforcement of its new business terms after publishers raised concerns that they could allow the company to scrape news sites for AI training, as reported earlier by Fast Company. In a statement to T"
-    },
-    {
-      "id": "901dc42363c4",
-      "title": "Show HN: We had AI write a wiki from 45k Enron emails, every fact cited",
-      "url": "https://www.thisandthat.chat/enron/",
-      "source": "Hacker News",
-      "date": "2026-10-23T12:02:53.000Z",
-      "snippet": "70 points · 56 comments on HN"
-    },
-    {
-      "id": "fa80f1a6b4b7",
-      "title": "Retro gaming is being overrun with AI",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1015430/ai-retro-games-decomp-recomp-port",
-      "source": "The Verge",
-      "date": "2026-10-23T12:00:00.000Z",
-      "snippet": "Retro video games are everywhere lately - especially in places where they aren't supposed to be. Halo in a web browser, Wind Waker on the iPhone, Super Smash Bros. in mixed reality. Over the past month or so, these kinds"
-    },
-    {
-      "id": "48e2274fdf2b",
-      "title": "Securing our frontier model training environment",
-      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
-      "source": "OpenAI",
-      "date": "2026-10-23T10:00:00.000Z",
-      "snippet": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming."
-    },
-    {
-      "id": "8db2bf743b5d",
-      "title": "The same AI request emits 8.5 times more CO2 in Texas than in Sweden",
-      "url": "https://berget.ai/en/blog/per-request-co2-press-release",
-      "source": "Hacker News",
-      "date": "2026-10-23T06:41:11.000Z",
-      "snippet": "143 points · 157 comments on HN"
-    },
-    {
-      "id": "94cd4ca5fb66",
-      "title": "Uber rival inDrive eyes 2027 robotaxi tests in Central Asia with Pony AI and Nvidia",
-      "url": "https://techcrunch.com/2026/10/22/uber-rival-indrive-eyes-2027-robotaxi-tests-in-central-asia-with-pony-ai-and-nvidia/",
-      "source": "TechCrunch",
-      "date": "2026-10-23T04:00:00.000Z",
-      "snippet": "The company plans to begin testing Pony.ai's robotaxis in Kazakhstan's capital in the first half of 2027."
-    },
-    {
-      "id": "085ba153da3b",
-      "title": "Left alone with nothing to do, AI agents started playing",
-      "url": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/",
-      "source": "TechCrunch",
-      "date": "2026-10-23T00:45:37.000Z",
-      "snippet": "MIT researchers marooned 13 AIs on a virtual island, and they responded by inventing games, mourning a lost ring and, eventually, getting better at their jobs."
-    },
-    {
-      "id": "15c1f8ef7a58",
-      "title": "OpenAI and Poland’s NASK partner to advance AI safety and security",
-      "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
-      "source": "OpenAI",
-      "date": "2026-10-23T00:00:00.000Z",
-      "snippet": "OpenAI and Poland’s NASK are partnering on AI safety, security, and technical research to strengthen safeguards and support a more resilient digital ecosystem."
-    },
-    {
-      "id": "cf9afdb4ee3d",
-      "title": "AI compute is the new oil–and needs a new market",
-      "url": "https://www.economist.com/finance-and-economics/2026/10/22/ai-compute-is-the-new-oil-and-needs-a-new-market",
-      "source": "Hacker News",
-      "date": "2026-10-22T23:45:16.000Z",
-      "snippet": "53 points · 63 comments on HN"
-    },
-    {
-      "id": "d73c3fbf5a8b",
-      "title": "OpenAI working on new $30B raise at $1.25T valuation ahead of IPO",
-      "url": "https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/",
-      "source": "TechCrunch",
-      "date": "2026-10-22T22:08:24.000Z",
-      "snippet": "Should OpenAI command an over $1 trillion valuation with this round, it would break records as the most highly valued private company ever."
-    },
-    {
-      "id": "1437b0ebe886",
-      "title": "Canva’s first AI image model plans designs before generating them",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model",
-      "source": "The Verge",
-      "date": "2026-10-22T21:51:25.000Z",
-      "snippet": "Canva is diving even deeper into AI with the launch of an image generation model that competes directly with those from OpenAI, Microsoft, and Google. The model, called Canva Craft, uses a two-stage architecture that all"
-    },
-    {
-      "id": "b7046e0a16fa",
-      "title": "Most Americans Say AI Is Bad for Society, Oppose More Data Centers",
-      "url": "https://abcnews.com/Politics/americans-ai-bad-society-oppose-data-centers-abcpostipsos/story?id=137414085",
-      "source": "Hacker News",
-      "date": "2026-10-22T20:51:23.000Z",
-      "snippet": "91 points · 68 comments on HN"
-    },
-    {
-      "id": "29a87826b845",
-      "title": "Meta’s AI could still scrape news sites, legal experts say",
-      "url": "https://www.theverge.com/tech/1017082/meta-terms-update-ai-training-concerns",
-      "source": "The Verge",
-      "date": "2026-10-22T20:32:05.000Z",
-      "snippet": "Meta has tweaked its business terms to remove language suggesting that it could freely train its AI models on news sites, like The Verge - but legal experts say these changes aren't enough to address their concerns. \"Thi"
-    },
-    {
-      "id": "afeec198fbf5",
-      "title": "Meta turns Muse sharing back on",
-      "url": "https://www.theverge.com/tech/1017066/meta-muse-sharing-back-on-artifiacts",
-      "source": "The Verge",
-      "date": "2026-10-22T20:24:04.000Z",
-      "snippet": "Meta has re-enabled Muse sharing after security researchers had reported that public conversation links could be easy to find. The researchers said they had been able to find Muse pages like a marketing company's interna"
-    },
-    {
-      "id": "3992fc4ed3eb",
-      "title": "Sure, let’s smoosh SpaceX and Tesla together, who cares",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1016879/spacex-tesla-cursed-katamari",
-      "source": "The Verge",
-      "date": "2026-10-22T19:45:00.000Z",
-      "snippet": "Oh sure, SpaceX's credit risk is pretty high because it's about to borrow another $40 billion to spend on Nvidia chips, but who cares about that? SpaceX and Tesla have formed special committees to discuss a merger! The d"
-    },
-    {
-      "id": "ee7ecab28959",
-      "title": "1Password launches a way for AI agents to log in on your behalf without seeing your password",
-      "url": "https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/",
-      "source": "TechCrunch",
-      "date": "2026-10-22T19:07:09.000Z",
-      "snippet": "The new feature allows agents to log into a customer's personal accounts while still protecting the private credentials that secure those accounts."
-    },
-    {
-      "id": "27825e300358",
-      "title": "Build more responsive apps with the Decisions API",
-      "url": "https://openai.com/index/decisions-api",
-      "source": "OpenAI",
-      "date": "2026-10-22T19:00:00.000Z",
-      "snippet": "Fast, focused, low-cost decisions for any application."
-    },
-    {
-      "id": "afbb328c263f",
-      "title": "Canva releases its first image generation model",
-      "url": "https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/",
-      "source": "TechCrunch",
-      "date": "2026-10-22T19:00:00.000Z",
-      "snippet": "Canva is making its new image model available to all users, promising better, more customizable performance at lower costs."
-    },
-    {
-      "id": "1d8d266cc065",
-      "title": "OpenAI makes its Jev competitor widely available as decision model competition heats up",
-      "url": "https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/",
-      "source": "TechCrunch",
-      "date": "2026-10-22T19:00:00.000Z",
-      "snippet": "OpenAI is launching its decision model to the world. Can it compete with the original Jev?"
-    },
-    {
-      "id": "6dc97b2e6ae2",
-      "title": "Discord now formats Markdown previews right",
-      "url": "https://www.theverge.com/news/1017012/discord-markdown-previews-organize-servers-channels",
-      "source": "The Verge",
-      "date": "2026-10-22T18:58:19.000Z",
-      "snippet": "Discord's latest update released today has a big improvement for Markdown previews: they should now render correctly instead of with \"a bunch of symbols,\" according to the company. LLMs and AI agents often rely on Markdo"
-    },
-    {
-      "id": "9eefcb402ccc",
-      "title": "Hedra is a 3D open world game I wrote from scratch while in highschool",
-      "url": "https://github.com/maxilevi/project-hedra/tree/pre-ai",
-      "source": "Hacker News",
-      "date": "2026-10-22T18:44:36.000Z",
-      "snippet": "239 points · 48 comments on HN"
-    },
-    {
-      "id": "4baf690dfb57",
-      "title": "Microsoft’s Mustafa Suleyman says its AI outperforms doctors on hard cases as he chases ‘medical superintelligence’",
-      "url": "https://techcrunch.com/2026/10/22/microsofts-mustafa-suleyman-says-its-ai-outperforms-doctors-on-hard-cases-as-he-chases-medical-superintelligence/",
-      "source": "TechCrunch",
-      "date": "2026-10-22T18:43:53.000Z",
-      "snippet": "Microsoft’s new AI diagnostic system beat generalist doctors on hard cases, according to a study in Science. But most of the improvement seems to come from the AI models underneath, not from Microsoft’s system itself."
-    },
-    {
-      "id": "5521316bcdc5",
-      "title": "Show HN: UI micro interactions prompts for AI",
-      "url": "https://www.typeui.sh/micro-interactions",
-      "source": "Hacker News",
-      "date": "2026-10-22T18:32:57.000Z",
-      "snippet": "80 points · 46 comments on HN"
-    },
-    {
-      "id": "a6d46048e1fc",
-      "title": "Award-winning AI literature",
-      "url": "https://jamesyu.org/award-winning-ai-literature/",
-      "source": "Hacker News",
-      "date": "2026-10-22T18:28:26.000Z",
-      "snippet": "66 points · 76 comments on HN"
-    },
-    {
-      "id": "a89c1639c81c",
-      "title": "AI and the Enclosure of the Scientific Commons",
-      "url": "https://arxiv.org/abs/2610.27251",
-      "source": "Hacker News",
-      "date": "2026-10-22T18:28:16.000Z",
-      "snippet": "140 points · 81 comments on HN"
-    },
-    {
-      "id": "2c1b17b37189",
-      "title": "In Meta’s version of the future, I’ll have my Muse call your Muse",
-      "url": "https://www.theverge.com/tech/1016905/meta-earnings-fall-2026-muse-network",
-      "source": "The Verge",
-      "date": "2026-10-22T18:15:00.000Z",
-      "snippet": "Mark Zuckerberg is barrelling toward a future in which an autonomous network of AI agents will run our lives - shopping for us, working for us, talking to other people's AI agents for us. Are humans ready for this very s"
-    },
-    {
-      "id": "09776931f465",
-      "title": "Donating Agent Skills to the Agentic AI Foundation",
-      "url": "https://simonwillison.net/2026/Oct/22/donating-agent-skills/",
-      "source": "Simon Willison",
-      "date": "2026-10-22T18:09:56.000Z",
-      "snippet": "Donating Agent Skills to the Agentic AI Foundation News today from Anthropic: We’re committed to keeping Agent Skills open, community-driven, and vendor-neutral. Today, we are donating the standard to the Agentic AI Foun"
-    },
-    {
-      "id": "619008f39dfd",
-      "title": "AI analysis of CT scans finds 42.9% of patients have coronary inflammation",
-      "url": "https://www.biograph.com/newsroom/biograph-completes-first-u.s.-study-with-caristo-diagnostics%E2%80%99-ai-powered-coronary-inflammation-detection-finding-risk-in-over-42-of-asymptomatic-patients",
-      "source": "Hacker News",
-      "date": "2026-10-22T18:02:54.000Z",
-      "snippet": "91 points · 46 comments on HN"
-    },
-    {
-      "id": "98a7f3683d8f",
-      "title": "Microsoft says its AI tool is better than doctors at diagnosing conditions",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1016690/suleyman-microsoft-diagnostic-orchestrator-science-medical-superintelligence",
-      "source": "The Verge",
-      "date": "2026-10-22T18:00:00.000Z",
-      "snippet": "For years, AI leaders have touted healthcare as one of the clearest examples of where their technology will improve lives. Now \"it is finally here,\" Microsoft AI CEO Mustafa Suleyman tells The Verge. The company claims t"
-    },
-    {
-      "id": "4dcdb9557827",
-      "title": "OpenShell – A safe, private runtime for fleets of autonomous AI agents",
-      "url": "https://github.com/NVIDIA/OpenShell",
-      "source": "Hacker News",
-      "date": "2026-10-22T17:44:06.000Z",
-      "snippet": "499 points · 217 comments on HN"
-    },
-    {
-      "id": "7b213ad205a3",
-      "title": "Someone hacked the Switch 2 by using an old game and AI",
-      "url": "https://www.theverge.com/games/1016862/nintendo-switch-2-jailbreak-ai",
-      "source": "The Verge",
-      "date": "2026-10-22T17:21:31.000Z",
-      "snippet": "The Nintendo Switch 2 has apparently been jailbroken, and a modder has already shown the console running a custom version of Mario Kart World featuring new playable characters like Cinnamoroll, the red Angry Bird, Peter "
-    },
-    {
-      "id": "93c844a35d41",
-      "title": "Chinese hackers spied on thousands of companies after breaching IT giant ConnectWise",
-      "url": "https://techcrunch.com/2026/10/22/chinese-hackers-spied-on-thousands-of-companies-after-breaching-it-giant-connectwise/",
-      "source": "TechCrunch",
-      "date": "2026-10-22T16:47:17.000Z",
-      "snippet": "Microsoft points the blame for ConnectWise's breach at a China-aligned hacker, which relied on AI agents to rapidly hack into thousands of its customers."
-    },
-    {
-      "id": "2a8e11324f4e",
-      "title": "Wildwood’s director says AI is ‘antithetical to everything that we are at this studio’",
-      "url": "https://www.theverge.com/entertainment/1016647/wildwood-travis-knight-interview-ai-laika-stop-motion",
-      "source": "The Verge",
-      "date": "2026-10-22T16:16:15.000Z",
-      "snippet": "Wildwood is the most ambitious film yet from Laika, the stop-motion studio best known for the likes of Coraline and ParaNorman. It's a sprawling fantasy adventure that took five years to complete. The process involved mo"
-    },
-    {
-      "id": "36b89264973f",
-      "title": "Every AI model has the same \"controversial\" take on humans",
-      "url": "https://www.modelcompare.ai/blog/ai-models-controversial-take-on-humans",
-      "source": "Hacker News",
-      "date": "2026-10-22T16:08:00.000Z",
-      "snippet": "650 points · 623 comments on HN"
     }
   ]
 }
