@@ -1,7 +1,287 @@
 {
-  "updated": "2026-10-30T12:07:36.483Z",
+  "updated": "2026-10-31T11:40:45.515Z",
   "count": 80,
   "items": [
+    {
+      "id": "b112e6ada6a0",
+      "title": "OpenAI raises less than half of $30B target",
+      "url": "https://www.wsj.com/tech/ai/openai-raises-less-than-half-of-30-billion-target-in-latest-round-91aecdc5",
+      "source": "Hacker News",
+      "date": "2026-10-31T03:22:44.000Z",
+      "snippet": "154 points · 146 comments on HN"
+    },
+    {
+      "id": "6336aff37e57",
+      "title": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+      "url": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+      "source": "TechCrunch",
+      "date": "2026-10-31T01:20:05.000Z",
+      "snippet": "When investors get nervous about AI spending, it helps to have the chipmaker that sells the chips offer to cosign the loan."
+    },
+    {
+      "id": "43523836c604",
+      "title": "Ollie, a privacy-focused AI assistant, is shutting down",
+      "url": "https://techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down/",
+      "source": "TechCrunch",
+      "date": "2026-10-30T22:56:13.000Z",
+      "snippet": "As an increasing number of AI assistants flood the market, the founder of Ollie, an assistant that respected its users' privacy, says it will be shutting down in a week."
+    },
+    {
+      "id": "011fdc062b2b",
+      "title": "Apple Intelligence is finally coming to China with iOS 27.3",
+      "url": "https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3",
+      "source": "The Verge",
+      "date": "2026-10-30T22:32:53.000Z",
+      "snippet": "Apple will launch Apple Intelligence in China with iOS 27.3, the company announced on its Chinese newsroom website, as reported by MacRumors. The Apple Intelligence features will be available first in an iOS 27.3 beta th"
+    },
+    {
+      "id": "6198118eee13",
+      "title": "Intel’s stock crashes, knocking $12B from government’s stake",
+      "url": "https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/",
+      "source": "TechCrunch",
+      "date": "2026-10-30T21:54:34.000Z",
+      "snippet": "Intel is being hurt by PC sales as the AI industry gobbles memory and other components causing PC prices to rise."
+    },
+    {
+      "id": "60ba719a0574",
+      "title": "Anthropic expected to receive high ‘junk’ rating from credit agencies following IPO, FT report says",
+      "url": "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
+      "source": "TechCrunch",
+      "date": "2026-10-30T21:52:03.000Z",
+      "snippet": "Blackstone's forecast is just a prediction, but naturally, a high junk rating would make it more difficult and costlier for Anthropic to raise the money to keep funding its massive spending that has undergirded its busin"
+    },
+    {
+      "id": "df26d5473c41",
+      "title": "Supersonic airliner in doubt as company shifts to powering AI data centers",
+      "url": "https://arstechnica.com/gadgets/2026/10/united-airlines-ceo-doubts-supersonic-airliner-from-boom-will-be-ready-by-2029/",
+      "source": "Ars Technica",
+      "date": "2026-10-30T21:41:54.000Z",
+      "snippet": "Boom’s airliner may be delayed, and its data center power business lost a customer."
+    },
+    {
+      "id": "6d8713a11498",
+      "title": "Wall Street closes sharply lower as AI cash burn fears spark tech selloff",
+      "url": "https://www.reuters.com/business/nasdaq-futures-tumble-amazon-intel-results-deepen-ai-spending-woes-2026-10-30/",
+      "source": "Hacker News",
+      "date": "2026-10-30T21:32:35.000Z",
+      "snippet": "62 points · 13 comments on HN"
+    },
+    {
+      "id": "0806533d8a71",
+      "title": "Last-minute Halloween costumes for tech nerds",
+      "url": "https://techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds/",
+      "source": "TechCrunch",
+      "date": "2026-10-30T21:26:59.000Z",
+      "snippet": "No Halloween costume? Just be a deceptively cute AI agent icon, a PHP vulnerability, or sleepy time Bryan Johnson."
+    },
+    {
+      "id": "f1f6194d2036",
+      "title": "Cracks are emerging in the AI spending boom",
+      "url": "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/",
+      "source": "TechCrunch",
+      "date": "2026-10-30T21:17:40.000Z",
+      "snippet": "Big Tech is pouring billions into AI infrastructure, but mounting debt, negative cash flow, and growing investor skepticism are raising questions about the sustainability of the AI spending boom."
+    },
+    {
+      "id": "ce0cce9f3bc5",
+      "title": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
+      "url": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/",
+      "source": "Ars Technica",
+      "date": "2026-10-30T21:09:54.000Z",
+      "snippet": "It's still unknown how attackers got access to Anthropic's verified Cursor account."
+    },
+    {
+      "id": "e6a83342c0c5",
+      "title": "Sam Altman says it’s better for RAM to be in a data center than on your desk",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers",
+      "source": "The Verge",
+      "date": "2026-10-30T20:48:43.000Z",
+      "snippet": "Asked about supply chain shortages, like the ongoing RAM shortage, OpenAI CEO Sam Altman said in an interview that it's \"terrible\" to have RAM in personal PCs instead of data centers. During his appearance on the Cheeky "
+    },
+    {
+      "id": "65d255a74525",
+      "title": "Dartmouth's provost warned us about AI cheating—but his own AI use cost him his job",
+      "url": "https://arstechnica.com/tech-policy/2026/10/dartmouths-provost-warned-us-about-ai-cheating-but-his-own-ai-use-cost-him-his-job/",
+      "source": "Ars Technica",
+      "date": "2026-10-30T20:40:13.000Z",
+      "snippet": "People who love AI don't always love telling others they used it."
+    },
+    {
+      "id": "25a528e218b1",
+      "title": "The biggest names in AI are backing a new way to opt out of scraping",
+      "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
+      "source": "The Verge",
+      "date": "2026-10-30T20:26:10.000Z",
+      "snippet": "OpenAI, Google, Microsoft, and Anthropic say they will adopt a new standard that publishers can use to opt out of being scraped by AI, as reported earlier by Search Engine Roundtable. With this control, publishers can ap"
+    },
+    {
+      "id": "1da35e307aba",
+      "title": "Product Managers aren't safe either",
+      "url": "https://lucaskostka.com/posts/ai-challenges-more-than-devs",
+      "source": "Hacker News",
+      "date": "2026-10-30T20:14:39.000Z",
+      "snippet": "56 points · 76 comments on HN"
+    },
+    {
+      "id": "538ea1326a6a",
+      "title": "Basically no one is using AI agents for their DoorDash orders",
+      "url": "https://arstechnica.com/ai/2026/10/doordash-says-outside-ai-agents-have-only-led-to-hundreds-of-orders-so-far/",
+      "source": "Ars Technica",
+      "date": "2026-10-30T19:30:52.000Z",
+      "snippet": "But it's still early days for the relatively new e-commerce use case."
+    },
+    {
+      "id": "c4dbacf8aa2b",
+      "title": "Google’s satellite AI server transmits its first response to Earth",
+      "url": "https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission",
+      "source": "The Verge",
+      "date": "2026-10-30T18:21:38.000Z",
+      "snippet": "Google's AI chip-equipped satellite has generated its first response from space. In a blog post on Friday, Google says it successfully booted up the satellite's Tensor Processing Units (TPUs), allowing the on-board Gemma"
+    },
+    {
+      "id": "d52c9778a55e",
+      "title": "Zest’s new AI agent finds restaurants and books reservations over text",
+      "url": "https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/",
+      "source": "TechCrunch",
+      "date": "2026-10-30T17:47:12.000Z",
+      "snippet": "Can't agree on where to eat? Zest's AI concierge can combine everyone's tastes, put restaurant options to a vote, and make the reservation."
+    },
+    {
+      "id": "b10570d1171f",
+      "title": "Fujifilm to boost tape production 5x as AI fuels archiving demand",
+      "url": "https://arstechnica.com/gadgets/2026/10/fujifilm-to-boost-tape-production-5x-as-ai-fuels-archiving-demand/",
+      "source": "Ars Technica",
+      "date": "2026-10-30T17:38:19.000Z",
+      "snippet": "Low costs and offline security mean magnetic tape still has a job."
+    },
+    {
+      "id": "0de3f9697e49",
+      "title": "Starbucks wants to use AI to show you a ‘personalized digital menu’ at the drive-thru",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru",
+      "source": "The Verge",
+      "date": "2026-10-30T17:38:04.000Z",
+      "snippet": "Starbucks could eventually show you a personalized digital menu when you pull up to the drive-thru. During an earnings call on Thursday, Starbucks CEO Brian Niccol said the company is going to explore \"experiences that r"
+    },
+    {
+      "id": "88726a3bff9a",
+      "title": "Proton's CEO Cancels AI 'Re-Interviews'",
+      "url": "https://www.404media.co/protons-ceo-cancels-ai-re-interviews/",
+      "source": "Hacker News",
+      "date": "2026-10-30T17:24:45.000Z",
+      "snippet": "276 points · 232 comments on HN"
+    },
+    {
+      "id": "135f70cd39eb",
+      "title": "Google’s first data center satellite is online and writing poetry",
+      "url": "https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/",
+      "source": "TechCrunch",
+      "date": "2026-10-30T17:00:00.000Z",
+      "snippet": "The first TPU in space is running a Google DeepMind Gemma 4 model and writing cheesy poetry."
+    },
+    {
+      "id": "1a9f926a45b8",
+      "title": "Thousands of “ghost students” use AI to steal millions in student loans, DOJ says",
+      "url": "https://arstechnica.com/tech-policy/2026/10/doj-exposes-ghost-students-using-ai-to-complete-courses-steal-student-loans/",
+      "source": "Ars Technica",
+      "date": "2026-10-30T16:53:49.000Z",
+      "snippet": "Applying for FAFSA may get messy as DOJ “ghost student” crackdown ramps up."
+    },
+    {
+      "id": "1634c7b4a767",
+      "title": "US tech stocks see sharp falls over AI cost fears",
+      "url": "https://www.bbc.co.uk/news/articles/cvwy72e0n72yo",
+      "source": "Hacker News",
+      "date": "2026-10-30T16:13:02.000Z",
+      "snippet": "255 points · 283 comments on HN"
+    },
+    {
+      "id": "8cb2db80dc5c",
+      "title": "Theranos whistleblower Tyler Shultz warns that the AI boom is ‘a great opportunity to go deceive people’",
+      "url": "https://techcrunch.com/2026/10/30/theranos-whistleblower-tyler-shultz-warns-that-the-ai-boom-is-a-great-opportunity-to-go-deceive-people/",
+      "source": "TechCrunch",
+      "date": "2026-10-30T16:03:45.000Z",
+      "snippet": "The cautionary Theranos tale takes on a new significance in the AI era, when companies that have never turned a profit are raising capital at trillion-dollar valuations."
+    },
+    {
+      "id": "9e37c40a85b3",
+      "title": "AI isn't replacing SREs, it's deskilling them",
+      "url": "https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling",
+      "source": "Hacker News",
+      "date": "2026-10-30T15:52:18.000Z",
+      "snippet": "603 points · 453 comments on HN"
+    },
+    {
+      "id": "974d9b85c8fb",
+      "title": "Pope Leo calls for the disarmament of AI: ‘Machines are tools, not persons’",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1023188/pope-leo-disarm-ai",
+      "source": "The Verge",
+      "date": "2026-10-30T14:58:06.000Z",
+      "snippet": "Pope Leo XIV says AI systems should be \"disarmed,\" adding that humans \"have the responsibility to guide, change and, when necessary, reject its applications.\" In Friday's Papal Address, Pope Leo encourages United Nations"
+    },
+    {
+      "id": "a4ef64159748",
+      "title": "Neal Stephenson on AI and What Comes Next [video]",
+      "url": "https://www.youtube.com/watch?v=Ii-aeW5pHPQ",
+      "source": "Hacker News",
+      "date": "2026-10-30T14:18:34.000Z",
+      "snippet": "53 points · 24 comments on HN"
+    },
+    {
+      "id": "5d1e722469ff",
+      "title": "Cisco gives engineer unlimited AI tokens to rewrite legacy code",
+      "url": "https://fortune.com/2026/10/30/cisco-president-jeetu-patel-gen-z-27-year-old-unlimited-ai-tokens-rewrite-legacy-code-entry-level-jobs/",
+      "source": "Hacker News",
+      "date": "2026-10-30T14:08:20.000Z",
+      "snippet": "205 points · 243 comments on HN"
+    },
+    {
+      "id": "40aed769d1c2",
+      "title": "Skip the small talk: Make game-changing connections at TechCrunch Founder Summit with Braindate",
+      "url": "https://techcrunch.com/2026/10/30/skip-the-small-talk-make-game-changing-connections-at-techcrunch-founder-summit-with-braindate/",
+      "source": "TechCrunch",
+      "date": "2026-10-30T14:00:00.000Z",
+      "snippet": "At TechCrunch Founder Summit 2026, happening November 4 at SoWa Power Station in Boston, networking powered by Braindate is designed to make those conversations easier to find, whether they are in 1:1 or small-group on-s"
+    },
+    {
+      "id": "f986a412ee0e",
+      "title": "DoorDash said it’s only received ‘several hundred’ orders from AI agents",
+      "url": "https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/",
+      "source": "TechCrunch",
+      "date": "2026-10-30T13:54:25.000Z",
+      "snippet": "DoorDash said that it is open to working with third-party agent makers."
+    },
+    {
+      "id": "5ec9437afb13",
+      "title": "Silicon Valley wants you to invest in miracles",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1023070/anthropic-ipo-risk-factors-filing-miracles",
+      "source": "The Verge",
+      "date": "2026-10-30T13:11:05.000Z",
+      "snippet": "Investing in any stock is kind of like gambling in the sense that you're betting your money on a company's future performance. But how do you bet on a technology that could, in the worst-case scenario, \"pose catastrophic"
+    },
+    {
+      "id": "5cfbd02556ec",
+      "title": "Sam Altman sympathizes with mathematicians, but says OpenAI’s math onslaught won’t stop",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1023054/altman-cheeky-pint-ai-math-interview",
+      "source": "The Verge",
+      "date": "2026-10-30T13:01:14.000Z",
+      "snippet": "After months of bombarding mathematicians with a relentless stream of AI-generated results, OpenAI CEO Sam Altman says he sympathizes with researchers struggling to make sense of it all. But he has no intention of stoppi"
+    },
+    {
+      "id": "5135d63cacdd",
+      "title": "5 days left: Your last chance to connect, scale, and save at TechCrunch Founder Summit 2026",
+      "url": "https://techcrunch.com/2026/10/30/5-days-left-your-last-chance-to-connect-scale-and-save-at-techcrunch-founder-summit-2026/",
+      "source": "TechCrunch",
+      "date": "2026-10-30T13:00:00.000Z",
+      "snippet": "5 days to save up to $100, plus a second pass for free to TechCrunch Founder Summit 2026 in Boston on November 4. Register now."
+    },
+    {
+      "id": "cea73ec16e82",
+      "title": "Can AI data centers be mass-produced like cars? This startup aims to find out",
+      "url": "https://techcrunch.com/2026/10/30/can-ai-data-centers-be-mass-produced-like-cars-and-online-in-48-hours-this-startup-aims-to-find-out/",
+      "source": "TechCrunch",
+      "date": "2026-10-30T13:00:00.000Z",
+      "snippet": "Runware is building a factory to turn out prefabricated AI data centers on an assembly line. The real test will be whether it can deliver at that scale."
+    },
     {
       "id": "dbfbce585037",
       "title": "Maine’s data center revolt will decide who controls the Senate",
@@ -11,12 +291,28 @@
       "snippet": "Maine Sen. Susan Collins, a Republican, was midway through defending her record during the final debate of the midterms when an audience member cut her short. \"I'm terrified,\" a man shouted. \"AI data centers are destroyi"
     },
     {
+      "id": "25cc4c9bb2e3",
+      "title": "Making it easier for websites to express AI training preferences",
+      "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+      "source": "OpenAI",
+      "date": "2026-10-30T09:30:00.000Z",
+      "snippet": "OpenAI will honor a shared robots.txt signal to help website operators communicate their AI training preferences to participating providers."
+    },
+    {
       "id": "b91e16468749",
       "title": "Ask HN: Are you tired too in this AI era?",
       "url": "https://news.ycombinator.com/item?id=50301479",
       "source": "Hacker News",
       "date": "2026-10-30T09:17:43.000Z",
-      "snippet": "100 points · 96 comments on HN"
+      "snippet": "144 points · 139 comments on HN"
+    },
+    {
+      "id": "c7606af40dbb",
+      "title": "Community safety report and new protections for teens",
+      "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+      "source": "OpenAI",
+      "date": "2026-10-30T09:00:00.000Z",
+      "snippet": "OpenAI is strengthening violence prevention in ChatGPT with expanded safeguards, earlier interventions, and a new commitment to public safety reporting."
     },
     {
       "id": "a973ac401cee",
@@ -32,7 +328,7 @@
       "url": "https://www.penligent.ai/hackinglabs/cve-2026-98432/",
       "source": "Hacker News",
       "date": "2026-10-30T02:33:04.000Z",
-      "snippet": "58 points · 34 comments on HN"
+      "snippet": "63 points · 41 comments on HN"
     },
     {
       "id": "3e1cebb1f9f3",
@@ -41,6 +337,14 @@
       "source": "TechCrunch",
       "date": "2026-10-30T01:20:48.000Z",
       "snippet": "David Durman, a University of Kentucky administrator, recently earned a religious exemption from using AI in the workplace."
+    },
+    {
+      "id": "d2282bcce162",
+      "title": "Fair use benefits everyone",
+      "url": "https://openai.com/index/fair-use-benefits-everyone",
+      "source": "OpenAI",
+      "date": "2026-10-30T00:00:00.000Z",
+      "snippet": "OpenAI shares excerpts from court briefs by creators, academics, accessibility advocates, and legal experts, among others, on how fair use supports AI training and innovation."
     },
     {
       "id": "05367ef1f34c",
@@ -56,7 +360,15 @@
       "url": "https://www.bbc.com/news/articles/cm9qzdqpxy48o",
       "source": "Hacker News",
       "date": "2026-10-29T22:22:13.000Z",
-      "snippet": "65 points · 30 comments on HN"
+      "snippet": "77 points · 35 comments on HN"
+    },
+    {
+      "id": "2f083e35c49b",
+      "title": "Building an AI-native engineering org",
+      "url": "https://twitter.com/sgondala2/status/2115832070274723875",
+      "source": "Hacker News",
+      "date": "2026-10-29T21:58:34.000Z",
+      "snippet": "162 points · 183 comments on HN"
     },
     {
       "id": "923d025e66a5",
@@ -64,7 +376,7 @@
       "url": "https://convo.casa/@b/117525936178835007",
       "source": "Hacker News",
       "date": "2026-10-29T21:49:28.000Z",
-      "snippet": "101 points · 100 comments on HN"
+      "snippet": "117 points · 114 comments on HN"
     },
     {
       "id": "d8eb5a4b641e",
@@ -72,7 +384,7 @@
       "url": "https://labs.ycombinator.com/projects/games/index.html",
       "source": "Hacker News",
       "date": "2026-10-29T21:40:28.000Z",
-      "snippet": "311 points · 116 comments on HN"
+      "snippet": "402 points · 166 comments on HN"
     },
     {
       "id": "c30c38a613a7",
@@ -80,7 +392,7 @@
       "url": "https://github.com/SheepSeb/tinyworldformer",
       "source": "Hacker News",
       "date": "2026-10-29T20:32:28.000Z",
-      "snippet": "232 points · 15 comments on HN"
+      "snippet": "270 points · 19 comments on HN"
     },
     {
       "id": "6224c596d37f",
@@ -192,7 +504,7 @@
       "url": "https://news.ycombinator.com/item?id=50291116",
       "source": "Hacker News",
       "date": "2026-10-29T15:56:32.000Z",
-      "snippet": "71 points · 24 comments on HN"
+      "snippet": "77 points · 35 comments on HN"
     },
     {
       "id": "a525c413ff05",
@@ -200,7 +512,15 @@
       "url": "https://skypilot.ai/blog/grace-blackwell-needs-a-new-scheduler",
       "source": "Hacker News",
       "date": "2026-10-29T15:45:05.000Z",
-      "snippet": "137 points · 21 comments on HN"
+      "snippet": "144 points · 22 comments on HN"
+    },
+    {
+      "id": "54a7e21cbe6d",
+      "title": "AI, Lean, and the Future of Formal Verification, with Lean Creator Leo de Moura",
+      "url": "https://thedataexchange.media/leo-de-moura-lean-aws/",
+      "source": "Hacker News",
+      "date": "2026-10-29T15:29:48.000Z",
+      "snippet": "51 points · 10 comments on HN"
     },
     {
       "id": "bd43dca7b973",
@@ -208,7 +528,7 @@
       "url": "https://trakkr.ai/trakkr-research/zombie-stats",
       "source": "Hacker News",
       "date": "2026-10-29T15:06:17.000Z",
-      "snippet": "167 points · 67 comments on HN"
+      "snippet": "178 points · 72 comments on HN"
     },
     {
       "id": "9d92d4ec6e5e",
@@ -232,7 +552,7 @@
       "url": "https://www.404media.co/manifestos-fear-and-loser-thinking-inside-protons-ai-reckoning/",
       "source": "Hacker News",
       "date": "2026-10-29T14:29:06.000Z",
-      "snippet": "170 points · 62 comments on HN"
+      "snippet": "228 points · 81 comments on HN"
     },
     {
       "id": "779b541ff77b",
@@ -240,7 +560,7 @@
       "url": "https://mistral.ai/news/mistral-large-4-oss/",
       "source": "Hacker News",
       "date": "2026-10-29T14:13:21.000Z",
-      "snippet": "1539 points · 404 comments on HN"
+      "snippet": "1695 points · 436 comments on HN"
     },
     {
       "id": "079251699e8e",
@@ -280,7 +600,7 @@
       "url": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1",
       "source": "Hacker News",
       "date": "2026-10-29T12:41:56.000Z",
-      "snippet": "336 points · 242 comments on HN"
+      "snippet": "336 points · 245 comments on HN"
     },
     {
       "id": "9cd5509199bf",
@@ -312,7 +632,7 @@
       "url": "https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce",
       "source": "Hacker News",
       "date": "2026-10-29T03:33:42.000Z",
-      "snippet": "568 points · 232 comments on HN"
+      "snippet": "583 points · 235 comments on HN"
     },
     {
       "id": "05a0d3d33151",
@@ -320,327 +640,7 @@
       "url": "https://github.com/ZigEmbeddedGroup/microzig/blob/main/CODE_OF_CONDUCT.md",
       "source": "Hacker News",
       "date": "2026-10-29T00:30:37.000Z",
-      "snippet": "57 points · 74 comments on HN"
-    },
-    {
-      "id": "13088c2d23b4",
-      "title": "New York Times adds more AI features to its Cooking app. Users aren't thrilled",
-      "url": "https://www.niemanlab.org/2026/10/the-new-york-times-is-adding-more-ai-features-to-its-cooking-app-and-users-arent-thrilled/",
-      "source": "Hacker News",
-      "date": "2026-10-29T00:16:08.000Z",
-      "snippet": "57 points · 108 comments on HN"
-    },
-    {
-      "id": "09f762edab0d",
-      "title": "Adam Mosseri says negativity around AI is ‘going to get worse’",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1021644/adam-mosseri-instagram-ai-negativity",
-      "source": "The Verge",
-      "date": "2026-10-28T23:05:39.000Z",
-      "snippet": "Asked about AI and the trend of college students booing tech CEOs at graduation ceremonies, Instagram head Adam Mosseri acknowledged in an interview that a lot of people really don't like AI, and it's not just young peop"
-    },
-    {
-      "id": "d0407e5d8c6e",
-      "title": "AI execs may be too out of touch to build for the general public",
-      "url": "https://techcrunch.com/2026/10/28/ai-execs-may-be-too-out-of-touch-to-build-for-the-general-public/",
-      "source": "Hacker News",
-      "date": "2026-10-28T22:27:46.000Z",
-      "snippet": "90 points · 73 comments on HN"
-    },
-    {
-      "id": "b126d7721238",
-      "title": "Microsoft just shared Azure’s actual revenue in dollars: $33.2 billion",
-      "url": "https://techcrunch.com/2026/10/28/microsoft-just-shared-azures-actual-revenue-in-dollars-33-2-billion/",
-      "source": "TechCrunch",
-      "date": "2026-10-28T21:58:32.000Z",
-      "snippet": "Microsoft has never disclosed Azure's quarterly revenue in dollars. But for the first time, we can see just how close it is getting to besting the biggest competitor in the market, AWS."
-    },
-    {
-      "id": "f348c6db37d8",
-      "title": "Google expands AI Search ads globally as core ad growth slows",
-      "url": "https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/",
-      "source": "TechCrunch",
-      "date": "2026-10-28T21:48:37.000Z",
-      "snippet": "The announcement came alongside parent company Alphabet's third-quarter earnings report, which saw revenue grow 25% year over year to $127.6 billion."
-    },
-    {
-      "id": "90b267becbf2",
-      "title": "Microsoft recorded $10 billion in revenue from OpenAI",
-      "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
-      "source": "TechCrunch",
-      "date": "2026-10-28T21:34:30.000Z",
-      "snippet": "Microsoft said it made $10 billion in revenue from commercial arrangements with OpenAI, including revenue-sharing payments, in the quarter ending September 30. It underscores the still-enormous financial dependency of th"
-    },
-    {
-      "id": "e4867209a9cd",
-      "title": "Akai is embracing vibe-coded mods with an open-source MPC",
-      "url": "https://www.theverge.com/gadgets/1021405/akai-open-source-mpc-sample-key",
-      "source": "The Verge",
-      "date": "2026-10-28T21:34:04.000Z",
-      "snippet": "The MPC Sample Key isn't even formally announced yet, but Akai is already showing off what the modding community is cooking up through vibe coding. Akai has decided to embrace the explosion of hackers and custom firmware"
-    },
-    {
-      "id": "f7041d98b561",
-      "title": "Microsoft hits 10 quarters of record-breaking revenue in a row",
-      "url": "https://techcrunch.com/2026/10/28/microsoft-hits-10-quarters-of-record-breaking-revenue-in-a-row/",
-      "source": "TechCrunch",
-      "date": "2026-10-28T21:25:30.000Z",
-      "snippet": "Whatever the future of AI might be, the current situation is still very good for Microsoft. The tech giant reported yet another record for quarterly revenue on Wednesday: $92.3 billion, a 19% increase over the year-ago q"
-    },
-    {
-      "id": "fc7d1d71bde9",
-      "title": "Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity",
-      "url": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
-      "source": "The Verge",
-      "date": "2026-10-28T20:03:00.000Z",
-      "snippet": "Google has released its latest frontier model, Gemini 4 Carbon, offering \"significant gains\" in coding, agentic tasks, and cybersecurity. In an announcement on Wednesday, Google highlights Carbon's top spot on the Artifi"
-    },
-    {
-      "id": "2ede9b7f3431",
-      "title": "Anthropic just launched tools to show companies what their AI spending is buying",
-      "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/",
-      "source": "TechCrunch",
-      "date": "2026-10-28T19:19:58.000Z",
-      "snippet": "The frontier lab is lifting the curtain on how users spend money on its models ahead of a planned IPO."
-    },
-    {
-      "id": "66c9055b3cf2",
-      "title": "Wiz’s CTO on PHP2Shell and the coming ‘vulnpocalypse’",
-      "url": "https://techcrunch.com/video/wizs-cto-on-php2shell-and-the-coming-vulnpocalypse/",
-      "source": "TechCrunch",
-      "date": "2026-10-28T19:05:46.000Z",
-      "snippet": "The PHP scare may have faded from your feed, but the cleanup is far from over. Last week, two critical bugs in the open source language behind roughly 70% of websites left organizations scrambling to fix their systems, w"
-    },
-    {
-      "id": "24b289310b19",
-      "title": "The ‘Vulnpocalypse’ is coming for the internet’s aging code, says Wiz’s CTO",
-      "url": "https://techcrunch.com/podcast/the-vulnpocalypse-is-coming-for-the-internets-aging-code-says-wizs-cto/",
-      "source": "TechCrunch",
-      "date": "2026-10-28T18:50:39.000Z",
-      "snippet": "The PHP scare may have faded from your feed, but the cleanup is far from over. Last week, two critical bugs in the open source language behind roughly 70% of websites left organizations scrambling to fix their systems, w"
-    },
-    {
-      "id": "bfd6acefc1fb",
-      "title": "Google announces Gemini 4 Carbon, its latest frontier AI model that you can't use",
-      "url": "https://arstechnica.com/ai/2026/10/google-announces-gemini-4-carbon-its-latest-frontier-ai-model-that-you-cant-use/",
-      "source": "Ars Technica",
-      "date": "2026-10-28T18:47:27.000Z",
-      "snippet": "Gemini 4 Carbon is essentially a slightly better version of Argon."
-    },
-    {
-      "id": "d0753be868cc",
-      "title": "Microsoft is ending Copilot support on smart TVs",
-      "url": "https://www.theverge.com/tech/1021143/microsoft-lg-samsung-copilot-ai-assistant-smart-tvs-ending",
-      "source": "The Verge",
-      "date": "2026-10-28T18:36:26.000Z",
-      "snippet": "Nearly two years after LG and Samsung announced at CES 2025 that their latest smart TVs would include access to Microsoft's Copilot, the company is ending support for the AI assistant's functionality on all TVs this year"
-    },
-    {
-      "id": "0de90675be39",
-      "title": "Big Tech's thirst for water is sparking a global resistance",
-      "url": "https://restofworld.org/2026/ai-datacenters-water-resistance-global/",
-      "source": "Hacker News",
-      "date": "2026-10-28T18:34:51.000Z",
-      "snippet": "51 points · 44 comments on HN"
-    },
-    {
-      "id": "def3d17f3c12",
-      "title": "Scaling Hierarchical Networks",
-      "url": "https://www.cartesia.ai/blog/from-tokens-to-bytes-part-1",
-      "source": "Hacker News",
-      "date": "2026-10-28T18:07:41.000Z",
-      "snippet": "91 points · 13 comments on HN"
-    },
-    {
-      "id": "0676def7896c",
-      "title": "Google AI gets cagey when asked who won the 2020 elections",
-      "url": "https://arstechnica.com/ai/2026/10/google-ai-gets-cagey-when-asked-who-won-the-2020-elections/",
-      "source": "Ars Technica",
-      "date": "2026-10-28T17:46:32.000Z",
-      "snippet": "But the AI responses get more forthright when asked outside the US."
-    },
-    {
-      "id": "185e559c77b9",
-      "title": "Gemini 4 Carbon",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
-      "source": "Hacker News",
-      "date": "2026-10-28T17:01:23.000Z",
-      "snippet": "1007 points · 799 comments on HN"
-    },
-    {
-      "id": "b0da25ea6c1a",
-      "title": "Gemini 4 Carbon: Our next frontier model",
-      "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
-      "source": "Google DeepMind",
-      "date": "2026-10-28T17:00:58.000Z",
-      "snippet": ""
-    },
-    {
-      "id": "765a5a74d244",
-      "title": "Chrome’s AI-powered Autofill can now dig through your Gmail to fill out forms",
-      "url": "https://techcrunch.com/2026/10/28/chromes-ai-powered-autofill-can-now-dig-through-your-gmail-to-fill-out-forms/",
-      "source": "TechCrunch",
-      "date": "2026-10-28T17:00:00.000Z",
-      "snippet": "The autofill update lets Chrome pull flight confirmations, tracking info, order details, and other information from your inbox, with your permission."
-    },
-    {
-      "id": "1e8ba9106ed8",
-      "title": "As AI agents reshape the web, Google opens Gemini and Search to more apps",
-      "url": "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/",
-      "source": "TechCrunch",
-      "date": "2026-10-28T17:00:00.000Z",
-      "snippet": "A new developer platform will let businesses bring their services to Google's AI experiences, potentially changing how consumers discover and use apps."
-    },
-    {
-      "id": "c802108aab79",
-      "title": "Chrome’s enhanced autofill can now pull info from Gmail to help you fill out forms",
-      "url": "https://www.theverge.com/tech/1020626/chrome-enhanced-autofill-gmail-forms-gemini-personal-intelligence",
-      "source": "The Verge",
-      "date": "2026-10-28T17:00:00.000Z",
-      "snippet": "Following improvements made to Chrome's enhanced autofill last year that included your name, passport number, email address, and physical addresses sourced from your Google Accounts and services like Google Wallet, the f"
-    },
-    {
-      "id": "1739307690c3",
-      "title": "Meta says it’ll probably delay its controversial new business terms again",
-      "url": "https://www.theverge.com/tech/1020769/meta-updated-business-terms-delay-indefinitely",
-      "source": "The Verge",
-      "date": "2026-10-28T16:15:30.000Z",
-      "snippet": "Meta says it may push the implementation of its new business terms past November 20th as it faces backlash from publishers over concerns about AI training. In a post on X, Meta communications head Andy Stone said the com"
-    },
-    {
-      "id": "97373eedda74",
-      "title": "Dayjob: Tax – evaluating AI agents on 50 professional tax assignments",
-      "url": "https://surgehq.ai/blog/dayjob-tax",
-      "source": "Hacker News",
-      "date": "2026-10-28T15:46:30.000Z",
-      "snippet": "257 points · 173 comments on HN"
-    },
-    {
-      "id": "feda3ad530f5",
-      "title": "South Korea’s financial industry hit by fresh wave of cyberattacks",
-      "url": "https://techcrunch.com/2026/10/28/south-koreas-financial-industry-hit-by-fresh-wave-of-cyberattacks/",
-      "source": "TechCrunch",
-      "date": "2026-10-28T15:41:18.000Z",
-      "snippet": "South Korea’s financial institutions have been hit by another wave of cyberattacks, highlighting the growing risk of AI-driven hacking in Asia."
-    },
-    {
-      "id": "f1ebb512d4e0",
-      "title": "Voice AI in vogue: Nvidia releases new open transcription model",
-      "url": "https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/",
-      "source": "TechCrunch",
-      "date": "2026-10-28T15:00:00.000Z",
-      "snippet": "Nvidia just released a free speech-to-text model that can transcribe up to 40 languages, but it only works on recordings, not live audio, so it’s a big step for meeting and medical transcription tools while still leaving"
-    },
-    {
-      "id": "5283652bd524",
-      "title": "xAI is buying out homeowners who promise not to sue over data center noise",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1020596/xai-mississippi-neighborhood-data-center-lawsuit",
-      "source": "The Verge",
-      "date": "2026-10-28T14:44:00.000Z",
-      "snippet": "A subsidiary of Elon Musk's xAI is offering to buy up homes in a Mississippi neighborhood, as long as residents don't join a lawsuit targeting the company's nearby data center and power plant, according to a report from "
-    },
-    {
-      "id": "1d10efda47a9",
-      "title": "Harvey raised 500M for legal AI, I built the same and open sourced it",
-      "url": "https://github.com/thomasunise/casecite",
-      "source": "Hacker News",
-      "date": "2026-10-28T13:56:21.000Z",
-      "snippet": "69 points · 38 comments on HN"
-    },
-    {
-      "id": "28c9ad1a666f",
-      "title": "Kentucky man becomes the first humanist granted religious exemption from AI",
-      "url": "https://religionnews.com/2026/10/26/in-a-first-a-humanist-granted-a-religious-exemption-from-using-ai/",
-      "source": "Hacker News",
-      "date": "2026-10-28T13:41:30.000Z",
-      "snippet": "489 points · 537 comments on HN"
-    },
-    {
-      "id": "cdf190a7da2b",
-      "title": "Valve Responds to Developers Fearing AI Slop and Clones",
-      "url": "https://www.invenglobal.com/articles/27761/valve-responds-to-developers-fearing-ai-slop-and-clones",
-      "source": "Hacker News",
-      "date": "2026-10-28T13:27:24.000Z",
-      "snippet": "68 points · 83 comments on HN"
-    },
-    {
-      "id": "75e2017ed4c5",
-      "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
-      "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
-      "source": "OpenAI",
-      "date": "2026-10-28T13:15:00.000Z",
-      "snippet": "OpenAI and ServiceNow expand their partnership to bring OpenAI models and agents into ServiceNow and ServiceNow workflows into ChatGPT and Codex."
-    },
-    {
-      "id": "11933a85bc5f",
-      "title": "7 days until TechCrunch Founder Summit: Save up to $100 on your pass before doors open",
-      "url": "https://techcrunch.com/2026/10/28/7-days-until-techcrunch-founder-summit-save-up-to-100-before-doors-open/",
-      "source": "TechCrunch",
-      "date": "2026-10-28T13:00:00.000Z",
-      "snippet": "In just 7 days, TechCrunch Founder Summit takes over Boston’s SoWa Power Station on November 4. Your chance to save up to $100 on tickets is running out, and the opportunity to learn and connect directly with experienced"
-    },
-    {
-      "id": "8030d1b5c635",
-      "title": "Voters in Texas agree: They hate data centers",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1018676/data-center-midterm-election-energy-water-texas",
-      "source": "The Verge",
-      "date": "2026-10-28T12:00:00.000Z",
-      "snippet": "Ask Texas NAACP president Gary Bledsoe what it's been like to see data center developers descend upon Austin and its surrounding suburbs and he can rattle off project after project facing opposition from locals. There's "
-    },
-    {
-      "id": "6da995572c9c",
-      "title": "Meta quietly launched an ‘AI pet journal’ app",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1020410/meta-launched-ai-pet-journal-app-waddle-world",
-      "source": "The Verge",
-      "date": "2026-10-28T11:27:30.000Z",
-      "snippet": "Meta has launched a \"tamagotchi-style\" pet game called Waddle World, with virtual creatures that chat with users and create doodles to illustrate conversations. According to its Apple and Play Store listings, the \"16-bit"
-    },
-    {
-      "id": "fdcf20ad2cf6",
-      "title": "Microsoft and Epic Games Suddenly Agree That AI Is Theft",
-      "url": "https://kotaku.com/now-that-the-shoe-is-on-the-other-foot-microsoft-and-epic-games-suddenly-agree-that-ai-is-theft-2000749316",
-      "source": "Hacker News",
-      "date": "2026-10-28T10:10:58.000Z",
-      "snippet": "69 points · 37 comments on HN"
-    },
-    {
-      "id": "0dc3cf0b7c98",
-      "title": "The future of the firm",
-      "url": "https://openai.com/index/the-future-of-the-firm",
-      "source": "OpenAI",
-      "date": "2026-10-28T10:00:00.000Z",
-      "snippet": "How AI might enter the org chart—beneath, beside, and between us."
-    },
-    {
-      "id": "41c97fe8dc29",
-      "title": "Legora is building the agentic operating system for legal work",
-      "url": "https://openai.com/index/legora",
-      "source": "OpenAI",
-      "date": "2026-10-28T09:30:00.000Z",
-      "snippet": "See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work."
-    },
-    {
-      "id": "2fc8e689e413",
-      "title": "Legora is building the agentic operating system for legal work",
-      "url": "https://openai.com/index/legora-agentic-operating-system-for-legal-work",
-      "source": "OpenAI",
-      "date": "2026-10-28T09:30:00.000Z",
-      "snippet": "See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work."
-    },
-    {
-      "id": "34fa11d94c60",
-      "title": "Artificial Analysis Intelligence Index v5",
-      "url": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5",
-      "source": "Hacker News",
-      "date": "2026-10-28T03:06:22.000Z",
-      "snippet": "96 points · 82 comments on HN"
-    },
-    {
-      "id": "0a7119608b55",
-      "title": "VCs will make billions on Anthropic’s IPO, but Amazon is set to make much (much) more",
-      "url": "https://techcrunch.com/2026/10/27/vcs-will-make-billions-on-anthropics-ipo-but-amazon-is-set-to-make-much-much-more/",
-      "source": "TechCrunch",
-      "date": "2026-10-28T01:15:28.000Z",
-      "snippet": "Massive note conversions reveal the true extent of Amazon's ownership in Anthropic."
+      "snippet": "57 points · 80 comments on HN"
     }
   ]
 }
