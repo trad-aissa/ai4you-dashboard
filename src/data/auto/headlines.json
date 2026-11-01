@@ -1,14 +1,134 @@
 {
-  "updated": "2026-10-31T11:40:45.515Z",
+  "updated": "2026-11-01T12:40:02.859Z",
   "count": 80,
   "items": [
+    {
+      "id": "fe548f549737",
+      "title": "The AI cost of JavaScript frameworks",
+      "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/",
+      "source": "Hacker News",
+      "date": "2026-11-01T06:06:19.000Z",
+      "snippet": "121 points · 70 comments on HN"
+    },
+    {
+      "id": "d7e241d7cf24",
+      "title": "Leaking Secrets from Air-Gap Computers by Spelling Radio Signals from RAM (2024)",
+      "url": "https://arxiv.org/abs/2409.02292",
+      "source": "Hacker News",
+      "date": "2026-11-01T01:46:29.000Z",
+      "snippet": "103 points · 55 comments on HN"
+    },
+    {
+      "id": "bc9463905bbd",
+      "title": "datasette-llm 0.1a9",
+      "url": "https://simonwillison.net/2026/Oct/31/datasette-llm/",
+      "source": "Simon Willison",
+      "date": "2026-10-31T22:10:01.000Z",
+      "snippet": "Release: datasette-llm 0.1a9 I have some big upgrades to Datasette Agent in the pipeline, but in the meantime here's a tiny user experience improvement to the underlying datasette-llm plugin. It now picks up the default "
+    },
+    {
+      "id": "567c750dad41",
+      "title": "AI text watermarking and quality loss",
+      "url": "https://blog.keyvan.net/p/ai-text-watermarking-and-quality",
+      "source": "Hacker News",
+      "date": "2026-10-31T21:50:13.000Z",
+      "snippet": "57 points · 9 comments on HN"
+    },
+    {
+      "id": "89c6cb6d2971",
+      "title": "Apple CEO says the company doesn’t ‘want to ship AI for AI’s sake’",
+      "url": "https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/",
+      "source": "TechCrunch",
+      "date": "2026-10-31T21:41:00.000Z",
+      "snippet": "Apple's new CEO defended the company's current position in the AI landscape."
+    },
+    {
+      "id": "cefcb0bd2478",
+      "title": "4 days left: How TechCrunch Founder Summit helps you make more useful connections to scale",
+      "url": "https://techcrunch.com/2026/10/31/4-days-left-how-techcrunch-founder-summit-helps-you-make-more-useful-connections-to-scale/",
+      "source": "TechCrunch",
+      "date": "2026-10-31T21:36:07.000Z",
+      "snippet": "On November 4 at Boston’s SoWa Power Station, get ready for a full day packed with meaningful networking opportunities, actionable insights, and connections that could change the trajectory of your idea and startup. Regi"
+    },
+    {
+      "id": "bc398a80a0df",
+      "title": "Judge allows NAACP lawsuit over xAI data center pollution to move forward",
+      "url": "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/",
+      "source": "TechCrunch",
+      "date": "2026-10-31T21:17:03.000Z",
+      "snippet": "An NAACP lawsuit accuses the SpaceX-owned AI company of violating the Clean Air Act."
+    },
+    {
+      "id": "aa4997f9eba1",
+      "title": "The Impact of Generative AI on Critical Thinking: Self-Reported (2025)",
+      "url": "https://dl.acm.org/doi/full/10.1145/3706598.3713778",
+      "source": "Hacker News",
+      "date": "2026-10-31T18:02:29.000Z",
+      "snippet": "78 points · 53 comments on HN"
+    },
+    {
+      "id": "344dcf79744a",
+      "title": "OpenAI reportedly lowers funding target for new round",
+      "url": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
+      "source": "TechCrunch",
+      "date": "2026-10-31T16:12:55.000Z",
+      "snippet": "OpenAI’s latest funding round doesn't seem to be living up to expectations."
+    },
+    {
+      "id": "ed0268fa6e32",
+      "title": "I built an AI Tamagotchi before Meta could",
+      "url": "https://www.theverge.com/gadgets/1013375/muse-charm-gadgets-preview-waveshare-esp32-claude-vibe-code",
+      "source": "The Verge",
+      "date": "2026-10-31T16:05:00.000Z",
+      "snippet": "Mark Zuckerberg's Meta made AI look so stinking cute by giving it a squishy little face - and this holiday season, he wants to sell you a Muse Charm so you can carry your jolly AI helper around like a Tamagotchi. But I w"
+    },
+    {
+      "id": "2e58988f93d7",
+      "title": "Show HN: A USB-C LTE modem that gives my computer a phone line",
+      "url": "https://github.com/Koppar-AI/koppar-lte-modem",
+      "source": "Hacker News",
+      "date": "2026-10-31T15:56:41.000Z",
+      "snippet": "58 points · 37 comments on HN"
+    },
+    {
+      "id": "5be14df72cef",
+      "title": "Malware uses LLMs to rank victims by how much they're worth",
+      "url": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/",
+      "source": "Hacker News",
+      "date": "2026-10-31T14:29:03.000Z",
+      "snippet": "249 points · 131 comments on HN"
+    },
+    {
+      "id": "17eb77de1744",
+      "title": "AI startup hacks Anthropic, gains access to employee details, internal messages",
+      "url": "https://www.indiatoday.in/technology/news/story/ai-startup-hacks-anthropic-in-12-hours-gains-access-to-employee-details-and-internal-messages-3025452-2026-10-26",
+      "source": "Hacker News",
+      "date": "2026-10-31T13:25:10.000Z",
+      "snippet": "74 points · 18 comments on HN"
+    },
+    {
+      "id": "94697ec49ac5",
+      "title": "Anthropic's Claude AI blocks video game cloning and reverse-engineering",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ai-model-is-now-blocking-attempts-at-video-game-recreation-and-cloning-users-also-claim-non-malicious-generic-reverse-engineering-tasks-are-blocked",
+      "source": "Hacker News",
+      "date": "2026-10-31T13:25:00.000Z",
+      "snippet": "71 points · 42 comments on HN"
+    },
+    {
+      "id": "381223935ae3",
+      "title": "Do the math: How we took over ChatGPT accounts",
+      "url": "https://www.parameter.ai/labs/we-found-a-gap-at-openai",
+      "source": "Hacker News",
+      "date": "2026-10-31T10:30:11.000Z",
+      "snippet": "344 points · 168 comments on HN"
+    },
     {
       "id": "b112e6ada6a0",
       "title": "OpenAI raises less than half of $30B target",
       "url": "https://www.wsj.com/tech/ai/openai-raises-less-than-half-of-30-billion-target-in-latest-round-91aecdc5",
       "source": "Hacker News",
       "date": "2026-10-31T03:22:44.000Z",
-      "snippet": "154 points · 146 comments on HN"
+      "snippet": "184 points · 191 comments on HN"
     },
     {
       "id": "6336aff37e57",
@@ -64,7 +184,7 @@
       "url": "https://www.reuters.com/business/nasdaq-futures-tumble-amazon-intel-results-deepen-ai-spending-woes-2026-10-30/",
       "source": "Hacker News",
       "date": "2026-10-30T21:32:35.000Z",
-      "snippet": "62 points · 13 comments on HN"
+      "snippet": "69 points · 15 comments on HN"
     },
     {
       "id": "0806533d8a71",
@@ -120,7 +240,7 @@
       "url": "https://lucaskostka.com/posts/ai-challenges-more-than-devs",
       "source": "Hacker News",
       "date": "2026-10-30T20:14:39.000Z",
-      "snippet": "56 points · 76 comments on HN"
+      "snippet": "56 points · 78 comments on HN"
     },
     {
       "id": "538ea1326a6a",
@@ -168,7 +288,7 @@
       "url": "https://www.404media.co/protons-ceo-cancels-ai-re-interviews/",
       "source": "Hacker News",
       "date": "2026-10-30T17:24:45.000Z",
-      "snippet": "276 points · 232 comments on HN"
+      "snippet": "291 points · 252 comments on HN"
     },
     {
       "id": "135f70cd39eb",
@@ -192,7 +312,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cvwy72e0n72yo",
       "source": "Hacker News",
       "date": "2026-10-30T16:13:02.000Z",
-      "snippet": "255 points · 283 comments on HN"
+      "snippet": "267 points · 296 comments on HN"
     },
     {
       "id": "8cb2db80dc5c",
@@ -203,12 +323,20 @@
       "snippet": "The cautionary Theranos tale takes on a new significance in the AI era, when companies that have never turned a profit are raising capital at trillion-dollar valuations."
     },
     {
+      "id": "53a0ff8f9c70",
+      "title": "Some Thing is Happening A note from the AI companies",
+      "url": "https://alanbellows.com/some-thing-is-happening/",
+      "source": "Hacker News",
+      "date": "2026-10-30T15:53:42.000Z",
+      "snippet": "68 points · 19 comments on HN"
+    },
+    {
       "id": "9e37c40a85b3",
       "title": "AI isn't replacing SREs, it's deskilling them",
       "url": "https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling",
       "source": "Hacker News",
       "date": "2026-10-30T15:52:18.000Z",
-      "snippet": "603 points · 453 comments on HN"
+      "snippet": "655 points · 476 comments on HN"
     },
     {
       "id": "974d9b85c8fb",
@@ -224,7 +352,7 @@
       "url": "https://www.youtube.com/watch?v=Ii-aeW5pHPQ",
       "source": "Hacker News",
       "date": "2026-10-30T14:18:34.000Z",
-      "snippet": "53 points · 24 comments on HN"
+      "snippet": "55 points · 24 comments on HN"
     },
     {
       "id": "5d1e722469ff",
@@ -232,7 +360,7 @@
       "url": "https://fortune.com/2026/10/30/cisco-president-jeetu-patel-gen-z-27-year-old-unlimited-ai-tokens-rewrite-legacy-code-entry-level-jobs/",
       "source": "Hacker News",
       "date": "2026-10-30T14:08:20.000Z",
-      "snippet": "205 points · 243 comments on HN"
+      "snippet": "308 points · 381 comments on HN"
     },
     {
       "id": "40aed769d1c2",
@@ -304,7 +432,7 @@
       "url": "https://news.ycombinator.com/item?id=50301479",
       "source": "Hacker News",
       "date": "2026-10-30T09:17:43.000Z",
-      "snippet": "144 points · 139 comments on HN"
+      "snippet": "148 points · 141 comments on HN"
     },
     {
       "id": "c7606af40dbb",
@@ -328,7 +456,7 @@
       "url": "https://www.penligent.ai/hackinglabs/cve-2026-98432/",
       "source": "Hacker News",
       "date": "2026-10-30T02:33:04.000Z",
-      "snippet": "63 points · 41 comments on HN"
+      "snippet": "65 points · 43 comments on HN"
     },
     {
       "id": "3e1cebb1f9f3",
@@ -360,7 +488,7 @@
       "url": "https://www.bbc.com/news/articles/cm9qzdqpxy48o",
       "source": "Hacker News",
       "date": "2026-10-29T22:22:13.000Z",
-      "snippet": "77 points · 35 comments on HN"
+      "snippet": "79 points · 35 comments on HN"
     },
     {
       "id": "2f083e35c49b",
@@ -368,7 +496,7 @@
       "url": "https://twitter.com/sgondala2/status/2115832070274723875",
       "source": "Hacker News",
       "date": "2026-10-29T21:58:34.000Z",
-      "snippet": "162 points · 183 comments on HN"
+      "snippet": "187 points · 196 comments on HN"
     },
     {
       "id": "923d025e66a5",
@@ -376,7 +504,7 @@
       "url": "https://convo.casa/@b/117525936178835007",
       "source": "Hacker News",
       "date": "2026-10-29T21:49:28.000Z",
-      "snippet": "117 points · 114 comments on HN"
+      "snippet": "120 points · 117 comments on HN"
     },
     {
       "id": "d8eb5a4b641e",
@@ -384,7 +512,7 @@
       "url": "https://labs.ycombinator.com/projects/games/index.html",
       "source": "Hacker News",
       "date": "2026-10-29T21:40:28.000Z",
-      "snippet": "402 points · 166 comments on HN"
+      "snippet": "412 points · 169 comments on HN"
     },
     {
       "id": "c30c38a613a7",
@@ -504,7 +632,7 @@
       "url": "https://news.ycombinator.com/item?id=50291116",
       "source": "Hacker News",
       "date": "2026-10-29T15:56:32.000Z",
-      "snippet": "77 points · 35 comments on HN"
+      "snippet": "77 points · 36 comments on HN"
     },
     {
       "id": "a525c413ff05",
@@ -512,135 +640,7 @@
       "url": "https://skypilot.ai/blog/grace-blackwell-needs-a-new-scheduler",
       "source": "Hacker News",
       "date": "2026-10-29T15:45:05.000Z",
-      "snippet": "144 points · 22 comments on HN"
-    },
-    {
-      "id": "54a7e21cbe6d",
-      "title": "AI, Lean, and the Future of Formal Verification, with Lean Creator Leo de Moura",
-      "url": "https://thedataexchange.media/leo-de-moura-lean-aws/",
-      "source": "Hacker News",
-      "date": "2026-10-29T15:29:48.000Z",
-      "snippet": "51 points · 10 comments on HN"
-    },
-    {
-      "id": "bd43dca7b973",
-      "title": "Zombie stats: Where the numbers AI quotes come from",
-      "url": "https://trakkr.ai/trakkr-research/zombie-stats",
-      "source": "Hacker News",
-      "date": "2026-10-29T15:06:17.000Z",
-      "snippet": "178 points · 72 comments on HN"
-    },
-    {
-      "id": "9d92d4ec6e5e",
-      "title": "The NYT Cooking app is testing AI recipe modifications",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1022193/nyt-cooking-app-ai-recipe-modification-tool",
-      "source": "The Verge",
-      "date": "2026-10-29T14:39:37.000Z",
-      "snippet": "The New York Times is testing a new AI feature for its Cooking app that helps users to modify recipes, and it has sparked some drama among users. Last Friday, NYT Cooking senior editor Genevieve Ko announced the feature,"
-    },
-    {
-      "id": "60c269dfa54e",
-      "title": "Wabi, the AI agent that builds mini apps, now valued at $1.25B after latest round",
-      "url": "https://techcrunch.com/2026/10/29/wabi-the-ai-agent-that-builds-mini-apps-now-valued-at-1-25b-after-latest-round/",
-      "source": "TechCrunch",
-      "date": "2026-10-29T14:35:26.000Z",
-      "snippet": "On Thursday, AI app Wabi, now describing itself as a \"personal agent,\" said it has raised $55 million at a $1.25 billion valuation."
-    },
-    {
-      "id": "90835edef505",
-      "title": "Manifestos, Fear, and 'Loser Thinking': Inside Proton's AI Reckoning",
-      "url": "https://www.404media.co/manifestos-fear-and-loser-thinking-inside-protons-ai-reckoning/",
-      "source": "Hacker News",
-      "date": "2026-10-29T14:29:06.000Z",
-      "snippet": "228 points · 81 comments on HN"
-    },
-    {
-      "id": "779b541ff77b",
-      "title": "We're releasing the weights of Mistral Large 4",
-      "url": "https://mistral.ai/news/mistral-large-4-oss/",
-      "source": "Hacker News",
-      "date": "2026-10-29T14:13:21.000Z",
-      "snippet": "1695 points · 436 comments on HN"
-    },
-    {
-      "id": "079251699e8e",
-      "title": "Anthropic is asking Wall Street to believe in AGI",
-      "url": "https://www.theverge.com/podcast/1021322/anthropic-ipo-filing-s-1-claude-semianalysis-joey-brookhart-interview",
-      "source": "The Verge",
-      "date": "2026-10-29T14:00:00.000Z",
-      "snippet": "Today on Decoder, I’m joined by Joey Brookhart, an analyst at the chip and AI research firm SemiAnalysis, to help me dig into the story inside the numbers of the Anthropic IPO filing — a document known as an S-1. Anthrop"
-    },
-    {
-      "id": "0b3918620b86",
-      "title": "Anthropic’s business plan: Build God or die trying",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1021476/anthropic-s-1-compute-recursive",
-      "source": "The Verge",
-      "date": "2026-10-29T13:30:00.000Z",
-      "snippet": "The Anthropic S-1 seems to have provided the financial justification for the company to spend as much as it possibly can on compute. If you are the kind of person who wonders if Anthropic is doing its level best to build"
-    },
-    {
-      "id": "c546a70dbf99",
-      "title": "Deepgram acquires Pipecat-maker Daily to bolster its voice AI infrastructure",
-      "url": "https://techcrunch.com/2026/10/29/deepgram-acquires-pipecat-maker-daily-to-bolster-its-voice-ai-infrastructure/",
-      "source": "TechCrunch",
-      "date": "2026-10-29T13:00:00.000Z",
-      "snippet": "With Pipecat, Deepgram will likely gain a deeper understanding of real-time voice and video infrastructure."
-    },
-    {
-      "id": "fd92a529665f",
-      "title": "Amazon updates Alexa to help you manage shopping lists and subscriptions and update delivery instructions",
-      "url": "https://techcrunch.com/2026/10/29/amazon-updates-alexa-to-help-you-manage-shopping-lists-and-subscriptions-and-update-delivery-instructions/",
-      "source": "TechCrunch",
-      "date": "2026-10-29T13:00:00.000Z",
-      "snippet": "The update allows you to use Alexa to create lists, register them, see what's on them, and add or edit items. You can also manage subscriptions."
-    },
-    {
-      "id": "eebb63f2228b",
-      "title": "Gemini 4 Carbon is the new #1 on the Artificial Analysis Intelligence Index v5",
-      "url": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1",
-      "source": "Hacker News",
-      "date": "2026-10-29T12:41:56.000Z",
-      "snippet": "336 points · 245 comments on HN"
-    },
-    {
-      "id": "9cd5509199bf",
-      "title": "AI has come for Arizona’s water",
-      "url": "https://www.theverge.com/cs/features/1016650/arizona-water-data-center-tsmc",
-      "source": "The Verge",
-      "date": "2026-10-29T10:00:04.000Z",
-      "snippet": "A hulking gray giant rises from the desert. Inside, engineers create the force behind our phones and computers and appliances, our streaming services and search engines and chatbots and vibe-coded apps and websites. The "
-    },
-    {
-      "id": "d28967fce9c6",
-      "title": "How we detect frontier model misalignment",
-      "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
-      "source": "OpenAI",
-      "date": "2026-10-29T09:00:00.000Z",
-      "snippet": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate."
-    },
-    {
-      "id": "2d9928289658",
-      "title": "How Ropes & Gray is developing AI for transactional diligence",
-      "url": "https://openai.com/index/ropes-gray-ai-diligence",
-      "source": "OpenAI",
-      "date": "2026-10-29T07:00:00.000Z",
-      "snippet": "Ropes & Gray is developing AI for transactional diligence with OpenAI. Lawyers review grouped documents, summaries, and reports before advising clients."
-    },
-    {
-      "id": "271134257c4a",
-      "title": "Claude Code regularly sends each background agent’s transcript to its model",
-      "url": "https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce",
-      "source": "Hacker News",
-      "date": "2026-10-29T03:33:42.000Z",
-      "snippet": "583 points · 235 comments on HN"
-    },
-    {
-      "id": "05a0d3d33151",
-      "title": "MicroZig to Adopt Strict No LLM / No AI Policy",
-      "url": "https://github.com/ZigEmbeddedGroup/microzig/blob/main/CODE_OF_CONDUCT.md",
-      "source": "Hacker News",
-      "date": "2026-10-29T00:30:37.000Z",
-      "snippet": "57 points · 80 comments on HN"
+      "snippet": "146 points · 22 comments on HN"
     }
   ]
 }
