@@ -1,6 +1,42 @@
 {
-  "updated": "2026-11-02T14:45:15.817Z",
+  "updated": "2026-11-03T13:37:30.239Z",
   "claude-code": [
+    {
+      "version": "2.1.317",
+      "date": null,
+      "bullets": [
+        "Added a warning to <code>/schedule</code> when a new cloud scheduled task gets connectors you did not ask for, with how to remove them",
+        "Added a check that asks before a web or shell tool call sends your account email address to the network",
+        "Added <code>onFailure: &quot;block&quot;</code> for Agent SDK hook callbacks, so a callback that fails blocks the action instead of letting it run",
+        "Added a notice in Claude Desktop's Code tab when your organization's remote managed settings haven't loaded for the session, and another once they do",
+        "Added a notice when auto mode's check has no answer for a subagent's tool call, which used to leave nothing in the main view",
+        "Added <code>anthropic.plan</code>, <code>anthropic.seat_type</code>, <code>anthropic.provider</code> and <code>anthropic.custom_base_url</code> to OTel metrics, events and spans",
+        "Added a cost report to the Claude apps gateway admin API, <code>GET /v1/organizations/analytics/cost</code>, for reading past spend over a date range in total, per developer, per day or per IdP group",
+        "Added a daily record of each developer's IdP groups on Claude apps gateways with <code>admin:</code> set, kept for <code>admin.identity_retention_days</code>, which the cost report groups by",
+        "Added <code>CLAUDE_CODE_DISABLE_NESTED_SESSION_ID</code>: set it to <code>1</code> on a self-hosted runner to have <code>claude -p</code> run inside a session use that session's ID and transcript, as in earlier versions",
+        "Fixed project and local MCP servers disconnecting after the first turn in some Claude desktop sessions",
+        "Fixed auto mode failing every turn when an LLM gateway set as the base URL answers 403 or 422 to its server-side safety check (a 403 with an apiKeyHelper is unchanged)",
+        "Fixed <code>claude auth status</code> exiting before a slow token refresh was saved, which could sign you out on the next run",
+        "Fixed a project's <code>effortLevel</code> setting being ignored by sessions that an app starts ahead of time and then opens in the project, such as new sessions in the desktop app's Code tab",
+        "Fixed <code>claude --from-pr</code> reporting &quot;No conversations found&quot; in projects with many sessions when the linked session was older than the first page",
+        "Fixed the second of two simultaneous permission prompts showing no file path or command on claude.ai and the mobile apps",
+        "Fixed Remote Control and SDK hosts offering &quot;don't ask again&quot; on a mod's tool calls",
+        "Fixed session titles being lost in cloud and SDK sessions when a new message or Stop arrived while the title was generating",
+        "Fixed self-paced <code>/loop</code> wakeups sometimes not being scheduled when Claude left a field out of its request",
+        "Fixed auto mode in cloud sessions stopping for approval when the Artifact tool uploaded, wrote to a database or saved a file through the outputs folder",
+        "Fixed skills synced from claude.ai being lost or downloaded again every ten minutes when they can't be written to disk",
+        "Fixed <code>/schedule</code> leaving a cloud scheduled task's next run time and link out of its results after creating or updating it",
+        "Fixed screen readers speaking a running subagent's elapsed time and token count on every change in screen reader mode",
+        "Fixed a region or network block (HTTP 403) being shown as a sign-in failure; the error now explains the block",
+        "Fixed Claude saying a working claude.ai connector needed authorization or had failed in cloud sessions when a synced plugin included the same server",
+        "Fixed <code>claude -p</code> exiting 0 when a full disk or quota lost its transcript or ~/.claude.json writes; it now prints an error and, in text and json output, exits 1. Full NFS exports may be missed",
+        "Fixed edits to settings files made in the first second or so after launch not taking effect until a settings file changed again",
+        "Fixed old transcripts not being cleaned up on machines where some runs skip cleanup, such as runs using <code>--setting-sources</code>",
+        "Fixed deleted agent team inboxes being re-created by a teammate's late message",
+        "Fixed a re-created agent teammate being removed from its team by an earlier shutdown approval",
+        "Fixed stored scheduled tasks being impossible to list or delete after scheduled tasks were turned off"
+      ]
+    },
     {
       "version": "2.1.316",
       "date": null,
@@ -715,45 +751,16 @@
         "Fixed published artifact pages freezing or crashing the reader's browser tab on short code blocks with many unclosed `` tags",
         "Fixed a mod's Client region staying failed for the whole session after the terminal threw while drawing it"
       ]
-    },
-    {
-      "version": "2.1.288",
-      "date": null,
-      "bullets": [
-        "Added <code>$.ui.selection()</code> for mods: returns the text you last selected in fullscreen mode and, when the selection lies within one transcript row, that row",
-        "Added a built-in <code>gh api</code> to cloud sessions whose image has no GitHub CLI, and fixed the built-in sending control characters from file names, jq filters or GitHub errors to the terminal",
-        "Added recovery for a prompt cleared with Ctrl+C: pressing Up on the empty prompt brings the draft back, including pasted text and images",
-        "Added a re-authenticate prompt when an MCP server asks for more OAuth scope during a tool call",
-        "Added <code>--max-findings |all</code> to /code-review to report more or fewer findings than the usual limit; the choice is reused until you pass <code>--max-findings default</code>",
-        "Added Ctrl+F to find a session by name and Alt+↑/↓ to jump between groups in the agents view; both, and rename, can be rebound in keybindings.json",
-        "Added a screen reader mode announcement of the new permission mode when you approve a plan, including with Shift+Tab",
-        "Fixed mid-response API timeouts failing the turn: non-interactive sessions and subagents now continue from the partial response, and thinking-only responses are retried",
-        "Fixed long conversations failing with &quot;Prompt is too long&quot; instead of auto-compacting when the last reply reported zero token usage",
-        "Fixed <code>--resume</code> sometimes dropping files and other context that a compaction had just restored",
-        "Fixed a resumed session sometimes not saving the last response of a turn, so that the next <code>--resume</code> showed the prompt unanswered",
-        "Fixed resume occasionally loading a transcript cut short when the same session rewrote the file during the load",
-        "Fixed resuming a conversation started on 2.1.286 or earlier dropping the model's earlier thinking",
-        "Fixed session titles, memory recall and prompt hooks failing on Mantle or behind gateways that reject structured outputs; added <code>CLAUDE_CODE_DISABLE_STRUCTURED_OUTPUTS</code> to turn structured outputs off",
-        "Fixed auto mode denials pointing Claude at a Bash permission rule when the blocked tool was not Bash",
-        "Fixed auto mode on Bedrock and Mantle switching to the local classifier for the rest of the session after a request to an older model, such as a WebFetch summary or a <code>sonnet</code> subagent",
-        "Fixed cloud sessions that restarted on a newly picked model replying with that model after the server refused it",
-        "Fixed Cowork cloud sessions staying marked as waiting for input after a WebFetch permission prompt for an unapproved URL went unanswered for five minutes",
-        "Fixed prompt suggestions not appearing on a phone that joins a Cowork cloud session started on another device",
-        "Fixed a mod's button sometimes running a different button's action when pressed on a view drawn before Claude Code restarted",
-        "Fixed a plugin's pane showing nothing when one <code>Code</code> element held a diff that does not parse; it now draws as plain code",
-        "Fixed plugin LSP servers receiving literal <code>${user_config.*}</code> and <code>${CLAUDE_PLUGIN_ROOT}</code> placeholders in <code>initializationOptions</code> and <code>settings</code> instead of substituted values or manifest defaults",
-        "Fixed a plugin's <code>tool.call</code> hook making Bash fail and file searches read the wrong folder in subagents that run in a worktree",
-        "Fixed <code>git-subdir</code> plugin installs failing, or caching an incomplete plugin, on older git (before 2.39, e.g. Ubuntu 22.04's 2.34)",
-        "Fixed plugins loaded with <code>--plugin-dir</code> not showing &quot;Configure options&quot; in <code>/plugin</code>",
-        "Fixed background sessions ending when a plugin was reloaded or disabled while one of its timers or reads was still running",
-        "Fixed sandboxed heredocs with an unquoted delimiter (<code>python3 &lt;&lt;EOF</code>) asking for approval on every run under sandbox auto-allow when the body holds only plain text and simple <code>$VAR</code> references",
-        "Fixed Bash tool permission check to prompt before a <code>BASHPID</code> assignment whose value the shell would evaluate as arithmetic, instead of allowing it silently",
-        "Fixed fullscreen sessions exiting with &quot;unrecoverable interface error&quot; when opening the background tasks dialog while a plugin or mod showed rows above the prompt",
-        "Fixed Claude reporting a message to another session as delivered when that session held it: the notice now says it wasn't delivered and names the session, and in SDK sessions Claude can now learn of it mid-turn"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.167.0-alpha.4",
+      "date": "2026-11-03T02:24:00.000Z",
+      "bullets": [
+        "Release 0.167.0-alpha.4"
+      ]
+    },
     {
       "version": "0.167.0-alpha.3",
       "date": "2026-11-01T22:26:17.000Z",
@@ -885,13 +892,6 @@
       "date": "2026-10-22T04:22:12.000Z",
       "bullets": [
         "Release 0.164.0-alpha.11"
-      ]
-    },
-    {
-      "version": "0.163.0-alpha.11.2",
-      "date": "2026-10-22T06:41:14.000Z",
-      "bullets": [
-        "Release 0.163.0-alpha.11.2"
       ]
     }
   ]
