@@ -1,6 +1,42 @@
 {
-  "updated": "2026-11-03T13:37:30.239Z",
+  "updated": "2026-11-04T13:45:58.960Z",
   "claude-code": [
+    {
+      "version": "2.1.318",
+      "date": null,
+      "bullets": [
+        "Added a record of your answer when Claude Code asks to turn on the mods it writes in a session",
+        "Added <code>assume_role</code> on <code>mantle</code> upstreams of the Claude apps gateway, for a role in another AWS account and for per-developer AWS cost attribution",
+        "Added an <code>effort</code> option to a mod's <code>$.model.fork</code>, so a quick side job can run at <code>low</code> whatever effort the session uses; the result reports the effort sent",
+        "Added the date a stored claude.ai sign-in ends to <code>claude auth status</code> (<code>loginExpiresAt</code>) and to <code>claude -p</code> JSON results (<code>credential_expires_at</code>)",
+        "Added a one-line stderr warning to <code>claude -p</code> text output, starting 10 days before a stored claude.ai sign-in ends",
+        "Fixed <code>--continue</code> sometimes losing the earlier conversation after a malformed tool call's retries ran out (regression in 2.1.314)",
+        "Fixed macOS sessions with many running Bash commands stalling while memory grew",
+        "Fixed permission prompts being answered by keys typed just after sending a message, or before a slow prompt appeared",
+        "Fixed <code>/logout</code>, <code>claude auth logout</code> and <code>claude mcp remove</code> reporting success, and changes to trust, consent or MCP settings being dropped with no word, when the config file could not be updated on a shared network home directory",
+        "Fixed jobs exiting with <code>Not logged in</code> when another terminal or host signs in again to the same account and organization on the same home",
+        "Fixed <code>claude mcp add</code> and <code>remove</code> writing the config without its lock: they now wait for it or exit 1, though another job's save can still replace a saved server",
+        "Fixed <code>claude plugin</code> commands exiting before a slow token refresh was saved, which could sign you out on the next run",
+        "Fixed <code>claude plugin validate</code> passing a custom-named marketplace file that <code>claude plugin marketplace add</code> rejects",
+        "Fixed stdio MCP servers that exit on the version probe being re-probed on every start; a server that dies in under 3s for its own reason is also pinned to the legacy handshake for 7 days",
+        "Fixed sessions being refused at startup by an <code>allowedProviders</code> list that another login on the same machine had stored",
+        "Fixed idle compaction replacing a conversation with a reply that was not a summary",
+        "Fixed the &quot;Now using usage credits&quot; notice reappearing about every 30 seconds while a background subagent is running",
+        "Fixed custom slash commands that fail, or that only Claude can invoke, printing nothing in <code>claude -p</code> and SDK sessions",
+        "Fixed <code>claude -p</code> and Agent SDK sessions reporting success when an API error cut off a reply while a mod hooked <code>turn.step</code>",
+        "Fixed a message sent right after a model change still running after Stop in headless sessions: Stop now cancels or stops it as it would a queued message",
+        "Fixed a deleted session transcript being re-created with its last prompt when an idle non-interactive session exited",
+        "Fixed <code>claude remote-control</code> hosts, the background daemon and self-hosted runners failing to start new sessions (<code>spawn ENOENT</code>) after an update or version cleanup removed the binary of a still-running process",
+        "Fixed a running Claude Code process owned by another user (for example one left by <code>sudo claude</code>) being treated as dead by version cleanup, which could delete its binary",
+        "Fixed <code>/remote-control</code> showing a session as available after a failed connection",
+        "Fixed <code>/design revoke</code> reporting success when the request failed with a 404",
+        "Fixed a shell command approved after a self-hosted runner or cloud session restart running in the session's start folder, not the folder it was asked in; if that folder can't be entered, it is not run",
+        "Fixed Claude not being told when an approved connector tool was unavailable after a cloud session restart",
+        "Fixed cloud sessions being stopped in the middle of a turn when the service refuses uploads for several minutes",
+        "Fixed variables a <code>Setup</code> hook writes to <code>CLAUDE_ENV_FILE</code> not reaching the Bash tool in some cloud sessions",
+        "Fixed the iPhone app showing a cloud session's turn as finished while it kept running, after a response was cut off at a tool call or a refused image or document was removed"
+      ]
+    },
     {
       "version": "2.1.317",
       "date": null,
@@ -718,47 +754,28 @@
         "Fixed the background daemon's log passing terminal control characters to the screen under <code>claude daemon run</code> and <code>claude daemon logs</code>; they now show as <code>\\uXXXX</code> escapes",
         "Self-hosted runner: Fixed a crafted, very long line of a session's error output freezing the runner for several seconds"
       ]
-    },
-    {
-      "version": "2.1.289",
-      "date": null,
-      "bullets": [
-        "Fixed a deny or ask rule on a nested part of a compound shell command not holding over a user-installed mod's approval on managed machines",
-        "Fixed the terminal freezing on short code blocks with many unclosed `<code> tags or deeply nested </code>${` substitutions",
-        "Fixed <code>Read</code> deny rules not applying to files @-mentioned, changed, or selected in the IDE through a symlink",
-        "[VSCode] Reverted a 2.1.288 change to <code>claude auth status</code> that may have made sign-outs more frequent",
-        "Improved how quickly large files open in a plugin code pane by laying the highlighted view out once at its final width",
-        "Fixed <code>plugin list</code>, <code>plugin eval</code> and <code>plugin update</code> showing a stale copy of a plugin installed from a local folder marketplace, and hot reload for a symlinked <code>--plugin-dir</code>",
-        "Fixed installed mods not loading in the first session after an upgrade",
-        "Fixed a plugin's rows above the prompt showing a stale row while the Background tasks dialog was open in fullscreen",
-        "Fixed plugin panes drawing nothing when a link used a localhost address, an <code>@</code> in its path, an uppercase host or a <code>file:</code> path",
-        "Fixed a user-installed plugin being able to rewrite the descriptions of an organization-managed MCP server's sign-in tools",
-        "Fixed a freeze or forced quit at launch when a plugin drew a Box with a border style the terminal does not know",
-        "Fixed supervised and background sessions ending when a plugin's on-screen handler threw asynchronously",
-        "Fixed sessions ending with an interface error when a plugin region with no height kept growing",
-        "Fixed Bash deny and ask rules missing a command behind an environment variable prefix with an expanded value (e.g. <code>TZ=&quot;$HOME&quot; rm -rf build</code>) when the sandbox auto-allows commands",
-        "Fixed a Bash deny or ask rule being skipped under sandbox auto-allow when a bare variable assignment came before the command",
-        "Fixed <code>claude plugin validate</code> skipping the plugin when the folder also holds a marketplace manifest",
-        "Added <code>agent.spawn</code> for teammates, one agent id across plugin hook events, and idle and waiting states in <code>$.agent.list()</code>",
-        "Fixed sessions ending with &quot;unrecoverable interface error&quot; when a value a mod's <code>ui.render</code> hook wrote made a row throw while drawn; the engine now draws its own row instead",
-        "Fixed text with a tab, a stray escape and a C1 control, or a short text with a tab and CRLF line endings, drawing over the rows below it",
-        "Fixed right-aligned content in a mod's pane or band drawing under the close mark or <code>[-]</code>, which now also keep one column in from the terminal's edge",
-        "Fixed a mod's <code>Client</code> that fails while drawn taking down everything the mod drew around it; it now fails alone and raises <code>ui.fault</code>",
-        "Fixed <code>claude plugin validate</code> failing an Anthropic marketplace's own plugin and listing a clean <code>plugin.json</code> in <code>--json</code>",
-        "Fixed a mod's band that fails to draw briefly telling the cards under it to step aside",
-        "Fixed a failed plugin component showing <code>Error</code> or nothing as its reason when the failure carried no message",
-        "Improved the line a mod's author sees when its band or pane fails to draw: it names the mod and says nothing was drawn",
-        "Fixed published artifact pages freezing or crashing the reader's browser tab on short code blocks with many unclosed `` tags",
-        "Fixed a mod's Client region staying failed for the whole session after the terminal threw while drawing it"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.168.0-alpha.1",
+      "date": "2026-11-04T02:54:53.000Z",
+      "bullets": [
+        "Release 0.168.0-alpha.1"
+      ]
+    },
     {
       "version": "0.167.0-alpha.4",
       "date": "2026-11-03T02:24:00.000Z",
       "bullets": [
         "Release 0.167.0-alpha.4"
+      ]
+    },
+    {
+      "version": "2.75",
+      "date": "2026-11-03T23:04:31.000Z",
+      "bullets": [
+        "Mirror of the unmodified libcap 2.75 source archive used to build Bubblewrap for Codex's Linux musl packages. - Upstream archive - SHA-256 for <code>libcap-2.75.tar.xz</code> is <code>de4e7e064c9ba451d5234dd46e897d7c71c96a9ebf9a0c445bc04f4742d83632</code>."
       ]
     },
     {
@@ -878,20 +895,6 @@
       "date": "2026-10-22T11:11:51.000Z",
       "bullets": [
         "Release 0.164.0-alpha.12"
-      ]
-    },
-    {
-      "version": "0.164.0-alpha.11.1",
-      "date": "2026-10-23T01:58:13.000Z",
-      "bullets": [
-        "Release 0.164.0-alpha.11.1"
-      ]
-    },
-    {
-      "version": "0.164.0-alpha.11",
-      "date": "2026-10-22T04:22:12.000Z",
-      "bullets": [
-        "Release 0.164.0-alpha.11"
       ]
     }
   ]
