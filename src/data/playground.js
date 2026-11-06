@@ -153,9 +153,9 @@ export const playgroundCategories = [
     label: 'Codex CLI',
     commands: {
       codex: ['✓ TUI started · model: gpt-5.6-codex · sandbox: workspace-write'],
-      '/approvals': [
-        'Approval mode:',
-        '  [1] Read-only  [2] Auto (default)  [3] Full access',
+      '/permissions': [
+        'Choose what Codex is allowed to do:',
+        '  [1] Read Only  [2] Default  [3] Full Access',
       ],
       '/model': ['✓ Switched to gpt-5.6-codex'],
       'codex exec "audit auth.js" --sandbox read-only': [
@@ -166,7 +166,7 @@ export const playgroundCategories = [
       'cat ~/.codex/config.toml': [
         'model = "gpt-5.6-codex"',
         'approval_policy = "on-request"',
-        'sandbox = "workspace-write"',
+        'sandbox_mode = "workspace-write"',
       ],
     },
   },

@@ -239,7 +239,7 @@ claude -p "is this issue a bug or a feature request? reply with one word" &lt; i
     tool: 'Codex',
     level: 'Beginner',
     minutes: 10,
-    summary: 'OpenAI\'s open-source coding agent: install it, pick an approval mode you trust, and run tasks from the terminal.',
+    summary: 'OpenAI\'s open-source coding agent: install it, pick a permission level you trust, and run tasks from the terminal.',
     sections: [
       {
         heading: 'Install and sign in',
@@ -248,13 +248,14 @@ claude -p "is this issue a bug or a feature request? reply with one word" &lt; i
 <p>First run asks you to sign in with ChatGPT (Plus/Pro/Team plans include Codex usage) or an API key. Then run <code>codex</code> inside a project to open the interactive TUI — same mental model as Claude Code: a colleague with terminal access and guardrails.</p>`,
       },
       {
-        heading: 'Approval modes — the dial that matters',
-        body: `<p>Codex's key setting is how much it may do without asking. Interactive <code>/approvals</code> (or the <code>--ask-for-approval</code> / <code>--sandbox</code> flags) sets it:</p>
+        heading: 'Permissions — the dial that matters',
+        body: `<p>Codex's key setting is how much it may do without asking. Type <code>/permissions</code> in a session to pick one of three presets:</p>
 <ul>
-<li><strong>Read-only</strong> — it can look, suggest, but not touch. Good first run in an unfamiliar repo.</li>
-<li><strong>Auto</strong> — reads/writes in the workspace and runs sandboxed commands without asking; escalates anything outside.</li>
-<li><strong>Full access</strong> — no sandbox, no prompts. Powerful, and exactly what it says on the tin; use it in disposable environments.</li>
+<li><strong>Read Only</strong> — it can read the workspace; editing files or using the internet needs your approval. Good first run in an unfamiliar repo.</li>
+<li><strong>Default</strong> — reads, edits and runs commands inside the workspace; asks before touching anything outside it or going online.</li>
+<li><strong>Full Access</strong> — edits anywhere and uses the internet without asking. Powerful, and exactly what it says on the tin; use it in disposable environments.</li>
 </ul>
+<p>Under the hood each preset is a sandbox (<code>--sandbox</code>: <code>read-only</code>, <code>workspace-write</code> or <code>danger-full-access</code>) plus an approval policy (<code>--ask-for-approval</code>: <code>untrusted</code>, <code>on-request</code> or <code>never</code>). Set defaults in <code>~/.codex/config.toml</code> with <code>sandbox_mode</code> and <code>approval_policy</code>.</p>
 <p>Start read-only, watch what it <em>wants</em> to do, then loosen. Trust is earned per-repo.</p>`,
       },
       {
@@ -267,11 +268,11 @@ claude -p "is this issue a bug or a feature request? reply with one word" &lt; i
       hint: 'Simulated Codex CLI session.',
       commands: {
         'codex': ['Opening Codex TUI…', '✓ Signed in with ChatGPT · model: gpt-5.6-codex · sandbox: workspace-write'],
-        '/approvals': [
-          'Approval mode:',
-          '  [1] Read-only      — look, suggest, never touch',
-          '  [2] Auto (default) — sandboxed edits + commands, escalate outside',
-          '  [3] Full access    — no sandbox, no prompts',
+        '/permissions': [
+          'Choose what Codex is allowed to do:',
+          '  [1] Read Only   — read the workspace; ask to edit or go online',
+          '  [2] Default     — edit + run commands in the workspace; ask outside it',
+          '  [3] Full Access — edit anywhere, use the internet, never ask',
           'Select: _',
         ],
         '/model': ['Model options: gpt-5.6-codex · gpt-5.6 · gpt-5.6-mini', '✓ Switched to gpt-5.6-codex'],
@@ -285,10 +286,10 @@ claude -p "is this issue a bug or a feature request? reply with one word" &lt; i
     },
     quiz: [
       {
-        q: 'Which approval mode is the sensible first run in an unfamiliar repo?',
-        options: ['Full access', 'Auto', 'Read-only', 'No sandbox needed'],
+        q: 'Which /permissions preset is the sensible first run in an unfamiliar repo?',
+        options: ['Full Access', 'Default', 'Read Only', 'No sandbox needed'],
         answer: 2,
-        explain: 'Read-only lets you watch the agent propose work before granting any write access.',
+        explain: 'Read Only lets you watch the agent propose work before granting any write access.',
       },
       {
         q: 'Codex\'s project memory file is called:',
