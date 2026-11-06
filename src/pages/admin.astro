@@ -1,287 +1,456 @@
 ---
 // src/pages/admin.astro — private dashboard (Supabase email/password auth)
+// Links (affiliate placements + their clicks), Clicks (30-day view), Subscribers.
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Link dashboard · ai4you.site">
+<Layout title="Admin · ai4you.site">
   <meta name="robots" content="noindex, nofollow" slot="head-extra" />
-  <div class="dash-wrap">
-    <!-- ===== auth gate ===== -->
-    <div id="auth" class="auth-card">
-      <span class="brand">ai4you<em> · link dashboard</em></span>
-      <h1 class="gate-title">Sign in to manage link placements</h1>
-      <p class="gate-sub">Authentication is handled by Supabase. Only the admin email configured in <code>src/config.js</code> is allowed to make changes — enforced again at the database level.</p>
-      <label class="visually-hidden" for="a-email">Email</label>
-      <input id="a-email" type="email" placeholder="admin@yourdomain.com" autocomplete="username" />
-      <label class="visually-hidden" for="a-pass">Password</label>
-      <input id="a-pass" type="password" placeholder="Password" autocomplete="current-password" />
-      <button class="btn btn--primary" id="a-login" type="button">Sign in</button>
-      <p class="gate-msg" id="a-msg" role="alert"></p>
-    </div>
+  <div class="adm">
+    <!-- ===== sign in ===== -->
+    <form id="auth" class="auth-card">
+      <h1 class="auth-title">ai4you admin</h1>
+      <p class="auth-sub">Sign in with the admin account. Only the email set in <code>src/config.js</code> can make changes.</p>
+      <label for="a-email">Email</label>
+      <input id="a-email" type="email" autocomplete="username" required />
+      <label for="a-pass">Password</label>
+      <input id="a-pass" type="password" autocomplete="current-password" required />
+      <button class="btn btn--primary" id="a-login" type="submit">Sign in</button>
+      <p class="auth-msg" id="a-msg" role="alert"></p>
+    </form>
 
     <!-- ===== dashboard ===== -->
     <div id="dash" hidden>
-      <div class="admin-bar">
-        <span id="who">Signed in</span>
-        <button class="bar-btn" id="signout" type="button">Sign out</button>
-      </div>
+      <header class="adm-top">
+        <h1>Admin</h1>
+        <nav class="tabs" role="tablist" aria-label="Admin sections">
+          <button role="tab" type="button" data-tab="links" aria-selected="true">Links</button>
+          <button role="tab" type="button" data-tab="clicks" aria-selected="false">Clicks</button>
+          <button role="tab" type="button" data-tab="subs" aria-selected="false">Subscribers <span class="tab-n" id="subs-n"></span></button>
+        </nav>
+        <div class="who"><span id="who"></span><button class="link-btn" id="signout" type="button">Sign out</button></div>
+      </header>
 
-      <h1>Link dashboard</h1>
-      <p class="lede">Create, edit, pause, and delete link placements. Changes save to the database immediately; the public site picks them up on its next build (Vercel redeploys automatically, or trigger one from the Vercel dashboard).</p>
-
-      <div class="panel">
-        <h2 id="form-title">New placement</h2>
-        <div class="grid2">
-          <div class="field">
-            <label for="f-slug">Slug (used as the LinkUnit slug &amp; sub-id)</label>
-            <input id="f-slug" type="text" placeholder="jasper-inline-1" />
+      <!-- Links -->
+      <section id="tab-links" role="tabpanel" aria-label="Links">
+        <div class="stats" id="link-stats"></div>
+        <div class="toolbar">
+          <input id="q" type="search" placeholder="Search links" aria-label="Search links" />
+          <div class="seg" role="group" aria-label="Show">
+            <button type="button" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" data-filter="live" aria-pressed="false">Live</button>
+            <button type="button" data-filter="paused" aria-pressed="false">Paused</button>
+            <button type="button" data-filter="shelf" aria-pressed="false">On /tools</button>
           </div>
-          <div class="field">
-            <label for="f-type">Placement type</label>
-            <select id="f-type">
-              <option value="inline">inline — in-text link</option>
-              <option value="button">button — CTA button</option>
-              <option value="card" selected>card — compact product card</option>
-              <option value="banner">banner — full-width strip</option>
-              <option value="box">box — recommended panel</option>
-            </select>
-          </div>
+          <button class="btn btn--primary" id="new-link" type="button">New link</button>
         </div>
-        <div class="field">
-          <label for="f-url">Affiliate / tracking URL</label>
-          <input id="f-url" type="url" placeholder="https://vendor.com/?fpr=YOURID" />
-        </div>
-        <div class="grid2">
-          <div class="field">
-            <label for="f-label">Label</label>
-            <input id="f-label" type="text" placeholder="Try Jasper" />
-          </div>
-          <div class="field">
-            <label for="f-note">Note (shown on card/banner/box)</label>
-            <input id="f-note" type="text" placeholder="Short supporting sentence" />
-          </div>
-        </div>
-        <div class="grid2">
-          <div class="field">
-            <label for="f-commission">Commission text (shown on tool-shelf cards, optional)</label>
-            <input id="f-commission" type="text" placeholder="~30% recurring" />
-          </div>
-          <div class="field">
-            <label for="f-network">Affiliate network (optional)</label>
-            <input id="f-network" type="text" placeholder="PartnerStack / Impact / in-house" />
-          </div>
-        </div>
-        <div class="grid2">
-          <div class="field">
-            <label for="f-shelfcat">Shelf category</label>
-            <select id="f-shelfcat">
-              <option value="">- not on shelf -</option>
-              <option value="writing">writing</option>
-              <option value="video">video &amp; audio</option>
-              <option value="seo">seo</option>
-              <option value="marketing">marketing</option>
-              <option value="productivity">productivity</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>&nbsp;</label>
-            <label style="display:flex;gap:8px;align-items:center;font-size:13px;color:var(--ink);"><input id="f-shelf" type="checkbox" style="width:auto;" /> Show on the tool shelf (/tools)</label>
-          </div>
-        </div>
-        <div class="btn-row">
-          <button class="btn btn--primary" id="f-save" type="button">Save placement</button>
-          <button class="btn btn--ghost" id="f-cancel" type="button" hidden>Cancel edit</button>
-        </div>
-        <p class="status" id="f-status" role="status" aria-live="polite"></p>
-      </div>
-
-      <div class="panel">
-        <h2>Placements (<span id="count">0</span>)</h2>
-        <div id="rows"></div>
-        <p class="hint">Place on any page with: <code>&lt;LinkUnit slug="SLUG" /&gt;</code> — import it from <code>~/components/LinkUnit.astro</code> and the build renders it. Changes go live on the next deploy.</p>
-      </div>
-
-      <div class="panel">
-        <h2>Clicks (last 30 days)</h2>
-        <table class="stats-table">
-          <thead><tr><th>Placement</th><th>Clicks</th></tr></thead>
-          <tbody id="click-rows"><tr><td colspan="2">—</td></tr></tbody>
+        <table class="grid">
+          <thead><tr><th>Link</th><th>Format</th><th>Status</th><th class="num">7 days</th><th class="num">30 days</th><th class="trend-col">Last 30 days</th><th><span class="visually-hidden">Actions</span></th></tr></thead>
+          <tbody id="rows"></tbody>
         </table>
-        <div class="btn-row" style="margin-top:12px;">
-          <button class="btn btn--ghost btn--small" id="refresh-clicks" type="button">Refresh</button>
+        <p class="empty" id="rows-empty" hidden></p>
+        <p class="foot-note">Put a link on a page with <code>&lt;LinkUnit slug="its-id" /&gt;</code>. Use <em>Copy code</em> in the editor.</p>
+      </section>
+
+      <!-- Clicks -->
+      <section id="tab-clicks" role="tabpanel" aria-label="Clicks" hidden>
+        <div class="stats" id="click-stats"></div>
+        <figure class="chart">
+          <figcaption>Clicks per day, last 30 days</figcaption>
+          <div id="chart"></div>
+        </figure>
+        <div class="two">
+          <div><h2>Pages that send clicks</h2><table class="grid grid--plain"><tbody id="top-pages"></tbody></table></div>
+          <div><h2>Where visitors came from</h2><table class="grid grid--plain"><tbody id="top-refs"></tbody></table></div>
         </div>
-      </div>
+      </section>
+
+      <!-- Subscribers -->
+      <section id="tab-subs" role="tabpanel" aria-label="Subscribers" hidden>
+        <div class="toolbar">
+          <input id="sq" type="search" placeholder="Search emails" aria-label="Search subscribers" />
+          <button class="btn btn--ghost" id="export" type="button">Download CSV</button>
+        </div>
+        <table class="grid">
+          <thead><tr><th>Email</th><th>Signed up</th><th><span class="visually-hidden">Actions</span></th></tr></thead>
+          <tbody id="subs"></tbody>
+        </table>
+        <p class="empty" id="subs-empty" hidden>No subscribers yet. The signup form is on the homepage.</p>
+      </section>
     </div>
+
+    <!-- ===== link editor ===== -->
+    <dialog id="editor" aria-labelledby="ed-title">
+      <form id="ed-form" novalidate>
+        <div class="ed-head">
+          <h2 id="ed-title">New link</h2>
+          <button class="link-btn" type="button" data-close>Close</button>
+        </div>
+
+        <div class="ed-preview" aria-label="Preview"><div id="preview"></div></div>
+
+        <label for="f-label">Text on the site</label>
+        <input id="f-label" type="text" placeholder="Try Jasper" required />
+
+        <label for="f-url">Affiliate link</label>
+        <input id="f-url" type="url" placeholder="https://vendor.com/?fpr=YOURID" required />
+
+        <label for="f-type">Format</label>
+        <select id="f-type">
+          <option value="inline">Text link inside a sentence</option>
+          <option value="button">Button</option>
+          <option value="card" selected>Small product card</option>
+          <option value="banner">Full-width strip</option>
+          <option value="box">"Recommended" panel</option>
+        </select>
+
+        <label for="f-note">Supporting sentence</label>
+        <input id="f-note" type="text" placeholder="The AI writer marketing teams keep paying for." />
+        <p class="hint">Shown on cards, strips and panels; before the link for text links.</p>
+
+        <label for="f-slug">ID</label>
+        <input id="f-slug" type="text" placeholder="jasper-card" pattern="[a-z0-9][a-z0-9-]{1,40}" />
+        <p class="hint" id="slug-hint">Filled from the text. Pages use it to place the link, and clicks are counted under it.</p>
+
+        <fieldset class="shelf">
+          <label class="check"><input id="f-shelf" type="checkbox" /> Also list it on the /tools page</label>
+          <div id="shelf-fields" hidden>
+            <label for="f-shelfcat">Category on /tools</label>
+            <select id="f-shelfcat">
+              <option value="writing">Writing</option>
+              <option value="video">Video &amp; audio</option>
+              <option value="seo">SEO</option>
+              <option value="marketing">Marketing</option>
+              <option value="productivity" selected>Productivity</option>
+            </select>
+            <label for="f-commission">Commission shown to readers</label>
+            <input id="f-commission" type="text" placeholder="~30% recurring" />
+            <label for="f-network">Affiliate network (only you see this)</label>
+            <input id="f-network" type="text" placeholder="PartnerStack" />
+          </div>
+        </fieldset>
+
+        <p class="form-err" id="f-err" role="alert"></p>
+
+        <div class="ed-foot">
+          <button class="btn btn--primary" id="f-save" type="submit">Create link</button>
+          <button class="btn btn--ghost" id="f-copy" type="button" hidden>Copy code</button>
+          <span class="spacer"></span>
+          <button class="link-btn danger" id="f-delete" type="button" hidden>Delete link</button>
+          <span id="f-delete-wrap" hidden>Delete for good? <button class="btn btn--danger" id="f-delete-confirm" type="button">Delete</button> <button class="link-btn" id="f-delete-cancel" type="button">Keep</button></span>
+        </div>
+      </form>
+    </dialog>
+
+    <p id="toast" role="status" aria-live="polite"></p>
   </div>
 </Layout>
 
-<style>
-  .dash-wrap { max-width: 980px; margin: 0 auto; padding: 32px 24px 80px; }
-  .dash-wrap h1 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 4.5vw, 52px); letter-spacing: -0.02em; margin: 0 0 8px; }
-  .dash-wrap .lede { color: var(--muted); font-size: 15px; margin: 0 0 32px; max-width: 62ch; }
-  .auth-card {
-    max-width: 420px; margin: 48px auto; border: 1px solid var(--hairline);
-    background: var(--surface); border-radius: 12px; padding: 36px 32px;
-  }
-  .auth-card .brand { font-family: var(--display); font-size: 26px; margin-bottom: 14px; display: block; }
-  .auth-card .brand em { font-style: italic; color: var(--muted); }
-  .gate-title { font: 600 15px/1.4 var(--sans); margin: 0 0 4px; }  /* h1: the only one visible while signed out */
-  .gate-sub { font-size: 13px; color: var(--muted); margin: 0 0 18px; line-height: 1.55; }
-  .gate-sub code { font-family: var(--mono); font-size: 11.5px; }
-  #auth input {
-    width: 100%; font: 400 15px/1.4 var(--sans); color: var(--ink);
-    background: var(--canvas); border: 1px solid var(--hairline-strong);
-    border-radius: 8px; padding: 12px 14px; margin-bottom: 12px;
-  }
-  #auth input:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
-  .gate-msg { font: 500 13px/1.5 var(--sans); min-height: 20px; margin: 12px 0 0; }
-  .gate-msg.err { color: var(--pale-red-fg); }
-  .gate-msg.ok { color: var(--pale-green-fg); }
-  .panel { border: 1px solid var(--hairline); background: var(--surface); border-radius: 10px; padding: 24px; margin-bottom: 24px; }
-  .panel h2 { font: 600 17px/1.3 var(--sans); margin: 0 0 16px; }
-  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .field { margin-bottom: 14px; }
-  label { display: block; font: 500 12px/1.4 var(--sans); color: var(--muted); margin-bottom: 5px; }
-  input[type="text"], input[type="url"], select {
+<style is:global>
+  /* global: rows/previews are built with innerHTML, which scoped styles miss. Page-only CSS, so nothing leaks. */
+  .adm { max-width: 1120px; margin: 0 auto; padding: 28px 24px 96px; font-variant-numeric: tabular-nums; }
+  .adm code { font-family: var(--mono); font-size: 0.88em; }
+  .adm label { display: block; font: 500 13px/1.4 var(--sans); color: var(--ink); margin: 16px 0 6px; }
+  .adm :is(input[type="text"], input[type="url"], input[type="email"], input[type="password"], input[type="search"], select) {
     width: 100%; font: 400 14px/1.4 var(--sans); color: var(--ink);
-    background: var(--canvas); border: 1px solid var(--hairline-strong); border-radius: 8px; padding: 10px 12px;
+    background: var(--canvas); border: 1px solid var(--hairline-strong); border-radius: 8px; padding: 9px 12px;
   }
-  input:focus-visible, select:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
-  .status { font: 500 13px/1.4 var(--sans); min-height: 20px; margin: 12px 0 0; }
-  .status.ok { color: var(--pale-green-fg); } .status.err { color: var(--pale-red-fg); }
-  .hint { font-size: 12.5px; color: var(--muted); margin: 8px 0 0; }
-  .hint code { font-family: var(--mono); font-size: 11.5px; background: var(--canvas); border: 1px solid var(--hairline); border-radius: 4px; padding: 1px 5px; }
-  .unit-row { display: flex; align-items: center; gap: 12px; border: 1px solid var(--hairline); border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; background: var(--canvas); flex-wrap: wrap; }
-  .unit-row .u-id { font-family: var(--mono); font-size: 12px; font-weight: 500; }
-  .unit-row .u-url { margin-left: auto; font-size: 12px; color: var(--muted); font-family: var(--mono); }
-  .unit-row .u-actions { display: flex; gap: 8px; }
-  .btn--small { padding: 8px 12px; font-size: 12.5px; border-radius: 6px; }
-  .stats-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-  .stats-table th { font: 600 11px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--hairline-strong); }
-  .stats-table td { padding: 9px 10px; border-bottom: 1px solid var(--hairline); }
-  .admin-bar { background: var(--pale-yellow-bg); color: var(--pale-yellow-fg); font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 8px 16px; border-radius: 8px; margin-bottom: 24px; flex-wrap: wrap; }
-  .admin-bar .bar-btn { background: none; border: 1px solid currentColor; color: inherit; font: inherit; letter-spacing: inherit; text-transform: inherit; border-radius: 5px; padding: 3px 9px; cursor: pointer; }
-  .admin-bar .bar-btn:hover { background: rgba(0,0,0,0.05); }
-  /* placement cards */
-  .pcard {
-    border: 1px solid var(--hairline); background: var(--canvas); border-radius: 10px;
-    padding: 18px 20px; margin-bottom: 14px;
-  }
-  .pcard--paused { opacity: 0.55; }
-  .pcard-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
-  .pcard-head .u-id { font-family: var(--mono); font-size: 12.5px; font-weight: 500; }
-  .pcard-url { margin-left: auto; font-family: var(--mono); font-size: 11px; color: var(--faint); max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .pcard-preview {
-    border: 1px dashed var(--hairline-strong); border-radius: 8px; background: var(--surface);
-    padding: 14px 16px; margin-bottom: 14px;
-  }
-  .pcard-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin: 0 0 8px; }
-  .pcard-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-  /* preview mockups */
-  .pv-btn {
-    display: inline-flex; align-items: center; gap: 6px;
-    font: 600 13px/1 var(--sans); padding: 9px 14px; border-radius: 7px;
-    border: 1px solid var(--ink); background: var(--surface); color: var(--ink);
-  }
+  input:focus-visible, select:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .hint { font-size: 12.5px; color: var(--muted); margin: 6px 0 0; }
+  .link-btn { background: none; border: 0; padding: 4px 2px; font: 500 13px/1 var(--sans); color: var(--muted); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  .link-btn:hover { color: var(--ink); }
+  .link-btn.danger, .danger { color: var(--pale-red-fg); }
+  .btn--danger { background: var(--pale-red-fg); color: var(--surface); }
+  .btn--sm { padding: 6px 11px; font-size: 12.5px; }
+
+  /* sign in */
+  .auth-card { max-width: 380px; margin: 56px auto; }
+  .auth-title { font-family: var(--display); font-weight: 400; font-size: 40px; letter-spacing: -0.01em; margin: 0 0 6px; }
+  .auth-sub { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
+  .auth-card .btn { width: 100%; margin-top: 20px; justify-content: center; }
+  .auth-msg { min-height: 20px; font-size: 13px; color: var(--pale-red-fg); margin: 12px 0 0; }
+
+  /* header + tabs */
+  .adm-top { display: flex; align-items: baseline; gap: 28px; flex-wrap: wrap; border-bottom: 1px solid var(--hairline); margin-bottom: 24px; }
+  .adm-top h1 { font-family: var(--display); font-weight: 400; font-size: 38px; margin: 0; }
+  .tabs { display: flex; gap: 4px; }
+  .tabs button { background: none; border: 0; border-bottom: 2px solid transparent; padding: 12px 10px; font: 500 14.5px/1 var(--sans); color: var(--muted); cursor: pointer; margin-bottom: -1px; }
+  .tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+  .tab-n { color: var(--faint); font-weight: 400; }
+  .who { margin-left: auto; font-size: 13px; color: var(--muted); display: flex; gap: 10px; align-items: baseline; }
+
+  /* stats */
+  .stats { display: flex; gap: 40px; flex-wrap: wrap; margin: 4px 0 22px; }
+  .stat b { display: block; font: 500 28px/1.1 var(--sans); color: var(--ink); }
+  .stat span { font-size: 13px; color: var(--muted); }
+
+  /* toolbar */
+  .toolbar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
+  .toolbar input[type="search"] { max-width: 260px; }
+  .toolbar .btn--primary { margin-left: auto; }
+  .seg { display: inline-flex; border: 1px solid var(--hairline-strong); border-radius: 8px; overflow: hidden; }
+  .seg button { background: none; border: 0; padding: 8px 12px; font: 500 13px/1 var(--sans); color: var(--muted); cursor: pointer; }
+  .seg button + button { border-left: 1px solid var(--hairline-strong); }
+  .seg button[aria-pressed="true"] { background: var(--ink); color: var(--canvas); }
+
+  /* tables */
+  .grid { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .grid th { font: 500 12.5px/1.2 var(--sans); color: var(--muted); text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--hairline-strong); }
+  .grid td { padding: 11px 10px; border-bottom: 1px solid var(--hairline); vertical-align: middle; }
+  .grid .num { text-align: right; }
+  .grid tbody tr:hover { background: var(--hover); }
+  .grid--plain td:last-child { text-align: right; color: var(--muted); }
+  .l-name { font-weight: 600; color: var(--ink); }
+  .l-id { display: block; font-family: var(--mono); font-size: 11.5px; color: var(--faint); margin-top: 2px; }
+  .st { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; }
+  .st::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--pale-green-fg); }
+  .st--paused { color: var(--muted); }
+  .st--paused::before { background: transparent; border: 1.5px solid var(--faint); width: 5px; height: 5px; }
+  .tag { font-size: 12px; color: var(--muted); margin-left: 6px; }
+  tr.is-paused .l-name { color: var(--muted); }
+  .acts { white-space: nowrap; text-align: right; }
+  .spark { display: block; color: var(--link); }
+  .empty { color: var(--muted); padding: 28px 10px; }
+  .foot-note { font-size: 13px; color: var(--muted); margin-top: 18px; }
+
+  /* clicks tab */
+  .chart { margin: 0 0 32px; }
+  .chart figcaption { font: 500 14px/1.3 var(--sans); margin-bottom: 10px; }
+  .chart svg { width: 100%; height: auto; display: block; color: var(--link); }
+  .chart .axis { fill: var(--faint); font: 400 9px var(--sans); }
+  .chart .base { stroke: var(--hairline-strong); }
+  .chart rect.hit { fill: transparent; }
+  .chart g:hover rect.bar { opacity: 0.75; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .two h2 { font: 600 15px/1.3 var(--sans); margin: 0 0 6px; }
+
+  /* editor */
+  dialog#editor { margin: 0 0 0 auto; height: 100dvh; max-height: 100dvh; width: min(480px, 100vw); border: 0; border-left: 1px solid var(--hairline-strong); padding: 0; background: var(--surface); color: var(--ink); overflow-y: auto; }
+  dialog#editor::backdrop { background: rgb(0 0 0 / 0.28); }
+  #ed-form { padding: 22px 26px 26px; }
+  .ed-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .ed-head h2 { font-family: var(--display); font-weight: 400; font-size: 28px; margin: 0; }
+  .ed-preview { margin: 16px 0 4px; padding: 16px; border-radius: 10px; background: var(--canvas); border: 1px solid var(--hairline); }
+  .shelf { border: 0; padding: 0; margin: 18px 0 0; }
+  .check { display: flex; gap: 8px; align-items: center; margin: 0; }
+  .form-err { min-height: 20px; color: var(--pale-red-fg); font-size: 13px; margin: 14px 0 0; }
+  .ed-foot { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
+  .ed-foot .spacer { flex: 1; }
+  #f-delete-wrap { font: 500 13px/1.4 var(--sans); color: var(--pale-red-fg); display: inline-flex; gap: 8px; align-items: center; }
+
+  /* preview mockups (mirror LinkUnit formats) */
+  .pv-btn { display: inline-flex; align-items: center; gap: 6px; font: 600 13px/1 var(--sans); padding: 9px 14px; border-radius: 7px; border: 1px solid var(--ink); background: var(--surface); color: var(--ink); }
   .pv-btn--solid { background: var(--ink); color: var(--canvas); }
-  .pv-btn .arrow { width: 12px; height: 12px; }
-  .pv-btn .arrow path { stroke: currentColor; stroke-width: 1.8; fill: none; stroke-linecap: round; }
   .pv-inline { margin: 0; font-size: 14px; }
   .pv-link { color: var(--link); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
-  .pv-banner {
-    display: flex; align-items: center; justify-content: space-between; gap: 12px;
-    border: 1px solid var(--hairline); background: var(--surface); border-radius: 8px; padding: 12px 14px;
+  .pv-banner { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .pv-banner strong, .pv-card strong, .pv-box strong { display: block; font: 600 14.5px/1.3 var(--sans); }
+  .pv-banner em, .pv-card em, .pv-box em { display: block; font: 400 12.5px/1.5 var(--sans); color: var(--muted); font-style: normal; margin: 2px 0 10px; }
+  .pv-box { border-top: 2px solid var(--ink); padding-top: 10px; }
+  .pv-kicker { font-size: 12px; color: var(--pale-green-fg); margin: 0 0 4px; font-weight: 600; }
+
+  /* toast */
+  #toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); margin: 0; background: var(--ink); color: var(--canvas); font: 500 14px/1.4 var(--sans); padding: 11px 18px; border-radius: 10px; opacity: 0; pointer-events: none; transition: opacity 0.15s; z-index: 1000; max-width: calc(100vw - 32px); }
+  #toast.show { opacity: 1; }
+  #toast.err { background: var(--pale-red-fg); }
+
+  @media (max-width: 760px) {
+    .trend-col, #tab-links .grid td:nth-child(6), #tab-links .grid th:nth-child(2), #tab-links .grid td:nth-child(2) { display: none; }
+    #tab-links .grid th:nth-child(4), #tab-links .grid td:nth-child(4) { display: none; }
+    .two { grid-template-columns: 1fr; }
+    .toolbar input[type="search"] { max-width: none; flex: 1 1 100%; }
+    .stats { gap: 24px; }
   }
-  .pv-banner strong { display: block; font: 600 14px/1.3 var(--sans); }
-  .pv-banner em { display: block; font: 400 12px/1.4 var(--sans); color: var(--muted); font-style: normal; }
-  .pv-card, .pv-box {
-    border: 1px solid var(--hairline); background: var(--surface); border-radius: 8px; padding: 14px;
-  }
-  .pv-box { border-top: 2px solid var(--ink); }
-  .pv-card strong, .pv-box strong { display: block; font: 600 14.5px/1.3 var(--sans); margin-bottom: 3px; }
-  .pv-card em, .pv-box em { display: block; font: 400 12.5px/1.5 var(--sans); color: var(--muted); font-style: normal; margin-bottom: 10px; }
-  .pv-kicker { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pale-green-fg); margin: 0 0 6px; }
-  @media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { #toast { transition: none; } }
 </style>
 
 <script>
   import { supabase } from '../lib/supabase.js';
   import { ADMIN_EMAIL } from '../config.js';
 
+  // Changes reach the static site on its next build (a database webhook can
+  // trigger one per change; otherwise the daily job rebuilds).
+  const LIVE_NOTE = 'Live on the site after the next build.';
+  const DAY = 864e5;
+
   const $ = (s) => document.querySelector(s);
-  const shelfBadge = (u) => u.show_on_shelf ? '<span class="chip chip--pricing" title="On /tools shelf">shelf</span> ' : '';
   const esc = (s = '') => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const msg = (t, ok = false) => { const el = $('#a-msg'); el.textContent = t; el.classList.toggle('ok', ok); el.classList.toggle('err', !ok); };
-  const fmsg = (t, ok = false) => { const el = $('#f-status'); el.textContent = t; el.classList.toggle('ok', ok); el.classList.toggle('err', !ok); };
+  const fmtDate = (iso) => new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  const slugify = (s) => s.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40);
 
-  let editingId = null;
-  let units = [];
+  let toastTimer;
+  function toast(text, ok = true) {
+    const el = $('#toast');
+    el.textContent = text; el.classList.toggle('err', !ok); el.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), ok ? 3500 : 7000);
+  }
 
-  async function requireAdmin(user) {
-    if (!user) return false;
-    if (user.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
-      msg(`Signed in as ${user.email}, but only ${ADMIN_EMAIL} may edit.`, false);
-      return false;
+  let units = [], clicks = [], subs = [];
+  let filter = 'all', editing = null, slugTouched = false;
+
+  /** Supabase caps a select at 1000 rows; page through so 30-day stats stay complete. */
+  async function fetchAll(table, cols, since) {
+    const out = [];
+    for (let from = 0; ; from += 1000) {
+      let q = supabase.from(table).select(cols).order('created_at', { ascending: false }).range(from, from + 999);
+      if (since) q = q.gte('created_at', since);
+      const { data, error } = await q;
+      if (error) throw error;
+      out.push(...data);
+      if (data.length < 1000) return out;
     }
-    return true;
   }
 
-  async function loadUnits() {
-    const { data, error } = await supabase
-      .from('link_units')
-      .select('*')
-      .order('created_at', { ascending: true });
-    if (error) {
-      if (/JWT|expired|token/i.test(error.message)) {
-        const { data: refreshed } = await supabase.auth.refreshSession();
-        if (refreshed?.session) {
-          const retry = await supabase.from('link_units').select('*').order('created_at', { ascending: true });
-          if (!retry.error) { units = retry.data ?? []; render(); return; }
-        }
-        await supabase.auth.signOut();
-        location.reload();
-        return;
-      }
-      fmsg('Load failed: ' + error.message, false);
-      return;
+  async function withSession(fn) {
+    try { return await fn(); }
+    catch (e) {
+      if (!/JWT|expired|token/i.test(e.message)) throw e;
+      const { data } = await supabase.auth.refreshSession();
+      if (!data?.session) { await supabase.auth.signOut(); location.reload(); return; }
+      return fn();
     }
-    units = data ?? [];
-    render();
   }
 
-  function render() {
-    $('#count').textContent = String(units.length);
-    $('#rows').innerHTML = units.length
-      ? units.map((u) => {
-          const shortUrl = u.url.length > 42 ? u.url.slice(0, 40) + '…' : u.url;
-          return `
-        <div class="pcard${u.active ? '' : ' pcard--paused'}">
-          <div class="pcard-head">
-            <span class="u-id">${esc(u.slug)}</span>
-            <span class="chip chip--model">${esc(u.type)}</span>
-            ${u.active ? '' : '<span class="chip chip--red">paused</span>'}
-            ${u.show_on_shelf ? '<span class="chip chip--pricing">shelf</span>' : ''}
-            <span class="pcard-url" title="${esc(u.url)}">${esc(shortUrl)}</span>
-          </div>
-          <div class="pcard-preview">
-            <p class="pcard-label">Preview</p>
-            ${previewHtml(u)}
-          </div>
-          <div class="pcard-actions">
-            <button class="btn btn--ghost btn--small" data-copy="${esc(u.slug)}" type="button">Copy snippet</button>
-            <button class="btn btn--ghost btn--small" data-edit="${u.id}" type="button">Edit</button>
-            <button class="btn btn--ghost btn--small" data-toggle="${u.id}" type="button">${u.active ? 'Pause' : 'Resume'}</button>
-            <button class="btn btn--ghost btn--small" data-del="${u.id}" type="button">Delete</button>
-          </div>
-        </div>`;
-        }).join('')
-      : '<p class="hint">No placements yet — create your first above.</p>';
+  async function loadAll() {
+    try {
+      [units, clicks, subs] = await withSession(() => Promise.all([
+        fetchAll('link_units', '*'),
+        fetchAll('click_events', 'unit_slug,page,ref,created_at', new Date(Date.now() - 30 * DAY).toISOString()),
+        fetchAll('newsletter_subscribers', 'id,email,created_at'),
+      ]));
+    } catch (e) { toast('Could not load data: ' + e.message, false); return; }
+    renderLinks(); renderClicks(); renderSubs();
   }
+
+  /* ---------- clicks helpers ---------- */
+  /** 30 daily buckets, oldest first; index 29 is today. */
+  function daily(rows) {
+    const b = new Array(30).fill(0);
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    for (const r of rows) {
+      const d = new Date(r.created_at); d.setHours(0, 0, 0, 0);
+      const i = 29 - Math.round((today - d) / DAY);
+      if (i >= 0 && i < 30) b[i]++;
+    }
+    return b;
+  }
+  const recent = (rows, days) => rows.filter((r) => Date.now() - new Date(r.created_at) < days * DAY).length;
+
+  function spark(b) {
+    const max = Math.max(1, ...b), w = 3, gap = 1, h = 22;
+    const bars = b.map((v, i) => {
+      const bh = v ? Math.max(2, Math.round((v / max) * h)) : 1;
+      return `<rect x="${i * (w + gap)}" y="${h - bh}" width="${w}" height="${bh}" rx="1" fill="currentColor" opacity="${v ? 1 : 0.25}"/>`;
+    }).join('');
+    return `<svg class="spark" width="${30 * (w + gap)}" height="${h}" viewBox="0 0 ${30 * (w + gap)} ${h}" role="img" aria-label="${b.reduce((a, c) => a + c, 0)} clicks in the last 30 days">${bars}</svg>`;
+  }
+
+  /* ---------- Links ---------- */
+  const FORMAT = { inline: 'Text link', button: 'Button', card: 'Card', banner: 'Strip', box: 'Panel' };
+
+  function renderLinks() {
+    const by = {};
+    for (const c of clicks) (by[c.unit_slug] ??= []).push(c);
+    const live = units.filter((u) => u.active).length;
+    $('#link-stats').innerHTML = [
+      [live, `live link${live === 1 ? '' : 's'}`],
+      [units.length - live, 'paused'],
+      [recent(clicks, 7), 'clicks, last 7 days'],
+      [clicks.length, 'clicks, last 30 days'],
+    ].map(([n, l]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join('');
+
+    const q = $('#q').value.trim().toLowerCase();
+    const shown = units
+      .filter((u) => filter === 'all' || (filter === 'live' && u.active) || (filter === 'paused' && !u.active) || (filter === 'shelf' && u.show_on_shelf))
+      .filter((u) => !q || [u.label, u.slug, u.url, u.note].some((v) => (v ?? '').toLowerCase().includes(q)))
+      .map((u) => ({ u, c: by[u.slug] ?? [] }))
+      .sort((a, b) => b.c.length - a.c.length || a.u.label.localeCompare(b.u.label));
+
+    $('#rows').innerHTML = shown.map(({ u, c }) => `
+      <tr data-slug="${esc(u.slug)}" class="${u.active ? '' : 'is-paused'}">
+        <td><span class="l-name">${esc(u.label)}</span>${u.show_on_shelf ? '<span class="tag">on /tools</span>' : ''}<span class="l-id">${esc(u.slug)}</span></td>
+        <td>${FORMAT[u.type] ?? esc(u.type)}</td>
+        <td><span class="st ${u.active ? '' : 'st--paused'}" data-status="${u.active ? 'live' : 'paused'}">${u.active ? 'Live' : 'Paused'}</span></td>
+        <td class="num">${recent(c, 7)}</td>
+        <td class="num">${c.length}</td>
+        <td class="trend-col">${spark(daily(c))}</td>
+        <td class="acts">
+          <button class="btn btn--ghost btn--sm" data-toggle="${u.id}" type="button">${u.active ? 'Pause' : 'Resume'}</button>
+          <button class="btn btn--ghost btn--sm" data-edit="${u.id}" type="button">Edit</button>
+        </td>
+      </tr>`).join('');
+
+    const empty = $('#rows-empty');
+    empty.hidden = shown.length > 0;
+    empty.textContent = units.length ? 'No links match. Clear the search or pick another filter.' : 'No links yet. Create one with New link.';
+  }
+
+  /* ---------- Clicks ---------- */
+  function topList(rows, key, label) {
+    const n = {};
+    for (const r of rows) { const k = r[key] || label; n[k] = (n[k] ?? 0) + 1; }
+    const top = Object.entries(n).sort((a, b) => b[1] - a[1]).slice(0, 10);
+    return top.length ? top.map(([k, v]) => `<tr><td>${esc(k)}</td><td>${v}</td></tr>`).join('') : '<tr><td>No clicks yet.</td><td></td></tr>';
+  }
+
+  function renderClicks() {
+    const b = daily(clicks);
+    const best = Math.max(...b);
+    $('#click-stats').innerHTML = [
+      [recent(clicks, 1), 'today'], [recent(clicks, 7), 'last 7 days'], [clicks.length, 'last 30 days'],
+    ].map(([n, l]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join('');
+
+    // ponytail: native <title> tooltips; a custom hover layer when this gets real use.
+    const W = 720, H = 180, top = 16, bottom = 24, slot = W / 30, bw = slot - 4, max = Math.max(1, best);
+    const day0 = Date.now() - 29 * DAY;
+    const bars = b.map((v, i) => {
+      const bh = v ? Math.max(2, ((H - top - bottom) * v) / max) : 0;
+      const x = i * slot + 2, label = new Date(day0 + i * DAY).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      return `<g><title>${label}: ${v} click${v === 1 ? '' : 's'}</title><rect class="hit" x="${i * slot}" y="${top}" width="${slot}" height="${H - top - bottom}"/>`
+        + (bh ? `<rect class="bar" x="${x}" y="${H - bottom - bh}" width="${bw}" height="${bh}" rx="2" fill="currentColor"/>` : '') + '</g>';
+    }).join('');
+    const tick = (i, anchor) => `<text class="axis" x="${i * slot + slot / 2}" y="${H - 6}" text-anchor="${anchor}">${new Date(day0 + i * DAY).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</text>`;
+    $('#chart').innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${clicks.length} clicks over 30 days, busiest day ${best}">`
+      + `<line class="base" x1="0" x2="${W}" y1="${H - bottom}" y2="${H - bottom}"/>${bars}`
+      + `<text class="axis" x="0" y="11">${best ? `peak ${best}` : 'no clicks yet'}</text>${tick(0, 'start')}${tick(15, 'middle')}${tick(29, 'end')}</svg>`;
+
+    $('#top-pages').innerHTML = topList(clicks, 'page', '(unknown page)');
+    $('#top-refs').innerHTML = topList(clicks.map((c) => ({ ref: c.ref?.replace(/^https?:\/\/(www\.)?/, '') })), 'ref', 'Direct or unknown');
+  }
+
+  /* ---------- Subscribers ---------- */
+  function renderSubs() {
+    $('#subs-n').textContent = subs.length ? String(subs.length) : '';
+    const q = $('#sq').value.trim().toLowerCase();
+    const shown = subs.filter((s) => !q || s.email.toLowerCase().includes(q));
+    $('#subs').innerHTML = shown.map((s) => `
+      <tr><td>${esc(s.email)}</td><td>${fmtDate(s.created_at)}</td>
+      <td class="acts"><button class="link-btn danger" data-unsub="${s.id}" type="button">Remove</button></td></tr>`).join('');
+    $('#subs-empty').hidden = shown.length > 0 || subs.length > 0;
+  }
+
+  $('#export').addEventListener('click', () => {
+    const csv = 'email,signed_up\n' + subs.map((s) => `"${s.email.replace(/"/g, '""')}",${s.created_at}`).join('\n');
+    const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([csv], { type: 'text/csv' })), download: `ai4you-subscribers-${new Date().toISOString().slice(0, 10)}.csv` });
+    a.click(); URL.revokeObjectURL(a.href);
+  });
+
+  $('#subs').addEventListener('click', async (e) => {
+    const btn = e.target.closest('[data-unsub]');
+    if (!btn) return;
+    if (!btn.dataset.armed) { btn.dataset.armed = '1'; btn.textContent = 'Click again to remove'; setTimeout(() => { delete btn.dataset.armed; btn.textContent = 'Remove'; }, 4000); return; }
+    const { error } = await supabase.from('newsletter_subscribers').delete().eq('id', btn.dataset.unsub);
+    if (error) return toast('Remove failed: ' + error.message, false);
+    subs = subs.filter((s) => s.id !== btn.dataset.unsub); renderSubs(); toast('Subscriber removed.');
+  });
+
+  /* ---------- editor ---------- */
+  const ed = $('#editor');
+  const F = (id) => $(`#f-${id}`);
 
   function previewHtml(u) {
-    const note = esc(u.note || '');
-    const label = esc(u.label);
-    const btn = (text) => `<span class="pv-btn">${text}<svg class="arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>`;
+    const note = esc(u.note || ''), label = esc(u.label || 'Text on the site');
+    const btn = (t) => `<span class="pv-btn">${t}</span>`;
     switch (u.type) {
       case 'inline': return `<p class="pv-inline">${note} <span class="pv-link">${label}</span></p>`;
       case 'button': return `<span class="pv-btn pv-btn--solid">${label}</span>`;
@@ -290,131 +459,128 @@ import Layout from '../layouts/Layout.astro';
       default: return `<div class="pv-card"><strong>${label}</strong><em>${note}</em>${btn('Check it out')}</div>`;
     }
   }
+  const updatePreview = () => { $('#preview').innerHTML = previewHtml({ label: F('label').value, note: F('note').value, type: F('type').value }); };
 
-  function clearForm() {
-    editingId = null;
-    $('#form-title').textContent = 'New placement';
-    for (const id of ['#f-slug', '#f-url', '#f-label', '#f-note', '#f-commission', '#f-network']) $(id).value = '';
-    $('#f-shelf').checked = false; $('#f-shelfcat').value = '';
-    $('#f-cancel').hidden = true;
+  function openEditor(u = null) {
+    editing = u;
+    slugTouched = !!u;
+    $('#ed-title').textContent = u ? 'Edit link' : 'New link';
+    F('save').textContent = u ? 'Save changes' : 'Create link';
+    F('label').value = u?.label ?? ''; F('url').value = u?.url ?? ''; F('type').value = u?.type ?? 'card';
+    F('note').value = u?.note ?? ''; F('slug').value = u?.slug ?? '';
+    F('shelf').checked = !!u?.show_on_shelf; F('shelfcat').value = u?.shelf_category ?? 'productivity';
+    F('commission').value = u?.commission ?? ''; F('network').value = u?.network ?? '';
+    $('#shelf-fields').hidden = !F('shelf').checked;
+    $('#slug-hint').textContent = u
+      ? 'Changing the ID breaks pages that already use it and restarts its click count.'
+      : 'Filled from the text. Pages use it to place the link, and clicks are counted under it.';
+    F('copy').hidden = !u; F('delete').hidden = !u; F('delete-wrap').hidden = true;
+    F('err').textContent = '';
+    updatePreview();
+    ed.showModal();
+    F('label').focus();
   }
 
-  function fillForm(u) {
-    if (!u) return;
-    editingId = u.id;
-    $('#form-title').textContent = `Editing “${u.slug}”`;
-    $('#f-slug').value = u.slug; $('#f-type').value = u.type;
-    $('#f-url').value = u.url; $('#f-label').value = u.label; $('#f-note').value = u.note ?? '';
-    $('#f-shelf').checked = !!u.show_on_shelf; $('#f-shelfcat').value = u.shelf_category ?? '';
-    $('#f-commission').value = u.commission ?? ''; $('#f-network').value = u.network ?? '';
-    $('#f-cancel').hidden = false;
-    $('#form-title').scrollIntoView({ block: 'nearest' });
-  }
+  F('label').addEventListener('input', () => { if (!slugTouched) F('slug').value = slugify(F('label').value); updatePreview(); });
+  F('slug').addEventListener('input', () => { slugTouched = true; });
+  F('note').addEventListener('input', updatePreview);
+  F('type').addEventListener('change', updatePreview);
+  F('shelf').addEventListener('change', () => { $('#shelf-fields').hidden = !F('shelf').checked; });
+  ed.querySelector('[data-close]').addEventListener('click', () => ed.close());
+  ed.addEventListener('click', (e) => { if (e.target === ed) ed.close(); }); // backdrop click
 
-  async function save() {
-    const slug = $('#f-slug').value.trim().toLowerCase();
-    const type = $('#f-type').value;
-    const url = $('#f-url').value.trim();
-    const label = $('#f-label').value.trim();
-    const note = $('#f-note').value.trim();
-    if (!/^[a-z0-9][a-z0-9-]{1,40}$/.test(slug)) { fmsg('Slug: 2–40 chars, lowercase letters/numbers/dashes.', false); return; }
-    if (!label) { fmsg('Label is required.', false); return; }
-    try { const u = new URL(url); if (!/^https?:$/.test(u.protocol)) throw 0; }
-    catch { fmsg('Enter a valid https:// URL.', false); return; }
+  $('#ed-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const slug = F('slug').value.trim().toLowerCase();
+    const label = F('label').value.trim();
+    const url = F('url').value.trim();
+    const err = (t, field) => { F('err').textContent = t; F(field).focus(); };
+    if (!label) return err('Add the text readers will see.', 'label');
+    try { if (!/^https?:$/.test(new URL(url).protocol)) throw 0; } catch { return err('Paste the full affiliate link, starting with https://', 'url'); }
+    if (!/^[a-z0-9][a-z0-9-]{1,40}$/.test(slug)) return err('ID: 2–41 characters, lowercase letters, numbers and dashes.', 'slug');
 
-    const shelfOn = $('#f-shelf').checked;
-    const payload = { slug, type, label, note, url, show_on_shelf: shelfOn, shelf_category: shelfOn ? $('#f-shelfcat').value || 'productivity' : null, commission: $('#f-commission').value.trim() || null, network: $('#f-network').value.trim() || null };
-    const { error } = editingId
-      ? await supabase.from('link_units').update(payload).eq('id', editingId)
+    const shelf = F('shelf').checked;
+    const payload = {
+      slug, label, url, type: F('type').value, note: F('note').value.trim(),
+      show_on_shelf: shelf, shelf_category: shelf ? F('shelfcat').value : null,
+      commission: F('commission').value.trim() || null, network: F('network').value.trim() || null,
+    };
+    F('save').disabled = true;
+    const { error } = editing
+      ? await supabase.from('link_units').update(payload).eq('id', editing.id)
       : await supabase.from('link_units').insert(payload);
-    if (error) { fmsg('Save failed: ' + error.message, false); return; }
-    fmsg(editingId ? 'Updated.' : 'Created.', true);
-    clearForm();
-    await loadUnits();
-  }
-
-  async function loadClicks() {
-    const since = new Date(Date.now() - 30 * 24 * 3600 * 1000).toISOString();
-    const { data, error } = await supabase
-      .from('click_events')
-      .select('unit_slug')
-      .gte('created_at', since);
-    if (error) { $('#click-rows').innerHTML = '<tr><td colspan="2">Could not load clicks: ' + esc(error.message) + '</td></tr>'; return; }
-    const counts = {};
-    for (const r of data ?? []) counts[r.unit_slug] = (counts[r.unit_slug] ?? 0) + 1;
-    const rows = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-    $('#click-rows').innerHTML = rows.length
-      ? rows.map(([slug, n]) => `<tr><td>${esc(slug)}</td><td>${n}</td></tr>`).join('')
-      : '<tr><td colspan="2">No clicks yet — place the snippets and share your articles.</td></tr>';
-  }
-
-  /* auth wiring */
-  $('#a-login').addEventListener('click', async () => {
-    const email = $('#a-email').value.trim();
-    const password = $('#a-pass').value;
-    if (!email || !password) { msg('Enter email and password.', false); return; }
-    $('#a-login').disabled = true;
-    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-    $('#a-login').disabled = false;
-    if (error) { msg('Sign-in failed: ' + error.message, false); return; }
-    if (!(await requireAdmin(data.user))) return;
-    enterDash(data.user);
+    F('save').disabled = false;
+    if (error) return err(/duplicate|unique/i.test(error.message) ? 'That ID is taken. Pick another.' : 'Could not save: ' + error.message, 'slug');
+    ed.close();
+    toast(`${editing ? 'Changes saved' : 'Link created'}. ${LIVE_NOTE}`);
+    await loadAll();
   });
+
+  F('copy').addEventListener('click', () => {
+    navigator.clipboard?.writeText(`<LinkUnit slug="${editing.slug}" />`).then(() => toast('Code copied. Paste it into a page.'), () => toast('Copy failed. Select the ID and copy it by hand.', false));
+  });
+  F('delete').addEventListener('click', () => { F('delete').hidden = true; F('delete-wrap').hidden = false; F('delete-cancel').focus(); });
+  F('delete-cancel').addEventListener('click', () => { F('delete').hidden = false; F('delete-wrap').hidden = true; });
+  F('delete-confirm').addEventListener('click', async () => {
+    const { error } = await supabase.from('link_units').delete().eq('id', editing.id);
+    if (error) { F('err').textContent = 'Could not delete: ' + error.message; return; }
+    ed.close();
+    toast(`Link deleted. Pages using “${editing.slug}” show nothing in that spot.`);
+    await loadAll();
+  });
+
+  /* ---------- table + tabs wiring ---------- */
+  $('#new-link').addEventListener('click', () => openEditor());
+  $('#rows').addEventListener('click', async (e) => {
+    const edit = e.target.closest('[data-edit]'), tog = e.target.closest('[data-toggle]');
+    if (edit) openEditor(units.find((u) => u.id === edit.dataset.edit));
+    if (tog) {
+      const u = units.find((x) => x.id === tog.dataset.toggle);
+      if (!u) return;
+      tog.disabled = true;
+      const { error } = await supabase.from('link_units').update({ active: !u.active }).eq('id', u.id);
+      if (error) { tog.disabled = false; return toast('Could not update: ' + error.message, false); }
+      toast(`${u.active ? 'Paused' : 'Resumed'}. ${LIVE_NOTE}`);
+      await loadAll();
+    }
+  });
+  $('#q').addEventListener('input', renderLinks);
+  $('#sq').addEventListener('input', renderSubs);
+  document.querySelectorAll('[data-filter]').forEach((b) => b.addEventListener('click', () => {
+    filter = b.dataset.filter;
+    document.querySelectorAll('[data-filter]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    renderLinks();
+  }));
+  document.querySelectorAll('[data-tab]').forEach((t) => t.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((x) => {
+      x.setAttribute('aria-selected', String(x === t));
+      $(`#tab-${x.dataset.tab}`).hidden = x !== t;
+    });
+  }));
+
+  /* ---------- auth ---------- */
+  const isAdmin = (user) => user?.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase();
 
   function enterDash(user) {
     $('#auth').hidden = true;
     $('#dash').hidden = false;
-    $('#who').textContent = `Signed in as ${user.email}`;
-    loadUnits();
-    loadClicks();
+    $('#who').textContent = user.email;
+    loadAll();
   }
 
-  $('#signout').addEventListener('click', async () => {
-    await supabase.auth.signOut();
-    location.reload();
+  $('#auth').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = $('#a-email').value.trim(), password = $('#a-pass').value;
+    if (!email || !password) { $('#a-msg').textContent = 'Enter your email and password.'; return; }
+    $('#a-login').disabled = true; $('#a-msg').textContent = '';
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+    $('#a-login').disabled = false;
+    if (error) { $('#a-msg').textContent = 'Sign-in failed: ' + error.message; $('#a-msg').classList.add('err'); return; }
+    if (!isAdmin(data.user)) { $('#a-msg').textContent = `${data.user.email} is not the admin account.`; $('#a-msg').classList.add('err'); await supabase.auth.signOut(); return; }
+    enterDash(data.user);
   });
 
-  /* dashboard wiring */
-  $('#f-save').addEventListener('click', save);
-  $('#f-cancel').addEventListener('click', clearForm);
-  $('#refresh-clicks').addEventListener('click', loadClicks);
+  $('#signout').addEventListener('click', async () => { await supabase.auth.signOut(); location.reload(); });
 
-  $('#rows').addEventListener('click', async (e) => {
-    const copy = e.target.closest('[data-copy]');
-    const edit = e.target.closest('[data-edit]');
-    const toggle = e.target.closest('[data-toggle]');
-    const del = e.target.closest('[data-del]');
-    if (copy) {
-      const snippet = `<LinkUnit slug="${copy.dataset.copy}" />`;
-      navigator.clipboard?.writeText(snippet).then(() => fmsg('Snippet copied.', true), () => {});
-    }
-    if (edit) fillForm(units.find((u) => u.id === edit.dataset.edit));
-    if (toggle) {
-      const u = units.find((x) => x.id === toggle.dataset.toggle);
-      if (!u) return;
-      const { error } = await supabase.from('link_units').update({ active: !u.active }).eq('id', u.id);
-      if (error) fmsg('Update failed: ' + error.message, false);
-      else { fmsg(u.active ? 'Paused — it disappears from the site on next build.' : 'Resumed.', true); loadUnits(); }
-    }
-    if (del) {
-      const u = units.find((x) => x.id === del.dataset.del);
-      if (!u) return;
-      if (!confirm(`Delete “${u.slug}”? Pages that reference it will render nothing for that slot.`)) return;
-      const { error } = await supabase.from('link_units').delete().eq('id', u.id);
-      if (error) fmsg('Delete failed: ' + error.message, false);
-      else { fmsg('Deleted.', true); loadUnits(); }
-    }
-  });
-
-  /* session restore */
-  supabase.auth.getSession().then(async ({ data }) => {
-    if (!data?.session) return;
-    if (!(await requireAdmin(data.session.user))) return;
-    const probe = await supabase.from('link_units').select('slug').limit(1);
-    if (probe.error && /JWT|expired|token/i.test(probe.error.message)) {
-      const { data: refreshed } = await supabase.auth.refreshSession();
-      if (!refreshed?.session) { await supabase.auth.signOut(); location.reload(); return; }
-    }
-    enterDash(data.session.user);
-  });
+  supabase.auth.getSession().then(({ data }) => { if (isAdmin(data?.session?.user)) enterDash(data.session.user); });
 </script>

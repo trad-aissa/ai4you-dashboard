@@ -21,63 +21,59 @@ function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
-async function waitForStatus(page, text) {
-  await page.locator('#f-status').filter({ hasText: text }).waitFor({ state: 'visible' });
+async function waitForToast(page, text) {
+  await page.locator('#toast').filter({ hasText: text }).waitFor({ state: 'visible' });
 }
 
-async function rowFor(page) {
-  return page.locator('.pcard', { has: page.locator('.u-id', { hasText: slug }) });
-}
+const rowFor = (page) => page.locator(`#rows tr[data-slug="${slug}"]`);
 
 try {
   browser = await chromium.launch();
   const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
   const page = await context.newPage();
-  page.on('dialog', (dialog) => dialog.accept());
 
   await page.goto(`${base}/admin`, { waitUntil: 'networkidle' });
   await page.locator('#a-email').fill(ADMIN_TEST_EMAIL);
   await page.locator('#a-pass').fill(ADMIN_TEST_PASSWORD);
-  await page.locator('#a-login').click();
+  await page.locator('#a-pass').press('Enter');
   await Promise.race([
     page.locator('#dash').waitFor({ state: 'visible' }),
     page.locator('#a-msg.err').waitFor({ state: 'visible' }).then(async () => {
       throw new Error(`Admin sign-in failed: ${await page.locator('#a-msg').textContent()}`);
     }),
   ]);
-  await page.locator('#rows').waitFor({ state: 'visible' });
 
-  await page.locator('#f-slug').fill(slug);
-  await page.locator('#f-type').selectOption('card');
-  await page.locator('#f-url').fill(`https://example.com/quality-test?sub=${slug}`);
+  await page.locator('#new-link').click();
+  await page.locator('#editor[open]').waitFor();
   await page.locator('#f-label').fill(`Quality ${slug}`);
+  await page.locator('#f-url').fill(`https://example.com/quality-test?sub=${slug}`);
+  await page.locator('#f-type').selectOption('card');
   await page.locator('#f-note').fill('Temporary automated quality audit placement');
+  await page.locator('#f-slug').fill(slug);
   needsCleanup = true;
   await page.locator('#f-save').click();
-  await waitForStatus(page, 'Created.');
+  await waitForToast(page, 'Link created');
 
-  let row = await rowFor(page);
+  let row = rowFor(page);
   await row.waitFor({ state: 'visible' });
   await row.locator('[data-edit]').click();
   await page.locator('#f-label').fill(updatedLabel);
   await page.locator('#f-save').click();
-  await waitForStatus(page, 'Updated.');
-  row = await rowFor(page);
+  await waitForToast(page, 'Changes saved');
   await row.getByText(updatedLabel).waitFor({ state: 'visible' });
 
   await row.locator('[data-toggle]').click();
-  await waitForStatus(page, 'Paused');
-  row = await rowFor(page);
-  assert(await row.locator('.chip--red').textContent() === 'paused', 'Placement did not become paused');
+  await waitForToast(page, 'Paused');
+  await row.locator('[data-status="paused"]').waitFor({ state: 'visible' });
 
   await row.locator('[data-toggle]').click();
-  await waitForStatus(page, 'Resumed.');
-  row = await rowFor(page);
-  await row.waitFor({ state: 'visible' });
-  await row.locator('.chip--red').waitFor({ state: 'detached' });
+  await waitForToast(page, 'Resumed');
+  await row.locator('[data-status="live"]').waitFor({ state: 'visible' });
 
-  await row.locator('[data-del]').click();
-  await waitForStatus(page, 'Deleted.');
+  await row.locator('[data-edit]').click();
+  await page.locator('#f-delete').click();
+  await page.locator('#f-delete-confirm').click();
+  await waitForToast(page, 'Link deleted');
   await row.waitFor({ state: 'detached' });
   needsCleanup = false;
 
