@@ -268,9 +268,9 @@ import Layout from '../layouts/Layout.astro';
   import { supabase } from '../lib/supabase.js';
   import { ADMIN_EMAIL } from '../config.js';
 
-  // Changes reach the static site on its next build (a database webhook can
-  // trigger one per change; otherwise the daily job rebuilds).
-  const LIVE_NOTE = 'Live on the site after the next build.';
+  // Supabase webhook "rebuild-site" (Integrations → Database Webhooks) calls a
+  // Vercel deploy hook on every link_units change; a rebuild takes ~1 minute.
+  const LIVE_NOTE = 'Live on the site in about a minute.';
   const DAY = 864e5;
 
   const $ = (s) => document.querySelector(s);
