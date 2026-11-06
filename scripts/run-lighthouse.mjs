@@ -5,7 +5,7 @@ import { createServer } from 'node:http';
 import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
 
-const ROUTES = ['/', '/news', '/tools', '/learn', '/article'];
+const ROUTES = ['/', '/news', '/tools', '/learn', '/news/august-2026-model-scorecard'];
 const THRESHOLDS = { performance: 0.75, accessibility: 0.9, 'best-practices': 0.9, seo: 0.9 };
 const ARTIFACT_DIR = '.cluster/quality/lighthouse';
 const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.woff2': 'font/woff2' };

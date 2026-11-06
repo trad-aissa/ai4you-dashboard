@@ -74,5 +74,12 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/article",
+      "destination": "/news/august-2026-model-scorecard",
+      "permanent": true
+    }
   ]
 }

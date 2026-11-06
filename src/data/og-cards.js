@@ -18,7 +18,7 @@ const PAGES = {
   '/tools':               { title: 'The tool shelf',                          tag: 'Tools · honestly labelled' },
   '/best-writing-tools':  { title: 'The 4 best AI writing tools in 2026',     tag: 'Compared · writing' },
   '/changelog':           { title: 'The agentic CLI changelogs',              tag: 'Claude Code · Codex · daily' },
-  '/article':             { title: 'The August 2026 model scorecard',         tag: 'Deep dive · six labs' },
+  '/news/august-2026-model-scorecard':             { title: 'The August 2026 model scorecard',         tag: 'Deep dive · six labs' },
   '/learn':               { title: 'Learn AI coding agents by doing',         tag: 'Learn · interactive' },
   '/learn/playground':    { title: 'A safe terminal to practise in',          tag: 'Learn · playground' },
   '/learn/builder':       { title: 'Generate your CLAUDE.md, hooks and MCP config', tag: 'Learn · config builder' },

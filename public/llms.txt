@@ -5,7 +5,7 @@
 - [Latest Briefings](https://www.ai4you.site/): Daily editorial coverage and model release analysis.
 - [AI Headlines](https://www.ai4you.site/news): Auto-gathered daily headlines from primary labs (OpenAI, DeepMind, Anthropic, xAI, Z.ai).
 - [Tool Shelf](https://www.ai4you.site/tools): Curated AI software tools with transparent commission rates and verified terms.
-- [Model Scorecard & Deep Dives](https://www.ai4you.site/article): In-depth benchmark and architectural breakdowns across frontier models.
+- [Model Scorecard & Deep Dives](https://www.ai4you.site/news/august-2026-model-scorecard): In-depth benchmark and architectural breakdowns across frontier models.
 - [Coding Changelogs](https://www.ai4you.site/changelog): Real-time release logs for Claude Code, Codex, and coding agents.
 - [Learn by Doing](https://www.ai4you.site/learn): Practical developer guides for building with LLMs, MCP, subagents, and skills.
 

@@ -6,6 +6,7 @@
 export const modules = [
   {
     slug: 'claude-code-101',
+    seoTitle: "Claude Code Tutorial for Beginners (2026)",
     title: 'Claude Code from zero',
     tool: 'Claude Code',
     level: 'Beginner',
@@ -89,6 +90,7 @@ export const modules = [
 
   {
     slug: 'claude-md-memory',
+    seoTitle: "CLAUDE.md Guide: Examples & Best Practices",
     title: 'Teach it your project: CLAUDE.md',
     tool: 'Claude Code',
     level: 'Beginner',
@@ -158,6 +160,7 @@ export const modules = [
 
   {
     slug: 'claude-code-automation',
+    seoTitle: "Claude Code Hooks & Custom Slash Commands",
     title: 'Hooks, slash commands & headless runs',
     tool: 'Claude Code',
     level: 'Intermediate',
@@ -229,6 +232,7 @@ claude -p "is this issue a bug or a feature request? reply with one word" &lt; i
 
   {
     slug: 'codex-cli-101',
+    seoTitle: "OpenAI Codex CLI Tutorial for Beginners",
     title: 'Codex CLI from zero',
     tool: 'Codex',
     level: 'Beginner',
@@ -300,6 +304,7 @@ claude -p "is this issue a bug or a feature request? reply with one word" &lt; i
   },
   {
     slug: 'permissions-safety',
+    seoTitle: "Claude Code Permissions & Safe Settings",
     title: 'Permissions & staying safe',
     tool: 'Claude Code',
     level: 'Beginner',
@@ -366,6 +371,7 @@ claude -p "is this issue a bug or a feature request? reply with one word" &lt; i
   },
   {
     slug: 'skills',
+    seoTitle: "Claude Code Skills: How to Write a SKILL.md",
     title: 'Skills: teach it your playbooks',
     tool: 'Claude Code',
     level: 'Intermediate',
@@ -440,6 +446,7 @@ description: Run before cutting any release — versioning, notes, smoke tests.
   },
   {
     slug: 'mcp',
+    seoTitle: "Claude Code MCP Servers: Setup Guide",
     title: "MCP: plug in the world's tools",
     tool: 'Claude Code',
     level: 'Intermediate',
@@ -516,6 +523,7 @@ description: Run before cutting any release — versioning, notes, smoke tests.
   },
   {
     slug: 'subagents',
+    seoTitle: "Claude Code Subagents: How to Use Them",
     title: 'Subagents & agent teams',
     tool: 'Claude Code',
     level: 'Advanced',
@@ -587,6 +595,7 @@ root cause. Never edit application code — report findings only.</code></pre>
   },
   {
     slug: 'plugins',
+    seoTitle: "Claude Code Plugins & Marketplaces Guide",
     title: 'Plugins & marketplaces',
     tool: 'Claude Code',
     level: 'Intermediate',
@@ -648,6 +657,7 @@ root cause. Never edit application code — report findings only.</code></pre>
   },
   {
     slug: 'git-workflows',
+    seoTitle: "Claude Code Git Workflow: Commits, PRs, Worktrees",
     title: 'Claude Code × Git',
     tool: 'Claude Code',
     level: 'Intermediate',
@@ -716,6 +726,7 @@ root cause. Never edit application code — report findings only.</code></pre>
   },
   {
     slug: 'context-management',
+    seoTitle: "Claude Code Context: /compact, /clear & Costs",
     title: 'Context: the invisible budget',
     tool: 'Claude Code',
     level: 'Beginner',
@@ -778,6 +789,7 @@ root cause. Never edit application code — report findings only.</code></pre>
   },
   {
     slug: 'ci-cd',
+    seoTitle: "Claude Code GitHub Action & CI/CD Guide",
     title: 'Claude Code in CI/CD',
     tool: 'Claude Code',
     level: 'Advanced',
@@ -850,6 +862,7 @@ root cause. Never edit application code — report findings only.</code></pre>
   },
   {
     slug: 'codex-automation',
+    seoTitle: "Codex CLI: exec, config.toml & Automation",
     title: 'Codex: exec, config & automation',
     tool: 'Codex',
     level: 'Intermediate',

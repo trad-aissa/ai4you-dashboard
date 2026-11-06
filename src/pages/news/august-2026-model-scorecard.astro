@@ -1,11 +1,11 @@
 ---
 // src/pages/article.astro — the launch deep dive (template for future articles)
-import Layout from '../layouts/Layout.astro';
-import PreferredSources from '../components/PreferredSources.astro';
-import LinkUnit from '../components/LinkUnit.astro';
+import Layout from '../../layouts/Layout.astro';
+import PreferredSources from '../../components/PreferredSources.astro';
+import LinkUnit from '../../components/LinkUnit.astro';
 ---
 
-<Layout title="The August 2026 model scorecard — six labs, one relentless month · ai4you.site" path="/article" description="GPT-5.6, Opus 5, Gemini 3.7 Flash, Grok 4.6, Muse Code, Kimi K3: what a relentless month of AI model releases means for the way you work." type="article" publishedTime="2026-08-27T12:00:00Z" breadcrumbs={[{ name: 'Deep dive', path: '/article' }]}>
+<Layout title="The August 2026 model scorecard — six labs, one relentless month · ai4you.site" path="/news/august-2026-model-scorecard" description="GPT-5.6, Opus 5, Gemini 3.7 Flash, Grok 4.6, Muse Code, Kimi K3: what a relentless month of AI model releases means for the way you work." type="article" publishedTime="2026-08-27T12:00:00Z" breadcrumbs={[{ name: 'Deep dive', path: '/news/august-2026-model-scorecard' }]}>
   <script type="application/ld+json" slot="head-extra" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
@@ -14,7 +14,7 @@ import LinkUnit from '../components/LinkUnit.astro';
     dateModified: '2026-08-27T12:00:00Z',
     author: { '@type': 'Organization', name: 'ai4you.site' },
     publisher: { '@type': 'Organization', name: 'ai4you.site', logo: { '@type': 'ImageObject', url: 'https://www.ai4you.site/favicon.svg' } },
-    mainEntityOfPage: 'https://www.ai4you.site/article',
+    mainEntityOfPage: 'https://www.ai4you.site/news/august-2026-model-scorecard',
     description: 'What four weeks of relentless AI model releases means for the way you work.',
   })} />
   <article class="article wrap">

@@ -4,7 +4,7 @@ import { createServer } from 'node:http';
 import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
 
-const PAGES = ['/', '/news', '/tools', '/learn', '/changelog', '/article', '/about', '/terms', '/best-writing-tools', '/admin'];
+const PAGES = ['/', '/news', '/tools', '/learn', '/changelog', '/news/august-2026-model-scorecard', '/about', '/terms', '/best-writing-tools', '/admin'];
 const VIEWPORTS = [
   { name: 'desktop', width: 1440, height: 900 },
   { name: 'mobile', width: 390, height: 844 },

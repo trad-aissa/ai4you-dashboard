@@ -15,7 +15,7 @@ const crumb = [{ name: 'Learn', path: '/learn' }, { name: lesson.title, path: `/
 const toolChip = lesson.tool === 'Codex' ? 'chip--product' : 'chip--model';
 ---
 
-<Layout title={`${lesson.title} — learn by doing · ai4you.site`} path={`/learn/${lesson.slug}`} description={lesson.summary} type="article" publishedTime={`${LESSONS_PUBLISHED}T09:00:00Z`} breadcrumbs={crumb}>
+<Layout title={`${lesson.seoTitle ?? lesson.title} · ai4you.site`} path={`/learn/${lesson.slug}`} description={lesson.summary} type="article" publishedTime={`${LESSONS_PUBLISHED}T09:00:00Z`} breadcrumbs={crumb}>
   <article class="article wrap" data-module={lesson.slug}>
     <div class="article-head" style="position:relative;">
       <span class="chip chip--pricing lesson-done-badge" data-done-badge hidden>✓ completed</span>
