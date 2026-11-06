@@ -11,6 +11,8 @@ const files = import.meta.glob('../content/articles/*.md', { eager: true });
 const REQUIRED = ['title', 'description', 'date'];
 
 export const articles = Object.entries(files)
+  // `draft: true` in frontmatter keeps a file out of every page, feed and sitemap.
+  .filter(([, mod]) => !mod.frontmatter.draft)
   .map(([file, mod]) => {
     const fm = mod.frontmatter;
     const slug = file.split('/').pop().replace(/\.md$/, '');

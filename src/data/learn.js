@@ -6,6 +6,7 @@
 export const modules = [
   {
     slug: 'claude-code-101',
+    linkUnits: ['claude-pro-card'], // /admin link IDs for this lesson; unknown IDs render nothing
     seoTitle: "Claude Code Tutorial for Beginners (2026)",
     title: 'Claude Code from zero',
     tool: 'Claude Code',
@@ -232,6 +233,7 @@ claude -p "is this issue a bug or a feature request? reply with one word" &lt; i
 
   {
     slug: 'codex-cli-101',
+    linkUnits: ['chatgpt-plus-card'], // /admin link IDs for this lesson; unknown IDs render nothing
     seoTitle: "OpenAI Codex CLI Tutorial for Beginners",
     title: 'Codex CLI from zero',
     tool: 'Codex',
@@ -446,6 +448,7 @@ description: Run before cutting any release — versioning, notes, smoke tests.
   },
   {
     slug: 'mcp',
+    linkUnits: ['cursor-card'], // /admin link IDs for this lesson; unknown IDs render nothing
     seoTitle: "Claude Code MCP Servers: Setup Guide",
     title: "MCP: plug in the world's tools",
     tool: 'Claude Code',
@@ -657,6 +660,7 @@ root cause. Never edit application code — report findings only.</code></pre>
   },
   {
     slug: 'git-workflows',
+    linkUnits: ['github-copilot-card'], // /admin link IDs for this lesson; unknown IDs render nothing
     seoTitle: "Claude Code Git Workflow: Commits, PRs, Worktrees",
     title: 'Claude Code × Git',
     tool: 'Claude Code',

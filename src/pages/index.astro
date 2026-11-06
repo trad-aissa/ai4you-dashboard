@@ -4,8 +4,8 @@ import { getActiveUnits } from '../lib/supabase.js';
 import { renderUnit, bindUnits } from '../lib/link-units.js';
 import Layout from '../layouts/Layout.astro';
 import NewsFeed from '../components/NewsFeed.astro';
-import PreferredSources from '../components/PreferredSources.astro';
 import TokenCalculator from '../components/TokenCalculator.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
 import headlines from '../data/auto/headlines.json';
 
 let units = [];
@@ -77,19 +77,7 @@ const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
     })()}
   </section>
 
-  <section class="newsletter" aria-label="Newsletter signup">
-    <div class="wrap inner reveal">
-      <h2>The 3-minute AI brief, <em>every weekday</em>.</h2>
-      <p>Model launches, price changes and one tool worth trying — read before your coffee cools.</p>
-      <form novalidate>
-        <label class="visually-hidden" for="nl-email">Email address</label>
-        <input id="nl-email" name="email" type="email" placeholder="you@work.com" autocomplete="email" required />
-        <button class="btn btn--primary" type="submit">Get the brief</button>
-      </form>
-      <div style="margin-top:18px;display:flex;justify-content:center;"><PreferredSources /></div>
-        <p class="form-msg" id="nl-msg" role="status" aria-live="polite"></p>
-    </div>
-  </section>
+  <NewsletterSignup sources />
 
   {dbError && (
     <div class="wrap" style="padding-bottom:40px;">
@@ -100,40 +88,5 @@ const byslug = Object.fromEntries(units.map((u) => [u.slug, u]));
 
 <script>
   import { bindUnits } from '../lib/link-units.js';
-  import { subscribeEmail } from '../lib/track.js';
   bindUnits(document);
-
-  // newsletter signup — writes to newsletter_subscribers (see supabase/upgrade-2026-08-30.sql)
-  const form = document.querySelector('.newsletter form');
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const input = form.querySelector('input[type="email"]');
-    const msgEl = document.getElementById('nl-msg');
-    const setMsg = (t, ok) => {
-      if (!msgEl) return;
-      msgEl.textContent = t;
-      msgEl.classList.toggle('ok', ok);
-      msgEl.classList.toggle('err', !ok);
-    };
-    const v = (input?.value ?? '').trim();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) {
-      setMsg('Please enter a valid email address.', false);
-      return;
-    }
-    const btn = form.querySelector('button');
-    if (btn) btn.disabled = true;
-    const result = await subscribeEmail(v.toLowerCase());
-    if (btn) btn.disabled = false;
-    if (result === 'error') {
-      setMsg("Couldn't subscribe right now — please try again in a minute.", false);
-      return;
-    }
-    setMsg(
-      result === 'duplicate'
-        ? "You're already on the list — see you in the next brief."
-        : 'Thanks — you are on the list. The next brief lands in your inbox.',
-      true,
-    );
-    if (input) input.value = '';
-  });
 </script>

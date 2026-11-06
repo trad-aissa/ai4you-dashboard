@@ -1,0 +1,69 @@
+---
+// src/components/NewsletterSignup.astro — email signup, usable on any page (any number of times).
+// Writes to newsletter_subscribers (see supabase/upgrade-2026-08-30.sql). Styles: .newsletter in site.css.
+import PreferredSources from './PreferredSources.astro';
+
+interface Props {
+  heading?: string;   // trusted HTML (author-written), e.g. 'Get the next deep dive <em>by email</em>.'
+  blurb?: string;
+  sources?: boolean;  // show the "Preferred sources" button under the form
+}
+const {
+  heading = 'The 3-minute AI brief, <em>every weekday</em>.',
+  blurb = 'Model launches, price changes and one tool worth trying — read before your coffee cools.',
+  sources = false,
+} = Astro.props;
+const id = `nl-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+<section class="newsletter" aria-label="Newsletter signup">
+  <div class="wrap inner reveal">
+    <h2 set:html={heading} />
+    <p>{blurb}</p>
+    <form novalidate data-newsletter>
+      <label class="visually-hidden" for={`${id}-email`}>Email address</label>
+      <input id={`${id}-email`} name="email" type="email" placeholder="you@work.com" autocomplete="email" required />
+      <button class="btn btn--primary" type="submit">Get the brief</button>
+    </form>
+    {sources && <div style="margin-top:18px;display:flex;justify-content:center;"><PreferredSources /></div>}
+    <p class="form-msg" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<script>
+  import { subscribeEmail } from '../lib/track.js';
+
+  for (const form of document.querySelectorAll<HTMLFormElement>('form[data-newsletter]')) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const input = form.querySelector('input[type="email"]') as HTMLInputElement | null;
+      const msgEl = form.closest('.newsletter')?.querySelector('.form-msg');
+      const setMsg = (t: string, ok: boolean) => {
+        if (!msgEl) return;
+        msgEl.textContent = t;
+        msgEl.classList.toggle('ok', ok);
+        msgEl.classList.toggle('err', !ok);
+      };
+      const v = (input?.value ?? '').trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) {
+        setMsg('Please enter a valid email address.', false);
+        return;
+      }
+      const btn = form.querySelector('button');
+      if (btn) btn.disabled = true;
+      const result = await subscribeEmail(v.toLowerCase());
+      if (btn) btn.disabled = false;
+      if (result === 'error') {
+        setMsg("Couldn't subscribe right now — please try again in a minute.", false);
+        return;
+      }
+      setMsg(
+        result === 'duplicate'
+          ? "You're already on the list — see you in the next brief."
+          : 'Thanks — you are on the list. The next brief lands in your inbox.',
+        true,
+      );
+      if (input) input.value = '';
+    });
+  }
+</script>

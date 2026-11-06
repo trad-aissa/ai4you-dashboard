@@ -3,6 +3,8 @@
 import Layout from '../../layouts/Layout.astro';
 import PreferredSources from '../../components/PreferredSources.astro';
 import LinkUnit from '../../components/LinkUnit.astro';
+import ShareButtons from '../../components/ShareButtons.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { articles } from '../../data/articles.js';
 
 export function getStaticPaths() {
@@ -45,8 +47,10 @@ const pretty = new Date(published).toLocaleDateString('en-US', { month: 'short',
 
     <div class="prose">
       <Content />
+      <ShareButtons title={a.seoTitle ?? a.title} path={a.path} />
       <div class="wrap" style="max-width:700px;margin:32px 0 0;"><PreferredSources /></div>
       {a.linkUnit && <div class="wrap" style="max-width:700px;margin:24px 0 0;"><LinkUnit slug={a.linkUnit} /></div>}
     </div>
   </article>
+  <NewsletterSignup heading="Get the next deep dive <em>by email</em>." blurb="One sourced piece when it's worth your time, plus the week's model launches and price changes. No spam, unsubscribe any time." />
 </Layout>

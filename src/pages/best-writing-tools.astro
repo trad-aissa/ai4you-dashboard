@@ -4,7 +4,10 @@
 import Layout from '../layouts/Layout.astro';
 import Seo from '../components/Seo.astro';
 import PreferredSources from '../components/PreferredSources.astro';
+import LinkUnit from '../components/LinkUnit.astro';
 import { REVIEWED } from '../config.js';
+import { unitBySlug } from '../lib/supabase.js';
+import { renderUnit } from '../lib/link-units.js';
 
 const tools = [
   {
@@ -12,21 +15,21 @@ const tools = [
     blurb: 'The most mature AI writing platform: brand-voice training, campaign workflows, and team collaboration. Priced for businesses, worth it if content is a revenue channel for you.',
     pros: ['Brand voice memory across campaigns', 'Templates for ads, emails, blogs', 'Team roles & workflows'],
     cons: ['Expensive vs. raw chatbots', 'Overkill for casual users'],
-    url: 'https://www.jasper.ai/', slug: 'jasper-best-writing',
+    url: 'https://www.jasper.ai/', slug: 'jasper-best-writing', unit: 'jasper-card',
   },
   {
     rank: 2, name: 'Copy.ai', tag: 'Best for GTM automation',
     blurb: 'Less "write me a blog post", more "run my outbound engine." Copy.ai went all-in on go-to-market workflows — sequences, enrichment, and CRM sync alongside the writer.',
     pros: ['Strong workflow automation', 'Generous free tier', 'Sales + marketing in one tool'],
     cons: ['Writing quality trails Jasper for long-form', 'Interface takes a day to learn'],
-    url: 'https://www.copy.ai/', slug: 'copyai-best-writing',
+    url: 'https://www.copy.ai/', slug: 'copyai-best-writing', unit: 'copyai-card',
   },
   {
     rank: 3, name: 'Grammarly', tag: 'Best editor (not writer)',
     blurb: 'Not a generator — an editor that lives everywhere you type. The pair-well with any AI writer: draft fast anywhere, let Grammarly keep tone and polish consistent.',
     pros: ['Works in every app', 'Free tier is genuinely useful', 'Tone suggestions are best-in-class'],
     cons: ['Not a content generator', 'Premium needed for full rewrites'],
-    url: 'https://www.grammarly.com/', slug: 'grammarly-best-writing',
+    url: 'https://www.grammarly.com/', slug: 'grammarly-best-writing', unit: 'grammarly-card',
   },
   {
     rank: 4, name: 'ChatGPT (free)', tag: 'Best free all-rounder',
@@ -44,6 +47,11 @@ const tools = [
 // NOTE: each slug below also needs a link_units row before its clicks will
 // join to anything in the dashboard's Clicks table.
 const isAffiliate = (t) => { try { return new URL(t.url).search.length > 0; } catch { return false; } };
+
+// Admin-managed placements: create a link in /admin with the tool's `unit` ID
+// (jasper-card, copyai-card, grammarly-card) and it replaces the plain button
+// on the next build. Missing or paused → the plain button below stays.
+for (const t of tools) t.hasUnit = !!(t.unit && renderUnit(await unitBySlug(t.unit)));
 ---
 
 <Layout title="The 4 Best AI Writing Tools in 2026 (Compared) · ai4you.site" path="/best-writing-tools" description="Jasper vs Copy.ai vs Grammarly vs free ChatGPT: which AI writing tool is actually worth your money in 2026 — tested, compared, with honest pros and cons." type="article" publishedTime="2026-08-28T09:00:00Z" breadcrumbs={[{ name: 'Best AI writing tools', path: '/best-writing-tools' }]}>
@@ -89,6 +97,7 @@ const isAffiliate = (t) => { try { return new URL(t.url).search.length > 0; } ca
             {t.pros.map((p) => <li><strong>Pro:</strong> {p}</li>)}
             {t.cons.map((c) => <li style="color:var(--muted);"><strong>Con:</strong> {c}</li>)}
           </ul>
+          {t.hasUnit ? <LinkUnit slug={t.unit} /> : (<>
           <a
             class="btn btn--primary"
             href={t.url}
@@ -100,6 +109,7 @@ const isAffiliate = (t) => { try { return new URL(t.url).search.length > 0; } ca
             <span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
           </a>
           {isAffiliate(t) && <p class="disclosure-mini" style="margin-top:8px;">Affiliate link — we may earn a commission at no extra cost to you.</p>}
+          </>)}
         </section>
       ))}
 
