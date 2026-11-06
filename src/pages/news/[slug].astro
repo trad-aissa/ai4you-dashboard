@@ -1,0 +1,52 @@
+---
+// src/pages/news/[slug].astro — one page per Markdown file in src/content/articles/
+import Layout from '../../layouts/Layout.astro';
+import PreferredSources from '../../components/PreferredSources.astro';
+import LinkUnit from '../../components/LinkUnit.astro';
+import { articles } from '../../data/articles.js';
+
+export function getStaticPaths() {
+  return articles.map((a) => ({ params: { slug: a.slug }, props: { a } }));
+}
+
+const { a } = Astro.props;
+const { Content } = a;
+const published = `${a.date}T12:00:00Z`;
+const modified = a.updated ? `${new Date(a.updated).toISOString().slice(0, 10)}T12:00:00Z` : published;
+const pretty = new Date(published).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+---
+
+<Layout title={`${a.seoTitle ?? a.title} · ai4you.site`} path={a.path} description={a.description} type="article" publishedTime={published} breadcrumbs={[{ name: 'Stories', path: '/stories' }, { name: a.title, path: a.path }]}>
+  <script type="application/ld+json" slot="head-extra" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: a.seoTitle ?? a.title,
+    datePublished: published,
+    dateModified: modified,
+    author: { '@type': 'Organization', name: 'ai4you.site' },
+    publisher: { '@type': 'Organization', name: 'ai4you.site', logo: { '@type': 'ImageObject', url: 'https://www.ai4you.site/favicon.svg' } },
+    mainEntityOfPage: `https://www.ai4you.site${a.path}`,
+    image: `https://www.ai4you.site/og${a.path}.png`,
+    description: a.description,
+  })} />
+  <article class="article wrap">
+    <header class="article-head">
+      <span class="kicker">{a.kicker ?? 'Deep dive'}</span>
+      <h1>{a.title}</h1>
+      {a.dek && <p class="dek">{a.dek}</p>}
+      <div class="article-meta">
+        <span>ai4you.site</span>
+        <span aria-hidden="true">·</span>
+        <time datetime={a.date}>{pretty}</time>
+        <span aria-hidden="true">·</span>
+        <span class="reading-time">{a.minutes} min read</span>
+      </div>
+    </header>
+
+    <div class="prose">
+      <Content />
+      <div class="wrap" style="max-width:700px;margin:32px 0 0;"><PreferredSources /></div>
+      {a.linkUnit && <div class="wrap" style="max-width:700px;margin:24px 0 0;"><LinkUnit slug={a.linkUnit} /></div>}
+    </div>
+  </article>
+</Layout>

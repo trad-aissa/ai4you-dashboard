@@ -10,6 +10,7 @@
 // src/pages/og/[...slug].png.ts renders one PNG per entry at build time.
 // ============================================================
 import { modules } from './learn.js';
+import { articles } from './articles.js';
 
 const PAGES = {
   '/':                    { title: 'The model race, decoded for busy humans', tag: 'AI wire · frontier models' },
@@ -18,7 +19,6 @@ const PAGES = {
   '/tools':               { title: 'The tool shelf',                          tag: 'Tools · honestly labelled' },
   '/best-writing-tools':  { title: 'The 4 best AI writing tools in 2026',     tag: 'Compared · writing' },
   '/changelog':           { title: 'The agentic CLI changelogs',              tag: 'Claude Code · Codex · daily' },
-  '/news/august-2026-model-scorecard':             { title: 'The August 2026 model scorecard',         tag: 'Deep dive · six labs' },
   '/learn':               { title: 'Learn AI coding agents by doing',         tag: 'Learn · interactive' },
   '/learn/playground':    { title: 'A safe terminal to practise in',          tag: 'Learn · playground' },
   '/learn/builder':       { title: 'Generate your CLAUDE.md, hooks and MCP config', tag: 'Learn · config builder' },
@@ -32,6 +32,10 @@ const PAGES = {
 // Lessons keep their own titles — those are already short.
 for (const m of modules) {
   PAGES[`/learn/${m.slug}`] = { title: m.title, tag: `Learn · ${m.tool} · ${m.minutes} min` };
+}
+
+for (const a of articles) {
+  PAGES[a.path] = { title: a.cardTitle ?? a.seoTitle ?? a.title, tag: a.cardTag ?? 'Deep dive' };
 }
 
 export const OG_CARDS = PAGES;

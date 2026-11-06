@@ -251,7 +251,7 @@ const VISIBLE = 8; // releases shown per product before "Show older"
   .cl-version { font-family: var(--mono); font-size: 17px; font-weight: 600; margin: 0; letter-spacing: 0; }
   .cl-date { font-family: var(--mono); font-size: 11px; color: var(--faint); letter-spacing: 0.04em; }
   .cl-n { font-family: var(--mono); font-size: 11px; color: var(--faint); }
-  .cl-bullets { margin: 0; padding: 0; list-style: none; }
+  .cl-bullets { margin: 0; padding: 0; list-style: none; overflow-wrap: anywhere; } /* long env-var names in release notes overflow phones */
   .cl-bullets[hidden] { display: none; }
   .cl-bullets li {
     position: relative; font-size: 14px; line-height: 1.65; color: var(--ink);

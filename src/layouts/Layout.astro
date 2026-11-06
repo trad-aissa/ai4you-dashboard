@@ -1,6 +1,8 @@
 ---
 // src/layouts/Layout.astro — shared page shell
 import '../styles/site.css';
+import { articles } from '../data/articles.js';
+const latest = articles[0]?.path ?? '/stories';
 
 // Self-hosted fonts (better performance + no third-party requests;
 // families registered: 'Instrument Serif', 'Instrument Sans Variable',
@@ -77,7 +79,7 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
           <a href="/tools" aria-current={Astro.url.pathname === '/tools' ? 'page' : undefined}>Tools</a>
           <a href="/learn" aria-current={Astro.url.pathname.startsWith('/learn') ? 'page' : undefined}>Learn</a>
           <a href="/changelog" aria-current={Astro.url.pathname === '/changelog' ? 'page' : undefined}>Updates</a>
-          <a href="/news/august-2026-model-scorecard" aria-current={Astro.url.pathname === '/news/august-2026-model-scorecard' ? 'page' : undefined}>Deep dive</a>
+          <a href={latest} aria-current={Astro.url.pathname === latest ? 'page' : undefined}>Deep dive</a>
           <a href="/about" aria-current={Astro.url.pathname === '/about' ? 'page' : undefined}>About</a>
 
           <div class="theme-switch" role="group" aria-label="Color theme">
@@ -116,7 +118,7 @@ const { title, description, path, image, type, publishedTime, breadcrumbs } = As
               <li><a href="/learn">Learn by doing</a></li>
               <li><a href="/changelog">Claude Code & Codex updates</a></li>
               <li><a href="/stories">Story archive</a></li>
-              <li><a href="/news/august-2026-model-scorecard">Deep dive</a></li>
+              <li><a href={latest}>Deep dive</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/rss.xml">RSS feed</a></li>
               <li><a href="/news.json" target="_blank">JSON feed (API)</a></li>

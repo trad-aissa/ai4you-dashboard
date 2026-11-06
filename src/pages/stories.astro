@@ -2,6 +2,7 @@
 // src/pages/stories.astro — full editorial archive
 import Layout from '../layouts/Layout.astro';
 import news from '../data/news.js';
+import { articles } from '../data/articles.js';
 
 const items = news.items ?? [];
 const cats = [
@@ -22,6 +23,24 @@ const label = (c) => ({ 'model-release': 'Model release', pricing: 'Pricing', pr
     <h1>Every story we've covered.</h1>
     <p class="lede">Our hand-written briefs — summaries and "why it matters" for each move, linked to the primary source. Auto-gathered live headlines live on <a href="/news">/news</a>.</p>
   </section>
+
+  {articles.length > 0 && (
+  <section class="dir wrap" aria-label="Deep dives">
+    <h2>Deep dives</h2>
+    <div class="feed">
+      {articles.map((a) => (
+        <article class="feed-card">
+          <div class="card-meta">
+            <span class="chip chip--research">Deep dive</span>
+            <span class="card-date">{fmt(a.date)}</span>
+          </div>
+          <h3><a href={a.path}>{a.title}</a></h3>
+          <p>{a.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+  )}
 
   <section class="dir wrap" style="padding-bottom:72px;" aria-label="Story archive">
     <div class="filters" id="st-filters" role="group" aria-label="Filter stories by category">
