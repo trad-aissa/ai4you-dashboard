@@ -210,7 +210,16 @@ try {
   const internalResults = await mapConcurrent(internalLinks, 8, (url) => checkLink(url, true));
   const externalResults = await mapConcurrent(externalLinks, 6, (url) => checkLink(url, false));
   const brokenLinks = [...internalResults, ...externalResults].filter((result) => !result.ok);
+  // Links the daily job pulls in (headlines, changelogs) point at news sites we
+  // don't control and that often block bots; a flaky one must not turn CI red.
+  const autoText = (await Promise.all(['headlines.json', 'changelogs.json'].map((f) => readFile(new URL(`../src/data/auto/${f}`, import.meta.url), 'utf8')))).join('\n');
+  const autoLinks = new Set([...autoText.matchAll(/https?:\/\/[^\s"'<>)\\]+/g)].map((m) => { try { return new URL(m[0]).href; } catch { return m[0]; } }));
   for (const result of brokenLinks) {
+    if (autoLinks.has(result.url)) {
+      console.log(`WARN link ${result.url} (${result.error}) — auto-fetched, not failing`);
+      if (process.env.GITHUB_ACTIONS) console.log(`::warning::Unreachable auto-fetched link ${result.url}`);
+      continue;
+    }
     failures.push({ label: `link ${result.url}`, errors: [result.error] });
     console.log(`FAIL link ${result.url} (${result.error})`);
   }
