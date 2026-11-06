@@ -7,7 +7,6 @@ date: 2026-11-06
 kicker: "Compared · coding agents"
 cardTitle: "Claude Code vs Codex CLI"
 cardTag: "Compared · coding agents"
-draft: true
 ---
 
 **The short answer.** If you already pay for ChatGPT, start with Codex CLI: it's included from the $20 Plus plan, it's open source, and every command runs in a sandbox by default. If you already pay for Claude, or you want the most ways to control what an agent may do, start with Claude Code: it's included from the $20 Pro plan and offers six permission modes, hooks, skills, subagents and plugins, and it runs in the terminal, IDEs, a desktop app and the browser. At the entry price the two cost the same, so the subscription you already have is a fair tiebreaker.
