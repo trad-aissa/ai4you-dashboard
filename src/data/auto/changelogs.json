@@ -1,6 +1,42 @@
 {
-  "updated": "2026-11-06T13:43:49.820Z",
+  "updated": "2026-11-07T12:26:48.990Z",
   "claude-code": [
+    {
+      "version": "2.1.319",
+      "date": null,
+      "bullets": [
+        "Changed auto mode with telemetry or feature flags off, including behind LLM gateways: calls the server can't check are asked about or denied, with no fallback to the built-in classifier; set <code>CLAUDE_CODE_AUTO_MODE_SERVER=0</code> to keep using it (Bedrock, Vertex and Foundry are unchanged)",
+        "Changed auto mode behind an LLM gateway: <code>CLAUDE_CODE_AUTO_MODE_SERVER=1</code> turns on the server-side check even with <code>CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS</code> set; if managed settings set the latter, they must set the <code>1</code> too",
+        "Added support for MCP tasks in the terminal: when an MCP server runs a tool call as a task, Claude Code moves it to the background right away and tells Claude the result when it finishes",
+        "Added the <code>CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND</code> environment variable to make Claude Code wait for an MCP task inside its tool call instead of moving it to the background right away",
+        "Added <code>permissions.denyInsteadOfPrompting</code> setting: a tool call that would wait on a permission prompt is denied and the turn continues, in terminal sessions, subagents and teammates",
+        "Added <code>/claude-api latency-optimize</code> to find where your Claude API code makes people wait and try faster settings against your eval",
+        "Added the <code>CLAUDE_CODE_DISABLE_FEATURE_FLAGS</code> environment variable, which stops feature-flag fetching without turning off telemetry; every flag then uses its built-in default",
+        "Added spend for today, this week and this month to <code>/usage</code> for developers behind a Claude apps gateway who have no spend limit, when the gateway runs this version or later",
+        "Added <code>admin.pooled_conflict_rule</code> and <code>admin.pooled_priority_order</code> to the Claude apps gateway, to set which pooled group budget pays first for a developer in several groups",
+        "Added an optional <code>login_notice</code> setting to the Claude apps gateway that shows an operator-defined message on the gateway's browser verification page and on Claude Code's sign-in screen",
+        "Added <code>CLAUDE_GATEWAY_LOG_FORMAT=json</code> to the Claude apps gateway: operational log lines become JSON with <code>severity</code>, <code>time</code> and <code>message</code>, for log collectors that read the level from a field",
+        "Added a Claude apps gateway boot warning for a case where another policy's <code>availableModels</code> also allows a custom model id that one policy lists by name",
+        "Added start-up warnings to the Claude apps gateway for policies with no <code>desktopHome</code> that rely on <code>coworkTabEnabled: false</code> or <code>chatSessionRetentionDays</code>, ahead of Claude Desktop's November 10 change",
+        "Added a warning when your claude.ai login ends and Claude Code continues on the sign-in from <code>ant auth login</code>, which bills usage to your Claude Console organization",
+        "Added a line at startup naming the Claude Console organization that is billed in a case where Claude Code uses the sign-in from <code>ant auth login</code>",
+        "Added an &quot;Earlier in this session&quot; row to <code>/tasks</code> that lists finished subagents, so you can reopen one and message it even after it leaves the list or you restart",
+        "Added a note to <code>/loop</code> confirmations in cloud sessions that a timer stops with its container, with an offer of a loop that survives",
+        "Fixed MCP servers on the older handshake failing to connect, or returning empty results, because Claude Code declared an extension that it only uses with newer servers",
+        "Fixed a long-running MCP tool call on a claude.ai connector sometimes never reporting its result after <code>--resume</code>",
+        "Fixed a session's diff failing to load on claude.ai and the mobile apps when the folder Claude Code runs in has a file or folder named <code>HEAD</code>",
+        "Fixed <code>/diff</code> showing &quot;Diff unavailable&quot; when a git repository has a file or folder named <code>HEAD</code> at its top level",
+        "Fixed the <code>/diff</code> pane opening blank in sessions where 64 or more turns edited files",
+        "Fixed slash commands typed after a leading space, tab or newline being sent to Claude as plain text instead of running",
+        "Fixed a request that kept failing with a 401 refreshing your login on every retry and causing 401s in your other sessions",
+        "Fixed <code>/context</code> sending its full visual grid to Claude on every later turn; Claude now reads only the table",
+        "Fixed <code>claude -p</code> exiting 0 in auto mode when its actions were refused because no safety check was available: text and JSON output now exit 1",
+        "Fixed a case where Claude Code listed every project file at start on Linux for projects on a network file system (NFS, SMB, Lustre and similar)",
+        "Fixed a case where auto mode was wrongly refused when a client sent a model change and a request for auto mode back to back",
+        "Fixed <code>/status</code> showing &quot;Auto mode server: Enabled&quot; when the server-side review isn't reaching the session, for example behind an LLM gateway that drops it",
+        "Fixed Claude-drafted feedback, surveys and <code>/feedback</code> continuing to appear after the server refused feedback for your organization"
+      ]
+    },
     {
       "version": "2.1.318",
       "date": null,
@@ -718,45 +754,16 @@
         "Fixed a regression in 2.1.290 where cloud sessions could drop answers to permission prompts",
         "Fixed a regression in 2.1.288 where the last messages of a session could be lost when quitting"
       ]
-    },
-    {
-      "version": "2.1.290",
-      "date": null,
-      "bullets": [
-        "Added <code>serverToolUses</code> to the result of a mod's <code>turn.step</code> hook: the tool calls the API ran itself (the advisor), each with its id, name, input, start and end",
-        "Added <code>agentId</code> to the <code>tool.check</code> event of plugin hooks, so a hook can tell a subagent's permission check from the main session's",
-        "Added <code>ceiling</code> to the question and verdict a mod's <code>tool.check</code> hook reads, naming the approval an organization requires for a tool",
-        "Added <code>ThemeKey</code> and <code>Color</code> types to the plugin hooks typings, so an editor lists the theme colors a mod's drawing can name",
-        "Added to <code>claude plugin validate</code>: each hook a mod registers at a gating site is listed with whether it has a <code>.catch</code> (<code>gatingHooks</code> under <code>--json</code>)",
-        "Added a Deny button to the Claude apps gateway's sign-in approval page: it ends the pending sign-in, so the waiting terminal stops within seconds",
-        "Added <code>claude attach </code> and <code>claude logs </code>: part of a session name works in place of the id",
-        "Added <code>/claude-api managed-agents-onboard </code> to set up the Managed Agents pattern a page describes as <code>ant apply</code> files",
-        "Added <code>/claude-api managed-agents-onboard </code> to build a Console quickstart template, such as <code>deep-researcher</code>, with the <code>ant</code> CLI",
-        "Added a warning when a managed settings file is a link to a file outside the managed settings folder",
-        "Added a /status and doctor warning when managed settings ignore user-configured sandbox allowRead paths or allowed domains",
-        "Fixed requests failing behind proxies and gateways that reject one of Claude Code's beta headers with a status other than 400, or together with a second beta",
-        "Fixed long sessions with hundreds of images getting stuck on &quot;Request rejected as unprocessable by the model&quot; errors",
-        "Fixed a turn ending at once when the API's output content filter stopped a reply while Claude was still thinking; the request is now retried once before the error is shown",
-        "Fixed resumed subagents and teammates losing their earlier thinking and prompt cache after receiving a message mid-run",
-        "Fixed WebFetch silently dropping page text past 100,000 characters; it now says how much was unread and takes an <code>offset</code> to read on",
-        "Fixed a crash (&quot;Maximum call stack size exceeded&quot;) when a response nested lists or quotes thousands of levels deep",
-        "Fixed <code>/rewind</code> not listing a prompt sent while Claude was still working",
-        "Fixed scheduled tasks (<code>/loop</code> with an interval, reminders) silently not coming back on resume once the conversation was compacted; covers compactions made from this version on",
-        "Fixed scheduled tasks set in the foreground never firing after a ← or <code>/background</code> hand-off, and recurring ones firing an extra run on every resume, respawn or fork",
-        "Fixed headless <code>--json-schema</code> runs exiting non-zero with <code>is_error: true</code> on a <code>success</code> result when the connection dropped after the structured output was already delivered",
-        "Fixed plan mode letting the auto mode classifier approve non-read-only connector tools that carry a server-pushed ask policy",
-        "Fixed a project <code>CLAUDE.md</code>, rule or <code>AGENTS.md</code> symlinked outside the working directories loading under <code>permissions.blockReadsOutsideWorkingDirectories</code> or a <code>Read</code> deny rule",
-        "Fixed URL allow and deny patterns with a wildcard inside an <code>xn--</code> host label matching differently from one process to the next",
-        "Fixed an MCP server provided by your organization being relisted as your own after signing in or reconnecting, including from a late result in headless and SDK sessions",
-        "Fixed <code>/ultrareview</code> dropping uncommitted changes without a warning on Windows when <code>git stash create</code> failed, and refusing them after a <code>git add -N</code> file was deleted or moved",
-        "Fixed the <code>plansDirectory</code> setting's project-root check for paths that contain a backslash on macOS and Linux",
-        "Fixed replies in very long Remote Control and cloud sessions that could appear a block at a time instead of streaming in",
-        "Fixed the background daemon's log passing terminal control characters to the screen under <code>claude daemon run</code> and <code>claude daemon logs</code>; they now show as <code>\\uXXXX</code> escapes",
-        "Self-hosted runner: Fixed a crafted, very long line of a session's error output freezing the runner for several seconds"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.169.0-alpha.2",
+      "date": "2026-11-06T22:13:30.000Z",
+      "bullets": [
+        "Release 0.169.0-alpha.2"
+      ]
+    },
     {
       "version": "0.167.0",
       "date": "2026-11-06T01:40:00.000Z",
@@ -892,13 +899,6 @@
       "date": "2026-10-28T01:22:03.000Z",
       "bullets": [
         "Release 0.166.0-alpha.4"
-      ]
-    },
-    {
-      "version": "0.166.0-alpha.3",
-      "date": "2026-10-27T19:23:16.000Z",
-      "bullets": [
-        "Release 0.166.0-alpha.3"
       ]
     }
   ]
