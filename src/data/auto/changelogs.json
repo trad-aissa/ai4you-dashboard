@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T13:32:55.487Z",
+  "updated": "2026-11-12T14:37:01.176Z",
   "claude-code": [
     {
       "version": "2.1.322",
@@ -757,10 +757,46 @@
   ],
   "codex": [
     {
+      "version": "0.170.0-alpha.2",
+      "date": "2026-11-12T01:30:28.000Z",
+      "bullets": [
+        "Release 0.170.0-alpha.2"
+      ]
+    },
+    {
+      "version": "0.167.2",
+      "date": "2026-11-11T22:44:46.000Z",
+      "bullets": [
+        "- Codex now sends tool updates incrementally by default on Google Cloud Vertex AI.",
+        "To opt out, set <code>incremental_tools_legacy_gcp = false</code> under <code>[features]</code> in <code>config.toml</code>. (#60617, #60848) Full Changelog: https://github.com/openai/codex/compare/rust-v0.167.1...rust-v0.167.2"
+      ]
+    },
+    {
+      "version": "0.170.0-alpha.1",
+      "date": "2026-11-11T20:06:13.000Z",
+      "bullets": [
+        "Release 0.170.0-alpha.1"
+      ]
+    },
+    {
+      "version": "0.169.0-alpha.11.1",
+      "date": "2026-11-11T22:22:11.000Z",
+      "bullets": [
+        "Release 0.169.0-alpha.11.1"
+      ]
+    },
+    {
       "version": "0.169.0-alpha.11",
       "date": "2026-11-11T10:11:06.000Z",
       "bullets": [
         "Release 0.169.0-alpha.11"
+      ]
+    },
+    {
+      "version": "0.167.0-alpha.4.3",
+      "date": "2026-11-11T23:54:59.000Z",
+      "bullets": [
+        "Release 0.167.0-alpha.4.3"
       ]
     },
     {
@@ -863,41 +899,6 @@
       "date": "2026-11-05T13:16:05.000Z",
       "bullets": [
         "Release 0.167.0-alpha.3.2"
-      ]
-    },
-    {
-      "version": "0.168.0-alpha.2",
-      "date": "2026-11-04T20:47:50.000Z",
-      "bullets": [
-        "Release 0.168.0-alpha.2"
-      ]
-    },
-    {
-      "version": "0.168.0-alpha.1",
-      "date": "2026-11-04T02:54:53.000Z",
-      "bullets": [
-        "Release 0.168.0-alpha.1"
-      ]
-    },
-    {
-      "version": "0.167.0-alpha.5",
-      "date": "2026-11-04T18:09:02.000Z",
-      "bullets": [
-        "Release 0.167.0-alpha.5"
-      ]
-    },
-    {
-      "version": "0.167.0-alpha.3.1",
-      "date": "2026-11-04T19:05:21.000Z",
-      "bullets": [
-        "Release 0.167.0-alpha.3.1"
-      ]
-    },
-    {
-      "version": "0.167.0-alpha.4",
-      "date": "2026-11-03T02:24:00.000Z",
-      "bullets": [
-        "Release 0.167.0-alpha.4"
       ]
     }
   ]
