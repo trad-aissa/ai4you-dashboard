@@ -1,14 +1,118 @@
 {
-  "updated": "2026-11-14T12:57:26.641Z",
+  "updated": "2026-11-15T13:25:53.545Z",
   "count": 80,
   "items": [
+    {
+      "id": "4c525e5e54fa",
+      "title": "An overview of Jensen Huang’s messy days",
+      "url": "https://www.theverge.com/column/1033943/jensen-huang-nvidia-china-spying-scandal-resignation",
+      "source": "The Verge",
+      "date": "2026-11-15T13:00:00.000Z",
+      "snippet": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on Jensen Huang's resignation and the fallout from Nvidia's leadership crisis, follow Terrence O'Brien. The Stepba"
+    },
+    {
+      "id": "64e86b44ffa8",
+      "title": "The Single Router in Southern Arkansas That Ground Air Travel to a Halt",
+      "url": "https://www.wsj.com/business/airlines/the-single-router-in-southern-arkansas-that-ground-air-travel-to-a-halt-eedc326c",
+      "source": "Hacker News",
+      "date": "2026-11-15T03:05:54.000Z",
+      "snippet": "66 points · 39 comments on HN"
+    },
+    {
+      "id": "14ba8d169059",
+      "title": "Court denies motion to dismiss DRAM price fixing case",
+      "url": "https://litnews.ai/articles/garciaguirre-samsung-sk-hynix-micron-dram-conspiracy-suit-survives-dismissal",
+      "source": "Hacker News",
+      "date": "2026-11-15T01:18:36.000Z",
+      "snippet": "266 points · 99 comments on HN"
+    },
+    {
+      "id": "acaf00569e86",
+      "title": "Where was Nvidia’s security team?",
+      "url": "https://techcrunch.com/2026/11/14/where-was-nvidias-security-team/",
+      "source": "TechCrunch",
+      "date": "2026-11-15T00:08:07.000Z",
+      "snippet": "Nvidia’s security chief quietly left in August, and now that CEO Jensen Huang has stepped down over his relationships, including one with an executive at a company suspected of funneling chips to China, a former intellig"
+    },
+    {
+      "id": "2059ff8340bb",
+      "title": "datasette-llm 0.1a11",
+      "url": "https://simonwillison.net/2026/Nov/14/datasette-llm/",
+      "source": "Simon Willison",
+      "date": "2026-11-14T23:59:28.000Z",
+      "snippet": "Release: datasette-llm 0.1a11 datasette-llm is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins. This release adds support for OpenAI-compatible endpoints, so you "
+    },
+    {
+      "id": "a4a92fbcda03",
+      "title": "Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang",
+      "url": "https://techcrunch.com/2026/11/14/elon-musk-other-tech-execs-sign-petition-calling-on-nvidia-to-reinstate-jensen-huang/",
+      "source": "TechCrunch",
+      "date": "2026-11-14T21:41:22.000Z",
+      "snippet": "The petition had attracted more than 115,000 signatures as of Saturday afternoon."
+    },
+    {
+      "id": "7134e7e1ad67",
+      "title": "The AI graveyard: a running list of projects and startups that didn’t make it",
+      "url": "https://techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
+      "source": "TechCrunch",
+      "date": "2026-11-14T17:30:00.000Z",
+      "snippet": "From Apple's repeatedly delayed Siri AI to OpenAI's messy \"super app\" launch, here's a look at the AI projects that shut down or missed expectations."
+    },
+    {
+      "id": "075bbfb634c2",
+      "title": "Asian governments react to Nvidia CEO Jensen Huang’s exit",
+      "url": "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/",
+      "source": "TechCrunch",
+      "date": "2026-11-14T16:34:15.000Z",
+      "snippet": "Some governments moved to confirm chip supply commitments, while others are monitoring the impact on local projects or addressing ongoing investigations."
+    },
+    {
+      "id": "8a429aeabf43",
+      "title": "Smuggling of 1.5M AI GPUs could be the cause of Huang's departure",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/mass-smuggling-of-nvidia-ai-gpus-could-be-the-underlying-cause-of-jensen-huangs-departure-analysts-claim-more-than-1-5-gigawatts-of-banned-chips-tracked-to-china-despite-export-controls",
+      "source": "Hacker News",
+      "date": "2026-11-14T15:58:57.000Z",
+      "snippet": "59 points · 39 comments on HN"
+    },
+    {
+      "id": "d46b516a4c83",
+      "title": "The OpenAI board member who fired Sam Altman says we still can’t trust AI CEOs",
+      "url": "https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview",
+      "source": "The Verge",
+      "date": "2026-11-14T15:00:00.000Z",
+      "snippet": "Today, I’m talking with Helen Toner, the executive director of the Center for Security and Emerging Technology at Georgetown University. This episode is part two of our series on AI in real life. Helen is a well-known fi"
+    },
+    {
+      "id": "5bfa2e37b7da",
+      "title": "Show HN: A terminal-native idle factory game, written in Rust with ratatui",
+      "url": "https://gitlab.com/snipedbywifi/terminactory",
+      "source": "Hacker News",
+      "date": "2026-11-14T14:05:54.000Z",
+      "snippet": "159 points · 39 comments on HN"
+    },
+    {
+      "id": "567fa298898a",
+      "title": "Jensen Huang and the decline of the visionary showman founder CEO",
+      "url": "https://www.theverge.com/tech/1033781/nvidia-jensen-huang-last-visionary-showman-founder-ceo",
+      "source": "The Verge",
+      "date": "2026-11-14T12:00:00.000Z",
+      "snippet": "On January 6th, 2025, Nvidia CEO Jensen Huang got his rockstar moment at last. He strode triumphantly onstage, hand raised in the air, to the claps and cheers of a 14,000-person arena absolutely packed with influencers a"
+    },
+    {
+      "id": "4d0c29e8f59a",
+      "title": "Ask HN: What are the most useful, concrete AI skills to independently learn?",
+      "url": "https://news.ycombinator.com/item?id=50494696",
+      "source": "Hacker News",
+      "date": "2026-11-14T06:56:42.000Z",
+      "snippet": "86 points · 51 comments on HN"
+    },
     {
       "id": "c6caa4d4f0b0",
       "title": "Nvidia allegedly engineered scarcity by funding AI startups to buy its GPUs",
       "url": "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus",
       "source": "Hacker News",
       "date": "2026-11-14T02:52:59.000Z",
-      "snippet": "717 points · 413 comments on HN"
+      "snippet": "1079 points · 642 comments on HN"
     },
     {
       "id": "a9dc79e6aa5b",
@@ -16,7 +120,7 @@
       "url": "https://claude.com/resources/articles/projects-redesigned",
       "source": "Hacker News",
       "date": "2026-11-14T00:28:11.000Z",
-      "snippet": "92 points · 85 comments on HN"
+      "snippet": "99 points · 93 comments on HN"
     },
     {
       "id": "10c60fc60c0f",
@@ -24,7 +128,7 @@
       "url": "https://unsloth.ai/docs/models/qwen3.8",
       "source": "Hacker News",
       "date": "2026-11-14T00:06:04.000Z",
-      "snippet": "176 points · 51 comments on HN"
+      "snippet": "252 points · 83 comments on HN"
     },
     {
       "id": "04367a7d0b10",
@@ -48,7 +152,7 @@
       "url": "https://orcasairband.com/",
       "source": "Hacker News",
       "date": "2026-11-13T22:04:24.000Z",
-      "snippet": "274 points · 65 comments on HN"
+      "snippet": "292 points · 70 comments on HN"
     },
     {
       "id": "c479f2841d4a",
@@ -64,7 +168,7 @@
       "url": "https://twitter.com/flightradar24/status/2121347654714077605",
       "source": "Hacker News",
       "date": "2026-11-13T21:06:52.000Z",
-      "snippet": "203 points · 40 comments on HN"
+      "snippet": "212 points · 44 comments on HN"
     },
     {
       "id": "951c84561943",
@@ -80,7 +184,7 @@
       "url": "https://www.slopmanifesto.com/",
       "source": "Hacker News",
       "date": "2026-11-13T19:51:56.000Z",
-      "snippet": "203 points · 121 comments on HN"
+      "snippet": "220 points · 132 comments on HN"
     },
     {
       "id": "645e798427f9",
@@ -96,7 +200,7 @@
       "url": "https://www.perplexity.ai/hub/blog/perplexity-decider",
       "source": "Hacker News",
       "date": "2026-11-13T19:24:47.000Z",
-      "snippet": "136 points · 24 comments on HN"
+      "snippet": "145 points · 26 comments on HN"
     },
     {
       "id": "3dc626ea28ff",
@@ -112,7 +216,7 @@
       "url": "https://www.dwarkesh.com/p/rsi",
       "source": "Hacker News",
       "date": "2026-11-13T18:39:42.000Z",
-      "snippet": "64 points · 105 comments on HN"
+      "snippet": "67 points · 114 comments on HN"
     },
     {
       "id": "c137e8c9cee8",
@@ -120,7 +224,7 @@
       "url": "https://www.forbes.com/sites/maryroeloffs/2026/08/17/ai-companies-are-buying-and-destroying-antique-books-heres-why/",
       "source": "Hacker News",
       "date": "2026-11-13T18:14:38.000Z",
-      "snippet": "56 points · 62 comments on HN"
+      "snippet": "59 points · 70 comments on HN"
     },
     {
       "id": "e940fd987572",
@@ -128,7 +232,7 @@
       "url": "https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths",
       "source": "Hacker News",
       "date": "2026-11-13T17:30:10.000Z",
-      "snippet": "397 points · 101 comments on HN"
+      "snippet": "430 points · 110 comments on HN"
     },
     {
       "id": "743e8b03b2d9",
@@ -160,7 +264,7 @@
       "url": "https://text.npr.org/nx-s1-6029408",
       "source": "Hacker News",
       "date": "2026-11-13T15:29:10.000Z",
-      "snippet": "188 points · 178 comments on HN"
+      "snippet": "194 points · 194 comments on HN"
     },
     {
       "id": "4f5b4ce8cb48",
@@ -168,7 +272,7 @@
       "url": "https://www.youtube.com/watch?v=IRK8h67ol7Q",
       "source": "Hacker News",
       "date": "2026-11-13T15:08:44.000Z",
-      "snippet": "341 points · 460 comments on HN"
+      "snippet": "473 points · 710 comments on HN"
     },
     {
       "id": "5bf4951adbe9",
@@ -232,7 +336,7 @@
       "url": "https://www.theatlantic.com/books/2026/11/ai-literary-scams-amazon/689391/",
       "source": "Hacker News",
       "date": "2026-11-13T11:13:46.000Z",
-      "snippet": "344 points · 211 comments on HN"
+      "snippet": "367 points · 232 comments on HN"
     },
     {
       "id": "44da454e7900",
@@ -240,7 +344,7 @@
       "url": "https://status.claude.com/incidents/nn11wk485zfn",
       "source": "Hacker News",
       "date": "2026-11-13T10:18:13.000Z",
-      "snippet": "489 points · 387 comments on HN"
+      "snippet": "493 points · 389 comments on HN"
     },
     {
       "id": "d1318183fe17",
@@ -256,7 +360,7 @@
       "url": "https://www.techspot.com/news/114532-chicago-schools-tell-google-they-can-live-without.html",
       "source": "Hacker News",
       "date": "2026-11-13T00:38:41.000Z",
-      "snippet": "89 points · 29 comments on HN"
+      "snippet": "90 points · 30 comments on HN"
     },
     {
       "id": "85fb0dda3eed",
@@ -264,7 +368,7 @@
       "url": "https://www.economist.com/leaders/2026/11/12/why-you-should-expect-an-ai-crash",
       "source": "Hacker News",
       "date": "2026-11-12T23:08:31.000Z",
-      "snippet": "102 points · 84 comments on HN"
+      "snippet": "103 points · 84 comments on HN"
     },
     {
       "id": "f980cc1f1e21",
@@ -272,7 +376,7 @@
       "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
       "source": "Hacker News",
       "date": "2026-11-12T23:06:17.000Z",
-      "snippet": "345 points · 105 comments on HN"
+      "snippet": "353 points · 105 comments on HN"
     },
     {
       "id": "8d30336b14bf",
@@ -312,7 +416,7 @@
       "url": "https://scottjg.com/posts/2026-11-11-reverse-engineering-my-coway-air-purifier-to-ditch-the-cloud/",
       "source": "Hacker News",
       "date": "2026-11-12T22:03:09.000Z",
-      "snippet": "765 points · 215 comments on HN"
+      "snippet": "792 points · 222 comments on HN"
     },
     {
       "id": "d096a8a420fb",
@@ -320,7 +424,7 @@
       "url": "https://unemploymentlabs.com/checkpoint-forensics",
       "source": "Hacker News",
       "date": "2026-11-12T21:56:11.000Z",
-      "snippet": "365 points · 159 comments on HN"
+      "snippet": "404 points · 176 comments on HN"
     },
     {
       "id": "3403360ccc1d",
@@ -352,7 +456,7 @@
       "url": "https://synthanatomy.com/2026/11/ai-is-turning-apples-app-review-process-into-a-nightmare-for-developers.html",
       "source": "Hacker News",
       "date": "2026-11-12T21:09:49.000Z",
-      "snippet": "197 points · 232 comments on HN"
+      "snippet": "198 points · 233 comments on HN"
     },
     {
       "id": "e153c4dc0f7f",
@@ -432,7 +536,7 @@
       "url": "https://github.com/Parcha-ai/agentrun/blob/main/README.md",
       "source": "Hacker News",
       "date": "2026-11-12T18:15:48.000Z",
-      "snippet": "135 points · 39 comments on HN"
+      "snippet": "137 points · 40 comments on HN"
     },
     {
       "id": "d545fdc617b9",
@@ -448,7 +552,7 @@
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
       "source": "Hacker News",
       "date": "2026-11-12T18:01:48.000Z",
-      "snippet": "565 points · 350 comments on HN"
+      "snippet": "569 points · 352 comments on HN"
     },
     {
       "id": "4bad5afe01a1",
@@ -464,7 +568,7 @@
       "url": "https://news.ycombinator.com/item?id=50471281",
       "source": "Hacker News",
       "date": "2026-11-12T17:51:23.000Z",
-      "snippet": "58 points · 13 comments on HN"
+      "snippet": "60 points · 13 comments on HN"
     },
     {
       "id": "96892311de09",
@@ -537,110 +641,6 @@
       "source": "TechCrunch",
       "date": "2026-11-12T16:32:33.000Z",
       "snippet": "Nvidia's ousted CEO Jensen Huang's downfall isn’t just your run-of-the-mill salacious billionaire sex scandal. He was using his influence to push the AI industry in some very specific ways."
-    },
-    {
-      "id": "1d250e9233fe",
-      "title": "Jensen Huang is out. What did China want from him?",
-      "url": "https://www.theverge.com/podcast/1031260/nvidia-jensen-huang-resign-china-spy-scandal-ai-chips-trump",
-      "source": "The Verge",
-      "date": "2026-11-12T16:30:00.000Z",
-      "snippet": "Today, we’re talking about the Jensen Huang scandal at Nvidia, which is developing so quickly that we had to do an emergency update of this intro minutes before publishing this episode. Huang just resigned from his posit"
-    },
-    {
-      "id": "a5ee89764269",
-      "title": "Trump floats Apple chairman Tim Cook as Jensen Huang’s successor",
-      "url": "https://techcrunch.com/2026/11/12/trump-floats-apple-chairman-tim-cook-as-jensen-huangs-successor/",
-      "source": "TechCrunch",
-      "date": "2026-11-12T16:12:44.000Z",
-      "snippet": "In a post on Truth Social, President Trump says only one man can take Jensen Huang's place as head of Nvidia: Tim Cook."
-    },
-    {
-      "id": "830958e6e6f7",
-      "title": "Read Nvidia’s internal emails about the ‘extraordinarily difficult period’ amid CEO shakeup",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1032028/read-nvidias-internal-emails-jensen-huang",
-      "source": "The Verge",
-      "date": "2026-11-12T15:48:12.000Z",
-      "snippet": "Jensen Huang resigned as CEO of Nvidia this morning, a company he co-founded in 1993. The decision came following the company's board opening an investigation into multiple extramarital affairs Huang had with a direct re"
-    },
-    {
-      "id": "15b0384fb53f",
-      "title": "Jensen Huang is out at Nvidia — who is Colette Kress, his interim replacement?",
-      "url": "https://techcrunch.com/2026/11/12/jensen-huang-is-out-at-nvidia-who-is-colette-kress-his-interim-replacement/",
-      "source": "TechCrunch",
-      "date": "2026-11-12T15:37:29.000Z",
-      "snippet": "Nvidia CFO Colette Kress is taking over as an interim replacement for longtime CEO Jensen Huang, who is embroiled in scandal."
-    },
-    {
-      "id": "62c34abfa66e",
-      "title": "Norwest pushes deeper into AI with new $4B fund",
-      "url": "https://techcrunch.com/2026/11/12/norwest-pushes-deeper-into-ai-with-new-4b-fund/",
-      "source": "TechCrunch",
-      "date": "2026-11-12T15:18:14.000Z",
-      "snippet": "This is the investment firm's largest fund to date."
-    },
-    {
-      "id": "023d1c79ca20",
-      "title": "Cyberattack on Fireworks AI allowed hackers to access Notion customers’ chat transcripts",
-      "url": "https://techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts/",
-      "source": "TechCrunch",
-      "date": "2026-11-12T15:02:28.000Z",
-      "snippet": "This is Fireworks' second data breach in as many months."
-    },
-    {
-      "id": "15c28179b2dc",
-      "title": "Nvidia CEO Jensen Huang has resigned. What happens next?",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang",
-      "source": "The Verge",
-      "date": "2026-11-12T15:01:31.000Z",
-      "snippet": "After the leather-jacketed CEO, president, and co-founder of Nvidia, Jensen Huang, acknowledged an affair with Megaspeed exec Alice Huang, his company initially announced an investigation. However, The New York Times rep"
-    },
-    {
-      "id": "5f96a0ebfa7b",
-      "title": "Google pushes privacy angle as Gemini-powered smartglasses debut starting at $395",
-      "url": "https://arstechnica.com/google/2026/11/google-pushes-privacy-angle-as-gemini-powered-smartglasses-debut-starting-at-395/",
-      "source": "Ars Technica",
-      "date": "2026-11-12T14:50:17.000Z",
-      "snippet": "The first Gemini smartglasses are a collab between Google, Samsung, Gentle Monster, and Warby Parker."
-    },
-    {
-      "id": "39f4c129e434",
-      "title": "I reviewed the Apple HomeView, ask me anything",
-      "url": "https://www.theverge.com/tech/1031868/i-reviewed-the-apple-homeview-ask-me-anything",
-      "source": "The Verge",
-      "date": "2026-11-12T14:10:00.000Z",
-      "snippet": "Hi! I'm Jen Tuohy, The Verge's senior smart home reviewer. I've tested every smart display Amazon and Google have ever made, and for the past week I've been testing Apple's first: The $299 HomeView. I put the tabletop an"
-    },
-    {
-      "id": "426b199762db",
-      "title": "Nvidia CEO Jensen Huang resigns amid spy, affair scandals",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1031689/jensen-huang-nvidia-ceo-resigns",
-      "source": "The Verge",
-      "date": "2026-11-12T13:53:16.000Z",
-      "snippet": "Nvidia's board announced that Jensen Huang - its longtime co-founder, president, and CEO - has resigned after reports of two extramarital affairs, one with an alleged Chinese spy and one with an Nvidia executive who repo"
-    },
-    {
-      "id": "7ed9c1c82c2d",
-      "title": "Nine Korean startups vie for a spot in Disrupt 2027’s Startup Battlefield 200 competition",
-      "url": "https://techcrunch.com/2026/11/12/nine-korean-startups-vie-for-a-spot-in-disrupt-2027s-startup-battlefield-200-competition/",
-      "source": "TechCrunch",
-      "date": "2026-11-12T13:26:25.000Z",
-      "snippet": "The startups work across the deep tech sector, including healthcare, fintech, energy, semiconductors, and AI. All nine are looking to enter the US."
-    },
-    {
-      "id": "90d79223706e",
-      "title": "Gondola doubles revenue as its team builds more with Codex",
-      "url": "https://openai.com/business/customer-stories/gondola",
-      "source": "OpenAI",
-      "date": "2026-11-12T12:00:00.000Z",
-      "snippet": "Gondola helps creatives get credit and get hired, with Codex raising its lead engineer’s output by 50% and ChatGPT simplifying daily work."
-    },
-    {
-      "id": "0990939c7d6e",
-      "title": "Holiday Extras is rethinking what it can build with Codex",
-      "url": "https://openai.com/business/customer-stories/holidays-extras-codex",
-      "source": "OpenAI",
-      "date": "2026-11-12T09:30:00.000Z",
-      "snippet": "With Codex, Holiday Extras is turning customer expertise into better apps, higher booking conversion and new possibilities for growth."
     }
   ]
 }
