@@ -1,6 +1,42 @@
 {
-  "updated": "2026-11-16T14:46:43.644Z",
+  "updated": "2026-11-17T15:29:10.152Z",
   "claude-code": [
+    {
+      "version": "2.1.326",
+      "date": null,
+      "bullets": [
+        "Added support for turning on Code Mode while agent teams are enabled; if you already turned it on, sessions with teams on now start in Code Mode",
+        "Added a startup warning when an <code>--allowedTools</code>, <code>--disallowedTools</code> or <code>--tools</code> value has an entry that doesn't look like a complete rule",
+        "Added a message explaining why MCP servers stop loading when an administrator adds <code>managed-mcp.json</code> during a session",
+        "Added a row to <code>/status</code> that says when your provider or an environment variable such as <code>DISABLE_TELEMETRY</code> turns features off",
+        "Added a note in <code>/plugin</code> and <code>claude plugin list</code> when a malformed <code>plugin.json</code> field such as <code>author</code> or <code>homepage</code> is ignored",
+        "Added Ctrl+O to show hidden startup notices",
+        "Added a hint in the empty prompt that says what to do after a request fails",
+        "Added an <code>esc to stop</code> footer hint in a subagent's view where Esc would stop it",
+        "Added <code>OTEL_RESOURCE_INCLUDE_HOST</code> to include <code>host.name</code> and <code>host.id</code> in OpenTelemetry resource attributes (off by default)",
+        "Added <code>overflowX=&quot;scroll&quot;</code> on a mod's <code>Box</code>, and <code>maxLines</code> and <code>wrap=&quot;clip&quot;</code> on its <code>Text</code>",
+        "Fixed <code>cp</code> of a file being refused when only its source was covered by an <code>Edit</code> deny rule",
+        "Fixed Bash commands that delete or overwrite files (<code>find -delete</code>, <code>cat a &gt; b</code>, <code>sort -o</code>) being summed up in the transcript as a search or a read",
+        "Fixed a misleading &quot;Dangerous rm operation&quot; warning in the Bash permission prompt on some commands with no rm that Claude Code can't read reliably",
+        "Fixed background sessions losing the LLM gateway your shell exported after a crash, after a reopen from another folder, or when the background service lacks it: they now stop before any model request",
+        "Fixed the background service ending your own processes, such as an SSH login, when a process number on its list had been reused by another user's process",
+        "Fixed rules added in <code>/permissions</code> or at a main-conversation tool prompt, and <code>/add-dir</code> folders, looking saved when the settings file couldn't be written; the terminal now warns and names it",
+        "Fixed a failed MCP <code>headersHelper</code>, or one not run in an untrusted folder, making other sessions start without that server, for most servers with no stored OAuth refresh token",
+        "Fixed managed settings with certain key names stopping Claude Code from starting or affecting other managed files",
+        "Fixed settings files with values nested thousands of levels deep crashing Claude Code or applying only some of the time; values past 64 levels are now dropped with a warning",
+        "Fixed a settings file saved with an error mid-session being skipped silently; a warning now names the file",
+        "Fixed the subagent model set in managed settings not applying in Claude Desktop's Code tab; it now overrides your own, as in a terminal, unless those settings also pick a provider or gateway",
+        "Fixed sandboxed commands failing to start on Linux when the home or config directory is reached through a symlink into <code>/net</code> and sandbox settings deny reads of it",
+        "Fixed empty placeholder files, including <code>.git/config.lock</code>, sometimes being left in the project on Linux when Claude Code was stopped during a sandboxed command",
+        "Fixed Up then Enter answering Yes at the folder trust prompt shown under an already trusted parent folder",
+        "Fixed an extra Enter at the end of setup accepting the offer to make auto mode the default",
+        "Fixed a message typed over the startup auto mode offer being lost, and its Enter accepting the offer",
+        "Fixed a note typed on a permission prompt being sent to Claude after Tab had hidden it",
+        "Fixed PreToolUse hooks in managed settings leaving no OpenTelemetry <code>tool_decision</code> event or <code>permission_denials</code> entry when they refused a direct tool call",
+        "Fixed letters typed over <code>/sandbox</code> or a delete question in <code>/permissions</code> moving the selection",
+        "Fixed resumed sessions losing recent turns after a crash when the previous turn ended with an empty reply"
+      ]
+    },
     {
       "version": "2.1.325",
       "date": null,
@@ -745,45 +781,51 @@
         "Fixed cloud sessions skipping auto mode's checks on Claude in Chrome actions that a saved permission allows when their feature flags had not loaded",
         "Fixed <code>CLAUDE_CODE_RESUME_INTERRUPTED_TURN</code> re-running a finished turn after a restart when an MCP tool result had ended that turn"
       ]
-    },
-    {
-      "version": "2.1.295",
-      "date": null,
-      "bullets": [
-        "Added <code>onFailure: &quot;block&quot;</code> for command and HTTP hooks: a hook that can't start, times out, or exits with an unexpected code blocks the action instead of letting it through",
-        "Added Program Status Protocol (OSC 7501) support: terminals that implement it can show whether Claude Code is working, waiting on you, or done",
-        "Added quoted text to the <code>/copy</code> picker, so a drafted message copies without its <code>&gt;</code> markers",
-        "Added a warning to <code>claude plugin install</code>, <code>enable</code>, <code>disable</code> and <code>marketplace add</code> when the settings file they write to does not load",
-        "Added a line on stderr, when it is a terminal, that says what a <code>claude -p</code> run is waiting for when it stays open after its last turn",
-        "Added support for <code>timeouts.upstream_ttfb_ms</code> on the Claude apps gateway's Bedrock, Vertex, Foundry and other cloud upstreams: a value you set now limits how long a stream may take to start there, after which it fails over or gets a 502",
-        "Added a &quot;Backgrounding cancelled&quot; message when you stop the turn while <code>←</code> is waiting for the current tool to finish",
-        "Added an optional <code>models</code> list to every Claude apps gateway upstream: only the listed models are sent there, on failover too, and one <code>*</code> in an entry is a wildcard",
-        "Added support for <code>forceLoginMethod: &quot;gateway&quot;</code> and <code>forceLoginGatewayUrl</code> in your own user settings on machines with no managed settings, so <code>/login</code> opens on that Claude apps gateway",
-        "Added advice to <code>claude plugin validate</code> when a plugin's README has no install line: it prints the line to paste and never changes the exit code, even with <code>--strict</code>",
-        "Added <code>upstream_request_id</code> to the Claude apps gateway's <code>inference</code> audit event: the request ID from Amazon Bedrock, the Anthropic API or another upstream, for support cases",
-        "Added <code>$.ui.notify</code> for mods: raises a native notification through your own notification setting and says which channel sent it",
-        "Added children to a mod's <code>Button</code>: strings and <code>Text</code>, so a row of a list is one pressable with a chip or a dim detail inside",
-        "Added <code>CLAUDE_CODE_RETRY_WATCHDOG_MAX_WAIT_MS</code> to limit how long unattended retry mode (<code>CLAUDE_CODE_RETRY_WATCHDOG</code>) waits out 429 and 529 errors",
-        "Added a <code>request-id</code> header to the Claude apps gateway's successful inference responses, so <code>request_id</code> in Claude Code telemetry matches the gateway's audit log",
-        "Fixed every request failing on a <code>[1m]</code> model when a gateway, Bedrock, Vertex or Foundry refuses the context-1m beta; Claude Code now resends without it",
-        "Fixed <code>claude -p</code> text output dropping earlier responses when background work started another turn; each turn's response now prints when the turn ends",
-        "Fixed remote MCP servers in headless and SDK sessions staying disconnected after an outage longer than 15 seconds, or reconnecting in a tight loop to a server that drops each connection right after it connects; repeated drops now back off, up to 30s",
-        "Fixed remote MCP connections being dropped when a server's error reply happened to contain a network error name",
-        "Fixed MCP servers that repeat a pagination cursor being asked for the same page up to 20 times at every connect",
-        "Fixed CSS, JavaScript and XML files returned by MCP tools being saved as .bin, which the Read tool refuses; font and icon files now get their own extension too",
-        "Fixed Bash tool calls failing when the model passes <code>command_description</code> instead of <code>description</code>",
-        "Fixed Claude in Chrome not applying a site deny rule written with port 80 (<code>host:80</code>) to plain <code>http://</code> pages on that host",
-        "Fixed <code>/plugin</code>'s Errors tab removing a marketplace that failed to load, and uninstalling its plugins, on Enter without asking first",
-        "Fixed <code>claude plugin marketplace add</code> reporting success for a marketplace whose name no plugin can be installed under; such an add is now refused",
-        "Fixed <code>CLAUDE_AUTO_BACKGROUND_TASKS</code> moving a subagent to the background while an edit or shell command waited behind it, which started that call before the subagent finished",
-        "Fixed PushNotification saying a push was not sent in <code>claude remote-control</code> sessions right after a phone message, without the <code>/config</code> toggle, or when started from inside Claude Code",
-        "Fixed files sent from remote sessions being refused as &quot;could not be vouched for&quot; when more than 256 were sent at once",
-        "Fixed a rare failure to load managed settings at startup right after a login refresh",
-        "Fixed <code>/tui</code> exiting without a message, or with a raw system error, when Claude Code could not be started again"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.171.0-alpha.12",
+      "date": "2026-11-17T14:26:49.000Z",
+      "bullets": [
+        "Release 0.171.0-alpha.12"
+      ]
+    },
+    {
+      "version": "0.171.0-alpha.11",
+      "date": "2026-11-17T04:24:57.000Z",
+      "bullets": [
+        "Release 0.171.0-alpha.11"
+      ]
+    },
+    {
+      "version": "0.170.0-alpha.4.1",
+      "date": "2026-11-17T02:19:17.000Z",
+      "bullets": [
+        "Release 0.170.0-alpha.4.1"
+      ]
+    },
+    {
+      "version": "0.171.0-alpha.9",
+      "date": "2026-11-16T19:13:19.000Z",
+      "bullets": [
+        "Release 0.171.0-alpha.9"
+      ]
+    },
+    {
+      "version": "0.171.0-alpha.8",
+      "date": "2026-11-16T16:25:46.000Z",
+      "bullets": [
+        "Release 0.171.0-alpha.8"
+      ]
+    },
+    {
+      "version": "0.171.0-alpha.10",
+      "date": "2026-11-16T23:32:43.000Z",
+      "bullets": [
+        "Release 0.171.0-alpha.10"
+      ]
+    },
     {
       "version": "0.171.0-alpha.7",
       "date": "2026-11-15T23:13:50.000Z",
@@ -887,48 +929,6 @@
       "date": "2026-11-11T22:22:11.000Z",
       "bullets": [
         "Release 0.169.0-alpha.11.1"
-      ]
-    },
-    {
-      "version": "0.169.0-alpha.11",
-      "date": "2026-11-11T10:11:06.000Z",
-      "bullets": [
-        "Release 0.169.0-alpha.11"
-      ]
-    },
-    {
-      "version": "0.167.0-alpha.4.3",
-      "date": "2026-11-11T23:54:59.000Z",
-      "bullets": [
-        "Release 0.167.0-alpha.4.3"
-      ]
-    },
-    {
-      "version": "0.167.1",
-      "date": "2026-11-10T21:32:01.000Z",
-      "bullets": [
-        "Full Changelog: https://github.com/openai/codex/compare/rust-v0.167.0...rust-v0.167.1"
-      ]
-    },
-    {
-      "version": "0.169.0-alpha.9",
-      "date": "2026-11-10T22:09:09.000Z",
-      "bullets": [
-        "Release 0.169.0-alpha.9"
-      ]
-    },
-    {
-      "version": "0.169.0-alpha.10",
-      "date": "2026-11-11T03:33:09.000Z",
-      "bullets": [
-        "Release 0.169.0-alpha.10"
-      ]
-    },
-    {
-      "version": "0.167.0-alpha.4.2",
-      "date": "2026-11-11T01:29:15.000Z",
-      "bullets": [
-        "Release 0.167.0-alpha.4.2"
       ]
     }
   ]
