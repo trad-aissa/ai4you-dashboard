@@ -1,6 +1,42 @@
 {
-  "updated": "2026-11-18T15:05:54.233Z",
+  "updated": "2026-11-19T15:14:28.309Z",
   "claude-code": [
+    {
+      "version": "2.1.328",
+      "date": null,
+      "bullets": [
+        "Added auto mode for Claude Opus 4.6 and Sonnet 4.6 on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry and Claude apps gateway; interactive sessions with no permission mode start in it",
+        "Added <code>&quot;onFailure&quot;: &quot;block&quot;</code> for <code>mcp_tool</code> hooks, as for command and HTTP hooks: a hook whose call fails blocks the action",
+        "Added a warning when a message from a session that skips permission prompts may be held and dropped by a cloud session",
+        "Added a notice in <code>/status</code> and <code>claude doctor</code> when an OpenTelemetry exporter has no endpoint and its data would likely be lost",
+        "Added <code>CLAUDE_CODE_DISABLE_DEFERRED_TOOL_RESUME</code>, which lets a host stop <code>claude -p --resume</code> and <code>--continue</code> from running a tool call that a hook deferred",
+        "Added support for apps that embed Claude Code to switch on the policy plugin's <code>allowManagedModsOnly</code> option; an admin's managed settings still win",
+        "Added a startup warning to the Claude apps gateway when a policy's <code>maxEffortLevel</code> is not a valid effort level",
+        "Self-hosted runner: Added <code>--repository-folder</code> to name the folder that sessions use for a repository at <code>--capacity 1</code>, in place of its path under the base folder, which can't be a symbolic link",
+        "Self-hosted runner: Added a start-up warning when the host's settings.json sets a default permission mode that sessions ignore",
+        "Self-hosted runner: Added <code>--hook-label</code> to <code>claude self-hosted-runner orchestrator</code>, to hand chosen session labels to the <code>spawn-runner</code> hook",
+        "Self-hosted runner: Added <code>--metadata key=value</code> to <code>claude --environment</code>, to label a session for the <code>spawn-runner</code> hook",
+        "Self-hosted runner: Added <code>claude_code_self_hosted_orchestrator_session_queue_wait_by_reason_seconds</code> to the orchestrator's <code>/metrics</code>, so a re-opened session's wait can be told from a new one's",
+        "Self-hosted runner: Added an orchestrator metric, <code>claude_code_self_hosted_orchestrator_sessions_given_up_total</code>, that counts by cause how often Anthropic gave up starting a runner for a session",
+        "Fixed Bash commands in zsh stopping with a &quot;not found&quot; error at a word that starts with <code>=</code>, such as <code>echo ====</code> or <code>[ a == b ]</code>; <code>=cmd</code> no longer expands to a command's path",
+        "Fixed automatic compaction reusing the session's earlier system prompt instead of rebuilding it the way <code>/compact</code> does",
+        "Fixed markdown rendering freezing on some very long or malformed input",
+        "Fixed rare screen freezes",
+        "Fixed Esc often being lost at a permission prompt or question when you typed straight after it; in terminals that send Alt as Esc and a key, an unused Alt or Option key now declines there",
+        "Fixed a paste or a terminal's reply being typed into the prompt when a slow connection cut it in two",
+        "Fixed saving a scheduled task erasing the project's other saved tasks when the scheduled tasks file can't be read, on third-party providers or with telemetry or feature flags turned off",
+        "Fixed a scheduled task with a typo in the project's scheduled tasks file being deleted the next time that file was saved",
+        "Fixed a case where a resumed cloud session could lose its compaction summary or recent messages when a message was saved late",
+        "Fixed the token counts on the spinner and for subagents counting a retried reply twice, missing replies that were not streamed, and standing still while Claude thinks",
+        "Fixed the error shown when usage credits run out mid-response, which named a rate limit",
+        "Fixed auto mode failing every turn outside Claude Desktop with <code>CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS</code> set behind a gateway rejecting betas, on Bedrock, Agent Platform, Foundry or Claude apps gateway",
+        "Fixed <code>CLAUDE_STREAM_IDLE_TIMEOUT_MS</code> not lengthening the 5-minute connection limit on gateways, custom base URLs and cloud providers",
+        "Fixed some Claude Desktop sessions on third-party providers, other than scheduled tasks, ending for good with &quot;Prompt is too long&quot; after large tool results; the largest are now left out",
+        "Fixed MCP tools whose input schema starts with <code>anyOf</code>, <code>oneOf</code> or <code>allOf</code> going missing on third-party providers or with telemetry or feature flags turned off",
+        "Fixed an MCP tool with an invalid input schema failing requests on third-party providers or with telemetry or feature flags turned off; the tool is now left out and Claude is told why",
+        "Fixed effort being turned off for a subagent's model for the session if Bedrock, Google Cloud's Agent Platform or Foundry refused its progress summary's effort setting (regression in 2.1.327)"
+      ]
+    },
     {
       "version": "2.1.327",
       "date": null,
@@ -745,42 +781,6 @@
         "Fixed <code>--worktree</code> sessions sometimes starting from the wrong commit when a tag or branch was named like a commit ID, and their starting git status naming a branch other than the new worktree's",
         "Fixed the branch showing as &quot;.invalid&quot; and <code>--worktree</code> failing to reopen a worktree in repositories using git's reftable ref storage"
       ]
-    },
-    {
-      "version": "2.1.299",
-      "date": null,
-      "bullets": [
-        "Added <code>CLAUDE_CODE_DISABLE_FILE_MENTIONS</code> environment variable: Claude gets the paths of <code>@</code> file mentions to read with its file tools, not the files' contents",
-        "Added idle compaction in the terminal: a 200K+ token conversation left idle for about 54 minutes is compacted before its one-hour prompt cache expires, so your next message doesn't reprocess it all",
-        "Added <code>CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS</code> to change idle compaction's 200K-token minimum; <code>&quot;idleCompaction&quot;: false</code> in settings.json turns it off. Both need v2.1.290 or later",
-        "Added <code>$.prompt.media</code> so a <code>prompt.submit</code> hook of a mod installed by managed settings can read the bytes of an image or document attached to the prompt",
-        "Added <code>$.session.identity()</code> for mods installed by managed settings: how the session is signed in, and its organization and email when managed <code>forceLoginOrgUUID</code> lists that organization",
-        "Added <code>size</code>, <code>weight</code>, <code>mono</code> and <code>tabular</code> to a mod's <code>Text</code> and named spacing steps (<code>xs</code> to <code>xl</code>) to its <code>Box</code>; <code>bold</code> is deprecated in favor of <code>weight</code>",
-        "Added <code>--shutdown-drain-sec</code> to <code>claude self-hosted-runner orchestrator</code>: on SIGTERM it stops polling and gives the poll in flight and running spawn hooks up to that many seconds to finish",
-        "Added the skill's frontmatter, source, plugin name and file path to what a mod's <code>skill.prompt</code> hook receives",
-        "Added <code>/effort</code> and <code>/fast</code> in agent view to set what new sessions start with; a bare <code>/model</code>, <code>/effort</code> or <code>/fast</code> there now opens a picker",
-        "Added a &quot;safe mode&quot; line to the agents view peek panel for background sessions started with <code>--safe-mode</code>",
-        "Added a one-time note when plan mode won't ask before most edits or commands because bypass permissions is available",
-        "Added <code>--disallow-tools</code> and a <code>disallowed_tools</code> case field to <code>claude plugin eval</code> to keep specific built-in tools, such as Agent, out of eval runs",
-        "Added support for turning off the attribution block in Claude Desktop's Code tab: set <code>CLAUDE_CODE_ATTRIBUTION_HEADER=0</code> in the <code>env</code> of a Claude apps gateway's <code>code</code> policy",
-        "Added a field to the attribution block in Claude Code sessions behind a Claude apps gateway; remove the block with <code>CLAUDE_CODE_ATTRIBUTION_HEADER=0</code>",
-        "Added a <code>queue</code> door to the <code>session.append</code> mod hook, so a mod can make the transcript's queue records differ from the prompt as sent",
-        "Added a note in <code>/plugin</code> and <code>claude plugin validate</code> naming a mod's hooks that are skipped where an organization manages Claude Code",
-        "Added <code>/usage</code> warnings for max effort, workflows, always-on context and large tool results",
-        "Fixed the error for a denied cloud session, which could point to the wrong organization when a key from <code>apiKeyHelper</code> was in use",
-        "Fixed sessions on a gateway-specific model name behind a custom <code>ANTHROPIC_BASE_URL</code> ending with &quot;Prompt is too long · automatic compaction failed&quot; near 200K tokens instead of sending the request",
-        "Fixed a mod that submits a prompt at the end of every turn keeping a headless run going past <code>--max-turns</code>, <code>--max-budget-usd</code>, an interrupt, or the end of the host's conversation",
-        "Fixed cloud sessions sometimes showing the model's follow-up text after a tool group's one-line label",
-        "Fixed the Write and Edit tools creating a mod in a session's mods folder without asking in accept-edits mode when the config directory's path has no <code>.claude</code> in it",
-        "Fixed installed mods that kept running in an open session after being turned off remotely; they now unload between turns",
-        "Fixed Edit and Retry in Cowork and claude.ai cloud sessions failing on a message stopped while its <code>UserPromptSubmit</code> or mod <code>prompt.submit</code> hooks were still running (regression in 2.1.296)",
-        "Fixed an agent teammate started without a description keeping part of a credential from its prompt in the task description shown for it",
-        "Fixed the claude.ai view of a Remote Control or cloud session freezing when a large batch of events could not finish uploading over a slow connection",
-        "Fixed a sandboxed shell command being able to write into a <code>--plugin-dir</code> folder, whose code Claude Code reloads and runs outside the sandbox",
-        "Fixed memory growth under heavy debug logging (<code>--debug</code>, <code>--debug-file</code>), and a hang on exit when the debug log is on a disk or network mount that stops accepting writes",
-        "Fixed memory growing without bound when debug output goes to stderr and the parent process stops reading it",
-        "Fixed rm prompts on shell <code>-c</code> scripts that don't run <code>rm</code>. An rm built at run time in a script Claude Code can't read no longer prompts unless <code>CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT=1</code>"
-      ]
     }
   ],
   "codex": [
@@ -789,6 +789,13 @@
       "date": "2026-11-18T03:40:48.000Z",
       "bullets": [
         "- Added WebRTC negotiation for realtime voice calls in the TUI. (#61172) - Added automatically refreshed authentication headers for OpenTelemetry HTTP exporters. (#61028) - Added experimental support for using identically named MCP servers across environments. (#60905) - Oversized WebSocket requests now fall back to HTTP without unnecessary retries. (#60840, #60841) - Fixed MCP OAuth credential races during cancellation, login, and logout. (#60849, #60981) - Improved automatic reconnection for Cloud conversations and preserved active recovery turns when clients reconnect. (#60969, #61014) - Fixed Windows file replacement, sandbox permission preservation, and runtime registration recovery. (#60872, #60943, #60944) - Fixed permission updates and child threads losing existing sandbox restrictions. (#60936, #61134) - Removed duplicate file search results and fixed thread search snippets for queries containing whitespace. (#60845, #60846) - Updated sandbox documentation to explain permission profiles and filesystem rules. (#61133) Full Changelog: https://github.com/openai/codex/compare/rust-v0.169.0...rust-v0.170.0 - #60770 Derive history and notes tool schemas from typed requests @euroelessar - #60771 Preserve model-facing ID allocations in saved history @euroelessar - #60773 Resolve saved Daybreak choices for each subagent turn @sayan-oai - #60784 Centralize synchronous Guardian reviewer selection @felixxia-oai - #60839 Preserve retained assistant revisions across rollout replay @euroelessar - #60840 Fall back to HTTP immediately for oversized WebSocket requests @charliemarsh-oai - #60841 Honor advertised WebSocket message size limits @charliemarsh-oai - #60842 Make TUI thread titles resilient to generation failures @etraut-openai - #60845 Deduplicate file search results from overlapping roots @etraut-openai - #60846 Fix thread search snippets for whitespace-containing queries @etraut-openai - #60848 Enable incremental tool declarations by default for GCP @akira-oai - #60849 Protect MCP OAuth persistence from stale credential writes @mzeng-openai - #60871 Wait for the in-process initialization handshake to finish @goodman-oai - #60872 Fix Windows atomic writes and refresh build maintenance @zm-oai - #60882 Stabilize tracing in the cancellation timing test @bc-openai - #60897 Use the Responses API for issue label suggestions @GrantBirki - #60898 Include bundled bubblewrap in the root metadata test fixture @sayan-oai - #60904 Version answer display instructions and restrict unsupported payloads @psachdeva-oai - #60905 Keep same-named MCP servers separate across environments @sayan-oai - #60914 Reserve Guardian context budget for selected Code Mode exec results @felixxia-oai - #60929 Preserve Command Center task ownership across backend switches @bc-openai - #60936 Preserve legacy sandbox templates in TUI permission conversions @ioanbudea-OAI - #60942 Preserve thread-local model ID state across replay and compaction @euroelessar - #60943 Preserve file permissions during repeated Windows sandbox setup @zm-oai - #60944 Reconcile Windows runtime registration after service privilege errors @zm-oai - #60948 Report biometric type in user verification responses @bdavis-oai - #60962 Refactor shortcut overlay binding construction @bc-openai - #60964 Validate the issue labeler's API key before sending requests @GrantBirki - #60969 Reconnect idle Cloud conversations after transient stream loss @bc-openai - #60972 Lowercase service tier names in the model status line @bc-openai - #60977 Preserve allocated response item IDs in requests @euroelessar - #60981 Make reactive MCP OAuth refreshes cancellation-safe @mzeng-openai - #61014 Preserve active recovery turns when clients reconnect @apanasenko-oai - #61017 Record reasoning replay removal metrics @akira-oai - #61018 Extract HTTP headers helper execution into a shared crate @abhinav-oai - #61028 Add refreshable headers for OTLP HTTP exporters @abhinav-oai - #61129 Simplify non-curated plugin cache refreshes @smurching-oai - #61133 Use permission profiles in sandbox tests and documentation @ioanbudea-OAI - #61134 Normalize permission updates at session settings admission @ioanbudea-OAI - #61136 Compare resume sandbox overrides using permission profile labels @ioanbudea-OAI - #61138 Centralize filesystem helper sandbox preparation @viyatb-oai - #61141 Preserve multiline status lines in unfocused chat panes @fcoury-oai - #61144 Remove the legacy sandbox policy setter from <code>Config</code> @ioanbudea-OAI - #61153 Fix code-mode session admission retries for proxy HTTP 503 responses @seanh-oai - #61156 Ignore Hickory DNSSEC advisories while DNSSEC is disabled @swastik-oai - #61163 Reuse Guardian reviewer history for direct reviews @swastik-oai - #61167 Refactor TUI sidebar layout and focus handling around panels @fcoury-oai - #61172 Negotiate realtime voice calls in the TUI @zahan-oai"
+      ]
+    },
+    {
+      "version": "0.172.0-alpha.1",
+      "date": "2026-11-18T17:54:54.000Z",
+      "bullets": [
+        "Release 0.172.0-alpha.1"
       ]
     },
     {
@@ -922,13 +929,6 @@
       "date": "2026-11-12T22:59:08.000Z",
       "bullets": [
         "Release 0.170.0-alpha.4"
-      ]
-    },
-    {
-      "version": "0.170.0-alpha.3",
-      "date": "2026-11-12T19:32:20.000Z",
-      "bullets": [
-        "Release 0.170.0-alpha.3"
       ]
     }
   ]
