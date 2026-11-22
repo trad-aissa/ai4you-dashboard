@@ -1,7 +1,111 @@
 {
-  "updated": "2026-11-21T14:11:56.067Z",
+  "updated": "2026-11-22T14:01:44.673Z",
   "count": 80,
   "items": [
+    {
+      "id": "0f50037c76f2",
+      "title": "The vibe-coding revolution is coming to all the gadgets",
+      "url": "https://www.theverge.com/column/1039139/vibe-coding-gadgets-tv-camera",
+      "source": "The Verge",
+      "date": "2026-11-22T13:00:00.000Z",
+      "snippet": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on the vibe-hacking of everything, follow David Pierce. The Stepback arrives in our subscribers' inboxes on Sunday"
+    },
+    {
+      "id": "bf1d56f79e08",
+      "title": "87% of the Anthropic power will come from gas and 11% from coal in 2028",
+      "url": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
+      "source": "Hacker News",
+      "date": "2026-11-22T08:57:34.000Z",
+      "snippet": "279 points · 382 comments on HN"
+    },
+    {
+      "id": "5cc0b3bf0f56",
+      "title": "AI Supply Chain Security: What Canary Tokens Found",
+      "url": "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
+      "source": "Hacker News",
+      "date": "2026-11-22T05:11:43.000Z",
+      "snippet": "89 points · 21 comments on HN"
+    },
+    {
+      "id": "7893687ce631",
+      "title": "Data Processing Incidents on Inference Providers",
+      "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
+      "source": "Hacker News",
+      "date": "2026-11-22T02:14:14.000Z",
+      "snippet": "205 points · 72 comments on HN"
+    },
+    {
+      "id": "78ed71768c6f",
+      "title": "The Mythology of Conscious AI",
+      "url": "https://www.noemamag.com/the-mythology-of-conscious-ai/",
+      "source": "Hacker News",
+      "date": "2026-11-22T02:10:02.000Z",
+      "snippet": "97 points · 224 comments on HN"
+    },
+    {
+      "id": "8d54d4add32f",
+      "title": "Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance",
+      "url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/",
+      "source": "TechCrunch",
+      "date": "2026-11-21T21:37:10.000Z",
+      "snippet": "Signal is limiting users' ability to take screenshots in both its Android and iOS apps."
+    },
+    {
+      "id": "127326b87b53",
+      "title": "A tale of two Nvidias",
+      "url": "https://techcrunch.com/2026/11/21/a-tale-of-two-nvidias/",
+      "source": "TechCrunch",
+      "date": "2026-11-21T21:07:42.000Z",
+      "snippet": "We got two very different pictures of Nvidia — the company’s latest earnings report vs. the tech executives loudly calling for Jensen Huang’s return."
+    },
+    {
+      "id": "cfea722a5658",
+      "title": "Pandex – Official European Law for AI Agents, over MCP",
+      "url": "https://www.pandex.io",
+      "source": "Hacker News",
+      "date": "2026-11-21T20:47:41.000Z",
+      "snippet": "113 points · 29 comments on HN"
+    },
+    {
+      "id": "234da3fc1867",
+      "title": "The UN fails to agree on rules regulating ‘killer robots’",
+      "url": "https://www.theverge.com/tech/1039554/un-regulations-killer-robots",
+      "source": "The Verge",
+      "date": "2026-11-21T20:03:37.000Z",
+      "snippet": "One of the items on the agenda for UN diplomats meeting in Geneva this week was working towards rules regarding the use of autonomous weapons, or so-called \"killer robots.\" Eventually, representatives left the meetings a"
+    },
+    {
+      "id": "6d859339b158",
+      "title": "Upload2Shell (CVE-2026-125396)",
+      "url": "https://pwn.ai/upload2shell",
+      "source": "Hacker News",
+      "date": "2026-11-21T18:29:29.000Z",
+      "snippet": "133 points · 64 comments on HN"
+    },
+    {
+      "id": "01945f6a907c",
+      "title": "Here are the top AI agents that can live in your text messages",
+      "url": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/",
+      "source": "TechCrunch",
+      "date": "2026-11-21T17:00:00.000Z",
+      "snippet": "We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work."
+    },
+    {
+      "id": "89298d3b7fb0",
+      "title": "Is selling an AI version of your face to this microdrama startup the future of Hollywood?",
+      "url": "https://techcrunch.com/2026/11/21/is-selling-an-ai-version-of-your-face-to-this-microdrama-startup-the-future-of-hollywood/",
+      "source": "TechCrunch",
+      "date": "2026-11-21T16:00:00.000Z",
+      "snippet": "An actor has licensed his face to a microdrama startup — in a trend that's already popular in China. Experts question the long-term consequences if this becomes a trend in Hollywood, too."
+    },
+    {
+      "id": "a9f34b76fcc6",
+      "title": "Can Anthropic afford to put safety first?",
+      "url": "https://www.theverge.com/podcast/1038701/anthropic-ipo-ai-safety-openai-nvidia-structure",
+      "source": "The Verge",
+      "date": "2026-11-21T15:00:00.000Z",
+      "snippet": "Today, I’m talking with Hayden Field, The Verge’s senior AI reporter, about the Anthropic IPO for the third and final episode in our series about AI in real life. The AI lab behind Claude went public on the Nasdaq last T"
+    },
     {
       "id": "e74727ec8af7",
       "title": "Chess.com’s next move is a new hub for classic games, from mahjong to sudoku",
@@ -16,7 +120,7 @@
       "url": "http://ricapar.net/ClawDOS/",
       "source": "Hacker News",
       "date": "2026-11-21T05:38:01.000Z",
-      "snippet": "115 points · 33 comments on HN"
+      "snippet": "166 points · 52 comments on HN"
     },
     {
       "id": "35f854dd7615",
@@ -24,7 +128,23 @@
       "url": "https://news.ycombinator.com/item?id=50583761",
       "source": "Hacker News",
       "date": "2026-11-20T23:18:32.000Z",
-      "snippet": "309 points · 313 comments on HN"
+      "snippet": "700 points · 782 comments on HN"
+    },
+    {
+      "id": "5a49fd4a2d77",
+      "title": "Google rolls out new search homepage with AI chat history and no search button",
+      "url": "https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar/",
+      "source": "Ars Technica",
+      "date": "2026-11-20T21:58:29.000Z",
+      "snippet": "Google search is making it even easier to access AI tools on the search page."
+    },
+    {
+      "id": "c4b0222f29f2",
+      "title": "Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers",
+      "url": "https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers/",
+      "source": "Ars Technica",
+      "date": "2026-11-20T21:47:10.000Z",
+      "snippet": "Meta is “re-evaluating” 2030 sustainability goals. Will others follow?"
     },
     {
       "id": "6f232f6bc590",
@@ -32,7 +152,15 @@
       "url": "https://www.wsj.com/finance/stocks/anthropics-ipo-bust-punctuates-4-trillion-ai-wipeout-on-wall-street-f1f1ec90",
       "source": "Hacker News",
       "date": "2026-11-20T21:18:46.000Z",
-      "snippet": "60 points · 5 comments on HN"
+      "snippet": "66 points · 5 comments on HN"
+    },
+    {
+      "id": "99727b65c290",
+      "title": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
+      "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
+      "source": "Ars Technica",
+      "date": "2026-11-20T20:59:08.000Z",
+      "snippet": "Test using prompts with unique, trackable secrets proves that data doesn't stay private."
     },
     {
       "id": "b9db119f86f5",
@@ -40,7 +168,7 @@
       "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
       "source": "Hacker News",
       "date": "2026-11-20T20:12:19.000Z",
-      "snippet": "1128 points · 213 comments on HN"
+      "snippet": "1429 points · 289 comments on HN"
     },
     {
       "id": "340614cb1d45",
@@ -80,7 +208,7 @@
       "url": "https://www.motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition/",
       "source": "Hacker News",
       "date": "2026-11-20T16:59:27.000Z",
-      "snippet": "277 points · 216 comments on HN"
+      "snippet": "282 points · 229 comments on HN"
     },
     {
       "id": "6a5063e8d8f0",
@@ -88,7 +216,7 @@
       "url": "https://a90.com/experiments/same-advice/",
       "source": "Hacker News",
       "date": "2026-11-20T16:58:05.000Z",
-      "snippet": "97 points · 41 comments on HN"
+      "snippet": "124 points · 52 comments on HN"
     },
     {
       "id": "859ee3ec8c20",
@@ -128,7 +256,7 @@
       "url": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
       "source": "Hacker News",
       "date": "2026-11-20T13:29:59.000Z",
-      "snippet": "384 points · 691 comments on HN"
+      "snippet": "514 points · 904 comments on HN"
     },
     {
       "id": "779ccf54081c",
@@ -152,7 +280,7 @@
       "url": "https://architectlabs.com/blog/frostbite",
       "source": "Hacker News",
       "date": "2026-11-20T10:01:41.000Z",
-      "snippet": "652 points · 340 comments on HN"
+      "snippet": "672 points · 362 comments on HN"
     },
     {
       "id": "3ea993db7e3c",
@@ -168,7 +296,15 @@
       "url": "https://signal.org/blog/protecting-your-privacy/",
       "source": "Hacker News",
       "date": "2026-11-20T09:42:16.000Z",
-      "snippet": "557 points · 327 comments on HN"
+      "snippet": "577 points · 343 comments on HN"
+    },
+    {
+      "id": "d63c6404d469",
+      "title": "llm-gemini 0.38.1",
+      "url": "https://simonwillison.net/2026/Nov/20/llm-gemini/",
+      "source": "Simon Willison",
+      "date": "2026-11-20T03:01:57.000Z",
+      "snippet": "Release: llm-gemini 0.38.1 Gemini 4 Carbon only supports low , medium and high reasoning levels - but Gemini 4 Hydrogen and Gemini 4 Neon both have an extra xhigh level. I missed that when I added those models to the llm"
     },
     {
       "id": "8f4728ffc5b9",
@@ -208,7 +344,7 @@
       "url": "https://www.techdirt.com/2026/11/19/court-tells-cops-that-the-4th-amendment-doesnt-cover-ai-generated-probable-cause/",
       "source": "Hacker News",
       "date": "2026-11-19T22:56:59.000Z",
-      "snippet": "69 points · 21 comments on HN"
+      "snippet": "71 points · 21 comments on HN"
     },
     {
       "id": "a22c687c439c",
@@ -288,7 +424,7 @@
       "url": "https://www.youtube.com/watch?v=lwfewYL7X0o",
       "source": "Hacker News",
       "date": "2026-11-19T18:47:16.000Z",
-      "snippet": "114 points · 247 comments on HN"
+      "snippet": "115 points · 258 comments on HN"
     },
     {
       "id": "87c903673df2",
@@ -320,7 +456,7 @@
       "url": "https://www.robertpeake.com/archives/104254-ai-came-for-the-coders-understanding-why-tells-us-whos-next.html",
       "source": "Hacker News",
       "date": "2026-11-19T17:43:38.000Z",
-      "snippet": "68 points · 81 comments on HN"
+      "snippet": "68 points · 82 comments on HN"
     },
     {
       "id": "2919f418f3f5",
@@ -336,7 +472,7 @@
       "url": "https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/",
       "source": "Hacker News",
       "date": "2026-11-19T17:02:40.000Z",
-      "snippet": "1134 points · 2304 comments on HN"
+      "snippet": "1140 points · 2326 comments on HN"
     },
     {
       "id": "27f297a759c1",
@@ -360,7 +496,7 @@
       "url": "https://perishablepress.com/chrome-ai-wasting-much-bandwidth/",
       "source": "Hacker News",
       "date": "2026-11-19T16:54:25.000Z",
-      "snippet": "133 points · 51 comments on HN"
+      "snippet": "134 points · 51 comments on HN"
     },
     {
       "id": "d0946e26531a",
@@ -376,7 +512,7 @@
       "url": "https://restofworld.org/2026/ai-jobs-skills-gig-work/",
       "source": "Hacker News",
       "date": "2026-11-19T16:45:50.000Z",
-      "snippet": "146 points · 82 comments on HN"
+      "snippet": "148 points · 83 comments on HN"
     },
     {
       "id": "9cb51fd9a48f",
@@ -384,7 +520,7 @@
       "url": "https://ounapuu.ee/posts/2026/11/19/unsafeguards/",
       "source": "Hacker News",
       "date": "2026-11-19T16:30:18.000Z",
-      "snippet": "610 points · 249 comments on HN"
+      "snippet": "616 points · 249 comments on HN"
     },
     {
       "id": "b80c1a82c17c",
@@ -400,7 +536,7 @@
       "url": "https://thedataexchange.media/pete-warden-moonshine/",
       "source": "Hacker News",
       "date": "2026-11-19T15:38:12.000Z",
-      "snippet": "270 points · 248 comments on HN"
+      "snippet": "272 points · 250 comments on HN"
     },
     {
       "id": "2600860578f3",
@@ -416,7 +552,7 @@
       "url": "https://hippomaps.ch/?q=cafes+by+the+Limmat+100+m+from+the+lake+in+zurich#map=15.02/47.36708/8.54935",
       "source": "Hacker News",
       "date": "2026-11-19T15:16:02.000Z",
-      "snippet": "132 points · 39 comments on HN"
+      "snippet": "136 points · 46 comments on HN"
     },
     {
       "id": "c990fb121000",
@@ -448,7 +584,7 @@
       "url": "https://foolscap.works/",
       "source": "Hacker News",
       "date": "2026-11-19T13:21:20.000Z",
-      "snippet": "122 points · 93 comments on HN"
+      "snippet": "129 points · 94 comments on HN"
     },
     {
       "id": "029ded4e9a8f",
@@ -472,7 +608,7 @@
       "url": "https://spectrum.ieee.org/ai-superintelligence-debate",
       "source": "Hacker News",
       "date": "2026-11-19T12:17:10.000Z",
-      "snippet": "105 points · 164 comments on HN"
+      "snippet": "106 points · 164 comments on HN"
     },
     {
       "id": "0af76e5f43d6",
@@ -505,142 +641,6 @@
       "source": "Hacker News",
       "date": "2026-11-19T00:57:20.000Z",
       "snippet": "118 points · 92 comments on HN"
-    },
-    {
-      "id": "a8022fb06095",
-      "title": "Microsoft CEO Satya Nadella explains why he asked 60K employees to quit",
-      "url": "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-explains-why-he-asked-60k-employees-to-quit/",
-      "source": "TechCrunch",
-      "date": "2026-11-19T00:42:56.000Z",
-      "snippet": "Microsoft CEO Satya Nadella explained why he offered buyouts to 60,000 of his employees in October, essentially urging them to voluntarily quit, rather than reducing the workforce via another massive layoff. The short an"
-    },
-    {
-      "id": "e29ac258c013",
-      "title": "Explore the Codex Security Plugin",
-      "url": "https://openai.com/business/learn/codex-security-plugin-demo",
-      "source": "OpenAI",
-      "date": "2026-11-19T00:00:00.000Z",
-      "snippet": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording."
-    },
-    {
-      "id": "cb99e2baa62e",
-      "title": "See PR scans in action",
-      "url": "https://openai.com/business/learn/pr-scans-demo",
-      "source": "OpenAI",
-      "date": "2026-11-19T00:00:00.000Z",
-      "snippet": "Watch a walkthrough of PR scans and see how the presenter reviews scan results in a pull request workflow."
-    },
-    {
-      "id": "a2fb00344062",
-      "title": "Get started with Daybreak Blue",
-      "url": "https://openai.com/business/learn/daybreak-blue-onboarding-demo",
-      "source": "OpenAI",
-      "date": "2026-11-19T00:00:00.000Z",
-      "snippet": "Watch a walkthrough of onboarding to Daybreak Blue, with a closer look at the setup experience and how to get started."
-    },
-    {
-      "id": "4b08ec50268e",
-      "title": "Deploying Daybreak Red",
-      "url": "https://openai.com/business/learn/deploying-daybreak-red",
-      "source": "OpenAI",
-      "date": "2026-11-19T00:00:00.000Z",
-      "snippet": "Explore a reference architecture for supervised security investigations with Daybreak Red, including safety controls, setup, and monitoring."
-    },
-    {
-      "id": "fd1897fc7619",
-      "title": "llm-gemini 0.38",
-      "url": "https://simonwillison.net/2026/Nov/18/llm-gemini/",
-      "source": "Simon Willison",
-      "date": "2026-11-18T23:59:20.000Z",
-      "snippet": "Release: llm-gemini 0.38 Today Google introduced Gemini 4 Neon . I wrote recently about how confusing the pricing for the Gemini 4 series was - Neon has somehow made this even worse. Previously the Gemini 4 lineup was Hy"
-    },
-    {
-      "id": "44255eb49d7c",
-      "title": "Amidst fears of AI cyberattacks, Satya Nadella says lots of critical infrastructure is ‘unpatchable’",
-      "url": "https://techcrunch.com/2026/11/18/amidst-fears-of-ai-cyberattacks-satya-nadella-says-lots-of-critical-infrastructure-is-unpatchable/",
-      "source": "TechCrunch",
-      "date": "2026-11-18T23:45:00.000Z",
-      "snippet": "The Microsoft CEO downplayed the recent Outlook outage while noting that AI was causing both opportunities and new challenges for securing much of the connected world."
-    },
-    {
-      "id": "ae30c6152bf9",
-      "title": "Elon Musk says ousting Jensen Huang is like ‘kicking Michael Jordan off your team’",
-      "url": "https://techcrunch.com/2026/11/18/elon-musk-says-ousting-jensen-huang-is-like-kicking-michael-jordan-off-your-team/",
-      "source": "TechCrunch",
-      "date": "2026-11-18T23:25:17.000Z",
-      "snippet": "“I don’t think [Huang is] disloyal to the United States,\" Musk said."
-    },
-    {
-      "id": "b429cb510b69",
-      "title": "The nation’s largest school districts consider ditching Google Search",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1037151/school-districts-ditching-google",
-      "source": "The Verge",
-      "date": "2026-11-18T23:18:35.000Z",
-      "snippet": "New York, Los Angeles, and Chicago schools are considering Google alternatives after the company said it will disable Search for schools that opt out of its AI features, according to The New York Times. Starting next yea"
-    },
-    {
-      "id": "ebee197c44b5",
-      "title": "Microsoft CEO Satya Nadella remains confident in Nvidia after Huang’s exit",
-      "url": "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-remains-confident-in-nvidia-after-huangs-exit/",
-      "source": "TechCrunch",
-      "date": "2026-11-18T23:17:28.000Z",
-      "snippet": "Microsoft CEO Satya Nadella expressed confidence in Jensen Huang's successor Colette Kress, who is serving as Nvidia's interim CEO."
-    },
-    {
-      "id": "f7885a7f892b",
-      "title": "Satya Nadella predicts AI agents will reshuffle the economics of the web",
-      "url": "https://techcrunch.com/2026/11/18/satya-nadella-predicts-ai-agents-will-reshuffle-the-economics-of-the-web/",
-      "source": "TechCrunch",
-      "date": "2026-11-18T22:58:11.000Z",
-      "snippet": "Microsoft's CEO says AI agents could disrupt advertising-driven business models, forcing companies like Amazon to rethink how they compete for customers."
-    },
-    {
-      "id": "6b4b11d8558c",
-      "title": "Anthropic prices IPO at $83 a share, above projected range",
-      "url": "https://techcrunch.com/2026/11/18/anthropic-reportedly-prices-ipo-at-83-a-share-above-projected-range/",
-      "source": "TechCrunch",
-      "date": "2026-11-18T22:11:15.000Z",
-      "snippet": "The long-awaited IPO reportedly values the company at $1.5 trillion on a fully diluted basis."
-    },
-    {
-      "id": "4544035da65a",
-      "title": "Nvidia created a weird bit of intrigue by not filing a routine SEC report",
-      "url": "https://techcrunch.com/2026/11/18/nvidia-created-a-weird-bit-of-intrigue-by-not-filing-a-routine-sec-report/",
-      "source": "TechCrunch",
-      "date": "2026-11-18T21:57:40.000Z",
-      "snippet": "One Wall Street analyst got to the bottom of Nvidia's surprise announcement that it wouldn't be filing its formal quarterly results document, the 10-Q, for weeks."
-    },
-    {
-      "id": "0c3c8b23c6ca",
-      "title": "Introducing Gemini 4 Neon",
-      "url": "https://deepmind.google/blog/introducing-gemini-4-neon/",
-      "source": "Google DeepMind",
-      "date": "2026-11-18T21:35:43.000Z",
-      "snippet": ""
-    },
-    {
-      "id": "48feb3ab27c8",
-      "title": "Palmer Luckey warns AI-powered cyberattacks are outpacing defenses: ‘It’s time to start running’",
-      "url": "https://techcrunch.com/2026/11/18/palmer-luckey-warns-ai-powered-cyberattacks-are-outpacing-defenses-its-time-to-start-running/",
-      "source": "TechCrunch",
-      "date": "2026-11-18T21:34:13.000Z",
-      "snippet": "The Anduril co-founder says outdated technology is leaving systems vulnerable to a new wave of AI-enabled attacks."
-    },
-    {
-      "id": "e2b6407cfa68",
-      "title": "Gemini 4 Neon",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
-      "source": "Hacker News",
-      "date": "2026-11-18T21:34:07.000Z",
-      "snippet": "1056 points · 778 comments on HN"
-    },
-    {
-      "id": "8ad47877f742",
-      "title": "Palmer Luckey thinks China is ‘thrilled to have Jensen out,’ so he wants the ousted Nvidia CEO reinstated",
-      "url": "https://techcrunch.com/2026/11/18/palmer-luckey-thinks-china-is-thrilled-to-have-jensen-out-so-he-wants-the-ousted-nvidia-ceo-reinstated/",
-      "source": "TechCrunch",
-      "date": "2026-11-18T21:31:21.000Z",
-      "snippet": "\"It makes America weaker to knock him out,\" the Anduril CEO said about ousted Nvidia leader Jensen Huang."
     }
   ]
 }
