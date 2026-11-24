@@ -1,7 +1,239 @@
 {
-  "updated": "2026-11-23T17:23:09.200Z",
+  "updated": "2026-11-24T16:57:16.919Z",
   "count": 80,
   "items": [
+    {
+      "id": "26c3ceae0894",
+      "title": "Tidal to ban and remove millions of AI-generated tracks as AI slop inundates music streaming",
+      "url": "https://techcrunch.com/2026/11/24/tidal-to-ban-and-remove-millions-of-ai-generated-tracks-as-ai-slop-inundates-music-streaming/",
+      "source": "TechCrunch",
+      "date": "2026-11-24T16:46:00.000Z",
+      "snippet": "The company said it will still accept songs that were made with AI assistance, but not fully generated."
+    },
+    {
+      "id": "c82ab5c57408",
+      "title": "Jensen Huang deepfakes are the hot new AI slop",
+      "url": "https://www.theverge.com/tech/1041222/jensen-huang-nvidia-scandal-deepfakes",
+      "source": "The Verge",
+      "date": "2026-11-24T16:30:00.000Z",
+      "snippet": "Jensen Huang is partying it up in Ibiza. In a video with nearly 6 million views on Instagram, the former CEO of Nvidia is dancing in a crowded club, champagne glass in hand, still wearing his signature black leather jack"
+    },
+    {
+      "id": "4dbaea2697ae",
+      "title": "Tidal Bans AI-Generated Music",
+      "url": "https://variety.com/2026/music/news/tidal-bans-ai-generated-music-1236956924/",
+      "source": "Hacker News",
+      "date": "2026-11-24T16:12:38.000Z",
+      "snippet": "122 points · 77 comments on HN"
+    },
+    {
+      "id": "8a546b15d29e",
+      "title": "Why a Crusoe investor is betting on solar and batteries to power future AI data centers",
+      "url": "https://techcrunch.com/2026/11/24/why-a-crusoe-investor-is-betting-on-solar-and-batteries-to-power-future-ai-data-centers/",
+      "source": "TechCrunch",
+      "date": "2026-11-24T16:10:00.000Z",
+      "snippet": "Next-generation data centers will need tens of gigawatts of power every year. One of Crusoe's investors thinks solar and energy storage are the obvious choice."
+    },
+    {
+      "id": "dc69597abec1",
+      "title": "The New York Times warns photographers not to update Photoshop over AI features",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
+      "source": "The Verge",
+      "date": "2026-11-24T16:09:23.000Z",
+      "snippet": "The New York Times is asking freelance photographers not to use the newest version of Adobe Photoshop because features in the 2027 update use AI \"in ways that may not be apparent to users.\" In an email seen by The Verge "
+    },
+    {
+      "id": "ee2357a4074e",
+      "title": "Pinterest will now let parents limit the AI-generated content their teens see",
+      "url": "https://techcrunch.com/2026/11/24/pinterest-will-now-let-parents-limit-the-ai-generated-content-their-teens-see/",
+      "source": "TechCrunch",
+      "date": "2026-11-24T16:02:37.000Z",
+      "snippet": "While other social platforms have focused on restricting teens' access to AI chatbots, Pinterest is addressing the AI content filling their feeds."
+    },
+    {
+      "id": "4a847676e926",
+      "title": "Amazon’s Decart acquisition is a bet on using software to narrow the gap with Nvidia in the AI chip race",
+      "url": "https://techcrunch.com/2026/11/24/amazons-decart-acquisition-is-a-bet-on-using-software-to-narrow-the-gap-with-nvidia-in-the-ai-chip-race/",
+      "source": "TechCrunch",
+      "date": "2026-11-24T15:51:07.000Z",
+      "snippet": "Amazon’s decision to acquire Decart for a reported $7.5 billion is part of its efforts to improve the efficiency of its Trainium chips."
+    },
+    {
+      "id": "2f75382e1552",
+      "title": "How Trump and Silicon Valley forced Nvidia to take Jensen Huang back",
+      "url": "https://arstechnica.com/tech-policy/2026/11/how-trump-and-silicon-valley-forced-nvidia-to-take-jensen-huang-back/",
+      "source": "Ars Technica",
+      "date": "2026-11-24T14:56:50.000Z",
+      "snippet": "Huang’s allies enlisted Trump and Vance to pressure Nvidia’s board into taking him back."
+    },
+    {
+      "id": "21c67f84759f",
+      "title": "Amazon says hackers' AI agents found and exploited 0-day with little human input",
+      "url": "https://arstechnica.com/security/2026/11/amazon-says-hackers-ai-agents-found-and-exploited-0-day-with-little-human-input/",
+      "source": "Ars Technica",
+      "date": "2026-11-24T12:30:05.000Z",
+      "snippet": "The Cairn AI framework is proving to be a boon for defenders and attackers."
+    },
+    {
+      "id": "fd5ebe6986a0",
+      "title": "Jevons Paradox in AI: Cheaper Tokens Won't Pay for Capex",
+      "url": "https://philippdubach.com/posts/cheaper-ai-tokens-wont-pay-for-capex/",
+      "source": "Hacker News",
+      "date": "2026-11-24T09:39:50.000Z",
+      "snippet": "71 points · 34 comments on HN"
+    },
+    {
+      "id": "80ee2a6733f1",
+      "title": "datasette-agent 0.7a1",
+      "url": "https://simonwillison.net/2026/Nov/24/datasette-agent/",
+      "source": "Simon Willison",
+      "date": "2026-11-24T03:45:57.000Z",
+      "snippet": "Release: datasette-agent 0.7a1 A small improvement to Datasette Agent : chat sessions could already open an iframe side panel that could then navigate to different pages. This version improves navigation by fragment hash"
+    },
+    {
+      "id": "9b8ffb980edd",
+      "title": "Declare is a UI language for you and your AI",
+      "url": "https://davidtemkin.github.io/declarelang/",
+      "source": "Hacker News",
+      "date": "2026-11-24T02:36:56.000Z",
+      "snippet": "90 points · 67 comments on HN"
+    },
+    {
+      "id": "049542555c2c",
+      "title": "Trump engineered a risky comeback for Jensen Huang",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1040652/jensen-huang-nvidia-trump-reinstated",
+      "source": "The Verge",
+      "date": "2026-11-23T22:25:12.000Z",
+      "snippet": "After Nvidia's board accepted Jensen Huang's resignation as CEO, following reports that Huang had an affair with an alleged Chinese spy, President Donald Trump, too, appeared to submit to the new reality. Appearing on St"
+    },
+    {
+      "id": "15c28179b2dc",
+      "title": "Nvidia CEO Jensen Huang is back. What happens next?",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang",
+      "source": "The Verge",
+      "date": "2026-11-23T22:10:32.000Z",
+      "snippet": "After the leather-jacketed CEO, president, and co-founder of Nvidia, Jensen Huang, acknowledged an affair with Megaspeed exec Alice Huang, his company initially announced an investigation. However, after The New York Tim"
+    },
+    {
+      "id": "8ab70d6f89cf",
+      "title": "Welcome to elite impunity, Jensen Huang",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1040819/welcome-to-elite-impunity-jensen-huang",
+      "source": "The Verge",
+      "date": "2026-11-23T22:09:26.000Z",
+      "snippet": "I suppose I must issue a hearty congratulations to Jensen Huang. Huang is CEO of Nvidia again, to the surprise of basically everyone except President Donald Trump and Vice President JD Vance, who made sure it happened. N"
+    },
+    {
+      "id": "27065c561fbc",
+      "title": "Anthropic launches Claude Ship, letting AI agents review, fix, and approve code changes",
+      "url": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/",
+      "source": "TechCrunch",
+      "date": "2026-11-23T22:05:50.000Z",
+      "snippet": "As AI-generated code piles up, Anthropic's new developer tools aim to eliminate another bottleneck by letting agents handle routine approvals."
+    },
+    {
+      "id": "0d63fb1e6c01",
+      "title": "Supertake raises $20M to let AI agents turn your market predictions into stock portfolios",
+      "url": "https://techcrunch.com/2026/11/23/supertake-raises-20m-to-let-ai-agents-turn-your-market-predictions-into-stock-portfolios/",
+      "source": "TechCrunch",
+      "date": "2026-11-23T22:02:05.000Z",
+      "snippet": "Think you know where the market is headed? A startup called Supertake lets you put money behind your ideas without having to pick the stocks yourself."
+    },
+    {
+      "id": "ada2460a24f6",
+      "title": "Elon Musk and others rejoice as Jensen Huang is reinstated at Nvidia amid scandal",
+      "url": "https://techcrunch.com/2026/11/23/elon-musk-and-others-rejoice-as-jensen-huang-is-reinstated-at-nvidia-amid-scandal/",
+      "source": "TechCrunch",
+      "date": "2026-11-23T21:47:41.000Z",
+      "snippet": "\"The mistake has been corrected,\" Elon Musk chimed in."
+    },
+    {
+      "id": "afbf4ed7c77a",
+      "title": "States sue SpaceX to stop Grok from generating child sex images, revenge porn",
+      "url": "https://arstechnica.com/tech-policy/2026/11/states-sue-spacex-to-stop-grok-from-generating-child-sex-images-revenge-porn/",
+      "source": "Ars Technica",
+      "date": "2026-11-23T21:30:44.000Z",
+      "snippet": "X says every Grok output is screened, but state AGs say Grok is still making CSAM."
+    },
+    {
+      "id": "9d1f6a725104",
+      "title": "Megaspeed, the company at the center of the Jensen Huang scandal, appears headed for a US blacklist",
+      "url": "https://techcrunch.com/2026/11/23/megaspeed-the-company-at-the-center-of-the-jensen-huang-scandal-appears-headed-for-a-u-s-blacklist/",
+      "source": "TechCrunch",
+      "date": "2026-11-23T21:25:42.000Z",
+      "snippet": "Megaspeed, which was previously led by Alice Huang, would be barred from doing business with U.S. companies unless those companies attained a special license from the federal government."
+    },
+    {
+      "id": "1d0c151fefed",
+      "title": "OpenAI and Cisco introduce Shirudo",
+      "url": "https://openai.com/index/introducing-shirudo",
+      "source": "OpenAI",
+      "date": "2026-11-23T21:20:00.000Z",
+      "snippet": "OpenAI and Cisco introduce Shirudo, an open-source runtime for Linux. It helps teams protect running systems while they roll out patches."
+    },
+    {
+      "id": "0cd17937bdc8",
+      "title": "AI data centers throw another wrench into chaotic UN climate talks",
+      "url": "https://www.theverge.com/science/1040497/ai-data-centers-electricity-un-climate-summit",
+      "source": "The Verge",
+      "date": "2026-11-23T21:09:37.000Z",
+      "snippet": "The clean energy revolution hinges on electrifying the entire global economy just as power-hungry data centers are surging. It's a challenge delegates from all over the world had to grapple with during the United Nations"
+    },
+    {
+      "id": "2475b067992d",
+      "title": "Nvidia employees greet Jensen Huang like a hero as he returns to company’s HQ",
+      "url": "https://techcrunch.com/2026/11/23/nvidia-employees-greet-jensen-huang-like-a-hero-as-he-returns-to-companys-hq/",
+      "source": "TechCrunch",
+      "date": "2026-11-23T20:38:53.000Z",
+      "snippet": "\"I'm going to be a better CEO the second time around,\" Huang told employees."
+    },
+    {
+      "id": "49ef9cf5084c",
+      "title": "Claude AI can review pull requests and ship fixes on its own now",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1040134/anthropic-claude-ship-ai-pull-requests",
+      "source": "The Verge",
+      "date": "2026-11-23T20:00:00.000Z",
+      "snippet": "Anthropic is launching some new Claude AI features to help software engineers ship code. As part of a new Claude Ship product being announced today, Claude now can review, fix, and approve pull requests. Engineers have a"
+    },
+    {
+      "id": "47b1648bdb93",
+      "title": "How Jensen Huang ended up as Nvidia CEO again",
+      "url": "https://www.theverge.com/tech/1040428/nvidia-jensen-huang-ceo-return",
+      "source": "The Verge",
+      "date": "2026-11-23T19:57:18.000Z",
+      "snippet": "The Jensen Huang era of Nvidia nearly came to an end this month. Huang, who three decades ago cofounded what's come to be considered one of the most important companies in AI, resigned from his role on November 12th over"
+    },
+    {
+      "id": "7601f68fa236",
+      "title": "Google Search’s AI Mode can now tap into Drive and Wallet for more personalized responses",
+      "url": "https://techcrunch.com/2026/11/23/google-searchs-ai-mode-can-now-tap-into-drive-and-wallet-for-more-personalized-responses/",
+      "source": "TechCrunch",
+      "date": "2026-11-23T19:14:46.000Z",
+      "snippet": "By bringing Personal Intelligence in AI Mode to Drive, Wallet, and the Gemini app, Google is leveraging the wealth of user data that's already within its ecosystem"
+    },
+    {
+      "id": "44fe677fd46c",
+      "title": "Nothing’s upcoming Ear Note is a pair of earbuds with AI transcription",
+      "url": "https://www.theverge.com/gadgets/1040357/nothing-ear-note-earbuds-ai-recording",
+      "source": "The Verge",
+      "date": "2026-11-23T19:04:52.000Z",
+      "snippet": "Nothing's new AI device is the Ear Note, a set of earbuds and their microphone-equipped charging case that can record and transcribe conversations, with a connected app to manage the recordings, transcriptions and AI-gen"
+    },
+    {
+      "id": "786a4f32021c",
+      "title": "Oregon and Virginia sue SpaceX over Grok’s porn deepfakes",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1040255/x-grok-ai-deepfakes-oregon-virginia-lawsuit",
+      "source": "The Verge",
+      "date": "2026-11-23T18:26:47.000Z",
+      "snippet": "In separate but similar lawsuits filed on Monday, Oregon Attorney General Dan Rayfield and Virginia Attorney General Jay Jones accused SpaceX of violating state consumer protection laws by ignoring industry-standard safe"
+    },
+    {
+      "id": "a2f14d06f82b",
+      "title": "Jensen Huang scheduled to testify next week in Senate following reinstatement as Nvidia CEO",
+      "url": "https://techcrunch.com/2026/11/23/jensen-huang-scheduled-to-testify-next-week-in-senate-following-reinstatement-as-nvidia-ceo/",
+      "source": "TechCrunch",
+      "date": "2026-11-23T18:12:22.000Z",
+      "snippet": "The public hearing follows bipartisan calls for Huang to testify about the affair with the suspected Chinese spy."
+    },
     {
       "id": "6a7990e1ad10",
       "title": "Amazon snaps up Decart’s AI optimization tech for $7.5B as it prepares to sell Trainium chips",
@@ -24,7 +256,7 @@
       "url": "https://techcrunch.com/2026/11/23/jensen-huang-isnt-out-of-the-woods-yet/",
       "source": "TechCrunch",
       "date": "2026-11-23T16:57:40.000Z",
-      "snippet": "It’s safe to say no one expected this. Monday morning, Jensen Huang returned as CEO of Nvidia, after resigning the position following news of multiple affairs, including one with a subordinate and one with a woman tied t"
+      "snippet": "Tech leaders should be clear-eyed about all the problems likely to come with Huang's reinstatement."
     },
     {
       "id": "81a464b2bd01",
@@ -32,7 +264,7 @@
       "url": "https://techcrunch.com/2026/11/23/trump-reportedly-called-into-nvidia-board-meeting-to-advocate-for-huangs-return/",
       "source": "TechCrunch",
       "date": "2026-11-23T16:39:10.000Z",
-      "snippet": "\"I spoke to them, let me put it that way... And I convinced them,\" the president told CNBC."
+      "snippet": "\"I spoke to them, let me put it that way … And I convinced them,\" the president told CNBC."
     },
     {
       "id": "de36b121eed6",
@@ -83,12 +315,20 @@
       "snippet": "Nvidia has reinstated Jensen Huang as its CEO. The company announced on Monday morning that the board \"voted unanimously to reinstate Mr. Huang following a series of discussions and meetings with Mr. Huang, after which t"
     },
     {
+      "id": "81ecb7742efe",
+      "title": "NariQ: BF16-level Qwen3.8-27B in a 10 GB file",
+      "url": "https://huggingface.co/nari-labs/Qwen3.8-27B-NariQ-GGUF",
+      "source": "Hacker News",
+      "date": "2026-11-23T13:42:38.000Z",
+      "snippet": "183 points · 36 comments on HN"
+    },
+    {
       "id": "b04893ed93ee",
       "title": "Amodei reportedly suggested games could pacify masses after AI took their jobs (2015)",
       "url": "https://www.theverge.com/ai-artificial-intelligence/1039745/dario-amodei-video-games-ai-joblessness",
       "source": "Hacker News",
       "date": "2026-11-23T12:41:14.000Z",
-      "snippet": "65 points · 74 comments on HN"
+      "snippet": "77 points · 82 comments on HN"
     },
     {
       "id": "70a4447641e0",
@@ -108,11 +348,27 @@
     },
     {
       "id": "5094532b4e2e",
-      "title": "GLM-5.4: Toward Generalized Coding with Our First Loop Transformer",
+      "title": "GLM-5.4: Toward generalized coding with our first loop transformer",
       "url": "https://z.ai/blog/glm-5.4",
       "source": "Hacker News",
       "date": "2026-11-23T10:06:43.000Z",
-      "snippet": "754 points · 267 comments on HN"
+      "snippet": "1150 points · 378 comments on HN"
+    },
+    {
+      "id": "f8a4e02f4212",
+      "title": "Connected intelligence for in-house legal",
+      "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+      "source": "OpenAI",
+      "date": "2026-11-23T08:00:00.000Z",
+      "snippet": "Watch OpenAI’s Stacey Wang and Craig Bruney, Mary O’Carroll of LECG, and Cooley’s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside co"
+    },
+    {
+      "id": "680b35173b97",
+      "title": "Richpanel helps companies automate 50% of support in 30 days",
+      "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
+      "source": "OpenAI",
+      "date": "2026-11-23T08:00:00.000Z",
+      "snippet": "Richpanel uses GPT-6 Astra and GPT-6.1 Sol to equip its AI support agents with tools and procedures, and GPT-6 Luna for their conversations."
     },
     {
       "id": "04504f1c4726",
@@ -128,7 +384,7 @@
       "url": "https://0rwx.com/",
       "source": "Hacker News",
       "date": "2026-11-22T23:53:00.000Z",
-      "snippet": "67 points · 17 comments on HN"
+      "snippet": "71 points · 17 comments on HN"
     },
     {
       "id": "ae6e6a35191d",
@@ -136,7 +392,7 @@
       "url": "https://claude.ai/artifact/CtQyX8qfYAF822bgHJHHE3",
       "source": "Hacker News",
       "date": "2026-11-22T23:12:10.000Z",
-      "snippet": "254 points · 191 comments on HN"
+      "snippet": "259 points · 202 comments on HN"
     },
     {
       "id": "5a80222bbbe1",
@@ -144,7 +400,7 @@
       "url": "https://donotaccept.ai/",
       "source": "Hacker News",
       "date": "2026-11-22T23:02:20.000Z",
-      "snippet": "53 points · 57 comments on HN"
+      "snippet": "55 points · 59 comments on HN"
     },
     {
       "id": "e7090200216e",
@@ -168,7 +424,7 @@
       "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
       "source": "Hacker News",
       "date": "2026-11-22T21:01:16.000Z",
-      "snippet": "675 points · 274 comments on HN"
+      "snippet": "766 points · 312 comments on HN"
     },
     {
       "id": "74f939e081ec",
@@ -184,7 +440,7 @@
       "url": "https://boazbk.github.io/mltheoryseminar/",
       "source": "Hacker News",
       "date": "2026-11-22T18:01:54.000Z",
-      "snippet": "76 points · 8 comments on HN"
+      "snippet": "80 points · 8 comments on HN"
     },
     {
       "id": "265c68ec3a4c",
@@ -193,6 +449,14 @@
       "source": "The Verge",
       "date": "2026-11-22T17:25:20.000Z",
       "snippet": "The Binding of Isaac: Repentance Plus has spent the last few days getting review-bombed on Steam after it was discovered that a particular segment of the game used AI music. Reddit user ShweetsStuff discovered the songs "
+    },
+    {
+      "id": "2653cf2f9615",
+      "title": "Ask HN: Are the trades a safe career transition?",
+      "url": "https://news.ycombinator.com/item?id=50600771",
+      "source": "Hacker News",
+      "date": "2026-11-22T15:52:33.000Z",
+      "snippet": "73 points · 114 comments on HN"
     },
     {
       "id": "0f50037c76f2",
@@ -208,7 +472,7 @@
       "url": "https://www.bloodinthemachine.com/p/ai-is-becoming-a-disaster-for-the",
       "source": "Hacker News",
       "date": "2026-11-22T12:19:46.000Z",
-      "snippet": "133 points · 62 comments on HN"
+      "snippet": "134 points · 64 comments on HN"
     },
     {
       "id": "0ceef4b235ec",
@@ -216,7 +480,7 @@
       "url": "https://simonwillison.net/2026/Nov/21/muru/",
       "source": "Hacker News",
       "date": "2026-11-22T09:57:01.000Z",
-      "snippet": "77 points · 11 comments on HN"
+      "snippet": "78 points · 12 comments on HN"
     },
     {
       "id": "bf1d56f79e08",
@@ -224,7 +488,7 @@
       "url": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
       "source": "Hacker News",
       "date": "2026-11-22T08:57:34.000Z",
-      "snippet": "1005 points · 988 comments on HN"
+      "snippet": "1035 points · 1007 comments on HN"
     },
     {
       "id": "5cc0b3bf0f56",
@@ -232,7 +496,7 @@
       "url": "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
       "source": "Hacker News",
       "date": "2026-11-22T05:11:43.000Z",
-      "snippet": "104 points · 22 comments on HN"
+      "snippet": "105 points · 22 comments on HN"
     },
     {
       "id": "7893687ce631",
@@ -240,7 +504,7 @@
       "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
       "source": "Hacker News",
       "date": "2026-11-22T02:14:14.000Z",
-      "snippet": "291 points · 100 comments on HN"
+      "snippet": "294 points · 100 comments on HN"
     },
     {
       "id": "78ed71768c6f",
@@ -248,7 +512,7 @@
       "url": "https://www.noemamag.com/the-mythology-of-conscious-ai/",
       "source": "Hacker News",
       "date": "2026-11-22T02:10:02.000Z",
-      "snippet": "179 points · 532 comments on HN"
+      "snippet": "181 points · 559 comments on HN"
     },
     {
       "id": "de5cd1a6d51d",
@@ -280,7 +544,7 @@
       "url": "https://www.pandex.io",
       "source": "Hacker News",
       "date": "2026-11-21T20:47:41.000Z",
-      "snippet": "140 points · 33 comments on HN"
+      "snippet": "141 points · 37 comments on HN"
     },
     {
       "id": "234da3fc1867",
@@ -296,7 +560,7 @@
       "url": "https://pwn.ai/upload2shell",
       "source": "Hacker News",
       "date": "2026-11-21T18:29:29.000Z",
-      "snippet": "153 points · 77 comments on HN"
+      "snippet": "154 points · 77 comments on HN"
     },
     {
       "id": "01945f6a907c",
@@ -336,7 +600,7 @@
       "url": "http://ricapar.net/ClawDOS/",
       "source": "Hacker News",
       "date": "2026-11-21T05:38:01.000Z",
-      "snippet": "175 points · 52 comments on HN"
+      "snippet": "176 points · 53 comments on HN"
     },
     {
       "id": "35f854dd7615",
@@ -344,7 +608,7 @@
       "url": "https://news.ycombinator.com/item?id=50583761",
       "source": "Hacker News",
       "date": "2026-11-20T23:18:32.000Z",
-      "snippet": "737 points · 838 comments on HN"
+      "snippet": "750 points · 854 comments on HN"
     },
     {
       "id": "5a49fd4a2d77",
@@ -377,270 +641,6 @@
       "source": "Ars Technica",
       "date": "2026-11-20T20:59:08.000Z",
       "snippet": "Test using prompts with unique, trackable secrets proves that data doesn't stay private."
-    },
-    {
-      "id": "b9db119f86f5",
-      "title": "Inkling 2 Mini",
-      "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
-      "source": "Hacker News",
-      "date": "2026-11-20T20:12:19.000Z",
-      "snippet": "1469 points · 293 comments on HN"
-    },
-    {
-      "id": "340614cb1d45",
-      "title": "Daniel Ek backs AI researcher’s fusion power startup. Here’s what they’re building.",
-      "url": "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building/",
-      "source": "TechCrunch",
-      "date": "2026-11-20T19:53:41.000Z",
-      "snippet": "Spotify founder Daniel Ek is backing Europa Fusion, a fusion power startup founded by an AI researcher. Here's what the startup is building."
-    },
-    {
-      "id": "d6bff5841b5a",
-      "title": "AI claimed a solution to the 167-year-old Riemann hypothesis — and a human did, too",
-      "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
-      "source": "TechCrunch",
-      "date": "2026-11-20T19:32:08.000Z",
-      "snippet": "Mathematicians are having their minds blown by the latest AI-driven result — and there's a competing human solution, too."
-    },
-    {
-      "id": "3a0cb236fd32",
-      "title": "Trump threatens ‘tremendous tax’ for moving AI data centers outside the US",
-      "url": "https://www.theverge.com/policy/1038892/trump-foreign-data-centers-tax",
-      "source": "The Verge",
-      "date": "2026-11-20T18:50:19.000Z",
-      "snippet": "President Donald Trump promised to put a \"tremendous tax\" on companies that build data centers outside of the US, even as states and cities around the country are placing restrictions on new applications to build them. \""
-    },
-    {
-      "id": "079373956374",
-      "title": "Chips can survive the space environment — can their financing?",
-      "url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing/",
-      "source": "TechCrunch",
-      "date": "2026-11-20T17:40:01.000Z",
-      "snippet": "Lenders don't want SpaceX shooting their collateral into orbit. What does that mean for space data centers writ large?"
-    },
-    {
-      "id": "321223b3abbe",
-      "title": "Google workers tell their employer not to punish schools that don't want AI",
-      "url": "https://www.motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition/",
-      "source": "Hacker News",
-      "date": "2026-11-20T16:59:27.000Z",
-      "snippet": "284 points · 229 comments on HN"
-    },
-    {
-      "id": "6a5063e8d8f0",
-      "title": "AI is giving everyone the same advice",
-      "url": "https://a90.com/experiments/same-advice/",
-      "source": "Hacker News",
-      "date": "2026-11-20T16:58:05.000Z",
-      "snippet": "125 points · 56 comments on HN"
-    },
-    {
-      "id": "859ee3ec8c20",
-      "title": "Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem",
-      "source": "The Verge",
-      "date": "2026-11-20T16:34:13.000Z",
-      "snippet": "Anthropic mathematician Levent Alpöge claims he has proved the Riemann hypothesis, one of mathematics's most notoriously difficult problems, with the help of Claude, cracking a puzzle that has eluded some of the world's "
-    },
-    {
-      "id": "92c1cc867c01",
-      "title": "The fallout from Nvidia’s Jensen Huang scandal continues",
-      "url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues/",
-      "source": "TechCrunch",
-      "date": "2026-11-20T14:55:44.000Z",
-      "snippet": "In the midst of dealing with the fallout from its ouster of CEO Jensen Huang, Nvidia delivered its latest earnings report this week, with healthy growth and promises that the good times will continue. At the same time, t"
-    },
-    {
-      "id": "299291fdd518",
-      "title": "The week everything fell apart",
-      "url": "https://www.theverge.com/podcast/1038419/outage-outlook-ground-stop-tech-failure-vergecast",
-      "source": "The Verge",
-      "date": "2026-11-20T14:06:59.000Z",
-      "snippet": "There was a dayslong Outlook outage. A nationwide ground stop for only the second time in 25 years. Banks seemed to suddenly stop working. Even iCloud couldn't stay up and running. This week, it felt like the technologic"
-    },
-    {
-      "id": "7d8981ef5476",
-      "title": "Six AI-powered gadgets that could make your home office smarter",
-      "url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter/",
-      "source": "TechCrunch",
-      "date": "2026-11-20T14:00:00.000Z",
-      "snippet": "From notetakers to webcams, here are six AI-powered gadgets to upgrade your workspace."
-    },
-    {
-      "id": "76ff8383c1ff",
-      "title": "Show HN: Drive around my village in 3D",
-      "url": "https://cherwellvalleymotorclub.app",
-      "source": "Hacker News",
-      "date": "2026-11-20T13:32:42.000Z",
-      "snippet": "53 points · 45 comments on HN"
-    },
-    {
-      "id": "fd2811614640",
-      "title": "Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic’s second day",
-      "url": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
-      "source": "Hacker News",
-      "date": "2026-11-20T13:29:59.000Z",
-      "snippet": "530 points · 927 comments on HN"
-    },
-    {
-      "id": "779ccf54081c",
-      "title": "Signal is blocking Gemini and Siri AI from reading your screen",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app",
-      "source": "The Verge",
-      "date": "2026-11-20T12:30:47.000Z",
-      "snippet": "Signal is restricting the ability to take screenshots on Android and iOS devices in an effort to prevent AI agents from reading users' messages and other data. The agentic AI capabilities built into operating systems tha"
-    },
-    {
-      "id": "14b67dddb807",
-      "title": "Epic Games Turns to AI Coding for the Unreal Engine",
-      "url": "https://spectrum.ieee.org/epic-games-unreal-engine-ai",
-      "source": "Hacker News",
-      "date": "2026-11-20T12:16:36.000Z",
-      "snippet": "58 points · 61 comments on HN"
-    },
-    {
-      "id": "000028228240",
-      "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
-      "url": "https://architectlabs.com/blog/frostbite",
-      "source": "Hacker News",
-      "date": "2026-11-20T10:01:41.000Z",
-      "snippet": "683 points · 364 comments on HN"
-    },
-    {
-      "id": "3ea993db7e3c",
-      "title": "Combatting adversarial distillation",
-      "url": "https://openai.com/index/combatting-adversarial-distillation",
-      "source": "OpenAI",
-      "date": "2026-11-20T10:00:00.000Z",
-      "snippet": "OpenAI’s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction."
-    },
-    {
-      "id": "11f79f6f88ff",
-      "title": "Restricting AI agents in mobile operating systems platforms from capturing data",
-      "url": "https://signal.org/blog/protecting-your-privacy/",
-      "source": "Hacker News",
-      "date": "2026-11-20T09:42:16.000Z",
-      "snippet": "581 points · 348 comments on HN"
-    },
-    {
-      "id": "d63c6404d469",
-      "title": "llm-gemini 0.38.1",
-      "url": "https://simonwillison.net/2026/Nov/20/llm-gemini/",
-      "source": "Simon Willison",
-      "date": "2026-11-20T03:01:57.000Z",
-      "snippet": "Release: llm-gemini 0.38.1 Gemini 4 Carbon only supports low , medium and high reasoning levels - but Gemini 4 Hydrogen and Gemini 4 Neon both have an extra xhigh level. I missed that when I added those models to the llm"
-    },
-    {
-      "id": "8f4728ffc5b9",
-      "title": "Apple may be developing its own AI agent that runs your Mac",
-      "url": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/",
-      "source": "TechCrunch",
-      "date": "2026-11-20T00:56:01.000Z",
-      "snippet": "The iPhone maker appears to be building agents that can compete with the likes of Meta Muse, Instinct, Claude, and OpenAI Dots."
-    },
-    {
-      "id": "f1dd0bea0b97",
-      "title": "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
-      "url": "https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/",
-      "source": "TechCrunch",
-      "date": "2026-11-20T00:43:50.000Z",
-      "snippet": "At the upgraded $83/share IPO price, Anthropic's seven founders each pocketed $280 million, while the company nabbed nearly $105 billion."
-    },
-    {
-      "id": "d15c45643214",
-      "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
-      "url": "https://openai.com/business/customer-stories/hebbia",
-      "source": "OpenAI",
-      "date": "2026-11-20T00:00:00.000Z",
-      "snippet": "Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality."
-    },
-    {
-      "id": "f4784c304003",
-      "title": "Can AI help scientists identify promising drug candidates?",
-      "url": "https://openai.com/index/introducing-medchembench",
-      "source": "OpenAI",
-      "date": "2026-11-20T00:00:00.000Z",
-      "snippet": "MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery."
-    },
-    {
-      "id": "279867a1c0ff",
-      "title": "Court: 4th Amendment Disallows Use Of AI-Generated 'Probable Cause'",
-      "url": "https://www.techdirt.com/2026/11/19/court-tells-cops-that-the-4th-amendment-doesnt-cover-ai-generated-probable-cause/",
-      "source": "Hacker News",
-      "date": "2026-11-19T22:56:59.000Z",
-      "snippet": "71 points · 21 comments on HN"
-    },
-    {
-      "id": "a22c687c439c",
-      "title": "Apple is hiring engineers to build its own AI agent",
-      "url": "https://www.theverge.com/tech/1038227/apple-ai-agent-engineer-job-listing",
-      "source": "The Verge",
-      "date": "2026-11-19T22:31:41.000Z",
-      "snippet": "Apple is working on its own AI agent that can perform a range of tasks for you, including browsing the web, working across apps, writing code, and calling services. That's according to a now-removed job listing spotted b"
-    },
-    {
-      "id": "74e2df778984",
-      "title": "A brief history of Nvidia’s recent stock fluctuations",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1038063/nvidia-stock-market-price-earnings",
-      "source": "The Verge",
-      "date": "2026-11-19T21:59:35.000Z",
-      "snippet": "\"We've got this,\" Colette Kress, interim CEO of Nvidia, said Tuesday night as she closed out the embattled chip company's third quarter earnings call. By Thursday, the company's stock price was hovering at around $150 pe"
-    },
-    {
-      "id": "6f0f2d869f0f",
-      "title": "Meta’s new Muse Charm device may cost $300",
-      "url": "https://techcrunch.com/2026/11/19/metas-new-muse-charm-device-may-cost-300/",
-      "source": "TechCrunch",
-      "date": "2026-11-19T21:58:06.000Z",
-      "snippet": "Meta hasn't denied the reporting from The Information, saying only that it will \"have more to share soon\" about its upcoming AI wearable."
-    },
-    {
-      "id": "f2dddf2ea7d8",
-      "title": "These tech outages are giving Y2K, AI agent style",
-      "url": "https://techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style/",
-      "source": "TechCrunch",
-      "date": "2026-11-19T21:42:31.000Z",
-      "snippet": "Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence? There's actually likely something deeper going on, cybersecurity experts say."
-    },
-    {
-      "id": "b0341a0ae375",
-      "title": "Meta’s Muse Charm might cost $300",
-      "url": "https://www.theverge.com/tech/1038087/meta-muse-charm-ai-price",
-      "source": "The Verge",
-      "date": "2026-11-19T20:22:17.000Z",
-      "snippet": "Meta is planning to price the Muse Charm, a little gadget with a screen that lets you chat with your Muse AI agent, at $300, according to The Information. CEO Mark Zuckerberg revealed the gadget earlier this year and sai"
-    },
-    {
-      "id": "a18d40e53c3a",
-      "title": "Traumatized teens sue school, cops after Doritos bag triggers AI gun alert",
-      "url": "https://arstechnica.com/tech-policy/2026/11/traumatized-teens-sue-school-cops-after-doritos-bag-triggers-ai-gun-alert/",
-      "source": "Ars Technica",
-      "date": "2026-11-19T20:19:28.000Z",
-      "snippet": "Lawsuit: Over 99% of school system’s AI gun alerts were false positives."
-    },
-    {
-      "id": "423b8c753c11",
-      "title": "The unfolding Jensen Huang scandal: a timeline",
-      "url": "https://techcrunch.com/2026/11/19/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
-      "source": "TechCrunch",
-      "date": "2026-11-19T20:18:49.000Z",
-      "snippet": "Jensen Huang has resigned from Nvidia following an affair, which could have ramifications for national security as the U.S. and China race to develop the most advanced AI infrastructure."
-    },
-    {
-      "id": "6900f6014b2a",
-      "title": "Google is putting AI chats right on the homepage",
-      "url": "https://www.theverge.com/tech/1038059/google-search-homepage-ai-chats",
-      "source": "The Verge",
-      "date": "2026-11-19T20:05:06.000Z",
-      "snippet": "Google is updating its homepage to include AI searches. In a post on X, Google's vice president of product, Robby Stein, shows how you can now open a collapsible sidebar to view and continue your AI chats. Based on the G"
-    },
-    {
-      "id": "2ad2190c7ade",
-      "title": "Anthropic’s IPO could deliver $156B to charity",
-      "url": "https://techcrunch.com/2026/11/19/anthropics-ipo-could-deliver-156-billion-to-charity/",
-      "source": "TechCrunch",
-      "date": "2026-11-19T19:10:45.000Z",
-      "snippet": "At a stock price of $95, the frontier lab's Public Benefit Foundation, its employee donations, and the company's match tot up to $156 billion."
     }
   ]
 }

@@ -1,6 +1,42 @@
 {
-  "updated": "2026-11-21T14:11:56.067Z",
+  "updated": "2026-11-24T16:57:16.919Z",
   "claude-code": [
+    {
+      "version": "2.1.331",
+      "date": null,
+      "bullets": [
+        "Added Code Mode support in terminal sessions on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry and Claude Platform on AWS",
+        "Added <code>oidc.groups_jsonpath</code> to the Claude apps gateway, to read groups from the matching entries of a list of objects with a small subset of JSONPath (RFC 9535)",
+        "Added an API connectivity section to <code>claude doctor</code> that reports whether the API can be reached, with the HTTP status or the error, or says why it wasn't tested",
+        "Added a notice when tap-mode voice dictation stops by itself, after 15 seconds without recognized speech or at its 2-minute limit",
+        "Added <code>CLAUDE_CODE_DISABLE_RESPONSE_COMPRESSION</code> to ask for uncompressed model responses behind a proxy that cuts compressed ones off; not advised yet for self-hosted runners or Remote Control",
+        "Added <code>CLAUDE_GATEWAY_IDP_CONNECT_BY_HOSTNAME=1</code> for Claude apps gateways: with <code>oidc.use_proxy: true</code>, sign-in requests hand the proxy an <code>https</code> IdP's hostname even with <code>NO_PROXY</code> set",
+        "Added <code>gen_ai.usage.*</code>, <code>gen_ai.response.model</code> and <code>gen_ai.operation.name</code> to <code>claude_code.llm_request</code> trace spans; <code>gen_ai.usage.input_tokens</code> includes prompt cache tokens",
+        "Added <code>optionalDependencies</code> to plugin manifests: plugins that install with the plugin listing them and can be disabled or uninstalled on their own",
+        "Fixed MCP tool calls hanging for up to 30 minutes on some malformed replies from a local or WebSocket server",
+        "Fixed PushNotification telling a headless run, such as a scheduled one, that the terminal was active in its first minute, instead of saying whether a mobile push was requested",
+        "Fixed <code>/install-github-app</code> skipping the repository step after setup warnings when no repository was found, and Esc not going back from its workflow list and sign-in steps",
+        "Fixed one-line tool results cut with no ellipsis in narrow windows, Markdown stars in the Auto mode tab of /permissions, and a hook's reason to stop a forked skill showing twice",
+        "Fixed <code>/diff</code> hiding its key hints and not selecting files in windows of 24 to 26 rows, and leaving out files added with <code>git add -N</code> in a repository with no commits",
+        "Fixed the first-run theme list showing too few themes in short windows, and /usage and other tall screens coming out garbled there",
+        "Fixed <code>/bug</code> in fullscreen hiding its Yes and No answers behind a long report, and Yes staying out of view in very short windows",
+        "Fixed /compact and auto-compact sometimes losing part of the conversation summary when the summary quoted certain XML tags",
+        "Fixed Claude not being told when permission rules on the Agent tool dropped its queued message to a subagent that had already ended",
+        "Fixed a Remote Control message sometimes showing above the reply that was finishing when it was sent",
+        "Fixed Stop hooks that read the transcript missing the last reply in Claude Desktop; SubagentStop hooks now wait for it too",
+        "Fixed turns and subagents failing in cloud sessions, or timing out on long replies elsewhere, when a reply went silent while Claude was still thinking; Claude Code now tries the request once more",
+        "Fixed Esc and Stop waiting about a minute or more when the contents of a cloud or network file that Claude is reading stall",
+        "Fixed Code Mode sessions resumed with <code>--resume</code> or <code>--continue</code> in another permission mode losing thinking and the prompt cache; one begun in a mode that asks keeps that mode's limits on scripts",
+        "Fixed Code Mode sending a request about every second when a <code>!</code> or slash command was typed while a script was running",
+        "Fixed an interrupted or failed plugin update leaving a partial plugin folder that later loaded with skills or other components missing (anthropics/claude-code#102186)",
+        "Windows: Fixed file writes on FAT32 and exFAT drives asking for permission every time in some plugin sessions",
+        "Fixed Claude failing to read a notebook that has a null output or an error output with no traceback",
+        "Fixed a rewind deleting files after a restore had failed",
+        "Fixed auto mode sometimes refusing Claude's call to stop a /loop, which left the next wake-up to fire",
+        "Fixed a Workflow agent's background shells and MCP servers sometimes being left running after it handed back its report",
+        "Windows: Fixed <code>/desktop</code> downloading the older Claude Desktop installer, and asking for an update when an older install's folder was left behind"
+      ]
+    },
     {
       "version": "2.1.330",
       "date": null,
@@ -745,45 +781,53 @@
       "bullets": [
         "Bug fixes and reliability improvements"
       ]
-    },
-    {
-      "version": "2.1.302",
-      "date": null,
-      "bullets": [
-        "Added <code>CLAUDE_CODE_AUTO_MODE_MODEL</code> to choose the model the client-side auto mode classifier uses; it does not change the model for server-side auto mode",
-        "Added an <code>Idle compaction</code> row to <code>/config</code> for turning idle compaction off or back on; the notices shown after an idle compaction now say how to turn it off",
-        "Added a notice to <code>/design-sync</code> and <code>/design-login</code> that standalone Claude Design (claude.ai/design) closes by December 14, 2026",
-        "Fixed a &quot;Prompt is too long&quot; error when stopping a turn while the conversation was being compacted",
-        "Fixed requests failing with &quot;diagnostics: Extra inputs are not permitted&quot; after switching to Vertex or Bedrock mid-session",
-        "Fixed the Read tool loading an image file of any size, or a pipe or device named like an image, entirely into memory; image sources over 128 MB are now refused",
-        "Fixed <code>/autocompact</code> and <code>/effort</code> saving to the wrong model when a gateway names Opus 4 or 4.1 with a prefix, such as <code>anthropic/claude-opus-4-1</code>",
-        "Fixed a prompt cache miss when a tool added mid-session was loaded again through ToolSearch or after compaction",
-        "Fixed <code>claude plugin</code> and other subcommands sometimes exiting before a queued settings or config write finished, which could lose the change or leave a <code>.tmp</code> file behind",
-        "Fixed plugin marketplaces re-cloning on every refresh, and newly installed git plugins showing version &quot;unknown&quot;, when git defaults to the reftable ref format",
-        "Fixed the PowerShell tool not finding commands in a plugin's <code>bin/</code> folder, and reporting an error when a search that finds nothing (rg, grep, findstr, git grep) is piped into <code>Select-Object</code> or another formatting cmdlet",
-        "Fixed Claude in the desktop app pointing you to claude.ai settings or <code>/mcp</code> to authorize or reconnect an MCP server where that option isn't available",
-        "Fixed artifact publishes sometimes failing when Claude sent an empty list of edits, and Claude retrying an artifact update the wrong way after a newer version of the artifact turned it away",
-        "Fixed <code>classifier_category</code> missing from OpenTelemetry <code>tool_decision</code> events for most auto mode classifier blocks, and new <code>tool_decision</code> attributes pushing out <code>tool_use_id</code>, <code>tool_source</code> and <code>tool_parameters</code> when <code>OTEL_LOGRECORD_ATTRIBUTE_COUNT_LIMIT</code> is low",
-        "Fixed rows in the agents view staying blank after moving down a long list or folding a section",
-        "Fixed <code>claude remote-control --help</code> not printing its usage and exiting when not signed in",
-        "Fixed <code>/design consent</code> and <code>/design revoke</code> suggesting <code>/design-login</code> when they fail in a cloud session, where it isn't available; the message now points to claude.ai/design/settings",
-        "Fixed MCP servers showing no tools, or every tool call failing, when the server negotiates protocol version 2026-07-28 but omits <code>resultType</code>, <code>ttlMs</code> or <code>cacheScope</code>",
-        "Fixed prompt suggestions spending usage credits on models your plan pays for only with credits: they are now skipped after a reply billed to credits",
-        "Fixed URLs written in backticks being clickable only on their first row when they wrap; the whole URL is now one link in terminals that support hyperlinks",
-        "Fixed <code>claude plugin details @builtin</code> suggesting <code>claude plugin list</code>, which never shows built-in plugins, when the plugin isn't found; it now points to <code>/plugin</code>",
-        "Fixed an emoji that a link starts inside wrapping one column too wide, which hid it in question previews and turned tables into lists",
-        "Fixed worktree isolation refusing to create or resume worktrees under git 2.56 or later when a stray <code>.git</code> file points at a directory that doesn't exist",
-        "Fixed a cloud session's cost and usage restarting from zero after the session resumed in a new process",
-        "Self-hosted runner: Fixed git fetches failing with &quot;bad object refs/heads&quot; in sessions that reuse a checkout stored in git's reftable format",
-        "Windows: Fixed every file write being refused or asked about for projects on exFAT or FAT32 drives, including in sessions started with <code>--plugin-dir</code>",
-        "Improved startup time with many plugins enabled: plugin command and agent files now take far fewer file system calls to load, most of all on Windows",
-        "Improved auto mode with the server-side classifier: a conversation too long for the safety check is now compacted, instead of every checked tool call being denied",
-        "Improved the message when a background session reopened from another folder has no LLM gateway: it now says why, instead of &quot;Not logged in&quot;",
-        "Changed <code>claude -p</code> and Agent SDK sessions with no permission mode to start in <code>default</code> mode on third-party providers, with telemetry off or on a fresh install; <code>--permission-mode auto</code> keeps auto"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.174.0-alpha.2",
+      "date": "2026-11-24T16:14:14.000Z",
+      "bullets": [
+        "Release 0.174.0-alpha.2"
+      ]
+    },
+    {
+      "version": "0.174.0-alpha.1",
+      "date": "2026-11-24T01:46:17.000Z",
+      "bullets": [
+        "Release 0.174.0-alpha.1"
+      ]
+    },
+    {
+      "version": "0.172.0",
+      "date": "2026-11-24T00:03:55.000Z",
+      "bullets": [
+        "- Follow thread links from search results and transcripts to open saved conversations and nested agents in the terminal. (#62332) - Press <code>Tab</code> to complete arguments for supported slash commands.",
+        "For example, <code>/mcp lo</code> completes to <code>/mcp login</code>. (#62343) - Jump between task groups in the agent command center with <code>Shift+Up</code> and <code>Shift+Down</code>. (#62200) - Optional stdio MCP servers with cached tool lists now start on their first tool call by default. (#62366) - Set an approval reviewer for individual connected app tools in <code>config.toml</code>. (#62360) - App-server clients can select Amazon Bedrock Runtime during setup or sign-in. (#62222) - <code>codex exec resume</code> restores saved sandbox permissions, the working directory, and workspace roots unless explicitly overridden. (#62194) - Remote sessions preserve working directories, workspace roots, and writable paths when the client and server run on different operating systems. (#62375, #62376, #62377) - Codex reports provider errors as soon as they arrive in a response stream and identifies which API spend limit was reached. (#62329, #62356) - Interrupting a parent turn preserves queued replies from child agents for the next turn. (#62348) - Use <code>PageUp</code> and <code>PageDown</code> to read and submit answer choices that are taller than the terminal’s answer area. (#62209) - Cloud replies that finish after history loads now update in place, keeping the terminal transcript in order. (#62403) - The bundled <code>openai-docs</code> skill now covers migration to GPT-6.2 Astra and Sol, including endpoint choices and tool-calling requirements. (#62447) - Code Mode now uses gRPC for all host connections.",
+        "The <code>code_mode_host_grpc</code> setting is deprecated. (#62476) - Python formatting and SDK type generation now verify dependency hashes against the repository lockfile. (#62346) Full Changelog: https://github.com/openai/codex/compare/rust-v0.171.0...rust-v0.172.0 - #62190 Route turn and response checkpoints through the rollout budget policy @anp-oai - #62192 Distinguish Windows sandbox provisioning timeouts and pipe closures @zm-oai - #62194 Preserve saved sandbox permissions when resuming <code>codex exec</code> @viyatb-oai - #62200 Add task group navigation to the agent command center @bc-openai - #62202 Omit unknown server versions from <code>/status</code> @bc-openai - #62205 Keep sandbox preparation with the command through launch @viyatb-oai - #62206 Prevent duplicate initial context when injection races the first turn @euroelessar - #62209 Allow paging through long choices in async questions @bc-openai - #62215 Resolve Linux sandbox mode once before launching the helper @viyatb-oai - #62222 Allow Bedrock Runtime selection during setup and login @alexsong-oai - #62225 Tag Guardian review counts with turn origin @cazhang-oai - #62245 Refactor realtime handoff and history access @zahan-oai - #62251 Derive realtime input receipts from thread history @zahan-oai - #62271 Gate local realtime frame history on paginated storage @zahan-oai - #62274 Support independent refreshes of managed Guardian policy @ioanbudea-OAI - #62276 Refresh managed Guardian policy independently of MCP @ioanbudea-OAI - #62284 Use the system clock for in-memory MCP message boards @jif-oai - #62288 Persist realtime handoffs before accepting turn input @zahan-oai - #62292 Route injected plaintext agent mail through the native mailbox @jif-oai - #62299 Preserve pending realtime speech when a call ends @zahan-oai - #62302 Route local MCP board notifications through response item injection @jif-oai - #62308 Extract Guardian verdict execution and pending-action context @felixxia-oai - #62309 Use attached Guardian reviewers for synchronous approvals @felixxia-oai - #62310 Use Guardian V3 board evidence for synchronous approvals @felixxia-oai - #62314 Keep authorization evidence local to agent forks @rhan-oai - #62317 Move sandbox preparation into platform backends @viyatb-oai - #62320 Trace MCP binding capture and tool catalog refresh @bkotsopoulos - #62325 Accept inbound Noise connections in remote exec-server @richardopenai - #62326 Measure plugin recommendation latency during initial context setup @bkotsopoulos - #62329 Report API spend limit errors by scope @apcha-oai - #62331 Migrate the Windows MXC sandbox to the public V1 SDK @iceweasel-oai - #62332 Open Codex thread links inside the TUI @bc-openai - #62335 Let users open the command center from provider error screens @bc-openai - #62337 Box the config reload future for persistent MCP tool approvals @dylan-hurd-oai - #62338 Account for macOS voice build parallelism in Bazel @dylan-hurd-oai - #62343 Add slash command argument completion to the TUI composer @bc-openai - #62346 Verify dependency hashes when running Python repository tools @colby-oai - #62348 Preserve queued agent messages when a parent turn is interrupted @jif-oai - #62350 Support piped I/O when starting Seatbelt sandbox commands @charliemarsh-oai - #62353 Add a shared sandbox launcher for Linux and macOS @charliemarsh-oai - #62354 Treat statusless bio and cyber policy errors as terminal @charliemarsh-oai - #62356 Surface Responses stream errors as soon as they arrive @charliemarsh-oai - #62357 Report why turn critical path capture is incomplete @akak-oai - #62358 Reserve credential permission tables in Codex configuration @viyatb-oai - #62360 Allow per-tool approval reviewers for Codex apps @jameswt-oai - #62362 Make sidebar file preview errors easier to act on @fcoury-oai - #62366 Enable lazy startup for stdio MCP servers by default @charliemarsh-oai - #62370 Share config layer entries across snapshots @charliemarsh-oai - #62372 Make Guardian V3 routing and retrieval guidance configurable @felixxia-oai - #62373 Add opt-in in-memory message boards for Guardian v3 @felixxia-oai - #62374 Reconsider denials in attached Guardian reviews @felixxia-oai - #62375 Preserve app-server thread working directories across platforms @etraut-openai - #62376 Preserve sandbox writable roots across client and server platforms @etraut-openai - #62377 Preserve workspace roots across client and server platforms @etraut-openai - #62378 Remove the 4,000-byte prompt limit for <code>thread/sample</code> @keyz - #62382 Skip the sandbox denial wait when unified exec output closes @richardopenai - #62384 Centralize transcript overlay input routing @fcoury-oai - #62386 Prepare managed proxy settings once per sandbox command @viyatb-oai - #62387 Expose custom status lines in <code>/experimental</code> @joesavona - #62388 Support optional Apps tool results in Responses requests @ssetty-oai - #62389 Pause runtime sandbox integrity checks @iceweasel-oai - #62390 Highlight clickable links and controls on hover in the fullscreen TUI @fcoury-oai - #62392 Pass eligible connector results through to ChatGPT Responses @ssetty-oai - #62400 Test saved chat hover highlighting in the sidebar chooser @fcoury-oai - #62403 Reconcile unfinished Cloud replies in the TUI transcript @bc-openai - #62407 Deduplicate large tool output strings in rollout traces @cassirer-openai - #62415 Enable network access in the shell snapshot filesystem test @TAFOYA-OAI - #62419 Allow per-sample model overrides in <code>thread/sample</code> @keyz - #62420 Box the future returned by response item injection @charliemarsh-oai - #62421 Reject provider query parameters for connector result passthrough @ssetty-oai - #62423 Include nested Apps tool results in Code Mode sampling requests @ssetty-oai - #62430 Support tool-specific JavaScript preloads in Code Mode @hlevy-openai - #62432 Add opt-in OAuth discovery to config server loaders @vishnu-oai - #62434 Expand connector result metadata coverage across auth configurations @ssetty-oai - #62435 Let extensions attach metadata to MCP tool requests @tepman-oai - #62437 Defer Git worktree status until the turn starts @ningyi-oai - #62439 Add Windows MXC sandbox launch diagnostics @iceweasel-oai - #62447 Update the <code>openai-docs</code> skill for GPT-6.2 @kkahadze-oai - #62474 Send authorized connector results over Responses WebSockets @ssetty-oai - #62476 Use gRPC for all code-mode host connections @cconger - #62477 Box the thread startup future in <code>spawn_thread</code> @charliemarsh-oai - #62489 Honor elastic budgets for attached Guardian reviews @felixxia-oai - #62496 Refresh managed Guardian policy across Codex threads @ioanbudea-OAI - #62499 Expose Daybreak availability in model discovery @igorrybalka-oai - #62507 Add Statsig counters for <code>exec_command</code> latency @jif-oai"
+      ]
+    },
+    {
+      "version": "0.173.0-alpha.5",
+      "date": "2026-11-24T06:44:18.000Z",
+      "bullets": [
+        "Release 0.173.0-alpha.5"
+      ]
+    },
+    {
+      "version": "0.172.0-alpha.2.1",
+      "date": "2026-11-23T18:02:51.000Z",
+      "bullets": [
+        "Release 0.172.0-alpha.2.1"
+      ]
+    },
+    {
+      "version": "0.171.0-alpha.13.2",
+      "date": "2026-11-23T19:38:30.000Z",
+      "bullets": [
+        "Release 0.171.0-alpha.13.2"
+      ]
+    },
     {
       "version": "0.173.0-alpha.4",
       "date": "2026-11-21T00:35:19.000Z",
@@ -881,48 +925,6 @@
       "date": "2026-11-17T04:24:57.000Z",
       "bullets": [
         "Release 0.171.0-alpha.11"
-      ]
-    },
-    {
-      "version": "0.170.0-alpha.4.1",
-      "date": "2026-11-17T02:19:17.000Z",
-      "bullets": [
-        "Release 0.170.0-alpha.4.1"
-      ]
-    },
-    {
-      "version": "0.171.0-alpha.9",
-      "date": "2026-11-16T19:13:19.000Z",
-      "bullets": [
-        "Release 0.171.0-alpha.9"
-      ]
-    },
-    {
-      "version": "0.171.0-alpha.8",
-      "date": "2026-11-16T16:25:46.000Z",
-      "bullets": [
-        "Release 0.171.0-alpha.8"
-      ]
-    },
-    {
-      "version": "0.171.0-alpha.10",
-      "date": "2026-11-16T23:32:43.000Z",
-      "bullets": [
-        "Release 0.171.0-alpha.10"
-      ]
-    },
-    {
-      "version": "0.171.0-alpha.7",
-      "date": "2026-11-15T23:13:50.000Z",
-      "bullets": [
-        "Release 0.171.0-alpha.7"
-      ]
-    },
-    {
-      "version": "0.171.0-alpha.6",
-      "date": "2026-11-15T18:58:35.000Z",
-      "bullets": [
-        "Release 0.171.0-alpha.6"
       ]
     }
   ]
