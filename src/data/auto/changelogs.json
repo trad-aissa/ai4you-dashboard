@@ -1,6 +1,42 @@
 {
-  "updated": "2026-11-24T16:57:16.919Z",
+  "updated": "2026-11-25T16:46:36.356Z",
   "claude-code": [
+    {
+      "version": "2.1.332",
+      "date": null,
+      "bullets": [
+        "Added skills from MCP servers (beta). They show as <code>server:skill</code> in the <code>/</code> menu; other skills keep their names",
+        "Added a <code>PreSkillShellCommand</code> hook event that can refuse a skill or command's inline shell commands as it loads; on 2.1.331 and older, a settings file naming it opens a dialog at start",
+        "Added &quot;Always deliver&quot; to the prompt for held messages from other sessions",
+        "Added a footer line that stays while a flagged message has your session on a different model, until you pick one with <code>/model</code>",
+        "Added an OpenTelemetry <code>assistant_response</code> event for text Claude sends through SendUserMessage or Cowork's message tool, when response logging is on",
+        "Added a warning in VS Code and Desktop's Code tab when part of a session couldn't be saved, saying how to save it with <code>/compact</code>",
+        "Added a notice in VS Code and Desktop's Code tab when a resumed session's earlier messages weren't loaded, as the terminal already shows",
+        "Added your Cyber Verification Program access tier to the startup header, beside the model name when your tier applies to that model and you're signed in with a claude.ai account",
+        "Fixed <code>claude auth login</code> reporting <code>Login successful.</code> when a claude.ai login could not be saved: it now exits 1 and says what to check, such as a leftover lock file or a full disk",
+        "Fixed Read, @-mentions and compaction hanging on a named pipe that nothing writes to, such as a <code>.env</code> mounted by a locked secrets manager; the read now fails after 20 seconds",
+        "Fixed turns ending in &quot;Prompt is too long&quot; after repeated auto-compaction failures when one more compaction at the context limit could have kept them going",
+        "Fixed compaction failing when a summary kept running past the output limit: after three cut-off replies, the last try now asks for a shorter summary",
+        "Fixed a freeze when a permission rule or hook condition with several wildcards was checked against a long command",
+        "Fixed freezes and runaway memory use in most cases while a hook prints output without end",
+        "Fixed a freeze and context overflow when a hook blocks or fails during a turn, or after <code>/compact</code>, with a very large log; text over about 50,000 characters is now shortened",
+        "Fixed the terminal freezing, and ignoring Ctrl+C, while a local MCP server floods its standard output",
+        "Fixed a freeze when a prompt or piped input holds an <code>@</code> followed by a very long unbroken string, such as minified CSS with an embedded font",
+        "Fixed a long freeze when opening a rewind point after a large tracked file was rewritten",
+        "Fixed SSE MCP servers hanging or refusing every tool call after their event stream was cut and came back on a new endpoint or not at all, until reconnected by hand",
+        "Fixed Remote Control showing a session in the desktop app, VS Code or the Agent SDK as running while it waited there on a dialog or an MCP server's question",
+        "Fixed a usage limit being reported as reached to Remote Control, IDE and SDK clients after it had already reset",
+        "Fixed CLAUDE.md and rules files being sent to the model a second time, in most cases, after a session moves into a worktree under <code>.claude/worktrees</code> with EnterWorktree or is resumed there",
+        "Fixed tool calls that never ran being counted as done in a claude.ai chat's summary line after you declined a permission prompt in a session that had restarted",
+        "Linux: Fixed the Bash edit diff showing an unchanged symlink as edited after Claude had read the file through it",
+        "Fixed resuming a session and <code>/stats</code> freezing for seconds when a transcript holds many damaged lines",
+        "Fixed a family name such as <code>sonnet</code> in <code>--fallback-model</code> being dropped when <code>availableModels</code> allows only an older version of it",
+        "Fixed keys lagging for seconds while <code>/stats</code> reads large session transcripts, also after the dialog is closed, and with debug logging on while a language server floods its stderr",
+        "Fixed a session failing when the cloud refused its default model and an <code>availableModels</code> list that isn't enforced named neither it nor an older model of that family",
+        "Fixed an enforced list of older models failing on Google Cloud's Agent Platform and Foundry when the first is refused: it now steps down to the next in that family, if listed newest first",
+        "Fixed <code>opus</code> failing on Bedrock, Google Cloud's Agent Platform and Foundry behind a gateway that refuses a model in its own words: it now steps down to an older model that answers"
+      ]
+    },
     {
       "version": "2.1.331",
       "date": null,
@@ -774,16 +810,30 @@
         "Fixed <code>claude --help</code> text for <code>--tools</code>, <code>--resume</code>, <code>--debug</code>, <code>--json-schema</code>, <code>--disable-slash-commands</code>, <code>--system-prompt-snapshot</code> and <code>claude update</code> to match actual behavior",
         "Fixed <code>claude --worktree</code> removing the worktree and its branch without asking at exit when HEAD was detached or on another branch, which could lose commits"
       ]
-    },
-    {
-      "version": "2.1.303",
-      "date": null,
-      "bullets": [
-        "Bug fixes and reliability improvements"
-      ]
     }
   ],
   "codex": [
+    {
+      "version": "0.174.0-alpha.5",
+      "date": "2026-11-25T01:11:35.000Z",
+      "bullets": [
+        "Release 0.174.0-alpha.5"
+      ]
+    },
+    {
+      "version": "0.174.0-alpha.4",
+      "date": "2026-11-24T23:01:51.000Z",
+      "bullets": [
+        "Release 0.174.0-alpha.4"
+      ]
+    },
+    {
+      "version": "0.174.0-alpha.3",
+      "date": "2026-11-24T20:14:27.000Z",
+      "bullets": [
+        "Release 0.174.0-alpha.3"
+      ]
+    },
     {
       "version": "0.174.0-alpha.2",
       "date": "2026-11-24T16:14:14.000Z",
@@ -903,28 +953,6 @@
       "date": "2026-11-18T01:52:33.000Z",
       "bullets": [
         "Release 0.170.0-alpha.4.2"
-      ]
-    },
-    {
-      "version": "0.169.1",
-      "date": "2026-11-17T22:21:10.000Z",
-      "bullets": [
-        "No verified release highlights available.",
-        "Full Changelog: https://github.com/openai/codex/compare/rust-v0.169.0...rust-v0.169.1"
-      ]
-    },
-    {
-      "version": "0.171.0-alpha.12",
-      "date": "2026-11-17T14:26:49.000Z",
-      "bullets": [
-        "Release 0.171.0-alpha.12"
-      ]
-    },
-    {
-      "version": "0.171.0-alpha.11",
-      "date": "2026-11-17T04:24:57.000Z",
-      "bullets": [
-        "Release 0.171.0-alpha.11"
       ]
     }
   ]
