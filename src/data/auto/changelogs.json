@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T16:46:36.356Z",
+  "updated": "2026-11-26T16:22:51.701Z",
   "claude-code": [
     {
       "version": "2.1.332",
@@ -814,6 +814,20 @@
   ],
   "codex": [
     {
+      "version": "0.174.0-alpha.7",
+      "date": "2026-11-26T04:36:47.000Z",
+      "bullets": [
+        "Release 0.174.0-alpha.7"
+      ]
+    },
+    {
+      "version": "0.174.0-alpha.6",
+      "date": "2026-11-25T19:35:37.000Z",
+      "bullets": [
+        "Release 0.174.0-alpha.6"
+      ]
+    },
+    {
       "version": "0.174.0-alpha.5",
       "date": "2026-11-25T01:11:35.000Z",
       "bullets": [
@@ -939,20 +953,6 @@
       "date": "2026-11-18T17:54:54.000Z",
       "bullets": [
         "Release 0.172.0-alpha.1"
-      ]
-    },
-    {
-      "version": "0.171.0-alpha.13",
-      "date": "2026-11-18T05:47:55.000Z",
-      "bullets": [
-        "Release 0.171.0-alpha.13"
-      ]
-    },
-    {
-      "version": "0.170.0-alpha.4.2",
-      "date": "2026-11-18T01:52:33.000Z",
-      "bullets": [
-        "Release 0.170.0-alpha.4.2"
       ]
     }
   ]
