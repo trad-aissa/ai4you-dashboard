@@ -1,14 +1,54 @@
 {
-  "updated": "2026-11-27T16:07:33.973Z",
+  "updated": "2026-11-28T15:01:37.196Z",
   "count": 80,
   "items": [
+    {
+      "id": "765ab0a36bed",
+      "title": "Sakana AI’s CEO says its homegrown models are about more than Japan’s national security",
+      "url": "https://techcrunch.com/2026/11/28/sakana-ais-ceo-says-its-homegrown-models-are-about-more-than-japans-national-security/",
+      "source": "TechCrunch",
+      "date": "2026-11-28T14:00:00.000Z",
+      "snippet": "Sakana AI aims to strengthen Japan’s industrial competitiveness with homegrown AI models."
+    },
+    {
+      "id": "4e825df2be8b",
+      "title": "Woman evicted after landlord's AI assistant told her she could delay rent",
+      "url": "https://drmahfouz.substack.com/p/woman-evicted-after-landlords-ai",
+      "source": "Hacker News",
+      "date": "2026-11-28T01:32:56.000Z",
+      "snippet": "197 points · 152 comments on HN"
+    },
+    {
+      "id": "60fe99fe03e0",
+      "title": "SessionGraph: Visualize all your coding agent sessions in one interactive graph",
+      "url": "https://sessiongraph.ai/",
+      "source": "Hacker News",
+      "date": "2026-11-27T21:07:34.000Z",
+      "snippet": "69 points · 28 comments on HN"
+    },
+    {
+      "id": "42792ea1ec91",
+      "title": "Prospero: Bloat-free, native AI coding harness with ImGui",
+      "url": "https://github.com/skeeto/prospero",
+      "source": "Hacker News",
+      "date": "2026-11-27T20:23:14.000Z",
+      "snippet": "83 points · 36 comments on HN"
+    },
+    {
+      "id": "f21d90605390",
+      "title": "I'm Scared of AI",
+      "url": "https://thesoapbox.email/archive/3",
+      "source": "Hacker News",
+      "date": "2026-11-27T17:45:31.000Z",
+      "snippet": "217 points · 248 comments on HN"
+    },
     {
       "id": "7f71381ca1e4",
       "title": "Show HN: bouncemarket – a live prediction market game for a bouncing ball",
       "url": "https://bouncemarket.minhanhday.com/",
       "source": "Hacker News",
       "date": "2026-11-27T15:01:50.000Z",
-      "snippet": "63 points · 27 comments on HN"
+      "snippet": "395 points · 133 comments on HN"
     },
     {
       "id": "24644713102c",
@@ -24,7 +64,7 @@
       "url": "https://news.sky.com/story/us-air-forces-cloud-computing-platform-hacked-13617163",
       "source": "Hacker News",
       "date": "2026-11-27T12:54:11.000Z",
-      "snippet": "142 points · 80 comments on HN"
+      "snippet": "350 points · 214 comments on HN"
     },
     {
       "id": "d6b51fef844a",
@@ -32,7 +72,7 @@
       "url": "https://www.kimi.ai/news/kimi-for-science-program",
       "source": "Hacker News",
       "date": "2026-11-27T12:03:11.000Z",
-      "snippet": "110 points · 74 comments on HN"
+      "snippet": "186 points · 159 comments on HN"
     },
     {
       "id": "4f426f509098",
@@ -40,15 +80,15 @@
       "url": "https://www.thetimes.com/uk/technology-uk/article/ai-making-online-security-useless-smr73d3n8",
       "source": "Hacker News",
       "date": "2026-11-27T11:09:04.000Z",
-      "snippet": "71 points · 80 comments on HN"
+      "snippet": "119 points · 163 comments on HN"
     },
     {
       "id": "48b0d8d3f8ca",
-      "title": "The group chat where your AI talks behind your back",
+      "title": "Group chat where your AI talks behind your back",
       "url": "https://construct22.com/",
       "source": "Hacker News",
       "date": "2026-11-27T06:44:34.000Z",
-      "snippet": "517 points · 227 comments on HN"
+      "snippet": "718 points · 291 comments on HN"
     },
     {
       "id": "7354ff43a60c",
@@ -64,7 +104,7 @@
       "url": "https://janlukas.blog/posts/ai-self-hosting",
       "source": "Hacker News",
       "date": "2026-11-26T21:47:45.000Z",
-      "snippet": "927 points · 449 comments on HN"
+      "snippet": "1129 points · 526 comments on HN"
     },
     {
       "id": "94305b427e5a",
@@ -80,7 +120,7 @@
       "url": "https://karpathy.ai/usaciv/",
       "source": "Hacker News",
       "date": "2026-11-26T19:53:58.000Z",
-      "snippet": "72 points · 58 comments on HN"
+      "snippet": "73 points · 59 comments on HN"
     },
     {
       "id": "e445c0a44058",
@@ -88,7 +128,7 @@
       "url": "https://news.ycombinator.com/item?id=50657957",
       "source": "Hacker News",
       "date": "2026-11-26T18:14:53.000Z",
-      "snippet": "64 points · 110 comments on HN"
+      "snippet": "71 points · 119 comments on HN"
     },
     {
       "id": "280fc6b8ee71",
@@ -96,7 +136,7 @@
       "url": "https://diseasescuredbyai.com/",
       "source": "Hacker News",
       "date": "2026-11-26T17:16:41.000Z",
-      "snippet": "314 points · 190 comments on HN"
+      "snippet": "324 points · 199 comments on HN"
     },
     {
       "id": "e5c5d8632474",
@@ -120,7 +160,7 @@
       "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/",
       "source": "Hacker News",
       "date": "2026-11-26T09:44:23.000Z",
-      "snippet": "384 points · 318 comments on HN"
+      "snippet": "421 points · 333 comments on HN"
     },
     {
       "id": "64a870b6a927",
@@ -128,7 +168,7 @@
       "url": "https://commandcode.ai/moat",
       "source": "Hacker News",
       "date": "2026-11-26T06:32:48.000Z",
-      "snippet": "309 points · 161 comments on HN"
+      "snippet": "324 points · 161 comments on HN"
     },
     {
       "id": "7822140280bf",
@@ -160,7 +200,7 @@
       "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
       "source": "Hacker News",
       "date": "2026-11-25T21:18:02.000Z",
-      "snippet": "676 points · 539 comments on HN"
+      "snippet": "685 points · 547 comments on HN"
     },
     {
       "id": "dc85126b0ac7",
@@ -296,7 +336,7 @@
       "url": "https://www.marginalia.nu/log/a_141_marginalia_update/",
       "source": "Hacker News",
       "date": "2026-11-25T03:47:42.000Z",
-      "snippet": "224 points · 84 comments on HN"
+      "snippet": "226 points · 84 comments on HN"
     },
     {
       "id": "26adec5d4677",
@@ -304,7 +344,7 @@
       "url": "https://www.proofatlas.ai/open-problems/",
       "source": "Hacker News",
       "date": "2026-11-25T03:01:36.000Z",
-      "snippet": "105 points · 53 comments on HN"
+      "snippet": "105 points · 54 comments on HN"
     },
     {
       "id": "05f887d0221c",
@@ -368,7 +408,7 @@
       "url": "https://www.anthropic.com/research/working-with-ai",
       "source": "Hacker News",
       "date": "2026-11-24T21:07:38.000Z",
-      "snippet": "90 points · 78 comments on HN"
+      "snippet": "91 points · 78 comments on HN"
     },
     {
       "id": "6014a04f08fa",
@@ -376,7 +416,7 @@
       "url": "https://news.ycombinator.com/item?id=50634426",
       "source": "Hacker News",
       "date": "2026-11-24T20:44:15.000Z",
-      "snippet": "110 points · 110 comments on HN"
+      "snippet": "112 points · 113 comments on HN"
     },
     {
       "id": "30d256445c7c",
@@ -472,7 +512,7 @@
       "url": "https://news.ycombinator.com/item?id=50630809",
       "source": "Hacker News",
       "date": "2026-11-24T16:45:44.000Z",
-      "snippet": "470 points · 359 comments on HN"
+      "snippet": "477 points · 362 comments on HN"
     },
     {
       "id": "c82ab5c57408",
@@ -488,7 +528,7 @@
       "url": "https://variety.com/2026/music/news/tidal-bans-ai-generated-music-1236956924/",
       "source": "Hacker News",
       "date": "2026-11-24T16:12:38.000Z",
-      "snippet": "337 points · 346 comments on HN"
+      "snippet": "337 points · 347 comments on HN"
     },
     {
       "id": "8e9b94fee057",
@@ -496,7 +536,7 @@
       "url": "https://masondata.ai/",
       "source": "Hacker News",
       "date": "2026-11-24T16:11:52.000Z",
-      "snippet": "109 points · 21 comments on HN"
+      "snippet": "110 points · 21 comments on HN"
     },
     {
       "id": "8a546b15d29e",
@@ -592,7 +632,7 @@
       "url": "https://davidtemkin.github.io/declarelang/",
       "source": "Hacker News",
       "date": "2026-11-24T02:36:56.000Z",
-      "snippet": "125 points · 98 comments on HN"
+      "snippet": "127 points · 98 comments on HN"
     },
     {
       "id": "ec442b764e04",
@@ -601,46 +641,6 @@
       "source": "OpenAI",
       "date": "2026-11-24T00:00:00.000Z",
       "snippet": "Marina Petrova’s dot Aria helps research websites and build proposals, while proactively flagging messages and resolving issues."
-    },
-    {
-      "id": "7a6462e387eb",
-      "title": "How iFood scales coding agents across 15,000 repositories",
-      "url": "https://openai.com/business/customer-stories/ifood",
-      "source": "OpenAI",
-      "date": "2026-11-24T00:00:00.000Z",
-      "snippet": ""
-    },
-    {
-      "id": "99b93f3e1098",
-      "title": "Clay helps sales teams win with Codex and ChatGPT",
-      "url": "https://openai.com/business/customer-stories/clay-plugins-openai",
-      "source": "OpenAI",
-      "date": "2026-11-24T00:00:00.000Z",
-      "snippet": "ChatGPT and Codex integrations help Clay’s users research deals and turn data into go-to-market plays, with GPT-6 models handling the reasoning."
-    },
-    {
-      "id": "049542555c2c",
-      "title": "Trump engineered a risky comeback for Jensen Huang",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1040652/jensen-huang-nvidia-trump-reinstated",
-      "source": "The Verge",
-      "date": "2026-11-23T22:25:12.000Z",
-      "snippet": "After Nvidia's board accepted Jensen Huang's resignation as CEO, following reports that Huang had an affair with an alleged Chinese spy, President Donald Trump, too, appeared to submit to the new reality. Appearing on St"
-    },
-    {
-      "id": "15c28179b2dc",
-      "title": "Nvidia CEO Jensen Huang is back. What happens next?",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang",
-      "source": "The Verge",
-      "date": "2026-11-23T22:10:32.000Z",
-      "snippet": "After the leather-jacketed CEO, president, and co-founder of Nvidia, Jensen Huang, acknowledged an affair with Megaspeed exec Alice Huang, his company initially announced an investigation. However, after The New York Tim"
-    },
-    {
-      "id": "8ab70d6f89cf",
-      "title": "Welcome to elite impunity, Jensen Huang",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1040819/welcome-to-elite-impunity-jensen-huang",
-      "source": "The Verge",
-      "date": "2026-11-23T22:09:26.000Z",
-      "snippet": "I suppose I must issue a hearty congratulations to Jensen Huang. Huang is CEO of Nvidia again, to the surprise of basically everyone except President Donald Trump and Vice President JD Vance, who made sure it happened. N"
     }
   ]
 }
